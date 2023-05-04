@@ -17,7 +17,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: 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
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
           user_name: Quynh-Nguyen
           user_email: quynh.nguyen@digitalfortress.dev
