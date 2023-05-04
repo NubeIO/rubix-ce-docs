@@ -6,6 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const organizationName = "NubeIO";
 const projectName = "rubix-ce-docs";
+const deploymentBranch = "deployment"
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -20,6 +21,7 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName, // Usually your GitHub org/user name.
   projectName, // Usually your repo name.
+  deploymentBranch,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
