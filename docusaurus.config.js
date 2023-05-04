@@ -10,7 +10,7 @@ const deploymentBranch = "deployment"
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Document Rubix',
+  title: 'Document',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
