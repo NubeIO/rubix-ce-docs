@@ -6,8 +6,9 @@ on:
       - CICD
 jobs:
     deploy:
+      name: Deploy to GitHub Pages
       environment:
-        name: github-pages
+        name: Deploy to GitHub Pages
         url: ${{ steps.deployment.outputs.page_url }}
       runs-on: ubuntu-latest
       steps:
