@@ -4,8 +4,8 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-const organizationName = "docsrubix";
-const projectName = "docsrubix";
+const organizationName = "NubeIO";
+const projectName = "rubix-ce-docs";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
