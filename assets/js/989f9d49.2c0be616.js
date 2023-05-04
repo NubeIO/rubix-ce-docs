@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7373],{5220:e=>{e.exports=JSON.parse('{"label":"hola","permalink":"/rubix-ce-docs/blog/tags/hola","allTagsPath":"/rubix-ce-docs/blog/tags","count":1}')}}]);
