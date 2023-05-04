@@ -21,6 +21,8 @@ jobs:
           publish_dir: ./build
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          GIT_USER=Quynh-Nguyen yarn deploy
 
 
 
