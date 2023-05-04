@@ -1,34 +1,28 @@
 name: Deploy to GitHub Pages
 
 on:
-  pull_request:
-    branches: [CICD]
   push:
-    branches: [CICD]
-
+    branches:
+      - CICD
 jobs:
-  test-deploy:
-    if: github.event_name != 'push'
+  deploy:
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-      - name: Test build website
+      - name: Build website
         run: yarn build
-  deploy:
-    if: github.event_name != 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: webfactory/ssh-agent@v0.5.0
-        with:
-          ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
       - name: Deploy to GitHub Pages
-        env:
-          USE_SSH: true
-        run: |
-          git config --global user.email "chien.dang@digitalfortress.dev"
-          git config --global user.name "quangchien2203"
-          yarn install --frozen-lockfile
-          yarn deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+
+
+
+
+
