@@ -27,6 +27,8 @@ jobs:
             # 👇 Specify build output path
             github_token: ${{ secrets.GITHUB_TOKEN }}
             path: build
+            user_name: github-actions[bot]
+            user_email: 41898282+github-actions[bot]@users.noreply.github.com
         - name: Deploy to GitHub Pages
           id: deployment
           uses: actions/deploy-pages@v1
