@@ -2,26 +2,22 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [CICD]
-
+    branches:
+      - CICD
 jobs:
-  test-deploy:
+  deploy:
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-      - name: Test build website
+      - name: Build website
         run: yarn build
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
       - name: Deploy to GitHub Pages
-        env:
-          USE_SSH: true
-        run: |
-          git config --global user.email "quynh.nguyen@digitalfortress.dev"
-          git config --global user.name "Quynh-Nguyen"
-          yarn install --frozen-lockfile
-          yarn deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: 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
+          publish_dir: ./build
+          user_name: Quynh-Nguyen
+          user_email: quynh.nguyen@digitalfortress.dev
