@@ -28,4 +28,7 @@ jobs:
 
       - name: Deploy Source
         run: |
+          git config --global user.email "chien.dang@digitalfortress.dev"
+          git config --global user.name "quangchien2203"
+          git config --global user.password "Chien@123456"
           USE_SSH=true GIT_USER=Quynh-Nguyen yarn deploy
