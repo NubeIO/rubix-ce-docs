@@ -12,7 +12,7 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">Document Rubix Test 2</h1>
+        <h1 className="hero__title">Document Rubix Title</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
       </div>
     </header>
