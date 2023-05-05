@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Tutorial Intro
 
-L discover **Docusaurus in less than 5 minutes**.
+Edit TEST discover **Docusaurus in less than 5 minutes**.
 
 ## Getting Started
 
