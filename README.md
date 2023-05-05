@@ -1,4 +1,6 @@
 # Website
+link to site
+https://nubeio.github.io/rubix-ce-docs/
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
