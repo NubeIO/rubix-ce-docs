@@ -12,7 +12,7 @@ const deploymentBranch = "deployment"
 const config = {
   title: 'Document',
   tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  favicon: 'https://nube-io.com/wp-content/uploads/2021/06/cropped-index-32x32.png',
 
   // Set the production url of your site here
    url: `https://${organizationName}.github.io`,
@@ -67,7 +67,7 @@ const config = {
         title: 'Document',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'https://nube-io.com/wp-content/uploads/2022/04/Nube-logo.png',
         },
         items: [
           {
@@ -84,7 +84,7 @@ const config = {
         respectPrefersColorScheme: false,
       },
       footer: {
-        style: 'dark',
+        // style: 'dark',
         links: [
           {
             title: 'Docs',
