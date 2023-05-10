@@ -84,7 +84,7 @@ const config = {
         respectPrefersColorScheme: false,
       },
       footer: {
-        style: 'dark',
+        // style: 'dark',
         links: [
           {
             title: 'Docs',
