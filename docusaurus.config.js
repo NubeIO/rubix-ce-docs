@@ -64,7 +64,7 @@ const config = {
       // Replace with your project's social card
       image: 'https://nube-io.com/wp-content/uploads/2022/04/Nube-logo.png',
       navbar: {
-        title: 'Home Page',
+        title: 'Home',
         logo: {
           alt: 'My Site Logo',
           src: 'https://nube-io.com/wp-content/uploads/2022/04/Nube-logo.png',
@@ -75,6 +75,12 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Documentation',
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            dropdownActiveClassDisabled: true,
           },
         ],
       },

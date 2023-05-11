@@ -1,8 +1,8 @@
 ---
-sidebar_position: 5
+sidebar_position: 2
 ---
 
-# Advanced
+# Getting Started
 
 # running a simulation of rubix-stack on your PC
 

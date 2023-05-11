@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Advanced
+# advanced
 
 # running a simulation of rubix-stack on your PC
 

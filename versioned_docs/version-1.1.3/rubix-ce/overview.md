@@ -2,8 +2,15 @@
 sidebar_position: 1
 ---
 
+# Overview
 
-# overview
+# Rubix Computer Edition (CE - Overview)
+Rubix Platform CE is Nube iO's new desktop software designed for offline programming and product management.
+Built to be fast, lightweight and portable, it allows users and technicians to configure and modify remotely without requiring a constant internet connection.
+
+
+
+# Stack overview
 
 ## Rubix-Assist
 Rubix-Assist is used to manage a group of Rubix-computes, Rubix-assist can either run in the cloud or on a single Rubix-compute.
@@ -144,8 +151,3 @@ runs on port `http`
 ```
 sudo systemctl status nubeio-rubix-edge-wires
 ```
-
-
-
-
-
