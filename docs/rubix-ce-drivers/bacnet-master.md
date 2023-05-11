@@ -17,6 +17,15 @@ BACnet protocol supports communication and control of applications such as heati
 ### whois 
 The BACnet: Who-Is Node allows you to broadcast a Who-Is message and await I-Am replies from BACnet-compatible devices on your network.
 
+| Service                                | Supported |
+|----------------------------------------|-----------|
+| Who-Is (Device and Object Discovery)   | yes       |
+| I-Am (Device and Object Discovery)     | yes       |
+| Read-Property (Data Sharing)           | yes       |
+| Read-Property Multiple (Data Sharing)  | yes       |
+| Write-Property (Data Sharing)          | yes       |
+| Write-Property Multiple (Data Sharing) | yes       |
+| Subscribe COV                          | no        |
 
 ### read properties
 For example for a BACnet point

@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Overview
 
-## Rubix Computer Edition (CE - Overview)
+# Rubix Computer Edition (CE - Overview)
 Rubix Platform CE is Nube iO's new desktop software designed for offline programming and product management.
 Built to be fast, lightweight and portable, it allows users and technicians to configure and modify remotely without requiring a constant internet connection.
 
