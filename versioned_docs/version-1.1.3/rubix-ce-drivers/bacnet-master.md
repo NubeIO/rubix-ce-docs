@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# BACnet Master New
+# BACnet Master
 
 ## about
 
