@@ -76,6 +76,12 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            dropdownActiveClassDisabled: true,
+          },
         ],
       },
       colorMode: {
