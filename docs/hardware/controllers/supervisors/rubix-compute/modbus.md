@@ -2,15 +2,27 @@
 sidebar_position: 5
 ---
 
-
-# Modbus RS485 Wiring
-
+# Modbus
 
 https://nubeio.zohodesk.com.au/portal/en/kb/articles/powering-the-rubix-compute
 
 ## Modbus RS485 Terminal Wiring
 To establish communication with Modbus RS485 devices, the RS485 connectors are terminated and installed as shown below.
 
+## ports
+
+| Port Name         | Serial Port Name |
+|-------------------|------------------|
+| 485-1             | /dev/ttyUSB0     |
+| 485-2 and support | /dev/ttyAMA0     |
+
+## pins
+
+| Pin       |
+|-----------|
+| Pin 1 (+) |
+| Pin 2 (-) |
+| Pin 3 (G) |
 
 When wiring an RS485 network a single shielded twisted pair (STP) cable should be used.  The twisted pair cable cancels out interference and ensures that the 2 conductors are at the same lengths. Having a ground shield on the twisted pair cable further provides protection to interference on the RS485 network.
 

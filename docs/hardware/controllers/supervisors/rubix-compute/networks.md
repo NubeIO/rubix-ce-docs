@@ -12,10 +12,18 @@ https://nubeio.zohodesk.com.au/portal/en/kb/articles/rubix-compute-network-conne
 This article explains the best practices in how to connect Rubix Compute device to a network, and how to locate Rubix Compute device on the network.
 
 # Network Connection and Discovery
-In order to connect to and interact with a Rubix Compute controller it must be connected to a network via Ethernet cable.  The best way to connect to the Rubix Compute is via a router.  Alternatively, the Rubix Compute Controller can be connected directly to a PC via ethernet.
+In order to connect to and interact with a Rubix Compute controller it must be connected to a network via Ethernet cable.  
+The best way to connect to the Rubix Compute is via a router.  
+Alternatively, the Rubix Compute Controller can be connected directly to a PC via ethernet.
 
 ## Network Architecture
-To add a Nube-iO Rubix Compute Gateway Controller to a network, an ethernet cable must be connected to one of the Ethernet ports on the controller; generally this will be using the ETH-2 port.  The other end of the Ethernet cable should be connected (directly or indirectly) to the Network Router.  The cable architecture back to the Network Router can be via a number of Network Switches.  Below are examples of valid Ethernet networking architectures.
+To add a Nube-iO Rubix Compute Gateway Controller to a network, an ethernet cable must be connected to one of the Ethernet ports on the controller; generally this will be using the ETH-2 port.  
+The other end of the Ethernet cable should be connected (directly or indirectly) to the Network Router.  
+The cable architecture back to the Network Router can be via a number of Network Switches.  
+
+Below are examples of valid Ethernet networking architectures.
+
+![networks-router.png](img/networks-router.png)
 
 
 # Default Network Configuration
