@@ -4,4 +4,9 @@ sidebar_position: 1
 
 # Getting Started
 
-Client/Server versus Master/Slave - We tend to think of master and slave at the MS/TP level, and start thinking in terms of client/server when we talk about IP networks. Functionally, the client and master are synonomous while the server and slave are synonomous.
+# Drivers (Protocols)
+To add a driver for a new network, return to the driver tab in the controller page. Select "+Create" and then select the driver from the available list on the dropdown menu. If the required driver does not appear in the menu the plugin will need to be installed, see previous section for instructions.
+
+
+
+![-](./img/driver-page.png)
