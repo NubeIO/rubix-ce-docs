@@ -64,7 +64,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Home Page',
+        title: 'Home',
         logo: {
           alt: 'My Site Logo',
           src: 'https://nube-io.com/wp-content/uploads/2022/04/Nube-logo.png',

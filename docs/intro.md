@@ -2,30 +2,150 @@
 sidebar_position: 1
 ---
 
-# Intro 
 
-Rubix Platform CE is Nube iO's new desktop software designed for offline programming and product management.
-Built to be fast, lightweight and portable, it allows users and technicians to configure and modify remotely without requiring a constant internet connection.
+# overview
 
-## Downloads
-
-### Rubix-CE Download
-
-:arrow_down: [link to latest version](https://drive.google.com/drive/folders/1EY1bF_T503HGjCt3KOKtp5LyakRAAj5Z)
-
-:arrow_down: [link to all downloads](https://drive.google.com/drive/folders/1slMWRrk0-apIV1HEBnewk-_PWTgDcmn8)
+## Rubix-Assist
+Rubix-Assist is used to manage a group of Rubix-computes, Rubix-assist can either run in the cloud or on a single Rubix-compute.
 
 
-for windows download the version folder called `windows` and then download the build inside for example named `rubix-ce-windows-2023.05.05.exe`
+### performs tasks like:
+* Updating Rubix-computes apps
+
+### runs on hardware
+Runs in the `cloud` or on a `Rubix-compute`
+
+### port
+
+runs on port `http`
+```
+1662
+```
+runs on port `https`
+```
+ra-YOURACCOUNT.nube-iiot.com
+```
+
+### service name
+```
+sudo systemctl status nubeio-rubix-assist
+```
 
 
-![-](./img/where-to-download.png)
+
+
+## Rubix-Edge
+Rubix-Edge is used to connect to rubix-assist
+
+### performs tasks like
+
+* Updating rubix-computes apps
+* Updating the device networking, time and firewall
+
+### runs on hardware
+Runs in the `cloud` or on a `Rubix-compute`
+
+### port
+
+runs on port `http`
+```
+1662
+```
+runs on port  `https`
+```
+re-YOURACCOUNT.nube-iiot.com
+```
+
+### service name
+```
+sudo systemctl status nubeio-rubix-edge
+```
+
+## Rubix-Edge-Bios
+Rubix-Edge is used to connect to rubix-assist
+
+### performs tasks like
+
+* Updating rubix-computes apps
+* Updating the device networking, time and firewall
+
+### runs on hardware
+Runs in the `cloud` or on a `Rubix-compute`
+
+### port
+
+runs on port `http`
+```
+1662
+```
+runs on port  `https`
+```
+443
+rb-YOURACCOUNT.nube-iiot.com
+```
+
+### service name
+```
+sudo systemctl status nubeio-rubix-edge-bios
+```
+
+
+
+## Flow-framework
+Flow-framework is used for managing protocols like lora, bacnet
+
+## performs tasks like
+
+* Scheduling
+* Connections to the Nube-IO cloud
+* Protocols like Lora, Modbus and BACnet
+
+### runs on hardware
+Runs in the `cloud` or on a `Rubix-compute`
+
+### port
+
+runs on port `http`
+```
+1660
+```
+runs on port  `https`
+```
+ff-YOURACCOUNT.nube-iiot.com
+```
+
+### service name
+```
+sudo systemctl status nubeio-flow-framework
+```
+
+
+
+### Rubix-Edge-Wires
+Rubix-Edge-Wires is a building automation control runtime for controlling HVAC equipment, lighting. Rubix-Edge-Wires uses a flow based programming runtime
+
+## performs tasks like
+
+* bms HVAC flow based programming
+
+
+### runs on hardware
+Runs in the `cloud` or on a `Rubix-compute`
+
+### port
+
+runs on port `http`
+```
+1665
+```
+
+
+### service name
+```
+sudo systemctl status nubeio-rubix-edge-wires
+```
 
 
 
 
-### Rubix-Compute
-Rubix-Compute-5
-
-:arrow_down: [download link](https://raw.githubusercontent.com/NubeIO/rubix-docs/master/pdfs/hardware/rubix-compute/Rubix%20Compute%205%20-%20Datasheet.pdf) 
 
