@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 
 
-# overview
+# Overview
 
 ## Rubix-Assist
 Rubix-Assist is used to manage a group of Rubix-computes, Rubix-assist can either run in the cloud or on a single Rubix-compute.

@@ -24,10 +24,10 @@ The Rubix-Compute is the NubeIO gateway. It is a small wireless gateway capable 
 # Modules (Plugins)
 Modules (or Plugins) are software applications used to enable various functions on the Rubix Compute. Once controllers have been installed on Rubix-Platform-CE (see here add link), modules will have to be installed to enable supported functions such as Lora, Bacnet or Modbus communications. 
 
-![-](./img/apps/plugins-page.png)
+![-](../img/apps/plugins-page.png)
 
 
 ## Install A Plugin
 After adding the controller, click on the view network button in the "Actions" column
 
-![-](./img/apps/plugin-install.png)
+![-](../img/apps/plugin-install.png)
