@@ -6,11 +6,6 @@ sidebar_position: 1
 # Modbus Pass-through
 
 
-![](https://raw.githubusercontent.com/NubeIO/rubix-docs/master/images/hardware/rubix-compute/rc5-small.png)
-
-## datasheet
-:arrow_down: [download link](https://raw.githubusercontent.com/NubeIO/rubix-docs/master/pdfs/hardware/rubix-compute/Rubix%20Compute%205%20-%20Datasheet.pdf)
-
 # Introduction
 
 In this example, we will be setting up a Rubix IO16 as a modbus pass-through device, turning the meter into a wireless solution.
