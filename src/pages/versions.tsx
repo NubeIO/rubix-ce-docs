@@ -49,7 +49,7 @@ export default function Version(): JSX.Element {
   return (
     <Layout
       title="Versions"
-      description="Docusaurus 2 Versions page listing all documented site versions"
+      description="page listing all documented site versions"
     >
       <main className="container margin-vert--lg">
         <Heading as="h1">
@@ -149,28 +149,6 @@ export default function Version(): JSX.Element {
           </table>
         </div>
         <div className="margin-bottom--lg">
-          <Heading as="h3" id="legacy">
-            <Translate id="versionsPage.legacy.title">
-              Docusaurus v1 (Legacy)
-            </Translate>
-          </Heading>
-          <p>
-            <Translate id="versionsPage.legacy.description">
-              Here you can find documentation for legacy version of Docusaurus.
-            </Translate>
-          </p>
-          <table>
-            <tbody>
-              <tr>
-                <th>1.x</th>
-                <td>
-                  <Link href="https://v1.docusaurus.io/docs/en/installation">
-                    <DocumentationLabel />
-                  </Link>
-                </td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </main>
     </Layout>

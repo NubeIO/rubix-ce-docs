@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 
 
-# Rubix-Compute
+# Overview
 
 
 ![](https://raw.githubusercontent.com/NubeIO/rubix-docs/master/images/hardware/rubix-compute/rc5-small.png)
