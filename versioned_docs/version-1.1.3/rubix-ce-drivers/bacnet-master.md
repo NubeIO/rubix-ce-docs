@@ -2,23 +2,23 @@
 sidebar_position: 3
 ---
 
-# BACnet Master 
+# BACnet Master New
 
 ## about
 
 BACnet is a data communications protocol for Building Automation and Control Networks. It is an approved and
 standard protocol by American Society of Heating, Refrigerating and Air Conditioning Engineers (ASHRAE),
 American National Standards Institute (ANSI), and International Organization for Standardization (ISO). The
-BACnet protocol supports communication and control of applications such as heating, ventilation, air-conditioning, lighting, access, and fire detection systems and their associated equipment. 
-
+BACnet protocol supports communication and control of applications such as heating, ventilation, air-conditioning, lighting, access, and fire detection systems and their associated equipment.
 
 ## supported services
 
-### whois 
+### whois
+
 The BACnet: Who-Is Node allows you to broadcast a Who-Is message and await I-Am replies from BACnet-compatible devices on your network.
 
 | Service                                | Supported |
-|----------------------------------------|-----------|
+| -------------------------------------- | --------- |
 | Who-Is (Device and Object Discovery)   | yes       |
 | I-Am (Device and Object Discovery)     | yes       |
 | Read-Property (Data Sharing)           | yes       |
@@ -28,11 +28,11 @@ The BACnet: Who-Is Node allows you to broadcast a Who-Is message and await I-Am 
 | Subscribe COV                          | no        |
 
 ### read properties
+
 For example for a BACnet point
 
-
 | Object             | Number | Supported For Read |
-|--------------------|--------|--------------------|
+| ------------------ | ------ | ------------------ |
 | Analog Input       | 0      | yes                |
 | Analog Output      | 1      | yes                |
 | Analog Value       | 2      | yes                |
@@ -53,15 +53,12 @@ For example for a BACnet point
 | Schedule           | 17     | no                 |
 | Multi-state Value  | 19     | yes                |
 
-
-
-
 ### write properties
+
 For example for a BACnet point
 
-
 | Object             | Number | Supported For Write |
-|--------------------|--------|---------------------|
+| ------------------ | ------ | ------------------- |
 | Analog Input       | 0      | no                  |
 | Analog Output      | 1      | yes                 |
 | Analog Value       | 2      | yes                 |
