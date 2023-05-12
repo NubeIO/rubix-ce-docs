@@ -8,10 +8,12 @@ const organizationName = "NubeIO";
 const projectName = "rubix-ce-docs";
 const deploymentBranch = "deployment"
 
+
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Document',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'hardware is cool',
   favicon: 'https://nube-io.com/wp-content/uploads/2021/06/cropped-index-32x32.png',
 
   // Set the production url of your site here
@@ -33,7 +35,6 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
   presets: [
     [
       'classic',
@@ -131,6 +132,11 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
 };
 
 module.exports = config;

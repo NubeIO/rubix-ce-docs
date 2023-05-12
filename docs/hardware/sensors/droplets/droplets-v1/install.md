@@ -11,3 +11,7 @@ https://nubeio.zohodesk.com.au/portal/en/kb/articles/droplet-installation-and-co
 
 
 
+![droplet-sizes.png](img/droplet-sizes.png)
+
+
+# 
