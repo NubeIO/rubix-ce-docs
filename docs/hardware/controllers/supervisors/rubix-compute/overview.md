@@ -2,11 +2,12 @@
 sidebar_position: 1
 ---
 
-
 # Overview
 
 This IoT multi-gateway will collect data from both wired and wireless devices. 
 It will enable you to aggregate data from multiple sensors and send it anywhere – your cloud, a local server, or 3rd-party hardware.
+
+![rc5.png](../../../img/rc5.png)
 
 
 ## One Gateway. Multiple Data Types.
