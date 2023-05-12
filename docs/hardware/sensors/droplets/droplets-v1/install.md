@@ -5,8 +5,7 @@ sidebar_position: 2
 
 # Installation and Configuration
 
-![droplet-sizes.png](img/droplet-sizes.png)
-
+![max200px](../../../img/droplet.png)
 
 This article details the installation and configuration of the Nube-iO MicroEdge LoRa Wireless Asset Sensor.  
 # Mounting
@@ -15,13 +14,13 @@ They can be mounted vertically or horizontally.
 The sensor should always be mounted in a location such that it will not experience very high or low temperatures,  liquids or high humidity.   
 Mounting locations should be selected such that the sensor will experience conditions representative of the entire sensing space.
 
-![Droplet - Mounting - Back Panel.png](img/Droplet%20-%20Mounting%20-%20Back%20Panel.png)
+![max400px](img/droplet-sizes.png)
 
 # Power
 Droplet sensors are powered by 3 x AA Batteries as shown below.   
 Battery runtime should be between 3-5 years depending on the configured push rate (more data pushes means lower battery runtime).
 
-![Droplet - Power - Battery Terminals.png](img/Droplet%20-%20Power%20-%20Battery%20Terminals.png)
+![max300px](img/Droplet%20-%20Power%20-%20Battery%20Terminals.png)
 
 
 # Sensor Positioning and LoRa Signal Quality
@@ -40,7 +39,7 @@ The Reset Button is also used in some configuration steps.
 
 Location is shown below.
 
-![Droplet - Layout - Reset Switch.png](img/Droplet%20-%20Layout%20-%20Reset%20Switch.png)
+![max300px](img/Droplet%20-%20Layout%20-%20Reset%20Switch.png)
 
 # Onboard DIP Switch Configuration
 
@@ -54,7 +53,7 @@ DIP switches are ON/1 when pushed UP,  and they are OFF/0 when they are pushed d
 DIP switches 1-3 are used to set the push rate of the Droplet sensor.  
 The sensor will send the sensor data at the configured period as configured by these first 3 DIP switches.
 
-![Droplet - Configuration - DIP Switch Push Rate.png](img/Droplet%20-%20Configuration%20-%20DIP%20Switch%20Push%20Rate.png)
+![max400px](img/Droplet%20-%20Configuration%20-%20DIP%20Switch%20Push%20Rate.png)
 
 
 # Motion / PIR Interrupt
@@ -64,7 +63,7 @@ When DIP switch 4 is set ON/1 the Droplet sensor will send a data push immediate
 This is intended to give an instant indication of motion in space. 
 When DIP 4 is OFF/0 the Droplet sensor will only send data pushes at the configured Push rate Period.
 
-![Droplets - Configuration - Motion_PIR DIP Switch Table.png](img/Droplets%20-%20Configuration%20-%20Motion_PIR%20DIP%20Switch%20Table.png)
+![max600px](img/Droplets%20-%20Configuration%20-%20Motion_PIR%20DIP%20Switch%20Table.png)
 
 # Reset Sensor ID
 
@@ -74,7 +73,7 @@ The Droplet sensor is generally labeled with the original Sensor ID, using this 
 
 Follow the below instructions to reset the Sensor ID:
 
-![Droplet - Configuration - Reset Sensod ID Dip Switches Table.png](img/Droplet%20-%20Configuration%20-%20Reset%20Sensod%20ID%20Dip%20Switches%20Table.png)
+![max600px](img/Droplet%20-%20Configuration%20-%20Reset%20Sensod%20ID%20Dip%20Switches%20Table.png)
 
 
 # Testing Mode
@@ -83,9 +82,9 @@ In Testing Mode the Droplet Sensor will temporarily self-assign a known Sensor I
 Testing Mode is enabled when either DIP switch 7 OR 8 are ON/1/UP.  
 Testing Mode aids in identifying and positioning the Droplet sensor. 
 
-![Droplet - Configuration - Testing Mode DIP Switches Table.png](img%2FDroplet%20-%20Configuration%20-%20Testing%20Mode%20DIP%20Switches%20Table.png)
+![max600px](img/Droplet%20-%20Configuration%20-%20Testing%20Mode%20DIP%20Switches%20Table.png)
 
 
 # DIP Switch Configuration Summary Table
 
-![Droplet - Configuration - DIP Switch Configuration Table.png](img%2FDroplet%20-%20Configuration%20-%20DIP%20Switch%20Configuration%20Table.png)
+![max700px](img/Droplet%20-%20Configuration%20-%20DIP%20Switch%20Configuration%20Table.png)

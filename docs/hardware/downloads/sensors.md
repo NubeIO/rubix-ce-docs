@@ -7,7 +7,7 @@ sidebar_position: 2
 
 # Droplet
 
-![droplet.png](../img/droplet.png)
+![max200px](../img/droplet.png)
 
 :::tip Downloads
 :arrow_down: [Datasheet](https://raw.githubusercontent.com/NubeIO/rubix-docs/master/pdfs/hardware/lora-sensors/droplet/Wireless_Droplet_Sensors_Datasheet_20220201.pdf)
@@ -18,7 +18,7 @@ sidebar_position: 2
 
 # Micro-Edge
 
-![droplet.png](../img/micro-edge.png)
+![max200px](../img/micro-edge.png)
 
 :::tip Downloads
 :arrow_down: [Datasheet](https://raw.githubusercontent.com/NubeIO/rubix-docs/master/pdfs/hardware/lora-sensors/micro-edge/Wireless_MicroEdge_Sensor_Datasheet_20230307.pdf)
