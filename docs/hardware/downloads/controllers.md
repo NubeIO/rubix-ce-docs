@@ -8,7 +8,7 @@ sidebar_position: 1
 # Rubix-Compute
 
 
-![rc5.png](../img/rc5.png)
+![max200px](../img/rc5.png)
 
 
 :::tip Downloads
@@ -20,7 +20,7 @@ sidebar_position: 1
 
 
 # Rubix-IO-16
-![io-16.png](../img/io-16.png)
+![max200px](../img/io-16.png)
 
 
 :::tip Downloads
