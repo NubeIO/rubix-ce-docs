@@ -13,7 +13,7 @@ When adding the bacnet driver the default settings should be suitable for most a
 required.
 
 # Adding a network
-![max800px](../../img/bacnet-add-network-whois.gif)
+![max800px](img/bacnet-add-network-whois.gif)
 
 ## name
 Name of the network
@@ -36,7 +36,7 @@ Set max polling rate
 # Editing a network
 You can either click on the **edit icon** ![edit icon](../../../../img/edit-icon.png) or **right-click** and **edit**
 
-![max800px](../../img/bacnet-master-settings.png)
+![max800px](img/bacnet-master-settings.png)
 
 # Adding a BACnet device
 
@@ -46,7 +46,7 @@ Click on the **add button** ![edit icon](../../../img/apps/add-button.png)
 
 ## BACnet network device discovery (BACnet WhoIs)
 
-![max800px](../../img/whois.gif)
+![max800px](img/whois.gif)
 
 
 ## Adding a points to a device
@@ -61,7 +61,7 @@ Click on the **add button** ![edit icon](../../../img/apps/add-button.png)
 
 You can also discover and add the points ass required
 
-![max800px](../../img/discover-points.gif)
+![max800px](img/discover-points.gif)
 
 #### Point settings
 

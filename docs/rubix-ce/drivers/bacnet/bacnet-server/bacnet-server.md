@@ -19,7 +19,7 @@ make sure the config is set for the number of AIs and AOs needed. (eg 2x **[Nube
 :::
 
 
-![max800px](../../img/bacnet-config.gif)
+![max800px](img/bacnet-config.gif)
 
 
 :::info Important things to note before proceeding

@@ -28,7 +28,7 @@ This should now create the LoRa and network. Now open the LoRa network to add a 
 adding the LoRa driver for the first time it will install a module/plugin dependency called `LoRa`
 :::
 
-![max800px](../../img/adding-lora-network.gif)
+![max800px](img/adding-lora-network.gif)
 
 ## Adding a sensor
 
@@ -51,7 +51,7 @@ will give you the type of sensors to select from. For this example, we will be u
 
 **Step-4** Once the sensor has been added, view the points by clicking on the arrow point on the newly added device.
 
-![max800px](../../img/adding-lora-droplet.gif)
+![max800px](img/adding-lora-droplet.gif)
 
 
 :::info
