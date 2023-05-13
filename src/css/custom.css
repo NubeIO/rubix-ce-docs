@@ -43,8 +43,10 @@
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+
+
 img[alt="max50px"] {
-    max-width: 50px;
+    max-width: 10px;
     display: block;
 }
 
@@ -85,5 +87,10 @@ img[alt="max700px"] {
 
 img[alt="max800px"] {
     max-width: 800px;
+    display: block;
+}
+
+img[alt="max900px"] {
+    max-width: 900px;
     display: block;
 }
