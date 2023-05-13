@@ -8,78 +8,53 @@ sidebar_position: 1
 
 A Flow is a type of logical programming that is created by linking nodes together to create custom functionality. These
 flows are build and modified in live runtime. Flows can be exported and imported as JSON.
+
+# What is a node
+
 A node is a block of logic in Wires. There are many nodes representing many functions. You can connect the inputs and
 outputs of a node to other nodes to send values between nodes (thus creating logic flows).
 
-# Adding Nodes
+# About The Editor
 
-## Adding Nodes from the Context Menu
+The Editor is used to connect nodes together to write your program
 
-Right-clicking on the Editor Pane opens the Context Menu. By clicking `Add` you will see a list of all the available
-node groups. Clicking a group will show the nodes available in that group. Clicking a node will add it to the Editor
-Pane.
+For example add 3x nodes 2x **const-num** and node **add** and wire each **const-num** output into input `in1` and `in2`
+on the **add** node
 
-![max500px](img/add-node-right-click.png)
+What we have created is called a **Flow Program**
 
-## Adding Nodes from the Node Palette
+![max800px](img/simple-example.png)
 
-The Node Palette shows the node groups. Clicking a node group will expand that group, showing the available nodes.
-Dragging a node from the Node Palette to the Editor Pane will add it to the Editor Pane.
+# Flow Program
 
-![max500px](img/add-node.png)
+A **Flow Program** is a collection of nodes and wired connections that will create complete program
 
-# Node Palette Search
+# Editor Overview
 
-To find nodes more easily in the Node Palette, a search feature is located at the top of the Node Palette. Typing in the
-`search` bar will filter the nodes shown in the Node Palette to only those which match the search terms.
+The editor is where to write and test your programs
 
-![max500px](img/pallet.png)
+![max800px](img/overview.png)
 
-# Cloning nodes
+# Editor Buttons
 
-Nodes can be cloned (duplicated) by selecting `ctrl-d`
+The buttons are used to do the following
 
-# Removing Nodes
+![max800px](img/editor-buttons.png)
 
-Select a node by clicking on it and then use the delete key to delete the node
-To remove multiple nodes, hold the shift key and select(click) the desired nodes to be removed; An outline will appear
-around the selected nodes. Once selected either press the delete key on the keyboard.
+# Shortcuts
 
-# Node Settings
+* Hold Control and Left click to select nodes or connections.
+* Hold Control and A to select all node.
+* Hold Control and E for export to nodes .
+* Hold Control and I for import to nodes.
+* Hold Control and C to copy nodes.
+* Hold Control and D to duplicate nodes.
+* Hold Control and Z to undo.
+* Hold Control and Y to redo.
+* Hold Control and X to cut.
+* Hold Control and S to save/deploy flow.
 
-Each node on the Editor Pane has settings that are used to configure its function or labelling. Settings are configured
-and saved for each individual node.
-To edit a node settings **double-click** on the node or **right click** and edit settings
 
-# Node Inputs and Outputs
 
-Nodes have different inputs and outputs based on the specific function they perform. Many nodes have settings which will
-change the available inputs and outputs.
 
-## Node Inputs
 
-Node inputs provide values to be used in computing the node’s outputs. Wire links can be connected to the left hand side
-of node input slots. The image below shows the 4 inputs of a `min-on-off` node.
-
-![max500px](img/node-inputs.png)
-
-## Node Inputs value
-
-A node supports the option to write a value directly in the input rather than connecting in another node
-
-![max500px](img/node-inputs-values.png)
-
-# Variable Input Counts
-
-Many nodes have a setting which will create/remove node inputs.
-
-Example of some nodes that support this: **Math/Add** **Bool/And**
-
-![max500px](img/variable%20input%20counts.png)
-
-# Node Outputs
-
-Node outputs are the results of a nodes specific function. Wire links can be connected from the right hand side of node
-output slots. The image below shows the 1 output of a const-num node.
-
-![max500px](img/node-outputs.png)
