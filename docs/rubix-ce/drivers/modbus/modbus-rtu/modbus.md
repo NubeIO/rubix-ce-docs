@@ -1,8 +1,8 @@
 ---
-sidebar_position: 6
+sidebar_position: 1
 ---
 
-# Modbus
+# Getting Started
 
 Modbus Network
 
@@ -11,7 +11,7 @@ Modbus data from connected Modbus devices.
 
 ## Adding a network
 
-**Step-1** On the controller level, under `drivers`, click the **create** ![add icon](../img/apps/add-button.png) to
+**Step-1** On the controller level, under `drivers`, click the **create** ![add icon](../../../img/apps/add-button.png) to
 select and download and install the relevant network. Follow the wizard to continue installing the network.
 
 **Step-2** Select the **Modbus Serial Network** or **Modbus TCP Network**. This will download the appropriate modules
@@ -28,7 +28,7 @@ This should now create the Modbus and network. Now open the Modbus network to ad
 :::info
 Important things to note before proceeding:
 You must have a rubix-compute and a modbus RTU device and know the settings required to add the device *
-**[ports](../../hardware/controllers/supervisors/rubix-compute/ports.md)**
+**[ports](../../../../hardware/controllers/supervisors/rubix-compute/ports.md)**
 :::
 
 * **Network name** - The network name is the name of the desired network. It is recommended you use the type of modbus

@@ -87,7 +87,7 @@ const config = {
       },
       colorMode: {
         defaultMode: 'light',
-        disableSwitch: true,
+        disableSwitch: false,
         respectPrefersColorScheme: false,
       },
       footer: {
@@ -110,7 +110,7 @@ const config = {
                 href: 'https://nube-io.com/',
               },
               {
-                label: 'Nube-IO Documents',
+                label: 'Old Nube-IO Documents Site',
                 href: 'https://nubeio.zohodesk.com.au/portal/en/kb/nube-io',
               },
             ],
