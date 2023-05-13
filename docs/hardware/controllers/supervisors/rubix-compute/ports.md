@@ -21,8 +21,15 @@ sidebar_position: 4
 | 485-2 and support | /dev/ttyAMA0     |
 
 
-# LoRa
+# LoRa For Droplets and Micro-Edges
 
 | Port Name | Serial Port Name  |
 |-----------|-------------------|
 | LoRa      | /data/socat/loRa1 |
+
+
+# Modbus Over LoRa For the IO-16
+
+| Port Name | Serial Port Name          |
+|-----------|---------------------------|
+| LoRa      | /data/socat/serialBridge1 |
