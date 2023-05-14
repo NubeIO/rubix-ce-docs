@@ -11,6 +11,11 @@ sidebar_position: 1
 
 ## flow-framework
 
+:::info
+flow-framework port: `1660`
+:::
+
+
 ### valid from flow-framework version `0.14.0`
 
 [postman json import](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/)
