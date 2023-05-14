@@ -3,8 +3,6 @@ sidebar_position: 4
 ---
 # Networking and Interfaces
 
-
-
 ![rc-networking.png](img/rc-networking.png)
 # networking
 
@@ -33,3 +31,12 @@ sidebar_position: 4
 | Port Name | Serial Port Name          |
 |-----------|---------------------------|
 | LoRa      | /data/socat/serialBridge1 |
+
+
+# Summery
+
+| **Device Type**                          | **LoRa Port selection on Rubix Platform** |
+|------------------------------------------|-------------------------------------------|
+| Wireless sensors - Droplets & Micro Edge | /data/socat/loRa1                         |
+| Rubix iO-16 in Wireless Mode             | /data/socat/serialBridge1                 |
+| Rubix iO-16 in 485 Mode                  | /dev/ttyAMA0                              |

@@ -2,12 +2,7 @@
 sidebar_position: 2
 ---
 
-
 # Identifying Hardware Version
-
-
-https://nubeio.zohodesk.com.au/portal/en/kb/articles/microedge-identifying-device-version
-
 
 The Rubix Compute has had a number of hardware improvements since its release.
 It is important to know which version of the Rubix Compute you are working with so that the correct versions of manuals and documentation are used.

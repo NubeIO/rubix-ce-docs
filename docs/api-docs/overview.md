@@ -6,10 +6,16 @@ sidebar_position: 1
 
 ## postman import json
 
-[postman json import](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/)
+[postman api-docs](https://api.postman.com/collections/666859-6bce0560-065c-496e-9047-0dd41d765558?access_key=PMAT-01H079RP9T09YXRSZ74C8NY0JV)
+
 
 ## flow-framework
 
-valid from version `0.14.0`
+:::info
+flow-framework port: `1660`
+:::
 
-[postman api-docs](https://api.postman.com/collections/666859-6bce0560-065c-496e-9047-0dd41d765558?access_key=PMAT-01H079RP9T09YXRSZ74C8NY0JV) 
+
+### valid from flow-framework version `0.14.0`
+
+[postman json import](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/)
