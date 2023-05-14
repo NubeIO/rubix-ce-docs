@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 ---
-# Networking and Interfaces 111
+# Networking and Interfaces
 
 ![rc-networking.png](img/rc-networking.png)
 # networking

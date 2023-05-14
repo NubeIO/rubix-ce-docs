@@ -12,11 +12,15 @@ requiring a constant internet connection.
 
 You need the following to get started
 
-:heavy_check_mark: A Windows PC 10 or 11 :heavy_check_mark: An internet connection
+:::info
+* A Windows PC 10 or 11 
+* An internet connection
+* **[downloads page](download.md#download)** if not done so please download and install the rubix-ce software
+* A **[nube-io cloud account](docker.md#nube-io-cloud-account)**
+* And or a nube-io **[rubix-compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)**
+:::
 
-:exclamation: [downloads page](download.md#download) if not done so please download and install the rubix-ce software
-
-click on the green ![add-button.png](../img/apps/add-button.png)
+  
 
 # Install
 
@@ -26,7 +30,13 @@ No install is required just right click and run the program
 
 ## add token
 
-:exclamation: `you need to contact nube support to get a token`
+
+:::caution token
+you need to contact nube support to get a token 
+
+support@nube-io.com
+:::
+
 
 paste in the token, the token is needed to download apps and services over the internet
 
@@ -34,7 +44,7 @@ paste in the token, the token is needed to download apps and services over the i
 
 You will then have the option to either `Enter Application` or `Create supervisor`
 
-if you don't [Create supervisor](supervisor.md#create-a-supervisor) don't worry you can always add one later
+if you don't [Create supervisor](supervisor.md#supervisor) don't worry you can always add one later
 
 ![getting-started-add-or-open.png](../img/apps/getting-started-add-or-open.png)
 
@@ -97,7 +107,7 @@ A physical Nube-IO rubix-compute
 ----RC2
 ```
 
-![side-bar-supervisors.png](img%2Fside-bar-supervisors.png)
+![side-bar-supervisors.png](img/side-bar-supervisors.png)
 
 
 

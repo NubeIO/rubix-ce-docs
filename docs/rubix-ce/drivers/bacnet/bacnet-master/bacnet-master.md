@@ -4,15 +4,24 @@ sidebar_position: 1
 
 # Getting Started
 
-To add the BACnet-Mas
+To add the BACnet-Master driver to a controller follow the steps in the previous sections: 
 
-ter driver to a controller follow the steps in the previous sections: Modules (Modules/Plugins) and
-Drivers (Protocols).
+Modules (Modules/Plugins) and Drivers (Protocols).
 
 When adding the bacnet driver the default settings should be suitable for most applications but can be changed if
 required.
 
+:::info Important things to note before proceeding:
+* Install required **[modules/plugins](../../../setup/plugins.md)** **bacnetmaster**
+:::
+
+
 # Adding a network
+
+1. open the host device you wish to add the BACnet network to
+2. click on the Add ![add-button.png](../../../img/apps/add-button.png)
+3. Follow the steps in the wizard
+
 ![max800px](img/bacnet-add-network-whois.gif)
 
 ## name
@@ -28,26 +37,35 @@ Default port is `47808` you can also set it to another port like `47809` if requ
 
 ### network interface 
 Select the network interface
-`ETH-1 interface eth0, ETH-2 interface eth1`
+- ETH-1 interface eth0 `Or` ETH-2 interface eth1
 
 ### max poll rate
 Set max polling rate
 
 # Editing a network
-You can either click on the **edit icon** ![edit icon](../../../../img/edit-icon.png) or **right-click** and **edit**
+
+1. You can either click on the **edit icon** ![edit icon](../../../../img/edit-icon.png) or **right-click** and **edit**
+2. Update as required
+3. To save hit the submit button
+
 
 ![max800px](img/bacnet-master-settings.png)
 
 # Adding a BACnet device
 
-## Add manually
+1. open the network you added by **right-click** View
+2. click on the Add ![add-button.png](../../../img/apps/add-button.png)
+3. Enter the details required
+4. To save hit the submit button
 
-Click on the **add button** ![edit icon](../../../img/apps/add-button.png) 
 
 ## BACnet network device discovery (BACnet WhoIs)
 
-![max800px](img/whois.gif)
+You can also do a bacnet device discovery to add the devices.
 
+Enter into the BACnet tab and click on the **discover** icon
+
+![max800px](img/whois.gif)
 
 ## Adding a points to a device
 
@@ -59,7 +77,7 @@ Click on the **add button** ![edit icon](../../../img/apps/add-button.png)
 
 ### BACnet network points discovery (BACnet Discover Device Objects)
 
-You can also discover and add the points ass required
+You can also discover and add the points as required
 
 ![max800px](img/discover-points.gif)
 

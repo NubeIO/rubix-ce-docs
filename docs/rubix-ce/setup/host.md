@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Add A Rubix-Compute
+# Hosts/Rubix-Computes
 
 A rubix compute is to be added under within a supervisor
 

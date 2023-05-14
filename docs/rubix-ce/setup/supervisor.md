@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Create A Supervisor
+# Supervisor
 
 The Rubix-Platform-CE application can be used to setup and program multiple instances of the Rubix-assist (each customer
 has their own instance of Rubix-assist running in the cloud or on premises) so the user of CE can engineer multiple
@@ -11,12 +11,19 @@ sites at once.
 An admin can generate multiple tokens for each site specific customer and can also remove the customer from the site by
 revoking the specific token. See 'Generating a Token'.
 
-## click on the add button
+
+:::info before starting you need the following
+1. A **[nube-io cloud account](docker.md#nube-io-cloud-account)**
+2. And or a nube-io **[rubix-compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)
+:::
+
+## Adding a Supervisor
+
+1. open the Supervisor page
+2. click on the Add ![add-button.png](../img/apps/add-button.png)
+3. Follow the steps in the wizard
 
 ![max800px](img/adding-supervisor.gif)
-
-
-click on the Add ![add-button.png](../img/apps/add-button.png)
 
 ![max800px](../img/apps/add-supervisor-1.png)
 

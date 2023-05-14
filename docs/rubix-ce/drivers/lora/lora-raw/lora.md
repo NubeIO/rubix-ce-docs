@@ -8,10 +8,11 @@ This page will demonstrate how to add wireless LoRa Droplets and Micro Edges to 
 
 ## Adding a network
 
-:::info
-Important things to note before proceeding:
-Install the BACnet app see link: **[installing apps](../../../setup/apps.md)** and install the **driver-lora** app
+:::info Important things to note before proceeding:
+* Install required **[apps](../../../setup/apps.md)** **driver-lora**
+* Install required **[modules/plugins](../../../setup/plugins.md)** **lora** 
 :::
+
 
 **Step-1** On the controller level, under `drivers`, click the **create** ![add icon](../../../img/apps/add-button.png) to
 select and download and install the relevant network. Follow the wizard to continue installing the network.
