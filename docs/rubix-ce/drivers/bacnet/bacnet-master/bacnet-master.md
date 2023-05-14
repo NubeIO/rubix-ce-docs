@@ -24,23 +24,22 @@ required.
 
 ![max800px](img/bacnet-add-network-whois.gif)
 
-## name
-Name of the network
+## Attributes
 
-## description
-Description of the network, eg: `level 1 network`
 
-## show advanced options
+| Attribute   | description                                       |
+|-------------|---------------------------------------------------|
+| name        | Name of the network                               |
+| description | Description of the network, eg: `level 1 network` |
 
-### port
-Default port is `47808` you can also set it to another port like `47809` if required
+### show advanced options
 
-### network interface 
-Select the network interface
-- ETH-1 interface eth0 `Or` ETH-2 interface eth1
+| Attribute         | description                                                                             |
+|-------------------|-----------------------------------------------------------------------------------------|
+| port              | Default port is `47808` you can also set it to another port like `47809` if required    |
+| network interface | Select the network interface: <br/> - ETH-1 interface eth0 <br/> - ETH-2 interface eth1 |
+| max poll rate     | Set max polling rate                                                                    |
 
-### max poll rate
-Set max polling rate
 
 # Editing a network
 
@@ -85,18 +84,22 @@ You can also discover and add the points as required
 
 ##### Poll  Priority
 
-- high
-- normal
-- low
+| Attribute | description                        |
+|-----------|------------------------------------|
+| name      | - high <br/> - normal <br/>  - low |
+
 
 ##### Poll Rate
 Select the required poll rate
 
+:::info
 **the time settings are set in the device settings**
+:::
 
-- fast
-- normal
-- slow
+| Attribute | description                         |
+|-----------|-------------------------------------|
+| Poll Rate | - fast <br/> - normal <br/>  - slow |
+
 
 
 ## About

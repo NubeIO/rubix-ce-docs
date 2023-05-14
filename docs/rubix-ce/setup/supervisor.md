@@ -14,7 +14,7 @@ revoking the specific token. See 'Generating a Token'.
 
 :::info before starting you need the following
 1. A **[nube-io cloud account](docker.md#nube-io-cloud-account)**
-2. And or a nube-io **[rubix-compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)
+2. And or a nube-io **[rubix-compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)**
 :::
 
 ## Adding a Supervisor
@@ -59,10 +59,9 @@ then you have 3 choices as below
 ## Option 1 Using a rubix-compute as the master
 
 :::info
-
 * a rubix-compute is needed to use this method
 * this is the simplest way to get started with nube-io
-  :::
+:::
 
 ```mermaid
 flowchart TD
@@ -75,10 +74,9 @@ flowchart TD
 ## Option 2 Using nube cloud
 
 :::info
-
 * a rubix-compute is needed to use this method & a cloud account is needed
 * contact nube support to get a cloud account
-  :::
+:::
 
 ```mermaid
 flowchart TD
@@ -91,15 +89,12 @@ flowchart TD
 ## Option 3 Using your pc running docker
 
 :::info
-
 * no hardware is need for testing this
 * you must install docker
-  :::
+:::
 
 :::caution
-this is for advanced use only
-
-see: [setup of docker](docker.md)
+this is for advanced use only see: [setup of docker](docker.md)
 :::
 
 ```mermaid
@@ -110,3 +105,10 @@ flowchart TD
 
 
 # Right-Click Options
+
+## Ping 
+will ping the supervisor 
+
+## Enable/Disable Supervisor 
+Is the same as edit and change the value of `enable`, when enabled it will show up on the side-bar
+

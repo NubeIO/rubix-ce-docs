@@ -27,13 +27,12 @@ then you have 3 choices as below
 This would be when you only have one rubix-compute, and you want to connect to it `without` using the `nube-io cloud`
 
 :::info pre start checks
-
 - a **[rubix-compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)** with network access to the
   device
 - the default IP on `ETH-1` is `192.168.15.10` the 2nd port `ETH-2` is set to `DHCP`
 - set you PC on the same network or set a fixed IP on your PC *
   *[networking](../../hardware/controllers/supervisors/rubix-compute/networks.md)**
-  :::
+:::
 
 ```mermaid
 flowchart TD
@@ -45,20 +44,15 @@ flowchart TD
 This would be when you only have one rubix-compute, and you want to connect to it `with` using the `nube-io cloud`
 
 :::info pre start checks
-
 - You first need to add the device the same as above!
-- a **[rubix-compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)** with network access to the
-  device and a public IP address
+- a **[rubix-compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)** with network access to the device and a public IP address
 - the default IP on `ETH-1` is `192.168.15.10` the 2nd port `ETH-2` is set to `DHCP`
-- connect your PC to your local network **[networking](../../hardware/controllers/supervisors/rubix-compute/networks.md)
-  **
-  :::
+- connect your PC to your local network **[networking](../../hardware/controllers/supervisors/rubix-compute/networks.md)**
+:::
 
 :::caution
 You need access to your office router or a 4G router to give the rubix-compute a temporary public IP address
 This is needed to establish a VPN connection between the cloud and the rubix-compute
-
-Nube-IO uses OpenVPN
 :::
 
 ```mermaid
