@@ -4,7 +4,6 @@ sidebar_position: 5
 
 # Modbus
 
-https://nubeio.zohodesk.com.au/portal/en/kb/articles/powering-the-rubix-compute
 
 ## Modbus RS485 Terminal Wiring
 To establish communication with Modbus RS485 devices, the RS485 connectors are terminated and installed as shown below.

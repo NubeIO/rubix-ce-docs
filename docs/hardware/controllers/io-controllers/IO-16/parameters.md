@@ -5,7 +5,6 @@ sidebar_position: 1
 
 # Parameters
 
-https://nubeio.zohodesk.com.au/portal/en/kb/articles/rubix-io-modules-configuring-modbus-communications-parameters
 
 
 In order to communicate via Modbus the IO Modules must be configured correctly.   
