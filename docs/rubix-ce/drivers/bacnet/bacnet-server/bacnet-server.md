@@ -6,11 +6,9 @@ sidebar_position: 2
 
 BACnet Server Integration (make the Rubix Compute a discoverable BACnet device)
 
-:::info
-Important things to note before proceeding:
-Install the BACnet app see link: **[installing apps](../../../setup/apps.md)** and install the **driver-bacnet** app
+:::info Important things to note before proceeding:
+* Install required **[apps](../../../setup/apps.md)** **driver-bacnet**
 :::
-
 
 
 :::info
@@ -19,7 +17,17 @@ make sure the config is set for the number of AIs and AOs needed. (eg 2x **[Nube
 :::
 
 
+:::info rubix-wires bacnet-server node
+To make the rubix-compute a native BACnet device please follow the link: **[bacnet](../../../wires/bacnet.md)** 
+:::
+
+see below for installing the BACnet-driver and editing the sever settings
+
 ![max800px](img/bacnet-config.gif)
+
+## BACnet server settings
+
+![config.png](img/config.png)
 
 
 :::info Important things to note before proceeding

@@ -2,11 +2,8 @@
 sidebar_position: 5
 ---
 
-
 # Network Connection and Discovery
 
-
-https://nubeio.zohodesk.com.au/portal/en/kb/articles/rubix-compute-network-connection-and-discovery
 
 
 This article explains the best practices in how to connect Rubix Compute device to a network, and how to locate Rubix Compute device on the network.

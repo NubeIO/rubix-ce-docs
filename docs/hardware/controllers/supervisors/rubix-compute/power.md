@@ -2,12 +2,7 @@
 sidebar_position: 3
 ---
 
-
 #  Power Requirements and Wiring
-
-
-https://nubeio.zohodesk.com.au/portal/en/kb/articles/rubix-compute-modbus-rs485-wiring
-
 
 :exclamation: Warning:  Power requirements are different for older models of Rubix Compute. To determine the device version of Rubix Compute, 
 
