@@ -31,7 +31,7 @@ the wizard to continue installing the network.
 
 **Step-3** Once all the settings are added click on **Submit** button
 
-This should now create the network of the protocol that you selected. You can then **right-click** View to open to view
+This should now create the network of the protocol that you selected. You can then **right-click** Open to open to view
 the **devices**
 
 # Drivers Dependencies Overviews

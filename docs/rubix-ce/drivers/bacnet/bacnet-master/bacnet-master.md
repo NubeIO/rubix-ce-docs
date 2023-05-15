@@ -52,7 +52,7 @@ required.
 
 # Adding a BACnet device
 
-1. open the network you added by **right-click** View
+1. open the network you added by **right-click** Open
 2. click on the Add ![add-button.png](../../../img/apps/add-button.png)
 3. Enter the details required
 4. To save hit the submit button
@@ -70,7 +70,7 @@ Enter into the BACnet tab and click on the **discover** icon
 
 ### Add manually
 
-1. Open the BACnet device by **right-click** and **View**
+1. Open the BACnet device by **right-click** and **Open**
 2. Click on the **add button** ![edit icon](../../../img/apps/add-button.png)
 3. Enter the point details then save
 
