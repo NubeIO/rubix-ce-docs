@@ -4,10 +4,10 @@ sidebar_position: 1
 
 # Download
 
-:arrow_down: [link to latest version](https://drive.google.com/drive/folders/1EY1bF_T503HGjCt3KOKtp5LyakRAAj5Z)
-
-:arrow_down: [link to all downloads](https://drive.google.com/drive/folders/1slMWRrk0-apIV1HEBnewk-_PWTgDcmn8)
-
+:::info download links
+**[link to latest version](https://drive.google.com/drive/folders/1EY1bF_T503HGjCt3KOKtp5LyakRAAj5Z)** <br/>
+**[link to all downloads](https://drive.google.com/drive/folders/1slMWRrk0-apIV1HEBnewk-_PWTgDcmn8)**
+:::
 
 ## Download 
 

@@ -9,7 +9,7 @@ sidebar_position: 1
 # Introduction
 
 Pass through mode is used to connect any Modbus RS485 networks together wirelessly over LoRa. It can connect any number over wired RS485 networks together as long as there are no conflicting addresses. It can also support up to the normal amount of Modbus slave devices of 247 with just one Rubix IO16.
-Since the Rubix Compute and Rubix IO16 are communicating over LoRa, their baud rates are independent from one another and do not have to match. <br/>
+Since the Rubix Compute and Rubix IO16 are communicating over LoRa, their baud rates are independent of one another and do not have to match. <br/>
 
 The Rubix IO16 in pass-through mode should match the other devices on the RS485 network it is connected to. 
 
@@ -20,10 +20,12 @@ When creating the Modbus network on the client/platform, the baud rate should be
 # Example
 
 ## Meter settings:
-* Baud Rate: 9600
-* Modbus Address: 1
-* Parity: None
 
+| **Attribute**  | **Setting Value** | 
+|----------------|-------------------|
+| Baud Rate      | 9600              | 
+| Modbus Address | 1                 | 
+| Parity         | None              | 
 
 
 ## Hardware setup - Rubix iO 16
@@ -33,6 +35,10 @@ When creating the Modbus network on the client/platform, the baud rate should be
 - On the right bank of the Rubix iO-16, set the dip switch settings to match the meter's `baud rate (9600)` and `parity (None)`.
 
 Also, remember to set the communication mode to pass-through mode. 
+
+:::info
+more info on IO-16s dips switch: **[settings](parameters.md#dip-switch-configuration)**
+:::
 
 | **Left Bank Switch** | **Position** | **Function**      |
 |----------------------|--------------|-------------------|

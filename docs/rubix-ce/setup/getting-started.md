@@ -28,12 +28,11 @@ No install is required just right click and run the program
 
 # Running Rubix-CE
 
-## add token
+## Add token
 
 
 :::caution token
-you need to contact nube support to get a token 
-
+you need to contact nube support to get a token <br/>
 support@nube-io.com
 :::
 
@@ -58,9 +57,6 @@ adding a user)
 ![delete-button.png](../img/apps/delete-button.png)  Delete button is used for deleting an object for delete to work
 please select one or more items in the table
 
-## Sidebar
-
-The sidebar is they way to navigate between supervisors, devices, protocols and sensors
 
 ## Supervisors
 
@@ -108,6 +104,26 @@ A physical Nube-IO rubix-compute
 ```
 
 ![side-bar-supervisors.png](img/side-bar-supervisors.png)
+
+
+## Sidebar
+
+The sidebar is they way to navigate between supervisors, devices, protocols and sensors
+
+![max800pc](img/sidebar.png)
+
+### Active Supervisors
+
+:::info
+You must have already added a supervisor, See adding a **[supervisor](supervisor.md)**
+:::
+
+If you wish to view a supervisors on the sidebar you need to enable the supervisors from the supervisors table.
+
+Right-click and `Enable Supervisor`
+
+![maz800px](img/enable-supervisor.png)
+
 
 
 

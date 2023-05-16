@@ -23,9 +23,18 @@ revoking the specific token. See 'Generating a Token'.
 2. click on the Add ![add-button.png](../img/apps/add-button.png)
 3. Follow the steps in the wizard
 
-![max800px](img/adding-supervisor.gif)
+:::info default IP of a rubix-compute
+ETH-1: `192.168.15.10` <br/>
+ETH-2: `AUTO DHCP` <br/>
+please contact `nube-io support` for default username and password
+:::
 
 ![max800px](../img/apps/add-supervisor-1.png)
+
+The wizard will follow you through all the required steps
+
+![max800px](img/adding-supervisor.gif)
+
 
 ### name
 
@@ -94,7 +103,7 @@ flowchart TD
 :::
 
 :::caution
-this is for advanced use only see: [setup of docker](docker.md)
+this is for advanced use only see: **[setup of docker](docker.md)**
 :::
 
 ```mermaid
