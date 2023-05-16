@@ -5,6 +5,7 @@ sidebar_position: 5
 # Modbus
 
 ## Modbus RS485 Terminal Wiring
+
 To establish communication with Modbus RS485 devices, the RS485 connectors are terminated and installed as shown below.
 
 ## Modbus RS485 Networking
@@ -27,6 +28,7 @@ Ensure A/+ and B/- wires are kept consistent for all controllers on the network.
 :::
 
 ## End Of Line Termination
+
 When connecting a RS485 network, the first and last device on the network must have an End Of Line (EOL) resistor installed.  On the Rubix Compute this is done via an Onboard Jumper.  The location of the EOL Jumper is shown below.  When the jumper is installed in the upper position the EOL resistor is set.  When the jumper is installed in the lower position the EOL resistor is not set.  There are 2 sets of jumpers, 1 for each of the RS485 networks. 
 
 

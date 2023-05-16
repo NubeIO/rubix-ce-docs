@@ -21,7 +21,7 @@ The following features are supported
 
 | Name         | Is a Protocol      | Supports <br/>Networks | Description                                                                   | Use Case                                             | 
 |--------------|--------------------|------------------------|-------------------------------------------------------------------------------|------------------------------------------------------|
-| system       | yes rubix-api      | yes                    | a generic proxy network/devices/points that are not related to any protocol   | Schedules, proxy points                              | 
+| system       | yes rest-api       | yes                    | a generic proxy network/devices/points that are not related to any protocol   | Schedules, proxy points                              | 
 | lora         | yes LoRa           | yes                    | used with nube-io lora sensors                                                | When you want to use wireless sensors                | 
 | lorawan      | yes LoRaWAN        | yes                    | used with any supported LoraWAN sensors                                       | When you want to add LoRaWAN sensors                 | 
 | bacnetmaster | yes BACnet-Master  | yes                    | to read/write to BACnet device                                                | When you want to be a BACnet-master                  | 
