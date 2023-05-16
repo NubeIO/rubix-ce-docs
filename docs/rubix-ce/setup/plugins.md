@@ -19,12 +19,16 @@ The following features are supported
 
 # A list of common Modules/Plugins
 
-| Name         | Is a Protocol      | Supports <br/>Networks                                | Description                                                                 | Use Case                            | 
-|--------------|--------------------|-------------------------------------------------------|-----------------------------------------------------------------------------|-------------------------------------|
-| system       | yes rubix-api      | yes                                                   | a generic proxy network/devices/points that are not related to any protocol | Schedules, proxy points             | 
-| lora         | yes LoRa           | yes (points are auto added based of the sensor added) | used with nube-io lora sensors                                              | Used with Droplet and Micro-Edge    | 
-| bacnetmaster | yes BACnet-Master  | yes                                                   | to read/write to BACnet device                                              | When you want to be a BACnet-master | 
-| modbus       | yes Modbus RTU/TCP | yes                                                   | to read/write to Modbus device, can be either vai rs485 or modbus TCP       | When you want to be a Modbus-master | 
+| Name         | Is a Protocol      | Supports <br/>Networks | Description                                                                   | Use Case                                             | 
+|--------------|--------------------|------------------------|-------------------------------------------------------------------------------|------------------------------------------------------|
+| system       | yes rubix-api      | yes                    | a generic proxy network/devices/points that are not related to any protocol   | Schedules, proxy points                              | 
+| lora         | yes LoRa           | yes                    | used with nube-io lora sensors                                                | When you want to use wireless sensors                | 
+| lorawan      | yes LoRaWAN        | yes                    | used with any supported LoraWAN sensors                                       | When you want to add LoRaWAN sensors                 | 
+| bacnetmaster | yes BACnet-Master  | yes                    | to read/write to BACnet device                                                | When you want to be a BACnet-master                  | 
+| modbus       | yes Modbus RTU/TCP | yes                    | to read/write to Modbus device, can be either vai rs485 or modbus TCP         | When you want to be a Modbus-master                  | 
+| history      | no                 | no                     | internal service for proving histories for points                             | When you want to have local or cloud historical data | 
+| postgres     | no                 | no                     | send data into postgres (history plugin is needed to use the postgres plugin) | Used for edge to cloud histories for points          | 
+
 
 # Rubix-Compute
 

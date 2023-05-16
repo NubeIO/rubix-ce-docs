@@ -11,8 +11,7 @@ sidebar_position: 1
 
 ## Download 
 
-for windows download the version folder called `windows` and then download the build inside 
-
+for windows download the version folder called `windows` and then download the build inside <br/>
 for example named `rubix-ce-windows-2023.05.05.exe`
 
 
