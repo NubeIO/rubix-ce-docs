@@ -8,12 +8,16 @@ sidebar_position: 1
 
 ## Default Network Configuration
 
-When a Rubix Compute Controller is reset to factory defaults the 2 x Ethernet ports will be configured as follows:
+When a Rubix Compute Controller is reset to factory defaults the two off Ethernet ports will be configured as follows:
 
 | Port Name | Linux Port Name | Type  | IP            | Subnet        | Gateway      |
 |-----------|-----------------|-------|---------------|---------------|--------------|
 | ETH-1     | eth0            | Fixed | 192.168.15.10 | 255.255.255.0 | 192.168.15.1 |
 | ETH-2     | eth1            | DHCP  | na            | na            | na           |
+
+:::info
+more info on [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol)
+:::
 
 ## Changing the Rubix Compute's IP
 

@@ -11,17 +11,9 @@ Modbus data from connected Modbus devices.
 
 ## Adding a network
 
-**Step-1** On the controller level, under `drivers`, click the **create** ![add icon](../../../img/apps/add-button.png) to
-select and download and install the relevant network. Follow the wizard to continue installing the network.
-
-**Step-2** Select the **Modbus Serial Network** or **Modbus TCP Network**. This will download the appropriate modules
-and drivers.
-
-Check the default communication settings for the sensor by ticking the 'show advanced options' checkbox.
-
-**Step-3** Once all the settings are added click on **Submit** button
-
-This should now create the Modbus and network. Now open the Modbus network to add a device
+1. **Step-1** On the controller level, under `drivers`, click the **create** ![add icon](../../../img/apps/add-button.png) to select and download and install the relevant network. Follow the wizard to continue installing the network.
+2. **Step-2** Select the **Modbus Serial Network** or **Modbus TCP Network**. This will download the appropriate modules and drivers. Check the default communication settings for the sensor by ticking the 'show advanced options' checkbox.
+3. **Step-3** Once all the settings are added click on **Submit** button This should now create the Modbus and network. Now open the Modbus network to add a device
 
 ## Adding a Modbus RTU Network
 
