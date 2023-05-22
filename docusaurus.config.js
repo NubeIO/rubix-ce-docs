@@ -13,7 +13,7 @@ const deploymentBranch = "deployment"
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Document',
-  tagline: 'hardware is cool',
+  tagline: '',
   favicon: 'https://nube-io.com/wp-content/uploads/2021/06/cropped-index-32x32.png',
 
   // Set the production url of your site here
@@ -98,7 +98,7 @@ const config = {
             items: [
               {
                 label: 'Rubix-CE',
-                to: '/docs/intro',
+                to: '/docs/overview',
               },
             ],
           },
@@ -119,8 +119,12 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/NubeIO',
+                label: 'info on BACnet',
+                href: 'https://en.wikipedia.org/wiki/BACnet',
+              },
+              {
+                label: 'info on Modbus',
+                href: 'https://en.wikipedia.org/wiki/Modbus',
               },
             ],
           },
