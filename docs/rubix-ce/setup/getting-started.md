@@ -114,7 +114,7 @@ The sidebar is they way to navigate between supervisors, devices, protocols and 
 
 ### Active Supervisors
 
-:::info
+:::caution
 You must have already added a supervisor, See adding a **[supervisor](supervisor.md)**
 :::
 

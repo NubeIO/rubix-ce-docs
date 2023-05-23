@@ -1,11 +1,9 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 # LoRa to BACnet
 Setup the `rubix-compute` as a native BACnet/IP device with LoRa
-
-# Setup
 
 :::info reference
 `RC` is a `rubix-compute` <br/>
@@ -13,11 +11,13 @@ Setup the `rubix-compute` as a native BACnet/IP device with LoRa
 :::
 
 :::info prerequisites
-1. You need a **[rubix-compute](../hardware/controllers/supervisors/rubix-compute/overview.md)** and an **[IO-16](../hardware/sensors/droplets/droplets-v1/overview.md)** 
-2. power the `RC` 
+1. You need a **[rubix-compute](../hardware/controllers/supervisors/rubix-compute/overview.md)** and an **[IO-16](../hardware/sensors/droplets/droplets-v1/overview.md)**
+2. power the `RC`
 3. make sure you can ping the `RC` default IP on ETH-1 is `192.168.15.10` see **[networking](../hardware/controllers/supervisors/rubix-compute/networks.md)** for more info
 :::
 
+
+# Setup
 
 1. **[Download](../rubix-ce/setup/download.md)** once downloaded just double-click on the icon to run 
 2. **[Getting setup](../rubix-ce/setup/getting-started.md)** 

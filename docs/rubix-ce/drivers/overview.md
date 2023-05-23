@@ -24,15 +24,11 @@ need to be installed, see previous section for instructions.
 
 # Adding a network
 
-**Step-1** On the controller level, under `drivers`, click the **create** ![add icon](../img/apps/add-button.png)
+* **Step-1** On the controller level, under `drivers`, click the **create** ![add icon](../img/apps/add-button.png)
+* **Step-2** select the network you want to add, This will download and install the relevant network dependencies. Follow the wizard to continue installing the network.
+* **Step-3** Once all the settings are added click on **Submit** button
 
-**Step-2** select the network you want to add, This will download and install the relevant network dependencies. Follow
-the wizard to continue installing the network.
-
-**Step-3** Once all the settings are added click on **Submit** button
-
-This should now create the network of the protocol that you selected. You can then **right-click** Open to open to view
-the **devices**
+This should now create the network of the protocol that you selected. You can then **right-click** `Open` to view the **devices**
 
 # Drivers Dependencies Overviews
 
@@ -54,11 +50,10 @@ driver needs a `Module/Plugin` (for more info on modules  **[Module/Plugin](../s
 # Exporting And Importing 
 
 :::info
-for compute rubix-compute backups see **[Installing apps](../setup/snapshots.md)**
+for complete backup of a rubix-compute see **[backups](../setup/snapshots.md)**
 :::
 
-This section is for when the user wants to save Network, Device and Points from **Drivers**
-
+This section is for when the user wants to save Network, Device and Points from **Drivers** <br/>
 For example to a backup of a device with its points and import into another device `rubix-compute`
 
 ## Perform a Backup

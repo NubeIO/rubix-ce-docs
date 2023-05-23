@@ -1,9 +1,9 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 ---
 
-# BACnet device
-Setup the `rubix-compute` as a native BACnet/IP device
+# Modbus To IO-16
+Setup the `rubix-compute` as a Modbus-Master to the `IO-16`
 
 :::info reference
 `RC` is a `rubix-compute` <br/>
@@ -12,7 +12,7 @@ Setup the `rubix-compute` as a native BACnet/IP device
 
 :::info prerequisites
 1. You need a **[rubix-compute](../hardware/controllers/supervisors/rubix-compute/overview.md)** and an **[IO-16](../hardware/controllers/io-controllers/IO-16/overview.md)**
-2. plugin the `IO-16` into the side of the `RC`  and power the `RC` and set the `IO-16` address to `1`
+2. wire the `IO-16` into the `rs485-1` the `RC`  and power the `RC`, and `IO16` and set the `IO-16` address to `1` and `baud-rate` `38400`
 3. make sure you can ping the `RC` default IP on ETH-1 is `192.168.15.10` see **[networking](../hardware/controllers/supervisors/rubix-compute/networks.md)** for more info
 :::
 
@@ -26,12 +26,6 @@ Setup the `rubix-compute` as a native BACnet/IP device
 5. Add a **[host](../rubix-ce/setup/host.md)** (rubix-compute)
 6. Install **[apps](../rubix-ce/setup/apps.md)** **[driver-bacnet](../rubix-ce/drivers/bacnet/bacnet-server/bacnet-server.md)** & **[rubix-wires](../rubix-ce/wires/overview.md)**
 
-# BACnet config
-After the `bacnet-driver` is installed we need to 
-
-1. Set the `bacnet device-name`
-2. Set the `bacnet device-id`
-3. Set how many `IO-16s` we have plugin into the side
 
 
 # Adding nodes in wires

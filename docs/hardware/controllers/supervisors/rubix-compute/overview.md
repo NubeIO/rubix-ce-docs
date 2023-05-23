@@ -4,9 +4,16 @@ sidebar_position: 1
 
 # Overview
 
+The Rubix-Compute is the NubeIO gateway. It is a small wireless gateway capable of monitoring and controlling various
+applications. For example, it can be used in building to control and monitor the heating, cooling and ventilation
+systems.
+
+
 This IoT multi-gateway will collect data from both wired and wireless devices.
 It will enable you to aggregate data from multiple sensors and send it anywhere – your cloud, a local server, or
 3rd-party hardware.
+
+
 
 ![rc5.png](../../../img/rc5.png)
 

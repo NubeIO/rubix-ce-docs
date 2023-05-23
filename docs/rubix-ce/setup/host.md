@@ -4,17 +4,19 @@ sidebar_position: 4
 
 # Hosts/Rubix-Computes
 
-A rubix compute is to be added under within a supervisor
+A rubix compute (host) is to be added under a supervisor
+
+:::caution
+You must have already added a `supervisor`, `location` & `group`, See adding a **[supervisor](supervisor.md)**
+:::
 
 ![max800px](img/adding-host.gif)
 
 :::info
-A rubix compute can also act as a supervisor controller
-:::
-
-:::info
+A rubix compute can also act as a supervisor controller <br/>
 You can only add a rubix-compute after you have added a **supervisor/location and group**
 :::
+
 
 click on the Add ![add-button.png](../img/apps/add-button.png) inside the **device tab**
 
@@ -30,8 +32,7 @@ This would be when you only have one rubix-compute, and you want to connect to i
 - a **[rubix-compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)** with network access to the
   device
 - the default IP on `ETH-1` is `192.168.15.10` the 2nd port `ETH-2` is set to `DHCP`
-- set you PC on the same network or set a fixed IP on your PC *
-  *[networking](../../hardware/controllers/supervisors/rubix-compute/networks.md)**
+- set you PC on the same network or set a fixed IP on your PC **[networking](../../hardware/controllers/supervisors/rubix-compute/networks.md)**
 :::
 
 ```mermaid

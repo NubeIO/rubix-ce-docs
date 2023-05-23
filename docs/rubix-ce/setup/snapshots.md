@@ -9,12 +9,9 @@ The backup & restoring service is used for the user to take a backup of a rubix-
 - save the backup to your PC for safe keeping
 - restore a backup you took for a particular device
 
-:::info
-a backup is stored in supervisor device
-:::
 
 :::caution
-if you backup a supervisor device or cloud then the backup is stored in itself
+a backup is stored in supervisor device (this could be the rubix-compute or nube-io cloud) <br/>
 :::
 
 ![snapshots.gif](img/snapshots.gif)

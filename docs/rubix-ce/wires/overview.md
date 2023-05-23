@@ -55,6 +55,11 @@ The buttons are used to do the following
 * Hold Control and S to save/deploy flow.
 
 
+# Looping
+Looping the result of a node back to nodes that are connected into itself is **not** allowed
 
+![looping.png](img/looping.png)
 
+To rectify you can use the `link` nodes
 
+![link-topics.png](img/link-topics.png)
