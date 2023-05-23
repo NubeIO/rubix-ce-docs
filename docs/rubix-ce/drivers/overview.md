@@ -63,3 +63,15 @@ To back up a Network, Device or Points you can **right-click** **Export** and en
 ## Restore a Backup
 
 To restore a back-up of a Network, Device or Points click on the **Import Button** and select the back-up you wish to import
+
+
+# Point Write Modes
+
+| Mode                   | Use case                                                                                                   | Description                                                                                                                                                   | 
+|------------------------|------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| read only              | mostly used for polling values                                                                             | Only Read Point Value Once.                                                                                                                                   |
+| write once             | used when you want fast network speeds                                                                     | Only Read Point Value (poll rate defined by setting).                                                                                                         |
+| write once read once   | used on device like a small thermostat where it has <br/>its own set-point so you dont want to override it | Write the value on COV, don't Read.                                                                                                                           |
+| write always           | used when you want to write every poll                                                                     | Write the value on every poll (poll rate defined by setting).                                                                                                 |
+| write always then read |                                                                                                            | Write the value on COV, then Read on each poll (poll rate defined by setting).                                                                                |
+| write and maintain     |                                                                                                            | Write the value on COV, then Read on each poll (poll rate defined by setting). <br/> If the Read value does not match the Write value, Write the value again. |

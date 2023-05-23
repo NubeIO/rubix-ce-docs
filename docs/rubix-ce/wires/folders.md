@@ -4,11 +4,17 @@ sidebar_position: 4
 
 # Sub-flows
 
+:::info reference
+`folder` and `sub-flows` can be referred to as the same thing.  <br/>
+A `sub-flow` is a concept of putting a grouping nodes into a `folder` to be reused
+:::
+
 Folder nodes are located in the `folder` node category. Folder nodes are containers that can hold other nodes. Each
 Folder contains a separate wire-sheet where more nodes and logic flows can be created. They are used to separate and
 organise wire-sheets.
 
-![bacnet-server.png](img/bacnet-server.png)
+## Child Nodes
+Child Nodes are nodes that can only be added inside a `folder` node.
 
 # Nodes that are folder's
 
@@ -17,6 +23,8 @@ organise wire-sheets.
 | Folder        | sub-flow | A write a program that you want to re-use     | folder-inputs and outputs  |
 | Flow-Network  | flow     | To read/write points from **flow-framework**  | point-read and point-write |
 | BACnet-Server | bacnet   | To read/write points to app **driver-bacnet** | AI, AO, AV, BV             |
+
+
 
 # Creating Folders
 
@@ -34,7 +42,7 @@ the entry in the Menu Sidebar, or select `Open Sub-Flow` from the Folder node’
 To close the sub-flow click on the **Close sub flow** icon
 
 :::tip
-ctrl & right-mouse click will also open the Sub-Flow Folder
+**ctrl & right-mouse** click will also `open` the `Sub-Flow Folder`
 :::
 
 ## Linking Folders

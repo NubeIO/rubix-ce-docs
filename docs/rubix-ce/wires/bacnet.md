@@ -7,14 +7,21 @@ sidebar_position: 6
 The server node is used to read/write value to the **[driver-bacnet](../setup/apps.md)** so the rubix-compute can be
 added to a BACnet-network
 
+:::tip
+See also: **[tutorials bacnet-device](../../tutorials/bacnet-device.md)**
+:::
+
 The BACnet-server node has 2x use cases
 
-1. Adding the IO (hardware input/output eg: sensors and 0-10dc) to the rubix-compute, via adding the *
-   *[Nube-IO IO-16](../../hardware/controllers/io-controllers/IO-16/overview.md)**
+1. Adding the IO (hardware input/output eg: sensors and 0-10dc) to the rubix-compute, via adding the **[Nube-IO IO-16](../../hardware/controllers/io-controllers/IO-16/overview.md)**
 2. Adding proxy points (AVs and BVs) to the driver-bacnet
 
 :::info Important thing to note before proceeding:
 * Install required **[apps](../setup/apps.md)** **driver-bacnet**
+:::
+
+:::danger modbus networks conflict
+You cant add a `modbus network` in `driver's` and the `BACnet-server` node in rubix-wires with the same `serial-port`, Its one or the other
 :::
 
 # Setup
@@ -30,8 +37,15 @@ The BACnet-server node has 2x use cases
 
 1. Open the bacnet-server node by right-click and `Open sub flow`
 2. Once inside you can right-click to add nodes or drag from the pallet
+3. Add a new node either: `AI, AO, AV`
+4. Set the node name to set the `BACnet` object name
 
-BACnet point nodes
+:::tip
+Make sure you set the node `name` to reflect the point `name` on the `BACnet network`
+:::
+
+
+**BACnet point nodes**
 
 | Node Name       | Category | Use Case                                                                 | is writeable              | 
 |-----------------|----------|--------------------------------------------------------------------------|---------------------------|
@@ -60,6 +74,7 @@ we don't need to add a modbus network in flow-framework to talk to the IO-16s
 set up the BACnet-Server configuration with the number of IO-16s you will add more info **[bacnet-config](../drivers/bacnet/bacnet-server/bacnet-server.md#bacnet-server-settings)**
 :::
 
+
 Let's start with an example of adding UI-1 on IO-2
 
 1. power down the rubix-compute and plugin 2x IO16s (note the IO-16s are powered via the rubix-compute)
@@ -72,6 +87,18 @@ Let's start with an example of adding UI-1 on IO-2
 7. set the `IO Device Number` and our example it will be 2 (this is the 2nd IO-16)
 8. set the `UI Number` to 1 (as in UI1)
 9. this will set the *AI9*
+
+
+:::tip
+As the `IO-16` uses `UOs` and `UIs` we can only add `AOs` & `AIs` <br/>
+eg: to use `UI-1` as an `DI` we add an `AI node` and set it to `address 1` (`AI1`) and set as as a `digital`
+:::
+
+:::tip writing to a UO as digital
+Add an `AO` node and set the setting as `digital` the point will accept any value greater then `1` to turn on the `DO` <br/>
+eg: `true/false` or `1/0` or `10/0`
+:::
+
 
 ## the UI and UO to BACnet addressing
 

@@ -48,6 +48,7 @@ There are 2 banks of small DIP switches (8 DIP Switches per bank) under the cove
 * 0 is DIP switch DOWN
 * DIP switch 8 must remain ON/UP/1 for normal operation.
 
+
 ![dips.png](img/dips.png)
 
 ## Left Bank DIP Switches (SW2)

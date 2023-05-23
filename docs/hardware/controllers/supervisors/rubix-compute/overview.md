@@ -68,7 +68,7 @@ To communicate with the IO-16s you have two options
 2. Or add a BACnet-server node in [rubix-wires](../../../../rubix-ce/wires/bacnet.md)
 
 :::danger modbus networks conflict
-You cant add a modbus network and the BACnet-server node in rubix-wires, Its one or the other
+You cant add a `modbus network` in `driver's` and the `BACnet-server` node in rubix-wires with the same `serial-port`, Its one or the other
 :::
 
 

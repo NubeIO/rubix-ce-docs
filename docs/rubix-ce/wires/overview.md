@@ -54,9 +54,11 @@ The buttons are used to do the following
 * Hold Control and X to cut.
 * Hold Control and S to save/deploy flow.
 
-
 # Looping
+
+:::danger Looping
 Looping the result of a node back to nodes that are connected into itself is **not** allowed
+:::
 
 ![looping.png](img/looping.png)
 
