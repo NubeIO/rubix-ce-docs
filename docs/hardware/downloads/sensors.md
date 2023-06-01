@@ -5,6 +5,8 @@ sidebar_position: 2
 
 # Sensors
 
+LoRa Sensors
+ 
 # Droplet
 
 ![max200px](../img/droplet.png)

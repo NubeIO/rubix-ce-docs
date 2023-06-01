@@ -6,7 +6,7 @@ sidebar_position: 1
 # Controllers
 
 # Rubix-Compute
-
+Rubix-Compute
 
 ![max200px](../img/rc5.png)
 
