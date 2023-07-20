@@ -69,6 +69,17 @@ The connector is terminated and installed as shown below.
 | open-closed hold | 101 to 108 for UI1 to UI8 | Discrete Input  | bit1 / digital | 1      | na               |
 
 
+### Pulse Inputs
+
+set holding reg 5201 to 8 or 9 (default is 0 meaning its disabled)
+- 0: Pulse Disabled (default)
+- 8: Pulse On RISE
+- 9: Pulse On FALL
+
+example for UI1 , then read input reg 401 as UINT32
+
+***note only first 3 inputs work as pulse***
+
 ## Outputs
 
 | Sensor Type | Register Number       | Type             | Data Type      | Length | Math Conversions |
