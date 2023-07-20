@@ -68,17 +68,31 @@ The connector is terminated and installed as shown below.
 | open-closed      | 1 to 8 for UI1 to UI8     | Discrete Input  | bit1 / digital | 1      | na               |
 | open-closed hold | 101 to 108 for UI1 to UI8 | Discrete Input  | bit1 / digital | 1      | na               |
 
+### Special Digital Inputs
 
-### Pulse Inputs
+- **Digital Holding** - Holds `true` value on interrupt until read.
+- **Pulse Counter** - Pulse accumulation on interrupt. Value is reset by setting the type back to `0` (default)
 
-set holding reg 5201 to 8 or 9 (default is 0 meaning its disabled)
-- 0: Pulse Disabled (default)
-- 8: Pulse On RISE
-- 9: Pulse On FALL
+***note only first 3 inputs work as pulse***  
 
-example for UI1 , then read input reg 401 as UINT32
+Points must be manually set to a corresponding type.
 
-***note only first 3 inputs work as pulse***
+| Register Name    | Register Number             | Type            | Data Type      | Length |
+|------------------|-----------------------------|-----------------|----------------|--------|
+| UI Configuration | 5201 to 5203 for UI1 to UI3 | Holding Register| int16          | 1      |
+
+| Type                         | Value |
+|------------------------------|-------|
+| Default                      | 0     |
+| Digital Hold - rising edge   | 6     |
+| Digital Hold - falling edge  | 7     |
+| Pulse Counter - rising edge  | 8     |
+| Pulse Counter - falling edge | 9     |
+
+Note: Other config values can be used to improve LoRa polling speed.
+
+#### Pulse Inputs
+Read pulses as Input Registers 401 to 405 as UINT32
 
 ## Outputs
 
