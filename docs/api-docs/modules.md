@@ -169,6 +169,10 @@ Finally, use the following command to build the module,
 ```zsh
 go build -o <module-name>
 ```
+add in the build in the modules dir and restart `rubix-os`
+```
+/home/user/rubix-os/data/modules
+```
 
 # Proto
 https://github.com/NubeIO/rubix-os#update-proto
