@@ -5,7 +5,7 @@ sidebar_position: 1
 # Download
 
 :::info download links
-**[link to latest version](https://drive.google.com/drive/folders/1EY1bF_T503HGjCt3KOKtp5LyakRAAj5Z)** <br/>
+**[link to latest version](https://drive.google.com/drive/u/1/folders/1ylDsqJDOtbAh5KUySgK7WkO4exmK6Vbi)** <br/>
 **[link to all downloads](https://drive.google.com/drive/folders/1slMWRrk0-apIV1HEBnewk-_PWTgDcmn8)**
 :::
 
