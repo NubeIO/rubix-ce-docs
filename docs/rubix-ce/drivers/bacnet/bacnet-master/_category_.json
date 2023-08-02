@@ -1,6 +1,6 @@
 {
   "label": "BACnet Master",
-  "position": 1,
+  "position": 2,
   "link": {
     "type": "generated-index"
   }
