@@ -176,3 +176,28 @@ sidebar_position: 1
 | vendorName                     | 121    |
 | vtClassesSupported             | 122    |
 | weeklySchedule                 | 123    |
+
+
+
+# Debugging
+
+
+## wireshark/tshark
+
+### tshark
+
+install
+```
+sudo apt-get install tshark
+```
+
+usage 
+```
+sudo tshark -i eth0 -f "udp" | grep "BACnet-APDU"
+```
+
+## ping port 47808
+check and see if port 47808 is open on your target device
+```
+netcat -v -u -z 192.168.15.155 47808
+```
