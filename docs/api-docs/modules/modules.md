@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 
 # Module
-https://github.com/NubeIO/module-core-system
+quick start and example see: https://github.com/NubeIO/module-contrib-demo
 
 
 # Modules Naming

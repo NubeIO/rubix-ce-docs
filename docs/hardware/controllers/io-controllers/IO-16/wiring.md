@@ -64,7 +64,7 @@ The connector is terminated and installed as shown below.
 | Temp             | 1 to 8 for UI1 to UI8     | Input Register  | int16          | 1      | x /100           |
 | 0-10 V           | 201 to 208 for UI1 to UI8 | Input Register  | int16          | 1      | x /100           |
 | 4-20ma           | 301 to 308 for UI1 to UI8 | Input Register  | int16          | 1      | x /100           |
-| pulse            | 401 to 408 for UI1 to UI8 | Input Register  | unit32         | 2      | na               |
+| pulse            | 401 to 408 for UI1 to UI3 | Input Register  | unit32         | 2      | na               |
 | open-closed      | 1 to 8 for UI1 to UI8     | Discrete Input  | bit1 / digital | 1      | na               |
 | open-closed hold | 101 to 108 for UI1 to UI8 | Discrete Input  | bit1 / digital | 1      | na               |
 
@@ -72,8 +72,9 @@ The connector is terminated and installed as shown below.
 
 - **Digital Holding** - Holds `true` value on interrupt until read.
 - **Pulse Counter** - Pulse accumulation on interrupt. Value is reset by setting the type back to `0` (default)
+- ***note only first 3 inputs work as pulse***
 
-***note only first 3 inputs work as pulse***  
+
 
 Points must be manually set to a corresponding type.
 
