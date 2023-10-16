@@ -14,6 +14,15 @@ Rules can be written in a javaScript like syntax and then executed in the RQL ru
 ## Quick example
 
 ```js
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+RQL.Result = getRandomInt(100);
+```
+
+
+```js
 let getTime = RQL.Time() // will get current time from the RQL server
 RQL.Result = getTime; // any value sent to RQL.Result will be returned to view in the editor and also stored as logs
 ```

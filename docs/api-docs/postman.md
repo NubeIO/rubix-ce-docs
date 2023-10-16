@@ -4,9 +4,46 @@ sidebar_position: 1
 
 # API Docs
 
-## postman import json
+## postman 
 
-[postman api-docs](https://api.postman.com/collections/666859-6bce0560-065c-496e-9047-0dd41d765558?access_key=PMAT-01H079RP9T09YXRSZ74C8NY0JV)
+[postman api-docs](https://documenter.getpostman.com/view/666859/2s9YJhyL9U)
+
+## Set global variables
+
+![postman.png](img/postman.png)
+
+### URL
+
+```
+ros_base_url
+```
+
+for local or a nube-io rubix-compute `non https`
+```
+http://localhost:1660
+```
+```
+http://192.168.15.10:1660
+```
+
+for nubeio cloud account `https`
+```
+https://<NUBE-CLOUD-ACCOUNT>:443
+```
+
+### Access token
+
+Add an access token so the API can be used from cloud. Get the token from rubix-ce
+
+```
+access_token
+```
+
+![token.png](img/token.png)
+
+
+
+
 
 
 ## rubix-os
@@ -16,6 +53,6 @@ rubix-os port: `1660`
 :::
 
 
-### valid from rubix-os version `0.0.18`
-
-[postman json import](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/)
+:::info
+rubix-os for https port: `443`
+:::
