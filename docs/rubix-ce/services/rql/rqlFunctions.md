@@ -2,6 +2,20 @@
 sidebar_position: 2
 ---
 
+# Functions
+
+To use an inbuilt RQL function we need to use the key work `RQL` followed by `.` and the function name we wish to call
+
+example
+```
+RQL.Date()
+```
+
+working example, run this and the debug will return the current date when the script is called
+```
+RQL.Result = RQL.Date()
+```
+
 # Alerts
 
 ## GetAlerts
