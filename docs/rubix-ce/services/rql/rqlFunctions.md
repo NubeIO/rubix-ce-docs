@@ -143,3 +143,82 @@ Scale returns the (float64) input value (between inputMin and inputMax) scaled t
 ```
 Scale(value, inMin, inMax, outMin, outMax float64) float64
 ```
+
+# Networking
+
+## Ping
+Ping ping an list of IP address eg: ["192.168.15.1", "192.168.15.2"]
+```go
+type PingResult struct {
+	Ip string `json:"ip"`
+	Ok bool   `json:"ok"`
+}
+```
+
+```
+Ping(ipList []string) []PingResult 
+```
+
+# RQS Points
+
+## GetPoints
+Get all the points from a host by passing in the name or uuid
+
+```
+GetPoints(hostIDName string) any
+```
+
+## GetPoint
+Get a point from a host by passing in the name or uuid, and the point uuid
+
+```
+GetPoint(hostIDName, uuid string) any 
+```
+
+## WritePointValuePriority
+Write a point value from a host by passing in the name or uuid, and the point uuid, the priority value and the write value
+
+```
+WritePointValuePriority(hostIDName, uuid string, pri int, value float64) any 
+```
+
+# RQL Variables
+Variables are added from the rubix-ce UI
+
+returned result of a variable
+```
+{
+  Name: "test",
+  Password: "",
+  UUID: "rql_2b0065e41311",
+  Variable: 1234.0,
+}
+```
+## Example
+to get a variable value by its name
+```js
+RQL.Result = RQL.GetVariable("test").Variable;
+```
+
+## GetVariables
+Get all the variables that where added to the RQl database
+
+```
+GetVariables() any 
+```
+
+## GetVariable
+Get a variable by its name or its uuid
+
+```
+GetVariable(uuidName string) any 
+```
+
+
+## UpdateVariableValue
+Update a variable by its name or its uuid
+
+```
+UpdateVariableValue(uuidName string, value any) any 
+```
+
