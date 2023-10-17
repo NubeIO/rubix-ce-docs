@@ -4,6 +4,10 @@ sidebar_position: 7
 
 # Backup & Restoring
 
+:::caution
+to do a backup you need either 2x rubix-computes or 1x rubix-compute and 1x nube-io cloud account
+:::
+
 The backup & restoring service is used for the user to take a backup of a rubix-compute or nube-io cloud. Once a backup is taken the user can perform the following
 
 - save the backup to your PC for safe keeping

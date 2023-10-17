@@ -6,7 +6,7 @@ sidebar_position: 6
 
 # Overview
 
-**Modules/Plugins** are a way to extend the ability of flow-framework, for example rather than bloating the
+**Modules/Plugins** are a way to extend the ability of rubix-os for example rather than bloating the
 rubix-compute with every feature or protocol's the user can add/remove **Modules/Plugins** as required.
 
 The following features are supported
