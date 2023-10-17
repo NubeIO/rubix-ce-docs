@@ -5,6 +5,8 @@ sidebar_position: 1
 # RQL
 RQL means Rubix-Query-Language. The main use case for using RQL is to write rules and then run the rules and a set time interval. And example use case is to ping a device every 15min to see if its online
 
+RQL is a `Synchronous` blocking architecture, so the execution of each operation depends on completing the one before it. Each task requires an answer before moving on to the next iteration.
+
 ## About
 Rules can be written in a javaScript like syntax and then executed in the RQL runtime
 
