@@ -99,3 +99,7 @@ curl -i -X POST -H "Content-Type: application/json" -d '{"body":{"a":100}}' http
 ```
 
 
+
+## Example JavaScript Functions
+
+

@@ -1,8 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
-# Functions
+# Inbuilt RQL Functions
 
 To use an inbuilt RQL function we need to use the key work `RQL` followed by `.` and the function name we wish to call
 
