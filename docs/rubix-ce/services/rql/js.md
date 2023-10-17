@@ -127,5 +127,37 @@ for (const element of array1) {
 RQL.Result = a;
 ```
 
+## if/else
 
+**[docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)**
 
+```js
+let a = 10
+let result = ""
+if (a > 0) {
+    result = 'positive';
+} else {
+    result = 'NOT positive';
+}
+```
+
+## SwitchCase
+
+**[docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)**
+
+```js
+const expr = "b";
+let a = "";
+switch (expr) {
+  case "a":
+    a = "is a";
+    break;
+  case "b":
+    a = "is b";
+    break;
+  default:
+    a = "nada";
+}
+
+RQL.Result = a;
+```
