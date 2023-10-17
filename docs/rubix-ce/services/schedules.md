@@ -5,6 +5,8 @@ sidebar_position: 1
 # Schedules
 Schedules are for controlling HVAC equipment on time schedule.
 
+`please make sure the system module is installed`
+
 1. open the `device` you want to add a schedule to on the sidebar under its `services`
 2. click on the Add ![add-button.png](../img/apps/add-button.png)
 3. Enter the `name`

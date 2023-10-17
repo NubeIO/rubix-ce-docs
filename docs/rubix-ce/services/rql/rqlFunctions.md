@@ -107,18 +107,35 @@ Get all the hosts status from group
 GetHostsStatus(groupUUID string) any
 ```
 
-# Rule Logs
+## GetRuleLogs
 Get all the logs that have been stored in a rule that is set to run at an interval
 
-```go
-type RuleLogsResponse struct {
-	Result []storage.Result
-	Error  string
-}
-```
 
 ```
-GetRuleLogs(uuidName string) *RuleLogsResponse 
+GetRuleLogs(uuidName string) any 
+```
+
+### return body
+
+```
+[
+  {
+    Result: 3,
+    Time: "2023-10-17T09:05:21.556313433-05:00",
+    Timestamp: "Tue, 17 Oct 2023 09:05:21 -05",
+  },
+  {
+    Result: 6,
+    Time: "2023-10-17T09:05:23.570618144-05:00",
+    Timestamp: "Tue, 17 Oct 2023 09:05:23 -05",
+  }
+]
+```
+
+### example
+get the first log and its value. The script name is `test`
+```
+RQL.Result = RQL.GetRuleLogs("test")[0].Result;
 ```
 
 # Numbers
