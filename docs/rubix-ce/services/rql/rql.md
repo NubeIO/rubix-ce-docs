@@ -35,3 +35,42 @@ let data = RQL.UpdateVariableValue("test", 11.333); // update by its name or uui
 RQL.Result = data;
 ```
 
+
+# Serverless Functions
+A rule can be written and called from an external endpoint and a body can be passed in for data to be processed
+
+## Usage
+- add a new script called `test` and paste in the example code below
+- call the end point below as per the curl example. (the endpoint is called by passing in the script name)
+
+## Example RQL code
+```js
+let x = Input.Body.a;
+let y = RQL.RandInt(10, 20);
+let calc = x + y;
+let out = {
+  inputValue: x,
+  randomNumber: y,
+  calc: calc,
+};
+
+RQL.Result = out;
+```
+
+## http body
+```json
+{
+    "body":{
+        "a":100
+    }
+}
+```
+
+## call the endpoint to execute the rule
+- method `POST`
+- body `JSON`
+```
+curl -i -X POST -H "Content-Type: application/json" -d '{"body":{"a":100}}' http://0.0.0.0:1660/api/modules/module-core-rql/rules/run/test
+```
+
+
