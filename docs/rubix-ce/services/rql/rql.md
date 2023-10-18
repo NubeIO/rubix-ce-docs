@@ -7,6 +7,11 @@ RQL means Rubix-Query-Language. The main use case for using RQL is to write rule
 
 RQL is a `Synchronous` blocking architecture, so the execution of each operation depends on completing the one before it. Each task requires an answer before moving on to the next iteration.
 
+:::info Important things to note before proceeding:
+* Install required **[modules/plugins](../../setup/plugins.md)** **module-core-rql**
+:::
+
+
 ## About
 Rules can be written in a javaScript like syntax and then executed in the RQL runtime
 
