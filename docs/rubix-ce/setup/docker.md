@@ -27,15 +27,14 @@ To install docker go to docker [downloads](https://docs.docker.com/get-docker/) 
 You need to get a **GITHUB_TOKEN** from `nube-io support` to download the docker images 
 :::
 
-once you have the token copy the `cmd` below and replace `<GITHUB_TOKEN>` with the token given to you by `nube-io support`
+Once you have the token copy the `cmd` below and replace `<GITHUB_TOKEN>` with the token given to you by `nube-io support`
 
 ```
-docker run -p 1659:1659 -p 1661:1661 -v rubix-volume:/data -e GITHUB_TOKEN=<GITHUB_TOKEN> --rm -it -d --privileged --name bios ghcr.io/nubeio/rubix-bios:1.11.0
+docker run -p 1659:1659 -p 1660:1660 -v <MOUNTING_LOCATION>:/data -e GITHUB_TOKEN=<GITHUB_TOKEN> --rm -it -d --privileged --name bios ghcr.io/nubeio/rubix-bios-legacy:1.13.0
 ```
 
+Here `<MOUNTING_LOCATION>` could be:
+- `/data`: if you wanna mount it in that location or any other absolute directory
+- `rubix-volume`: if you wanna mount it in docker volume
 
-
-this will install bios only
-then you need to
-* install assist by right click on supervisor
-* then add a host and right-click install edge
+This will install BIOS only and create a platform to install other Nube applications.
