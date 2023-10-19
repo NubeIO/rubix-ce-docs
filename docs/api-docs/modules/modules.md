@@ -3,9 +3,16 @@ sidebar_position: 1
 ---
 
 # Module
-quick start and example see: https://github.com/NubeIO/module-contrib-demo
-
 ROS provides built-in modules functionality built on top of the [plugin system](https://github.com/hashicorp/go-plugin). It is built for extending ROS functionality.
+
+:::tip
+Modules can only be developed after contacting nube-io support: support@nube-io.com
+:::
+
+:::tip demo module
+quick start and example see: [demo module](https://github.com/NubeIO/module-contrib-demo)
+:::
+
 
 ## Features
 
