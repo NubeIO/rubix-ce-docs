@@ -5,6 +5,7 @@ sidebar_position: 2
 # Methods
 
 
+
 ## Common methods to ROS
 
 - Get, Edit, Delete, Add for `networks, devices and points`

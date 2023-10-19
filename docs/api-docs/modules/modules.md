@@ -1,10 +1,22 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Module
 quick start and example see: https://github.com/NubeIO/module-contrib-demo
 
+ROS provides built-in modules functionality built on top of the [plugin system](https://github.com/hashicorp/go-plugin). It is built for extending ROS functionality.
+
+## Features
+
+- Registering custom http handlers
+- YAML-based configuration system on the rubix-ce
+
+
+## Applications
+
+- Protocol drivers
+- Database connections and cloud connections.
 
 # Modules Naming
 ```
