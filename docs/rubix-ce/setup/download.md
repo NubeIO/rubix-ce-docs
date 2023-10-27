@@ -5,14 +5,22 @@ sidebar_position: 1
 # Download
 
 :::info download links
-**[link to latest version](https://drive.google.com/drive/u/1/folders/1ylDsqJDOtbAh5KUySgK7WkO4exmK6Vbi)** <br/>
-**[link to all downloads](https://drive.google.com/drive/folders/1slMWRrk0-apIV1HEBnewk-_PWTgDcmn8)**
+**[link to all downloads](https://github.com/NubeIO/rubix-ce-builds/releases)**
 :::
+
+# OS support
+Rubix-CE is supported for Windows, Mac and Linux
 
 ## Download 
 
-for windows download the version folder called `windows` and then download the build inside <br/>
-for example named `rubix-ce_v0.0.3_ROSv0.0.26_2023-08-02.exe`
+for windows download the version build name called `windows` <br/>
+for example named `rubix-ce-0.1.1-ae3be517.windows.zip`
+
+
+:::info get the Latest version
+On github `releases` page the newest version of rubix-ce will be marked with a green **Latest**
+:::
+
 
 
 ![-](img/where-to-download.png)
