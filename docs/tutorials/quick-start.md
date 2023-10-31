@@ -27,6 +27,11 @@ if you don't an ethernet port on your PC don't worry as the 2nd ethernet port on
 2. Plugin the `IO-16` into the side of the `Rubix-Compute` (This will power the IO-16, and the `default modbus address` of the IO-16 is `address-1`)
 3. Use the ethernet cable and plug it into the 2nd port of the rubix-compute for DHCP or the 1st port for a fix IP address of `192.168.15.10`
 
+:::tip
+[**Rubix-Compute Power Connection**](../hardware/controllers/supervisors/rubix-compute/power.md) <br/>
+[**IO-16 Modbus Address**](../hardware/controllers/io-controllers/IO-16/parameters.md#dip-switch-configuration) 
+:::
+
 ## Programming the Rubix-Compute
 ### Run Rubix-CE
 Once the software is downloaded you can run the software (there is no install process)
