@@ -2,7 +2,6 @@
 sidebar_position: 1
 ---
 
-
 # Overview
 
 # Rubix-OS (open by firewall)
