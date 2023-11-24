@@ -9,7 +9,7 @@ sidebar_position: 1
 :::
 
 # OS support
-Rubic CE is supported for Windows, Mac and Linux operating systems.
+Rubix CE is supported for Windows, Mac and Linux operating systems.
 
 ## Download 
 
@@ -18,7 +18,7 @@ for example named `rubix-ce-0.1.1-ae3be517.windows.zip`
 
 
 :::info get the Latest version
-On github `releases` page the newest version of Rubic CE will be marked with a green **Latest** icon
+On github `releases` page the newest version of Rubic CE will be marked with a Green **Latest** icon
 :::
 
 
@@ -28,21 +28,18 @@ On github `releases` page the newest version of Rubic CE will be marked with a g
 # Migrations 
 
 
-# from flow-framework to rubix-os Aug 2023
+# From Flow Framework to Rubix OS
 
-Any rubix-compute-5 can be updated by Nube-iO at anytime on request. <br/>
-The process takes around 5 minutes an no data will be lost <br/>
-
-reason for the migration
-- we have combined `rubix-assist`, `rubix-edge` and `flow-framework` into a new platform called `rubix-os`
-- we have added dashboard `views` which will allow user to read/write points and schedule's via the Nube-iO app
-- we are building in support for being able to write `flow` based programs and download them to the IO-16
+Any Rubix Compute can be updated/migratred by Nube iO at anytime upon request by support@nube-io.com. <br/>
+The process takes around 5 minutes an no data will be lost during the process.
+Upgrades can sometimes be requried after major firmware releases.
+<br/>
 
 
 :::danger backwards compatible
-Rubic CE is not backwards compatible to Nube-iO flow-framework or rubix-platform <br/>
-rubix-wires is not backwards compatible to rubix-edge-wires <br/>
-`rubix-os` is not compatible on the Nube-iO `edge-28` 
+Rubix CE is not backwards compatible to the Nube iO Flow Framework or Rubix Platform <br/>
+Rubix Wires is not backwards compatible to Rubix Edge Wires <br/>
+`rubix-os` is not compatible on the Nube iO `edge-28` 
 :::
 
 
