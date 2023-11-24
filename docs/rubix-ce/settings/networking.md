@@ -5,12 +5,12 @@ sidebar_position: 1
 # Networking
 
 :::caution
-please note the rubix-compute will be rebooted after updating the IP address
+Please note that the Rubix Compute will be rebooted after updating an IP address
 :::
 
 ## Default Network Configuration
 
-When a Rubix Compute Controller is reset to factory defaults the two off Ethernet ports will be configured as follows:
+When a Rubix Compute is reset to its factory defaults, both Ethernet ports will be configured as follows:
 
 | Port Name | Linux Port Name | Type  | IP            | Subnet        | Gateway      |
 |-----------|-----------------|-------|---------------|---------------|--------------|
@@ -18,16 +18,15 @@ When a Rubix Compute Controller is reset to factory defaults the two off Etherne
 | ETH-2     | eth1            | DHCP  | na            | na            | na           |
 
 :::info
-more info on [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol)
+Additional info on [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol)
 :::
 
-## Changing the Rubix Compute's IP
+## Changing the Rubix Compute IP address
 
 1. On the 'device level' of the supervisor. Click into the device's 'settings' tab, then click the 'networking' tab.
-   Click the notepad and wait for the pop-up.
-2. Follow the wizard to set IP as either static or dynamic
-3. The wizard will then prompt the user to reboot the controller Reboot the controller for the new IP to take into
-   effect.
+   Click the notepad and wait for the pop-up to appear.
+2. Follow the wizard to set the IP address as either static or dynamic.
+3. The wizard will then prompt to reboot the Rubix Compute. Reboot the Rubix Compute to for the new IP address to be updated.
 
 ![max800px](img/ip-1.png)
 ![max800px](img/ip-2.png)
