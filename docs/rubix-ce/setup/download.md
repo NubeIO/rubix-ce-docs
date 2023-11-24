@@ -9,7 +9,7 @@ sidebar_position: 1
 :::
 
 # OS support
-Rubix-CE is supported for Windows, Mac and Linux
+Rubix-CE is supported for Windows, Mac and Linux operating systems.
 
 ## Download 
 
