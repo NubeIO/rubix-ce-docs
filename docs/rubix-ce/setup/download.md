@@ -9,16 +9,16 @@ sidebar_position: 1
 :::
 
 # OS support
-Rubix-CE is supported for Windows, Mac and Linux operating systems.
+Rubic CE is supported for Windows, Mac and Linux operating systems.
 
 ## Download 
 
-for windows download the version build name called `windows` <br/>
+For windows download the version build name called `windows` <br/>
 for example named `rubix-ce-0.1.1-ae3be517.windows.zip`
 
 
 :::info get the Latest version
-On github `releases` page the newest version of rubix-ce will be marked with a green **Latest**
+On github `releases` page the newest version of Rubic CE will be marked with a green **Latest** icon
 :::
 
 
@@ -40,7 +40,7 @@ reason for the migration
 
 
 :::danger backwards compatible
-rubix-ce is not backwards compatible to Nube-iO flow-framework or rubix-platform <br/>
+Rubic CE is not backwards compatible to Nube-iO flow-framework or rubix-platform <br/>
 rubix-wires is not backwards compatible to rubix-edge-wires <br/>
 `rubix-os` is not compatible on the Nube-iO `edge-28` 
 :::
