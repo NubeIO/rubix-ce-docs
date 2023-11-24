@@ -4,27 +4,27 @@ sidebar_position: 2
 
 # Getting Started
 
-## Rubix Computer Edition (CE - Overview)
+## Rubix CE (Rubix Computer Edition)
 
-Rubix Platform CE is Nube iO's new desktop software designed for offline programming and product management.
-Built to be fast, lightweight and portable, it allows users and technicians to configure and modify remotely without
+Rubix Platform CE is the Nube iO desktop software required for offline programming and product management.
+Built to be fast, lightweight and portable, it allows users and technicians to configure and make changes remotely without
 requiring a constant internet connection.
 
-You need the following to get started
+You will need the following to get started with Rubix CE:
 
 :::info
-* A Windows PC 10 or 11 
-* An internet connection
-* **[downloads page](download.md#download)** if not done so please download and install the rubix-ce software
+* A Windows PC 10 or 11.
+* An internet connection.
+* **[downloads page](download.md#download)** please download and install the Rubix CE software.
 * A **[nube-io cloud account](docker.md#nube-io-cloud-account)**
-* And or a nube-io **[rubix-compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)**
+* And or a Nube iO **[rubix-compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)**
 :::
 
   
 
 # Install
 
-No install is required just right click and run the program
+No install is required. Simply right click to run Rubix CE.
 
 # Running Rubix-CE
 
@@ -32,49 +32,48 @@ No install is required just right click and run the program
 
 
 :::caution token
-you need to contact nube support to get a token <br/>
-support@nube-io.com
+Please contact Nube iO support to request a unique token via support@nube-io.com <br/>
 :::
 
 
-paste in the token, the token is needed to download apps and services over the internet
+Copy and Paste in the token, the token is required to download Apps and Services over the internet.
 
 ![gettingStartedToken.png](../img/apps/getting-started-token.png)
 
-You will then have the option to either `Enter Application` or `Create supervisor`
+You will then have an option to either `Enter Application` or `Create supervisor`
 
-if you don't [Create supervisor](supervisor.md#supervisor) don't worry you can always add one later
+If you do not [Create supervisor](supervisor.md#supervisor) don't worry you can always add one later.
 
 ![getting-started-add-or-open.png](../img/apps/getting-started-add-or-open.png)
 
 ## Buttons
 
-![add-button.png](../img/apps/add-button.png)  Add button is used for adding object to the application (for example
-adding a user)
+![add-button.png](../img/apps/add-button.png)  The Add button is used for adding object to the application (for example
+adding a user).
 
-![refresh-button.png](../img/apps/refresh-button.png)  Refresh button refreshing data in a table view
+![refresh-button.png](../img/apps/refresh-button.png)  Refresh button is used for refreshing data in a table view.
 
-![delete-button.png](../img/apps/delete-button.png)  Delete button is used for deleting an object for delete to work
-please select one or more items in the table
+![delete-button.png](../img/apps/delete-button.png)  Delete button is used for deleting an object.  For delete to work
+please select one or more items in the table before deleting.
 
 
 ## Supervisors
 
-A supervisors can be either a physical Nube-IO rubix-compute or a connection to Nube-IO cloud
+A supervisors can be either a physical Rubix Compute or a connection to a Nube iO cloud Service.
 
 ## Location
 
-A location is a collection of groups of rubix-computes
+A location is a collection of groups of Rubix Computes.
 
 ## Group
 
-A way to group rubix-computes, eg: `level-1` or `metering`
+A way to group Rubix Computes for easier deivce identifcation or management. For Example: `level-1` or `metering`.
 
 ## Devices
-A link to click on the rubix-computes
+A link to click on the Rubix Computes.
 
 ## Device
-A physical Nube-IO rubix-compute
+A physical Rubix Compute.
 
 ## Example setup
 
@@ -108,14 +107,14 @@ A physical Nube-IO rubix-compute
 
 ## Sidebar
 
-The sidebar is they way to navigate between supervisors, devices, protocols and sensors
+The sidebar is they way to easily navigate between supervisors, devices, protocols and sensors.
 
 ![max800pc](img/sidebar.png)
 
 ### Active Supervisors
 
 :::caution
-You must have already added a supervisor, See adding a **[supervisor](supervisor.md)**
+You must have already added a supervisor. See adding a **[supervisor](supervisor.md)**
 :::
 
 If you wish to view a supervisors on the sidebar you need to enable the supervisors from the supervisors table.
