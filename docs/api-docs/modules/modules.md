@@ -2,30 +2,30 @@
 sidebar_position: 1
 ---
 
-# Module
-ROS provides built-in modules functionality built on top of the [plugin system](https://github.com/hashicorp/go-plugin). It is built for extending ROS functionality.
+# Rubix OS Modules
+ROS provides built-in modules for additional functionality built on top of the [plugin system](https://github.com/hashicorp/go-plugin). Modules are built for extending ROS functionality.
 
 :::tip
-Modules can only be developed after contacting nube-io support: support@nube-io.com
+Modules can only be developed after contacting Nube iO support: support@nube-io.com
 :::
 
 :::tip demo module
-quick start and example see: [demo module](https://github.com/NubeIO/module-contrib-demo)
+For quick start see example: [demo module](https://github.com/NubeIO/module-contrib-demo)
 :::
 
 
-## Features
+## Module Features
 
 - Registering custom http handlers
-- YAML-based configuration system on the rubix-ce
+- YAML-based configuration system on the Rubix CE software (Rubix Computer Edition)
 
 
-## Applications
+## Module Applications
 
 - Protocol drivers
-- Database connections and cloud connections.
+- Database connections and cloud connections
 
-# Modules Naming
+# Module Naming
 ```
 module-core-lora
 module-oem-cps
@@ -39,13 +39,13 @@ module-contrib-oem-xxx (for private module developed by the third party)
 - [GoLand by JetBrains](https://www.jetbrains.com/go/)
 
 # Creating a Plugin
-To create a new rubix-os module (plugin), start by running the following command,
+To create a new Rubix OS module (plugin), start by running the following command,
 
 ```zsh
 go mod init github.com/NubeIO/<module-name>
 ```
 
-This command initializes a new Go module with the specified module path. The module path follows the URL-like syntax and should be unique.
+This command initializes a new Go module with the specified module path. The module path follows the URL- similar to syntax and should be unique.
 Once executed, a `go.mod` file will be created, and you can add necessary dependencies.
 
 # Managing Dependencies
@@ -59,8 +59,8 @@ go get <package-name>
 
 This command downloads the specified package and adds it to your `go.mod` file, along with its version. If you want to use a specific version of the package, you can append `@<version>` to the package name.
 
-# rubix-os as Dependency
-`rubix-os` is one of the major dependencies that need to be added to all modules. Follow the following command to add `rubix-os`:
+# Rubix OS as Dependency
+`rubix-os` is one of the major dependencies that needs to be added to all modules. Follow the following command to add `rubix-os`:
 
 ```zsh
 go get github.com/NubeIO/rubix-os
@@ -73,7 +73,7 @@ go mod edit -replace github.com/NubeIO/rubix-os=/<path-to>/rubix-os
 ```
 
 # Plugin System Over RPC
-A plugin system over RPC allows us to separate or extend the core functionality of rubix-os. With this system, a plugin must adhere to the pre-defined interface, and the main application can communicate with plugins using RPC.
+A plugin system over RPC allows users separate or extend the core functionality of the Rubix OS. With this system, a plugin must adhere to the pre-defined interface, and the main application can communicate with plugins using RPC.
 
 ## Installation
 `go-plugin` by `HashiCorp` is used to build a plugin system over RPC. To add this package follow the following command:
@@ -83,7 +83,7 @@ go get github.com/hashicorp/go-plugin
 ```
 
 ## Implement the Interface
-Create plugin implementations that satisfy the interface requirements by going through the following steps,
+Create plugin implementations that satisfy the interface requirements by going through the following steps:
 
 ### 1. Define a `struct`
 Each plugin will need to define a `struct` that implements the interface methods. For example, in above mentioned module [Example](#Example), we've defined `struct` **Module** as follows:
@@ -143,7 +143,7 @@ func main() {
     ServePlugin()
 }
 ```
-> NOTE: Here `shared.NubeModule` is the interface provided by `rubix-os` that an author's `struct` **Module** needs to implement.
+> NOTE: `shared.NubeModule` is the interface provided by `rubix-os` that an author `struct` **Module** needs to implement.
 
 # Logging with Logrus
 Logrus is used to log necessary information which is crucial for tackling any issues.
@@ -156,7 +156,7 @@ go get github.com/sirupsen/logrus
 ```
 
 ## Configuration
-Logrus can be configured by passing needed arguments to their pre-defined methods. `rubix-os` requires only two configurations which are as follows,
+Logrus can be configured by passing required arguments to their pre-defined methods. `rubix-os` requires only two configurations which are as follows,
 
 ```go
 log.SetFormatter(&log.TextFormatter{
@@ -183,7 +183,7 @@ func (m *Module) ValidateAndSetConfig(config []byte) ([]byte, error) {
 ```
 
 # Build the Plugin
-Finally, use the following command to build the module,
+Finally, use the following command to build the module:
 
 ```zsh
 go build -o <module-name>
