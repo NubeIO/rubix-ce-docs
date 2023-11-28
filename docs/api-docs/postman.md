@@ -4,11 +4,11 @@ sidebar_position: 1
 
 # API Docs
 
-## postman 
+## Postman 
 
 [postman api-docs](https://documenter.getpostman.com/view/666859/2s9YJhyL9U)
 
-## Set global variables
+## Set Global Variables
 
 ![postman.png](img/postman.png)
 
@@ -18,7 +18,7 @@ sidebar_position: 1
 ros_base_url
 ```
 
-for local or a nube-io rubix-compute `non https`
+For local or a Nube iO Rubix Compute `non https`
 ```
 http://localhost:1660
 ```
@@ -26,17 +26,17 @@ http://localhost:1660
 http://192.168.15.10:1660
 ```
 
-for nubeio cloud account `https`
+For Nube iO cloud account `https`
 ```
 https://<NUBE-CLOUD-ACCOUNT>:443
 ```
 
-### Access token
+### Access Tokens
 
-Add an access token so the API can be used from cloud. Get the token from rubix-ce
+Add an access token to allow the API to be used from a cloud hosted account. Accces the token from the Rubix CE software.
 
 ```
-access_token
+Access_token
 ```
 
 ![token.png](img/token.png)
@@ -46,13 +46,13 @@ access_token
 
 
 
-## rubix-os
+## Rubix OS - Rubix Operating System or ROS
 
 :::info
-rubix-os port: `1660`
+Rubix OS port: `1660`
 :::
 
 
 :::info
-rubix-os for https port: `443`
+Rubix OS for https port: `443`
 :::
