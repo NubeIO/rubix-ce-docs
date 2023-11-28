@@ -4,37 +4,35 @@ sidebar_position: 1
 
 # Overview
 
-# Rubix-OS (open by firewall)
-Rubix-OS is the core runtime that runs either on the Rubix-Compute or in the Nube-iO cloud
+# Rubix OS - Rubix Operating Stytem or ROS (open by firewall)
+Rubix OS is the core runtime that runs either on the Rubix Compute or in the Nube-iO cloud.
 
-
-## performs tasks like:
-* Updating Rubix-computes apps, points, histories and network drivers
+## Performs tasks such as:
+* Updating Rubix Compute apps, points, histories and/or network drivers
 * Scheduling
-* Connections to the Nube-IO cloud
-* Protocols like Lora, Modbus and BACnet
+* Connections to the Nube iO cloud
+* Protocols such as LoRa, Modbus and/or BACnet
 
+## Operates on hardware or Cloud Servers
+Can operate either in the `cloud` or on a `Rubix-compute`.
 
-## runs on hardware
-Runs in the `cloud` or on a `Rubix-compute`
+## Ports
 
-## port
-
-runs on port `http`
+Operates on port `http`
 ```
 1660
 ```
-runs on port `https`
+Operates on port `https`
 ```
 ra-YOURACCOUNT.nube-iiot.com
 ```
 
-## service name
+## Service Name
 ```
-sudo systemctl status nubeio-rubix-os
+Sudo systemctl status nubeio-rubix-os.
 ```
 
-# Overview of ports normally opened for port-forwarding for remote access
+# Overview of ports normally opened for port-forwarding for remote access:
 
 | Driver/Service Name | Service Name      | Port |                                                   | 
 |---------------------|-------------------|------|---------------------------------------------------|
@@ -44,159 +42,159 @@ sudo systemctl status nubeio-rubix-os
 | lorawan-dashboard   | lorawan-server    | 8080 | Optional                                          | 
 
 
-# Rubix-Bios (open by firewall)
-Rubix-Edge is used to connect to rubix-os
+# Rubix Bios (open by firewall)
+Rubix Edge is used to connect to the Rubix OS.
 
-## performs tasks like
+## Rubix Bios performs tasks such as:
 
-* Updating rubix-os
+* Updating Rubix OS.
 
+## Operates on hardware or Cloud Servers
+Operates in the `cloud` or on a `Rubix-compute`.
 
-## runs on hardware
-Runs in the `cloud` or on a `Rubix-compute`
+## Ports
 
-## port
-
-runs on port `http`
+Operateson port `http`
 ```
 1659
 ```
-runs on port  `https`
+Operates on port `https`
 ```
 443
 rb-YOURACCOUNT.nube-iiot.com
 ```
 
-## service name
+## Service Name
 ```
-sudo systemctl status nubeio-rubix-bios
-```
-
-# Rubix-Edge-Wires (closed by firewall)
-Rubix-Edge-Wires is a building automation control runtime for controlling HVAC equipment, lighting. Rubix-Edge-Wires uses a flow based programming runtime
-
-## performs tasks like
-
-* bms HVAC flow based programming
-
-
-## runs on hardware
-Runs in the `cloud` or on a `Rubix-compute`
-
-## port
-
-runs on port `http`
-```
-1665
+Sudo systemctl status nubeio-rubix-bios.
 ```
 
-## service name
+# Rubix Edge Wires - Wires (closed by firewall)
+Rubix Edge Wires is a block logic Building Automation Control runtime for controlling HVAC equipment, lighting and creating function block logic programs.
+
+## Wires Performs tasks such as
+
+* BMS or DDC flow based programming.
+
+## Operates on hardware or Cloud Servers
+Operates in the `cloud` or on a `Rubix-compute`.
+
+## Ports
+
+Operates on port `http`
 ```
-sudo systemctl status nubeio-rubix-edge-wires
+1665.
+```
+
+## Service Name
+```
+Sudo systemctl status nubeio-rubix-edge-wires.
 ```
 
 
-# Other 3rd party services and Drivers
+# Other 3rd Party Services and Drivers
 
-## driver-bacnet (open by firewall)
-Service for communication for `BACnet-master` and `BACnet-device`
+## BACnet Driver (open by firewall)
+Communication protocol for `BACnet-master` and `BACnet-device`.
 
-### service name
+### Service Name
 ```
-sudo systemctl status driver-bacnet 
+Sudo systemctl status driver-bacnet.
 ```
 
-### port
+### Ports
 
-runs on port `udp`
+Operates on port `udp`
 ```
 47808
 ```
 
+## LoRa Driver (closed by firewall)
+The LoRa driver is a wireless communication protocol for Nube iO LoRa sensors and other wireless devices.
+Note: LoRa and LoRaWAN are not the same protocol. For 3rd Party LoRa sensors or devices, a LoRaWAN driver and gateway/reciver is required.
 
-## driver-lora (closed by firewall)
-Service for communication for `LoRa` for Nube-iO LoRa sensors
-
-### service name
+### Service Name
 ```
-sudo systemctl status driver-lora 
-```
-
-### port
-
-na
-
-## driver-rubix-compute-io  (closed by firewall)
-Service for communication for `IO` for Nube-iO Rubix-Compute-IO
-
-### service name
-```
-sudo systemctl status driver-rubix-compute-io 
+Sudo systemctl status driver-lora.
 ```
 
-### port
+### Ports
 
-runs on port `http`
+n/a
+
+## Rubix Compute iO Driver  (closed by firewall)
+Rubix Compute iO Driver is a communication protocol for Input/Output (IO) hardware devices for Nube iO Rubix Compute iO.
+
+### Service Name
+```
+Sudo systemctl status driver-rubix-compute-io. 
+```
+
+### Ports
+
+Operates on port `http`
 ```
 5001
 ```
 
 ## VPN (open by firewall)
-VPN service used for the Rubix-Compute to communicate back to the `Nube-iO-Cloud`
+A VPN service used for the Rubix Compute to communicate back to the `Nube iO Cloud`.
 
-### service name
+### Service Name
 ```
-sudo systemctl status openvpn 
+Sudo systemctl status openvpn.
 ```
 
-### port
+### Ports
 
-runs on port `tls`
+Operates on port `tls`
 ```
 443
 ```
 
-## mqtt broker (closed by firewall)
-The MQTT broker is used for internal services
-### service name
+## MQTT broker (closed by firewall)
+The MQTT broker is used for internal services.
+
+### Service Name
 ```
-sudo systemctl status mosquitto 
+Sudo systemctl status mosquitto.
 ```
 
-### port 
+### Ports 
 
-runs on port `tcp`
+Operates on port `tcp`
 ```
 1883
 ```
 
 ## LoRaWAN Dashboard (open by firewall)
-Dashboard used for the administration of the lorawan server
+Dashboard used for the administration of the loRaWAN server.
 
-### service name
+### Service Name
 ```
-sudo systemctl status lorawan-server 
+Sudo systemctl status lorawan-server. 
 ```
 
-### port
+### Ports
 
-runs on port `http`
+Operates on port `http`
 ```
 8080
 ```
 
+## LoRaWAN Gateway/Driver (closed by firewall)
+The LoRaWAN driver is a wireless communication protocol for 3rd party LoRaWAN sensors and other wireless devices.
+Note: LoRa and LoRaWAN are not the same protocol. For 3rd Party LoRa sensors or devices, a LoRaWAN driver and gateway/reciver is required.
+Service for communication to the `LORA-CONNECT` plugged into a Rubix Compute via a `RJ12` plug and cable.
 
-## LoRaWAN Gateway (closed by firewall)
-Service for communication to the `LORA-CONNECT` plugged into the Rubix-Compute via the `RJ12` plug and cable
-
-### service name
+### Service Name
 ```
-sudo systemctl status lorawan-gateway 
+Sudo systemctl status lorawan-gateway. 
 ```
 
-### port
+### Ports
 
-runs on port `udp`
+Operates on port `udp`
 ```
 tba
 ```
