@@ -184,7 +184,7 @@ Operates on port `http`
 
 ## LoRaWAN Gateway/Driver (closed by firewall)
 The LoRaWAN driver is a wireless communication protocol for 3rd party LoRaWAN sensors and other wireless devices.
-Note: LoRa and LoRaWAN are not the same protocol. For 3rd Party LoRa sensors or devices, a LoRaWAN driver and gateway/reciver is required.
+Note: LoRa and LoRaWAN are not the same protocol. For 3rd Party LoRa sensors or devices, a LoRaWAN driver and gateway/reciver is required. 
 Service for communication to the `LORA-CONNECT` plugged into a Rubix Compute via a `RJ12` plug and cable.
 
 ### Service Name
