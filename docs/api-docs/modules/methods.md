@@ -6,7 +6,7 @@ sidebar_position: 2
 
 
 
-## Common methods to ROS
+## Common Methods to Rubix OS (ROS)
 
 - Get, Edit, Delete, Add for `networks, devices and points`
 
@@ -14,7 +14,7 @@ sidebar_position: 2
 inst.grpcMarshaller
 ```
 
-### example
+### Example
 ```go
 func (inst *Module) networkUpdateSuccess(uuid string) error {
 	var network model.Network
