@@ -7,7 +7,7 @@ sidebar_position: 2
 
 ![max200px](../../../img/droplet.png)
 
-This article details the installation and configuration of the Nube-iO MicroEdge LoRa Wireless Asset Sensor.  
+This article details the installation and configuration of the Nube iO Droplet LoRa Wireless Sensor.  
 # Mounting
 Droplets are 86mm x 86mm.  They are designed to be mounted on flat surfaces using screws or double sided tape.  
 They can be mounted vertically or horizontally.  
@@ -18,7 +18,7 @@ Mounting locations should be selected such that the sensor will experience condi
 
 # Power
 Droplet sensors are powered by 3 x AA Batteries as shown below.   
-Battery runtime should be between 3-5 years depending on the configured push rate (more data pushes means lower battery runtime).
+Battery runtime should be between 3-5 years depending on the configured push rate and battery quality (more frequent data pushes means lower battery runtime).
 
 ![max300px](img/Droplet%20-%20Power%20-%20Battery%20Terminals.png)
 
