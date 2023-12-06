@@ -5,31 +5,35 @@ sidebar_position: 1
 
 # Overview
 
-The Droplet is a LoRa® IoT sensor. It captures multiple points of data 
+The Droplet is a LoRa® IoT sensor. It captures multiple points of data: 
+* Temperature
+* Humidity
+* Lux
+* Motion (PIR)
 
-* temperature
-* humidity
-* lux
-* motion
+
+The Droplet is avalible in 3 different models:
+* Droplet TH -Temperature & Humidity
+* Droplet THL -Temperature, Humidity & Lux
+* Droplet THLM -Temperature, Humidity, Lux and Motion (PIR)
 
 :::info
-upto 5 year battery life with 3x AA batteries
+Upto 5 year battery life with 3x AA batteries
 :::
 
 
 # Why LoRa
 
-LoRa® is a low-power, long-range wireless technology designed for the Internet of Things. 
-It is less affected by buildings and other obstructions than regular WiFi, with one gateway generally being able to provide coverage for a 70x70m 3-story building.
+LoRa® is a low-powered, long-range wireless technology designed for the Internet of Things. 
+It is less affected by buildings and other obstructions than regular WiFi and Bluetooth, with one gateway generally being able to provide coverage for a 70x70m, 3 story building.
 
-LoRa® is expected to hold 75% of the IoT device market share soon. 
 The LoRa® community is expanding rapidly, with many new contributions and developments occurring every day.
 
-* Significantly longer range than for Bluetooth and WiFi
+* Significantly longer range compared to Bluetooth and WiFi
 * Drastically lower power consumption than for Bluetooth, WiFi, or 4G
-* AES128 encryption
-* Excellent penetration through obstacles
-* Highly versatile application, which translates into easier integration
+* AES128 encryption on data packets
+* Excellent penetration through obstacles such as walls and ceilings
+* Highly versatile application, which translates into easier integration and a more efficiant installation
 
 ![droplet.png](../../../img/droplet.png)
 
