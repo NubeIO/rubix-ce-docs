@@ -7,7 +7,7 @@ sidebar_position: 1
 
 
 
-In order to communicate via Modbus the IO Modules must be configured correctly.   
+In order to communicate via Modbus the Rubix IO Modules must be configured correctly.   
 The Modbus ID/Address, Baud Rate, and Parity must be configured correctly to communicate over the Modbus RS485 Network. 
 
 
@@ -17,9 +17,9 @@ The Modbus ID/Address, Baud Rate, and Parity must be configured correctly to com
 ## Operation Mode
 
 This setting configures the Operation Mode of the Rubix IO Module.
-* When using a wired RS485 Modbus network the IO Module should be configured to RS485 Wired Mode.
-* When using Wireless Modbus over LoRa, the IO Module should be configured to LoRa Wireless Mode (LoRa wireless is only available on LR type IO Modules).
-* When using the IO Module as a wireless Modbus Passthrough (to extend to a wired 3rd party Modbus device via LoRa wireless), the IO Module should be configured to RS485 -> LoRa Passthrough Mode (LoRa wireless is only available on LR type IO Modules).
+* When using a wired RS485 Modbus network the Rubix IO Module should be configured to RS485 Wired Mode.
+* When using Wireless Modbus over LoRa, the Rubix IO Module should be configured to LoRa Wireless Mode (LoRa wireless is only available on the Rubix IO ending with the model number of LR).
+* When using the Rubix IO Module as a wireless Modbus Passthrough (to extend to a wired 3rd party Modbus device via LoRa wireless), the Rubix IO Module should be configured to RS485 -> LoRa Passthrough Mode (LoRa wireless is only available on the Rubix IO ending with the model number of LR).
 
 
 ## Device ID/Address
@@ -29,7 +29,7 @@ The Modbus Device ID/Address on the Rubix IO Modules is set using DIP Switches 1
 See table below for more information
 
 ## Baud Rate
-The Baud Rate is the speed that the Modbus RS485 network communicates at.  
+The Baud Rate is the speed that the Modbus RS485 network communicates.  
 All devices on the same modbus network must be configured to the same Baud Rate.  
 The Rubix IO Modules supports 3 Baud Rates (9600, 19200, and 38400).
 
@@ -52,14 +52,14 @@ There are 2 banks of small DIP switches (8 DIP Switches per bank) under the cove
 ![dips.png](img/dips.png)
 
 ## Left Bank DIP Switches (SW2)
-The Left Bank of DIP Switches (labeled SW2) is used to set the address of the IO Module.  
+The Left Bank of DIP Switches (labeled SW2) is used to set the address of the Rubix IO Module.  
 The value is set as a binary number (lowest digit is DIP 1) plus 1.  
 
 See table below for reference.  
 ![left-dip.png](img/left-dip.png)
 
 ## Right Bank DIP Switches (SW1)
-The Right Bank of DIP Switches (labeled SW1) is used to configure various functions of the IO Module.  
+The Right Bank of DIP Switches (labeled SW1) is used to configure various functions of the Rubix IO Module.  
 
 See table below for reference.  
 ![right-dip.png](img/right-dip.png)
