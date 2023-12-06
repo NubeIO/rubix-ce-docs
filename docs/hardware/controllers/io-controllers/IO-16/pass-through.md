@@ -8,12 +8,12 @@ sidebar_position: 1
 
 # Introduction
 
-Pass through mode is used to connect any Modbus RS485 networks together wirelessly over LoRa. It can connect any number over wired RS485 networks together as long as there are no conflicting addresses. It can also support up to the normal amount of Modbus slave devices of 247 with just one Rubix IO16.
+Pass through mode is used to connect any Modbus RS485 networks together wirelessly over LoRa. It can connect any number over wired RS485 networks together as long as there are no conflicting addresses. It can also support up to the normal amount of Modbus slave devices of 247 with just one Rubix IO.
 Since the Rubix Compute and Rubix IO16 are communicating over LoRa, their baud rates are independent of one another and do not have to match. <br/>
 
-The Rubix IO16 in pass-through mode should match the other devices on the RS485 network it is connected to. 
+The Rubix IO in pass-through mode should match the other devices on the RS485 network it is connected to. 
 
-I.e. a Modbus power meter is on address 2, baud rate 9600, the R-IO should be set to baud rate 9600. <br/>
+Example: A Modbus power meter is on address 2, baud rate 9600, the Rubix IO should be set to baud rate 9600. <br/>
 When creating the Modbus network on the client/platform, the baud rate should be set to 38400 as this is the required setting for the Rubix Compute.
 
 
@@ -28,16 +28,16 @@ When creating the Modbus network on the client/platform, the baud rate should be
 | Parity         | None              | 
 
 
-## Hardware setup - Rubix iO 16
+## Hardware setup - Rubix IO16
 
 - The Modbus device's addressing is only required on the Rubix platform during modbus pass-though mode. 
-- The Rubix iO-16's address can be disregarded, so the dip switches on the left bank can be set all down `(but leave switch 8 up)`.
-- On the right bank of the Rubix iO-16, set the dip switch settings to match the meter's `baud rate (9600)` and `parity (None)`.
+- The Rubix IO16's address can be disregarded, so the dip switches on the left bank can be set all down `(but leave switch 8 up)`.
+- On the right bank of the Rubix IO16, set the dip switch settings to match the meter's `baud rate (9600)` and `parity (None)`.
 
 Also, remember to set the communication mode to pass-through mode. 
 
 :::info
-more info on IO-16s dips switch: **[settings](parameters.md#dip-switch-configuration)**
+More info on Rubix IO dips switch: **[settings](parameters.md#dip-switch-configuration)**
 :::
 
 | **Left Bank Switch** | **Position** | **Function**      |
@@ -64,10 +64,10 @@ more info on IO-16s dips switch: **[settings](parameters.md#dip-switch-configura
 | 8                     | **Up**       | Always Up                |
 
 
-## add a modbus network
+## Adding a Modbus network
 Network Name: (assign a network name)
 * Type: RTU
-* Delay between points (ms): 6000ms for IO modules in LoRa mode
+* Delay between points (ms): 6000ms for Rubix IO modules in LoRa mode
 * timeout: 1
 * rtu parity: none
 * rtu speed: 38400
