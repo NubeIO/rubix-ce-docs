@@ -5,8 +5,8 @@ sidebar_position: 1
 
 # Controllers
 
-# Rubix-Compute
-Rubix-Compute
+# Rubix Compute
+Rubix Compute
 
 ![max200px](../img/rc5.png)
 
@@ -19,7 +19,7 @@ Rubix-Compute
 :::
 
 
-# Rubix-IO-16
+# Rubix IO16
 ![max200px](../img/io-16.png)
 
 
