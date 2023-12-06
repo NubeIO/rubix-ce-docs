@@ -4,14 +4,14 @@ sidebar_position: 4
 # Networking and Interfaces
 
 ![rc-networking.png](img/rc-networking.png)
-# networking
+# Networking
 
 | Port Name | Linux Port Name | Type  | IP            | Subnet        | Gateway      |
 |-----------|-----------------|-------|---------------|---------------|--------------|
 | ETH-1     | eth0            | Fixed | 192.168.15.10 | 255.255.255.0 | 192.168.15.1 |
 | ETH-2     | eth1            | DHCP  | na            | na            | na           |
 
-# 485 ports
+# RS485 ports
 
 | Port Name         | Serial Port Name |
 |-------------------|------------------|
@@ -19,14 +19,14 @@ sidebar_position: 4
 | 485-2 and support | /dev/ttyAMA0     |
 
 
-# LoRa For Droplets and Micro-Edges
+# LoRa for Droplet, Micro-Edge and Rubix IO
 
 | Port Name | Serial Port Name  |
 |-----------|-------------------|
 | LoRa      | /data/socat/loRa1 |
 
 
-# Modbus Over LoRa For the IO-16
+# Modbus Over LoRa For the Rubix IO
 
 | Port Name | Serial Port Name          |
 |-----------|---------------------------|
@@ -38,5 +38,5 @@ sidebar_position: 4
 | **Device Type**                          | **LoRa Port selection on Rubix Platform** |
 |------------------------------------------|-------------------------------------------|
 | Wireless sensors - Droplets & Micro Edge | /data/socat/loRa1                         |
-| Rubix iO-16 in Wireless Mode             | /data/socat/serialBridge1                 |
-| Rubix iO-16 in 485 Mode                  | /dev/ttyAMA0                              |
+| Rubix IO16 in Wireless Mode             | /data/socat/serialBridge1                 |
+| Rubix IO16 in 485 Mode                  | /dev/ttyAMA0                              |
