@@ -18,7 +18,7 @@ LoRa Sensors
 :arrow_down: [Installation manual](https://raw.githubusercontent.com/NubeIO/rubix-docs/master/pdfs/hardware/lora-sensors/droplet/Wireless_Droplet_Sensors_Installation_and_User_Manual_20220112.pdf)
 :::
 
-# Micro-Edge
+# Micro Edge
 
 ![max200px](../img/micro-edge.png)
 
