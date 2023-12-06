@@ -4,9 +4,9 @@ sidebar_position: 6
 
 # Inputs & Outputs
 
-# IO Configuration
-There are several physical onboard switches that must be configured correctly for proper communication and functionality. These switches are located under the front cover of the Rubix iO Module. To remove the front cover, use a flat blade screwdriver to gently pry the cover off at the cover join line.
-There are several switches under the cover of the Nube-iO iO Module that are used to set the Input (UI) and Output (UO) type configurations.
+# Rubix IO Configuration
+There are several physical onboard switches that must be configured correctly for proper communication and functionality. These switches are located under the front cover of the Rubix IO Module. To remove the front cover, use a flat blade screwdriver to gently pry the cover off at the cover join line.
+There are several switches under the cover of the Rubix IO Module that are used to set the Input (UI) and Output (UO) type configurations.
 
 ![overview.png](img/overview.png)
 
