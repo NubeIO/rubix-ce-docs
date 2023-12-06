@@ -8,7 +8,7 @@ sidebar_position: 5
 
 
 # Power Supply Requirements
-The IO Module is powered by a 24v AC or DC power supply on the `24 AC/DC POWER` terminals as shown below.
+The Rubix IO Module is powered by a 24volt AC or DC power supply on the `24 AC/DC POWER` terminals as shown below.
 
 ![power.png](img/power.png)
 
@@ -21,14 +21,14 @@ Wiring
 
 # Modbus RS485 Wiring
 
-Nube-iO Rubix IO Modules are a pure Modbus device; All communications with the IO Modules are via Modbus.  
+Rubix IO Modules are a pure Modbus device. All communications with the IO Modules are via Modbus.  
 This article will detail the correct wiring for the Modbus RS485 Network.  
 To communicate via Modbus the Rubix IO Module must also have its Onboard DIP Switches configured correctly to set the Modbus Serial Communication Parameters.
 
-# Connecting RS485 Network (Wired Network)
-When using the wired network connection, the IO Module RS485 Modbus connection is used.  
+# Connecting a RS485 Network (Wired Network)
+When using the wired network connection, the Rubix IO Module RS485 Modbus connection is used.  
 
-When Networking multiple Nube-iO iO Modules on an RS485 network, each controller is
+When Networking multiple Rubix IO Modules on an RS485 network, each controller is
 connected in a `Daisy Chain`. Controllers that are connected between 2 other controllers
 will have 2 wires (one from the previous controller and one from the next controller) in the
 same terminal. Ensure A/+ and B/- wires are kept consistent for all controllers on the
@@ -46,7 +46,7 @@ The connector is terminated and installed as shown below.
 | Pin 3 (G) |
 
 
-## Serial Ports On the Rubix-Compute
+## Serial Ports On the Rubix Compute
 
 | Port Name         | Serial Port Name |
 |-------------------|------------------|
@@ -71,7 +71,7 @@ The connector is terminated and installed as shown below.
 
 - **Digital Holding** - Holds `true` value on interrupt until read.
 - **Pulse Counter** - Pulse accumulation on interrupt. Value is reset by setting the type back to `0` (default)
-- ***note only first 3 inputs work as pulse***
+- ***Note only first 3 inputs work as a pulse input***
 
 
 
