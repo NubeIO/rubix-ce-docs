@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-# BACnet overview
+# BACnet Overview
 
-## Object IDs
+## BACnet Object IDs
 
 | Object             | Number |
 |--------------------|--------|
@@ -28,7 +28,7 @@ sidebar_position: 1
 | Schedule           | 17     |
 | Multi-state Value  | 19     |
 
-## Common Property's
+## BACnet Common Property's
 
 | PropertyName  | Number |
 |---------------|--------|
@@ -37,9 +37,9 @@ sidebar_position: 1
 | priorityArray | 87     |
 | device        | 8      |
 
-## Common Property's for a device
+## BACnet Common Property's for a Device
 
-| PropertyName          | Device | Number |
+| Property Name         | Device | Number |
 |-----------------------|--------|--------|
 | objectList            | 8      | 76     |
 | deviceName            | 8      | 77     |
@@ -48,9 +48,9 @@ sidebar_position: 1
 | segmentationSupported | 8      | 107    |
 | maxApduLength         | 8      | 62     |
 
-## Property's
+## BACnet Property's
 
-| PropertyName                   | Number |
+| Property Name                  | Number |
 |--------------------------------|--------|
 | ackedTransitions               | 0      |
 | ackRequired                    | 1      |
@@ -182,22 +182,22 @@ sidebar_position: 1
 # Debugging
 
 
-## wireshark/tshark
+## Wireshark/Tshark
 
-### tshark
+### Tshark
 
-install
+Install
 ```
 sudo apt-get install tshark
 ```
 
-usage 
+Usage 
 ```
 sudo tshark -i eth0 -f "udp" | grep "BACnet-APDU"
 ```
 
-## ping port 47808
-check and see if port 47808 is open on your target device
+## Ping Port 47808
+Check and see if port 47808 is open on your target device.
 ```
-netcat -v -u -z 192.168.15.155 47808
+Netcat -v -u -z 192.168.15.155 47808
 ```
