@@ -6,23 +6,23 @@ sidebar_position: 1
 
 Modbus Network
 
-This article explains how to configure the Modbus Network within Rubix-CE. This will allow us the send and receive
+This article explains how to configure the Modbus Network within Rubix CE (Computer Edition). This will allow us the send and receive
 Modbus data from connected Modbus devices.
 
-## Adding a network
+## Adding a Modbus Network
 
 1. **Step-1** On the controller level, under `drivers`, click the **create** ![add icon](../../../img/apps/add-button.png) to select and download and install the relevant network. Follow the wizard to continue installing the network.
 2. **Step-2** Select the **Modbus Serial Network** or **Modbus TCP Network**. This will download the appropriate modules and drivers. Check the default communication settings for the sensor by ticking the 'show advanced options' checkbox.
-3. **Step-3** Once all the settings are added click on **Submit** button This should now create the Modbus and network. Now open the Modbus network to add a device
+3. **Step-3** Once all the settings are added click on **Submit** button This should now create the Modbus and network. Now open the Modbus network to add a device.
 
 ## Adding a Modbus RTU Network
 
 :::info
 Important things to note before proceeding:
-You must have a rubix-compute and a modbus RTU device and know the settings required to add the device**[ports](../../../../hardware/controllers/supervisors/rubix-compute/ports.md)**
+You must have a Rubix Compute and a Modbus RTU device and know the settings required to add the device**[ports](../../../../hardware/controllers/supervisors/rubix-compute/ports.md)**
 :::
 
-* **Network name** - The network name is the name of the desired network. It is recommended you use the type of modbus
+* **Network name** - The network name is the name of the desired network. It is recommended you use the type of Modbus
   communications (eg. LoRa or RS485-1 / RS485-2).
 * **Enable** - Tick to enable the Modbus Network.
 * **Delay between points (ms)** - This is the minimum time (in milliseconds) between the individual Modbus poll requests.
@@ -36,4 +36,4 @@ You must have a rubix-compute and a modbus RTU device and know the settings requ
 * **RTU port** - (RTU ONLY) Select from the dropdown the serial port that is used for the Modbus Network. For
   RS485-1/RS485-2 ports, use `/dev/tty/RS485-1` / `/dev/tty/RS485-2` RTU ports. respectively. For wireless Modbus-Over-LoRa Network,
   use `/data/socat/serialBridge1`.
-* **Max Poll Rate** (seconds) max polling rate
+* **Max Poll Rate** (seconds) max polling rate.
