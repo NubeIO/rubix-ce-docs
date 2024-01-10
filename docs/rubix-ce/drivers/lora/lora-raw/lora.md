@@ -5,8 +5,9 @@ sidebar_position: 1
 # Getting Started
 
 This page will demonstrate how to add wireless LoRa Droplets and Micro Edges to the Rubix Compute.
+The Rubix Compute is a LoRa Gateway/Reciever. 
 
-## Adding a network
+## Adding a LoRa Network
 
 :::info Important things to note before proceeding:
 * Install required **[apps](../../../setup/apps.md)** **driver-lora**
@@ -14,47 +15,47 @@ This page will demonstrate how to add wireless LoRa Droplets and Micro Edges to 
 :::
 
 
-1. **Step-1** On the controller level, under `drivers`, click the **create** ![add icon](../../../img/apps/add-button.png) to select and download and install the relevant network. Follow the wizard to continue installing the network.
+1. **Step-1** On the controller level, under `drivers`, click the **create** ![add icon](../../../img/apps/add-button.png) to select and download and install the relevant network. Follow the wizard to continue installing the LoRa network.
 2. **Step-2** Select the LoRa network. This will download the appropriate modules and drivers. Check the default communication settings for the sensor by ticking the 'show advanced options' checkbox.
-3. **Step-3** Once all the settings are added click on **Submit** button This should now create the LoRa and network. Now open the LoRa network to add a device
+3. **Step-3** Once all the settings are added click on **Submit** button This should now create the LoRa and network. Now open the LoRa network to add a device.
 
 :::info
-adding the LoRa driver for the first time it will install a module/plugin dependency called `LoRa`
+Adding the LoRa driver for the first time it will install a module/plugin dependency called `LoRa`.
 :::
 
-## Summery Of Ports When Adding a network
+## Summery Of Ports When Adding a Network
 
-Depending on the Lora network use case the correct serial-port must be selected
+Depending on the LoRa network use case the correct serial-port must be selected.
 
 ![max800px](img/ports.png)
 
 
 | **Device Type**                          | **LoRa Port selection on Rubix Platform** |
 |------------------------------------------|-------------------------------------------|
-| Wireless sensors - Droplets & Micro Edge | /data/socat/loRa1                         |
-| Rubix iO-16 in Wireless Mode             | /data/socat/serialBridge1                 |
-| Rubix iO-16 in 485 Mode                  | /dev/ttyAMA0                              |
+| Wireless Sensors - Droplets & Micro Edge | /data/socat/loRa1                         |
+| Rubix iO 16 in Wireless Mode             | /data/socat/serialBridge1                 |
+| Rubix iO 16 in 485 Mode                  | /dev/ttyAMA0                              |
 
 
 
 ![max800px](img/adding-lora-network.gif)
 
-## Adding a sensor
+## Adding a LoRa Sensor
 
 :::info
-see nube supported sensors for more info **[sensors](../../../../hardware/downloads/sensors.md)**
+See Nube iO supported sensors for more info **[sensors](../../../../hardware/downloads/sensors.md)**
 :::
 
-Sensor models
+Sensor Models
 
 | Sensor Model | Supports Temperature | Supports Humidity | Supports Motion | Supports Lux |  
 |--------------|----------------------|-------------------|-----------------|--------------|
-| THLM         | yes                  | yes               | yes             | yes          | 
-| THL          | yes                  | yes               | no              | yes          |  
-| TH           | yes                  | yes               | no              | no           |  
+| THLM         | Yes                  | Yes               | Yes             | Yes          | 
+| THL          | Yes                  | Yes               | No              | Yes          |  
+| TH           | Yes                  | Yes               | No              | No           |  
 
 
-1. **Step-1** Once inside the `network`, click the **create** ![add icon](../../../img/apps/add-button.png) button and a pop-up will give you the type of sensors to select from. For this example, we will be using a `THLM` droplet.
+1. **Step-1** Once inside the `network`, click the **create** ![add icon](../../../img/apps/add-button.png) button and a pop-up will give you the type of sensors to select from. For this example, we will be using a `THLM` Droplet.
 2. **Step-2** Follow the wizard by assigning a name and description, and then press `submit` to continue.
 3. **Step-3** Enter the 8 digit serial number printed on the sensor and press submit.
 4. **Step-4** Once the sensor has been added, view the points by clicking on the arrow point on the newly added device.
