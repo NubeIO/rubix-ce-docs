@@ -6,8 +6,8 @@ sidebar_position: 2
 # Installation and Configuration
 
 # Mounting
-The MicroEdge is 115mm x 65mm.  They are designed to be mounted on flat surfaces using external screws.  
-They can be mounted in any orientation.  
+The Micro Edge is 115mm x 65mm.  It is designed to be mounted on flat surfaces using external screws.  
+The Micro Edge can be mounted in any orientation.  
 The sensor should always be mounted in a location such that it will not experience very high or low temperatures.   
 When selecting a mounting location, position relative to the LoRa gateway should be considered.
 
@@ -15,21 +15,21 @@ When selecting a mounting location, position relative to the LoRa gateway should
 
 # Power
 
-The MicroEdge sensor can alternatively be powered by a 24 VAC power supply by wiring into the 24 VAC +  and - terminals.  
+The Micro Edge sensor can alternatively be powered by a 24 VAC power supply by wiring into the 24 VAC +  and - terminals.  
 
 Power wiring shown below.
 
 ![MicroEdge - Power - Wired.png](../img/MicroEdge%20-%20Power%20-%20Wired.png)
 
 # Sensor Positioning and LoRa Signal Quality
-MicroEdge sensors utilize LoRa IOT Wireless radio technology.  
+Micro Edge sensors utilize LoRa IOT Wireless radio technology.  
 This wireless system features long range, and good object penetration.  
 However, care still must be taken to position sensors such that they have a good communication signal with the LoRa Gateway.   
-The quality of the communication signal depends on the distance from the LoRa Gateway, and the objects between the Micro-edge sensor and the LoRa Gateway.
+The quality of the communication signal depends on the distance from the LoRa Gateway, and the objects between the Micro Eddge sensor and the LoRa Gateway.
 
 # Onboard Reset/Push Button
-Nube-iO MicroEdge sensors have a small Reset Button within the sensor.  
-This Reset Button is used to trigger a data push.  
+Nube iO Micro Edge sensor has a small Reset Button within the sensor.  
+This Reset Button is used to trigger a data push for testing purposes. 
 This function is frequently used when deploying and testing MicroEdge sensors.  
 The Reset Button is also used in some configuration steps.   
 
@@ -39,7 +39,7 @@ The Reset / Push Button location is shown below.
 
 
 # Onboard DIP Switch Configuration
-MicroEdge sensors have a bank of 8 small DIP switches within the sensor.  
+Micro Edge sensors have a bank of 8 x small DIP switches within the sensor.  
 These DIP switches are used to configure the functionality of the sensor.  
 These DIP switches are located near the batteries on the sensor PCB.  
 Open the sensor cover to find the DIP switches within.  
@@ -76,7 +76,7 @@ Follow the below instructions to reset the Pulse Count Accumulation:
 
 
 # Onboard Jumper Configuration
-MicroEdge sensors have 4 sets of small jumper pins within the sensor.  
+Micro Edge sensors have 4 sets of small jumper pins within the sensor.  
 These jumper pins are bridged to configure the functionality of the sensor inputs.  
 These sets of jumper pins are located near the batteries on the sensor PCB.  
 Remove the sensor cover to find the jumper pins within.
