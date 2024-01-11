@@ -4,33 +4,33 @@ sidebar_position: 3
 
 # Inbuilt RQL Functions
 
-To use an inbuilt RQL function we need to use the key work `RQL` followed by `.` and the function name we wish to call
+To use an in built RQL function we need to use the key work `RQL` followed by `.` and the function name we wish to call.
 
-example
+Example
 ```
 RQL.Date()
 ```
 
-working example, run this and the debug will return the current date when the script is called
+Working example, run this and the debug will return the current date when the script is called
 ```
 RQL.Result = RQL.Date()
 ```
 
 # Alerts
 
-## GetAlerts
+## Get Alerts
 Get all the alerts from the supervisor
 ```
 GetAlerts() any
 ```
 
-## AddAlert
+## Add Alert
 Add a new alert to a host
 ```
 AddAlert(hostIDName string, body any)
 ```
 
-### example
+### Example
 
 ```
 let body = {
@@ -46,7 +46,7 @@ let alert = RQL.AddAlert("hos_c8ab2fe07e7a413c", body);
 RQL.Result = alert.CreatedAt;
 ```
 
-## UpdateAlertStatus
+## Update Alert Status
 Update an alert
 
 ```
@@ -63,7 +63,7 @@ Sleep(duration int)
 ```
 
 
-## TimeDate
+## Time Date
 TimeDate returns time/date formatted as `2006.01.02 15:04:05`
 
 ```
@@ -86,28 +86,28 @@ Date() string
 
 # Hosts and Groups
 
-## GetGroups
+## Get Groups
 Get all the groups from a supervisor
 
 ```
 GetGroups() any
 ```
 
-## GetAllHostsStatus
+## Get All Hosts Status
 Get all the hosts status
 
 ```
 GetAllHostsStatus() any
 ```
 
-## GetHostsStatus
+## Get Hosts Status
 Get all the hosts status from group
 
 ```
 GetHostsStatus(groupUUID string) any
 ```
 
-## GetRuleLogs
+## Get Rule Logs
 Get all the logs that have been stored in a rule that is set to run at an interval
 
 
@@ -115,7 +115,7 @@ Get all the logs that have been stored in a rule that is set to run at an interv
 GetRuleLogs(uuidName string) any 
 ```
 
-### return body
+### Return Body
 
 ```
 [
@@ -132,7 +132,7 @@ GetRuleLogs(uuidName string) any
 ]
 ```
 
-### example
+### Example
 get the first log and its value. The script name is `test`
 ```
 RQL.Result = RQL.GetRuleLogs("test")[0].Result;
@@ -140,28 +140,28 @@ RQL.Result = RQL.GetRuleLogs("test")[0].Result;
 
 # Numbers
 
-## RandInt
+## R and Int
 RandInt returns a random int within the specified range.
 
 ```
 RandInt(range1, range2 int) int
 ```
 
-## RandFloat
+## R and Float
 RandFloat returns a random float64 within the specified range.
 
 ```
 RandFloat(range1, range2 float64) float64
 ```
 
-## LimitToRange
+## Limit To Range
 LimitToRange returns the input value clamped within the specified range
 
 ```
 LimitToRange(value float64, range1 float64, range2 float64) float64 
 ```
 
-## RoundTo
+## Round To
 RoundTo returns the input value rounded to the specified number of decimal places.
 
 
@@ -192,21 +192,21 @@ Ping(ipList []string) []PingResult
 
 # RQS Points
 
-## GetPoints
+## Get Points
 Get all the points from a host by passing in the name or uuid
 
 ```
 GetPoints(hostIDName string) any
 ```
 
-## GetPoint
+## Get Point
 Get a point from a host by passing in the name or uuid, and the point uuid
 
 ```
 GetPoint(hostIDName, uuid string) any 
 ```
 
-## WritePointValuePriority
+## Write Point Value Priority
 Write a point value from a host by passing in the name or uuid, and the point uuid, the priority value and the write value
 
 ```
@@ -214,7 +214,7 @@ WritePointValuePriority(hostIDName, uuid string, pri int, value float64) any
 ```
 
 # RQL Variables
-Variables are added from the rubix-ce UI
+Variables are added from the Rubix CE UI
 
 returned result of a variable
 ```
@@ -231,14 +231,14 @@ to get a variable value by its name
 RQL.Result = RQL.GetVariable("test").Variable;
 ```
 
-## GetVariables
+## Get Variables
 Get all the variables that where added to the RQl database
 
 ```
 GetVariables() any 
 ```
 
-## GetVariable
+## Get Variable
 Get a variable by its name or its uuid
 
 ```
@@ -246,7 +246,7 @@ GetVariable(uuidName string) any
 ```
 
 
-## UpdateVariableValue
+## Update Variable Value
 Update a variable by its name or its uuid
 
 ```
