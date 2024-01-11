@@ -10,13 +10,13 @@ RQL is an implementation of ECMAScript 5.1.
 RQL is a Synchronous blocking architecture, so the execution of each operation depends on completing the one before it. Each task requires an answer before moving on to the next iteration.
 
 :::tip
-no external npm library's can be used. <br/>
-for example you cant use `momentjs` <br/>
-most Global JS objects and methods are supported **[mozilla developer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)**
+No external npm library's can be used. <br/>
+For example, you cant use `momentjs` <br/>
+Most Global JS objects and methods are supported **[mozilla developer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)**
 :::
 
 :::caution
-setTimeout() is not support, you can use `RQL.Sleep(100)`
+Set Timeout() is not support, you can use `RQL.Sleep(100)`
 :::
 
 
@@ -27,29 +27,29 @@ setTimeout() is not support, you can use `RQL.Sleep(100)`
 **[docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
 
-### toString
+### ToString
 
 ```js
-toString()
+ToString()
 ```
 
 ## Numbers
 
-### parseInt
+### ParseInt
 
 **[docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)**
 
 ```js
-parseInt()
+ParseInt()
 ```
 
-### parseFloat
+### ParseFloat
 
 **[docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat)**
 
 
 ```js
-parseFloat()
+ParseFloat()
 ```
 
 ## Arrays
@@ -57,7 +57,7 @@ parseFloat()
 **[docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)**
 
 
-### push
+### Push
 The push() method of Array instances adds the specified elements to the end of an array and returns the new length of the array.
 
 ```js
@@ -65,15 +65,15 @@ push()
 ```
 
 ```js
-let animals = ["pigs", "goats", "sheep"]
-animals.push("chickens", "cats", "dogs")
+Let animals = ["pigs", "goats", "sheep"]
+Animals.push("chickens", "cats", "dogs")
 RQL.Result = animals
 ```
 
-### remove an item
+### Remove an Item
 
 ```js
-function removeItemOnce(arr, value) {
+Function remove ItemOnce(arr, value) {
   var index = arr.indexOf(value);
   if (index > -1) {
     arr.splice(index, 1);
@@ -81,17 +81,17 @@ function removeItemOnce(arr, value) {
   return arr;
 }
 
-let animals = ["pigs", "goats", "sheep"];
+Let animals = ["pigs", "goats", "sheep"];
 
-removeItemOnce(animals, "pigs");
+Remove Item Once(animals, "pigs");
 
 RQL.Result = animals;
 ```
 
-## regex
+## Regex
 
 ```js
-function isValidIP(str) {
+Function isValidIP(str) {
   const octet = "(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]?|0)";
   const regex = new RegExp(`^${octet}\\.${octet}\\.${octet}\\.${octet}$`);
   return regex.test(str);
@@ -105,7 +105,7 @@ RQL.Result = isValidIP("192.168.15.10").toString();
 
 
 ```js
-function calcRectArea(width, height) {
+Function calcRectArea(width, height) {
   return width * height;
 }
 ```
@@ -127,7 +127,7 @@ for (const element of array1) {
 RQL.Result = a;
 ```
 
-## if/else
+## If/Else
 
 **[docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)**
 
@@ -141,7 +141,7 @@ if (a > 0) {
 }
 ```
 
-## SwitchCase
+## Switch Case
 
 **[docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)**
 
