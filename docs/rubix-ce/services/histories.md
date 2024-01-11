@@ -6,7 +6,7 @@ sidebar_position: 2
 
 To trend data points from devices and sensors, including droplets, modbus and LoRaWAN devices:
 
-if you have no points added please first add:
+If you have no points added please first add:
 1. A network, then
 2. A Device, and
 3. A Point
@@ -31,7 +31,7 @@ Interval: trends data at set time base
 
 
 # Viewing Histories
-You can either view a history directly from a point or from the `services/histories` tab
+You can either view a history directly from a point or from the `services/histories` tab.
 
 ## From a point
 
