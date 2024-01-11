@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 
 # RQL
-RQL means Rubix-Query-Language. The main use case for using RQL is to write rules and then run the rules and a set time interval. And example use case is to ping a device every 15min to see if its online
+RQL means Rubix Query Language. The main use case for using RQL is to write rules and then run the rules and a set time interval. An example use case is to ping a device every 15min to see if it is online.
 
 RQL is a `Synchronous` blocking architecture, so the execution of each operation depends on completing the one before it. Each task requires an answer before moving on to the next iteration.
 
@@ -13,12 +13,12 @@ RQL is a `Synchronous` blocking architecture, so the execution of each operation
 
 
 ## About
-Rules can be written in a javaScript like syntax and then executed in the RQL runtime
+Rules can be written in a javaScript similar to syntax and then executed in the RQL runtime.
 
 ![rql.png](img/rql.png)
 
 
-## Quick example
+## Example
 
 ```js
 function getRandomInt(max) {
@@ -39,32 +39,32 @@ RQL.Result = getTime; // any value sent to RQL.Result will be returned to view i
 The idea of a variable is it can be used across multiple rules/scripts rather than hard coding a variable within your rule code
 
 ### Add a variable
-1. open the `Variables` tab
-2. click on the green `+` icon and add the name and value
+1. Open the `Variables` tab
+2. Click on the green `+` icon and add the name and value
 
-### Use a variable in your code
+### Useing a Variable in Your Code
 
 ```js
 let data = RQL.UpdateVariableValue("test", 11.333); // update by its name or uuid
 RQL.Result = data;
 ```
 
-## Running Rules on timed interval
+## Running Rules on Timed Interval
 
 To set a rule/script to run on a time interval do the following
-1. open the `Scripts` tab
-2. right-click on the rule/script that you wish to view the logs and click on `Edit`.
+1. Open the `Scripts` tab
+2. Right-click on the rule/script that you wish to view the logs and click on `Edit`.
 3. Toggle `Enable Schedule`
 4. Select the time duration as a number and the time settings as `seconds, minutes, hours or days`
 
 
-### view rule logs
+### View Rule Logs
 
-1. open the `Scripts` tab
-2. right-click on the rule/script that you wish to view the logs and click on `Scheduled Results`. 
+1. Open the `Scripts` tab
+2. Right-click on the rule/script that you wish to view the logs and click on `Scheduled Results`. 
 
 
-### call the logs in a rule/script
+### Call the Logs in a Rule/Script
 [example to call logs](rqlFunctions.md#getrulelogs)
 
 
@@ -72,8 +72,8 @@ To set a rule/script to run on a time interval do the following
 A rule can be written and called from an external endpoint and a body can be passed in for data to be processed
 
 ### Usage
-- add a new script called `test` and paste in the example code below
-- call the end point below as per the curl example. (the endpoint is called by passing in the script name)
+- Add a new script called `test` and paste in the example code below
+- Call the end point below as per the curl example. (the endpoint is called by passing in the script name)
 
 ### Example RQL code
 ```js
@@ -89,7 +89,7 @@ let out = {
 RQL.Result = out;
 ```
 
-### http body
+### HTTP Body
 ```json
 {
     "body":{
@@ -98,7 +98,7 @@ RQL.Result = out;
 }
 ```
 
-### call the endpoint to execute the rule
+### Call the Endpoint to Execute the Rule
 - method `POST`
 - body `JSON`
 ```
