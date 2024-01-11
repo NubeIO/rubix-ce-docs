@@ -2,12 +2,12 @@
 sidebar_position: 4
 ---
 
-# Rubix-OS API
+# Rubix OS API
 
-# Rubix-OS Proxy
+# Rubix OS Proxy
 As apart of RQL we provide a generic HTTP client to interact with ROS.
 
-The main use case for the proxy is to give the RQL developer flexibility in being able to interact with ROS
+The main use case for the proxy is to give the RQL developer flexibility in being able to interact with ROS.
 
 - GET
 - POST
