@@ -2,10 +2,10 @@
 sidebar_position: 5
 ---
 
-# Rubix-OS Types
+# Rubix OS Types
 
-As apart of RQL we provide a methods to convert to ROS types. <br/>
-For example we will use the RQL proxy to get the points from ROS and then convert them to a ROS type points
+As part of RQL we provide a methods to convert to ROS types. <br/>
+For example we will use the RQL proxy to get the points from ROS and then convert them to a ROS type points.
 
 Example: <br/>
 In this example we perform an HTTP Proxy GET all points and then convert them into a **[points model](https://github.com/NubeIO/nubeio-rubix-lib-models-go/blob/master/pkg/v1/model/points.go#L198)** interface
