@@ -2,9 +2,9 @@
 sidebar_position: 5
 ---
 
-# Rubix OS Types
+# Rubix OS Types  (ROS)
 
-As part of RQL we provide a methods to convert to ROS types. <br/>
+As part of RQL (Rubix Query Language) we provide a methods to convert to ROS types. <br/>
 For example we will use the RQL proxy to get the points from ROS and then convert them to a ROS type points.
 
 Example: <br/>
