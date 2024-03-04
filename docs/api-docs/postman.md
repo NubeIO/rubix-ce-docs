@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Postman 
 
-[postman api-docs](https://documenter.getpostman.com/view/666859/2s9YJhyL9U)
+[postman api-docs](https://documenter.getpostman.com/view/666859/2s9Ykhg43Z)
 
 ## Set Global Variables
 
