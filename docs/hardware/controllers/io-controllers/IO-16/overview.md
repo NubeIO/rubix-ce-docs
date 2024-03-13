@@ -28,17 +28,32 @@ Modbus device.
 
 ### Physical Attributes 
 
-![io-16-size.jpg](img/io-16-size.jpg)
+![max500px](img/io-16-size.jpg)
 
-![dimensions-t.png](img/dimensions-t.png)
+|                       	|                                         	|
+|-----------------------	|-----------------------------------------	|
+| Height:               	|  112 mm / 4.41 inches                   	|
+| Width:                	| 65 mm / 2.56 inches                     	|
+| Depth:                	| 56 mm / 2.20 inches                     	|
+| Operating Temperature 	| 0°C to 65°C                             	|
+| Enclosure             	| ABS Plastic, DIN Rail Mount, IP40 Rated 	|
 
 ### Power Requirements
 
-![power-t.png](img/power-t.png)
+|                                  	|                                                            	|
+|----------------------------------	|------------------------------------------------------------	|
+| Power Supply                     	| 24VDC ±10%                                                 	|
+| Consumption                      	| **Base:** 1.2W (50mA at 24 VDC) <br/>**36W** (1500mA at 24VDC) 	|
+| Recommended Transformer Size* 	| 1050mA / 25VA                                              	|
+
 
 ### Communication Options
 
-![communication-t.png](img/communication-t.png)
+| Communication 	| Part                                       	| Details                                                                                                                                  	|
+|---------------	|--------------------------------------------	|------------------------------------------------------------------------------------------------------------------------------------------	|
+| ![max100px](img/modbus.jpg) <br/> ![max100px](img/rs-485.jpg)            	| **Nube-xbee-485-3wire**<br/>All Models      	| **EIA-485 (BUS A,B) Three-wire, Half Duplex**<br/><br/>**Speed:** 9600, 38400, 19200<br/>**Data Bits:** 8<br/>**Parity:** None, Even, Odd    	|
+|   **LoRa**           	| **nube-xbee-lora-RFM95**<br/>Optional addon 	| **Add in radio model**<br/><br/>**Supported Frequencies:** AU915, US915, AS232, EU863<br/>**Spreading Factor:** 7<br/>**Bandwidth:** 250 kHz 	|
+
 
 ### Physical Inputs and Outputs
 
@@ -59,13 +74,6 @@ into each other, or to a Rubix Compute via the side connections, the DO terminal
 | Nube IO / IO-11        	| AS/NZS CISPR 32: 2015    	| IO-11 device   	|
 | Nube IO / IO-16        	| AS/NZS CISPR 32: 2015    	| IO-16 device   	|
 | HopeRF / RFM95         	| FCC: Class B 3M Radiated 	| LoRa RF module 	|
-
-
-
-
-
-:::tip Downloads
-:arrow_down: [Datasheet](https://raw.githubusercontent.com/NubeIO/rubix-docs/master/pdfs/hardware/io-modules/Rubix%20IO-16%20-%20Datasheet.pdf)
 
 
 
