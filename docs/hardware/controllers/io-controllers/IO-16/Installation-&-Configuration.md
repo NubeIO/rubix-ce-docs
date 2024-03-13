@@ -11,12 +11,17 @@ humidity.
 
 ## Connecting Power ##
 
-The Nube-iO iO Module is powered by a 24v AC or DC power supply on the `24 AC/DC
+The Nube-iO iO Module is powered by a 24VDC power supply on the `24VDC
 POWER` terminals as shown below.
 
-![max300](img/wiring.png)
+|           	| ![max200px](img/IO-16-wiring.png)     |
+|-----------	|----------------	|
+| Pin 1 (+) 	| 24VDC          	|
+| Pin 2 ( ) 	| Do Not Connect 	|
+| Pin 3 (-) 	| DC Ground      	|
 
-*For 24VAC Full Wave Center Tapped Transformer, refer to the Knowledge Base Article 'Rubix iO: Power Requirements and Wiring' for more instructions*
+![max500px](img/IO-16-Wiring-2.png)
+
 
 
 ## Connecting RS-485 Network (Wired Network) ##
@@ -24,7 +29,15 @@ POWER` terminals as shown below.
 When using the wired network connection, the Nube-iO iO Module RS-485 modbus
 connection is used. The connector is terminated and installed as shown below.
 
-![max300](img/iO-16-wired-network.png)
+|           	| ![max200px](img/IO-16-wiring.png)     |
+|-----------	|----------------	|
+| Pin 1 (**+**) 	| **A** or **+** of RS485 Network         	|
+| Pin 2 (-) 	| **B** or - of of RS485 Network  	|
+| Pin 3 (**G**) 	| **C** or **Ground**      	|
+
+
+
+![max500px](img/IO-16-RS-485.png)
 
 When Networking multiple Nube-iO iO Modules on an RS485 network, each controller is
 connected in a `Daisy Chain`. Controllers that are connected between 2 other controllers
