@@ -10,7 +10,7 @@ To establish communication with Modbus RS485 devices to a Rubix Compute, the RS4
 
 ## Modbus RS485 Networking
 
-| Pin       |
+| Pin  ![max200px](img/123-wiring.png)      |
 |-----------|
 | Pin 1 (+) |
 | Pin 2 (-) |
@@ -18,14 +18,12 @@ To establish communication with Modbus RS485 devices to a Rubix Compute, the RS4
 
 When wiring an RS485 network a single shielded twisted pair (STP) cable should be used.  The twisted pair cable cancels out interference and ensures that the 2 conductors are at the same lengths. Having a ground shield on the twisted pair cable further provides protection to interference on the RS485 network.
 
-![rs485.png](img/rs485.png)
-
-
 When Networking multiple devices on an RS485 network, each controller is connected in a `Daisy Chain`. Controllers that are connected between 2 other controllers will have 2 wires (one from the previous controller and one from the next controller) in the same terminal.
 
-:::Caution
-Ensure A/+ and B/- wires are kept consistent for all controllers on the network.  
-:::
+:::caution
+Ensure A/+ and B/- wires are kept consistent for all controllers on the network. 
+::: 
+
 
 ## End Of Line Termination - EOL
 
