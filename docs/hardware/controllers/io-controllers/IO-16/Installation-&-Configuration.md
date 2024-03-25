@@ -75,11 +75,20 @@ Input (UI) and Output (UO) type configurations.
 
 #### Input Type Select Switches ####
 
-![inputs-config.png](img/inputs-config.png)
+
+| Mode                                       	| Purpose                                                                 	| Setting                                                         	|
+|--------------------------------------------	|-------------------------------------------------------------------------	|-----------------------------------------------------------------	|
+| 1Ok Resistor<br/>OR<br/>Digital (Dry Contact) 	| - Thermistor Temperature Sensor. <br/>- Dry Contact /Switch/ Digital 	| ![max200px](img/switches1.png)|
+| 0-1O VDC                                   	| Measuring 0-1O VDC signals                                              	| ![max200px](img/switches2.png)|
+| 4-2O mA                                    	| Measuring 4-2O mA signals                                               	| ![max200px](img/switches3.png) 	|
 
 #### Output Type Select Switches ####
 
-![outs-config.png](img/outs-config.png)
+
+| Mode                       	| Purpose                                                                                                                                   	| Setting 	|
+|----------------------------	|-------------------------------------------------------------------------------------------------------------------------------------------	|---------	|
+| Digital Output      <br/>0/ 12VDC 	| - 0VDC OR 12VDC output signal.<br/>- Drive 12VDC Relays.<br/>- Drive LEDs<br/>- Max output current 700mA.                                    	| ![max200px](img/switches4.png)    	|
+| Analog Output<br/>0-10VDC   	| - Producing 0-10 VDC signal.<br/>- Position and Speed, control for <br/>actuators or variable speed drives.<br/>- Max output current 50mA. 	| ![max200px](img/switches5.png)     	|
 
 ### DIP Configuration Switches ###
 
@@ -95,14 +104,61 @@ Module. The value is set as a binary number (lowest digit is DIP #1) plus 1 usin
 Switches 1 to 7. See table below for examples of address settings. 1 is DIP switch UP, and
 0 is DIP switch DOWN. DIP switch #8 must remain ON/UP/1 for normal operation.
 
-![left-dip.png](img/left-dip.png)
+
+##### LEFT DIP SWITCH BANK (SW2) "Table"
+
+|               	| [Dip-Switch: 1,2 3, 4, 5, 6, 7] - Device ID/ Address (as binary number+ 1)                                       |
+|:----------------:	|:-----------------------------------:	|
+| **Switch Setting** 	| **Device ID/ Address**                	|
+| 0000000        	| 1                                 	|
+| 1000000        	| 2                                 	|
+| 0100000        	| 3                                 	|
+| 1100000        	| 4                                 	|
+| 0010000        	| 5                                 	|
+| 1010000        	| 6                                 	|
+| 0110000        	| 7                                 	|
+| 1110000        	| 8                                 	|
+| 0001000        	| 9                                 	|
+| 1001000        	| 10                                	|
+| 0101000        	| 11                                	|
+| 1101000        	| 12                                	|
+| 0011000        	| 13                                	|
+| 1011000        	| 14                                	|
+| 0111000        	| 15                                	|
+| 1111000        	| 16                                	|
+| 1111110        	| 64                                	|
+|                	| **[Dip-Switch: 8] - MUST BE ON/UP/1**| 	|
 
 #### Right Bank DIP Switches - Operation Modes ####
 
 The Right Bank of DIP Switches (labeled SW1) is used to configure various functions of the
 Nube-iO iO Module. DIP switch #8 must remain ON/UP/1 for normal operation.
 
-![right-dip.png](img/right-dip.png)
+##### RIGHT DIP SWITCH BANK (SW1) "Table"
+<br/>
+
+|                    	| **[Dip-Switch: 1, 2] - Operation Mode** 	|
+|:--------------------:	|:--------------------------------------:	|
+| **Switch Setting** 	| **Operation Mode**                     	|
+| 00                 	| RS485 (Wired)                          	|
+| 10                 	| LoRa Wireless*                         	|
+| 01                 	| RS485 -> LoRA Passthrough**            	|
+| 11                 	| Settings Reset***                       	|
+|                    	|  **[Dip-Switch: 3, 4, 5]- Baud Rate**  	|
+| **Switch Setting** 	| **Baud Rate**                          	|
+| 000                	| 38400                                  	|
+| 100                	| 9600                                   	|
+| 0110               	| 19200                                  	|
+|                    	|     **[Dip-Switch: 6, 7] - Parity**    	|
+| **Switch Setting** 	| **Parity**                             	|
+| 00                 	| None                                   	|
+| 10                 	| Even                                   	|
+| 01                 	| Odd                                    	|
+|                    	|  **[Dip-Switch:8] - MUST BE ON/UP/1**  	|
+
+_ * * LoRa is only available on IO-11-RS1 Models.<br/>
+** Use this setting* when connecting to 3rd party Modbus Devices.<br/>
+*** Set DIP switches, power cycie, then set back to operation mode setting_
 
 ## Physical Input and Output Wiring ##
 
