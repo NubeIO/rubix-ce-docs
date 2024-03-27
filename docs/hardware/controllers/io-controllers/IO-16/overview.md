@@ -22,7 +22,7 @@ When using LoRa wireless to communicate with the Rubix iO Modules the RS485 port
 used as a Modbus passthrough, this allows for wireless communication with any wired (RS485)
 Modbus device.
 
-![max200px](../../../img/io-16.png)
+![max400px](../../../img/io-16.png)
 
 # Technical Specifications
 
