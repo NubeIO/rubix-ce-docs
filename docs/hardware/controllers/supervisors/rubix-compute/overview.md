@@ -16,7 +16,7 @@ It will enable you to aggregate data from multiple sensors and send it anywhere.
 
 
 
-![rc5.png](../../../img/rc5.png)
+![max400px](../../../img/rc5.png)
 
 ## One Gateway, Multiple Data Types.
 

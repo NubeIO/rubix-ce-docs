@@ -14,7 +14,7 @@ The MicroEdge provides 3 analog Inputs, and 1 Digital Pulse Accumulation Input. 
 Powered by a 4000mAh battery, the MicroEdge has a runtime of 8 - 10 years depending on the configured push rate
 
 
-![MICROEDGE-Front.png](img/MICROEDGE-Front.png)
+![max400px](img/MICROEDGE-Front.png)
 
 
 ## Pulse Input
@@ -31,14 +31,14 @@ The  Universal Inputs can be used as Analog or Digital inputs.
 
 | Minutes | Register Number   |
 |---------|-------------------| 
-| 0.5     | ![](img\dip1.png) |
-| 1       | ![](img\dip2.png) |
-| 3       | ![](img\dip3.png) |
-| 5       | ![](img\dip4.png) |
-| 10      | ![](img\dip5.png) |
-| 15      | ![](img\dip0.png) | 
-| 30      | ![](img\dip6.png) |
-| 60      | ![](img\dip7.png) |
+| 0.5     | ![max200px](img\dip1.png) |
+| 1       | ![max200px](img\dip2.png) |
+| 3       | ![max200px](img\dip3.png) |
+| 5       | ![max200px](img\dip4.png) |
+| 10      | ![max200px](img\dip5.png) |
+| 15      | ![max200px](img\dip0.png) | 
+| 30      | ![max200px](img\dip6.png) |
+| 60      | ![max200px](img\dip7.png) |
 
 
 
