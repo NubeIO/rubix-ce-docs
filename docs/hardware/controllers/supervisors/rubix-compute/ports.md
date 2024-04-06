@@ -3,13 +3,15 @@ sidebar_position: 4
 ---
 # Networking and Interfaces
 
-![rc-networking.png](img/rc-networking.png)
+![max500px](img/rc-networking.png)
+
 # Networking
 
 | Port Name | Linux Port Name | Type  | IP            | Subnet        | Gateway      |
 |-----------|-----------------|-------|---------------|---------------|--------------|
 | ETH-1     | eth0            | Fixed | 192.168.15.10 | 255.255.255.0 | 192.168.15.1 |
 | ETH-2     | eth1            | DHCP  | na            | na            | na           |
+
 
 # RS485 ports
 
