@@ -1,18 +1,14 @@
-# Installation and Configuration #
+# 2. Installation and Configuration #
 
-## Mounting ##
+## 2.1. Mounting ##
 
-The Nube-iO iO Module is 65mm x 112mm. It is designed to be mounted on electrical DIN
-rail. It can be mounted vertically or horizontally. The controller should always be mounted in
-a location such that it will not experience very high or low temperatures, liquids or high
-humidity.
+The Rubix iO 16 is 65mm x 112mm. It is designed to be mounted on an electrical DIN rail. It can be mounted vertically or horizontally. The controller should always be mounted in a location such that it will not experience very high or low temperatures, liquids or high humidity.
 
 ![max400px](img/mounting.jpg)
 
-## Connecting Power ##
+## 2.2. Connecting Power ##
 
-The Nube-iO iO Module is powered by a 24VDC power supply on the `24VDC
-POWER` terminals as shown below.
+The Nube iO Rubix iO 16 is powered by a 24VDC power supply on the 24VDC POWER terminals as shown below.
 
 |           	| ![max200px](img/IO-16-wiring.png)     |
 |-----------	|----------------	|
@@ -24,10 +20,9 @@ POWER` terminals as shown below.
 
 
 
-## Connecting RS-485 Network (Wired Network) ##
+## 2.3. Connecting RS-485 Network (Wired Network) ##
 
-When using the wired network connection, the Nube-iO iO Module RS-485 modbus
-connection is used. The connector is terminated and installed as shown below.
+When using the wired network connection, the Nube iO Rubix iO 16 RS-485 Modbus connection is used. The connector is terminated and installed as shown below.
 
 |           	| ![max200px](img/IO-16-wiring.png)     |
 |-----------	|----------------	|
@@ -39,41 +34,30 @@ connection is used. The connector is terminated and installed as shown below.
 
 ![max500px](img/IO-16-RS-485.png)
 
-When Networking multiple Nube-iO iO Modules on an RS485 network, each controller is
-connected in a `Daisy Chain`. Controllers that are connected between 2 other controllers
-will have 2 wires (one from the previous controller and one from the next controller) in the
-same terminal. Ensure A/+ and B/- wires are kept consistent for all controllers on the
-network.
+When Networking multiple Nube iO Rubix iO 16 on an RS485 network, each controller is connected in a `Daisy Chain`. Controllers that are connected between 2 other controllers will have 2 wires (one from the previous controller and one from the next controller) in the same terminal. Ensure A/+ and B/- wires are kept consistent for all controllers on the network.
+
 
 ![max500px](img/daisy-chain.jpg)
 
 
-### Modbus RS485 Passthrough - Wireless Modbus Extender ###
+### 2.3.1. Modbus RS485 Passthrough - Wireless Modbus Extender ###
 
-Modbus RS485 Passthrough is available on IO-11 Modules equipped with a LoRa (Wireless)
-Comms. In this mode the wired Modbus RS485 data is sent wirelessly to the gateway.
+Modbus RS485 Passthrough is available on Rubix iO 16 Modules equipped with LoRa® (Wireless) Comms. In this mode, the wired Modbus RS485 data is sent wirelessly to the gateway.
+When using a Nube iO Rubix iO 16 as a wireless Modbus passthrough, the RS485 network is connected only to the third-party device and the Nube iO Rubix iO 16, as shown below. The RS485 wiring is the same as described above.
 
-When using a Nube-iO IO-11 as a wireless modbus passthrough, the RS485 network is
-connected only to the third party device and the Nube-iO iO Module, as shown below. The
-RS485 wiring is the same as described above.
+![max500px](img/3rd-party-compatible.png)
 
-![max500px](img/modbus-passthrough.jpg)
+## 2.4. Configuring the Onboard Switches ##
 
-## Configuring the Onboard Switches ##
+Several physical onboard switches must be configured correctly for proper communication and functionality. These switches are located under the front cover of the Nube iO Rubix iO 16; to remove the front cover, use a flat-blade screwdriver to gently pry the cover off from the side corners at the cover join line.
 
-There are several physical onboard switches that must be configured correctly for proper
-communication and functionality. These switches are located under the front cover of the
-Nube-iO iO Module; to remove the front cover, use a flat blade screwdriver to gently pry the
-cover off at the cover join line.
+### 2.4.1. Input and Output Type Select Switches ###
 
-### Input and Output Type Select Switches ###
-
-There are several switches under the cover of the Nube-iO iO Module that are used to set the
-Input (UI) and Output (UO) type configurations.
+There are several switches under the cover of the Nube iO Rubix iO 16 that are used to set the Input (UI) and Output (UO) type configurations.
 
 ![in-out-switches.jpg](img/in-out-switches.jpg)
 
-#### Input Type Select Switches ####
+#### 2.4.1.1. Input Type Select Switches ####
 
 
 | Mode                                       	| Purpose                                                                 	| Setting                                                         	|
@@ -82,7 +66,7 @@ Input (UI) and Output (UO) type configurations.
 | 0-1O VDC                                   	| Measuring 0-1O VDC signals                                              	| ![max200px](img/switches2.png)|
 | 4-2O mA                                    	| Measuring 4-2O mA signals                                               	| ![max200px](img/switches3.png) 	|
 
-#### Output Type Select Switches ####
+#### 2.4.1.2. Output Type Select Switches ####
 
 
 | Mode                       	| Purpose                                                                                                                                   	| Setting 	|
@@ -90,19 +74,15 @@ Input (UI) and Output (UO) type configurations.
 | Digital Output      <br/>0/ 12VDC 	| - 0VDC OR 12VDC output signal.<br/>- Drive 12VDC Relays.<br/>- Drive LEDs<br/>- Max output current 700mA.                                    	| ![max200px](img/switches4.png)    	|
 | Analog Output<br/>0-10VDC   	| - Producing 0-10 VDC signal.<br/>- Position and Speed, control for <br/>actuators or variable speed drives.<br/>- Max output current 50mA. 	| ![max200px](img/switches5.png)     	|
 
-### DIP Configuration Switches ###
+### 2.4.2. DIP Configuration Switches ###
 
-There are 2 banks of small DIP switches (8 DIP Switches per bank) under the cover of the
-Nube-iO iO Module that are used to configure various functionalities of the controller.
+There are 2 banks of small DIP switches (8 DIP Switches per bank) under the cover of the Nube iO Rubix iO 16 that are used to configure various functionalities of the controller.
 
 ![max500px](img/dips.png)
 
-#### Left Bank DIP Switches - Modbus Addressing ####
+#### 2.4.2.1. Left Bank DIP Switches - Modbus Addressing ####
 
-The Left Bank of DIP Switches (labeled SW2) is used to set the address of the Nube-iO iO
-Module. The value is set as a binary number (lowest digit is DIP #1) plus 1 using DIP
-Switches 1 to 7. See table below for examples of address settings. 1 is DIP switch UP, and
-0 is DIP switch DOWN. DIP switch #8 must remain ON/UP/1 for normal operation.
+The Left Bank of DIP Switches (labelled SW2) is used to set the address of the Nube iO Rubix iO 16. The value is set as a binary number (the lowest digit is DIP #1) plus 1 using DIP Switches 1 to 7. See the table below for examples of address settings. 1 is DIP switch UP, and 0 is DIP switch DOWN. DIP switch #8 must remain ON/UP/1 for normal operation.
 
 
 ##### LEFT DIP SWITCH BANK (SW2) "Table"
@@ -126,13 +106,14 @@ Switches 1 to 7. See table below for examples of address settings. 1 is DIP swit
 | 1011000        	| 14                                	|
 | 0111000        	| 15                                	|
 | 1111000        	| 16                                	|
-| 1111110        	| 64                                	|
+| 0000010        	| 33                                	|
+| 0000001        	| 65                                	|
+| 1111110        	| 128                                	|
 |                	| **[Dip-Switch: 8] - MUST BE ON/UP/1**| 	|
 
-#### Right Bank DIP Switches - Operation Modes ####
+#### 2.4.2.2. Right Bank DIP Switches - Operation Modes ####
 
-The Right Bank of DIP Switches (labeled SW1) is used to configure various functions of the
-Nube-iO iO Module. DIP switch #8 must remain ON/UP/1 for normal operation.
+The Right Bank of DIP Switches (labelled SW1) is used to configure various functions of the Nube iO Rubix iO 16. DIP switch #8 must remain ON/UP/1 for normal operation.
 
 ##### RIGHT DIP SWITCH BANK (SW1) "Table"
 <br/>
@@ -141,8 +122,8 @@ Nube-iO iO Module. DIP switch #8 must remain ON/UP/1 for normal operation.
 |:--------------------:	|:--------------------------------------:	|
 | **Switch Setting** 	| **Operation Mode**                     	|
 | 00                 	| RS485 (Wired)                          	|
-| 10                 	| LoRa Wireless*                         	|
-| 01                 	| RS485 -> LoRA Passthrough**            	|
+| 10                 	| LoRa® Wireless*                         	|
+| 01                 	| RS485 -> LoRa® Passthrough**            	|
 | 11                 	| Settings Reset***                       	|
 |                    	|  **[Dip-Switch: 3, 4, 5]- Baud Rate**  	|
 | **Switch Setting** 	| **Baud Rate**                          	|
@@ -155,16 +136,14 @@ Nube-iO iO Module. DIP switch #8 must remain ON/UP/1 for normal operation.
 | 10                 	| Even                                   	|
 | 01                 	| Odd                                    	|
 |                    	|  **[Dip-Switch:8] - MUST BE ON/UP/1**  	|
+*Use this setting when connecting to 3rd party Modbus Devices.*<br/>
+*Set DIP switches, power cycle, then set back to the operation mode setting*<br/>
 
-_ * * LoRa is only available on IO-11-RS1 Models.<br/>
-** Use this setting* when connecting to 3rd party Modbus Devices.<br/>
-*** Set DIP switches, power cycie, then set back to operation mode setting_
-
-## Physical Input and Output Wiring ##
+## 2.5. Physical Input and Output Wiring ##
 
 This section describes how to connect/wire physical inputs and outputs.
 
-### Physical Input Wiring ###
+### 2.5.1. Physical Input Wiring ###
 
 Wired Inputs consist of wired sensors or wired signals from other devices. They are wired to
 Digital Input (DI), or Universal Input (UI) terminals.
@@ -178,14 +157,14 @@ from other devices).
 Temperature, Humidity, Pressure, CO2, Position Feedback, etc…
 Rubix
 
-#### Digital Inputs ####
+#### 2.5.1.1. Digital Inputs ####
 
 Digital Inputs are connected between the Ground(GND) terminal and the selected UI
 terminal. There is no polarity for Digital Input wiring (ie. input wires can be swapped).
 
 ![digital-inputs.jpg](img/digital-inputs.jpg)
 
-#### Analog Inputs ####
+#### 2.5.1.2. Analog Inputs ####
 
 Analog Inputs are connected between the Ground(GND) terminal and the selected UI
 terminal. There is usually a correct polarity for Analog Inputs (ie. correct wire must be on
@@ -207,7 +186,7 @@ Rubix
 
 ![analog-input.jpg](img/analog-inputs.jpg)
 
-### Physical Output Wiring ###
+### 2.5.2. Physical Output Wiring ###
 
 Wired outputs consist of wired output signals to be sent to other devices. They are wired
 from the Digital Output (DO), Universal Output (UO), and Relay Output (R1, R2,etc.) terminals of controllers that support wired output points.
@@ -218,7 +197,7 @@ Wired Outputs are grouped into two main categories:
 activate a Switch/Dry Contact.
 2. **Analog** – Many possible states based on a range of Voltage, or Current (specific to the output type).
 
-#### Digital Outputs ####
+#### 2.5.2.1. Digital Outputs ####
 
 Digital Outputs are connected between the Ground (GND) terminal and the selected DO or
 UO terminal.
@@ -231,7 +210,7 @@ Signal will be produced at the DO/UO terminal.
 
 ![digital-outputs.jpg](img/digital-outputs.jpg)
 
-#### Analog Outputs ####
+#### 2.5.2.2. Analog Outputs ####
 
 Analog Outputs are connected between Ground (GND) terminal and the selected UO
 terminal. Analog Outputs are polarity sensitive, with Ground (GND) being 0v (-) and UO
@@ -242,9 +221,6 @@ UO terminal.
 
 ![analog-outputs.jpg](img/analog-outputs.jpg)
 
-## Adding the Antenna ##
+## 2.6. Adding the Antenna ##
 
-For LoRa Wireless communication, an antenna may be required to achieve the required range
-to the gateway controller. Please ensure the antenna is fitted to the top of the Nube-iO iO
-Module if the Rubix Compute Gateway Controller is not receiving messages from the
-Nube-iO iO Module.
+For LoRa® Wireless communication, an antenna may be required to achieve the required range to the gateway controller. Please ensure the antenna is fitted to the top of the Nube iO Rubix iO 16 if the Rubix Compute Gateway Controller is not receiving messages from the Nube iO Rubix iO 16.
