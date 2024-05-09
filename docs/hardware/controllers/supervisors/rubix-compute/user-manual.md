@@ -9,7 +9,7 @@ The Rubix Compute is the Nube iO Multi protocol Edge gateway. It is a small wire
 
 The Rubix Compute IoT multi-gateway will collect data from both wired and wireless devices in a bi-directional method. It will enable you to aggregate data from multiple sensors and send it anywhere. Such as cloud server instances, a local server, or 3rd-party BMS and automation hardware.
 
-![max400px](../../../img/rc5.png)
+![max400px](img/rc5.png)
 
 ## 1.1. One Gateway, Multiple Data Types.
 

@@ -9,7 +9,7 @@ sidebar_position: 1
 the Rubix iO 16 is Nube iO’s versatile, low-cost physical Input/Output module. It provides expandable modular monitoring and control points in a small package. With one or more modules plugged directly into the side of a Rubix Compute or wired via RS485, these Rubix iO 16 allow for BMS implementations of any size. In addition to being a slave physical input/output device, OEM options are available for standalone HVAC applications. With configuration and monitoring of the HVAC applications via Modbus, these modules allow for low-cost distributed control and central monitoring of many types of systems. the Rubix iO 16 is a pure Modbus device, making it useful in systems beyond the Nube iO platform. Optional LoRa® wireless version of the Rubix iO allows for wireless communication with the Rubix iO 16. LoRa® wireless technology provides a very long transmission range less susceptible to object interference than other wireless technologies. When using LoRa® wireless to communicate with the Rubix iO 16s the RS485 port can be used as a Modbus passthrough, this allows for wireless communication with any wired (RS485) Modbus device.
 
 
-![max400px](../../../img/io-16.png)
+![max400px](img/io-16.png)
 
 ## 1.1. Technical Specifications
 
