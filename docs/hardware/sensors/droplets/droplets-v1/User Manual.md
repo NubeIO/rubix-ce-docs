@@ -35,7 +35,7 @@ The LoRa® community is expanding rapidly, with many new contributions and devel
 * Excellent penetration through obstacles such as walls and ceilings
 * Highly versatile application, which translates into easier integration and a more efficiant installation
 
-![max200px](../../../img/droplet.png)
+![max200px](img/droplet.png)
 
 
 ## 1.2. LoRa® capabilities

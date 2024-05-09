@@ -10,7 +10,7 @@ It seamlessly captures data from your equipment and other assets, enabling you t
 
 The micro Edge supports `3x UI` (universal inputs) and `1x pulse input` (normally used for a gas or water meter reading)
 
-![micro-edge.png](../../../img/micro-edge.png)
+![max400px](img/MICROEDGE-Front.png)
 
 :::info
 Up to 5 year battery life with a lithium battery.
