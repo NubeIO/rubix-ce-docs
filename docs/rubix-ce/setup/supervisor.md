@@ -4,72 +4,46 @@ sidebar_position: 3
 
 # Supervisor
 
-The Rubix Platform CE (Computer Edition) application can be used to setup and program multiple instances of the Rubix Assist (each customer
-has their own instance of Rubix Assist running in the cloud or on premises) so the user of Rubix CE can engineer multiple
-sites or devices at once.
+The Rubix Platform CE (Computer Edition) application enables the setup and programming of multiple 
+instances of Rubix Assist. Each customer has their own instance of Rubix Assist, which can be running
+either in the cloud or on-premises. This setup allows users of Rubix CE to engineer multiple sites or 
+devices simultaneously.
 
-An admin can generate multiple tokens for each site specific customer and can also remove the customer from the site by
-revoking the specific token. See 'Generating a Token'.
-
+Administrators have the ability to generate multiple tokens for each site-specific customer. Additionally, 
+they can revoke access for a specific customer from a site by revoking the corresponding token. For 
+detailed instructions, please refer to the section on 'Generating a Token'.
 
 :::info Before starting you need the following:
-1. A **[Nube iO Cloud Account](docker.md#nube-io-cloud-account)**
-2. And/or a Nube iO **[Rubix Compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)**
+1. **[Nube iO Cloud Account](docker.md#nube-io-cloud-account)**.
+2. And/Or Nube iO **[Rubix Compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)**.
 :::
 
 ## Adding a Supervisor
 
-1. Open the Supervisor page
-2. Click on the Add ![add-button.png](../img/apps/add-button.png)
-3. Follow the steps in the wizard
+1. Open the Supervisor page.
+2. Click on the Add ![add-button.png](../img/apps/add-button.png).
+3. Follow the steps in the short clip.
 
-:::Info The default IP's of a Rubix Compute are:<br/>
+:::info Default IP(s) of Rubix Compute:<br/>
 ETH 1: `192.168.15.10` <br/>
 ETH 2: `AUTO DHCP` <br/>
-Please contact `Nube iO support` for default username and password. Email support@nube-io.com
+For the default username and password, please contact Nube iO support at support@nube-io.com. 
 :::
 
 ![max800px](../img/apps/add-supervisor-1.png)
 
-The wizard will follow you through all the required steps.
+Short clip below will guide you through the configuration.
 
 ![max800px](img/adding-supervisor.gif)
 
 
-### Name
+## Supervising Hosting Option
+A supervisor can either be a Rubix Compute or Rubix OS running in the cloud. A Supervisor serves as the entry point to the functionalities and navigation of Rubix OS. The supervisor's function is to host and manage all Rubix Compute devices.
 
-The name of the **Supervisor**
-
-### Short Name
-
-The name that will appear on the menu sidebar
-
-### Display Colour
-
-The colour that will appear on the `sidebar`
-
-### Description
-
-Optional description of the setup of the **Supervisor**
-
-### Enable
-
-- If you `enable` **Supervisor** it will appear on the `sidebar`
-- If you `disable` **Supervisor** it will appear on the `sidebar`
-
-:::Tip
-Once the  **Supervisor** is added you can `right-click` to **Enable Supervisor** or **Disable Supervisor**
-:::
-
-### Network Information
-
-You will have 3 optons to choose from as below:
-
-## Option 1: Using a Rubix Compute as the master
-
-:::Info
-* A Rubix Compute is required to use this option.
-* This option is the simplest way to get started with Nube iO products.
+### Option 1: Nube iO Device
+:::info
+* This option requires a Rubix Compute.
+* It is the simplest method to commence with Nube iO products.
 :::
 
 ```mermaid
@@ -79,12 +53,11 @@ flowchart TD
     C --> E[Rubix-Compute-2]
     C --> F[Rubix-Compute-3]
 ```
+### Option 2: Nube iO Cloud
 
-## Option 2: Using a Nube iO Cloud Account
-
-:::Info
-* Both a Rubix Compute and a Nube iO Cloud Account is required to use this option.
-* Please contact `nube-io support` for access to a Nube iO Cloud Account. Email support@nube-io.com
+:::info
+* This option necessitates both a Rubix Compute and a Nube iO Cloud Account.
+* Please contact `nube-io support` at support@nube-io.com for access to a Nube iO Cloud Account.
 :::
 
 ```mermaid
@@ -95,15 +68,15 @@ flowchart TD
     C --> F[Rubix-Compute-3]
 ```
 
-## Option 3: Using your PC as a Running Docker
+### Option 3: Personal Computer via Device Simulation
 
 :::info
-* No hardware is need for testing this.
-* You must install docker on your local PC.
+* No hardware is needed for testing this option.
+* Install docker on your local PC.
 :::
 
-:::Caution
-This option is for advanced use only see: **[setup of docker](docker.md)**
+:::caution
+This option is for advanced use only. Please refer to the **[setup of docker](docker.md)** guide.
 :::
 
 ```mermaid
@@ -112,12 +85,63 @@ flowchart TD
     C[Simulated Rubix-Assist Your PC] --> D[Simulated Rubix-Compute]
 ```
 
+## Address
+IP or web address of the Nube iO device/cloud you wish to connect.
 
-# Right-Click Options
+## Port
+Port of the Nube iO device/cloud you wish to connect. Default port: 1659.
 
-## Ping 
-Will ping the supervisor on the Network.
+## Supervisor Name
 
-## Enable/Disable Supervisor 
-Is the same as Edit and will change the value of `enable`, when enabled it will display on the side-bar.
+Name of the **Supervisor**.
 
+## Short Name
+
+Name that will appear on the menu `sidebar`.
+
+## Description
+
+An optional description of the **Supervisor**.
+
+## Advance Options
+
+### Supervisor Sidebar Icon Color
+
+Set the background color of the `sidebar` supervisor icon.
+
+### Supervisor Group Name
+
+Set group name to empty to remove a supervisor from a group. Supervisors assigned with the same group name will be put into the same group.
+
+### Supervisor Latitude
+
+Set the latitude of a supervisor.
+
+### Supervisor Longitude
+
+Set the longitude of a supervisor.
+
+
+
+
+:::tip
+Once the  **Supervisor** is created it is automatically enabled. `right-click` the supervisor's name to **Enable Supervisor** or **Disable Supervisor**.
+
+- `Enable` **Supervisor** will display it on the `sidebar`.
+- `Disable` **Supervisor** remove it from the `sidebar`.
+:::
+
+
+
+
+
+
+
+## Ping Supervisor
+During the setup, you will have an option to ping the supervisor to verify that the destination address exists and can accept requests from the Rubix.
+
+## Configure Token 
+A Rubix User Token is required for accessing the functionalities of a supervisor. A user can generate multiple tokens for each site specific user and can also add or remove new users by providing or revoking specific user tokens.
+
+## Install Rubix OS
+Select and install the desired Rubix OS version for the newly created supervisor.

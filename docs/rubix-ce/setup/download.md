@@ -9,16 +9,16 @@ sidebar_position: 1
 :::
 
 # OS support
-Rubix CE is supported for Windows, Mac and Linux operating systems.
+Rubix CE is compatible with Windows, Mac, and Linux operating systems.
 
 ## Download 
 
-For windows download the version build name called `windows` <br/>
-for example named `rubix-ce-0.1.1-ae3be517.windows.zip`
+To download for Windows, look for the version build labeled as `windows` <br/>
+For example, latest window version is labeled as `rubix-ce-1.0.0-rc.9-aca0493f.windows.zip`
 
 
 :::info get the Latest version
-On github `releases` page the newest version of Rubic CE will be marked with a Green **Latest** icon
+Nube iO GitHub `releases` page will indicate the latest version of Rubix CE with a green **Latest** icon.
 :::
 
 
@@ -30,16 +30,17 @@ On github `releases` page the newest version of Rubic CE will be marked with a G
 
 # From Flow Framework to Rubix OS
 
-Any Rubix Compute can be updated/migratred by Nube iO at anytime upon request by support@nube-io.com. <br/>
-The process takes around 5 minutes an no data will be lost during the process.
-Upgrades can sometimes be requried after major firmware releases.
+
+Nube iO is fully equipped to perform updates or migrations on any Rubix Compute system upon request. Should such services be required, please do not hesitate to contact support@nube-io.com for further assistance. <br/><br/>
+The process typically spans approximately 5 minutes, during which no data will be lost. 
+It's worth noting that upgrades may occasionally become necessary following significant firmware releases.
 <br/>
 
 
-:::danger backwards compatible
-Rubix CE is not backwards compatible to the Nube iO Flow Framework or Rubix Platform <br/>
-Rubix Wires is not backwards compatible to Rubix Edge Wires <br/>
-`rubix-os` is not compatible on the Nube iO `edge-28` 
+:::danger backward compatibility
+- Rubix CE does not support backward compatibility with Nube iO Flow Framework or the Rubix Platform. <br/>
+- Rubix Wires does not offer backward compatibility with Rubix Edge Wires. <br/>
+- `rubix-os` is incompatible with Nube iO `edge-28` 
 :::
 
 

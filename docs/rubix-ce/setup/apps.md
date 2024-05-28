@@ -4,20 +4,18 @@ sidebar_position: 5
 
 # Apps
 
-:::danger internet connection
-A token must be added so the apps can be downloaded over the internet, the token is provided to each individual via the Nube iO Support team upon each request and is
-valid for up one year. Support can be contacted at Support@nube-io.com
+:::danger Internet Connection
+To download apps over the internet, you need to add a token. This token is provided by the Nube iO Support team to each individual upon request and remains valid for up to one year. For assistance, please contact Support@nube-io.com.
 :::
 
 :::danger user home directory
-Installing apps will add zip files in your user home directory  **/home/my-user/rubix/store/apps**
+When installing apps, zip files will be added to your user home directory at **/home/my-user/rubix/store/apps**.
 :::
 
 # Managing apps
 
-Apps are installed on each Rubix Compute similar to an App on a PC, Smart Phone or Tablet.
-
-Examples of Nube iO Apps:
+Rubix Compute is akin to installing or managing apps on a PC, smartphone, or tablet.
+Examples of Nube iO Apps includes:
 
 * BACnet Server
 * LoRaWAN Protocol
@@ -25,7 +23,7 @@ Examples of Nube iO Apps:
 
 # To install an App
 
-1. Make sure your unique token is added.  Refer to the Settings section of the Support Docuemtnation to add a token.
+1. Ensure that your unique token is added. Please refer to the `Settings` section of the Support Documentation for instructions on how to add a token.
 2. Click on the Plus (+) icon add dropdown the Apps Manager.
 3. Once in the Apps Manager you can install, uninstall or start, stop and restart any App.
 
