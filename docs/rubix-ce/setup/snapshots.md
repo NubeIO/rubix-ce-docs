@@ -2,13 +2,13 @@
 sidebar_position: 7
 ---
 
-# Backup & Restoring
+# Backup & Restore
 
 :::caution
-To create a backup you need either 2 x Rubix Computes OR 1 x Rubix Compute and 1 x Nube iO Cloud account
+To create a backup, you'll require either 2 x Rubix Computes or 1 x Rubix Compute along with 1 x Nube iO Cloud account.
 :::
 
-The backup & restoring service is used for the user to take a backup of a Rubix Compute or Nube iO Cloud. Once a backup is taken the user can perform the following:
+The backup & restoring service allows users to take a backup of a Rubix Compute or Nube iO Cloud. Once a backup is created, users can perform the following actions:
 
 - Save the backup to your PC for safe keeping
 - Restore a backup you took for a particular device

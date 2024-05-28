@@ -48,7 +48,7 @@ Rubix Edge is used to connect to the Rubix OS.
 
 ### Ports
 
-Operateson port `http`
+Operates on port `http`
 ```
 1659
 ```

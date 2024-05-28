@@ -4,7 +4,9 @@ sidebar_position: 4
 
 ## Hosts/Rubix Computes
 
-A Rubix Compute (host) is to be added under a Supervisor.
+**Rubix Compute** refers to a computing device or platform developed by **Nube iO**. It's designed for various applications in building automation and IoT (Internet of Things) contexts. Rubix Compute can serve as a central hub for collecting, processing, and analyzing data from sensors, devices, and systems within a building or industrial environment. It typically runs specialized software or applications developed by Nube iO or third-party developers to enable functionalities such as data monitoring, control, and optimization. Rubix Compute plays a crucial role in creating smart and interconnected building systems by facilitating data-driven decision-making and automation.
+
+A Rubix Compute (host) is to be added under a `Supervisor`.
 
 :::caution
 At this point, you should have already added a `supervisor`. If not, please refer to the instructions for adding a **[supervisor](supervisor.md)**.
@@ -87,7 +89,6 @@ Open the **device/apps**
 
 Right Click on the device you want to add the `vpn` to
 
-![max800px](../../hardware/controllers/supervisors/rubix-compute/img/enable-vpn.png)
 
 
 

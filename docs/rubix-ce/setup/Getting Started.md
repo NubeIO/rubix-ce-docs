@@ -22,8 +22,8 @@ To get started with Rubix CE, the following are required:
 
 ## Install
 
-No installation is necessary. Simply right-click to run Rubix CE.
-If running on Windows machine, Windows Defender may bar you from running the software. Simply click `More Info` then `Run Anyway`.
+No installation is necessary. Simply right-click to run Rubix CE. <br/>
+If you're running the software on a Windows machine, Windows Defender might prevent its execution. In such cases, simply click on `More Info` and then proceed by selecting `Run Anyway.`
 
 ![max300px](../img/apps/more-info.png)
 
