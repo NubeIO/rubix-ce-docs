@@ -22,7 +22,7 @@ These features provide users with robust capabilities for managing and controlli
 
 | Name         | Is a Protocol      | Supports <br/>Networks | Description                                                                   | Use Case                                             | 
 |--------------|--------------------|------------------------|-------------------------------------------------------------------------------|------------------------------------------------------|
-| System       | Yes (RestApi)       | Yes                    | Acts as a generic proxy for networks/devices/points not related to any protocol   | networks/devices/points not related to any protocol	Useful for managing schedules and proxy points                              | 
+| System       | Yes (RestApi)       | Yes                    | Acts as a generic proxy for networks/devices/points not related to any protocol   | Useful for managing schedules and proxy points                              | 
 | Lora         | Yes (LoRa)           | Yes                    | Used with Nube-iO LoRa sensors                                               | Ideal for implementing wireless sensor networks                | 
 | LoRaWAN     | Yes (LoRaWAN)        | Yes                    | Compatible with various LoRaWAN sensors                                      | Suitable for integrating LoRaWAN sensors                 | 
 | BACnet master | Yes (BACnet)  | Yes                    | Facilitates read/write operations with BACnet devices                                               | Essential for acting as a BACnet master                  | 
