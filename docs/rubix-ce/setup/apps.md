@@ -44,9 +44,16 @@ Apps can be installed by using the `Download` icon (down arrow) on the row of th
 
 ![max800px](img/adding-app.gif)
 
+## Updating Existing Apps/Services
+
+Updating an existing App/Service follows a process similar to installing one. The primary difference lies in the displayed `Version`, which indicates the currently installed version instead of the available versions for installation.
+
+1. Click the `Download` arrow icon on the row of the App/Service that is required to be installed.
+2. Install app window will pop up on the screen.
+3. Choose the desired App version from the `Select Release Version` drop-down menu, typically opting for the latest version available, and proceed by clicking the `Install button`  in blue button.
+4. Wait for installation to be completed and  for `Installation Complete` to be displayed. Click `Done`.
 
 ## Apps/Service Status
-
 
 Within the Apps/Services tab, you'll find tiles representing each installed App. Each tile features a colored status label indicating the current status of the respective service.
 
@@ -56,14 +63,12 @@ Within the Apps/Services tab, you'll find tiles representing each installed App.
 * **Stopped** (Red) - means the app/service is not running (may not be Enabled).
 * **Activating** (Yellow) - means the App/Service is starting, but is not yet running.
 
-## Updating Existing Apps/Services
+## Delete Database
+By clicking `Delete Database` and confirming it with a subsequent click on `Confirm`, you will initiate the irreversible process of permanently removing the specific app's database.
 
-Updating an existing App/Service follows a process similar to installing one. The primary difference lies in the displayed `Version`, which indicates the currently installed version instead of the available versions for installation.
+## Open Log
 
-1. Click the `Download` arrow icon on the row of the App/Service that is required to be installed.
-2. Install app window will pop up on the screen.
-3. Choose the desired App version from the `Select Release Version` drop-down menu, typically opting for the latest version available, and proceed by clicking the `Install button`  in blue button.
-4. Wait for installation to be completed and  for `Installation Complete` to be displayed. Click `Done`.
+By clicking on "Logs," a pop-up window will appear displaying a log table. This table includes timestamps, levels, and messages for the logs. You can filter these logs using a search function
 
 ## More Options
 
@@ -78,6 +83,8 @@ Initiating the `Start` function for an enabled app will activate and set the app
 ### Restart
 
 Clicking `Restart` will trigger the app to undergo a restart process. You can monitor the `Active` label, which indicates the duration for which the service has been running. Following a restart, the active time displayed should reset to a very low value.
+
+Additionally, there's an option to schedule an auto restart, enabling the app to automatically restart at predefined intervals.
 
 ### Stop
 
