@@ -8,13 +8,13 @@ sidebar_position: 1
 
 Wires is a programming tool that facilitates the integration, management, and automation of various devices, systems, and processes within a networked environment. It provides tools and capabilities for creating, configuring, and controlling workflows, data flows, and communication protocols between different components.
 
-The term wires refers to the connections or pathways through which data, commands, or signals flow between different elements, such as sensors, actuators, controllers, and software applications. These connections can be established, configured, and managed within the Rubix Wires platform, enabling seamless interaction and interoperability between diverse technologies and systems.
+The term wires refers to the connections or pathways through which data, commands, or signals flow between different elements, such as sensors, actuators, controllers, and software applications. These connections can be established, configured, and managed within the Wires, enabling seamless interaction and interoperability between diverse technologies and systems.
 
 Wires employs a concept called "Flows," which are a type of logical programming constructed by connecting nodes to create customized functionalities. These flows are dynamically built and modified during runtime, allowing for real-time adjustments. Additionally, flows can be exported and imported in JSON format, facilitating easy sharing and replication of custom functionalities across different instances or environments.
 
 # What is a node
 
-A node represents a block of logic or functionality within the system. There are various types of nodes, each representing different functions or operations that can be performed. These nodes can be connected by linking their inputs and outputs, allowing values to be passed between them. This interconnected network of nodes forms logical flows, enabling the creation of complex workflows and automation processes within the Rubix Wires platform. By connecting nodes together, users can build custom logic and implement specific functionalities tailored to their needs, leveraging the flexibility and versatility of the node-based architecture.
+A node represents a block of logic or functionality within the system. There are various types of nodes, each representing different functions or operations that can be performed. These nodes can be connected by linking their inputs and outputs, allowing values to be passed between them. This interconnected network of nodes forms logical flows, enabling the creation of complex workflows and automation processes within the Wires. By connecting nodes together, users can build custom logic and implement specific functionalities tailored to their needs, leveraging the flexibility and versatility of the node-based architecture.
 
 # About The Editor
 
@@ -26,7 +26,7 @@ This arrangement forms what is known as a **Flow Program**, where nodes are inte
 
 # Flow Program
 
-**Flow Program** is essentially a collection of nodes and their interconnected wired connections that collectively form a complete program. Each node represents a specific function or logic block, and the connections between nodes define how data flows and how operations are performed within the program. By organizing and configuring nodes in a meaningful way, users can create comprehensive programs tailored to their specific needs, leveraging the flexibility and versatility of the Wires platform.
+**Flow Program** is essentially a collection of nodes and their interconnected wired connections that collectively form a complete program. Each node represents a specific function or logic block, and the connections between nodes define how data flows and how operations are performed within the program. By organizing and configuring nodes in a meaningful way, users can create comprehensive programs tailored to their specific needs, leveraging the flexibility and versatility of Wires.
 
 # Editor Overview
 
@@ -37,6 +37,11 @@ The **editor** serves as the workspace where you can both write and test your pr
 # Editor Buttons
 
 Editor buttons are used to do the following
+* **Deploy** - any changes you have made to the configuration will be saved and applied, allowing the edited program or workflow to take effect
+* **Settings** - Provides access to configuration options and settings related to the editor interface or program behavior.
+* **Help** - Offers assistance and guidance in navigating and utilizing the editor effectively.
+* **Import/Export** -  Enables importing or exporting configurations or setups of nodes and connections, allowing users to share or transfer their work between different instances or environments.
+* **Wipe Flow** - Clears the current configuration or setup of nodes and connections from the editor, effectively resetting the workspace to its initial state. This can be useful for starting fresh or removing unwanted changes.
 
 ![max800px](img/editor-buttons.png)
 

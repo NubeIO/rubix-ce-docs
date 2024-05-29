@@ -23,26 +23,20 @@ Additional info on [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configurati
 
 ## Changing the Rubix Compute IP address
 
-
-ChatGPT
 To access the networking settings for a device on the supervisor level, follow these steps:
 
-Navigate to the device's settings tab.
-Click on the 'networking' tab within the settings.
-Look for the notepad icon and click on it.
-
-2. Follow the wizard to
-3. The wizard will then prompt to reboot the Rubix Compute. Reboot the Rubix Compute to for the new IP address to be updated.
-
+* Navigate to the device's settings tab.
+* Click on the 'networking' tab within the settings.
+* Look for the notepad icon and click on it.
 ![max800px](img/ip-1.png)
 
-Wait for the pop-up window to appear, which typically contains options or configurations related to the device's networking settings.
-Set the IP address as either static or dynamic.
+* Wait for the pop-up window to appear, which typically contains options or configurations related to the device's networking settings.
+* Set the IP address as either static or dynamic.
 ![max800px](img/ip-2.png)
 
-If you choose to set a static IP address during the networking configuration process, you will typically be prompted to enter the specific IP address, subnet mask and gateway.
+* If you choose to set a static IP address during the networking configuration process, you will typically be prompted to enter the specific IP address, subnet mask and gateway.
 ![max800px](img/ip-3.png)
 
-After making changes to the networking settings for the Rubix Compute device, the wizard will likely prompt you to reboot the device. This reboot is necessary for the new IP address or any other networking configurations to take effect. Once prompted, proceed to reboot the Rubix Compute device to ensure that the changes are applied successfully.
+* After making changes to the networking settings for the Rubix Compute device, the wizard will likely prompt you to reboot the device. This reboot is necessary for the new IP address or any other networking configurations to take effect. Once prompted, proceed to reboot the Rubix Compute device to ensure that the changes are applied successfully.
 
 
