@@ -24,7 +24,6 @@ Additional info on [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configurati
 ## Changing the Rubix Compute IP address
 
 To access the networking settings for a device on the supervisor level, follow these steps:
-
 * Navigate to the device's settings tab.
 * Click on the 'networking' tab within the settings.
 * Look for the notepad icon and click on it.
