@@ -6,58 +6,59 @@ sidebar_position: 1
 
 # Overview
 
-A Flow is a type of logical programming that is created by linking nodes together to create custom functionality. These
-flows are build and modified in live runtime. Flows can be exported and imported as JSON.
+Wires is a programming tool that facilitates the integration, management, and automation of various devices, systems, and processes within a networked environment. It provides tools and capabilities for creating, configuring, and controlling workflows, data flows, and communication protocols between different components.
+
+The term wires refers to the connections or pathways through which data, commands, or signals flow between different elements, such as sensors, actuators, controllers, and software applications. These connections can be established, configured, and managed within the Rubix Wires platform, enabling seamless interaction and interoperability between diverse technologies and systems.
+
+Wires employs a concept called "Flows," which are a type of logical programming constructed by connecting nodes to create customized functionalities. These flows are dynamically built and modified during runtime, allowing for real-time adjustments. Additionally, flows can be exported and imported in JSON format, facilitating easy sharing and replication of custom functionalities across different instances or environments.
 
 # What is a node
 
-A node is a block of logic in Wires. There are many nodes representing many functions. You can connect the inputs and
-outputs of a node to other nodes to send values between nodes (thus creating logic flows).
+A node represents a block of logic or functionality within the system. There are various types of nodes, each representing different functions or operations that can be performed. These nodes can be connected by linking their inputs and outputs, allowing values to be passed between them. This interconnected network of nodes forms logical flows, enabling the creation of complex workflows and automation processes within the Rubix Wires platform. By connecting nodes together, users can build custom logic and implement specific functionalities tailored to their needs, leveraging the flexibility and versatility of the node-based architecture.
 
 # About The Editor
 
-The Editor is used to connect nodes together to write your program
+The **Editor** within Wires serves as the interface for connecting nodes to construct your program. For instance, you can add three nodes: `two const-num nodes` and `one add node`. Then, you would connect the `output` of each `const-num node` to the `inputs in1 and in2` on the `add node`, respectively.
 
-For example add 3x nodes 2x **const-num** and node **add** and wire each **const-num** output into input `in1` and `in2`
-on the **add** node
-
-What we have created is called a **Flow Program**
+This arrangement forms what is known as a **Flow Program**, where nodes are interconnected to define the logic and functionality of the program. By linking nodes together in this manner, you can create customized workflows and implement specific tasks within the Wires environment.
 
 ![max800px](img/simple-example.png)
 
 # Flow Program
 
-A **Flow Program** is a collection of nodes and wired connections that will create complete program
+**Flow Program** is essentially a collection of nodes and their interconnected wired connections that collectively form a complete program. Each node represents a specific function or logic block, and the connections between nodes define how data flows and how operations are performed within the program. By organizing and configuring nodes in a meaningful way, users can create comprehensive programs tailored to their specific needs, leveraging the flexibility and versatility of the Wires platform.
 
 # Editor Overview
 
-The editor is where to write and test your programs
+The **editor** serves as the workspace where you can both write and test your programs in Wires. Here, you can add, configure, and connect nodes to create your logic flows or programs. Additionally, you can simulate or run your programs within the editor environment to test their functionality and behavior. This allows for iterative development, debugging, and refinement of your programs until they meet your desired specifications and requirements. Essentially, the **editor** provides a user-friendly interface for the entire program development lifecycle within Wires.
 
 ![max800px](img/overview.png)
 
 # Editor Buttons
 
-The buttons are used to do the following
+Editor buttons are used to do the following
 
 ![max800px](img/editor-buttons.png)
 
 # Shortcuts
 
-* Hold Control and Left click to select nodes or connections.
-* Hold Control and A to select all node.
-* Hold Control and E for export to nodes .
-* Hold Control and I for import to nodes.
-* Hold Control and C to copy nodes.
-* Hold Control and D to duplicate nodes.
-* Hold Control and Z to undo.
-* Hold Control and Y to redo.
-* Hold Control and X to cut.
-* Hold Control and S to save/deploy flow.
+- Hold Control and left-click to select nodes or connections.
+- Hold Control and press A to select all nodes.
+- Hold Control and press E to export to nodes.
+- Hold Control and press I to import to nodes.
+- Hold Control and press C to copy nodes.
+- Hold Control and press D to duplicate nodes.
+- Hold Control and press Z to undo.
+- Hold Control and press Y to redo.
+- Hold Control and press X to cut.
+- Hold Control and press S to save/deploy the flow.
+
+These shortcuts provide quick access to commonly used functions, enhancing efficiency and productivity while working in the editor.
 
 # Looping
 
 :::danger Looping
-Looping the result of a node back to nodes that are connected into itself is **not** allowed
+In Wires, it's not permitted to create loops by connecting the output of a node back to nodes that are part of its own input or connected into itself. This restriction ensures that the program doesn't enter an infinite loop, which could potentially cause unintended behavior or system instability. By disallowing such loops, Wires promotes the creation of well-defined and manageable logic flows within the program.
 :::
 
 ![looping.png](img/looping.png)
