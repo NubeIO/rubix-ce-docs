@@ -14,7 +14,7 @@ Rubix CE is compatible with Windows, Mac, and Linux operating systems.
 ## Download 
 
 To download for Windows, look for the version build labeled as `windows` <br/>
-For example, latest window version is labeled as `rubix-ce-1.0.0-rc.9-aca0493f.windows.zip`
+For example, latest window version is labeled as `rubix-ce-1.0.0-e6cdfba2.windows.zip`
 
 
 :::info get the Latest version
