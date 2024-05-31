@@ -16,3 +16,10 @@ Click ![update-status-button.png](../img/apps/update-status-icon.png) to update 
 <li>Inspect the SIM integrity.</li></ul>
 :::
 
+### System Performace
+If **Rubix CE** experiences performance issues, you can diagnose potential causes by accessing system information in the `Info` section under `settings`. This information includes CPU usage, memory usage, swap memory usage, and disk usage. Analyzing these metrics can help pinpoint the source of performance degradation and guide troubleshooting efforts to address the underlying issues.
+
+![max800px](../img/apps/info.png)
+
+
+
