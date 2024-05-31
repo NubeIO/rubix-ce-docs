@@ -17,7 +17,7 @@ See more info for each protocol:
 
 To incorporate a Driver for a new network, go back to the Driver Tab within the controller page. Click on "+ Create", then pick the driver from the dropdown menu. If the necessary Driver isn't visible in the menu, you'll need to install the plugin as outlined in the previous section.
 
-![max900px](./img/driver-page.png)
+![max800px](./img/driver-page.png)
 
 ## Adding a Network
 

@@ -4,10 +4,9 @@ sidebar_position: 6
 
 # Getting Started
 
-coming soon
+This page is under construction.
 
-## check token
+## Check Token
 
-JWT token
+JWT token - https://jwt.io/
 
-https://jwt.io/

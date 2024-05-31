@@ -25,7 +25,7 @@ see below for installing the BACnet-driver and editing the sever settings
 
 ![max800px](img/bacnet-config.gif)
 
-## BACnet server settings
+## BACnet Server Settings
 
 ![config.png](img/config.png)
 

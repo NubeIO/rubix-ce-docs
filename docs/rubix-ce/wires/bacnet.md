@@ -2,46 +2,43 @@
 sidebar_position: 6
 ---
 
-# BACnet
-
-The server node is used to read/write value to the **[driver-bacnet](../setup/apps.md)** so the rubix-compute can be
-added to a BACnet-network
+## About BACnet
+The server node serves the purpose of reading and writing values to the **[driver-bacnet](../setup/apps.md)**. This functionality enables Rubix Compute to be integrated into a BACnet network.
 
 :::tip
-See also: **[tutorials bacnet-device](../../tutorials/bacnet-device.md)**
+See also: **[Tutorials BACnet-device](../../tutorials/bacnet-device.md)**
+The BACnet-server node serves two primary use cases:
+
+1. Integrating hardware input/output (e.g., sensors and 0-10dc) into Rubix Compute by adding the **[Nube-IO IO-16](../../hardware/controllers/io-controllers/IO-16/overview.md)**.
+2. Adding proxy points (Analog Values and Binary Values) to the driver-bacnet.
+Before proceeding, ensure you have installed the required apps, particularly **[driver-BACnet](../setup/apps.md)**.
 :::
 
-The BACnet-server node has 2x use cases
-
-1. Adding the IO (hardware input/output eg: sensors and 0-10dc) to the rubix-compute, via adding the **[Nube-IO IO-16](../../hardware/controllers/io-controllers/IO-16/overview.md)**
-2. Adding proxy points (AVs and BVs) to the driver-bacnet
-
-:::info Important thing to note before proceeding:
-* Install required **[apps](../setup/apps.md)** **driver-bacnet**
+:::danger driver networks conflict
+In Rubix, you can't simultaneously add a **Modbus network** in the driver's settings and the **BACnet-server** node using the <u>same serial-port</u>. You have to **choose one** or the other, as they cannot coexist on the same port.
 :::
 
-:::danger modbus networks conflict
-You cant add a `modbus network` in `driver's` and the `BACnet-server` node in rubix-wires with the same `serial-port`, Its one or the other
-:::
+## Setup
 
-# Setup
-
-## Add the bacnet-server node
-
-1. Add the bacnet-server node
-2. set the number of IO-16s if applicable to your use case, and also set the serial port
+### Add the bacnet-server node
+1. Open the **Rubix Wires** interface.
+2. Locate and select the option to add a new node.
+3. Choose the **BACnet-server** node from the available options.
+4. Configure the node by setting the number of IO-16s if applicable to your use case.
+5. Set the serial port according to your hardware setup.
+5. Save/Deploy the configuration.
 
 ![bacnet-server.png](img/bacnet-server.png)
 
-## Adding points
-
-1. Open the bacnet-server node by right-click and `Open sub flow`
-2. Once inside you can right-click to add nodes or drag from the pallet
-3. Add a new node either: `AI, AO, AV`
-4. Set the node name to set the `BACnet` object name
+### Adding points
+Following steps below allows you to effectively add points to the BACnet-server node in Rubix Wires.
+1. Open the BACnet-server node by right-clicking and selecting **Open sub flow**.
+2. Once inside, you can add nodes by right-clicking or dragging from the palette.
+3. Add a new node, selecting either `AI (Analog Input)`, `AO (Analog Output)`, or `AV (Analog Value)`.
+4. Set the node name to specify the BACnet object name for the point.
 
 :::tip
-Make sure you set the node `name` to reflect the point `name` on the `BACnet network`
+Ensure to set the `node name` to accurately reflect the point name on the `BACnet network`.
 :::
 
 
@@ -54,53 +51,56 @@ Make sure you set the node `name` to reflect the point `name` on the `BACnet net
 | analogue-value  | bacnet   | to read and and write values to AVs on the bacnet-server, eg a set-point | writeable via in14 & in15 |
 | binary-value    | bacnet   | to read and and write values to BVs on the bacnet-server, eg an enable   | writeable via in14 & in15 |
 
-## Adding IO-16s
+### Adding IO-16s
 
 Adding upto 4x IO16s will make the rubix-compute a BACnet-ip IO device
 
 ![rc-with-io16s.png](../../hardware/controllers/supervisors/rubix-compute/img/rc-with-io16s.png)
 
 :::info
-**[more info on adding IO16s](../../hardware/controllers/supervisors/rubix-compute/overview.md#io-add-on-modules)**
+**[more info on adding IO16s](../../hardware/controllers/supervisors/rubix-compute/user-manual#IO-16)**
 :::
 
-### adding a AI or AO
+### Adding a AI or AO
 
 :::caution
-we don't need to add a modbus network in flow-framework to talk to the IO-16s
+In the flow-framework, there's no necessity to add a Modbus network to communicate with the IO-16s.
 :::
 
 :::caution
-set up the BACnet-Server configuration with the number of IO-16s you will add more info **[bacnet-config](../drivers/bacnet/bacnet-server/bacnet-server.md#bacnet-server-settings)**
+To configure the BACnet-Server with the desired number of IO-16s, you typically access the BACnet-Server settings interface and input the quantity of IO-16s you intend to add.
 :::
 
 
-Let's start with an example of adding UI-1 on IO-2
+To proceed, a systematic outline of each step for adding UI-1 on IO-2 is as follows:
 
-1. power down the rubix-compute and plugin 2x IO16s (note the IO-16s are powered via the rubix-compute)
-2. set IO16 number 1 to address 1 and number 2 to address 2 via the dip switches, also set the **baud rate** to **38400
-   ** **[more info on setting up the IO-16s](../../hardware/controllers/io-controllers/IO-16/parameters.md)**
-3. repower the rubix-compute
-4. open the bacnet-server node
-5. add an analogue-input node
-6. right-click on the node and open the node `settings`
-7. set the `IO Device Number` and our example it will be 2 (this is the 2nd IO-16)
-8. set the `UI Number` to 1 (as in UI1)
-9. this will set the *AI9*
+1. Power down the Rubix Compute.
+2. Connect 2x IO16s to the Rubix Compute. Remember, the IO-16s are powered via the Rubix Compute.
+3. Set the dip switches on IO16 number 1 to address 1 and on number 2 to address 2. Ensure the baud rate is set to 38400 as well. 
+4. Refer to the documentation for **[more info on setting up the IO-16s](../../hardware/controllers/io-controllers/IO-16/parameters.md)**.
+5. Power up the Rubix Compute.
+6. Open the BACnet-server node.
+7. Add an Analog Input (AI) node to the BACnet-server configuration.
+8. Right-click on the newly added AI node and select `Settings`.
+9. Configure the **IO Device Number to 2**, indicating the 2nd IO-16.
+10. Set the **UI Number to 1**, representing UI1.
+11. This configuration will assign the Analog Input as **AI9**.
 
 
 :::tip
-As the `IO-16` uses `UOs` and `UIs` we can only add `AOs` & `AIs` <br/>
-eg: to use `UI-1` as an `DI` we add an `AI node` and set it to `address 1` (`AI1`) and set as as a `digital`
+Given that the IO-16 utilizes UOs (Universal Outputs) and UIs (Universal Inputs), only AOs (Analog Outputs) and AIs (Analog Inputs) can be added.
+
+But we can employ UI-1 as a DI (Digital Input), an AI node should be added and configured to address 1 (AI1). Subsequently, it should be set as a digital input.
 :::
 
 :::tip writing to a UO as digital
-Add an `AO` node and set the setting as `digital` the point will accept any value greater then `1` to turn on the `DO` <br/>
-eg: `true/false` or `1/0` or `10/0`
+To enable this functionality:
+
+Add an AO (Analog Output) node and set its settings to operate in a digital mode. Configure the point to accept any value greater than 1 to activate the Digital Output (DO). For instance, the point should interpret values like `true/false, 1/0, or 10/0` to control the DO.
 :::
 
 
-## the UI and UO to BACnet addressing
+## UI/UO to BACnet Addressing
 
 ### Example for inputs
 
@@ -118,7 +118,7 @@ eg: `true/false` or `1/0` or `10/0`
 | 3              | UI1       | AI17           | 
 
 
-It will continue up until we get to 4x IO1-6 devices
+This device addressing can be extended until you reach the limit of 4x IO1-6 devices.
 
 ### Example for outputs
 

@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 
 ## Schedules
-Schedules are primarily utilized for controlling HVAC (Heating, Ventilation, and Air Conditioning) equipment based on predefined time schedules. To set up a schedule, `ensure that the system module is installed`. Then, follow these steps:
+Schedules are primarily utilized for controlling HVAC (Heating, Ventilation, and Air Conditioning) equipment based on predefined time schedules. To set up a schedule, `ensure that the system module is installed`. Follow these steps:
 
 1. Open the `device` you wish to add a schedule to from the sidebar under its `services`.
 2. Click on the Add button ![add-button.png](../img/apps/add-button.png)
@@ -13,10 +13,12 @@ Schedules are primarily utilized for controlling HVAC (Heating, Ventilation, and
 By following these steps, you can easily create and configure schedules to automate a system based on specific time criteria.
 
 ### Event 
-An event schedule allows you to override the regular 7-day schedule and set a specific device to an `ON state` for a defined period of time. For example, you might want to activate a device from the 24th of November 2022 at 8 am until the 24th of November 2022 at 1 am.
+An event schedule allows you to override the regular 7-day schedule and set a specific device to an `ON state` for a defined period of time. For example, you want to activate a device from the 24th of November 2022 at 8 am until the 24th of November 2022 at 1 am.
 
 ### Weekly
-a weekly schedule is a recurring schedule that operates from Monday to Sunday, covering a span of 7 days. Here's how you can set up a weekly schedule to turn on the HVAC every morning at 9 am and turn it off at 5 pm, specifically on Mondays, Tuesdays, and Wednesdays:
+Weekly schedule is a recurring schedule that operates from Monday to Sunday, covering a span of 7 days. 
+<br/>
+To establish a weekly schedule for activating the HVAC system each morning at 9 am and deactivating it at 5 pm, specifically on Mondays, Tuesdays, and Wednesdays:
 
 1. Open the device you want to schedule from the sidebar under its services.
 2. Click on the Add button ![add-button.png](../img/apps/add-button.png) to create a new schedule.

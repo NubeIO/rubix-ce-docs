@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
+
 ---
 
 # Alerts
-Alerts of a future service that is coming soon, the alerts will be created directly from `rubix-os`
+**Alerts** represents a forthcoming service within Rubix-OS. Users can anticipate the ability to generate alerts directly from the `Rubix-OS platform`.

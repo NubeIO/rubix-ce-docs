@@ -42,14 +42,10 @@ For example, if you set the History Interval to 1 hour, data will be trended eve
 ![histories-point-settings.png](img/histories-point-settings.png)
 
 
-# Viewing Histories
-You have two options for viewing history within Rubix CE:
+## Viewing Histories
 
-**Directly from a Point**: You can view the history directly from a specific point. This allows you to access the historical data associated with that particular point, typically through a dedicated interface or visualization tool.
+**From the services/histories Tab**: You can access history data from the services/histories tab. This tab provides a centralized location for viewing and managing historical data from multiple points or devices within your environment. It offers a comprehensive overview of historical trends and allows for easy navigation and analysis of past data records.
 
-**From the services/histories Tab**: Alternatively, you can access history data from the services/histories tab. This tab provides a centralized location for viewing and managing historical data from multiple points or devices within your environment. It offers a comprehensive overview of historical trends and allows for easy navigation and analysis of past data records.
-
-## From a point
 
 ![history-from-point.gif](img/history-from-point.gif)
 
