@@ -10,7 +10,7 @@ Wires is a programming tool that facilitates the integration, management, and au
 
 The term wires refers to the connections or pathways through which data, commands, or signals flow between different elements, such as sensors, actuators, controllers, and software applications. These connections can be established, configured, and managed within the Wires, enabling seamless interaction and interoperability between diverse technologies and systems.
 
-Wires employs a concept called "Flows," which are a type of logical programming constructed by connecting nodes to create customized functionalities. These flows are dynamically built and modified during runtime, allowing for real-time adjustments. Additionally, flows can be exported and imported in JSON format, facilitating easy sharing and replication of custom functionalities across different instances or environments.
+Wires employs a concept called "Flows," which are a type of logical programming constructed by connecting nodes to create customised functionalities. These flows are dynamically built and modified during runtime, allowing for real-time adjustments. Additionally, flows can be exported and imported in JSON format, facilitating easy sharing and replication of custom functionalities across different instances or environments.
 
 # What is a node
 
@@ -20,7 +20,7 @@ A node represents a block of logic or functionality within the system. There are
 
 The **Editor** within Wires serves as the interface for connecting nodes to construct your program. For instance, you can add three nodes: `two const-num nodes` and `one add node`. Then, you would connect the `output` of each `const-num node` to the `inputs in1 and in2` on the `add node`, respectively.
 
-This arrangement forms what is known as a **Flow Program**, where nodes are interconnected to define the logic and functionality of the program. By linking nodes together in this manner, you can create customized workflows and implement specific tasks within the Wires environment.
+This arrangement forms what is known as a **Flow Program**, where nodes are interconnected to define the logic and functionality of the program. By linking nodes together in this manner, you can create customised workflows and implement specific tasks within the Wires environment.
 
 ![max800px](img/simple-example.png)
 
