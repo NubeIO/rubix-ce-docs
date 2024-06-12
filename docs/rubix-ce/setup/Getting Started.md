@@ -14,8 +14,8 @@ To get started with Rubix CE, the following are required:
 * PC equipped with either Windows 10 or Windows 11.
 * Internet connection.
 * Download and install the Rubix CE software from this link: **[downloads page](download.md#download)**
-* **[nube-io cloud account](docker.md#nube-io-cloud-account)**
-* And/Or Nube iO **[rubix-compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)**
+* **[Nube iO Cloud Account](docker.md#nube-io-cloud-account)**
+* And/Or Nube iO **[Rubix Compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)**
 :::
 
   
@@ -40,7 +40,7 @@ Contact Nube iO support at support@nube-io.com to request for a unique token. <b
 :::
 
 
-Token is essential for downloading Apps and Services over the internet. Once received, simply copy and paste the token into the provided field.
+The Token is essential for downloading Apps and Services over the internet. Once received, simply copy and paste the token into the provided field.
 
 ![gettingStartedToken.png](../img/apps/getting-started-token.png)
 
