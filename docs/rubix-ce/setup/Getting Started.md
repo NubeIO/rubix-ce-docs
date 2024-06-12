@@ -30,7 +30,7 @@ If you're running the software on a Windows machine, Windows Defender might prev
 
 ![max300px](../img/apps/run-anyway.png)
 
-## Running Rubix-CE
+## Running Rubix CE
 
 ### Add token
 

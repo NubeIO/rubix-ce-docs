@@ -4,8 +4,8 @@ sidebar_position: 1
 
 # Getting Started
 
-## Download And Install Rubix-CE
-Rubix-CE is the engineering tool used to program the Nube-iO BMS products. See the link to download [**link**](../rubix-ce/setup/download.md)
+## Download And Install Rubix CE
+Rubix CE is the engineering tool used to program the Nube-iO BMS products. See the link to download [**link**](../rubix-ce/setup/download.md)
 
 
 ## Hardware Required
@@ -33,7 +33,7 @@ if you don't an ethernet port on your PC don't worry as the 2nd ethernet port on
 :::
 
 ## Programming the Rubix-Compute
-### Run Rubix-CE
+### Run Rubix CE
 Once the software is downloaded you can run the software (there is no install process)
 
 ### Install Rubix-OS & Adding A Supervisor
