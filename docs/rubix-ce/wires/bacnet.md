@@ -53,7 +53,7 @@ Ensure to set the `node name` to accurately reflect the point name on the `BACne
 
 ### Adding IO-16s
 
-Adding upto 4x IO16s will make the rubix-compute a BACnet-ip IO device
+Adding upto 4x IO16s will make the Rubix Compute a BACnet-ip IO device
 
 ![rc-with-io16s.png](../../hardware/controllers/supervisors/rubix-compute/img/rc-with-io16s.png)
 

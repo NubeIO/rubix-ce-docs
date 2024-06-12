@@ -7,8 +7,8 @@ See more info for each protocol:
 
 - [BACnet master](bacnet/bacnet-master/bacnet-master.md)
 - [BACnet Server](bacnet/bacnet-server/bacnet-server.md)
-- [LoRa](lora/lora-raw/lora.md)
-- [LoRaWAN](lora/lorawan/lorawan.md)
+- [LoRa®](lora/lora-raw/lora.md)
+- [LoRaWAN®](lora/lorawan/lorawan.md)
 - [Modbus-RTU](modbus/modbus-rtu/modbus.md)
 - [Modbus-TCP](modbus/modbus-tcp/modbus.md)
 - [System-Network](system/overview.md)
@@ -36,8 +36,8 @@ Typically, every driver requires the installation of an application called **flo
 |-------------------------|---------------|--------------------|----------------------------------|
 | BACnet master           | N/A           | BACnet Master      | N/A                              |
 | BACnet Server           | Driver-BACnet | na                 | N/A                              |
-| LoRa                    | N/A           | lora               | N/A                              |
-| LoRaWAN                 | N/A           | LoRaWAN            | LoRaWAN Gateway, LoRaWAN Service |
+| LoRa®                    | N/A           | lora               | N/A                              |
+| LoRaWAN®                 | N/A           | LoRaWAN®            | LoRaWAN® Gateway, LoRaWAN® Service |
 | Modbus-RTU & Modbus-TCP | N/A           | Modbus             | N/A                              |
 | System                  | N/A           | System             | N/A                              |
 

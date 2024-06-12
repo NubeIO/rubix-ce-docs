@@ -9,7 +9,7 @@ sidebar_position: 2
 The Micro Edge is 115mm x 65mm.  It is designed to be mounted on flat surfaces using external screws.  
 The Micro Edge can be mounted in any orientation.  
 The sensor should always be mounted in a location such that it will not experience very high or low temperatures.   
-When selecting a mounting location, position relative to the LoRa gateway should be considered.
+When selecting a mounting location, position relative to the LoRa® gateway should be considered.
 
 ![MicroEdge - Power - Battery Location.png](../img/MicroEdge%20-%20Power%20-%20Battery%20Location.png)
 
@@ -21,11 +21,11 @@ Power wiring shown below.
 
 ![MicroEdge - Power - Wired.png](../img/MicroEdge%20-%20Power%20-%20Wired.png)
 
-# Sensor Positioning and LoRa Signal Quality
-Micro Edge sensors utilize LoRa IOT Wireless radio technology.  
+# Sensor Positioning and LoRa® Signal Quality
+Micro Edge sensors utilize LoRa® IOT Wireless radio technology.  
 This wireless system features long range, and good object penetration.  
-However, care still must be taken to position sensors such that they have a good communication signal with the LoRa Gateway.   
-The quality of the communication signal depends on the distance from the LoRa Gateway, and the objects between the Micro Eddge sensor and the LoRa Gateway.
+However, care still must be taken to position sensors such that they have a good communication signal with the LoRa® Gateway.   
+The quality of the communication signal depends on the distance from the LoRa Gateway, and the objects between the Micro Eddge sensor and the LoRa® Gateway.
 
 # Onboard Reset/Push Button
 Nube iO Micro Edge sensor has a small Reset Button within the sensor.  

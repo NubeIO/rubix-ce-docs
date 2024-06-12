@@ -7,8 +7,8 @@ sidebar_position: 5
 Mapping in Rubix Wires facilitates the conversion of data from one protocol to another. For instance:
 
 
-- Map LoRa sensors to a BACnet-Server, enabling integration of LoRa sensors into a third-party BMS system.
--Map a LoRa sensor with motion detection capability to control the on/off state of a relay on a Modbus-RTU device.
+- Map LoRa® sensors to a BACnet-Server, enabling integration of LoRa® sensors into a third-party BMS system.
+-Map a LoRa® sensor with motion detection capability to control the on/off state of a relay on a Modbus-RTU device.
 
 ![max800px](img/mapping-overview.png)
 

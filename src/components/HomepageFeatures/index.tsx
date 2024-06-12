@@ -28,7 +28,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Powered by LoRa',
+    title: 'Powered by LoRa®',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>

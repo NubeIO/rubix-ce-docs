@@ -3,15 +3,15 @@ sidebar_position: 2
 ---
 
 # BACnet device
-Setup the `rubix-compute` as a native BACnet/IP device
+Setup the `Rubix Compute` as a native BACnet/IP device
 
 :::info reference
-`RC` is a `rubix-compute` <br/>
+`RC` is a `Rubix Compute` <br/>
 `wires` is a `rubix-wires`
 :::
 
 :::info prerequisites
-1. You need a **[rubix-compute](../hardware/controllers/supervisors/rubix-compute/overview.md)** and an **[IO-16](../hardware/controllers/io-controllers/IO-16/overview.md)**
+1. You need a **[Rubix Compute](../hardware/controllers/supervisors/rubix-compute/overview.md)** and an **[IO-16](../hardware/controllers/io-controllers/IO-16/overview.md)**
 2. plugin the `IO-16` into the side of the `RC`  and power the `RC` and set the `IO-16` address to `1`
 3. make sure you can ping the `RC` default IP on ETH-1 is `192.168.15.10` see **[networking](../hardware/controllers/supervisors/rubix-compute/networks.md)** for more info
 :::

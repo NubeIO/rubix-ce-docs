@@ -18,7 +18,7 @@ make sure the config is set for the number of AIs and AOs needed. (eg 2x **[Nube
 
 
 :::info rubix-wires bacnet-server node
-To make the rubix-compute a native BACnet device please follow the link: **[bacnet](../../../wires/bacnet.md)** 
+To make the Rubix Compute a native BACnet device please follow the link: **[bacnet](../../../wires/bacnet.md)** 
 :::
 
 see below for installing the BACnet-driver and editing the sever settings

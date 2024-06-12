@@ -93,16 +93,16 @@ A physical Rubix Compute.
 -- supervisor (Acme Corp) // Customer
 --- location (New York) // STATE
 ---- group  (NYC) // CITY
------ Empire State Building Metering // Rubix-Compute
+----- Empire State Building Metering // Rubix Compute
 ```
 
 ```
 -- supervisor (Acme Corp) 
 --- location (Empire State Building)
 ---group  (level -1) 
-----RC1 // Rubix-Compute
+----RC1 // Rubix Compute
 ---group  (level -2)
-----RC2 // Rubix-Compute
+----RC2 // Rubix Compute
 ```
 
 ```

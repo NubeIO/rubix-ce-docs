@@ -9,8 +9,8 @@ Rubix OS serves as the core runtime platform that operates on either the Rubix C
 * Updating Rubix Compute apps, points, histories and/or network drivers
 * Scheduling operations
 * Establishing connections to the Nube iO cloud
-* Support protocols such as LoRa, Modbus, and/or BACnet
-* Rubix OS operates on both hardware and cloud servers. It can operate either within the `cloud` or on a `Rubix-compute` device.
+* Support protocols such as LoRa®, Modbus, and/or BACnet
+* Rubix OS operates on both hardware and cloud servers. It can operate either within the `cloud` or on a `Rubix Compute` device.
 
 ### Ports
 
@@ -44,7 +44,7 @@ Rubix Edge is used to connect to the Rubix OS.
 ### Rubix Bios
 
 * Performs updating Rubix OS.
-* It can operate either within the `cloud` or on a `Rubix-compute` device.
+* It can operate either within the `cloud` or on a `Rubix Compute` device.
 
 ### Ports
 
@@ -69,7 +69,7 @@ Rubix Edge Wires is a block logic Building Automation Control runtime designed f
 ### Wires 
 
 * BMS (Building Management System) or DDC (Direct Digital Control) flow-based programming.
-* It can operate either within the `cloud` or on a `Rubix-compute` device.
+* It can operate either within the `cloud` or on a `Rubix Compute` device.
 
 ### Ports
 
@@ -101,9 +101,9 @@ Operates on port `udp`
 47808
 ```
 
-## LoRa Driver (closed by firewall)
-The LoRa driver facilitates wireless communication for Nube iO LoRa sensors and other compatible wireless devices. <br/><br/>
-Note: LoRa and LoRaWAN are distinct protocols. For third-party LoRa sensors or devices, a LoRaWAN driver and a gateway/receiver are necessary for integration.
+## LoRa® Driver (closed by firewall)
+The LoRa® driver facilitates wireless communication for Nube iO LoRa® sensors and other compatible wireless devices. <br/><br/>
+Note: LoRa® and LoRaWAN® are distinct protocols. For third-party LoRa® sensors or devices, a LoRaWAN® driver and a gateway/receiver are necessary for integration.
 
 ### Service Name
 ```
@@ -159,8 +159,8 @@ Operates on port `tcp`
 1883
 ```
 
-## LoRaWAN Dashboard (open by firewall)
-Dashboard used for the administration of the loRaWAN server.
+## LoRaWAN® Dashboard (open by firewall)
+Dashboard used for the administration of the LoRaWAN® server.
 
 ### Service Name
 ```
@@ -174,9 +174,9 @@ Operates on port `http`
 8080
 ```
 
-## LoRaWAN Gateway/Driver (closed by firewall)
-The LoRaWAN driver is a wireless communication protocol designed for 3rd party LoRaWAN sensors and other compatible wireless devices. <br/><br/>
-NOTE: LoRa and LoRaWAN are distinct protocols. For 3rd Party LoRa sensors or devices, a LoRaWAN driver and a gateway/receiver are necessary for integration.
+## LoRaWAN® Gateway/Driver (closed by firewall)
+The LoRaWAN® driver is a wireless communication protocol designed for 3rd party LoRaWAN® sensors and other compatible wireless devices. <br/><br/>
+NOTE: LoRa® and LoRaWAN® are distinct protocols. For 3rd Party LoRa® sensors or devices, a LoRaWAN® driver and a gateway/receiver are necessary for integration.
 Connect `LORA-CONNECT` to Rubix Compute via the `RJ12` port to establish communication.
 
 ### Service Name

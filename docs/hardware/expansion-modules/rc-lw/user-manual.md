@@ -8,7 +8,7 @@ sidebar_position: 1
 The Rubix Connect LW features a high-performance LoRaWAN® concentrator card seamlessly integrated into a specialised module for use with the Rubix Compute and other IOT systems. 
 A powerful, efficient platform for deploying LoRaWAN® networks. Designed for low power consumption and multi-channel support, it streamlines network setup and scales easily to accommodate various applications such as smart cities, agricultural monitoring, environmental sensing, industrial automation, and smart metering.
 
-The RC-LW-CON-1 is an add-on module to the Nube iO Rubix-Compute. Once plugged into the Rubix Compute this enables the Rubix Compute to run as a LoRaWAN® server. 
+The RC-LW-CON-1 is an add-on module to the Nube iO Rubix Compute. Once plugged into the Rubix Compute this enables the Rubix Compute to run as a LoRaWAN® server. 
 
 ![max400px](img/rc-lw.png)
 
