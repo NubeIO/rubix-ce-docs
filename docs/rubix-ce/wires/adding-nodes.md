@@ -133,11 +133,11 @@ Calculated points may involve mathematical operations like addition, subtraction
 **In this Logic:**
 
 
-* Input1, Input2, and Input3 are connected to an ADD node, which sums them together.
-* The output of the ADD node is then connected to a DIVIDE node, where Input4 is used as the divisor.
+* Input 1, Input 2, and Input 3 are connected to an ADD node, which sums them together.
+* The output of the ADD node is then connected to a DIVIDE node, where Input 4 is used as the divisor.
 * The result of the division is the output of the calculated point.
 
-This logic represents dividing the sum of Input1, Input2, and Input3 by Input4.
+This logic represents dividing the sum of Input 1, Input 2, and Input 3 by Input 4.
 
 ### Creating calculated points with network driver points
 
