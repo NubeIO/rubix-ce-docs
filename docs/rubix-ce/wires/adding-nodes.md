@@ -134,7 +134,7 @@ Calculated points may involve mathematical operations like addition, subtraction
 
 
 * Input1, Input2, and Input3 are connected to an ADD node, which sums them together.
-* The output of the ADD node is then connected to a DIVIDE node, where Input4 is used as the dividend (the number being divided).
+* The output of the ADD node is then connected to a DIVIDE node, where Input4 is used as the divisor.
 * The result of the division is the output of the calculated point.
 
 This logic represents dividing the sum of Input1, Input2, and Input3 by Input4.
