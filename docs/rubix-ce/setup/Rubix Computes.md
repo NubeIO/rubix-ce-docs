@@ -4,7 +4,7 @@ sidebar_position: 4
 
 ## Hosts/Rubix Computes
 
-**Rubix Compute** refers to a computing device or platform developed by **Nube iO**. It's designed for various applications in building automation and IoT (Internet of Things) contexts. Rubix Compute can serve as a central hub for collecting, processing, and analyzing data from sensors, devices, and systems within a building or industrial environment. It typically runs specialized software or applications developed by Nube iO or third-party developers to enable functionalities such as data monitoring, control, and optimization. Rubix Compute plays a crucial role in creating smart and interconnected building systems by facilitating data-driven decision-making and automation.
+**Rubix Compute** refers to a computing device or platform developed by **Nube iO**. It's designed for various applications in building automation and IoT (Internet of Things) contexts. Rubix Compute can serve as a central hub for collecting, processing, and analysing data from sensors, devices, and systems within a building or industrial environment. It typically runs specialized software or applications developed by Nube iO or third-party developers to enable functionalities such as data monitoring, control, and optimization. Rubix Compute plays a crucial role in creating smart and interconnected building systems by facilitating data-driven decision-making and automation.
 
 A Rubix Compute (host) is to be added under a `Supervisor`.
 
@@ -51,7 +51,7 @@ Click ![add-button.png](../img/apps/add-button.png)  inside the **Group tab**.
 This is only applicable when you have only one `Rubix Compute` and wish to connect to it directly, bypassing the need for the `Nube iO cloud`.
 
 :::info pre start checks
-- A **[rubix-compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)** with network access to the
+- A **[Rubix Compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)** with network access to the
   device
 - The default IP on `ETH-1` is `192.168.15.10` the 2nd port `ETH-2` is set to `DHCP`
 - Set you PC on the same network or set a fixed IP on your PC **[networking](../../hardware/controllers/supervisors/rubix-compute/networks.md)**
@@ -59,7 +59,7 @@ This is only applicable when you have only one `Rubix Compute` and wish to conne
 
 ```mermaid
 flowchart TD
-    A[[Rubix-CE]] --> B[Rubix-Compute-1]
+    A[[Rubix CE]] --> B[Rubix Compute-1]
 ```
 
 ### Add Device to a Cloud Server
@@ -67,7 +67,7 @@ Adding a local device to the Nube iO Servers will only be required when you only
 
 :::info pre start checks
 - Before proceeding, ensure you have added the device following the same steps as outlined above.
-- A **[rubix-compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)** with network access to the device and a public IP address assigned.
+- A **[Rubix Compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)** with network access to the device and a public IP address assigned.
 - Connect your PC to your local network. See **[networking](../../hardware/controllers/supervisors/rubix-compute/networks.md)** to see how.
 :::
 
@@ -77,8 +77,8 @@ To establish a VPN connection between the cloud and the Rubix Compute, you'll re
 
 ```mermaid
 flowchart TD
-    A[[Rubix-CE]] --> B[Nube-IO Cloud]
-    B[Nube-IO Cloud]--> C[Rubix-Compute-1]
+    A[[Rubix CE]] --> B[Nube IO Cloud]
+    B[Nube IO Cloud]--> C[Rubix Compute-1]
 ```
 
 <b>OpenVPN Service</b>

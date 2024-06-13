@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Modbus Network
 
-This article explains how to configure the Modbus Network within Rubix-CE. This will allow us the send and receive
+This article explains how to configure the Modbus Network within Rubix CE. This will allow us the send and receive
 Modbus data from connected Modbus devices.
 
 
@@ -14,7 +14,7 @@ Modbus data from connected Modbus devices.
 
 :::info
 Important things to note before proceeding:
-You must have a rubix-compute and a modbus RTU device and know the settings required to add the device
+You must have a Rubix Compute and a modbus RTU device and know the settings required to add the device
 **[ports](../../../../hardware/controllers/supervisors/rubix-compute/ports.md)**
 :::
 

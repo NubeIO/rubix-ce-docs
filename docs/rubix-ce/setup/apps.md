@@ -5,7 +5,7 @@ sidebar_position: 5
 # Apps
 
 :::danger Internet Connection
-To download apps over the internet, you need to add a token. This token is provided by the Nube iO Support team to each individual upon request and remains valid for up to one year. For assistance, please contact Support@nube-io.com.
+To download apps over the internet, you need to add a token. This token is provided by the Nube iO Support team to each individual upon request and remains valid for up to one year. For assistance, please contact support@nube-io.com.
 :::
 
 :::danger user home directory
@@ -18,7 +18,7 @@ Rubix Compute is akin to installing or managing apps on a PC, smartphone, or tab
 Examples of Nube iO Apps includes:
 
 * BACnet Server
-* LoRaWAN Protocol
+* LoRaWAN® Protocol
 * Rubix Wires
 
 ## App Installation

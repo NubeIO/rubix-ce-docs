@@ -66,7 +66,7 @@ To remove nodes in Rubix Wires, you can use the following methods:
 
 ## Node Settings
 
-Each node on the Editor Pane in Rubix Wires has settings that can be configured to adjust its function or labeling. These settings are unique to each individual node and can be customized as needed. <br/><br/>
+Each node on the Editor Pane in Rubix Wires has settings that can be configured to adjust its function or labeling. These settings are unique to each individual node and can be customised as needed. <br/><br/>
 Simply **double-click** on the node that you want to edit. This action will open up the settings interface for that particular node, allowing you to modify its configuration.<br/>
 Alternatively, you can **right-click** on the node.
 From the context menu that appears, select the `Edit Settings` option. This will open the settings interface for the selected node, where you can make the necessary adjustments.

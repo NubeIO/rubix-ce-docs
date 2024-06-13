@@ -4,15 +4,15 @@ sidebar_position: 2
 
 # Histories
 
-To trend data points from devices and sensors, including droplets, Modbus, and LoRaWAN devices, follow these steps:
+To trend data points from devices and sensors, including droplets, Modbus, and LoRaWAN® devices, follow these steps:
 
 1. **Add a Network**: Begin by adding a network. This serves as the overarching framework for connecting and managing your devices and sensors.
 
-2. **Add a Device**: Once the network is set up, add the specific device from which you want to collect data. This could be a droplet, Modbus device, LoRaWAN device, or any other compatible device.
+2. **Add a Device**: Once the network is set up, add the specific device from which you want to collect data. This could be a droplet, Modbus device, LoRaWAN® device, or any other compatible device.
 
 3. **Add a Point**: After adding the device, proceed to add the individual data points that you wish to trend or monitor. These points represent the specific measurements or values you want to track, such as temperature, pressure, or humidity.
 
-Once you've completed these steps and have points added, you can begin trending the data by accessing the histories or logging functionality. This allows you to visualize and analyze the historical data trends from your devices and sensors over time.
+Once you've completed these steps and have points added, you can begin trending the data by accessing the histories or logging functionality. This allows you to visualise and analyse the historical data trends from your devices and sensors over time.
 
 ## Enabling History
 To enable trending for specific points under the Drivers section, follow these steps:
@@ -21,6 +21,9 @@ To enable trending for specific points under the Drivers section, follow these s
 
 2. Right-click the network where the point you want to trend is located. Click on the `edit` button.
 
+3. In the editing interface, check the following options:
+- `History Enable`: This option enables historical data logging for the selected point(s), allowing you to track and analyse past data trends.
+- `Auto Mapping Enable`: This option enables automatic mapping for the selected point(s).
 3. In the editing interface, check the `History Enable` checkbox. `Click save`.
 
 ![histories-point-settings.png](img/history-enable-1.png)

@@ -45,10 +45,10 @@ For the default username and password, please contact Nube iO support at support
 
 ```mermaid
 flowchart TD
-    A[[Rubix-CE]] --> C[-]
-    C[Rubix-Compute-1 As Supervisor] --> D[Rubix-Compute-1]
-    C --> E[Rubix-Compute-2]
-    C --> F[Rubix-Compute-3]
+    A[[Rubix CE]] --> C[-]
+    C[Rubix Compute-1 As Supervisor] --> D[Rubix Compute-1]
+    C --> E[Rubix Compute-2]
+    C --> F[Rubix Compute-3]
 ```
 **Option 2: Nube iO Cloud**
 
@@ -59,10 +59,10 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A[[Rubix-CE]] --> C[-]
-    C[Nube Cloud] --> D[Rubix-Compute-1]
-    C --> E[Rubix-Compute-2]
-    C --> F[Rubix-Compute-3]
+    A[[Rubix CE]] --> C[-]
+    C[Nube Cloud] --> D[Rubix Compute-1]
+    C --> E[Rubix Compute-2]
+    C --> F[Rubix Compute-3]
 ```
 
 **Option 3: Personal Computer via Device Simulation**
@@ -78,8 +78,8 @@ This option is for advanced use only. Please refer to the **[setup of docker](do
 
 ```mermaid
 flowchart TD
-    A[[Rubix-CE]] --> C[-]
-    C[Simulated Rubix-Assist Your PC] --> D[Simulated Rubix-Compute]
+    A[[Rubix CE]] --> C[-]
+    C[Simulated Rubix-Assist Your PC] --> D[Simulated Rubix Compute]
 ```
 
 4. Insert the IP or web address of the Nube iO device/cloud you wish to connect.

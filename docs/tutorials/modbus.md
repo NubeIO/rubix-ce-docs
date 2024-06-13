@@ -3,15 +3,15 @@ sidebar_position: 4
 ---
 
 # Modbus To IO-16
-Setup the `rubix-compute` as a Modbus-Master to the `IO-16` and read `UI1` as a `10K sensor`
+Setup the `Rubix Compute` as a Modbus-Master to the `IO-16` and read `UI1` as a `10K sensor`
 
 :::info reference
-`RC` is a `rubix-compute` <br/>
+`RC` is a `Rubix Compute` <br/>
 `wires` is a `rubix-wires`
 :::
 
 :::info prerequisites
-1. You need a **[rubix-compute](../hardware/controllers/supervisors/rubix-compute/overview.md)** and an **[IO-16](../hardware/controllers/io-controllers/IO-16/overview.md)**
+1. You need a **[Rubix Compute](../hardware/controllers/supervisors/rubix-compute/overview.md)** and an **[IO-16](../hardware/controllers/io-controllers/IO-16/overview.md)**
 2. wire the `IO-16` into the `rs485-1` the `RC`  and power the `RC`, and `IO16` and set the `IO-16` address to `1` and `baud-rate` `38400`
 3. make sure you can ping the `RC` default IP on ETH-1 is `192.168.15.10` see **[networking](../hardware/controllers/supervisors/rubix-compute/networks.md)** for more info
 :::
@@ -31,7 +31,7 @@ Setup the `rubix-compute` as a Modbus-Master to the `IO-16` and read `UI1` as a 
 We will add a modbus network with these settings
 
 Network settings will be
-* serial port on `485-1` (left port on the rubix-compute)
+* serial port on `485-1` (left port on the Rubix Compute)
 * set modbus `baud-rate` to `38400`
 
 Device settings (take off the cover to access the dip switches)

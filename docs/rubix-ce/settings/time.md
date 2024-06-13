@@ -7,7 +7,7 @@ sidebar_position: 2
 
 # Changing the Date / Time Settings
 
-This section will guide you through the process of modifying the date and time on Rubix-Compute.
+This section will guide you through the process of modifying the date and time on Rubix Compute.
 
 ![max800px](img/time-overview.png)
 
