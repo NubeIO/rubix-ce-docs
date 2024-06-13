@@ -22,7 +22,6 @@ detailed instructions, please refer to the section on 'Generating a Token'.
 
 1. Open the Supervisor page.
 2. Click on the Add ![add-button.png](../img/apps/add-button.png).
-3. Follow the steps in the short clip.
 
 :::info Default IP(s) of Rubix Compute:<br/>
 ETH 1: `192.168.15.10` <br/>
@@ -32,15 +31,13 @@ For the default username and password, please contact Nube iO support at support
 
 ![max800px](../img/apps/add-supervisor-1.png)
 
-Short clip below will guide you through the configuration.
 
-![max800px](img/adding-supervisor.gif)
+3. Add Supervising Hosting Option <br/>
 
+**Supervising Hosting Option**
+<br/>A supervisor can either be a Rubix Compute or Rubix OS running in the cloud. A Supervisor serves as the entry point to the functionalities and navigation of Rubix OS. The supervisor's function is to host and manage all Rubix Compute devices. <br/><br/>
 
-## Supervising Hosting Option
-A supervisor can either be a Rubix Compute or Rubix OS running in the cloud. A Supervisor serves as the entry point to the functionalities and navigation of Rubix OS. The supervisor's function is to host and manage all Rubix Compute devices.
-
-### Option 1: Nube iO Device
+**Option 1: Nube iO Device**
 :::info
 * This option requires a Rubix Compute.
 * It is the simplest method to commence with Nube iO products.
@@ -53,7 +50,7 @@ flowchart TD
     C --> E[Rubix-Compute-2]
     C --> F[Rubix-Compute-3]
 ```
-### Option 2: Nube iO Cloud
+**Option 2: Nube iO Cloud**
 
 :::info
 * This option necessitates both a Rubix Compute and a Nube iO Cloud Account.
@@ -68,7 +65,7 @@ flowchart TD
     C --> F[Rubix-Compute-3]
 ```
 
-### Option 3: Personal Computer via Device Simulation
+**Option 3: Personal Computer via Device Simulation**
 
 :::info
 * No hardware is needed for testing this option.
@@ -85,44 +82,32 @@ flowchart TD
     C[Simulated Rubix-Assist Your PC] --> D[Simulated Rubix-Compute]
 ```
 
-## Address
-IP or web address of the Nube iO device/cloud you wish to connect.
+4. Insert the IP or web address of the Nube iO device/cloud you wish to connect.
 
-## Port
-Port of the Nube iO device/cloud you wish to connect. Default port: 1659.
+5. When opting for Nube iO device hosting, you have the flexibility to select your preferred port for connection and specify whether it should use HTTPS or HTTP. The default port is set at 1659. Click `Next`
 
-## Supervisor Name
+6. Add a Supervisor Name.
 
-Name of the **Supervisor**.
+7. Add the Supervisor sidebar icon name, which will be displayed in the menu `sidebar`. It should consist of a maximum of four characters.
 
-## Short Name
+8. The Supervisor description is optional. Feel free to provide a brief description of the Supervisor as needed.
 
-Name that will appear on the menu `sidebar`.
+9. Advanced options are also optional. Below are the descriptions for each:
 
-## Description
+    * **Supervisor Sidebar Icon Color:** Define the background color for the Supervisor icon in the sidebar.
 
-An optional description of the **Supervisor**.
+    * **Supervisor Group Name:** Assign a group name to supervisors. Leave empty to remove a supervisor from a group. Supervisors with the same group name will be grouped together.
 
-## Advance Options
+    * **Supervisor Latitude:** Specify the latitude for a supervisor.
 
-### Supervisor Sidebar Icon Color
+    * **Supervisor Longitude:** Specify the longitude for a supervisor.
 
-Set the background color of the `sidebar` supervisor icon.
+10. Ping Supervisor to check the connection to the newly added supervisor. You may opt to skip the process.
+11. To configure the Rubix User token, you can generate it by logging in with your `username` and `password`. If you haven't been provided with login details or a token, please reach out to <u>support@nube-io.com</u> for assistance. If you want to install a new Rubix OS version on your supervisor, click `Save Token & Next`. Otherwise, click `Save & Quit`.
+12. From the dropdown menu, select your preferred Rubix OS version. To install the new version, click `Save & Quit`; otherwise, click `Quit` to keep the current installation.
+Short clip below will guide you through the configuration.
 
-### Supervisor Group Name
-
-Set group name to empty to remove a supervisor from a group. Supervisors assigned with the same group name will be put into the same group.
-
-### Supervisor Latitude
-
-Set the latitude of a supervisor.
-
-### Supervisor Longitude
-
-Set the longitude of a supervisor.
-
-
-
+![max800px](img/adding-supervisor.gif)
 
 :::tip
 Once the  **Supervisor** is created it is automatically enabled. `right-click` the supervisor's name to **Enable Supervisor** or **Disable Supervisor**.
@@ -130,18 +115,3 @@ Once the  **Supervisor** is created it is automatically enabled. `right-click` t
 - `Enable` **Supervisor** will display it on the `sidebar`.
 - `Disable` **Supervisor** remove it from the `sidebar`.
 :::
-
-
-
-
-
-
-
-## Ping Supervisor
-During the setup, you will have an option to ping the supervisor to verify that the destination address exists and can accept requests from the Rubix.
-
-## Configure Token 
-A Rubix User Token is required for accessing the functionalities of a supervisor. A user can generate multiple tokens for each site specific user and can also add or remove new users by providing or revoking specific user tokens.
-
-## Install Rubix OS
-Select and install the desired Rubix OS version for the newly created supervisor.

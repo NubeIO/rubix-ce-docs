@@ -102,3 +102,54 @@ Node outputs are the results of a nodes specific function. Wire links can be con
 output slots. The image below shows the 1 output of a const-num node.
 
 ![max500px](img/node-outputs.png)
+
+
+## Adding Network Driver Points
+Points from the network driver can be connected to the system points. 
+1. Click the Drivers tab on the wire sheet.
+
+![max800px](img/wire-driver.png)
+
+2. Locate the driver you wanted to connect to system points.
+3. Expand the driver by clicking the arrow button.
+4. Drag the desired point from the network to the editor canvas. Network driver points may be configured as read-only or read-write.
+5. Connect the output of the network point to the system point you intend to link with. Refer to the sample image below for guidance.
+
+![max800px](img/wire-driver-connect.png)
+
+## Creating Calculated Points
+Calculated points may involve mathematical operations like addition, subtraction, multiplication, division, or more complex functions depending on the logic you wish to create. 
+
+1. First, you will need to identify the input variables. These could be sensor readings, system parameters, or any other relevant data sources.
+2. Define the logic or calculation. Develop the logic or calculation that your calculated point will perform using the input variables. This could involve mathematical operations like addition, subtraction, multiplication, division, or more complex functions such as conditional statements or mathematical models.
+3. Lastly the output, this will be the result of the processed inputs.
+### Example of Calculated Points
+
+### Creating calculated points using system points
+1. Calculate the average value of multiple input variables. <br/>
+
+![max800px](img/calculated-points.png)
+
+**In this Logic:**
+
+
+* Input1, Input2, and Input3 are connected to an ADD node, which sums them together.
+* The output of the ADD node is then connected to a DIVIDE node, where Input4 is used as the dividend (the number being divided).
+* The result of the division is the output of the calculated point.
+
+This logic represents dividing the sum of Input1, Input2, and Input3 by Input4.
+
+### Creating calculated points with network driver points
+
+2. Convert temperature from one scale to another (e.g., Celsius to Fahrenheit).
+
+![max800px](img/calculated-points-2.png)
+
+**In this Logic:**
+* Input (Celsius): This is the temperature value in degrees Celsius that you want to convert to Fahrenheit. It serves as the input variable for the calculation.
+
+* Multiplication by 9 and divide by 5: To convert Celsius to Fahrenheit, you multiply the temperature in Celsius by 9/5. This accounts for the difference in scale between Celsius and Fahrenheit.
+
+* Addition of 32: After multiplying by 9/5, you add 32 to the result. This is because 0 degrees Celsius is equivalent to 32 degrees Fahrenheit. Adding 32 shifts the temperature scale to match the Fahrenheit scale.
+
+* Output (Fahrenheit): The final result of the calculation is the temperature in degrees Fahrenheit. This serves as the output of the calculated point.
