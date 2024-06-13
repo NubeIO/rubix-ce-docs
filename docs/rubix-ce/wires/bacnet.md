@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 ---
-
+# BACnet
 ## About BACnet
 The server node serves the purpose of reading and writing values to the **[driver-bacnet](../setup/apps.md)**. This functionality enables Rubix Compute to be integrated into a BACnet network.
 

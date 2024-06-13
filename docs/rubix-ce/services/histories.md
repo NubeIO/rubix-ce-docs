@@ -21,9 +21,6 @@ To enable trending for specific points under the Drivers section, follow these s
 
 2. Right-click the network where the point you want to trend is located. Click on the `edit` button.
 
-3. In the editing interface, check the following options:
-- `History Enable`: This option enables historical data logging for the selected point(s), allowing you to track and analyse past data trends.
-- `Auto Mapping Enable`: This option enables automatic mapping for the selected point(s).
 3. In the editing interface, check the `History Enable` checkbox. `Click save`.
 
 ![histories-point-settings.png](img/history-enable-1.png)
@@ -37,8 +34,6 @@ By checking these options, you ensure that the selected points will be included 
 
 
 ## History Type and History Interval
-
-History Type:
 
 **COV (Change of value)**: Select this option if you want to trend data only when the point's value has changed. This helps in capturing data trends efficiently, especially when there are significant changes in the values.<br/>
 
@@ -62,3 +57,15 @@ For example, if you set the History Interval to 1 hour, data will be trended eve
 
 **Direct from point**: You also has an option to view the history data from the point itself.
 ![history-from-point.gif](img/history-point.gif)
+
+## Exporting Histories
+You can export histories in .xlsx format by following these steps:
+
+1. Select the point/(s) for which you want to export history.
+2. Adjust the start and end date/time for the history.
+3. Click the export button ![history-export-icon.png](img/history-export-icon.png).
+4. Name the history file according to your preference, but it's recommended to include the date for easy identification.
+5. Choose the folder where you want to save the data.
+6. Click Export to complete the process.
+
+![history-export.gif](img/history-export.gif)

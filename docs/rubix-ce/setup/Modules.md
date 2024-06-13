@@ -63,3 +63,4 @@ If a module isn't enabled, you may encounter errors when attempting to add or ut
 * Click enable or disable from the Menu as needed.
 
 ![-](../img/apps/enable-disable-module.png)
+
