@@ -21,7 +21,7 @@ Modbus data from connected Modbus devices.
 
 :::info
 Important things to note before proceeding:
-You must have a Rubix Compute and a Modbus RTU device and know the settings required to add the device**[ports](../../../../hardware/controllers/supervisors/rubix-compute/ports.md)**
+You must have a Rubix Compute and a Modbus RTU device and know the settings required to add the device **[ports](../../../../hardware/controllers/supervisors/rubix-compute/ports.md)**
 :::
 
 

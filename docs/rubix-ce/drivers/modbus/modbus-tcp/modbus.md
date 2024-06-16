@@ -24,7 +24,7 @@ You must have a Rubix Compute and a modbus RTU device and know the settings requ
 :::
 
 There should be a Modbus Network for Modbus Devices connecting via Ethernet/Networked to this Rubix device. We recommend
-naming this network based on the device that you are connecting to. See above for an explanation of what each of these
+naming this network based on the device that you are connecting to. See below explanation of what each of these
 settings pertain to.
 
 * **Network** name - Name related to the Modbus Device/Gateway you are connecting to.
