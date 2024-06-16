@@ -17,7 +17,7 @@ See more info for each protocol:
 
 Rubix CE offers enhanced functionality through its versatile driver support, empowering users to integrate a wide range of industrial protocols seamlessly. These drivers include essential protocols such as BACnet Master and Server, LoRa® and LoRaWAN®, Modbus-RTU and Modbus-TCP, as well as System-Network integration. Each driver expands Rubix CE's capabilities, enabling efficient communication and control across diverse industrial environments. Whether you need robust data acquisition, IoT connectivity, or network management, Rubix CE's comprehensive driver suite provides the essential tools for optimizing operational efficiency and scalability within industrial automation and control systems.
 
-To incorporate a Driver for a new network, go back to the Driver Tab within the controller page. Click on "+ Create", then pick the driver from the dropdown menu. If the necessary Driver isn't visible in the menu, you'll need to install the plugin as outlined in the previous section.
+To incorporate a Driver for a new network, go to the Driver Tab within the controller page. Click on "+ Create", then pick the driver from the dropdown menu. If the necessary Driver isn't visible in the menu, you'll need to install the plug-ins as outlined in **[plug-ins](../setup/plugins.md)**.
 
 ![max800px](./img/driver-page.png)
 
