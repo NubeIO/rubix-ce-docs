@@ -2,29 +2,33 @@
 sidebar_position: 1
 ---
 
-# Schedules
-Schedules are for controlling HVAC equipment on time schedule.
+## Schedules
+Schedules are primarily utilized for controlling HVAC (Heating, Ventilation, and Air Conditioning) equipment based on predefined time schedules. To set up a schedule, `ensure that the system module is installed`. Follow these steps:
 
-`Please make sure the system module is installed`
+1. Open the `device` you wish to add a schedule to from the sidebar under its `services`.
+2. Click on the Add button ![add-button.png](../img/apps/add-button.png)
+3. Enter the `name` for the schedule.
+4. Enter the `timezone` for the schedule. You can search for the desired timezone using the provided options.
 
-1. Open the `device` you want to add a schedule to on the sidebar under its `services`
-2. Click on the Add ![add-button.png](../img/apps/add-button.png)
-3. Enter the `name`
-4. Enter the `timezone` (You can search for the timezone)
+By following these steps, you can easily create and configure schedules to automate a system based on specific time criteria.
+
+### Event 
+An event schedule allows you to override the regular 7-day schedule and set a specific device to an `ON state` for a defined period of time. For example, you want to activate a device from the 24th of November 2022 at 8 am until the 24th of November 2022 at 1 am.
+
+### Weekly
+Weekly schedule is a recurring schedule that operates from Monday to Sunday, covering a span of 7 days. 
+<br/>
+To establish a weekly schedule for activating the HVAC system each morning at 9 am and deactivating it at 5 pm, specifically on Mondays, Tuesdays, and Wednesdays:
+
+1. Open the device you want to schedule from the sidebar under its services.
+2. Click on the Add button ![add-button.png](../img/apps/add-button.png) to create a new schedule.
+3. Enter a name for the weekly schedule.
+4. Set the `Time On` to 9 am and the `Time Off` to 5 pm.
+5. Specify the days of the week when the schedule should be active. In this case, select `Monday`, `Tuesday`, and `Wednesday`.
+6. Save the weekly schedule.
+
+By configuring the weekly schedule in this manner, you ensure that the HVAC system will automatically turn on at 9 am and turn off at 5 pm, but only on Mondays, Tuesdays, and Wednesdays, following the specified weekly schedule.
 
 
-## Event 
-An event schedule is used when you want to override the 7 day schedule to an `on state` for a set amount of time eg: `24th of November 2022 8am` till the `24th of November 2022 1am`.
-
-## Weekly
-The weekly schedule is a Monday to Sunday, 7 day schedule.  
-
-eg: In this example the HVAC will turn `on` every morning at `9am` and `off` at `5pm` only on day's `Monday`, `Tuesday`, `Wednesday`
-* Time On: `9am`
-* Time Off: `5pm`
-* Days: `Monday`, `Tuesday`, `Wednesday`
-
-
-
-## Exception 
-An event schedule is used when you want to override the 7 day schedule to an `off state` for a set amount of time eg: 25th of December 2022 8am till the 26th of December 2022 8am.
+### Exception 
+Is designed for overriding the regular 7-day schedule to set a device to an `OFF state` for a specified duration. For instance, you might want to deactivate a device from the 25th of December 2022 at 8 am until the 26th of December 2022 at 8 am.

@@ -3,13 +3,12 @@ sidebar_position: 7
 ---
 
 # Payload
-Set payload is used only when the user wants to send a value to wires runtime without needing to re-download the flow
+The `Set Payload` function is utilized when users intend to send a value to the Wires runtime without necessitating a re-download of the flow.
 
-The main use cause is when commissioning a program and you want to adjust for example a setpoint
-
+Its primary purpose is evident during the commissioning of a program, particularly when adjustments such as setting a new setpoint are required.
 
 :::caution
-When sending a payload value to the wires runtime the payload will not be kept on restart of the device or if a new program is re-downloaded 
+When transmitting a payload value to the Wires runtime, it's essential to note that this payload won't persist through device restarts or when a new program is re-downloaded.
 :::
 
 ## Supported nodes
@@ -20,8 +19,7 @@ When sending a payload value to the wires runtime the payload will not be kept o
 
 
 :::tip
-To remove the existing payload value **right-click** on the node and click on **Release Payload** <br/>
-This will revert to the default input node value
+To remove the existing payload value, right-click on the node and select `Release Payload`. This action will revert the node to its `default input value`.
 :::
 
 ![set-payload.png](img/set-payload.png)

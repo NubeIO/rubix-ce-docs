@@ -89,3 +89,8 @@ Open the **device/apps**
 <b> Connect to the VPN </b>
 
 Right Click on the device you want to add the `vpn` to
+
+
+
+
+

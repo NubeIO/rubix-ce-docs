@@ -32,7 +32,7 @@ required.
 | Name        | Name of the network                               |
 | Description | Description of the network, eg: `level 1 network` |
 
-### show Advanced Options
+### Show Advanced Options
 
 | Attribute         | Description                                                                             |
 |-------------------|-----------------------------------------------------------------------------------------|
@@ -104,11 +104,7 @@ Select the required poll rate.
 
 ## About BACnet
 
-BACnet is a data communications protocol for Building Automation and Control Networks. It is an approved and
-standard protocol by American Society of Heating, Refrigerating and Air Conditioning Engineers (ASHRAE),
-American National Standards Institute (ANSI), and International Organization for Standardization (ISO). The
-BACnet protocol supports communication and control of applications such as heating, ventilation, air-conditioning,
-lighting, access, and fire detection systems and their associated equipment.
+BACnet stands as a data communications protocol designed for Building Automation and Control Networks. It holds the status of an approved and standardized protocol by esteemed organizations such as the American Society of Heating, Refrigerating, and Air Conditioning Engineers (ASHRAE), the American National Standards Institute (ANSI), and the International Organization for Standardization (ISO). This protocol facilitates communication and control across various applications, including heating, ventilation, air-conditioning, lighting, access, and fire detection systems, along with their associated equipment.
 
 ## Supported Services
 

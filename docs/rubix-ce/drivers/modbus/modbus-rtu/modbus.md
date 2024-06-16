@@ -23,7 +23,7 @@ You must have a Rubix Compute and a Modbus RTU device and know the settings requ
 :::
 
 * **Network name** - The network name is the name of the desired network. It is recommended you use the type of Modbus
-  communications (eg. LoRa or RS485-1 / RS485-2).
+  communications (eg. LoRa® or RS485-1 / RS485-2).
 * **Enable** - Tick to enable the Modbus Network.
 * **Delay between points (ms)** - This is the minimum time (in milliseconds) between the individual Modbus poll requests.
 * **Serial Timeout** - This is the time (in seconds) that the Modbus Service will wait for a response from the Modbus Device before
@@ -34,6 +34,6 @@ You must have a Rubix Compute and a Modbus RTU device and know the settings requ
 * **RTU stop-bits** - (RTU ONLY) Stop Bit setting must match for all devices on the Modbus Network.
 * **RTU byte-size** - (RTU ONLY) Byte Size setting must match for all devices on the Modbus Network.
 * **RTU port** - (RTU ONLY) Select from the dropdown the serial port that is used for the Modbus Network. For
-  RS485-1/RS485-2 ports, use `/dev/tty/RS485-1` / `/dev/tty/RS485-2` RTU ports. respectively. For wireless Modbus-Over-LoRa Network,
+  RS485-1/RS485-2 ports, use `/dev/tty/RS485-1` / `/dev/tty/RS485-2` RTU ports. respectively. For wireless Modbus-Over-LoRa® Network,
   use `/data/socat/serialBridge1`.
 * **Max Poll Rate** (seconds) max polling rate.
