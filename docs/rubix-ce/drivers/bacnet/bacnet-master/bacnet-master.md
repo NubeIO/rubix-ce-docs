@@ -62,7 +62,13 @@ required.
 
 You can also do a BACnet device discovery to add the devices.
 
-Enter into the BACnet tab and click on the **discover** icon.
+To add BACnet device automatically, follow these steps:
+
+1. Navigate to the Discover tab.
+2. Click on the Discover icon.
+3. Wait for the device list to populate.
+4. Select the checkboxes next to the devices you want to connect to BACnet.
+5. Click on `Add Devices`.
 
 ![max800px](img/whois.gif)
 
@@ -76,7 +82,18 @@ Enter into the BACnet tab and click on the **discover** icon.
 
 ### BACnet Network Points Discovery (BACnet Discover Device Objects)
 
-You can also discover and add the BACnet points as required.
+Here are the steps to add points to your BACnet device using `Discovery`:
+
+1. Open the BACnet device where the points you want to add reside.
+2. Navigate to the Discover tab.
+3. Click on `Count Device Objects` and then click `Discover.`
+4. Click on `Discover Device Objects` and then click `Discover.`
+5. Select the checkboxes next to the device objects you want to move to the BACnet points table.
+6. Click on `Discover Points` and then click `Discover.`
+7. Wait for the table to populate with points.
+8. Again, select the checkboxes next to the points you wish to add.
+9. Finally, click `Add Points` to complete the process of adding your BACnet points.
+
 
 ![max800px](img/discover-points.gif)
 
