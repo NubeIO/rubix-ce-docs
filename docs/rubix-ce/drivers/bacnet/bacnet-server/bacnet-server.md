@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Getting Started
 
-BACnet Server Integration (make the Rubix Compute a discoverable BACnet device)
+BACnet Server Integration (make the Rubix Compute a discoverable BACnet device.
 
 :::info Important things to note before proceeding:
 * Install required **[apps](../../../setup/apps.md)** **driver-bacnet**

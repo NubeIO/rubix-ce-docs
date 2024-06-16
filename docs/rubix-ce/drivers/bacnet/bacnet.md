@@ -4,6 +4,10 @@ sidebar_position: 1
 
 # BACnet Overview
 
+## About BACnet
+
+BACnet stands as a data communications protocol designed for Building Automation and Control Networks. It holds the status of an approved and standardized protocol by esteemed organizations such as the American Society of Heating, Refrigerating, and Air Conditioning Engineers (ASHRAE), the American National Standards Institute (ANSI), and the International Organization for Standardization (ISO). This protocol facilitates communication and control across various applications, including heating, ventilation, air-conditioning, lighting, access, and fire detection systems, along with their associated equipment.
+
 ## BACnet Object IDs
 
 | Object             | Number |
