@@ -31,7 +31,7 @@ See below for installing the BACnet-driver and editing the sever settings
 
 
 :::info Important things to note before proceeding
-please make sure the correct ethernet port is select.
+Please make sure the correct ethernet port is select.
 * ETH-1 is would be set for `iface` `eth0`
 * ETH-2 is would be set for `iface` `eth1`
 :::

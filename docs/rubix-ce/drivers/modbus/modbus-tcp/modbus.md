@@ -12,8 +12,11 @@ Modbus data from connected Modbus devices.
 
 1. **Step-1** On the controller level, under `drivers`, click the **create** ![add icon](../../../img/apps/add-button.png) to select and download and install the relevant network. 
 2. **Step-2** Select the **Modbus Network** . This will download the appropriate modules and drivers.
-3. **Step-3** Configure the Modbus Network. Make sure that the parameters are same with the devices you will add on the network.
-4. **Step-4** Once all the settings are added click on **Create Network** button. This should now create the Modbus and network. Now open the Modbus network to add a device.
+3. **Step-3** Configure the Modbus Network. Add the network name, network description and choose `IP` on Network Transport Type, you can also turn ON the History if needed. Disregards other settings.
+4. **Step-4** Once all the settings are configured click on **Create Network** button. This should now create the Modbus and network. Now open the Modbus network to add a device.
+
+
+![max800px](img/modbus-tcp-network.gif)
 
 :::info
 Important things to note before proceeding:
@@ -35,7 +38,7 @@ settings pertain to.
 
 ## Adding a Modbus Device in the Network
 1. **Step-1** On Modbus Network, under `drivers`, click the **create new device** ![add icon](../../../img/apps/add-button.png).
-2. **Step-2** Fill out the details in the pop-up window with the correct information for the device you are adding. Ensure the Address ID is unique within the network. Click `Save` to confirm.
+2. **Step-2** Fill out the details in the pop-up window with the correct information for the device you are adding. Information such as device name, Address ID, Host IP Address and Port. Click `Save` to confirm.
 
 ## Adding Points to the Modbus Device
 1. **Step-1** Locate the device you want to add points to from the list under the Modbus network. Right-click to open its settings.

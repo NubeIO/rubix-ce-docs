@@ -20,7 +20,9 @@ required.
 
 1. Open the host device you wish to add the BACnet network to
 2. Click on the Add ![add-button.png](../../../img/apps/add-button.png)
-3. Follow the steps in the wizard
+3. A pop up window will appear, click the BACnet Master.
+4. Provide the required details for your BACnet Server, including its Name, Port, and Network Interface. These fields are mandatory.
+5. Click `Create Network`.
 
 ![max800px](img/bacnet-add-network-whois.gif)
 
@@ -44,8 +46,8 @@ required.
 # Editing a BACnet Network
 
 1. You can either click on the **edit icon** ![edit icon](../../../../img/edit-icon.png) or **right-click** and **edit**
-2. Update as required
-3. To save hit the submit button
+2. Update as required or as needed.
+3. To save, hit the save button
 
 
 ![max800px](img/bacnet-master-settings.png)
@@ -54,8 +56,8 @@ required.
 
 1. Open the network you added by **right-click** Open
 2. Click on the Add ![add-button.png](../../../img/apps/add-button.png)
-3. Enter the details required
-4. To save hit the submit button
+3. Enter the details required like Name, Object ID, Object Type etc.
+4. To save, hit the `save` button.
 
 
 ## BACnet Network Device Discovery (BACnet Who Is)
