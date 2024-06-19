@@ -2,9 +2,8 @@
 sidebar_position: 4
 ---
 
-# Rubix Computes
+## Hosts/Rubix Computes
 
-## Overview
 **Rubix Compute** refers to a computing device or platform developed by **Nube iO**. It's designed for various applications in building automation and IoT (Internet of Things) contexts. Rubix Compute can serve as a central hub for collecting, processing, and analysing data from sensors, devices, and systems within a building or industrial environment. It typically runs specialized software or applications developed by Nube iO or third-party developers to enable functionalities such as data monitoring, control, and optimization. Rubix Compute plays a crucial role in creating smart and interconnected building systems by facilitating data-driven decision-making and automation.
 
 A Rubix Compute (host) is to be added under a `Supervisor`.
@@ -26,7 +25,7 @@ Click on the `Create new Location` -or- click ![add-button.png](../img/apps/add-
 ![max800px](../img/apps/add-location.png)
 
 :::info
-When you add a location, if you click `Save` without entering any information, Rubix CE will assign a `default name` to the location. You can modify its settings by right-clicking on the location and selecting `Edit`.
+When you add a location, if you click `Save` without entering any information, Rubix will assign a `default name` to the location. You can modify its settings by right-clicking on the location and selecting `Edit`.
 :::
 
 ![max800px](../img/apps/edit-location.png)
@@ -55,7 +54,7 @@ This is only applicable when you have only one `Rubix Compute` and wish to conne
 - A **[Rubix Compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)** with network access to the
   device
 - The default IP on `ETH-1` is `192.168.15.10` the 2nd port `ETH-2` is set to `DHCP`
-- Set your PC on the same network or set a fixed IP on your PC **[networking](../../hardware/controllers/supervisors/rubix-compute/networks.md)**
+- Set you PC on the same network or set a fixed IP on your PC **[networking](../../hardware/controllers/supervisors/rubix-compute/networks.md)**
 :::
 
 ```mermaid

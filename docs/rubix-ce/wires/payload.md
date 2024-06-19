@@ -3,7 +3,7 @@ sidebar_position: 7
 ---
 
 # Payload
-The `Set Payload` function is utilized when users intend to send a value to the Wires runtime without necessitating a re-download of the flow.
+The 1Set Payload` function is utilized when users intend to send a value to the Wires runtime without necessitating a re-download of the flow.
 
 Its primary purpose is evident during the commissioning of a program, particularly when adjustments such as setting a new setpoint are required.
 
