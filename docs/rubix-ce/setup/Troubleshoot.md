@@ -32,7 +32,7 @@ If **Rubix CE** experiences performance issues, you can diagnose potential cause
 
 ## Rubix Host/Supervisor Level Troubleshooting
 * Initiate a ping to the Host/Supervisor by right-clicking on it as shown in the image below:
-![max800px](../img/apps/ping.png)
+![max800px](../img/apps/Ping.png)
 * After confirming connectivity with the host/supervisor, authenticate by right-clicking and selecting `Login`.
 * Once logged in, verify the presence of Rubix-OS. If it is not installed, you can install it by right-clicking on Rubix-OS and selecting `Install`.
 * Additionally, for troubleshooting purposes, you can restart Rubix-OS from the right-click menu, which can resolve issues on problematic systems. Restarting Rubix-OS can help resolve various issues by resetting its state and clearing temporary glitches or errors that may have occurred during operation. 
