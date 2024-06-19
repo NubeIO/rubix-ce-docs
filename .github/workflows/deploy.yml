@@ -5,6 +5,11 @@ on:
     tags:
       - 'v*.*.*'
   workflow_dispatch:
+    inputs:
+      version_name:
+        description: 'Version name (e.g., 1.0.0)'
+        required: true
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -32,8 +37,16 @@ jobs:
         uses: actions/checkout@v3
       - name: Install dependencies
         run: yarn install --frozen-lockfile --non-interactive
+      - name: Determine Version Name
+        id: determine_version
+        run: |
+          if [ -n "${{ github.event.inputs.version_name }}" ]; then
+            echo "::set-output name=version_name::${{ github.event.inputs.version_name }}"
+          else
+            echo "::set-output name=version_name::${{ github.ref_name }}"
+          fi
       - name: Publish new version
-        run: yarn docusaurus docs:version ${{  github.ref_name }}
+        run: yarn docusaurus docs:version ${{ steps.determine_version.outputs.version_name }}
       - name: Build
         run: yarn build
       - name: Setup Pages
