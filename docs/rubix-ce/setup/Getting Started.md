@@ -1,8 +1,8 @@
 ---
 sidebar_position: 2
 ---
-
-### Rubix CE (Rubix Computer Edition)
+# Getting Started
+## Rubix CE (Rubix Computer Edition)
 
 Rubix Platform CE servers is a Nube iO desktop software designed for offline programming and product management. 
 Engineered to be swift, efficient, and portable, it empowers users and technicians
@@ -20,7 +20,7 @@ To get started with Rubix CE, the following are required:
 
   
 
-## Install
+### Install
 
 No installation is necessary. Simply right-click to run Rubix CE. <br/>
 If you're running the software on a Windows machine, Windows Defender might prevent its execution. In such cases, simply click on `More Info` and then proceed by selecting `Run Anyway.`
@@ -30,9 +30,9 @@ If you're running the software on a Windows machine, Windows Defender might prev
 
 ![max300px](../img/apps/run-anyway.png)
 
-## Running Rubix CE
+### Running Rubix CE
 
-### Add token
+## Add token
 
 
 :::caution token
@@ -54,7 +54,7 @@ A newly launched software will appear like this.
 
 ![getting-started-add-or-open.png](../img/apps/fresh-start.png)
 
-### Buttons
+## Buttons
 
 ![refresh-button.png](../img/apps/refresh-button.png)  Refresh button serves the purpose of updating data in the table view.
 
@@ -69,25 +69,25 @@ please ensure that one or more items are selected in the table beforehand.
 ![export-button.png](../img/apps/export-button.png)  Export button is used for exporting supervisor from the supervisors tab to an excel file.
 
 
-### Supervisors
+## Supervisors
 
 Supervisor can either be a physical Rubix Compute device or a connection to a Nube iO cloud service.
 
-### Location
+## Location
 
 Location is comprised of groups of Rubix Computes.
 
-### Group
+## Group
 
 Serves as a method to cluster Rubix Computes for simplified device identification and management. For Example: `level-1` or `metering`.
 
-### Devices
+## Devices
 Directs users to access the Rubix Computes
 
-### Device
+## Device
 A physical Rubix Compute.
 
-### Example setup
+## Example setup
 
 ```
 -- supervisor (Acme Corp) // Customer
@@ -117,13 +117,13 @@ A physical Rubix Compute.
 ![side-bar-supervisors.png](img/side-bar-supervisors.png)
 
 
-### Sidebar
+## Sidebar
 
 The sidebar provides a simple means of navigating between supervisors, devices, protocols, and sensors.
 
 ![max800pc](img/sidebar.png)
 
-#### Active Supervisors
+## Active Supervisors
 
 :::caution
 At this point, you should have already added a supervisor. Please refer to **[supervisor](supervisor.md)** if you haven't done so already. 
