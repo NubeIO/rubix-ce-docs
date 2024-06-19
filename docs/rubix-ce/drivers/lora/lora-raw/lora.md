@@ -23,7 +23,7 @@ The Rubix Compute is a LoRa® Gateway/Reciever.
 Adding the LoRa® driver for the first time it will install a module/plugin dependency called `LoRa®`.
 :::
 
-## Summery Of Ports When Adding a Network
+## Summary Of Ports When Adding a Network
 
 Depending on the LoRa® network use case the correct serial-port must be selected.
 
