@@ -28,9 +28,6 @@ env:
 jobs:
   deploy:
     name: Deploy to GitHub Pages
-    environment:
-      name: Deploy to GitHub Pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -54,7 +51,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
+          # Use the build artifacts
           path: build
       - name: Deploy to GitHub Pages
         id: deployment
@@ -62,14 +59,13 @@ jobs:
 
   generate_pdf:
     name: Generate PDF from Deployed Site
-    environment:
-      name: Generate PDF from Deployed Site
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: deploy
     steps:
       - name: Wait for deployment
         run: echo "Deployment finished"
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Install dependencies
         run: yarn install --frozen-lockfile --non-interactive
       - name: Install Prince
@@ -79,7 +75,7 @@ jobs:
           cd prince-14.2-linux-generic-x86_64
           yes "" | sudo ./install.sh
       - name: Generate PDF
-        run: npx docusaurus-prince-pdf -u ${{ steps.deployment.outputs.page_url }}/docs/overview --include-index --output pdf/rubix-ce.pdf
+        run: npx docusaurus-prince-pdf -u https://nubeio.github.io/rubix-ce-docs/docs/overview --include-index --output pdf/rubix-ce.pdf
       - name: Upload PDF
         uses: actions/upload-artifact@v3
         with:
