@@ -6,9 +6,9 @@ sidebar_position: 6
 
 ## Overview
 
-**Modules** serve as a means to extend the functionality of Rubix-OS. Instead of overcrowding Rubix Compute with every feature or protocol, users have the flexibility to add or remove **modules** based on their specific needs. This modular approach allows for a more tailored and efficient use of resources, enabling users to customize their Rubix CE experience according to their requirements.
+**Modules** serve as a means to extend the functionality of Rubix-OS. Instead of overcrowding Rubix Compute with every feature or protocol, users have the flexibility to add or remove **modules** based on their specific needs. This modular approach allows for a more tailored and efficient use of resources, enabling users to customize their Rubix experience according to their requirements.
 
-The Rubix CE platform supports several key features:
+The Rubix platform supports several key features:
 
 * Reading point values from sensors and logical sources.
 * Writing to points, with support for priority arrays.
