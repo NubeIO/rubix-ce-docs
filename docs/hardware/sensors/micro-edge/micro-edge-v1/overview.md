@@ -33,7 +33,7 @@ Supports the following input types:
 
 
 
-# Why LoRa®
+# Why LoRa
 
 LoRa® is a low-power, long-range wireless technology designed for the Internet of Things.
 It is less affected by buildings and other obstructions than regular WiFi, with one gateway generally being able to provide coverage for a 70x70m, 3-story building.

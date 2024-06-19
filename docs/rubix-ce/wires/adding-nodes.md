@@ -2,8 +2,8 @@
 sidebar_position: 2
 ---
 
-# Using The Editor
-
+# Wiresheet
+Wiresheets allows you to create and manage wire-based programs for controlling and monitoring devices. 
 
 ## Adding Nodes
 
@@ -23,7 +23,7 @@ To add nodes from the context menu in Rubix Wires, follow these steps:
 
 To add nodes from the Node Palette in Rubix Wires, follow these steps:
 
-1. Open the Node Palette, which displays different node groups.
+1. Open the Node Pallet, which displays different node groups.
 2. Click on a node group to expand it, revealing the available nodes within that group.
 3. Locate the specific node you want to add to your workflow.
 4. Click and drag the desired node from the Node Palette to the Editor Pane.
@@ -32,14 +32,14 @@ To add nodes from the Node Palette in Rubix Wires, follow these steps:
 
 ![max500px](img/add-node.png)
 
-## Node Palette Search
+## Node Pallet Search
 
 
-To facilitate finding nodes quickly in the Node Palette, Rubix Wires offers a search feature located at the top of the Node Palette. Here's how it works:
+To facilitate finding nodes quickly in the Node Pallet, Rubix Wires offers a search feature located at the top of the Node Palette. Here's how it works:
 
-1. Locate the search bar at the top of the Node Palette.
+1. Locate the search bar at the top of the Node Pallet.
 2. Type your desired search term or keyword into the search bar.
-3. As you type, the Node Palette will dynamically filter the nodes displayed, showing only those that match the search terms.
+3. As you type, the Node Pallet will dynamically filter the nodes displayed, showing only those that match the search terms.
 4. Browse through the filtered nodes to find the one you're looking for.
 5. Once you find the desired node, you can click and drag it from the Node Palette to the Editor Pane to add it to your workflow.
 

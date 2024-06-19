@@ -23,7 +23,7 @@ The Rubix Compute is a LoRa® Gateway/Reciever.
 Adding the LoRa® driver for the first time it will install a module/plugin dependency called `LoRa®`.
 :::
 
-## Summery Of Ports When Adding a Network
+## Summary Of Ports When Adding a Network
 
 Depending on the LoRa® network use case the correct serial-port must be selected.
 
@@ -56,9 +56,9 @@ Sensor Models
 
 
 1. **Step-1** Once inside the `network`, click the **create** ![add icon](../../../img/apps/add-button.png) button and a pop-up will give you the type of sensors to select from. For this example, we will be using a `THLM` Droplet.
-2. **Step-2** Follow the wizard by assigning a name and description, and then press `submit` to continue.
+2. **Step-2** Follow the wizard to assign a name and description. Ensure to click `Show advanced options` and enable `Auto mapping` before submitting.
 3. **Step-3** Enter the 8 digit serial number printed on the sensor and press submit.
-4. **Step-4** Once the sensor has been added, view the points by clicking on the arrow point on the newly added device.
+4. **Step-4** Once the sensor has been added, view the points by right clicking the newly added device.
 
 ![max800px](img/adding-lora-droplet.gif)
 

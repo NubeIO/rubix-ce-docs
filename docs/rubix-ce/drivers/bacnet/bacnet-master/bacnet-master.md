@@ -20,7 +20,9 @@ required.
 
 1. Open the host device you wish to add the BACnet network to
 2. Click on the Add ![add-button.png](../../../img/apps/add-button.png)
-3. Follow the steps in the wizard
+3. A pop up window will appear, click the BACnet Master.
+4. Provide the required details for your BACnet Server, including its Name, Port, and Network Interface. These fields are mandatory.
+5. Click `Create Network`.
 
 ![max800px](img/bacnet-add-network-whois.gif)
 
@@ -44,8 +46,8 @@ required.
 # Editing a BACnet Network
 
 1. You can either click on the **edit icon** ![edit icon](../../../../img/edit-icon.png) or **right-click** and **edit**
-2. Update as required
-3. To save hit the submit button
+2. Update as required or as needed.
+3. To save, hit the save button
 
 
 ![max800px](img/bacnet-master-settings.png)
@@ -54,15 +56,21 @@ required.
 
 1. Open the network you added by **right-click** Open
 2. Click on the Add ![add-button.png](../../../img/apps/add-button.png)
-3. Enter the details required
-4. To save hit the submit button
+3. Enter the details required like Name, Object ID, Object Type etc.
+4. To save, hit the `save` button.
 
 
 ## BACnet Network Device Discovery (BACnet Who Is)
 
 You can also do a BACnet device discovery to add the devices.
 
-Enter into the BACnet tab and click on the **discover** icon.
+To add BACnet device automatically, follow these steps:
+
+1. Navigate to the Discover tab.
+2. Click on the Discover icon.
+3. Wait for the device list to populate.
+4. Select the checkboxes next to the devices you want to connect to BACnet.
+5. Click on `Add Devices`.
 
 ![max800px](img/whois.gif)
 
@@ -76,7 +84,18 @@ Enter into the BACnet tab and click on the **discover** icon.
 
 ### BACnet Network Points Discovery (BACnet Discover Device Objects)
 
-You can also discover and add the BACnet points as required.
+Here are the steps to add points to your BACnet device using `Discovery`:
+
+1. Open the BACnet device where the points you want to add reside.
+2. Navigate to the Discover tab.
+3. Click on `Count Device Objects` and then click `Discover.`
+4. Click on `Discover Device Objects` and then click `Discover.`
+5. Select the checkboxes next to the device objects you want to move to the BACnet points table.
+6. Click on `Discover Points` and then click `Discover.`
+7. Wait for the table to populate with points.
+8. Again, select the checkboxes next to the points you wish to add.
+9. Finally, click `Add Points` to complete the process of adding your BACnet points.
+
 
 ![max800px](img/discover-points.gif)
 
@@ -101,10 +120,6 @@ Select the required poll rate.
 | Poll Rate | - Fast <br/> - Normal <br/>  - Slow |
 
 
-
-## About BACnet
-
-BACnet stands as a data communications protocol designed for Building Automation and Control Networks. It holds the status of an approved and standardized protocol by esteemed organizations such as the American Society of Heating, Refrigerating, and Air Conditioning Engineers (ASHRAE), the American National Standards Institute (ANSI), and the International Organization for Standardization (ISO). This protocol facilitates communication and control across various applications, including heating, ventilation, air-conditioning, lighting, access, and fire detection systems, along with their associated equipment.
 
 ## Supported Services
 

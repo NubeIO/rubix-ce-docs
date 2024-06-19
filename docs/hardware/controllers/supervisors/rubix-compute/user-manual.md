@@ -18,7 +18,7 @@ The Rubix Compute is a one-of-a-kind gateway that aggregates and manages all typ
 * Integrate into any BMS via BACnet/IP
 * Has Flow-based programming environment for BMS programing
 * Receive wireless signals
-* LoRa® & LoRaWAN®®
+* LoRa® & LoRaWAN®
 * Convert Modbus & BACnet to wireless
 * Has onboard Rest-API
 
