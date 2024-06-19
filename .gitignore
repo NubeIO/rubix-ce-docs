@@ -3,6 +3,7 @@
 
 # Production
 /build
+/pdf
 
 .idea
 # Generated files

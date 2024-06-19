@@ -67,3 +67,20 @@ Example
 cd /home/aidan/code/go/rubix-ce-docs/docs/rubix-ce/services
 sed -i -e 's/####/###/g' rql.md
 ```
+
+## Generate PDF
+
+To generate PDF from a local Docusaurus instance. You need to first build the site locally:
+
+# Build the site
+```bash
+yarn build
+```
+
+# Serve built site locally
+```bash
+yarn serve
+```
+
+# Generate PDF from local Docusaurus instance
+npx docusaurus-prince-pdf -u http://localhost:3000/rubix-ce-docs/docs/overview --include-index --output pdf/rubix-ce.pdf
