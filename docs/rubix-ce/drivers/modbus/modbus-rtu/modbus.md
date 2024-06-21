@@ -72,22 +72,22 @@ You must have a Rubix Compute and a Modbus RTU device and know the settings requ
 | Port              | Default port is `47808` you can also set it to another port like `47809` if required.    |
 |Enable               |Enable the device                                                                    |
 | Object Type | This refers to the type of Modbus data object being configured. Common types include: 
-**Coil:** A single bit of read/write data.
-**Discrete Input:** A single bit of read-only data.
-**Input Register:** 16-bit read-only data.
-**Holding Register:** 16-bit read/write data.|
+| |**Coil:** A single bit of read/write data.|
+| |**Discrete Input:** A single bit of read-only data.|
+|| **Input Register:** 16-bit read-only data. |
+||**Holding Register:** 16-bit read/write data.|
 | Register | his specifies the address of the Modbus data object in decimal format. Registers in Modbus are memory locations where data is stored or from which it is read.|
 |Decimal Format |Specifies the type of data stored in the register. |
 |Write mode| Defines whether the register is read-only or read/write: |
-|Endianness| Specifies the byte order of multi-byte data types:
-**ABCD:** Big-endian (most significant byte first).
-**DCBA:** Little-endian (least significant byte first).
-**BACD:** Middle-endian (varying byte order).
-**CDAB:** Opposite of Middle-endian (varying byte order)|
-|Poll Priority| Specifies the priority level for polling this Modbus object. This helps in determining how frequently and quickly the data should be updated. Typical options include:
-**High:** Poll frequently (short poll interval).
-**Normal:** Poll moderately (moderate poll interval).
-**Low:** Poll infrequently (long poll interval).|
+|Endianness| Specifies the byte order of multi-byte data types:|
+|            | **ABCD:** Big-endian (most significant byte first). |
+|            | **DCBA:** Little-endian (least significant byte first). |
+|            | **BACD:** Middle-endian (varying byte order). |
+|            | **CDAB:** Opposite of Middle-endian (varying byte order). |
+|Poll Priority| Specifies the priority level for polling this Modbus object. This helps in determining how frequently and quickly the data should be updated. Typical options include:|
+|   | **High:** Poll frequently (short poll interval). |
+|   | **Normal:** Poll moderately (moderate poll interval).|
+|   | **Low:** Poll infrequently (long poll interval).|
 |Poll Rate|Specifies the frequency or interval at which the Modbus master device polls (requests data from) the Modbus slave device.|
 |Multiplication Factor| This factor is applied to the raw data read from the Modbus slave device before scaling.|
 |Scale Enable|This setting determines whether scaling should be applied to the data retrieved from the Modbus slave device. When enabled, the data read from the device is scaled according to the specified scaling parameters.|
