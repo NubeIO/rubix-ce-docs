@@ -26,22 +26,20 @@ required.
 
 ![max800px](img/bacnet-add-network-whois.gif)
 
-## Attributes
-
 
 | Attribute   | Description                                       |
 |-------------|---------------------------------------------------|
 | Name        | Name of the network                               |
 | Description | Description of the network, eg: `level 1 network` |
-
-### Show Advanced Options
-
-| Attribute         | Description                                                                             |
-|-------------------|-----------------------------------------------------------------------------------------|
 | Port              | Default port is `47808` you can also set it to another port like `47809` if required.    |
+|Enable               |Enable the network                                                                     |
 | Network interface | Select the network interface: <br/> - ETH-1 interface eth0 <br/> - ETH-2 interface eth1 |
 | Max poll rate     | Set max polling rate.                                                                    |
-
+|History Enable     | Enable network history                                                                    |
+|Tags               | Right-click the network then `tags, meta-tags` to add in query key words                    |
+|Meta-Tags          | Right-click the network then `tags, meta-tags` to add in query key words                   |
+|Message            | See **[Troubleshooting](../../../setup/Troubleshoot.md)** for list of messages|
+|State              | Shows `ok` when the network is working in order, next to it is the time when the object has a non-empty last-fail property. Shows `error` when the network is not working in order, the time next to it is the time diff between now and the last fail was reported|
 
 # Editing a BACnet Network
 
@@ -58,6 +56,25 @@ required.
 2. Click on the Add ![add-button.png](../../../img/apps/add-button.png)
 3. Enter the details required like Name, Object ID, Object Type etc.
 4. To save, hit the `save` button.
+
+| Attribute   | Description                                       |
+|-------------|---------------------------------------------------|
+| Name        | Name of the device                               |
+| Description | Description of the device, eg: `sensor 1` |
+|Host IP| Fill in for BACnet IP only, IP of the device you wanted to connect with|
+| Port              | Default port is `47808` you can also set it to another port like `47809` if required.    |
+|Enable               |Enable the network                                                                     |
+| Object ID | Refers to the identifier of a specific object instance within a BACnet device or network. |
+| Network Number    | Identifier that distinguishes different BACnet networks within a larger system.           |
+|Device MS/TP MAC Address    | For BACnet networks using MS/TP (Master-Slave/Token-Passing) communication, the MAC address (Media Access Control address) uniquely identifies each device on the network segment. It's essential for addressing and communication.|
+|Device Max-ADPU (Application Data Protocol Unit)| ADPU refers to the maximum size of data packets that the BACnet master can handle during communication with BACnet devices. It defines the maximum amount of data that can be sent or received in a single transmission.|
+|Device Segmentation| Refers to the capability of the BACnet master to handle large amounts of data by breaking them into smaller segments (ADPUs). It ensures efficient communication, especially over networks with limited bandwidth or where devices support different data sizes.|
+|Poll Delay Between Points| This parameter specifies the time interval between successive polls (requests for data) sent by Rubix CE to different BACnet devices or points (e.g., sensors, actuators).|
+|Tags               | Right-click the network then `tags, meta-tags` to add in query key words                    |
+|Meta-Tags          | Right-click the network then `tags, meta-tags` to add in query key words                   |
+|Message            | See **[Troubleshooting](../../../setup/Troubleshoot.md)** for list of messages|
+|State              | Shows `ok` when the network is working in order, next to it is the time when the object has a non-empty last-fail property. Shows `error` when the network is not working in order, the time next to it is the time diff between now and the last fail was reported|
+
 
 
 ## BACnet Network Device Discovery (BACnet Who Is)
@@ -81,6 +98,22 @@ To add BACnet device automatically, follow these steps:
 1. Open the BACnet device by **right-click** and **Open**
 2. Click on the **add button** ![edit icon](../../../img/apps/add-button.png)
 3. Enter the point details then save
+
+| Attribute   | Description                                       |
+|-------------|---------------------------------------------------|
+| Name        | Name of the point                               |
+| Description | Description of the point, eg: `temperature` |
+|Enable               |Enable the network                                                                     |
+|Object ID|  A unique identifier within a BACnet device that specifies a particular object instance. Each object in BACnet (such as analog input, binary output, etc.) is identified by a unique Object ID.|
+|Object Type      | Object Type specifies the class or type of the BACnet object.   |
+|Write Mode|Refers to how the data associated with a particular point can be written or updated.  |
+|Read/Write Type|Defines how a BACnet object can be accessed and manipulated by other devices or controllers on the network|
+|Round to Decimals|Defines the number of decimal places to which the value of a numeric object (like analog inputs or outputs) should be rounded.|
+|Fallback|Refers to the number of retries or attempts a device makes to establish communication or to perform an operation before it considers an action as unsuccessful.|
+|Unit|Refer to the specification of the measurement or data type associated with a particular data point or object|
+|History Type|Determines how historical data is recorded or stored for the object.|
+|History Interval|Specifies the time interval between consecutive history samples recorded for the object. |
+|History COV Threshold (Change of Value Threshold)| Sets the threshold value that triggers a change of value notification for historical records. When the object's value changes by an amount exceeding this threshold, a history update is recorded.|
 
 ### BACnet Network Points Discovery (BACnet Discover Device Objects)
 
