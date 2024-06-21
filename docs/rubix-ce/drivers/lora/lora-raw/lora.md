@@ -14,6 +14,18 @@ The Rubix Compute is a LoRa® Gateway/Reciever.
 * Install required **[modules/plugins](../../../setup/plugins.md)** **LoRa®** 
 :::
 
+| Attribute   | Description                                       |
+|-------------|---------------------------------------------------|
+| Name        | Name of the network                               |
+| Description | Description of the network, eg: `level 1 network` |
+|Enable               |Enable the network                                                                     |
+| Serial Port              | A dropdown menu to choose the port where the Lora Network is connected.    |
+| Serial Baudrate | A dropdown menu to choose speed at which data is transmitted over a serial communication interface |
+|History Enable     | Enable network history                                                                    |
+|Tags               | Right-click the network then `tags, meta-tags` to add in query key words                    |
+|Meta-Tags          | Right-click the network then `tags, meta-tags` to add in query key words                   |
+|Message            | See **[Troubleshooting](../../../setup/Troubleshoot.md)** for list of messages|
+|State              | Shows `ok` when the network is working in order, next to it is the time when the object has a non-empty last-fail property. Shows `error` when the network is not working in order, the time next to it is the time diff between now and the last fail was reported|
 
 1. **Step-1** On the controller level, under `drivers`, click the **create** ![add icon](../../../img/apps/add-button.png) to select and download and install the relevant network. Follow the wizard to continue installing the LoRa® network.
 2. **Step-2** Select the LoRa® network. This will download the appropriate modules and drivers. Check the default communication settings for the sensor by ticking the 'show advanced options' checkbox.

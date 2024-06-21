@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Overview
 
-# Rubix OS - Rubix Operating Stytem or ROS (open by firewall)
+# Rubix OS - Rubix Operating System or ROS (open by firewall)
 Rubix OS is the core runtime that runs either on the Rubix Compute or in the Nube-iO cloud.
 
 ## Performs tasks such as:
