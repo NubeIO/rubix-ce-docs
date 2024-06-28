@@ -13,7 +13,7 @@ Modbus data from connected Modbus devices.
 1. **Step-1** On the controller level, under `drivers`, click the **create** ![add icon](../../../img/apps/add-button.png) to select and download and install the relevant network. 
 2. **Step-2** Select the **Modbus Network** . This will download the appropriate modules and drivers.
 3. **Step-3** Configure the Modbus Network. Add the network name, network description and choose `IP` on Network Transport Type, you can also turn ON the History if needed. Disregards other settings.
-4. **Step-4** Once all the settings are configured click on **Create Network** button. This should now create the Modbus and network. Now open the Modbus network to add a device.
+4. **Step-4** Once all the settings are configured click on **Create Network** button. This will now create the Modbus and network. Now open the Modbus network to add a device.
 
 
 ![max800px](img/modbus-tcp-network.gif)
@@ -22,7 +22,7 @@ Modbus data from connected Modbus devices.
 |-------------|---------------------------------------------------|
 | Name        | Name of the network                               |
 | Description | Description of the network, eg: `level 1 network` |
-| Port              | Default port is `502` you can also set it to another port like if required.    |
+| Port              | Default port is `502` you can also set it to another port if required.    |
 |Enable               |Enable the network                                                                     |
 | Network Transport Type | Protocol used to physically transport Modbus messages between devices. This can be Serial, IP or LoRa |
 | Serial Port     | For Serial network only,   physical connector on a device that facilitates serial communication. use `/dev/tty/RS485-1` / `/dev/tty/RS485-2` RTU ports. respectively. For wireless Modbus-Over-LoRa® Network, use `/data/socat/serialBridge1`.           |
@@ -35,7 +35,7 @@ Modbus data from connected Modbus devices.
 :::info
 Important things to note before proceeding:
 You must have a Rubix Compute and a modbus RTU device and know the settings required to add the device
-**[ports](../../../../hardware/controllers/supervisors/rubix-compute/ports.md)**
+**[User Manual](../../../../hardware/controllers/supervisors/rubix-compute/user-manual.md)**
 :::
 
 
@@ -46,10 +46,10 @@ You must have a Rubix Compute and a modbus RTU device and know the settings requ
 | Attribute   | Description                                       |
 |-------------|---------------------------------------------------|
 | Name        | Name of the device                               |
-| Description | Description of the network, eg: `sensor 1` |
-|Enable   |Enable the network                                                                     |
+| Description | Description of the device, eg: `sensor 1` |
+|Enable   |Enable the device                                                                     |
 |Host IP| Fill in for Modbus IP only, IP of the device you wanted to connect with|
-| Port              | Modbus IP only, Default port is `502` you can also set it to another port like if required.    |
+| Port              | Modbus IP only, Default port is `502` you can also set it to another port if required.    |
 |Fast Poll Rate      |Refers to the shortest interval or fastest frequency at which the Modbus master sends requests to the Modbus slaves for data. A fast poll rate means that the master device queries the slaves more frequently.|
 | Normal Poll Rate |A moderate interval or frequency for polling Modbus slave devices. It’s a balanced approach where the master requests data at a rate that is frequent enough for timely updates but not as fast as the "Fast Poll Rate."|
 | Slow Poll Rate   |Longer interval or slower frequency for polling Modbus slaves. A slow poll rate means that the master device queries the slaves less frequently. This might be used in applications where the data doesn't need to be updated very often, or to reduce network traffic and conserve bandwidth.|
@@ -58,7 +58,7 @@ You must have a Rubix Compute and a modbus RTU device and know the settings requ
 |Tags               | Right-click the network then `tags, meta-tags` to add in query key words                    |
 |Meta-Tags          | Right-click the network then `tags, meta-tags` to add in query key words                   |
 |Message            | See **[Troubleshooting](../../../setup/Troubleshoot.md)** for list of messages|
-|State              | Shows `ok` when the network is working in order, next to it is the time when the object has a non-empty last-fail property. Shows `error` when the network is not working in order, the time next to it is the time diff between now and the last fail was reported|
+|State              | Shows `ok` when the device is working in order, next to it is the time when the object has a non-empty last-fail property. Shows `error` when the device is not working in order, the time next to it is the time diff between now and the last fail was reported|
 
 
 ## Adding Points to the Modbus Device
@@ -68,10 +68,10 @@ You must have a Rubix Compute and a modbus RTU device and know the settings requ
 
 | Attribute   | Description                                       |
 |-------------|---------------------------------------------------|
-| Name        | Name of the device                               |
-| Description | Description of the device, eg: `sensor 1` |
-|Host IP| Fill in for BACnet IP only, IP of the device you wanted to connect with|
-| Port              | Default port is `47808` you can also set it to another port like `47809` if required.    |
+| Name        | Name of the point                               |
+| Description | Description of the point, eg: `temp 1` |
+|Host IP| Fill in for Modbus IP only, IP of the device you wanted to connect with|
+| Port              | Default port is `502` you can also set it to another port if required.    |
 |Enable               |Enable the device                                                                    |
 | Object Type | This refers to the type of Modbus data object being configured. Common types include: 
 | |**Coil:** A single bit of read/write data.|
@@ -103,7 +103,7 @@ You must have a Rubix Compute and a modbus RTU device and know the settings requ
 |History Type|Determines how historical data is recorded or stored for the point.|
 |History Interval|Specifies the time interval between consecutive history samples recorded for the point. |
 |History COV Threshold (Change of Value Threshold)| Sets the threshold value that triggers a change of value notification for historical records. When the object's value changes by an amount exceeding this threshold, a history update is recorded.|
-|Tags               | Right-click the network then `tags, meta-tags` to add in query key words                    |
-|Meta-Tags          | Right-click the network then `tags, meta-tags` to add in query key words                   |
+|Tags               | Right-click the point then `tags, meta-tags` to add in query key words                    |
+|Meta-Tags          | Right-click the point then `tags, meta-tags` to add in query key words                   |
 |Message            | See **[Troubleshooting](../../../setup/Troubleshoot.md)** for list of messages|
-|State              | Shows `ok` when the network is working in order, next to it is the time when the object has a non-empty last-fail property. Shows `error` when the network is not working in order, the time next to it is the time diff between now and the last fail was reported|
+|State              | Shows `ok` when the point is working in order, next to it is the time when the object has a non-empty last-fail property. Shows `error` when the point is not working in order, the time next to it is the time diff between now and the last fail was reported|

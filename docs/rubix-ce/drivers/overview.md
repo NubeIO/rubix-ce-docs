@@ -17,21 +17,22 @@ See more info for each protocol:
 
 Rubix CE offers enhanced functionality through its versatile driver support, empowering users to integrate a wide range of industrial protocols seamlessly. These drivers include essential protocols such as BACnet Master and Server, LoRa® and LoRaWAN®, Modbus-RTU and Modbus-TCP, as well as System-Network integration. Each driver expands Rubix CE's capabilities, enabling efficient communication and control across diverse industrial environments. Whether you need robust data acquisition, IoT connectivity, or network management, Rubix CE's comprehensive driver suite provides the essential tools for optimizing operational efficiency and scalability within industrial automation and control systems.
 
-To incorporate a Driver for a new network, go to the Driver Tab within the controller page. Click on "+ Create", then pick the driver from the dropdown menu. If the necessary Driver isn't visible in the menu, you'll need to install the plug-ins as outlined in **[plug-ins](../setup/plugins.md)**.
+To incorporate a Driver for a new network, go to the Driver Tab within the controller page. Click on "+ Create", then pick the driver from the dropdown menu. If the necessary Driver isn't visible in the menu, you'll need to install the apps as outlined in **[apps](../setup/apps.md)**.
 
 ![max800px](./img/driver-page.png)
 
 ## Adding a Network
 
-* **Step-1** Navigate to the controller level, then under `drivers`, click on the **create** ![add icon](../img/apps/add-button.png)
-* **Step-2** Choose the network you wish to add. This action will initiate the download and installation of the necessary network dependencies. Follow the prompts in the wizard to complete the installation process.
-* **Step-3** After all the settings are configured, click on the **Submit** button.
+* **Step-1** Access the controller level by selecting the `host` and then clicking on the specified controller.
+* **Step-2** Under `drivers`, click on the **create** ![add icon](../img/apps/add-button.png)
+* **Step-3** Select the network you want to add. This will trigger the download and installation of required network dependencies. Follow the prompts in the wizard to finish the installation.
+* **Step-4** Once all settings are configured, click on the **Submit** button.
 
 Proceed to generate the network for the chosen protocol. Afterward, simply **right-click** and select "Open" to view the **devices**.
 
 ## Drivers Dependencies Overviews
 
-Typically, every driver requires the installation of an application called **flow-framework** (refer to **[Installing apps](../setup/plugins.md)** for instructions). Once **flow-framework** is installed, each driver needs a corresponding `Module/Plugin` (for further details on modules, check **[Module/Plugin](../setup/plugins.md)**).
+Typically, every driver requires the installation of an application (refer to **[Installing apps](../setup/apps.md)** for instructions). Once an App is installed, each driver needs a corresponding `Module` (for further details on modules, check **[Modules](../setup/Modules.md)**).
 
 
 | Driver Name             | App Name      | Module/Plugin Name | Service Name                     |
@@ -68,8 +69,8 @@ To restore a backup of a Network, Device, or Points, locate and click on the **I
 | Mode                   | Use case                                                                                                   | Description                                                                                                                                                   | 
 |------------------------|------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Read only              | Mostly used for polling values                                                                             | Only Read Point Value Once                                                                                                                                   |
-| Write once             | Used when you want fast network speeds                                                                     | Only Read Point Value (poll rate defined by setting)                                                                                                         |
-| Write once read once   | Used on device such as a small thermostat where it has its own set-point so you dont want to override it | Write the value on COV, not Read                                                                                                                           |
+| Write once             | A setpoint on a remote thermostat; The value is set (by writing to the Rubix point) at the beginning of the day, then the thermostat can be adjusted by the occupants throughout the day;  This mode will allow the point to be written, but then will perform read polls to check if the value has been changed by others. speeds                                                                     | Only Read Point Value (poll rate defined by setting)                                                                                                         |
+| Write once read once   |  | Write the value on COV, not Read                                                                                                                           |
 | Write always           | Used when you want to write every poll                                                                     | Write the value on every poll (poll rate defined by setting)                                                                                                 |
 | Write always then read |                                                                                                            | Write the value on COV, then read on each poll (poll rate defined by setting)                                                                                |
 | Write and maintain     |                                                                                                            | Value written on COV, then read on each poll (poll rate defined by setting). <br/> If read value doesn't match written value, rewrite the value. |

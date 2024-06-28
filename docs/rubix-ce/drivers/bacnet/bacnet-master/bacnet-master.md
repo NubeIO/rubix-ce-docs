@@ -12,7 +12,7 @@ When adding the BACnet driver the default settings should be suitable for most a
 required.
 
 :::info Important things to note before proceeding:
-* Install required **[modules/plugins](../../../setup/plugins.md)** **bacnetmaster**
+* Install required **[Apps](../../../setup/apps.md) and [Modules](../../../setup/Modules.md)** **Bacnet Master**
 :::
 
 
@@ -63,17 +63,17 @@ required.
 | Description | Description of the device, eg: `sensor 1` |
 |Host IP| Fill in for BACnet IP only, IP of the device you wanted to connect with|
 | Port              | Default port is `47808` you can also set it to another port like `47809` if required.    |
-|Enable               |Enable the network                                                                     |
+|Enable               |Enable the device                                                                    |
 | Object ID | Refers to the identifier of a specific object instance within a BACnet device or network. |
 | Network Number    | Identifier that distinguishes different BACnet networks within a larger system.           |
 |Device MS/TP MAC Address    | For BACnet networks using MS/TP (Master-Slave/Token-Passing) communication, the MAC address (Media Access Control address) uniquely identifies each device on the network segment. It's essential for addressing and communication.|
 |Device Max-ADPU (Application Data Protocol Unit)| ADPU refers to the maximum size of data packets that the BACnet master can handle during communication with BACnet devices. It defines the maximum amount of data that can be sent or received in a single transmission.|
 |Device Segmentation| Refers to the capability of the BACnet master to handle large amounts of data by breaking them into smaller segments (ADPUs). It ensures efficient communication, especially over networks with limited bandwidth or where devices support different data sizes.|
 |Poll Delay Between Points| This parameter specifies the time interval between successive polls (requests for data) sent by Rubix CE to different BACnet devices or points (e.g., sensors, actuators).|
-|Tags               | Right-click the network then `tags, meta-tags` to add in query key words                    |
-|Meta-Tags          | Right-click the network then `tags, meta-tags` to add in query key words                   |
+|Tags               | Right-click the device then `tags, meta-tags` to add in query key words                    |
+|Meta-Tags          | Right-click the device then `tags, meta-tags` to add in query key words                   |
 |Message            | See **[Troubleshooting](../../../setup/Troubleshoot.md)** for list of messages|
-|State              | Shows `ok` when the network is working in order, next to it is the time when the object has a non-empty last-fail property. Shows `error` when the network is not working in order, the time next to it is the time diff between now and the last fail was reported|
+|State              | Shows `ok` when the device is working in order, next to it is the time when the object has a non-empty last-fail property. Shows `error` when the device is not working in order, the time next to it is the time diff between now and the last fail was reported|
 
 
 
@@ -103,7 +103,7 @@ To add BACnet device automatically, follow these steps:
 |-------------|---------------------------------------------------|
 | Name        | Name of the point                               |
 | Description | Description of the point, eg: `temperature` |
-|Enable               |Enable the network                                                                     |
+|Enable               |Enable the point                                                                     |
 |Object ID|  A unique identifier within a BACnet device that specifies a particular object instance. Each object in BACnet (such as analog input, binary output, etc.) is identified by a unique Object ID.|
 |Object Type      | Object Type specifies the class or type of the BACnet object.   |
 |Write Mode|Refers to how the data associated with a particular point can be written or updated.  |

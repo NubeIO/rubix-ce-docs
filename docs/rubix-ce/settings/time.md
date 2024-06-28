@@ -5,9 +5,10 @@ sidebar_position: 2
 # Time/Date
 
 
-# Changing the Date / Time Settings
+## Changing the Date / Time Settings
 
 This section will guide you through the process of modifying the date and time on Rubix Compute.
+Navigate the settings of the Host and click `Date/Time`
 
 ![max800px](img/time-overview.png)
 

@@ -37,7 +37,7 @@ These protocols offer various functionalities catering to different use cases, f
 ![-](../img/apps/install-delete-modules.png)
 
 **To install a module in Rubix-CE, follow these steps:**
-* Navigate to the module page.
+* Access the Module page by expanding `Apps` and then selecting `Module`.
 * Click on the `Install Module` tab.
 * Check the list of available modules and click the install button ![install-button.png](../img/apps/install-button.png)
 * A pop-up window will appear prompting you with a drop down menu for module version.
