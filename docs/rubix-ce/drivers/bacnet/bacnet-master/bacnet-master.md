@@ -39,7 +39,8 @@ required.
 |Tags               | Right-click the network then `tags, meta-tags` to add in query key words                    |
 |Meta-Tags          | Right-click the network then `tags, meta-tags` to add in query key words                   |
 |Message            | See **[Troubleshooting](../../../setup/Troubleshoot.md)** for list of messages|
-|State              | Shows `ok` when the network is working in order, next to it is the time when the object has a non-empty last-fail property. Shows `error` when the network is not working in order, the time next to it is the time diff between now and the last fail was reported|
+|State              | `last_ok`:  Indicates the time since the system has been error-free.
+||`last_fail`: Specifies the date and time of the most recent occurrence of a failure.|
 
 # Editing a BACnet Network
 
@@ -73,8 +74,8 @@ required.
 |Tags               | Right-click the device then `tags, meta-tags` to add in query key words                    |
 |Meta-Tags          | Right-click the device then `tags, meta-tags` to add in query key words                   |
 |Message            | See **[Troubleshooting](../../../setup/Troubleshoot.md)** for list of messages|
-|State              | Shows `ok` when the device is working in order, next to it is the time when the object has a non-empty last-fail property. Shows `error` when the device is not working in order, the time next to it is the time diff between now and the last fail was reported|
-
+|State              | `last_ok`:  Indicates the time since the system has been error-free.
+||`last_fail`: Specifies the date and time of the most recent occurrence of a failure.|
 
 
 ## BACnet Network Device Discovery (BACnet Who Is)
@@ -114,6 +115,11 @@ To add BACnet device automatically, follow these steps:
 |History Type|Determines how historical data is recorded or stored for the object.|
 |History Interval|Specifies the time interval between consecutive history samples recorded for the object. |
 |History COV Threshold (Change of Value Threshold)| Sets the threshold value that triggers a change of value notification for historical records. When the object's value changes by an amount exceeding this threshold, a history update is recorded.|
+|Tags               | Right-click the device then `tags, meta-tags` to add in query key words                    |
+|Meta-Tags          | Right-click the device then `tags, meta-tags` to add in query key words                   |
+|Message            | See **[Troubleshooting](../../../setup/Troubleshoot.md)** for list of messages|
+|State              | `last_ok`: Indicates the most recent successful update of the latest value.|
+||`last_fail`:  Indicates the time when the issue first appeared, as specified in the message field.|
 
 ### BACnet Network Points Discovery (BACnet Discover Device Objects)
 

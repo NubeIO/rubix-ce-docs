@@ -25,7 +25,8 @@ The Rubix Compute is a LoRa® Gateway/Reciever.
 |Tags               | Right-click the network then `tags, meta-tags` to add in query key words                    |
 |Meta-Tags          | Right-click the network then `tags, meta-tags` to add in query key words                   |
 |Message            | See **[Troubleshooting](../../../setup/Troubleshoot.md)** for list of messages|
-|State              | Shows `ok` when the network is working in order, next to it is the time when the object has a non-empty last-fail property. Shows `error` when the network is not working in order, the time next to it is the time diff between now and the last fail was reported|
+|State              | `last_ok`:  Indicates the time since the system has been error-free.
+||`last_fail`: Specifies the date and time of the most recent occurrence of a failure.|
 
 1. **Step-1** On the controller level, under `drivers`, click the **create** ![add icon](../../../img/apps/add-button.png) to select and download and install the relevant network. Follow the wizard to continue installing the LoRa® network.
 2. **Step-2** Select the LoRa® network. This will download the appropriate modules and drivers.

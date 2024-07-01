@@ -58,8 +58,8 @@ You must have a Rubix Compute and a modbus RTU device and know the settings requ
 |Tags               | Right-click the network then `tags, meta-tags` to add in query key words                    |
 |Meta-Tags          | Right-click the network then `tags, meta-tags` to add in query key words                   |
 |Message            | See **[Troubleshooting](../../../setup/Troubleshoot.md)** for list of messages|
-|State              | Shows `ok` when the device is working in order, next to it is the time when the object has a non-empty last-fail property. Shows `error` when the device is not working in order, the time next to it is the time diff between now and the last fail was reported|
-
+|State              | `last_ok`:  Indicates the time since the system has been error-free.
+||`last_fail`: Specifies the date and time of the most recent occurrence of a failure.|
 
 ## Adding Points to the Modbus Device
 1. **Step-1** Locate the device you want to add points to from the list under the Modbus network. Right-click to open its settings.
@@ -106,4 +106,5 @@ You must have a Rubix Compute and a modbus RTU device and know the settings requ
 |Tags               | Right-click the point then `tags, meta-tags` to add in query key words                    |
 |Meta-Tags          | Right-click the point then `tags, meta-tags` to add in query key words                   |
 |Message            | See **[Troubleshooting](../../../setup/Troubleshoot.md)** for list of messages|
-|State              | Shows `ok` when the point is working in order, next to it is the time when the object has a non-empty last-fail property. Shows `error` when the point is not working in order, the time next to it is the time diff between now and the last fail was reported|
+|State              | `last_ok`: Indicates the most recent successful update of the latest value.|
+||`last_fail`:  Indicates the time when the issue first appeared, as specified in the message field.|
