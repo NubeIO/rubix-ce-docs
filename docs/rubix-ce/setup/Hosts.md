@@ -83,15 +83,19 @@ flowchart TD
     B[Nube IO Cloud]--> C[Rubix Compute-1]
 ```
 
-<b>OpenVPN Service</b>
-
-Open the **device/apps**
-
-<b> Connect to the VPN </b>
-
-Right Click on the device you want to add the `vpn` to
+## OpenVPN Service
 
 
+OpenVPN is an open-source software application that implements virtual private network (VPN) techniques for creating secure point-to-point or site-to-site connections in routed or bridged configurations and remote access facilities. Below are the steps on how to set up VPN on your device:
 
+1. Navigate to the devices section.
+2. Right-click on the device where you want to add the VPN and select `Configure Open VPN`.
+3. Wait for the prompt confirming that the VPN has been configured.
+4. Click the `refresh` button and verify if the VPN is displayed on the `Virtual IP tab`.
+5. Right-click on the same device again and choose `Attach Virtual IP`.
+6. Wait for the prompt confirming that the virtual IP has been configured successfully.
+
+
+![max800px](img/vpn-config.gif)
 
 

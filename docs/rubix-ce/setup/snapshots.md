@@ -2,7 +2,23 @@
 sidebar_position: 7
 ---
 
-# Backup & Restore
+# Backups & Templates
+## Overview
+
+### Templates
+
+Templates outlines the particulars of a system, including installed applications, modules, and data such as wires and ROS data. When restoring from a template, the process involves reinstalling each defined application and module, followed by the restoration of data. This method reconstructs the system environment piece by piece.
+
+![template-1.gif](./Backup/template-1.gif)
+
+
+### Backups
+
+Backups, on the other hand, involve capturing a comprehensive snapshot of a device, encompassing all its contents and configurations. This allows for the restoration of the entire system to its original state on either the same device or a different one. It mirrors the complete environment by duplicating everything, ensuring an exact replication of the setup.
+
+
+
+
 :::caution
 To create a backup, you'll require either 2 x Rubix Computes or 1 x Rubix Compute along with 1 x Nube iO Cloud account.
 :::
@@ -112,3 +128,4 @@ In Rubix CE, there is a dedicated tab displaying the history of when users perfo
 4. Click `Import` and then `Close` to complete the import process.
 
 ![Network-Excel.gif](./Backup/Network-Excel.gif)
+

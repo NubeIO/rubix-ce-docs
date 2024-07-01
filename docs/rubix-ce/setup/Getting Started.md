@@ -14,12 +14,12 @@ To get started with Rubix CE, the following are required:
 * PC equipped with Windows 10, Windows 11, Linux, or Mac OS.
 * Internet connection.
 * Download and install the Rubix CE software from the **[downloads page](download.md#download)**
-* Requires a Nube iO Cloud Accoun (see**[Nube iO Cloud Account](docker.md#nube-io-cloud-account)**)
+* Requires a Nube iO Cloud Accoun (see **[Nube iO Cloud Account](docker.md#nube-io-cloud-account)**)
 * Optionally, Nube iO Rubix Compute (see **[Rubix Compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)**)
 :::
 
-:::
-Note: This documentation assumes Windows for all examples and instructions.
+:::note
+This documentation assumes Windows for all examples and instructions.
 :::
 
 
