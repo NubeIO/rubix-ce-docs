@@ -150,8 +150,8 @@ When connecting an RS485 network, the first and last device on the network must 
 
 | Port Name         | Serial Port Name |
 |-------------------|------------------|
-| 485-1             | /dev/ttyUSB0     |
-| 485-2 and support | /dev/ttyAMA0     |
+| 485-1             | /dev/ttyRS485-1     |
+| 485-2 and support | /dev/ttyRS485-2 or /dev/ttyAMA0     |
 
 <br/>
 
@@ -183,7 +183,7 @@ To connect to and interact with a Rubix Compute it must be connected to a networ
 Alternatively, the Rubix Compute Controller can be connected directly to a PC via ethernet, see (Direct Connection to PC)
 
 ## 7.2. Network Architecture
-To add a Rubix Compute Gateway Controller to a network, an ethernet cable must be connected to one of the Ethernet ports on the controller. Generally, this will be using the ETH-2 port.
+To add a Rubix Compute Gateway Controller to a network, an ethernet cable must be connected to one of the Ethernet ports on the controller. Generally, this will be using the ETH-1 port.
 
 The other end of the Ethernet cable should be connected (directly or indirectly) to the Network Router.
 
@@ -203,21 +203,17 @@ When a Rubix Compute Controller is reset to factory defaults the 2 x Ethernet po
 | ETH-1     | eth0            | Fixed | 192.168.15.10 | 255.255.255.0 | 192.168.15.1 |
 | ETH-2     | eth1            | DHCP  | na            | na            | na           |
 
-<br/>
 
-## 7.4. Connecting Via Router (recommended)
-* When connecting to the Rubix Compute controller via a network router, ethernet port ETH-2 should be used (default network settings).
-* Once connected via an ethernet cable, find the automatically assigned IP Address by using the router’s admin user interface. Or by running an IP/Port Scanning Software (Port Scanner - Wikipedia https://en.wikipedia.org/wiki/Port_scanner).
-* Recommended IP/Port scanners include Angry IP Scanner or Advanced IP Scanner https://angryip.org/.
-* When you think you have found the correct IP Address, try running a PING check on that IP Address. If successful, unplug the Rubix Compute controller and re-run a PING check to see that the PING check now fails.  Then reconnect your Rubix Compute controller and PING again.
-
-
-
-# 7.5. Direct Connection to PC
-When connecting a Rubix Compute controller directly to a PC via an ethernet cable,  ethernet port ETH-1 should be used (at default network settings).  Ensure that the PC has self-assigned a static IP Address in the same subnet range as the Rubix Compute (default 192.168.15.xxx)
+# 7.4. Direct Connection to PC (recommended)
+When connecting a Rubix Compute controller directly to a PC via an ethernet cable,  ethernet port ETH-1 should be used (at default network settings).  Ensure that the PC has self-assigned a static IP Address in the same subnet range as the Rubix Compute (default 192.168.15.xxx) 
 
 :exclamation:`Each RC must be configured with an individual IP address`
 
 Once connected and the PC IP Address is configured, try running a PING check on the Rubix Compute IP Address (default: 192.168.15.10).
 
-This method is not recommended as it is quite difficult to provide the Rubix Compute Controller an internet connection when connected directly to a PC.  It is recommended to connect via a network router.
+## 7.5. Connecting Via Router 
+* When connecting to the Rubix Compute controller via a network router with DHCP capabilities, ethernet port ETH-2 should be used.
+* Once connected via an ethernet cable, find the automatically assigned IP Address by using the router’s admin user interface. Or by running an IP/Port Scanning Software (Port Scanner - Wikipedia https://en.wikipedia.org/wiki/Port_scanner).
+* Recommended IP/Port scanners include Angry IP Scanner or Advanced IP Scanner https://angryip.org/.
+* When you think you have found the correct IP Address, try running a PING check on that IP Address. If successful, unplug the Rubix Compute controller and re-run a PING check to see that the PING check now fails.  Then reconnect your Rubix Compute controller and PING again.
+

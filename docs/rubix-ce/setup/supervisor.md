@@ -5,7 +5,7 @@ sidebar_position: 3
 # Supervisor
 
 The Rubix Platform CE (Computer Edition) application enables the setup and programming of multiple 
-instances of Rubix Assist. Each customer has their own instance of Rubix Assist, which can be running
+instances of Rubix OS. Each customer has their own instance of Rubix OS, which can be running
 either in the cloud or on-premises. This setup allows users of Rubix CE to engineer multiple sites or 
 devices simultaneously.
 
@@ -32,10 +32,10 @@ For the default username and password, please contact Nube iO support at support
 ![max800px](../img/apps/add-supervisor-1.png)
 
 
-3. Add Supervising Hosting Option <br/>
+3. Add Supervisor Hosting Option <br/>
 
-**Supervising Hosting Option**
-<br/>A supervisor can either be a Rubix Compute or Rubix OS running in the cloud. A Supervisor serves as the entry point to the functionalities and navigation of Rubix OS. The supervisor's function is to host and manage all Rubix Compute devices. <br/><br/>
+**Supervisor Hosting Option**
+<br/>A supervisor can either be a Rubix Compute or Rubix OS running in the cloud. A Supervisor serves as the entry point to the functionalities and navigation of Rubix OS. The supervisor's function is to host and manage all Host devices, e.g Rubix Computes. <br/><br/>
 
 **Option 1: Nube iO Device**
 :::info
@@ -104,10 +104,20 @@ flowchart TD
 
 10. Ping Supervisor to check the connection to the newly added supervisor. You may opt to skip the process.
 11. To configure the Rubix User token, you can generate it by logging in with your `username` and `password`. If you haven't been provided with login details or a token, please reach out to <u>support@nube-io.com</u> for assistance. If you want to install a new Rubix OS version on your supervisor, click `Save Token & Next`. Otherwise, click `Save & Quit`.
-12. From the dropdown menu, select your preferred Rubix OS version. To install the new version, click `Save & Quit`; otherwise, click `Quit` to keep the current installation.
+12. From the dropdown menu, select your preferred Rubix OS version. To install the new version, click `Install & Quit`; otherwise, click `Quit` to keep the current installation.
 Short clip below will guide you through the configuration.
 
 ![max800px](img/adding-supervisor.gif)
+
+## Updating Rubix OS at Supervisor Level
+If step #12 regarding adding the Supervisor was missed and you need to update your current Rubix OS, follow these steps:
+1. Navigate to the icon on the sidebar corresponding to the Supervisor whose Rubix OS you want to update.
+2. Right click the icon and choose `Update Rubix OS`.
+3. From the dropdown menu, select the desired OS version you wish to install.
+4. Click on the "Install" button and patiently wait until the installation process is complete.
+5. Once installation is finished, click on "Done".
+
+![max800px](img/rubix-os-update.gif)
 
 :::tip
 Once the  **Supervisor** is created it is automatically enabled. `right-click` the supervisor's name to **Enable Supervisor** or **Disable Supervisor**.

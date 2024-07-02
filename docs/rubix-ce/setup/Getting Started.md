@@ -11,18 +11,21 @@ to remotely configure and implement changes without the need for a continuous in
 To get started with Rubix CE, the following are required:
 
 :::info
-* PC equipped with either Windows 10 or Windows 11.
+* PC equipped with Windows 10, Windows 11, Linux, or Mac OS.
 * Internet connection.
-* Download and install the Rubix CE software from this link: **[downloads page](download.md#download)**
-* **[Nube iO Cloud Account](docker.md#nube-io-cloud-account)**
-* And/Or Nube iO **[Rubix Compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)**
+* Download and install the Rubix CE software from the **[downloads page](download.md#download)**
+* Requires a Nube iO Cloud Accoun (see **[Nube iO Cloud Account](docker.md#nube-io-cloud-account)**)
+* Optionally, Nube iO Rubix Compute (see **[Rubix Compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)**)
 :::
 
-  
+:::note
+This documentation assumes Windows for all examples and instructions.
+:::
+
 
 ### Install
 
-No installation is necessary. Simply right-click to run Rubix CE. <br/>
+No installation is necessary. Unzip the downloaded file before running Rubix CE. Simply right-click to run Rubix CE after extracting. <br/>
 If you're running the software on a Windows machine, Windows Defender might prevent its execution. In such cases, simply click on `More Info` and then proceed by selecting `Run Anyway.`
 
 ![max300px](../img/apps/more-info.png)
@@ -82,10 +85,10 @@ Location is comprised of groups of Rubix Computes.
 Serves as a method to cluster Rubix Computes for simplified device identification and management. For Example: `level-1` or `metering`.
 
 ## Devices
-Directs users to access the Rubix Computes
+Directs users to access a physical Host (e.g Rubix compute).
 
 ## Device
-A physical Rubix Compute.
+A physical Device such as a Rubix Compute.
 
 ## Example setup
 

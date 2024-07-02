@@ -24,12 +24,7 @@ Operates on port `http`
 ```
 Operates on port `https`
 ```
-ra-YOURACCOUNT.nube-iiot.com
-```
-
-## Service Name
-```
-Sudo systemctl status nubeio-rubix-os.
+rb-YOURACCOUNT.nube-iiot.com
 ```
 
 # Overview of ports normally opened for port-forwarding for remote access:
@@ -64,11 +59,6 @@ Operates on port `https`
 rb-YOURACCOUNT.nube-iiot.com
 ```
 
-## Service Name
-```
-Sudo systemctl status nubeio-rubix-bios.
-```
-
 # Rubix Edge Wires - Wires (closed by firewall)
 Rubix Edge Wires is a block logic Building Automation Control runtime for controlling HVAC equipment, lighting and creating function block logic programs.
 
@@ -86,21 +76,10 @@ Operates on port `http`
 1665.
 ```
 
-## Service Name
-```
-Sudo systemctl status nubeio-rubix-edge-wires.
-```
-
-
 # Other 3rd Party Services and Drivers
 
 ## BACnet Driver (open by firewall)
 Communication protocol for `BACnet-master` and `BACnet-device`.
-
-### Service Name
-```
-Sudo systemctl status driver-bacnet.
-```
 
 ### Ports
 
@@ -111,7 +90,7 @@ Operates on port `udp`
 
 ## LoRa Driver (closed by firewall)
 The LoRa driver is a wireless communication protocol for Nube iO LoRa sensors and other wireless devices.
-Note: LoRa and LoRaWAN are not the same protocol. For 3rd Party LoRa sensors or devices, a LoRaWAN driver and gateway/reciver is required.
+Note: LoRa and LoRaWAN are not the same protocol. For 3rd Party LoRaWan sensors or devices, a LoRaWAN driver and gateway/reciever is required
 
 ### Service Name
 ```
@@ -123,12 +102,7 @@ Sudo systemctl status driver-lora.
 n/a
 
 ## Rubix Compute iO Driver  (closed by firewall)
-Rubix Compute iO Driver is a communication protocol for Input/Output (IO) hardware devices for Nube iO Rubix Compute iO.
-
-### Service Name
-```
-Sudo systemctl status driver-rubix-compute-io. 
-```
+Rubix Compute iO Driver is a communication protocol for Rubix ComputeiO hardware.
 
 ### Ports
 
@@ -140,11 +114,6 @@ Operates on port `http`
 ## VPN (open by firewall)
 A VPN service used for the Rubix Compute to communicate back to the `Nube iO Cloud`.
 
-### Service Name
-```
-Sudo systemctl status openvpn.
-```
-
 ### Ports
 
 Operates on port `tls`
@@ -154,11 +123,6 @@ Operates on port `tls`
 
 ## MQTT broker (closed by firewall)
 The MQTT broker is used for internal services.
-
-### Service Name
-```
-Sudo systemctl status mosquitto.
-```
 
 ### Ports 
 
@@ -170,11 +134,6 @@ Operates on port `tcp`
 ## LoRaWAN Dashboard (open by firewall)
 Dashboard used for the administration of the loRaWAN server.
 
-### Service Name
-```
-Sudo systemctl status lorawan-server. 
-```
-
 ### Ports
 
 Operates on port `http`
@@ -185,12 +144,7 @@ Operates on port `http`
 ## LoRaWAN Gateway/Driver (closed by firewall)
 The LoRaWAN driver is a wireless communication protocol for 3rd party LoRaWAN sensors and other wireless devices.
 Note: LoRa and LoRaWAN are not the same protocol. For 3rd Party LoRa sensors or devices, a LoRaWAN driver and gateway/reciver is required. 
-Service for communication to the `LORA-CONNECT` plugged into a Rubix Compute via a `RJ12` plug and cable.
-
-### Service Name
-```
-Sudo systemctl status lorawan-gateway. 
-```
+Service for communication to the `LORAWAN-CONNECT` plugged into a Rubix Compute via a `RJ12` plug and cable.
 
 ### Ports
 

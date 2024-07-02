@@ -32,8 +32,9 @@ Nube iO GitHub `releases` page will indicate the latest version of Rubix CE with
 
 
 Nube iO is fully equipped to perform updates or migrations on any Rubix Compute system upon request. Should such services be required, please do not hesitate to contact support@nube-io.com for further assistance. <br/><br/>
-The process typically spans approximately 5 minutes, during which no data will be lost. 
-It's worth noting that upgrades may occasionally become necessary following significant firmware releases.
+
+
+The process generally spans several minutes and may take longer on larger servers, during which no data will be lost. It's important to note that upgrades may be required occasionally after significant firmware releases.
 <br/>
 
 

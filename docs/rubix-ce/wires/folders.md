@@ -16,7 +16,7 @@ organise wire-sheets.
 ## Child Nodes
 Child Nodes are nodes that can only be added inside a `folder` node.
 
-# Nodes that are folder's
+## Nodes that are folder's
 
 | Node Name     | Category | Use Case                                      | Child Nodes                | 
 |---------------|----------|-----------------------------------------------|----------------------------|
@@ -26,13 +26,13 @@ Child Nodes are nodes that can only be added inside a `folder` node.
 
 
 
-# Creating Folders
+## Creating Folders
 
 Folders can be created like other nodes by adding them to the Editor Pane. Folders are located in the `folder` node
 category. Folders can also be created by selecting one or more nodes, and then selecting ‘Move To Container’ from the
 context menu; this will move all selected nodes and wire links to the new Folder.
 
-# Folder Navigation
+## Folder Navigation
 
 When a Folder node is created, it will appear in the Menu Sidebar under `Editor`. To go into a Folder, you can click on
 the entry in the Menu Sidebar, or select `Open Sub-Flow` from the Folder node’s context menu.
@@ -54,6 +54,12 @@ once outside the folder you will see 1x input connection and 1x output connectio
 
 ![inside-flow.png](img/inside-flow.png)
 
+**Link-Output-DATA TYPE:** Accepts data into its input; set the topic to reference the input link.
+
+**Link-Input-DATA TYPE:** Links data from Link-Output_DATA TYPE by adding the corresponding topic. Both must match for the data from Link-Output to reflect in Link-Input.
+
+
+![folder-link.gif](img/link-folder-min.gif)
 
 :::tip
 There is no limit to how deep folders can be added. You can add a folder within a folder and within a foler and so on

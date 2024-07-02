@@ -9,12 +9,20 @@ Rubix CE can detect if a device is offline. To check the availability of the dev
 ![max800px](../img/apps/is-online.png) <br/>
 Click ![update-status-button.png](../img/apps/update-status-icon.png) to update the current online/offline status of the devices.
 
-:::info Device Offline
-<b>Network Downtime: </b> Network signal is poor or nonexistent, the on-site engineer is advised to take the following steps to ensure connectivity: <br/>
-<ul><li>Check on the router's reception indicator.</li>
-<li>Restart the problematic device or check if the router is working correctly.</li>
-<li>Inspect the SIM integrity.</li></ul>
-:::
+### Device Offline for Remote Connections
+*** Network Downtime: *** Network signal is poor or nonexistent, the on-site engineer is advised to take the following steps to ensure connectivity:
+* Check on the router's reception indicator.
+* Restart the problematic device or check if the router is working correctly.
+* Inspect the SIM integrity.
+
+
+### Device Offline for Local Network without Internet
+* Ensure the device is powered on.
+* Verify the network configuration is correct.
+* Check for any damage to the Ethernet cable.
+* Verify if other devices on the same network are experiencing similar issues.
+* Restart the router to refresh the network connection.
+
 
 ## System Performace
 If **Rubix CE** experiences performance issues, you can diagnose potential causes by accessing system information in the `Info` section under `settings`. This information includes CPU usage, memory usage, swap memory usage, and disk usage. analysing these metrics can help pinpoint the source of performance degradation and guide troubleshooting efforts to address the underlying issues.
@@ -55,6 +63,5 @@ If **Rubix CE** experiences performance issues, you can diagnose potential cause
 |module-core-modbus (**`TCP`**)|Points|**`dial tcp <ip>:<port>: i/o timeout`**|when the poll point gets timeout (normally it happens if there's a physical connection issue)|
 
 
-##
 
 

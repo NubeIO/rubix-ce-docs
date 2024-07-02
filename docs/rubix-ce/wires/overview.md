@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Getting Started
 
-# Overview
+## Overview
 
 Wires is a programming tool that facilitates the integration, management, and automation of various devices, systems, and processes within a networked environment. It provides tools and capabilities for creating, configuring, and controlling workflows, data flows, and communication protocols between different components.
 
@@ -12,11 +12,11 @@ The term wires refers to the connections or pathways through which data, command
 
 Wires employs a concept called "Flows," which are a type of logical programming constructed by connecting nodes to create customised functionalities. These flows are dynamically built and modified during runtime, allowing for real-time adjustments. Additionally, flows can be exported and imported in JSON format, facilitating easy sharing and replication of custom functionalities across different instances or environments.
 
-# What is a node
+## What is a node
 
 A node represents a block of logic or functionality within the system. There are various types of nodes, each representing different functions or operations that can be performed. These nodes can be connected by linking their inputs and outputs, allowing values to be passed between them. This interconnected network of nodes forms logical flows, enabling the creation of complex workflows and automation processes within the Wires. By connecting nodes together, users can build custom logic and implement specific functionalities tailored to their needs, leveraging the flexibility and versatility of the node-based architecture.
 
-# About The Editor
+## About The Editor
 
 The **Editor** within Wires serves as the interface for connecting nodes to construct your program. For instance, you can add three nodes: `two const-num nodes` and `one add node`. Then, you would connect the `output` of each `const-num node` to the `inputs in1 and in2` on the `add node`, respectively.
 
@@ -24,7 +24,7 @@ This arrangement forms what is known as a **Flow Program**, where nodes are inte
 
 ![max800px](img/simple-example.png)
 
-# Flow Program
+## Flow Program
 
 **Flow Program** is essentially a collection of nodes and their interconnected wired connections that collectively form a complete program. Each node represents a specific function or logic block, and the connections between nodes define how data flows and how operations are performed within the program. By organizing and configuring nodes in a meaningful way, users can create comprehensive programs tailored to their specific needs, leveraging the flexibility and versatility of Wires.
 
@@ -34,18 +34,34 @@ The **editor** serves as the workspace where you can both write and test your pr
 
 ![max800px](img/overview.png)
 
-# Editor Buttons
+## Editor Buttons
 
 Editor buttons are used to do the following
-* **Deploy** - any changes you have made to the configuration will be saved and applied, allowing the edited program or workflow to take effect
+* **Deploy** - This button saves any changes made to the configuration within the editor and applies them. It effectively activates the edited program or workflow, allowing it to take effect in the system.
 * **Settings** - Provides access to configuration options and settings related to the editor interface or program behavior.
 * **Help** - Offers assistance and guidance in navigating and utilizing the editor effectively.
 * **Import/Export** -  Enables importing or exporting configurations or setups of nodes and connections, allowing users to share or transfer their work between different instances or environments.
 * **Wipe Flow** - Clears the current configuration or setup of nodes and connections from the editor, effectively resetting the workspace to its initial state. This can be useful for starting fresh or removing unwanted changes.
+* **Close Subflow** -  Closes the current subflow within the editor. 
+* **Back to Main** - Redirects you to the main wire page or the primary workspace within the editor.
+* **Connection Builder** - Generates block nodes for input and output by checking checkboxes and clicking `generate`. This feature helps in creating connections between nodes in the editor. 
+* **Link Builder** - Used to connect a link to another node using link nodes. It facilitates the creation and management of connections between different folders.
 
 ![max800px](img/editor-buttons.png)
 
-# Shortcuts
+## Editor Settings
+* **Show Mini Map:** Displays a miniature overview map (mini map) of the entire workspace within the editor, providing a quick visual reference of the overall structure. Toggles between showing or hiding the mini map.
+* **Show Node Pallet:** Allows users to show or hide the panel where nodes for building workflows or programs are listed. 
+* **Node Tree Show Node Count:** Shows or hides the numerical count of nodes for easy reference.
+* **Show Subflow tabs:** Enables or disables the tabs that allow navigation between various subflows.
+* **Export Nodes from Backend:** Provides functionality to export node configurations for backup, sharing, or deployment purposes.
+* **Use smooth Edge Style:** Enables a visually smoother connection style compared to straight lines.
+* **Minimap Position:** Allows positioning of the mini map at the top or bottom of the editor window.
+* **Refresh Time:** Defines how frequently the editor updates information or visually refreshes its content, such as node statuses or connections.
+
+![max800px](img/wire-setting.png)
+
+## Shortcuts
 
 - Hold Control and left-click to select nodes or connections.
 - Hold Control and press A to select all nodes.

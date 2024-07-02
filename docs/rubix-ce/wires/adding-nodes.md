@@ -47,7 +47,7 @@ To facilitate finding nodes quickly in the Node Pallet, Rubix Wires offers a sea
 
 ## Cloning nodes
 
-Nodes can be cloned (duplicated) by selecting `ctrl-d`
+Nodes can be cloned (duplicated) by selecting `ctrl-d` or by right clicking the node and selecting `Duplicate Node`
 
 ## Removing Nodes
 
@@ -58,17 +58,30 @@ To remove nodes in Rubix Wires, you can use the following methods:
 1. Click on the node you want to remove to select it.
 2. Press the delete key on your keyboard. This will delete the selected node.
 
+
 **Remove Multiple Nodes:**
 
 1. Hold down the shift key on your keyboard.
 2. Click on each node you want to remove while holding the shift key. This will select multiple nodes, and an outline will appear around each selected node.
 3. Once you have selected all the desired nodes, press the delete key on your keyboard. This will delete all the selected nodes simultaneously.
 
+Instead of using the delete button on your keyboard, you can also remove a node by following these steps:
+
+1. Right-click on the selected node or nodes within the editor interface.
+
+2. Select Delete Nodes from the context menu that appears.
+
+This method provides an alternative way to delete nodes from your workflow or configuration within the editor, offering flexibility in how you manage and manipulate elements within the workspace. It can be particularly useful for precise editing tasks or when working with multiple nodes simultaneously.
+
 ## Node Settings
 
-Each node on the Editor Pane in Rubix Wires has settings that can be configured to adjust its function or labeling. These settings are unique to each individual node and can be customised as needed. <br/><br/>
-Simply **double-click** on the node that you want to edit. This action will open up the settings interface for that particular node, allowing you to modify its configuration.<br/>
+Each node on the Editor Pane in Rubix Wires has settings that can be configured to adjust its function or labeling. These settings are unique to each individual node and can be customised as needed. 
+
+
+Simply **double-click** on the node that you want to edit. This action will open up the settings interface for that particular node, allowing you to modify its configuration.
+
 Alternatively, you can **right-click** on the node.
+
 From the context menu that appears, select the `Edit Settings` option. This will open the settings interface for the selected node, where you can make the necessary adjustments.
 
 ## Node Inputs and Outputs
@@ -96,6 +109,10 @@ Example of some nodes that support this: **Math/Add** **Bool/And**
 
 ![max500px](img/variable%20input%20counts.png)
 
+To add an input to a node, you can specify the number you need by right clicking the nodes and selecting settings. Input the number of input count on the pop up box.
+
+![max500px](img/input-count.png)
+
 ### Node Outputs
 
 Node outputs are the results of a nodes specific function. Wire links can be connected from the right hand side of node
@@ -106,6 +123,8 @@ output slots. The image below shows the 1 output of a const-num node.
 
 ## Adding Network Driver Points
 Points from the network driver can be connected to the system points. 
+
+### Directly from Drivers Pallet
 1. Click the Drivers tab on the wire sheet.
 
 ![max800px](img/wire-driver.png)
@@ -116,6 +135,14 @@ Points from the network driver can be connected to the system points.
 5. Connect the output of the network point to the system point you intend to link with. Refer to the sample image below for guidance.
 
 ![max800px](img/wire-driver-connect.png)
+
+### Using Flowpoint
+
+1. Drag the flow-point node from the Palette.
+2. Right-click on the node and choose `Settings`.
+3. From the list, select the desired point. The list is arranged based on the network configuration.
+
+![max800px](img/Flow-Point.gif)
 
 ## Creating Calculated Points
 Calculated points may involve mathematical operations like addition, subtraction, multiplication, division, or more complex functions depending on the logic you wish to create. 
