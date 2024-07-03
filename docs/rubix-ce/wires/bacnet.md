@@ -1,8 +1,8 @@
 ---
 sidebar_position: 6
 ---
-# BACnet
-## About BACnet
+# BACnet Server
+## About BACnet Server
 The server node serves the purpose of reading and writing values to the **[driver-bacnet](../setup/apps.md)**. This functionality enables Rubix Compute to be integrated into a BACnet network.
 
 :::tip
@@ -46,10 +46,10 @@ Ensure to set the `node name` to accurately reflect the point name on the `BACne
 
 | Node Name       | Category | Use Case                                                                 | is writeable              | 
 |-----------------|----------|--------------------------------------------------------------------------|---------------------------|
-| analogue-input  | bacnet   | Is only used when the IO-16s are added (will work with UIs)              | read only                 |
-| analogue-output | bacnet   | Is only used when the IO-16s are added (will work with UOs)              | writeable via in14 & in15 |
-| analogue-value  | bacnet   | to read and and write values to AVs on the bacnet-server, eg a set-point | writeable via in14 & in15 |
-| binary-value    | bacnet   | to read and and write values to BVs on the bacnet-server, eg an enable   | writeable via in14 & in15 |
+| analog-input  | bacnet   | Is only used when the IO-16s are added (will work with UIs)              | read only                 |
+| analog-output | bacnet   | Is only used when the IO-16s are added (will work with UOs)              | writeable via in14 & in15 |
+| analog-variables  | bacnet   | to read and and write values to AVs on the bacnet-server, eg a set-point | writeable via in14 & in15 |
+| binary-variables| bacnet   | to read and and write values to BVs on the bacnet-server, eg an enable   | writeable via in14 & in15 |
 
 ### Adding IO-16s
 

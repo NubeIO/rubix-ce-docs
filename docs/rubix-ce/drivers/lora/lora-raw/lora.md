@@ -11,7 +11,7 @@ The Rubix Compute is a LoRa® Gateway/Reciever.
 
 :::info Important things to note before proceeding:
 * Install required **[apps](../../../setup/apps.md)** **driver-LoRa®**
-* Install required **[modules/plugins](../../../setup/plugins.md)** **LoRa®** 
+* Install required **[modules](../../../setup/Modules.md)** **LoRa®** 
 :::
 
 | Attribute   | Description                                       |
@@ -25,14 +25,15 @@ The Rubix Compute is a LoRa® Gateway/Reciever.
 |Tags               | Right-click the network then `tags, meta-tags` to add in query key words                    |
 |Meta-Tags          | Right-click the network then `tags, meta-tags` to add in query key words                   |
 |Message            | See **[Troubleshooting](../../../setup/Troubleshoot.md)** for list of messages|
-|State              | Shows `ok` when the network is working in order, next to it is the time when the object has a non-empty last-fail property. Shows `error` when the network is not working in order, the time next to it is the time diff between now and the last fail was reported|
+|State              | `last_ok`:  Indicates the time since the system has been error-free.
+||`last_fail`: Specifies the date and time of the most recent occurrence of a failure.|
 
 1. **Step-1** On the controller level, under `drivers`, click the **create** ![add icon](../../../img/apps/add-button.png) to select and download and install the relevant network. Follow the wizard to continue installing the LoRa® network.
-2. **Step-2** Select the LoRa® network. This will download the appropriate modules and drivers. Check the default communication settings for the sensor by ticking the 'show advanced options' checkbox.
+2. **Step-2** Select the LoRa® network. This will download the appropriate modules and drivers.
 3. **Step-3** Once all the settings are added click on **Submit** button This should now create the LoRa® and network. Now open the LoRa® network to add a device.
 
 :::info
-Adding the LoRa® driver for the first time it will install a module/plugin dependency called `LoRa®`.
+Adding the LoRa® driver for the first time it will install a module dependency called `LoRa®`.
 :::
 
 ## Summary Of Ports When Adding a Network
@@ -46,7 +47,7 @@ Depending on the LoRa® network use case the correct serial-port must be selecte
 |------------------------------------------|-------------------------------------------|
 | Wireless Sensors - Droplets & Micro Edge | /data/socat/loRa1                         |
 | Rubix iO 16 in Wireless Mode             | /data/socat/serialBridge1                 |
-| Rubix iO 16 in 485 Mode                  | /dev/ttyAMA0                              |
+| Rubix iO 16 in 485 Mode                  |                             |
 
 
 
@@ -55,7 +56,7 @@ Depending on the LoRa® network use case the correct serial-port must be selecte
 ## Adding a LoRa® Sensor
 
 :::info
-See Nube iO supported sensors for more info **[sensors](../../../../hardware/downloads/sensors.md)**
+See Nube iO supported sensors and gateways for more info **[sensors](../../../../hardware/sensors/droplets/droplets-v1/Downloads.md)**  & **[gateway](../../../../hardware/sensors/micro-edge/MicroEdge-V2/Downloads.md)** 
 :::
 
 Sensor Models
@@ -65,7 +66,7 @@ Sensor Models
 | THLM         | Yes                  | Yes               | Yes             | Yes          | 
 | THL          | Yes                  | Yes               | No              | Yes          |  
 | TH           | Yes                  | Yes               | No              | No           |  
-
+|Microedge      |No                     |No                 |No            |No|
 
 1. **Step-1** Once inside the `network`, click the **create** ![add icon](../../../img/apps/add-button.png) button and a pop-up will give you the type of sensors to select from. For this example, we will be using a `THLM` Droplet.
 2. **Step-2** Follow the wizard to assign a name and description. Ensure to click `Show advanced options` and enable `Auto mapping` before submitting.

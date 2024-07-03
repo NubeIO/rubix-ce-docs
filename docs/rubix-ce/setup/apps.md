@@ -5,7 +5,7 @@ sidebar_position: 5
 # Apps
 
 :::danger Internet Connection
-To download apps over the internet, you need to add a token. This token is provided by the Nube iO Support team to each individual upon request and remains valid for up to one year. For assistance, please contact support@nube-io.com.
+To download apps over the internet, you need to ensure you have the current Github token added in CE. This token is provided by the Nube iO Support team to each individual upon request and remains valid for up to one year. For assistance, please contact support@nube-io.com.
 :::
 
 :::danger user home directory
@@ -23,7 +23,7 @@ Examples of Nube iO Apps includes:
 
 ## App Installation
 
-1. Make sure to add your unique token. You can find instructions on how to do this in the `Settings` section of the Support Documentation.
+1. Make sure to add your Github token. 
 2. Click on the ![plus-icon.png](../img/apps/plus-icon.png) icon to see the dropdown options of the Apps Manager.
 3. The Apps Manager provides lists of applications that you can install, uninstall, and edit.
 

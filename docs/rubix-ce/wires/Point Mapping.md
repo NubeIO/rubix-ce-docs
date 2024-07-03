@@ -15,11 +15,10 @@ Mapping in Rubix Wires facilitates the conversion of data from one protocol to a
 :::info Before proceeding
 To proceed effectively, it's vital to confirm that you've installed the necessary apps:
 * **[apps](../setup/apps.md)** **rubix-edge-wires**
-* **[apps](../setup/apps.md)** **flow-framework**
 * **[apps](../setup/apps.md)** **driver-bacnet**
 :::
 
-## Flow-Framework mapping
+## Flow Network Mapping
 
 :::info
 To begin, navigate to the `Wires` tab and add/setup a `Flow-Network` node. Opt for a name that is straightforward to recall.
@@ -34,8 +33,9 @@ To begin, navigate to the `Wires` tab and add/setup a `Flow-Network` node. Opt f
 7. Click on the **Stage Selected Mapping** button. This action will add the points in the Staged mapping table.
 8. Add as many mappings as you require.
 9. Once finished, click on the **Create/Delete** Mapping button.
-10. After completing this step, you will be redirected to the Rubix Wires flow editor. Ensure to download the new mapping that was added.
+10. After completing this step, you will be redirected to the Rubix Wires flow editor. Ensure to deploy the new mapping that was added.
 
+![max900px](img/mapping-flow.gif)
 
 ## BACnet-Server mapping
 
@@ -51,8 +51,12 @@ Subsequently, revisit the Wires tab and configure a BACnet-Server node. Opt for 
 5. Select the point you wish to map.
 6. Click on the **Stage Selected Mapping** Button. This action will add the selected points to the Staged mapping table.
 7. Add as many mappings as necessary.
-8. Once completed, click on the **Create/Delete Mapping** Button.
-9. Afterward, you will be directed to the Rubix Wires flow editor. Remember to download the newly added mapping.
+8. Double check if all mappings are correct. If necessary, change the instance number of the BACnet points being mapped.
+
+![max900px](img/change-instance-number.png)
+
+9. Once completed, click on the **Create/Delete Mapping** Button.
+10. Afterward, you will be directed to the Rubix Wires flow editor. Remember to deploy the newly added mapping.
 
 
 
