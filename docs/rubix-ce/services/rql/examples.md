@@ -10,19 +10,6 @@ sidebar_position: 6
 
 - Copy, paste and modify example script.
 
-# Examples
-
-1. [Alerts](#1-alerts)
-    1. [Gateway Offline Alerts](#i-gateway-offline-alerts)
-    2. [Sensor Offline Alerts](#ii-sensor-offline-alerts)
-    3. [Sensor Flat Line/NoData Alerts](#iii-sensor-flatlinenodata-alerts)
-    4. [High/Low Threshold Alerts](#iv-highlow-threshold-alerts)
-2. [Filter with Tags/MetaTags](#2-filter-with-tagsmetatags)
-    1. [Points filter with Tags/MetaTags](#i-points-filter-with-tagsmetatags)
-    2. [Histories filter with Tags/MetaTags](#ii-histories-filter-with-tagsmetatags)
-3. [Histories metrics(Count,Sum,Avg,Min,Max)](#3-histories-metricscountsumavgminmax)
-
-***
 
 ## 1. Alerts
 
