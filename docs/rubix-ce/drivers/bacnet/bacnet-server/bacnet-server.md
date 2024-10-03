@@ -40,15 +40,16 @@ Please make sure the correct ethernet port is select.
 2. Click the `edit` button to see all the configurable fields (server name, BACnet ports, device ID etc)
 3. Click the `Ok` button and refresh for the changes to update. 
 
-| Attribute   | Description                                       |
-|-------------|---------------------------------------------------|
-|Server Name    | User define name that helps identify the network|
-|Port           | The port number is the communication endpoint where the BACnet server listens for incoming communication from BACnet clients. Common ports used for BACnet are 47808 (UDP) and 47809 (TCP)|
-|IFace (Interface)|Refers to the network interface or interfaces through which the server communicates with other devices on the network.|
-|Device ID|This is a unique identifier assigned to the BACnet device (server) on the network. It distinguishes one BACnet device from another and is crucial for addressing and communication.|
-|AI Max (Analog Input Maximum)|Represents the maximum number of analog input (AI) points or objects that the BACnet server can handle.|
-|AO Max (Analog Output Maximum)|Indicates the maximum number of analog output (AO) points or objects that the BACnet server can support. |
-|AV Max (Analog Value Maximum)|Refers to the maximum number of analog value (AV) points or objects that the BACnet server can manage.|
-|BI Max (Binary Input Maximum)|Denotes the maximum number of binary input (BI) points or objects that the BACnet server supports.|
-|BO Max (Binary Output Maximum)|Indicates the maximum number of binary output (BO) points or objects that the BACnet server can handle.|
-|BV Max (Binary Value Maximum)|Represents the maximum number of binary value (BV) points or objects that the BACnet server can accommodate.|
+| Attribute                      | Description                                                                                                                                                                                 |
+|--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Server Name                    | User define name that helps identify the network                                                                                                                                            |
+| Port                           | The port number is the communication endpoint where the BACnet server listens for incoming communication from BACnet clients. Common ports used for BACnet are 47808 (UDP) (Non adjustable) |
+| IFace (Interface)              | Refers to the network interface or interfaces through which the server communicates with other devices on the network.                                                                      |
+| Device ID                      | This is a unique identifier assigned to the BACnet device (server) on the network. It distinguishes one BACnet device from another and is crucial for addressing and communication.         |
+| AI Max (Analog Input Maximum)  | Represents the maximum number of analog input (AI) points or objects that the BACnet server can handle.                                                                                     |
+| AO Max (Analog Output Maximum) | Indicates the maximum number of analog output (AO) points or objects that the BACnet server can support.                                                                                    |
+| AV Max (Analog Value Maximum)  | Refers to the maximum number of analog value (AV) points or objects that the BACnet server can manage.                                                                                      |
+| BI Max (Binary Input Maximum)  | Denotes the maximum number of binary input (BI) points or objects that the BACnet server supports.                                                                                          |
+| BO Max (Binary Output Maximum) | Indicates the maximum number of binary output (BO) points or objects that the BACnet server can handle.                                                                                     |
+| BV Max (Binary Value Maximum)  | Represents the maximum number of binary value (BV) points or objects that the BACnet server can accommodate.                                                                                |
+| COV                            | COV is not supported                                                                                                                                                                        |
