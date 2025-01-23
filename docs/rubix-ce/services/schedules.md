@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-## Schedules
+# Schedules
 Schedules are primarily utilized for controlling HVAC (Heating, Ventilation, and Air Conditioning) equipment based on predefined time schedules. To set up a schedule, follow these steps:
 
 1. Open the `device` you wish to add a schedule to from the sidebar under its `services`.
