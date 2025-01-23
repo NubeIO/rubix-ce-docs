@@ -9,7 +9,7 @@ sidebar_position: 6
 # Getting Started
 
 This page will demonstrate how to add wireless LoRaWAN Devices to the Rubix Compute.
-The Rubix Compute is a LoRa® Gateway/Reciever. 
+The Rubix Compute uses Rubix Connect LW as LoRa® Gateway/Reciever. 
 
 ## Adding a LoRa® Network
 
