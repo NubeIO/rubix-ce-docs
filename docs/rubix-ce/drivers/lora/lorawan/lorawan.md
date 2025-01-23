@@ -23,6 +23,7 @@ Important things to note before proceeding:
 
 
 1. **Step-1** Ensure the controller device type is set to `rubix-compute-lorawan-vpn`. This configuration is required for the `lorawan-gateway` and `lorawan-server` services to run.
+![max800px](lorawan-gateway-and-server.png) 
 2. **Step-2**  In the Rubix controller interface, go to the `Modules`, section and click on `install module`. From the list, select `module-core-lorawan` then click the **download** ![add icon](download.png)  to proceed.
 3. **Step-3** A pop-up window will appear prompting you to choose the desired driver version. It is recommended to select the latest version available in the list. After selecting, click `install`. TOnce installation is complete, Rubix will prompt for a reboot. Click `ok` to confirm.
 4. **Step-4** After installation, go back to the `Modules`  section and click `edit` on `module-core-lorawan` Each controller has a unique `cstoken`, please reach out to support@nube-io.com to get your unique cstoken. 
