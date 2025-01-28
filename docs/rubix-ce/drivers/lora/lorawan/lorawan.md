@@ -9,14 +9,14 @@ sidebar_position: 6
 # Getting Started
 
 This page will demonstrate how to add wireless LoRaWAN Devices to the Rubix Compute.
-The Rubix Compute uses Rubix Connect LW as LoRa® Gateway/Reciever. 
+The Rubix Compute uses Rubix Connect LW as LoRaWAN Gateway/Reciever. 
 
-## Adding a LoRa® Network
+## Adding a LoRaWAN Network
 
 :::info 
 Important things to note before proceeding:
 * Install required **[apps](../../../setup/apps.md)** **driver-LoRaWAN*
-* Install required **[modules](../../../setup/Modules.md)** **LoRa®** 
+* Install required **[modules](../../../setup/Modules.md)** **LoRaWAN** 
 * Install hardware **[Rubix Connect LW](/docs/hardware/expansion-modules/rc-lw/user-manual.md)**
 :::
 
@@ -26,10 +26,8 @@ Important things to note before proceeding:
 ![max800px](lorawan-gateway-and-server.png) 
 2. **Step-2**  In the Rubix controller interface, go to the `Modules`, section and click on `install module`. From the list, select `module-core-lorawan` then click the **download** ![add icon](download.png)  to proceed.
 3. **Step-3** A pop-up window will appear prompting you to choose the desired driver version. It is recommended to select the latest version available in the list. After selecting, click `install`. TOnce installation is complete, Rubix will prompt for a reboot. Click `ok` to confirm.
-4. **Step-4** After installation, go back to the `Modules`  section and click `edit` on `module-core-lorawan` Each controller has a unique `cstoken`, please reach out to support@nube-io.com to get your unique cstoken. 
-![max800px](cstoken.png)
-5. **Step-5** Right-click on `module-core-lorawan`and select `enable` to activate the module. 
-6. **Step-6** On the `Driver` level, open `module-core-lorawan` and click **create** ![add icon](../../../img/apps/add-button.png) to add device.
+4. **Step-4** Right-click on `module-core-lorawan`and select `enable` to activate the module. 
+5. **Step-5** On the `Driver` level, open `module-core-lorawan` and click **create** ![add icon](../../../img/apps/add-button.png) to add device.
 
 | Attribute                       | Description                                                                           |
 |---------------------------------|---------------------------------------------------------------------------------------|
@@ -43,7 +41,7 @@ Important things to note before proceeding:
 |Application Key                  | Secret cryptographic key used to secure communication between a LoRaWAN device and the network server.|
 |History Enable                   | Enabling history allows Rubix Compute to store and track device data over time. This can be useful for diagnostics and analysis of long-term trends.|
 
-7. **Step-7** Click `save`
+6. **Step-6** Click `save`
 
 ## Device Profile
 
