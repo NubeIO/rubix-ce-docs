@@ -192,7 +192,7 @@ The Right Bank of DIP Switches (labelled SW1) is used to configure various funct
 | **Switch Setting** 	| **Baud Rate**                          	|
 | 000                	| 38400                                  	|
 | 100                	| 9600                                   	|
-| 0110               	| 19200                                  	|
+| 010               	| 19200                                  	|
 |                    	|     **[Dip-Switch: 6, 7] - Parity**    	|
 | **Switch Setting** 	| **Parity**                             	|
 | 00                 	| None                                   	|
