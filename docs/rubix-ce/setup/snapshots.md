@@ -33,7 +33,7 @@ The backup & restoring service allows users to take a backup of a Rubix Compute 
 A backup is stored in supervisor device (this could be the Rubix Compute or Nube iO Cloud) <br/>
 :::
 
-![snapshots.gif](img/snapshots.gif)
+![snapshots.gif](/rubix-ce-docs/docs/rubix-ce/settings/img/Example%20Create.mov)
 
 ## Create a Snaptshots Backup
 To create a backup in Rubix CE, follow these steps:
@@ -58,7 +58,7 @@ Following these steps will allow you to restore a backup for the selected device
 Performing a backup or restore in Rubix CE may take several minutes, depending on factors such as the size of historical data and application files associated with the backup. Be prepared to wait for a few minutes while the restoration process completes
 :::
 
-![restore-snapshot.png](img/restore-snapshot.png)
+![restore-snapshot.png](../settings/img/Example%20Restore.mov)
 
 ## Restore History
 
@@ -78,7 +78,7 @@ In Rubix CE, there is a dedicated tab displaying the history of when users perfo
 3. In the popup window, choose the backup you wish to import and click `Ok`.
 4. Wait for the process to complete.
 
-![Network-Backup.gif](./Backup/Network-Backup.gif)
+![Network-Backup.gif](../settings/img/Example%20Restore.mov)
 
 ### via JSON File
 **Export**
@@ -95,7 +95,7 @@ In Rubix CE, there is a dedicated tab displaying the history of when users perfo
 5. Paste the copied text into the popup window in your CE. Click `Next`.
 6. Click `Import` and then `Close` to complete the import process.
 
-![Network-JSON.gif](./Backup/Network-JSON.gif)
+![Network-JSON.gif](../settings/img/Example%20Upload.mov)
 
 ### via JSON String
 **Export**
