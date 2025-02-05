@@ -57,20 +57,13 @@ A float 32 data type typically occupies four consecutive 16-bit registers (two w
 
 Below are descriptions of the `Write Modes` available on Modbus Points in Rubix CE.
 
-### Read Once 
-- Only Read Point Value Once.  This mode is used mostly for manual testing. 
+| Write Modes | Selection | Description |
+|--------------|----------------------|-------------------|
+|ReadOnce   |       WriteMode = "read_once"   |         // Only Read Point Value Once.|
+|ReadOnly     |     WriteMode = "read_only"    |        // Only Read Point Value (poll rate defined by setting).|
+|WriteOnce       |  WriteMode = "write_once"    |       // Write the value on COV, don't Read.|
+|WriteOnceReadOnce |WriteMode = "write_once_read_once"| // Write the value on COV, Read Once.|
+|WriteAlways      | WriteMode = "write_always"        | // Write the value on every poll (poll rate defined by setting).
+|WriteOnceThenRead| WriteMode = "write_once_then_read" |// Write the value on COV, then Read on each poll (poll rate defined by setting).
+|WriteAndMaintain | WriteMode = "write_and_maintain"   |// Write the value on COV, then Read on each poll (poll rate defined by setting). If the Read value does not match the Write value, |rite the value again.|
 
-### Read Only
-- Only Read Point Value (poll rate defined by setting).  This mode is used for most points that don't require any write polls.
-
-### Write Once Read Once
-- Write the value on COV, Read Once.  This mode is used for points that should be written once, then have the value confirmed via a read poll.
-
-### Write Always
-- Write the value on every poll (poll rate defined by setting).  This mode is used for points where the value should be written on each polling cycle; commonly used for driving outputs. 
-
-### Write Once Then Read
-- Write the value on COV, then Read on each poll (poll rate defined by setting).  This mode is used for points where the value can be changed by another modbus device and the Rubix point needs to track the value of the remote modbus point, while still being writable.  Eg. A setpoint on a remote modbus thermostat; The value is set (by writing to the Rubix point) at the beginning of the day, then the thermostat can be adjusted by the occupants throughout the day;  This mode will allow the point to be written, but then will perform read polls to check if the value has been changed by others. 
-
-### Write And Maintain
-- Write the value on COV, then Read on each poll (poll rate defined by setting). If the Read value does not match the Write value, Write the value again.  This mode is used when the point should maintain a fixed value, but we also want to know if it has been changed by others.  By performing read polls we will know if the point value on the modbus slave device has changed, but it will then be written back to the set value on the Rubix point. 
