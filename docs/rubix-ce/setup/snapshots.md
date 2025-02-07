@@ -9,7 +9,7 @@ sidebar_position: 7
 
 Templates outlines the particulars of a system, including installed applications, modules, and data such as wires and ROS data. When restoring from a template, the process involves reinstalling each defined application and module, followed by the restoration of data. This method reconstructs the system environment piece by piece.
 
-![template-1.gif](./Backup/template-1.gif)
+![template-1.gif](./backup/template-1.gif)
 
 
 ### Backups
