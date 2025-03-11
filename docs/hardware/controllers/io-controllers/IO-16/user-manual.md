@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# User Manual
+# Rubix iO 16 User Manual
 
 # 1. Overview
 
@@ -83,7 +83,7 @@ The Nube iO Rubix iO 16 is powered by a 24VDC power supply on the 24VDC POWER te
 
 
 
-## 2.3. Connecting RS-485 Network (Wired Network) ##
+## 2.3. Connecting RS-485 Network (Wired Network)
 
 When using the wired network connection, the Nube iO Rubix iO 16 RS-485 Modbus connection is used. The connector is terminated and installed as shown below.
 
@@ -288,9 +288,8 @@ UO terminal.
 
 For LoRa® Wireless communication, an antenna may be required to achieve the required range to the gateway controller. Please ensure the antenna is fitted to the top of the Nube iO Rubix iO 16 if the Rubix Compute Gateway Controller is not receiving messages from the Nube iO Rubix iO 16.
 
-<br/>
 
-# 3. Modbus Communications #
+## 3. Modbus Communications ##
 
 Nube iO Rubix iO 16 is a pure Modbus device; All communications with the Rubix iO 16 are via Modbus. Modbus settings are configured via the onboard DIP switches. Modbus settings on the gateway controller must match those set on the connected Rubix iO 16. All devices on a Modbus network must have the same Modbus network settings.
 

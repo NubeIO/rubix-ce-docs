@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 ---
-# User Manual
+# Rubix Compute User Manual
 
 # 1. Overview #
 
@@ -11,7 +11,7 @@ The Rubix Compute IoT multi-gateway will collect data from both wired and wirele
 
 ![max400px](img/rc5.png)
 
-## 1.1. One Gateway, Multiple Data Types.
+## 1.1. One Gateway, Multiple Data Types ##
 
 The Rubix Compute is a one-of-a-kind gateway that aggregates and manages all types of building BMS and Energy data, removing the frustration of running multiple gateways in one solution.
 
@@ -22,7 +22,7 @@ The Rubix Compute is a one-of-a-kind gateway that aggregates and manages all typ
 * Convert Modbus & BACnet to wireless
 * Has onboard Rest-API
 
-## 1.2. Hardware
+## 1.2. Hardware ##
 
 * Dual Ethernet ports
 * Dual RS485 ports
@@ -33,7 +33,7 @@ The Rubix Compute is a one-of-a-kind gateway that aggregates and manages all typ
 ![rc-overview.png](img/rc-overview.png)
 
 
-### 1.2.1. Overview of protocols
+### 1.2.1. Overview of protocols ##
 
 * BACnet Sever (Run the Rubix Compute as a BACnet Device over BACnet/IP)
 * BACnet Master (Run the Rubix Compute as a BACnet Client over BACnet/IP to read and write to other BACnet devices)
@@ -41,7 +41,7 @@ The Rubix Compute is a one-of-a-kind gateway that aggregates and manages all typ
 * LoRaWAN® Gateway and Server
 * LoRa® Gateway (For Nube iO sensors and Rubix IO controllers)
 
-## 1.3. Serial ports
+## 1.3. Serial ports ##
 
 |                                             	|                                            	|
 |---------------------------------------------	|--------------------------------------------	|
@@ -52,7 +52,7 @@ The Rubix Compute is a one-of-a-kind gateway that aggregates and manages all typ
 
 <br/>
 
-# 2. Mounting
+# 2. Mounting #
 
 The Rubix Compute is designed to be mounted on electrical DIN rail. It can be mounted vertically or horizontally. The
 controller should always be mounted in a location such that it will not experience very high or low temperatures,
@@ -60,7 +60,7 @@ liquids or high humidity.
 
 ![mounting.png](img/mounting.png)
 
-# 3. Direct Digital Control - DDC
+# 3. Direct Digital Control - DDC #
 Up to 4x Rubix iO 16s can be plugged into the right side of the Rubix Compute to create an Edge-based BMS controller.
 
 The Rubix Compute can be communicated over BACnet. The Rubix Compute communicates to the Rubix iO 16s over Modbus RTU and exposes the points to as one unit over BACnet Server.
@@ -78,10 +78,10 @@ You can not add a `Modbus network` in `drivers` and the `BACnet-server` node (fo
 
 ![rc-with-io16s.png](img/rc-with-io16s.png)
 
-#  4. Power Requirements and Wiring
+#  4. Power Requirements & Wiring #
 
 
-## 4.1. Power Supply Requirements
+## 4.1. Power Supply Requirements ##
 
 
 |                               	|                     	|
@@ -92,7 +92,7 @@ You can not add a `Modbus network` in `drivers` and the `BACnet-server` node (fo
 _ *Transformer should be sized based on Base Current plus the power requirements of all connected output devices._
 
 
-## 4.2. Power Supply Wiring
+## 4.2. Power Supply Wiring ##
 
 The Rubix Compute Gateway is powered by a 24VDC power supply on the `24VDC POWER` terminals as shown below. 
 
@@ -106,7 +106,7 @@ The Rubix Compute Gateway is powered by a 24VDC power supply on the `24VDC POWER
 
 ![max500px](img/RC-Wiring2.png)
 
-# 5. LoRa®
+# 5. LoRa® #
 LoRa® Gateway (For Nube iO sensors and Rubix IO controllers)
 The data is streamed over the following serial file in hexadecimal format
 
@@ -117,9 +117,9 @@ The data is streamed over the following serial file in hexadecimal format
 
 <br/>
 
-# 6. Modbus RTU 
+# 6. Modbus RTU #
 
-## 6.1. Terminal Wiring​
+## 6.1. Terminal Wiring​ ##
 
 To establish communication with Modbus RS485 devices to a Rubix Compute, the RS485 connectors are terminated and installed as shown below.
 
@@ -141,12 +141,12 @@ Ensure A/+ and B/- wires are kept consistent for all controllers on the network.
 ::: 
 
 
-## 6.2. End Of Line Termination
+## 6.2. End Of Line Termination ##
 
 When connecting an RS485 network, the first and last device on the network must have an End Of Line (EOL) resistor installed. On the Rubix Compute, this is done via an Onboard Jumper. The location of the EOL Jumper is shown below. When the jumper is installed in the upper position the EOL resistor is set. When the jumper is installed in the lower position the EOL resistor is not set, there are 2 sets of jumpers, 1 for each of the RS485 networks.
 
 
-## 6.3. Serial ports
+## 6.3. Serial ports ##
 
 | Port Name         | Serial Port Name |
 |-------------------|------------------|
@@ -155,7 +155,7 @@ When connecting an RS485 network, the first and last device on the network must 
 
 <br/>
 
-## 6.4. Modbus Over LoRa® For the Rubix iO
+## 6.4. Modbus Over LoRa® For the Rubix iO ##
 
 This section describes the serial port available to send Modbus RTU packets over LoRa® to Rubix iO devices (in LoRa® IO or Passthrough modes). This requires driver-Lora® software to be installed on the device via Rubix CE.
 
@@ -173,16 +173,16 @@ Speeds faster than the max poll rate will result in dropped packets.
 
 <br/>
 
-# 7. Network 
+# 7. Network  #
 
 This article explains the best practices in how to connect a Rubix Compute device to a network, and how to locate a Rubix Compute device on the network.
 
 
-## 7.1. Network Connection and Discovery
+## 7.1. Network Connection and Discovery ##
 To connect to and interact with a Rubix Compute it must be connected to a network via Ethernet cable. The best way to connect to the Rubix Compute is via a router with a DHCP server.
 Alternatively, the Rubix Compute Controller can be connected directly to a PC via ethernet, see (Direct Connection to PC)
 
-## 7.2. Network Architecture
+## 7.2. Network Architecture ##
 To add a Rubix Compute Gateway Controller to a network, an ethernet cable must be connected to one of the Ethernet ports on the controller. Generally, this will be using the ETH-1 port.
 
 The other end of the Ethernet cable should be connected (directly or indirectly) to the Network Router.
@@ -195,7 +195,7 @@ Below are examples of valid Ethernet networking architectures.
 ![max500px](img/networks-router.png)
 
 
-## 7.3. Default Network Configuration
+## 7.3. Default Network Configuration ##
 When a Rubix Compute Controller is reset to factory defaults the 2 x Ethernet ports will be configured as follows:
 
 | Port Name | Linux Port Name | Type  | IP            | Subnet        | Gateway      |
@@ -204,14 +204,14 @@ When a Rubix Compute Controller is reset to factory defaults the 2 x Ethernet po
 | ETH-2     | eth1            | DHCP  | na            | na            | na           |
 
 
-# 7.4. Direct Connection to PC (recommended)
+# 7.4. Direct Connection to PC (recommended) #
 When connecting a Rubix Compute controller directly to a PC via an ethernet cable,  ethernet port ETH-1 should be used (at default network settings).  Ensure that the PC has self-assigned a static IP Address in the same subnet range as the Rubix Compute (default 192.168.15.xxx) 
 
 :exclamation:`Each RC must be configured with an individual IP address`
 
 Once connected and the PC IP Address is configured, try running a PING check on the Rubix Compute IP Address (default: 192.168.15.10).
 
-## 7.5. Connecting Via Router 
+## 7.5. Connecting Via Router ##
 * When connecting to the Rubix Compute controller via a network router with DHCP capabilities, ethernet port ETH-2 should be used.
 * Once connected via an ethernet cable, find the automatically assigned IP Address by using the router’s admin user interface. Or by running an IP/Port Scanning Software (Port Scanner - Wikipedia https://en.wikipedia.org/wiki/Port_scanner).
 * Recommended IP/Port scanners include Angry IP Scanner or Advanced IP Scanner https://angryip.org/.

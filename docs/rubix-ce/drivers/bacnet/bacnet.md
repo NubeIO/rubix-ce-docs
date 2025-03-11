@@ -10,31 +10,32 @@ BACnet stands as a data communications protocol designed for Building Automation
 
 ## BACnet Object IDs
 
-| Object             | Number |
-|--------------------|--------|
-| Analog Input       | 0      |
-| Analog Output      | 1      |
-| Analog Value       | 2      |
-| Binary Input       | 3      |
-| Binary Output      | 4      |
-| Binary Value       | 5      |
-| Calendar           | 6      |
-| Command            | 7      |
-| Device             | 8      |
-| Event Enrollment   | 9      |
-| File               | 10     |
-| Group              | 11     |
-| Loop               | 12     |
-| Multi-state Input  | 13     |
-| Multi-state Output | 14     |
-| Notification Class | 15     |
-| Program            | 16     |
-| Schedule           | 17     |
-| Multi-state Value  | 19     |
+| Object           | Number | Description                                                                 |
+|-----------------------|------------|-----------------------------------------------------------------------------|
+| Analog Input          | 0          | Represents a continuously variable physical input, such as temperature or humidity. |
+| Analog Output         | 1          | Controls an analog output, such as a variable-speed fan or dimmable lighting. |
+| Analog Value          | 2          | Stores and processes analog values for calculations or logic operations.     |
+| Binary Input          | 3          | Represents a digital (on/off) input, such as a switch or sensor.             |
+| Binary Output         | 4          | Controls a digital (on/off) output, such as a relay or actuator.             |
+| Binary Value          | 5          | Stores and processes binary values for logical operations.                  |
+| Calendar              | 6          | Defines date-based schedules for automation processes.                      |
+| Command               | 7          | Executes predefined commands or sequences.                                  |
+| Device                | 8          | Represents a BACnet device and its associated properties.                   |
+| Event Enrollment      | 9          | Manages event-based notifications and alerts.                               |
+| File                  | 10         | Represents a file object used for data storage and transfer.                |
+| Group                 | 11         | Groups multiple objects for simplified control and monitoring.              |
+| Loop                  | 12         | Represents a control loop for process control applications.                 |
+| Multi-state Input     | 13         | Represents an input with multiple discrete states.                          |
+| Multi-state Output    | 14         | Controls an output that has multiple states.                                |
+| Notification Class    | 15         | Manages notifications and alarms for BACnet objects.                        |
+| Program               | 16         | Represents executable logic, such as scripts or automation routines.        |
+| Schedule              | 17         | Defines time-based automation schedules for devices.                        |
+| Multi-state Value     | 19         | Stores and processes values with multiple discrete states.                  |
+
 
 ## BACnet Common Property's
 
-| PropertyName  | Number |
+| Property Name  | Number |
 |---------------|--------|
 | objectName    | 77     |
 | presentValue  | 85     |
@@ -43,14 +44,15 @@ BACnet stands as a data communications protocol designed for Building Automation
 
 ## BACnet Common Property's for a Device
 
-| Property Name         | Device | Number |
-|-----------------------|--------|--------|
-| objectList            | 8      | 76     |
-| deviceName            | 8      | 77     |
-| manufacture           | 8      | 121    |
-| manufacture-id        | 8      | 120    |
-| segmentationSupported | 8      | 107    |
-| maxApduLength         | 8      | 62     |
+| Property Name            | Device | Identifier | Description                                                                 |
+|--------------------------|----------|------------|-----------------------------------------------------------------------------|
+| `objectList`             | 8    | 76         | Lists all objects that belong to the device.                                |
+| `deviceName`             | 8    | 77         | The human-readable name of the device.                                      |
+| `manufacturer`           | 8    | 121        | The name of the device manufacturer.                                        |
+| `manufacturer-id`        | 8    | 120        | A unique identifier assigned to the manufacturer.                           |
+| `segmentationSupported`  | 8    | 107        | Indicates whether the device supports segmentation.                         |
+| `maxApduLengthAccepted`  | 8    | 62         | Specifies the maximum APDU size the device can process.                     |
+
 
 ## BACnet Property's
 
@@ -180,6 +182,8 @@ BACnet stands as a data communications protocol designed for Building Automation
 | vendorName                     | 121    |
 | vtClassesSupported             | 122    |
 | weeklySchedule                 | 123    |
+
+
 
 
 

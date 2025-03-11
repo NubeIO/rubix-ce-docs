@@ -15,7 +15,7 @@ detailed instructions, please refer to the section on 'Generating a Token'.
 
 :::info Before starting you need the following:
 1. **[Nube iO Cloud Account](docker.md#nube-io-cloud-account)**.
-2. And/Or Nube iO **[Rubix Compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)**.
+2. And/Or Nube iO **[Rubix Compute](../../hardware/controllers/supervisors/rubix-compute/user-manual.md)**.
 :::
 
 ## Adding a Supervisor
@@ -125,3 +125,12 @@ Once the  **Supervisor** is created it is automatically enabled. `right-click` t
 - `Enable` **Supervisor** will display it on the `sidebar`.
 - `Disable` **Supervisor** remove it from the `sidebar`.
 :::
+
+
+# Supervisor Setup in Rubix CE
+
+The **Supervisor** in Rubix CE allows users to manage and program multiple instances of Rubix OS, whether cloud-based or on-premises. This enables efficient engineering and deployment across multiple sites or devices.
+
+---
+
+

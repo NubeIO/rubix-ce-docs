@@ -3,7 +3,8 @@ sidebar_position: 1
 ---
 
 # Overview
-See more info for each protocol:
+
+Rubix CE supports various network drivers, enabling seamless integration with industrial protocols. These drivers allow the system to communicate with different devices and systems for automation and control. Supported protocols include:
 
 - [BACnet master](bacnet/bacnet-master/bacnet-master.md)
 - [BACnet Server](bacnet/bacnet-server/bacnet-server.md)
@@ -13,64 +14,75 @@ See more info for each protocol:
 - [Modbus-TCP](modbus/modbus-tcp/modbus.md)
 - [System-Network](system/overview.md)
 
-## Drivers (Protocols)
 
-Rubix CE offers enhanced functionality through its versatile driver support, empowering users to integrate a wide range of industrial protocols seamlessly. These drivers include essential protocols such as BACnet Master and Server, LoRa® and LoRaWAN®, Modbus-RTU and Modbus-TCP, as well as System-Network integration. Each driver expands Rubix CE's capabilities, enabling efficient communication and control across diverse industrial environments. Whether you need robust data acquisition, IoT connectivity, or network management, Rubix CE's comprehensive driver suite provides the essential tools for optimizing operational efficiency and scalability within industrial automation and control systems.
+## Adding a Network Driver  
 
-To incorporate a Driver for a new network, go to the Driver Tab within the controller page. Click on "+ Create", then pick the driver from the dropdown menu. If the necessary Driver isn't visible in the menu, you'll need to install the apps as outlined in **[apps](../setup/apps.md)**.
+Follow these steps to add a new network driver in Rubix CE:
 
-![max800px](./img/driver-page.png)
+1. **Access the Controller**  
+   - Navigate to the `host` and select the target controller.  
 
-## Adding a Network
+2. **Add a Driver**  
+   - Open the `Drivers` tab and click on  `Create` ![add icon](../img/apps/add-button.png).  
+   - Choose the required driver from the dropdown list.  
+   - If the desired driver is not listed, ensure the required applications are installed. Refer to **[Installing Apps](../setup/apps.md)**.  
 
-* **Step-1** Access the controller level by selecting the `host` and then clicking on the specified controller.
-* **Step-2** Under `drivers`, click on the **create** ![add icon](../img/apps/add-button.png)
-* **Step-3** Select the network you want to add. This will trigger the download and installation of required network dependencies. Follow the prompts in the wizard to finish the installation.
-* **Step-4** Once all settings are configured, click on the **Submit** button.
+   ![max800px](./img/driver-page.png)
 
-Proceed to generate the network for the chosen protocol. Afterward, simply **right-click** and select "Open" to view the **devices**.
+3. **Configure the Network**  
+   - Follow the setup wizard to install dependencies and configure network settings.  
 
-## Drivers Dependencies Overviews
+4. **Complete Setup**  
+   - After configuring, click `Submit` to create the network.  
+   - To manage devices within the network, right-click on the network and select `Open`.  
 
-Typically, every driver requires the installation of an application (refer to **[Installing apps](../setup/apps.md)** for instructions). Once an App is installed, each driver needs a corresponding `Module` (for further details on modules, check **[Modules](../setup/Modules.md)**).
+---
 
+## Driver Dependencies  
 
-| Driver Name             | App Name      | Module/Plugin Name | Service Name                     |
-|-------------------------|---------------|--------------------|----------------------------------|
-| BACnet master           | N/A           | BACnet Master      | N/A                              |
-| BACnet Server           | Driver-BACnet | na                 | N/A                              |
-| LoRa®                    | N/A           | lora               | N/A                              |
-| LoRaWAN®                 | N/A           | LoRaWAN®            | LoRaWAN® Gateway, LoRaWAN® Service |
-| Modbus-RTU & Modbus-TCP | N/A           | Modbus             | N/A                              |
-| System                  | N/A           | System             | N/A                              |
+Each driver requires specific applications and modules to function correctly. The table below outlines the dependencies:  
 
+| **Driver Name**    | **App Name**   | **Module/Plugin Name** | **Service Name**              |
+|--------------------|---------------|------------------------|------------------------------|
+| BACnet Master     | N/A           | BACnet Master         | N/A                          |
+| BACnet Server     | Driver-BACnet | N/A                    | N/A                          |
+| LoRa®             | N/A           | LoRa                   | N/A                          |
+| LoRaWAN®         | N/A           | LoRaWAN®               | LoRaWAN® Gateway, LoRaWAN® Service |
+| Modbus-RTU & TCP  | N/A           | Modbus                 | N/A                          |
+| System            | N/A           | System                 | N/A                          |
 
+For more details on modules, refer to the **[Modules Guide](../setup/Modules.md)**.  
 
-## Exporting And Importing 
+---
 
-:::info
-To ensure a comprehensive backup of a Rubix Compute, refer to **[backups](../setup/snapshots.md)** for detailed instructions.
-:::
+## Exporting and Importing Configurations  
 
-This section is designed for users who wish to save a Network, Device, and Points from **Drivers**. <br/> 
-For instance, it allows you to create a backup of a device along with its points and then import them into another device, such as a `Rubix Compute`.
+Rubix CE allows users to export and import network, device, and point configurations for easy backup and restoration.  
 
-### Perform a Backup
+- **Export Configuration**  
+    
+  - To create back up /  export a Network, Device, or Points,
+   `Right-click` on the network -> device -> point you wish to export.  
+  - Select `Export` and enter a description for clarity.  
 
-To back up a Network, Device, or Points, simply **right-click** on the item you wish to export, then select **Export**. You'll be prompted to enter a meaningful comment, such as "Common Rubix IO16 points", to ensure clarity.
+- **Import Configuration**  
+  - To restore / import a backup of a Network, Device, or Points, locate. Click `Import` and upload the desired configuration file.
+  You'll be prompted to enter a meaningful comment, such as "Common Rubix IO16 points", to ensure clarity.  
 
-### Restore a Backup
+For a full guide on backup and recovery, visit the **[backups](../setup/snapshots.md)** section.  
 
-To restore a backup of a Network, Device, or Points, locate and click on the **Import Button**, then choose the backup file you wish to import.
+---
 
+## Point Write Modes  
 
-### Point Write Modes
+Rubix CE provides various point write modes for different operational needs:  
 
-| Mode                   | Use case                                                                                                   | Description                                                                                                                                                   | 
-|------------------------|------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Read only              | Mostly used for polling values                                                                             | Only Read Point Value Once                                                                                                                                   |
-| Write once             | A setpoint on a remote thermostat; The value is set (by writing to the Rubix point) at the beginning of the day, then the thermostat can be adjusted by the occupants throughout the day;  This mode will allow the point to be written, but then will perform read polls to check if the value has been changed by others. speeds                                                                     | Only Read Point Value (poll rate defined by setting)                                                                                                         |
-| Write once read once   |  | Write the value on COV, not Read                                                                                                                           |
-| Write always           | Used when you want to write every poll                                                                     | Write the value on every poll (poll rate defined by setting)                                                                                                 |
-| Write always then read |                                                                                                            | Write the value on COV, then read on each poll (poll rate defined by setting)                                                                                |
-| Write and maintain     |                                                                                                            | Value written on COV, then read on each poll (poll rate defined by setting). <br/> If read value doesn't match written value, rewrite the value. |
+| **Mode**                     | **Description**                                            |
+|-----------------------------|----------------------------------------------------------|
+| **Read Only**                | Reads values but does not write any changes.             |
+| **Write Once**               | Writes a value once but does not update further.         |
+| **Write Once Read Once**     | Writes a value when changed but does not re-read.       |
+| **Write Always**             | Continuously writes values on every poll cycle.         |
+| **Write Always Then Read**   | Writes on change and reads values at each poll cycle.   |
+| **Write and Maintain**       | Writes on change, reads on every poll, and rewrites if values differ. |
+

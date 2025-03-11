@@ -1,155 +1,113 @@
 ---
 sidebar_position: 1
 ---
-
 # Overview
 
-# Rubix OS - Rubix Operating System or ROS (open by firewall)
-Rubix OS is the core runtime that runs either on the Rubix Compute or in the Nube-iO cloud.
+Rubix CE (Computer Edition) is Nube iO's desktop software designed for offline programming and product management. Engineered to be swift, efficient, and portable, it empowers users and technicians to configure and modify systems remotely without requiring a continuous internet connection.
 
-## Performs tasks such as:
-* Updating Rubix Compute apps, points, histories and/or network drivers
-* Scheduling
-* Connections to the Nube iO cloud
-* Protocols such as LoRa, Modbus and/or BACnet
+## Core Components
 
-## Operates on hardware or Cloud Servers
-Can operate either in the `cloud` or on a `Rubix-compute`.
+### Rubix OS (Operating System)
 
-## Ports
+The Rubix OS serves as the core runtime environment, operating either on the Rubix Compute hardware or within the Nube iO cloud. Key functionalities include:
 
-Operates on port `http`
-```
-1660
-```
-Operates on port `https`
-```
-rb-YOURACCOUNT.nube-iiot.com
-```
+- **Application Management**: Updating Rubix Compute applications, points, histories, and network drivers.
+- **Scheduling**: Managing and executing scheduled tasks.
+- **Cloud Connectivity**: Establishing secure connections to the Nube iO cloud.
+- **Protocol Support**: Handling protocols such as LoRa, Modbus, and BACnet.
 
-# Overview of ports normally opened for port-forwarding for remote access:
+**Default Ports:**
 
-| Driver/Service Name | Service Name      | Port |                                                   | 
-|---------------------|-------------------|------|---------------------------------------------------|
-| Rubix-OS            | nubeio-rubix-os   | 1660 | Mandatory                                         | 
-| Rubix-Bios          | nubeio-rubix-bios | 1659 | Mandatory                                         | 
-| OpenVPN             | openvpn           | 443  | Optional but mandatory when using `Nube-IO-Cloud` | 
-| lorawan-dashboard   | lorawan-server    | 8080 | Optional                                          | 
+- **HTTP**: Port 1660
+- **HTTPS**: Accessible via `rb-YOURACCOUNT.nube-iiot.com`
 
+### Rubix Bios
 
-# Rubix Bios (open by firewall)
-Rubix Edge is used to connect to the Rubix OS.
+Rubix Bios facilitates seamless interactions with the Rubix OS. Its primary function includes:
 
-## Rubix Bios performs tasks such as:
+- **OS Updates**: Managing and deploying updates to the Rubix OS.
 
-* Updating Rubix OS.
+**Default Ports:**
 
-## Operates on hardware or Cloud Servers
-Operates in the `cloud` or on a `Rubix-compute`.
+- **HTTP**: Port 1659
+- **HTTPS**: Port 443, accessible via `rb-YOURACCOUNT.nube-iiot.com`
 
-## Ports
+### Rubix Edge Wires
 
-Operateson port `http`
-```
-1659
-```
-Operates on port `https`
-```
-443
-rb-YOURACCOUNT.nube-iiot.com
-```
+Rubix Edge Wires is a block logic Building Automation Control runtime designed for:
 
-# Rubix Edge Wires - Wires (closed by firewall)
-Rubix Edge Wires is a block logic Building Automation Control runtime for controlling HVAC equipment, lighting and creating function block logic programs.
+- **HVAC Control**: Managing heating, ventilation, and air conditioning systems.
+- **Lighting Systems**: Controlling and automating lighting solutions.
+- **Flow-Based Programming**: Creating function block logic programs for building management systems (BMS) or direct digital control (DDC).
 
-## Wires Performs tasks such as
+**Default Port:**
 
-* BMS or DDC flow based programming.
+- **HTTP**: Port 1665
 
-## Operates on hardware or Cloud Servers
-Operates in the `cloud` or on a `Rubix-compute`.
+## Additional Services and Drivers
 
-## Ports
+### BACnet Driver
 
-Operates on port `http`
-```
-1665.
-```
+Supports the BACnet communication protocol for both master and device configurations.
 
-# Other 3rd Party Services and Drivers
+**Default Port:**
 
-## BACnet Driver (open by firewall)
-Communication protocol for `BACnet-master` and `BACnet-device`.
+- **UDP**: Port 47808
 
-### Ports
+### LoRa Driver
 
-Operates on port `udp`
-```
-47808
-```
+Enables wireless communication for Nube iO LoRa sensors and other devices.
 
-## LoRa Driver (closed by firewall)
-The LoRa driver is a wireless communication protocol for Nube iO LoRa sensors and other wireless devices.
-Note: LoRa and LoRaWAN are not the same protocol. For 3rd Party LoRaWan sensors or devices, a LoRaWAN driver and gateway/reciever is required
+**Note**: LoRa and LoRaWAN are distinct protocols. For third-party LoRaWAN devices, a compatible driver and gateway are required.
 
-### Service Name
-```
-Sudo systemctl status driver-lora.
-```
+### Rubix Compute I/O Driver
 
-### Ports
+Facilitates communication with Rubix Compute I/O hardware.
 
-n/a
+**Default Port:**
 
-## Rubix Compute iO Driver  (closed by firewall)
-Rubix Compute iO Driver is a communication protocol for Rubix ComputeiO hardware.
+- **HTTP**: Port 5001
 
-### Ports
+### VPN Service
 
-Operates on port `http`
-```
-5001
-```
+Provides a secure VPN connection for Rubix Compute devices to communicate with the Nube iO Cloud.
 
-## VPN (open by firewall)
-A VPN service used for the Rubix Compute to communicate back to the `Nube iO Cloud`.
+**Default Port:**
 
-### Ports
+- **TLS**: Port 443
 
-Operates on port `tls`
-```
-443
-```
+### MQTT Broker
 
-## MQTT broker (closed by firewall)
-The MQTT broker is used for internal services.
+Utilized for internal service communications within the Rubix ecosystem.
 
-### Ports 
+**Default Port:**
 
-Operates on port `tcp`
-```
-1883
-```
+- **TCP**: Port 1883
 
-## LoRaWAN Dashboard (open by firewall)
-Dashboard used for the administration of the loRaWAN server.
+### LoRaWAN Dashboard
 
-### Ports
+A web-based interface for managing the LoRaWAN server.
 
-Operates on port `http`
-```
-8080
-```
+**Default Port:**
 
-## LoRaWAN Gateway/Driver (closed by firewall)
-The LoRaWAN driver is a wireless communication protocol for 3rd party LoRaWAN sensors and other wireless devices.
-Note: LoRa and LoRaWAN are not the same protocol. For 3rd Party LoRa sensors or devices, a LoRaWAN driver and gateway/reciver is required. 
-Service for communication to the `LORAWAN-CONNECT` plugged into a Rubix Compute via a `RJ12` plug and cable.
+- **HTTP**: Port 8080
 
-### Ports
+## Deployment Options
 
-Operates on port `udp`
-```
-tba
-```
+Rubix CE components can be deployed in two ways:
 
+- **Cloud** – Runs within the Nube iO cloud for remote access and management.
+- **Rubix Compute** – Operates locally on Rubix Compute devices for on-premises control.
+
+## Port Forwarding for Remote Access
+
+For remote access, ensure the following ports are configured for port-forwarding:
+
+| Service Name      | Port | Requirement                        |
+| ----------------- | ---- | ---------------------------------- |
+| Rubix OS          | 1660 | Mandatory                          |
+| Rubix Bios        | 1659 | Mandatory                          |
+| OpenVPN           | 443  | Mandatory when using Nube iO Cloud |
+| LoRaWAN Dashboard | 8080 | Optional                           |
+
+By configuring these components and services appropriately, users can fully leverage the capabilities of the Rubix CE platform for efficient building automation and management.

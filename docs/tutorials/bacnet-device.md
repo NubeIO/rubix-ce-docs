@@ -11,21 +11,21 @@ Setup the `rubix-compute` as a native BACnet/IP device
 :::
 
 :::info prerequisites
-1. You need a **[rubix-compute](../hardware/controllers/supervisors/rubix-compute/overview.md)** and an **[IO-16](../hardware/controllers/io-controllers/IO-16/overview.md)**
+1. You need a **[rubix-compute](../hardware/controllers/supervisors/rubix-compute/user-manual.md)** and an **[Rubix iO-16](../hardware/controllers/io-controllers/IO-16/user-manual.md)**
 2. plugin the `IO-16` into the side of the `RC`  and power the `RC` and set the `IO-16` address to `1`
-3. make sure you can ping the `RC` default IP on ETH-1 is `192.168.15.10` see **[networking](../hardware/controllers/supervisors/rubix-compute/networks.md)** for more info
+3. make sure you can ping the `RC` default IP on ETH-1 is `192.168.15.10` see **[networking](../rubix-ce/settings/networking.md)** for more info
 :::
 
 
 # Setup
 
 1. **[Download](../rubix-ce/setup/download.md)** once downloaded just double-click on the icon to run 
-2. **[Getting setup](../rubix-ce/setup/getting-started.md)** 
-3. Add a **[token](../rubix-ce/setup/getting-started.md#add-token)** to download 
+2. **[Getting setup](../rubix-ce/setup/Getting%20Started.md)**
+3. Add a **[token](../rubix-ce/setup/Getting%20Started.md#initial-setup)** to download 
 4. Add a **[supervisor](../rubix-ce/setup/supervisor.md)**  
-5. Add a **[host](../rubix-ce/setup/host.md)** (rubix-compute)
-6. Install **[apps](../rubix-ce/setup/apps.md)** **[driver-bacnet](../rubix-ce/drivers/bacnet/bacnet-server/bacnet-server.md)** & **[rubix-wires](../rubix-ce/wires/overview.md)**
-
+5. Add a **[host](../rubix-ce/setup/Hosts.md)** (rubix-compute)
+6. Install **[apps](../rubix-ce/setup/apps.md)** , **[driver-bacnet](../rubix-ce/drivers/bacnet/bacnet-server/bacnet-server.md)** & **[rubix-wires](../rubix-ce/wires/overview.md)**
+as
 # BACnet config
 After the `bacnet-driver` is installed we need to 
 

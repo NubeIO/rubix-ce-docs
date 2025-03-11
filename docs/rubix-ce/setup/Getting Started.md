@@ -11,84 +11,75 @@ to remotely configure and implement changes without the need for a continuous in
 To get started with Rubix CE, the following are required:
 
 :::info
-* PC equipped with Windows 10, Windows 11, Linux, or Mac OS.
-* Internet connection.
-* Download and install the Rubix CE software from the **[downloads page](download.md#download)**
-* Requires a Nube iO Cloud Accoun (see **[Nube iO Cloud Account](docker.md#nube-io-cloud-account)**)
-* Optionally, Nube iO Rubix Compute (see **[Rubix Compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)**)
+### Prerequisites
+
+To get started with Rubix CE, ensure you have the following:
+
+- **Compatible PC**: Running Windows 10, Windows 11, Linux, or macOS.
+- **Internet Connection**: Required for initial setup and downloads.
+- **Rubix CE Software**: Download and install from the **[downloads page](download.md#download)**.
+- **Nube iO Cloud Account**: Necessary for accessing cloud features. **[Nube iO Cloud Account](docker.md#nube-io-cloud-account)**.
+- **Optional Hardware**: Nube iO Rubix Compute device. **[More info on Rubix Compute](../../hardware/controllers/supervisors/rubix-compute/user-manual.md)**.
+
+*Note: This documentation provides examples and instructions primarily for Windows users.*
 :::
 
-:::note
-This documentation assumes Windows for all examples and instructions.
-:::
+### Installation
+
+Rubix CE doesn't require traditional installation. To set it up:
+
+1. **Extract the Downloaded File**: Right-click the downloaded `.zip` file and select "Extract All."
+2. **Run Rubix CE**: Navigate to the extracted folder, right-click on the `RubixCE.exe` file, and choose "Run as administrator."
+
+*Note: If Windows Defender blocks the application, click "More Info" and then select "Run Anyway."*
 
 
-### Install
-
-No installation is necessary. Unzip the downloaded file before running Rubix CE. Simply right-click to run Rubix CE after extracting. <br/>
-If you're running the software on a Windows machine, Windows Defender might prevent its execution. In such cases, simply click on `More Info` and then proceed by selecting `Run Anyway.`
-
-![max300px](../img/apps/more-info.png)
+![max500px](../img/apps/more-info.png)
 
 
-![max300px](../img/apps/run-anyway.png)
+![max500px](../img/apps/run-anyway.png)
 
-### Running Rubix CE
+### Initial Setup ###
 
-## Add token
+Upon launching Rubix CE for the first time:
 
+1. **Enter Token**: Contact Nube iO support at [support@nube-io.com](mailto:support@nube-io.com) to request your unique token. This token is essential for downloading apps and services over the internet. Once received, paste it into the provided field.
 
-:::caution token
-Contact Nube iO support at support@nube-io.com to request for a unique token. <br/>
-:::
+   ![gettingStartedToken.png](../img/apps/getting-started-token.png)
 
+2. **Choose an Option**:
+   - **Create Supervisor**: Set up a new supervisor instance.
+   - **Enter Application**: Proceed without creating a supervisor.
 
-The Token is essential for downloading Apps and Services over the internet. Once received, simply copy and paste the token into the provided field.
+   *Note: If you choose not to create a supervisor during this step, you can add one later.*
 
-![gettingStartedToken.png](../img/apps/getting-started-token.png)
+   ![getting-started-add-or-open.png](../img/apps/getting-started-add-or-open.png)
 
-You will then have an option to either `Create supervisor`or `Enter Application`
 
 Should you choose not to create a [Create supervisor](supervisor.md#supervisor) during the installation process, you can always add one later.
 
-![getting-started-add-or-open.png](../img/apps/getting-started-add-or-open.png)
+
 
 A newly launched software will appear like this.
 
+ ### Navigating the Interface
+
 ![getting-started-add-or-open.png](../img/apps/fresh-start.png)
 
-## Buttons
+- ![max 30px](../img/apps/refresh-button1.png)  **Refresh Button**: Updates data in the current table view.
+- ![max 30px](../img/apps/add-button1.png) **Add Button**: Adds new objects to the application (e.g., users, devices).
+- ![max 30px](../img/apps/delete-button1.png) **Delete Button**: Removes selected objects. Ensure items are selected in the table before attempting deletion.
+- ![max 30px](../img/apps/import-button1.png) **Import Button**: Imports supervisors using an Excel file.
+- ![max 30px](../img/apps/export-button1.png) **Export Button**: Exports supervisors to an Excel file.
 
-![refresh-button.png](../img/apps/refresh-button.png)  Refresh button serves the purpose of updating data in the table view.
+### Key Components
 
-![add-button.png](../img/apps/add-button.png)  The Add button is used for adding object to the application (such as
-adding a user).
+- **Supervisor**: A central entity managing multiple devices, either a physical Rubix Compute device or a connection to the Nube iO cloud service.
+- **Location**: Groups of Rubix Computes, typically representing physical or logical areas.
+- **Group**: Clusters of Rubix Computes for simplified management (e.g., "Level-1" or "Metering").
+- **Device**: A physical entity, such as a Rubix Compute.
 
-![delete-button.png](../img/apps/delete-button.png)  Delete button is used for removing an object. To execute a delete operation,
-please ensure that one or more items are selected in the table beforehand.
-
-![import-button.png](../img/apps/import-button.png)  Import button is used for importing supervisor using an excel file.
-
-![export-button.png](../img/apps/export-button.png)  Export button is used for exporting supervisor from the supervisors tab to an excel file.
-
-
-## Supervisors
-
-Supervisor can either be a physical Rubix Compute device or a connection to a Nube iO cloud service.
-
-## Location
-
-Location is comprised of groups of Rubix Computes.
-
-## Group
-
-Serves as a method to cluster Rubix Computes for simplified device identification and management. For Example: `level-1` or `metering`.
-
-## Devices
-Directs users to access a physical Host (e.g Rubix compute).
-
-## Device
-A physical Device such as a Rubix Compute.
+![side-bar-supervisors.png](img/side-bar-supervisors.png)
 
 ## Example setup
 
@@ -117,28 +108,26 @@ A physical Device such as a Rubix Compute.
 ----RC2
 ```
 
-![side-bar-supervisors.png](img/side-bar-supervisors.png)
+### Sidebar Navigation
+
+The sidebar allows easy navigation between supervisors, devices, protocols, and sensors.
+
+![Sidebar](img/sidebar.png)
 
 
-## Sidebar
+### Activating Supervisors
 
-The sidebar provides a simple means of navigating between supervisors, devices, protocols, and sensors.
+To view and manage supervisors:
 
-![max800pc](img/sidebar.png)
+1. **Enable Supervisor**: In the supervisors table, right-click the desired supervisor and select "Enable Supervisor."
 
-## Active Supervisors
+  ![max750px](img/enable-supervisor.png)
 
-:::caution
-At this point, you should have already added a supervisor. Please refer to **[supervisor](supervisor.md)** if you haven't done so already. 
-:::
+For more detailed information and advanced configurations, refer to the **[Supervisor](supervisor.md)** page.
 
-To view supervisors on the sidebar, you must enable them from the supervisors table.
+---
 
-Right-click the supervisor your wish to enable then click `Enable Supervisor`
-
-![maz800px](img/enable-supervisor.png)
-
-
+Let me know if you need any further assistance or modifications!
 
 
 
