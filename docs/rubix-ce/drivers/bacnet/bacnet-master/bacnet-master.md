@@ -31,7 +31,7 @@ required.
 |-------------|---------------------------------------------------|
 | Name        | Name of the network                               |
 | Description | Description of the network, eg: `level 1 network` |
-| Port              | Default port is `47808` you can also set it to another port like `47809` if required.    |
+| Port              | Only Supported x`BACnet port is `47808`  |
 |Enable               |Enable the network                                                                     |
 | Network interface | Select the network interface: <br/> - ETH-1 interface eth0 <br/> - ETH-2 interface eth1 |
 | Max poll rate     | Set max polling rate.                                                                    |
@@ -63,7 +63,7 @@ required.
 | Name        | Name of the device                               |
 | Description | Description of the device, eg: `sensor 1` |
 |Host IP| Fill in for BACnet IP only, IP of the device you wanted to connect with|
-| Port              | Default port is `47808` you can also set it to another port like `47809` if required.    |
+| Port              | Only BACnet port supported is `47808`  |
 |Enable               |Enable the device                                                                    |
 | Object ID | Refers to the identifier of a specific object instance within a BACnet device or network. |
 | Network Number    | Identifier that distinguishes different BACnet networks within a larger system.           |

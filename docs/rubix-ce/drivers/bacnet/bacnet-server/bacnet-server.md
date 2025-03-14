@@ -7,12 +7,12 @@ sidebar_position: 2
 BACnet Server Integration (make the Rubix Compute a discoverable BACnet device.
 
 :::info Important things to note before proceeding:
-* Install required **[apps](../../../setup/apps.md)** **driver-bacnet**
+* Install required **[apps](../../../setup/apps.md)** **[driver-bacnet](../../../drivers/bacnet/bacnet.md)**
 :::
 
 
 :::info
-Make sure the config is set for the number of AIs and AOs needed. (eg 2x **[Nube-IO IO-16](../../../../hardware/controllers/io-controllers/IO-16/overview.md)** we would need to add in the bacnet-config
+Make sure the config is set for the number of AIs and AOs needed. (eg 2x **[Nube-IO IO-16](../../../../hardware\controllers\io-controllers\IO-16\user-manual.md)**, We would need to add in the bacnet-config
 16-AIs and 16-AOs)
 :::
 

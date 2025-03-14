@@ -4,19 +4,26 @@ sidebar_position: 1
 
 # Download
 
-:::info download links
-**[link to all downloads](https://github.com/NubeIO/rubix-ce-builds/releases)**
-:::
+## OS Support
 
-# OS support
-Rubix CE is compatible with Windows, Mac, and Linux operating systems.
+Rubix CE is compatible with the following operating systems:
 
-## Download 
+- **Windows**
+- **macOS**
+- **Linux**
 
-To download for Windows, look for the version build labelled as `Windows` <br/>
-For example, latest Windows version is labelled as `rubix-ce-1.0.0-e6cdfba2.windows.zip`
+## Download Instructions
 
+To download Rubix CE:
 
+1. **Visit the [Nube iO GitHub Releases Page](https://github.com/NubeIO/rubix-ce-builds/releases).**
+
+2. **Identify the appropriate version for your operating system:**
+   - For **Windows**: Look for files ending with `.windows.zip` (e.g., `rubix-ce-1.2.2-1dc1a798.windows.zip`).
+   - For **macOS**: Look for files ending with `.macOS.intel.zip` , `.macOS.silicon.zip`.
+   - For **Linux**: Look for files ending with `.linux.zip`.
+
+3. **Download the latest version:**
 :::info get the Latest version
 Nube iO GitHub `releases` page will indicate the latest version of Rubix CE with a green **Latest** icon.
 :::
@@ -25,26 +32,23 @@ Nube iO GitHub `releases` page will indicate the latest version of Rubix CE with
 
 ![-](img/where-to-download.png)
 
-# Migrations 
+## Migration Information
 
+If you're transitioning from Flow Framework to Rubix OS:
 
-# From Flow Framework to Rubix OS
+- **Assistance Available**: Nube iO offers support for updates or migrations on any Rubix Compute system upon request. Contact [support@nube-io.com](mailto:support@nube-io.com) for assistance.
 
+- **Process Duration**: The migration typically takes several minutes, though it may take longer for larger servers. Rest assured, no data will be lost during this process.
 
-Nube iO is fully equipped to perform updates or migrations on any Rubix Compute system upon request. Should such services be required, please do not hesitate to contact support@nube-io.com for further assistance. <br/><br/>
+- **Upgrade Requirements**: Periodic upgrades may be necessary following significant firmware releases.
 
+### Important Notes on Compatibility
 
-The process generally spans several minutes and may take longer on larger servers, during which no data will be lost. It's important to note that upgrades may be required occasionally after significant firmware releases.
-<br/>
+- Rubix CE is **not backward compatible** with Nube iO Flow Framework or the Rubix Platform.
+- Rubix Wires does **not support backward compatibility** with Rubix Edge Wires.
+- `rubix-os` is **incompatible** with Nube iO `edge-28`.
 
-
-:::danger backward compatibility
-- Rubix CE does not support backward compatibility with Nube iO Flow Framework or the Rubix Platform. <br/>
-- Rubix Wires does not offer backward compatibility with Rubix Edge Wires. <br/>
-- `rubix-os` is incompatible with Nube iO `edge-28` 
-:::
-
-
+For further details and assistance, please refer to the [Getting Started](https://nubeio.github.io/rubix-ce-docs/docs/rubix-ce/setup/getting-started/) guide or contact our support team.
 
 
 

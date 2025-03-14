@@ -53,10 +53,10 @@ This is only applicable when you have `Rubix Compute` and wish to connect to it 
 Initially, to connect to multiple hosts on a local network, you'll designate one host as the supervisor. When this device is added as a host, its IP will be 0.0.0.0, reflecting that the supervisor's IP is identical to that of the host itself. This holds true even if there is only one host on your network, as that host will also have the IP address 0.0.0.0.
 
 :::info pre start checks
-- A **[Rubix Compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)** with network access to the
+- A **[Rubix Compute](../../hardware/controllers/supervisors/rubix-compute/user-manual.md)** with network access to the
   device
 - The default IP on `ETH-1` is `192.168.15.10` the 2nd port `ETH-2` is set to `DHCP`
-- Set your PC on the same network or set a fixed IP on your PC **[networking](../../hardware/controllers/supervisors/rubix-compute/networks.md)**
+- Set your PC on the same network or set a fixed IP on your PC **[networking](../../rubix-ce/settings/networking.md)**.
 :::
 
 ```mermaid
@@ -69,8 +69,8 @@ Adding a local device to the Nube iO Servers will only be required when you only
 
 :::info pre start checks
 - Before proceeding, ensure you have added the device following the same steps as outlined above.
-- A **[Rubix Compute](../../hardware/controllers/supervisors/rubix-compute/overview.md)** with network access to the device and a public IP address assigned.
-- Connect your PC to your local network. See **[networking](../../hardware/controllers/supervisors/rubix-compute/networks.md)** to see how.
+- A **[Rubix Compute](../../hardware/controllers/supervisors/rubix-compute/user-manual.md)** with network access to the device and a public IP address assigned.
+- Connect your PC to your local network. See **[networking](../../rubix-ce/settings/networking.md)** to see how.
 :::
 
 :::caution
