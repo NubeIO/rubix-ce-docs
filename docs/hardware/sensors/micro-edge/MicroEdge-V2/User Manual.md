@@ -103,6 +103,7 @@ An integrated pull-up resistor ensures reliable digital input readings.
     - Binary states: Open (no connection) or Closed (connected) circuit.
     - Suitable for: Switches, buttons, relays, and dry contacts (e.g., device status signals).
 - Analog Inputs:
+    - Varied states based on Resistance measurements.
     - Compatible with sensors for: Temperature, Humidity, Pressure, CO2 levels, Position Feedback.
 
 :::info 
