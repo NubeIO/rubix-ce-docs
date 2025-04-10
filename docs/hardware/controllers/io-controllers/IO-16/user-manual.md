@@ -372,7 +372,7 @@ The following table details the registers involved in interacting with the Unive
 | U08   	| 915      	|
 
 ## 3.2.2. Universal Inputs ##
-The following table details the Modbus registers involved with interacting with the Universal Input (UO) points. The type of each output must be configured correctly via Type Select Onboard Switches [2.4. Configuring the Onboard Switches](#24-configuring-the-onboard-switches).
+The following table details the Modbus registers involved with interacting with the Universal Input (UI) points. The type of each output must be configured correctly via Type Select Onboard Switches [2.4. Configuring the Onboard Switches](#24-configuring-the-onboard-switches).
 
 
 | Discrete Contacts (On/Off) 	|                 	|
