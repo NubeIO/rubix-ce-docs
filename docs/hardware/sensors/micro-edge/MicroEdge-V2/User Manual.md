@@ -71,7 +71,9 @@ LoRa® is expected to hold 75% of the IoT device market share soon. The LoRa® c
 
 ![max500px](img%2Finternal.png)
 
-* Reset Button: Power cycles the device.
+* PUSH: not used
+* BOOT: not used
+* RST: Pressing this button will reset the Micro-Edge and restart the firmware and publish a lora message.
 * Dip Switches: Adjusts the data push rate and resets the pulse counter.
 * Screw Terminal: Connects analog and digital inputs to the device.
 * Battery Connector: Links the battery to the device for power supply.
@@ -101,7 +103,6 @@ An integrated pull-up resistor ensures reliable digital input readings.
     - Binary states: Open (no connection) or Closed (connected) circuit.
     - Suitable for: Switches, buttons, relays, and dry contacts (e.g., device status signals).
 - Analog Inputs:
-    - Varied states based on Voltage, Resistance, or Current measurements.
     - Compatible with sensors for: Temperature, Humidity, Pressure, CO2 levels, Position Feedback.
 
 :::info 
