@@ -337,7 +337,7 @@ The following table details the registers involved in interacting with the Unive
 | Data Type      	| UINT16            	|
 | Function Codes 	| 3,6,16            	|
 | Description    	| Set value         	|
-| Value Scale    	| x100              	|
+| Value Scale    	| x 0.01              	|
 
 | Point 	| Register 	|
 |-------	|----------	|
@@ -424,7 +424,7 @@ The Rubix iO 16 supports the Digital Input HOLD on the first 3 UI’s only. To c
 | Data Type                    	| UINT16          	|
 | Function Codes               	| 4               	|
 | Description                  	| Read value      	|
-| Value Scale                  	| x100            	|
+| Value Scale                  	| x 0.01            	|
 
 | Point 	| Register 	|
 |-------	|----------	|
@@ -465,7 +465,7 @@ The Rubix iO 16 supports the Digital Input HOLD on the first 3 UI’s only. To c
 | Data Type      	| UINT16          	|
 | Function Codes 	| 4               	|
 | Description    	| Read value      	|
-| Value Scale    	| x100            	|
+| Value Scale    	| x 0.01            	|
 
 | Point 	| Register 	|
 |-------	|----------	|
@@ -486,7 +486,7 @@ The Rubix iO 16 supports the Digital Input HOLD on the first 3 UI’s only. To c
 | Data Type      	| UINT16          	|
 | Function Codes 	| 4               	|
 | Description    	| Read value      	|
-| Value Scale    	| x100            	|
+| Value Scale    	| x 0.01           	|
 
 | Point 	| Register 	|
 |-------	|----------	|
