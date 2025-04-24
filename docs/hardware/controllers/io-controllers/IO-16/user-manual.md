@@ -110,6 +110,12 @@ When using a Nube iO Rubix iO 16 as a wireless Modbus passthrough, the RS485 net
 
 ![max500px](img/3rd-party-compatible.png)
 
+To ensure the correct Modbus LoRa@ Passthrough operation mode is selected, configure the right DIP switch accordingly. Refer to section 
+[Right Bank DIP Switches Operation Modes](#2422-right-bank-dip-switches---operation-modes) for detailed instructions.
+
+On the CE, configure the Modbus device network's serial port using `/data/socat/serialBridge1` to enable Modbus RS485 – LoRa® Passthrough functionality.
+![max500px](img/lora-passthrough-config-ce.png)
+
 ## 2.4. Configuring the Onboard Switches ##
 
 Several physical onboard switches must be configured correctly for proper communication and functionality. These switches are located under the front cover of the Nube iO Rubix iO 16; to remove the front cover, use a flat-blade screwdriver to gently pry the cover off from the side corners at the cover join line.
@@ -125,9 +131,9 @@ There are several switches under the cover of the Nube iO Rubix iO 16 that are u
 
 | Mode                                       	| Purpose                                                                 	| Setting                                                         	|
 |--------------------------------------------	|-------------------------------------------------------------------------	|-----------------------------------------------------------------	|
-| 1Ok Resistor<br/>OR<br/>Digital (Dry Contact) 	| - Thermistor Temperature Sensor. <br/>- Dry Contact /Switch/ Digital 	| ![max200px](img/switches1.png)|
-| 0-1O VDC                                   	| Measuring 0-1O VDC signals                                              	| ![max200px](img/switches2.png)|
-| 4-2O mA                                    	| Measuring 4-2O mA signals                                               	| ![max200px](img/switches3.png) 	|
+| 10k Resistor<br/>OR<br/>Digital (Dry Contact) 	| - Thermistor Temperature Sensor. <br/>- Dry Contact /Switch/ Digital 	| ![max200px](img/switches1.png)|
+| 0-10 VDC                                   	| Measuring 0-10 VDC signals                                              	| ![max200px](img/switches2.png)|
+| 4-20 mA                                    	| Measuring 4-20 mA signals                                               	| ![max200px](img/switches3.png) 	|
 
 #### 2.4.1.2. Output Type Select Switches ####
 
@@ -149,8 +155,9 @@ The Left Bank of DIP Switches (labelled SW2) is used to set the address of the N
 
 
 ##### LEFT DIP SWITCH BANK (SW2) "Table"
+![max500px](img/left-dips-config-switch.png)
 
-|               	| [Dip-Switch: 1,2 3, 4, 5, 6, 7] - Device ID/ Address (as binary number+ 1)                                       |
+|               	| [Dip-Switch: 1,2 3, 4, 5, 6, 7] - Device ID/ Address (as binary number+ 1) |
 |:----------------:	|:-----------------------------------:	|
 | **Switch Setting** 	| **Device ID/ Address**                	|
 | 0000000        	| 1                                 	|
@@ -172,14 +179,14 @@ The Left Bank of DIP Switches (labelled SW2) is used to set the address of the N
 | 0000010        	| 33                                	|
 | 0000001        	| 65                                	|
 | 1111110        	| 128                                	|
-|                	| **[Dip-Switch: 8] - MUST BE ON/UP/1**| 	|
+|                	| **[Dip-Switch: 8] - MUST BE ON/UP/1**![max500px](img/left-sw8-dips-config-switch.png) 	|
 
 #### 2.4.2.2. Right Bank DIP Switches - Operation Modes ####
 
 The Right Bank of DIP Switches (labelled SW1) is used to configure various functions of the Nube iO Rubix iO 16. DIP switch #8 must remain ON/UP/1 for normal operation.
 
 ##### RIGHT DIP SWITCH BANK (SW1) "Table"
-<br/>
+![max500px](img/right-dips-config-switch.png)
 
 |                    	| **[Dip-Switch: 1, 2] - Operation Mode** 	|
 |:--------------------:	|:--------------------------------------:	|
@@ -198,7 +205,7 @@ The Right Bank of DIP Switches (labelled SW1) is used to configure various funct
 | 00                 	| None                                   	|
 | 10                 	| Even                                   	|
 | 01                 	| Odd                                    	|
-|                    	|  **[Dip-Switch:8] - MUST BE ON/UP/1**  	|
+|                    	|  **[Dip-Switch:8] - MUST BE ON/UP/1** ![max500px](img/right-sw8-dips-config-switch.png) 	|
 *Use this setting when connecting to 3rd party Modbus Devices.*<br/>
 *Set DIP switches, power cycle, then set back to the operation mode setting*<br/>
 
@@ -307,7 +314,36 @@ Initially, Modbus settings for the Rubix iO 16 will be set as follows:
 
 ## 3.2. Modbus Points ##
 
-This section describes the available Modbus registers that are used to interact with the Rubix iO 16
+This section describes the available Modbus registers that are used to interact with the Rubix iO 16.
+
+The IO16 is a Modbus-compatible device that supports digital inputs/outputs and communicates using the Modbus RTU protocol over RS485 or LoRa®. Here’s a breakdown of the Modbus object types and the data types available for IO16:
+
+### Object Type ###
+![objecttype](objecttype.png)
+
+| **Object Type**    	|  **Description**              |  **Access**                   | **Use Case**                                  |
+|----------------	|--------------------------	|--------------------------     |--------------------------	                |
+| Coils 	        | Digital outputs (on/off)      |Read/Write                     |Control output relays                          |
+| Discrete Inputs      	| Digital inputs (on/off)      	|Read Only                      |Monitor input signals (e.g., switches)         |
+| Holding Registers 	| General-purpose 16-bit data   |Read/Write                     |Device configuration, status, etc.             |
+| Input Registers   	| Input values (analog, etc.)	|Read Only                      |Sensor or device feedback (if supported)       |
+
+### Data Type ###
+![data-type](data-type.png)
+
+| **Data Type**    	|  **Size**                     |  **Value Range / Format**        | **Description/Use Case**                                     |
+|----------------	|--------------------------	|--------------------------        |--------------------------	                                  |
+| Digital               | 1 bit                         |0 (OFF), 1 (ON)                   | Digital I/O states                                           |
+| UInt16      	        | 16 bits (2 bytes)      	| 0 – 65,535                       | Common Modbus holding/input register type                    |
+| Int16 	        | 16 bits (2 bytes)             | -32,768 – 32,767                 | Used when negative values are needed                         |
+| UInt32   	        | 32 bits (4 bytes)	        | 0 – 4,294,967,295                | Large counters, timestamps, etc. (spans 2 registers)         |
+| Int32   	        | 32 bits (4 bytes)	        | -2,147,483,648 – 2,147,483,647                | Signed 32-bit integers          |
+| UInt64   	        | 64 bits (8 bytes)	        | 0 – 18,446,744,073,709,551,615   | Very large values, such as device IDs or extended counters   |
+| Int64   	        | 64 bits (8 bytes)	        | -9,223,372,036,854,775,808 – 9,223,372,036,854,775,807   | Signed 64-bit integers (used for timestamps, accumulated data) |
+| Float32   	        | 32 bits (4 bytes)	        | IEEE 754 standard (single precision)   | Real numbers/decimal values (e.g., temperature, voltage) |
+| Float64   	        | 64 bits (8 bytes)	        | IEEE 754 standard (double precision)   | High-precision floating-point numbers (spans 4 registers) |
+| Mod10-U32   	        | 32 bits (4 bytes)	        | nsigned 32-bit in Mod10 decimal (BCD-like encoding)   | Displays clean decimal digits, used in industrial counters/meters |
+
 
 ## 3.2.1. Universal Outputs​ ##
 The following table details the registers involved in interacting with the Universal Output (UO) points. Writing to these registers will drive the Physical Output points. For UOs, the type of each output must be configured correctly via the Type Select Onboard Switches 
@@ -337,7 +373,7 @@ The following table details the registers involved in interacting with the Unive
 | Data Type      	| UINT16            	|
 | Function Codes 	| 3,6,16            	|
 | Description    	| Set value         	|
-| Value Scale    	| x100              	|
+| Value Scale    	| x0.01              	|
 
 | Point 	| Register 	|
 |-------	|----------	|
@@ -424,7 +460,7 @@ The Rubix iO 16 supports the Digital Input HOLD on the first 3 UI’s only. To c
 | Data Type                    	| UINT16          	|
 | Function Codes               	| 4               	|
 | Description                  	| Read value      	|
-| Value Scale                  	| x100            	|
+| Value Scale                  	| x0.01            	|
 
 | Point 	| Register 	|
 |-------	|----------	|
@@ -465,7 +501,7 @@ The Rubix iO 16 supports the Digital Input HOLD on the first 3 UI’s only. To c
 | Data Type      	| UINT16          	|
 | Function Codes 	| 4               	|
 | Description    	| Read value      	|
-| Value Scale    	| x100            	|
+| Value Scale    	| x0.01            	|
 
 | Point 	| Register 	|
 |-------	|----------	|
@@ -486,7 +522,7 @@ The Rubix iO 16 supports the Digital Input HOLD on the first 3 UI’s only. To c
 | Data Type      	| UINT16          	|
 | Function Codes 	| 4               	|
 | Description    	| Read value      	|
-| Value Scale    	| x100            	|
+| Value Scale    	| x0.01            	|
 
 | Point 	| Register 	|
 |-------	|----------	|
@@ -604,6 +640,32 @@ The following registers are used to set the UI’s to special modes
 | Soft Reset              	| 10501    	| DIGITAL   	| W          	| Perform MCU soft reset                          	|
 | Factory Reset           	| 10502    	| DIGITAL   	| W          	| Reset to factory settings                       	|
 
+<br/>
 
+### Input / Output Multiplication Factor ###
+A multiplication factor is a numeric value used to scale raw data from a Modbus register to its real-world value. Many Modbus devices store values in integer format (e.g., UInt16 or Int16) to keep communication efficient and standardized. However, real-world measurements like temperature, voltage, current, or flow rate often require decimal precision, which integers can't directly represent.
 
+Instead of transmitting floating-point values (which are less universally supported and take more register space), devices apply a multiplication factor to convert the integer to its intended unit or precision.
 
+#### Why Use a Multiplication Factor ####
+✅ Efficiency – Keeps data transmission compact (uses 1 or 2 registers).
+
+✅ Compatibility – Easier to work with across different SCADA/BMS systems.
+
+✅ Precision – Enables decimal representation without using floating-point formats.
+
+✅ Standardization – Devices like IO16 can keep logic consistent across systems.
+
+#### Where to Configure It? ####
+In some devices like IO16, the multiplication factor is fixed in firmware or defined per register in RC CE.
+
+In other setups (e.g., SCADA, BMS), you may manually apply the factor, Scale Min/Max of Input/Output and rount to decimal desire value in the software that interprets Modbus values.
+
+![multiplication_factor](multiplication_factor1.png)
+
+#### Things to Watch Out For ####
+Always check the device documentation to know the correct factor.
+
+Applying the wrong factor leads to incorrect readings (e.g., a temperature of 230 instead of 23.0).
+
+Some devices may use dividers instead (e.g., divide by 10 instead of multiply by 0.1 — mathematically the same, but conceptually reversed).
