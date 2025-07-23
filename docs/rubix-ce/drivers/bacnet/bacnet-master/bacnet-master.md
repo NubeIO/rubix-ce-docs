@@ -71,12 +71,12 @@ required.
 |Device Max-ADPU (Application Data Protocol Unit)| ADPU refers to the maximum size of data packets that the BACnet master can handle during communication with BACnet devices. It defines the maximum amount of data that can be sent or received in a single transmission.|
 |Device Segmentation| Refers to the capability of the BACnet master to handle large amounts of data by breaking them into smaller segments (ADPUs). It ensures efficient communication, especially over networks with limited bandwidth or where devices support different data sizes.|
 |Poll Delay Between Points| This parameter specifies the time interval between successive polls (requests for data) sent by Rubix CE to different BACnet devices or points (e.g., sensors, actuators).|
-|Concurrency Limit| The maximum number of concurrent polling requests that can be sent to a BACnet device, allowing for faster polling cycles and quicker data retrieval. To enable this feature, you must tick Enable Concurrency, but only if the BACnet device supports concurrent access. A typical concurrency value is 5, and increasing it further generally yields minimal performance improvement.|
 |Tags               | Right-click the device then `tags, meta-tags` to add in query key words                    |
 |Meta-Tags          | Right-click the device then `tags, meta-tags` to add in query key words                   |
 |Message            | See **[Troubleshooting](../../../setup/Troubleshoot.md)** for list of messages|
 |State              | `last_ok`:  Indicates the time since the system has been error-free.
 ||`last_fail`: Specifies the date and time of the most recent occurrence of a failure.|
+
 
 ## BACnet Network Device Discovery (BACnet Who Is)
 
