@@ -48,7 +48,7 @@ the Rubix iO 16 is Nube iO’s versatile, low-cost physical Input/Output module.
 
 | Type                  	| Count 	| Count Details                                                                                                                      	|
 |-----------------------	|-------	|------------------------------------------------------------------------------------------------------------------------------------	|
-| Universal Input (UI)  	| 8     	| - 0 - 10 VDC Signal<br/>- 10k Thermistor<br/>- Resistance<br/>- Digital / Switch / Dry Contact<br/>- 4-20mA Signal<br/>- Pulse Counter* 	|
+| Universal Input (UI)  	| 8     	| - 0 - 10 VDC Signal<br/>- 10k Thermistor<br/>- Resistance<br/>- Digital / Switch / Dry Contact<br/>- 4-20mA Signal<br/>	|
 | Universal Output (UO) 	| 8     	| - Analog: 0 to 10 VDC (50ma Max)<br/>- Digital: 0 or 12 VDC 0V[OFF] / 12VDC[ON] (700mA Max)                                         	|
 _ Special configuration required [3.2.2.3. Universal Input Configurations](#3223-universal-input-configurations). Only the first 3 UI’s support this mode._
 
@@ -537,49 +537,7 @@ The Rubix iO 16 supports the Digital Input HOLD on the first 3 UI’s only. To c
 
 <br/>
 
-#### 3.2.2.2. Pulse Counter ####
-The Rubix iO 16 supports pulse counting on the first 3 UI’s only. To configure this mode, special configuration registers must be set to configure the system. [See section 3.2.2.3](#3223-universal-input-configurations). Universal Input Configurations 
-
-|                	|                 	|
-|----------------	|-----------------	|
-| Register Type  	| Input Registers 	|
-| Data Type      	| UINT36          	|
-| Function Codes 	| 4               	|
-| Description    	| Read value      	|
-
-| Point 	| Register 	|
-|-------	|----------	|
-| UI1   	| 401      	|
-| UI2   	| 403      	|
-| UI3   	| 405      	|
-| UI4   	| 407      	|
-| UI5   	| 409      	|
-| UI6   	| 411      	|
-| UI7   	| 413      	|
-| UI8   	| 415      	|
-
-<br/>
-
-| Raw (0.0-1.0)  	|                    	|
-|----------------	|--------------------	|
-| Register Type  	| Input Registers    	|
-| Data Type      	| FLOAT32            	|
-| Function Codes 	| 4                  	|
-| Description    	| Read value 0.0-1.0 	|
-
-| Point 	| Register 	|
-|-------	|----------	|
-| UI1   	| 901      	|
-| UI2   	| 903      	|
-| UI3   	| 905      	|
-| UI4   	| 907      	|
-| UI5   	| 909      	|
-| UI6   	| 911      	|
-| UI7   	| 913      	|
-| UI8   	| 915      	|
-
-
-#### 3.2.2.3. Universal Input Configurations ####
+#### 3.2.2.2. Universal Input Configurations ####
 The following registers are used to set the UI’s to special modes
 
 |                	|                   	|
@@ -607,8 +565,7 @@ The following registers are used to set the UI’s to special modes
 | 0                    	| Default                            	|
 | 6                    	| Digital input HOLD on RISING edge  	|
 | 7                    	| Digital input HOLD on FALLING edge 	|
-| 8                    	| Pulse Counter on RISING edge       	|
-| 9                    	| Pulse Counter on FALLING edge      	|
+
 
 | **Global Configurations** 	|                              	|
 |---------------------------	|------------------------------	|
