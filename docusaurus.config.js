@@ -1,50 +1,48 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 const organizationName = "NubeIO";
 const projectName = "rubix-ce-docs";
-const deploymentBranch = "deployment"
-
-
+const deploymentBranch = "deployment";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Document',
-  tagline: '',
-  favicon: 'https://nube-io.com/wp-content/uploads/2021/06/cropped-index-32x32.png',
+  title: "Document",
+  tagline: "",
+  favicon: "img/favicon.svg",
 
   // Set the production url of your site here
-   url: `https://${organizationName}.github.io`,
-   baseUrl: `/${projectName}/`,
+  url: `https://${organizationName}.github.io`,
+  baseUrl: `/${projectName}/`,
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName, // Usually your GitHub org/user name.
   projectName, // Usually your repo name.
   deploymentBranch,
 
-  onBrokenLinks: 'ignore',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "ignore",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-         // editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
+          // editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
         },
         blog: {
           showReadingTime: true,
@@ -53,7 +51,7 @@ const config = {
           editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
@@ -63,30 +61,31 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'https://nube-io.com/wp-content/uploads/2022/04/Nube-logo.png',
+      image: "img/logo.svg",
       navbar: {
-        title: 'Home',
+        title: "Home",
         logo: {
-          alt: 'My Site Logo',
-          src: 'https://nube-io.com/wp-content/uploads/2022/04/Nube-logo.png',
+          alt: "My Site Logo",
+          src: "img/logo.svg",
+          srcDark: "img/logoDark.svg",
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Documentation',
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar",
+            position: "left",
+            label: "Documentation",
           },
           {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            type: "docsVersionDropdown",
+            position: "right",
+            dropdownItemsAfter: [{ to: "/versions", label: "All versions" }],
             dropdownActiveClassDisabled: true,
           },
         ],
       },
       colorMode: {
-        defaultMode: 'light',
+        defaultMode: "light",
         disableSwitch: false,
         respectPrefersColorScheme: false,
       },
@@ -94,37 +93,37 @@ const config = {
         // style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: "Docs",
             items: [
               {
-                label: 'Rubix-CE',
-                to: '/docs/overview',
+                label: "Rubix-CE",
+                to: "/docs/overview",
               },
             ],
           },
           {
-            title: 'Nube IO',
+            title: "Nube IO",
             items: [
               {
-                label: 'Nube-IO Home Page',
-                href: 'https://nube-io.com/',
+                label: "Nube-IO Home Page",
+                href: "https://nube-io.com/",
               },
               {
-                label: 'Old Nube-IO Documents Site',
-                href: 'https://nubeio.zohodesk.com.au/portal/en/kb/nube-io',
+                label: "Old Nube-IO Documents Site",
+                href: "https://nubeio.zohodesk.com.au/portal/en/kb/nube-io",
               },
             ],
           },
           {
-            title: 'More',
+            title: "More",
             items: [
               {
-                label: 'info on BACnet',
-                href: 'https://en.wikipedia.org/wiki/BACnet',
+                label: "info on BACnet",
+                href: "https://en.wikipedia.org/wiki/BACnet",
               },
               {
-                label: 'info on Modbus',
-                href: 'https://en.wikipedia.org/wiki/Modbus',
+                label: "info on Modbus",
+                href: "https://en.wikipedia.org/wiki/Modbus",
               },
             ],
           },
@@ -140,8 +139,7 @@ const config = {
   markdown: {
     mermaid: true,
   },
-  themes: ['@docusaurus/theme-mermaid'],
-
+  themes: ["@docusaurus/theme-mermaid"],
 };
 
 module.exports = config;
