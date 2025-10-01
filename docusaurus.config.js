@@ -12,7 +12,7 @@ const deploymentBranch = "deployment";
 const config = {
   title: "Document",
   tagline: "",
-  favicon: "img/favicon.svg",
+  favicon: "img/Favicon.svg",
 
   // Set the production url of your site here
   url: `https://${organizationName}.github.io`,
