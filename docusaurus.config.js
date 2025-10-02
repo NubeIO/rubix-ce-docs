@@ -12,7 +12,7 @@ const deploymentBranch = "deployment";
 const config = {
   title: "Document",
   tagline: "",
-  favicon: "img/favicon.svg",
+  favicon: "img/Favicon.svg",
 
   // Set the production url of your site here
   url: `https://${organizationName}.github.io`,
@@ -67,7 +67,7 @@ const config = {
         logo: {
           alt: "My Site Logo",
           src: "img/logo.svg",
-          srcDark: "img/LogoDark.svg",
+          srcDark: "img/Logodark.svg",
         },
         items: [
           {
