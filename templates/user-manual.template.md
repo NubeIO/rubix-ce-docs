@@ -36,6 +36,13 @@
 ## 2.1. Mounting
 *Insert descriptions of mounting options*
 
+1. **Step-1** 
+2. **Step-2** 
+3. **Step-3**
+4. **Step-4** 
+5. **Step-5**
+
+
 *Insert Diagram of Best Mounting*
 
 ## 2.2. Dip Switch Configuration (If Applicable*)

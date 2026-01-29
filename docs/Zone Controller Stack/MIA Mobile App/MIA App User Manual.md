@@ -614,7 +614,7 @@ To check available fan speeds or for further details on each fan speed mode, ref
 
 | Revision | Date       | Change Description                  |
 |----------|------------|------------------------------------|
-| 1.0      | 29-01-2026 | Initial Draft release of the document.   |
+| 1.0      | 29-01-2026 | Initial release of the document for review  |
 | 1.1      | DD-MM-YYYY |     |
 | 1.2      | DD-MM-YYYY |     |
 

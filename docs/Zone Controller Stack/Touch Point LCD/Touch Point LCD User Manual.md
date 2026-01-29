@@ -3,33 +3,31 @@
 # 1. Overview/About Product
 
 ## 1.1. Product Overview
-ZoneConnex is Nube iO’s pre-programmed HVAC zone controller, designed to provide a local interface for monitoring and managing split ducted air conditioning systems in residential and light commercial environments.
+This wall-mounted touchscreen provides a local control interface and environmental sensing node for UART-compatible split ducted air conditioning systems in residential and light commercial environments. Designed for IoT-enabled HVAC and Building Management Systems, it acts as both a user control point and a source of environmental feedback.
 
-It delivers precise zone control and system visibility through the Nube iO UART mobile app or via the Nube iO Touch Point LCD screen, allowing users to easily adjust temperature settings, mode selections, and airflow preferences across multiple zones.
+Optimised for smart home and retrofit installations, it enables smooth interaction between users and connected HVAC systems. The intuitive interface allows quick adjustments to setpoints, fan modes, zoning preferences, and schedules, helping deliver a more comfortable and efficient indoor environment.
 
-Optimised for smart home integration and HVAC retrofit installations, ZoneConnex streamlines interactions between users and connected systems — helping improve comfort, efficiency, and overall control flexibility.
+Connects easily to centralised BMS platforms via RS485, with support for Modbus RTU and custom integration profiles. Integrated temperature and humidity sensors provide environmental feedback that enables intelligent automation and energy-efficient HVAC control.
 
-<!-- ![max1000px](img/ACB-ZC-ENCLOSURE.png) -->
+
+![max800px](img/LCD-Screen.png)
 
 
 ## 1.2. Architecture
-**ZoneConnex Controller:** Acts as the master device, interfacing with compatible RAC/PAC and VRF Air Conditioning units via the UART protocal. It manages data transmission to and from the field devices and manages the control of the air conditioning system. <br/>
 **Touch Point LCD:** This wall-mounted touchscreen provides a local control interface for the user to manage and monitor the air conditioning system. <br/>
+**ZoneConnex Controller:** Acts as the master device, interfacing with compatible RAC/PAC and VRF Air Conditioning units via the UART protocal. It manages data transmission to and from the field devices and manages the control of the air conditioning system. <br/>
 **Nube iO Mobile App:** This mobile application provides a remote control interface for the user to manage and monitor the air conditioning system. <br/>
 **Droplet:** This wireless LoRa device monitors temperature and humitidy in each zone transmitting data to the ZoneConnex allowing for individual zone control.
+
+<br/>
 
 ## 1.3. Product Features
 
 ## 1.3.1 Hardware Features
-**Wireless Connectivity:** The ZoneConnex supports Wi-Fi 2.4 GHz and Bluetooth 4.2 connectivity.<br/>
-**Ethernet:** 2x 100 Mbps RJ45 Ethernet Ports for LAN Connection.<br/>
-**RS-485:** The ZoneConnex incorrporates 2x RS485 Communication Ports
-- 1 × Isolated RS-485 (for third party field-bus communication)
-- 1 × RS-485 (for Touch Point LCD or local NubeiO Modbus device).
-
-**Zone Control Ports:** The ZoneConnex incorrporates 10x RJ12 outputs supplying 24V AC to zone dampers.<br/>
-**Touch Point LCD Integration:** The ZoneConnex provides a power source and connection point for the Nube iO Touch Point LCD.<br/>
-**LoRa® & LoRaWan:** The ZoneConnex supports LoRa and LoRaWan communication.<br/>
+**Wireless Connectivity:** The Touch Point LCD supports Wi-Fi 802.11 b/g/n connectivity.<br/>
+**RS-485:** The Touch Point lCD incorrporates 1x RS485 communication port. <br/>
+**DC Power:** The Touch Point LCD incorrporates a 18VDC power input port.
+**USB-C:** Service / Programming Port used to manage the Touch Point LCD firmware.
 
 
 ## 1.3.2 Control Features
@@ -39,11 +37,14 @@ Optimised for smart home integration and HVAC retrofit installations, ZoneConnex
 - Cooling setpoint 18 to 30 degrees Celsius
 - Heating setpoint 16-18 to 30 degrees Celsius (low limit model dependent)
 
-**Fan Speed Control:** Control fan speed (model dependent).<br/>
-**Zone Control and Managment:** Control and manage 10 zones individually.<br/>
+**Fan Speed Control:** Control fan speeds (model dependent).<br/>
 **Return Air Temperature Monitoring:** Monitor the return air temperature.<br/>
-**Zone Air Temperature Monitoring:** Monitor each zone air temperature indivudually via paired Droplet sensors.<br/>
-**Error Status Reporting:** Retrieve the error status and error code.
+**Zone Temperature/Humidity Monitoring:**
+**Zone Control:** Via the MIA mobile app users can interface with the ZoneConnex to control up to 10 zone dampers. Each damper can be controller within a range of 0-100% airflow in 5% increments. <br/>
+**Schedule Management:** Via the MIA mobile app, users can configure and manage schedules to automatically run their air conditioning unit at set times and days — helping maintain comfort, reduce manual adjustments, and improve energy efficiency. <br/>
+**Run Mode Management:** Via the MIA mobile app, users can set timed On/Off actions based on the unit’s current state. If the system is already running, a Run Off timer can be enabled to automatically turn the unit off after the selected duration. If the system is currently off, a Run On timer can be set to automatically start the unit after the chosen time period. <br/>
+**Scene Management:** Via the MIA mobile app, users can create custom “scenes” that bundle specific run conditions—such as mode, setpoint, and fan speed. These scenes can then be applied to schedules, or link them to run modes for consistent comfort with a single action. <br/>
+**Error Status Reporting:** Via the MIA mobile app users can monitor the error status and error codes generated by the Air Conditioner unit whilst also monitoring system generated alerts such as communications errors.
 
 <br/>
 
@@ -51,27 +52,26 @@ Optimised for smart home integration and HVAC retrofit installations, ZoneConnex
 
 ## 2.1. Packing List
 - Installation & User Manual 
-- ZoneConnex Device 
-- Wifi Antenna
-- LoRa Antenna
-- PAP-04V-S UART communication cable
-- 4 core 24AWG Power/communication cable
+- Touch Point LCD Device 
+- 15m 4 core 24AWG Power/communication cable
 - Pan Head Self Tapping Screws (4x M3x25mm)
 
 ## 2.2. Product Dimensions
 |                	        |                                           |
 |-----------------------	|-----------------------------------------	|
-| Height:               	| 105.31 mm (134.1 incl. clips) / 4.15 inches (5.27 incl. clips)                  	  |
-| Width:                	| 111.84 mm / 4.40 inches                      |
-| Depth:                	| 70.25 mm (72.95 incl. clips) / 2.76 inches (2.87 incl. clips)                    	|
-| Enclosure             	| PC/ABS blend (Flame Retardant Grade, UL94 V-0) Matte Black, IP2X Rated 	    |
+| Height:               	| 112.55 mm / 4.43 inches                	  |
+| Width:                	| 180.97 mm / 7.13 inches                      |
+| Depth:                	| 17.5 mm / 0.69 inches                   	|
+| LCD Housing             	| White ABS Plastic	    |
+| LCD Panel             	|  Glass, Liquid Crystal, Polarizer, LED    |
 
 <!-- ![max800px](img/ZoneConnex-Dimensions.png) -->
 
 ## 2.3. Product Component Breakdown
 
 ### 2.3.1 Front View
-- 24VAC/DC Power Input: Termination block for connecting the ZoneConnex 24VAC/DC power input.
+*Insert Image*
+<!-- - 24VAC/DC Power Input: Termination block for connecting the ZoneConnex 24VAC/DC power input.
 - U.FL Antenna: Connects the antenna for LoRa & LoRaWan communication.
 - Wifi Antenna: Connects the antenna for Wifi communication.
 - Din Rail Clip: Allows for secure din rail mounting and maintenance.
@@ -79,12 +79,13 @@ Optimised for smart home integration and HVAC retrofit installations, ZoneConnex
 - UART Port: Termination block for connecting the ZoneConnex to UART communication.
 - RS485-ISO: Termination block for connecting third party field-bus communication devices to the ZoneConnex.
 - LCD RS485: Termination block for connecting Touch Point LCD or local NubeiO Modbus devices to the ZoneConnex.
-- LCD 18VDC Power: Termination block for powering the Touch Point LCD from the ZoneConnex.
+- LCD 18VDC Power: Termination block for powering the Touch Point LCD from the ZoneConnex. -->
 
 <!-- ![max800px](img/ACB-ZC-Components-Markup-Front-View.png) -->
 
 ### 2.3.2 Top View
-- 24VAC/DC Power Input: Termination block for connecting the ZoneConnex 24VAC/DC power input.
+*Insert Image*
+<!-- - 24VAC/DC Power Input: Termination block for connecting the ZoneConnex 24VAC/DC power input.
 - Wifi Antenna: Connects the antenna for Wifi communication
 - Zone Control Ports 1-5: RJ12 outputs to supply 24V AC to control the zone dampers.
 - USB-C: Service / Programming Port used to manage the ZoneConnex firmware.
@@ -92,19 +93,20 @@ Optimised for smart home integration and HVAC retrofit installations, ZoneConnex
 - ACBM Reset Button: ***used for?*** ***Factory reset?***
 - ACBM User Button: ***used for?*** ***Reboot?***
 - Zone Control Reset Button: ***used for?*** ***Factory reset?***
-- Zone Control Button: ***used for?*** ***Reboot?***
+- Zone Control Button: ***used for?*** ***Reboot?*** -->
 
 <!-- ![max800px](img/ACB-ZC-Components-Markup-Top-View.png) -->
 
 ### 2.3.3 Bottom View
-- Zone Control Ports 6-10: RJ12 outputs to supply 24V AC to control the zone dampers.
+*Insert Image*
+<!-- - Zone Control Ports 6-10: RJ12 outputs to supply 24V AC to control the zone dampers.
 - U.FL Antenna: Connects the antenna for LoRa & LoRaWan communication.
 - RJ45 Ethernet Port 1: 100 Mbps RJ45 Ethernet Port for LAN Connection.
 - RJ45 Ethernet Port 2: 100 Mbps RJ45 Ethernet Port for LAN Connection.
 - UART Port: Termination block for connecting the ZoneConnex to UART communication.
 - RS485-ISO: Termination block for connecting third party field-bus communication devices to the ZoneConnex.
 - LCD RS485: Termination block for connecting Touch Point LCD or local Modbus devices to the ZoneConnex.
-- LCD 18VDC Power: Termination block for powering the Touch Point LCD from the ZoneConnex.
+- LCD 18VDC Power: Termination block for powering the Touch Point LCD from the ZoneConnex. -->
 
 <!-- ![max800px](img/ACB-ZC-Components-Markup-Bottom-View.png) -->
 
@@ -113,77 +115,42 @@ Optimised for smart home integration and HVAC retrofit installations, ZoneConnex
 # 3. Installation & Configuration
 
 ## 3.1. Mounting
-The ZoneConnex can be mounted in on din rail or via fixings utilising the mounting clips depending on the type of air conditioning system. In all cases, the antenna must remain vertical (unless specifically noted).
+The Touch Point can be mounted via fixings utilising the mounting holes incorporated in the LCD housing. The Touch Point LCD should always be mounted in a location such that it will not experience extreme high or low temperatures, liquids or high humidity.
 
-### 3.1.1 Din Rail Mounting
-<!-- ![max800px](img/ZoneConnex-DinMounting.png) -->
+### 3.1.1 Fixings & Mounting Clips
+Use the following steps to mount the Touch Point LCD utilising the 4x mounting clips and fixings:
 
-### 3.1.2 Fixings & Mounting Clips
+1. **Step-1** Using a flat-blade screwdriver, carefully release the two retaining clips on the bottom side of the housing.
+2. **Step-2** Position the Touch Point LCD housing against the mounting surface and mark the fixing hole locations using the mounting holes as a guide.
+3. **Step-3** Remove the Touch Point LCD housing and drill the required fixing holes at the marked locations. Install wall plugs if mounting to masonry or plasterboard.
+4. **Step-4** Align the Touch Point LCD housing with the fixing points and secure it to the surface using appropriate screws or fixings. Do not overtighten.
+5. **Step-5** Gently pull the LCD Screen housing forward to confirm it is securely mounted.
+6. **Step-6** Feed the prewired cable through the desired cable entry point and re-insert the LCD screen ensuring the two retaining clips on the bottom side of the house are re-seated into the slots.
+
+<br/>
+
+Use the following steps to remove the Touch Point LCD utilising the 4x mounting clips and fixings:
+
+1. **Step-1** Isolate power to the Touch Point LCD and ensure all connected equipment is safely powered down. 
+2. **Step-2** Using a flat-blade screwdriver, carefully release the two retaining clips on the bottom side of the housing.
+3. **Step-3** Gently pull the LCD screen forward and away from the housing to disengage it.
+4. **Step-4** Disconnect the prewired cable from the rear of the LCD screen, or pull through the excess cable if available.
+5. **Step-5** If removing the housing, loosen and remove the fixing screws securing the housing to the mounting surface then carefully lift the Touch Point LCD housing away from the mounting surface.
+
+<br/>
+
+*Insert Image*
 <!-- ![max800px](img/ZoneConnex-FixingMounting.png) -->
 
 <br/>
 
 ## 3.2. Power Supply Connections
-
-### 3.2.1 ZoneConnex Power Supply
-The ZoneConnex can be powered by a 24V AC or DC power supply on the 24VAC/DC power terminals as shown below. 
-
-<!-- |            | ![max300px](img/ZC-24VAC-DC-Wiring.png) | -->
-|----------- |----------------------------------------|
-| Pin 1 **(L / +)** | 24V AC **Live (L)** or 24V DC **+** |
-| Pin 2 **(N / -)** | 24V AC **Neutral (N)** or 24V DC **−** |
-
-**Note:** 24V AC must be used if zone damper control is required in order to power the actuators.
-
-### 3.2.2 Touch Point LCD Power Supply
-The ZoneConnex is equiped power the NubeiO Touch Point LCD. The ZoneConnex supplys 18V DC via connection to the LCD 18VDC Power terminals as shown below. 
-
-<!-- |            | ![max300px](img/ZC-LCD-Power-Wiring.png) | -->
-|----------- |----------------------------------------|
-| Pin 12 **(+)** | 24V DC **+** |
-| Pin 13 **(-)** | 24V DC **−** |
+*Insert Power Connections information and descriptions*
 
 <br/>
 
 ## 3.3. Communication Connections
-
-### 3.3.2 UART Connection
-The ZoneConnex is equiped to interface with compatible RAC/PAC and VRF Air Conditioning units via the UART protocal. 
-
-The UART connection is terminated and installed as shown below.
-
-<!-- |           	| ![max300px](img/ZC-UART-Wiring.png)     | -->
-|-----------	|----------------	                    |
-| Pin 3 (**G**) | **Ground** of UART Network       |
-| Pin 4 (**RX**) | **RX** of UART Network       |
-| Pin 5 (**TX**) | **TX** of UART Network     	            |
-| Pin 6 (**Spare**) | NOT USED   	            |
-
-<!-- ![max1000px](img/ACB-ZC-UART-PAP-04V-S.png) -->
-
-### 3.3.2 RS485 Connections
-
-There are two ports available to establish Modbus RS485 communication to devices via the ZoneConnex, LCD RS485 and RS485-ISO. 
-- LCD RS485: Termination block for connecting Touch Point LCD or local NubeiO Modbus devices to the ZoneConnex.
-- RS485-ISO: Termination block for connecting third party field-bus communication devices to the ZoneConnex.
-
-The RS485 connectors are terminated and installed as shown below.
-
-#### 3.3.2.1 RS485-ISO
-
-<!-- |           	| ![max300px](img/ZC-RS485-ISO-Wiring.png)     | -->
-|-----------	|----------------	                    |
-| Pin 7 (**+**) | **A** or **+** of RS485 Network       |
-| Pin 8 (**-**) 	| **B** or **-** of of RS485 Network        |
-| Pin 9 (**G**) | **C** or **Ground**      	            |
-
-#### 3.3.3.2 LCD RS485
-
-<!-- |           	| ![max300px](img/ZC-LCD-RS485-Wiring.png)     | -->
-|-----------	|----------------	                    |
-| Pin 12 (**+**) | **A** or **+** of RS485 Network       |
-| Pin 13 (**-**) 	| **B** or **-** of of RS485 Network        |
-
+*Insert Communications Connections information and descriptions*
 
 <br/>
 
