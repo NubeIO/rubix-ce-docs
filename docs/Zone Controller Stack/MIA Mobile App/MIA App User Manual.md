@@ -3,19 +3,19 @@
 # 1. About Product
 
 ## 1.1. Product Overview
-The Nube iO MIA mobile app is a powerful configuration and management tool designed to simplify the setup and ongoing control of the ZoneConnex HVAC zone controller. The app provides installers and users with an intuitive, guided interface to commission systems, configure zones, and manage day-to-day operation directly from a mobile device.
+The anywAiR Zone app is a powerful configuration and management tool designed to simplify the setup and ongoing control of the ZoneConnex HVAC zone controller. The app provides installers and users with an intuitive, guided interface to commission systems, configure zones, and manage day-to-day operation directly from a mobile device.
 
-Through a direct wifi access point connection, the app enables fast and reliable system configuration, including zone setup, temperature setpoints, operating modes, and airflow preferences. Once commissioned, users can pair their ZoneConnex system to thier local wifi and continue to monitor the system status in real time and make adjustments as needed, ensuring optimal comfort and performance across all connected zones.
+Through a direct wifi access point connection, the app enables fast and reliable system configuration, including zone setup, temperature setpoints, operating modes, and airflow preferences. Once commissioned, users can pair their ZoneConnex system to their local wifi and continue to monitor the system status in real time and make adjustments as needed, ensuring optimal comfort and performance across all connected zones.
 
-Designed for both residential and light commercial applications, the Nube iO MIA  mobile app supports smart home–ready installations and HVAC retrofit projects. By combining straightforward commissioning with flexible system management, the app reduces setup time, minimises complexity, and delivers a seamless control experience for modern zoned air conditioning systems.
+Designed for both residential and light commercial applications, the Nube iO MIA mobile app supports smart home-ready installations and HVAC retrofit projects. By combining straightforward commissioning with flexible system management, the app reduces setup time, minimizes complexity, and delivers a seamless control experience for modern zoned air conditioning systems.
 
 <br/>
 
 ## 1.2. Architecture
-**ZoneConnex Controller:** Acts as the master device, interfacing with compatible RAC/PAC and VRF Air Conditioning units via the UART protocal. It manages data transmission to and from the field devices and manages the control of the air conditioning system. <br/>
+**ZoneConnex Controller:** Acts as the master device, interfacing with compatible RAC/PAC and VRF Air Conditioning units via the UART protocol. It manages data transmission to and from the field devices and manages the control of the air conditioning system. <br/>
 **Touch Point LCD:** This wall-mounted touchscreen provides a local control interface for the user to manage and monitor the air conditioning system. <br/>
-**MIA Mobile App:** This mobile application provides a remote control interface for the user to manage and monitor the air conditioning system. <br/>
-**Droplet:** This wireless LoRa device monitors temperature and humitidy in each zone transmitting data to the ZoneConnex allowing for individual zone control.
+**anywAiR Zone App:** This mobile application provides a remote control interface for the user to manage and monitor the air conditioning system. <br/>
+**Droplet:** This wireless LoRa device monitors temperature and humidity in each zone transmitting data to the ZoneConnex allowing for individual zone control.
 
 <br/>
 
@@ -29,37 +29,44 @@ Designed for both residential and light commercial applications, the Nube iO MIA
 **Fan Speed Control:** Control fan speeds (model dependent).<br/>
 **Return Air Temperature Monitoring:** Monitor the return air temperature.<br/>
 **Zone Temperature/Humidity Monitoring:**
-**Zone Control:** Via the MIA mobile app users can interface with the ZoneConnex to control up to 10 zone dampers. Each damper can be controller within a range of 0-100% airflow in 5% increments. <br/>
-**Schedule Management:** Via the MIA mobile app, users can configure and manage schedules to automatically run their air conditioning unit at set times and days — helping maintain comfort, reduce manual adjustments, and improve energy efficiency. <br/>
-**Run Mode Management:** Via the MIA mobile app, users can set timed On/Off actions based on the unit’s current state. If the system is already running, a Run Off timer can be enabled to automatically turn the unit off after the selected duration. If the system is currently off, a Run On timer can be set to automatically start the unit after the chosen time period. <br/>
-**Scene Management:** Via the MIA mobile app, users can create custom “scenes” that bundle specific run conditions—such as mode, setpoint, and fan speed. These scenes can then be applied to schedules, or link them to run modes for consistent comfort with a single action. <br/>
-**Error Status Reporting:** Via the MIA mobile app users can monitor the error status and error codes generated by the Air Conditioner unit whilst also monitoring system generated alerts such as communications errors.
+**Zone Control:** Via the anywAiR Zone app users can interface with the ZoneConnex to control up to 10 zone dampers. Each damper can be controller within a range of 0–100% airflow in 5% increments.<br/>
+**Schedule Management:** Via the anywAiR Zone app, users can configure and manage schedules to automatically run their air conditioning unit at set times and days — helping maintain comfort, reduce manual adjustments, and improve energy efficiency.<br/>
+**Run Mode Management:** Via the anywAiR Zone app, users can set timed On/Off actions based on the unit’s current state. If the system is already running, a Run Off timer can be enabled to automatically turn the unit off after the selected duration. If the system is currently off, a Run On timer can be set to automatically start the unit after the chosen time period.<br/>
+**Scene Management:** Via the anywAiR Zone app, users can create custom “scenes” that bundle specific run conditions such as mode, setpoint, and fan speed. These scenes can then be applied to schedules, or link them to run modes for consistent comfort with a single action.<br/>
+**Error Status Reporting:** Via the anywAiR Zone app users can monitor the error status and error codes generated by the Air Conditioner unit whilst also monitoring system generated alerts such as communications errors.
 
 <br/>
 
 # 2. Downloading the App
-*When officially released add the real Apple and Google play links*
+[//]: # (TODO: When officially released, add the real Apple and Google play links*)
 
 
-|Downloads | |
-|-|-|
-| Google Play | <a href="https://play.google.com/apps/internaltest/4699394012260856314"> ![max300px](img/google-play-icon.png) </a> |
-| App Store | <a href="https://testflight.apple.com/v1/app/6754748732?build=193360892"> ![max300px](img/Apple-app-download-icon.png) </a> |
+| Downloads   |                                                                                                                             |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------|
+| Google Play | <a href="https://play.google.com/apps/internaltest/4699394012260856314"> ![max300px](img/google-play-icon.png) </a>         |
+| App Store   | <a href="https://testflight.apple.com/v1/app/6754748732?build=193360892"> ![max300px](img/Apple-app-download-icon.png) </a> |
 
 <br/>
 
 # 3. Installer Mode Configuration
 
 ## 3.1. Accessing Installer Mode
-User the Touch Point LCD wifi access point installers can utalise the Installer Mode to configure the zoneconnex system such as zone setup and damper pairing, min/max airflow preferences, damper calibration and droplet sensor management.
+Using the Touch Point LCD Wi-Fi access point, installers can use the Installer Mode to configure the zoneconnex system such as zone setup and damper pairing, min/max airflow preferences, damper calibration and droplet sensor management.
 
-**Note:** To access installer mode the user must first enable and join the wifi access point on the Touch Point LCD. The AP network will appear in the format of `ZC-LCD-xxxx` and the password can be found on the Wifi access point screen on the Touch Point LCD. <br/>
-***Add link to touch point setup for AP mode*** 
+**Note:** To access installer mode the user must first enable and join the Wi-Fi access point on the Touch Point LCD. The AP network will appear in the format of `ZC-LCD-xxxx` and the password can be found on the Wifi access point screen on the Touch Point LCD. <br/>
+
+[//]: # (TODO: ***Add link to touch point setup for AP mode*** )
 
 The Insaller Mode can be accessed using the following steps:
-1. **Step-1** On the main login/welcome screen press the `Continue as Installer` button below the sign in button. 
-2. **Step-2** A popup will appear cautioning the user they are entering the Installer Mode and to proceed with caution. Press `Continue` to enter installer mode or press `Cancel` to back out to the login/welcome screen.
-3. **Step-3** Users will be taken to the QR code where they can scan the QR code displyed on the Touch Point LCD. Note if users wish to cancel and return to the login/welcome screen they can press the `Exit Installer Mode` button to back out.
+1. **Step-1** On the main login/welcome screen press the `Continue as Installer` button below the "Sign In" button.
+<img src={require("./screenshots/1.png").default} width="300" />
+
+2. **Step-2** A popup will appear cautioning the user they are entering the Installer Mode and to proceed with caution. Press `Continue` to enter installer mode or press `Cancel` to back out to the login screen.
+<img src={require("./screenshots/2.png").default} width="300" />
+
+3. **Step-3** Users will be taken to the QR code where they can scan the QR code displyed on the Touch Point LCD. Note if users wish to cancel and return to the login screen, they can press the `Exit installer mode` button to back out.
+<img src={require("./screenshots/3.png").default} width="300" />
+<img src={require("./screenshots/4.png").default} width="300" />
 
 <br/>
 
@@ -67,119 +74,200 @@ The Insaller Mode can be accessed using the following steps:
 Via Installer Mode, users can configure zones, pair dampers to specific zones, and calibrate dampers to ensure accurate airflow and optimal system performance.
 
 ### 3.2.1 Initial Zone Configuration
-Once following section *2.2. Accessing Installer Mode* for a new system users will be navigated to the zone configuration workflow allowing users to configure they new system by following the below steps. 
+Once following section *3.1. Accessing Installer Mode* for a new system, users will be navigated to the zone configuration workflow allowing users to configure the new system by following the below steps. 
 1. **Step-1** Users must first define how many zones are connected to their system and select an appropriate number of constant zones based on the airflow requirements. Once values are entered press `Next` to save and move to the next configuration screen. <br/>
-     - `Number Of Zones` - Enter the amount of zones connected to the system. <br/>
-     - `Constant Zones` - Enter the amount of zones required to be active to meet minimum airflow requirements.
- 2. **Step-2** User will now be on the 'Select Constant Zones' screen. This is where the constant zones are selected. The amount required for selection is dependent on step 1. Once the required number of constant zones are set the user can press `Configure Zones` to save and move to the next configuration screen.
+     - `Number Of Zones` - Enter the number of zones connected to the system. <br/>
+     - `Constant Zones` - Enter the number of zones required to be active to meet minimum airflow requirements.
+   <img src={require("./screenshots/5.png").default} width="300" />
+
+ 2. **Step-2** User will now be on the 'Select Constant Zones' screen. This is where the constant zones are selected. The amount required for selection is dependent on step 1. Once the required number of constant zones is set the user can press `Configure zones` to save and move to the next configuration screen.
+<img src={require("./screenshots/6.png").default} width="300" />
+
  3. **Step-3** Users will now be taken to the settings page for the first zone. From this screen users will be able to configure each of the following variables:
     - **Edit Zone Name** – Rename the zone for easy identification by pressing the arrow `>` button beside the current zone name. After entering the desired name press the `Save` button to apply the changes or `cancel` button to cancel the changes. <br/>
+    <img src={require("./screenshots/7.png").default} width="300" />
+ 
     - **Mark Zone as Main** – Users can designate or disable the zone as the main zone for the system by pressing the toggle button beside the 'Main' setting. Note a zone requires a paired droplet sensor to be set as the Main zone. <br/>
-    - **Mark Zone as Constant** – Users can enable or disable zone as a constant zone by pressing the toggle button beside the 'Constant' setting. <br/>
-    - **Toggle Zone Power** - This allows the user to toggle the zones damper power to confirm damper pairing and control by pressing the toggle button. <br/>
+    <img src={require("./screenshots/8.png").default} width="300" />
+ 
+    - **Mark Zone as Constant** – Users can enable or disable a zone as a constant zone by pressing the toggle button beside the 'Constant' setting. <br/>
+    <img src={require("./screenshots/9.png").default} width="300" />
+ 
+    - **Toggle Zone Power** – This allows the user to toggle the zones damper power to confirm damper pairing and control by pressing the toggle button. <br/>
+    <img src={require("./screenshots/10.png").default} width="300" />
+ 
     - **Minimum Airflow (%)** – Specify the minimum airflow percentage the zone should maintain during operation using the plus ![plus button](img/circle-plus.png) and minus ![minus button](img/circle-minus.png) buttons. <br/>
+ 
     - **Maximum Airflow (%)** – Specify the maximum airflow percentage the zone can maintain during operation using the plus ![plus button](img/circle-plus.png) and minus ![minus button](img/circle-minus.png) buttons. <br/>
-    - **Add and Manage Zone Dampers** - Pair and manage associated dampers to the zone by using the `Add Dampers` button then selecting the appropriate damper from the list. To remove/unpair a damper press on the `>` button associated with the damper to open the Damper options screen then press the `Remove Damper` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
-    - **Add and Manage Droplets** - Pair and manage associated droplets to the zone by using the `Add Droplets` button then selecting the appropriate droplet from the list. To add a new droplet press the menu icon to the top right of the list and follow the steps outlined in section *2.4. Droplet Configuration & Management*. To remove/unpair a droplet press on the `>` button associated with the droplet to open the droplet options screen then press the `Remove Droplet` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
+    <img src={require("./screenshots/11.png").default} width="300" />
+ 
+    - **Add and Manage Zone Dampers** – Pair and manage associated dampers to the zone by using the `Add Dampers` button then selecting the appropriate damper from the list. To remove/unpair damper, press on the `>` button associated with the damper to open the Damper options screen then press the `Remove Damper` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
+    <img src={require("./screenshots/12.png").default} width="300" />
+    <img src={require("./screenshots/13.png").default} width="300" />
+    <img src={require("./screenshots/14.png").default} width="300" />
+    <img src={require("./screenshots/15.png").default} width="300" />
+ 
+    - **Add and Manage Droplets** – Pair and manage associated droplets to the zone by using the `Add Droplets` button then selecting the appropriate droplet from the list. To add a new droplet, press the menu icon to the top right of the list and follow the steps outlined in section *2.4. Droplet Configuration & Management*. To remove/unpair a droplet, press on the `>` button associated with the droplet to open the droplet options screen then press the `Remove Droplet` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
+    <img src={require("./screenshots/16.png").default} width="300" />
+    <img src={require("./screenshots/17.png").default} width="300" />
+    <img src={require("./screenshots/18.png").default} width="300" />
+    <img src={require("./screenshots/19.png").default} width="300" />
+    <img src={require("./screenshots/20.png").default} width="300" />
+    <img src={require("./screenshots/21.png").default} width="300" />
+    <img src={require("./screenshots/22.png").default} width="300" />
+    <img src={require("./screenshots/23.png").default} width="300" />
 
 4. **Step-4** Once all variables in step 3 are set press `Next` in the bottom right corner.
+<img src={require("./screenshots/24.png").default} width="300" />
+
 5. **Step-5** Repeat steps 3 and 4 for each zone. If at any time the user wishes to go back a step they can press `Back` in the bottom left corner.
+
 6. **Step-6** On the last zone once the variables are set the user can press `Complete` to complete the configuration and be navigated to the 'Zones' screen where they can see current status's and control the zones.
+<img src={require("./screenshots/25.png").default} width="300" />
 
 <br/>
 
 ### 3.2.2 Zone Management
-After the initial zone setup following section *2.2.1 Initial Zone Configuration* users can manage and edit the zones that have been previously configured using the following steps.
+After the initial zone setup following section *3.2.1 Initial Zone Configuration* users can manage and edit the zones that have been previously configured using the following steps.
 
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *2.2. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+
 2. **Step-2** On the setup page press the `Configure Zones` button to navigate to the 'Zones' screen with the list of configured zones.
-3. **Step-3** From the list of zones press on the `>` button for the zone you wish to edit to enter the 'Zone Information' for the selected zone.
-4. **Step-4** In the 'Zone Information' screen press the settings ![settings button](img/settings-2.png) button to enter the 'Zone Setup' screen.
-5. **Step-5** From the 'Zone Setup' screen users will be able to edit each of the following variables:
+<img src={require("./screenshots/26.png").default} width="300" />
+<img src={require("./screenshots/27.png").default} width="300" />
+
+3. **Step-3** From the list of zones press on the zone you wish to edit to enter the 'Zone Information' for the selected zone.
+<img src={require("./screenshots/28.png").default} width="300" />
+
+4. **Step-4** In the 'Zone Information' screen, press the settings ![settings button](img/settings-2.png) button to enter the 'Zone Setup' screen.
+<img src={require("./screenshots/29.png").default} width="300" />
+
+5. **Step-5** From the 'Zone Setup' screen, users will be able to edit each of the following variables:
     - **Edit Zone Name** – Rename the zone for easy identification by pressing the arrow `>` button beside the current zone name. After entering the desired name press the `Save` button to apply the changes or `cancel` button to cancel the changes. <br/>
     - **Mark Zone as Main** – Users can designate or disable the zone as the main zone for the system by pressing the toggle button beside the 'Main' setting. Note a zone requires a paired droplet sensor to be set as the Main zone. <br/>
-    - **Mark Zone as Constant** – Users can enable or disable zone as a constant zone by pressing the toggle button beside the 'Constant' setting. <br/>
-    - **Toggle Zone Power** - This allows the user to toggle the zones damper power to confirm damper pairing and control by pressing the toggle button. <br/>
+    - **Mark Zone as Constant** – Users can enable or disable a zone as a constant zone by pressing the toggle button beside the 'Constant' setting. <br/>
+    - **Toggle Zone Power** – This allows the user to toggle the zones damper power to confirm damper pairing and control by pressing the toggle button. <br/>
     - **Minimum Airflow (%)** – Specify the minimum airflow percentage the zone should maintain during operation using the plus ![plus button](img/circle-plus.png) and minus ![minus button](img/circle-minus.png) buttons. <br/>
     - **Maximum Airflow (%)** – Specify the maximum airflow percentage the zone can maintain during operation using the plus ![plus button](img/circle-plus.png) and minus ![minus button](img/circle-minus.png) buttons. <br/>
-    - **Add and Manage Zone Dampers** - Pair and manage associated dampers to the zone by using the `Add Dampers` button then selecting the appropriate damper from the list. To remove/unpair a damper press on the `>` button associated with the damper to open the Damper options screen then press the `Remove Damper` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
-    - **Add and Manage Droplets** - Pair and manage associated droplets to the zone by using the `Add Droplets` button then selecting the appropriate droplet from the list. To add a new droplet press the menu icon to the top right of the list and follow the steps outlined in section *2.4. Droplet Configuration & Management*. To remove/unpair a droplet press on the `>` button associated with the droplet to open the droplet options screen then press the `Remove Droplet` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
+    - **Add and Manage Zone Dampers** – Pair and manage associated dampers to the zone by using the `Add Dampers` button then selecting the appropriate damper from the list. To remove/unpair damper, press on the `>` button associated with the damper to open the Damper options screen then press the `Remove Damper` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
+    - **Add and Manage Droplets** – Pair and manage associated droplets to the zone by using the `Add Droplets` button then selecting the appropriate droplet from the list. To add a new droplet, press the menu icon to the top right of the list and follow the steps outlined in section *2.4. Droplet Configuration & Management*. To remove/unpair a droplet, press on the `>` button associated with the droplet to open the droplet options screen then press the `Remove Droplet` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
 
-6. **Step-6** To delete a Zone press the `Delete Zone` button at the bottom of the 'Zone Setup' screen. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`.
+6. **Step-6** To delete a Zone, press the `Delete Zone` button at the bottom of the 'Zone Setup' screen. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`.
+<img src={require("./screenshots/30.png").default} width="300" />
 
 ### 3.2.3 Zone Quick Pairing
-After the initial zone setup following section *2.2.1 Initial Zone Configuration* users can
-use the quick add feature in the 'Zones' screen to quickly add dampers and/or droplets to a zone without the need to enter the 'Zone Setp' screen.
+After the initial zone setup following section *3.2.1 Initial Zone Configuration* users can
+use the quick-add feature in the 'Zones' screen to quickly add dampers and/or droplets to a zone without the need to enter the 'Zone Setup' screen.
 
 #### 3.2.3.1 Damper Quick Pairing
 
 Use the following steps to Add a Damper to the zone:
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *2.2. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+
 2. **Step-2** On the setup page press the `Configure Zones` button to navigate to the 'Zones' screen with the list of configured zones.
-3. **Step-3** On the 'Zones' screen each Zone will have a plus ![plus button](img/plus.png) button on the zone card. Beside this plus button will either be the count for the currently paired dampers (eg 1 Damper) or if no dampers are paired it will show 'Add Dampers'. Press the plus ![plus button](img/plus.png) button to open the damper selection list.
-4. **Step-4** To add a damper from the list, press on the damper card and a loading wheel will appear. Once added a damper will show a tick ![tick button](img/tick.png) icon on the right hand side of the damper card.
+
+3. **Step-3** On the 'Zones' screen each Zone will have a plus ![plus button](img/plus.png) button on the zone card. Besides, this plus button will either be the count for the currently paired dampers (e.g., 1 Damper) or if no dampers are paired, it will show 'Add Dampers'. Press the plus ![plus button](img/plus.png) button to open the damper selection list.
+
+4. **Step-4** To add a damper from the list, press on the damper card and a loading wheel will appear. Once added, a damper will show a tick ![tick button](img/tick.png) icon on the right-hand side of the damper card.
+<img src={require("./screenshots/31.png").default} width="300" />
+<img src={require("./screenshots/32.png").default} width="300" />
+<img src={require("./screenshots/33.png").default} width="300" />
 
 Use the following steps to Remove a Damper from the zone:
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *2.2. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+
 2. **Step-2** On the setup page press the `Configure Zones` button to navigate to the 'Zones' screen with the list of configured zones.
-3. **Step-3** On the 'Zones' screen each Zone will have a plus ![plus button](img/plus.png) button on the zone card. Beside this plus button will either be the count for the currently paired dampers (eg 1 Damper) or if no dampers are paired it will show 'Add Dampers'. Press the plus ![plus button](img/plus.png) button to open the damper selection list.
-4. **Step-4** Dampers already added to the selected zone will show a tick ![tick button](img/tick.png) icon on the right hand side of the damper card. To remove a damper, press on the damper card and a loading wheel will appear. Once removed the tick ![tick button](img/tick.png) icon will be removed from the right hand side of the damper card.
+
+3. **Step-3** On the 'Zones' screen each Zone will have a plus ![plus button](img/plus.png) button on the zone card. Besides, this plus button will either be the count for the currently paired dampers (e.g., 1 Damper) or if no dampers are paired, it will show 'Add Dampers' Press the plus ![plus button](img/plus.png) button to open the damper selection list.
+
+4. **Step-4** Dampers already added to the selected zone will show a tick ![tick button](img/tick.png) icon on the right-hand side of the damper card. To remove a damper, press on the damper card and a loading wheel will appear. Once removed, the tick ![tick button](img/tick.png) icon will be removed from the right-hand side of the damper card.
 
 
 #### 3.2.3.2 Droplet Quick Pairing
 
 Use the following steps to Add a Droplet to the zone:
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *2.2. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+
 2. **Step-2** On the setup page press the `Configure Zones` button to navigate to the 'Zones' screen with the list of configured zones.
-3. **Step-3** On the 'Zones' screen each Zone will have a plus ![plus button](img/plus.png) button on the zone card. Beside this plus button will either be the count for the currently paired Droplets (eg 1 Droplet) or if no Droplets are paired it will show 'Add Droplets'. Press the plus ![plus button](img/plus.png) button to open the Droplet selection list.
-4. **Step-4** To add a Droplet from the list, press on the Droplet card and a loading wheel will appear. Once added a Droplet will show a tick ![tick button](img/tick.png) icon on the right hand side of the Droplet card.
+
+3. **Step-3** On the 'Zones' screen each Zone will have a plus ![plus button](img/plus.png) button on the zone card. Beside this plus button will either be the count for the currently paired Droplets (eg 1 Droplet) or if no Droplets are paired, it will show 'Add Droplets'. Press the plus ![plus button](img/plus.png) button to open the Droplet selection list.
+
+4. **Step-4** To add a Droplet from the list, press on the Droplet card and a loading wheel will appear. Once added, a Droplet will show a tick ![tick button](img/tick.png) icon on the right-hand side of the Droplet card.
+<img src={require("./screenshots/34.png").default} width="300" />
+<img src={require("./screenshots/35.png").default} width="300" />
 
 Use the following steps to Remove a Droplet from the zone:
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *2.2. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+
 2. **Step-2** On the setup page press the `Configure Zones` button to navigate to the 'Zones' screen with the list of configured zones.
-3. **Step-3** On the 'Zones' screen each Zone will have a plus ![plus button](img/plus.png) button on the zone card. Beside this plus button will either be the count for the currently paired Droplets (eg 1 Droplet) or if no Droplets are paired it will show 'Add Droplets'. Press the plus ![plus button](img/plus.png) button to open the Droplet selection list.
-4. **Step-4** Droplets already added to the selected zone will show a tick ![tick button](img/tick.png) icon on the right hand side of the Droplet card. To remove a Droplet, press on the Droplet card and a loading wheel will appear. Once remove the tick ![tick button](img/tick.png) icon will be removed from the right hand side of the Droplet card.
+
+3. **Step-3** On the 'Zones' screen each Zone will have a plus ![plus button](img/plus.png) button on the zone card. Beside this plus button will either be the count for the currently paired Droplets (e.g., 1 Droplet) or if no Droplets are paired, it will show 'Add Droplets'. Press the plus ![plus button](img/plus.png) button to open the Droplet selection list.
+
+4. **Step-4** Droplets already added to the selected zone will show a tick ![tick button](img/tick.png) icon on the right-hand side of the Droplet card. To remove a Droplet, press on the Droplet card and a loading wheel will appear. Once removed, the tick ![tick button](img/tick.png) icon will be removed from the right-hand side of the Droplet card.
 
 <br/>
 
 ## 3.3. Droplet Configuration & Management
-After the initial zone setup following section *2.2.1 Initial Zone Configuration* users can add and manage Droplets the using the following steps.
+After the initial zone setup following section *3.2.1 Initial Zone Configuration* users can add and manage Droplets using the following steps.
 
 ### 3.3.1 Adding a Droplet Manually
 
-To manually add a Droplet use the following steps:
+To manually add a Droplet, use the following steps:
 1. **Step-1** Users must first access the installer mode following the steps outlined in section *2.2. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+
 2. **Step-2** On the setup page press the `Configure Droplet` button to navigate to the 'Droplets' screen with the list of configured droplets. If no droplets are currently added the user will see a message stating that 'You dont have any droplets yet' and a prompt to add a droplet.
+
 3. **Step-3** To add a droplet press the `+ Add` button on the bottom right of the Droplets screen. Two options will appear, press on `+ Enter Droplet Details` to select the manual entry option.
+
 4. **Step-4** Enter the Droplet name and Address (8 digit Lora ID located on the droplet barcode) then press the `Add` button to create the device. Users will then be navigated to the 'Droplets' screen with the newly added droplet appearing in the list with blank values.
-5. **Step-5** If the droplet is powered and in range it will pair with the Zoneconnex automatically within 15 minutes with the droplets next interval reporting. Alternatively the user can reset or powercyle the droplet to initiate pairing when the Droplet reboots. Once paired values will appear in the droplet card (°C, % and dBm).
+
+5. **Step-5** If the droplet is powered and in range it will pair with the Zoneconnex automatically within 15 minutes with the droplets next interval reporting. Alternatively the user can reset or powercyle the droplet to initiate pairing when the Droplet reboots. Once paired values will appear in the droplet card (°C, %, and dBm).
 
 ### 3.3.2 Adding a Droplet via QR Code
 
 To manually add a Droplet use the following steps:
 1. **Step-1** Users must first access the installer mode following the steps outlined in section *2.2. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+
 2. **Step-2** On the setup page press the `Configure Droplet` button to navigate to the 'Droplets' screen with the list of configured droplets. If no droplets are currently added the user will see a message stating that 'You dont have any droplets yet' and a prompt to add a droplet.
+
 3. **Step-3** To add a droplet press the `+ Add` button on the bottom right of the Droplets screen. Two options will appear, press on `Scan QR Code` to select the QR Code scan option.
+
 4. **Step-4** Users will be taken to the QR code scanner where they can scan the QR code displyed on the Droplet. If a valid QR Code is scanned the user will be taken to the 'Add Droplet' screen with the Address (8 digit Lora ID) field pre-filled.
+
 5. **Step-5** Enter the Droplet name then press the `Add` button to create the device. Users will then be navigated to the 'Droplets' screen with the newly added droplet appearing in the list with blank values.
-6. **Step-6** If the droplet is powered and in range it will pair with the Zoneconnex automatically within 15 minutes with the droplets next interval reporting. Alternatively the user can reset or powercyle the droplet to initiate pairing when the Droplet reboots. Once paired values will appear in the droplet card (°C, % and dBm).
+
+6. **Step-6** If the droplet is powered and in range it will pair with the Zoneconnex automatically within 15 minutes with the droplets next interval reporting. Alternatively the user can reset or powercyle the droplet to initiate pairing when the Droplet reboots. Once paired values will appear in the droplet card (°C, %, and dBm).
 
 <br/>
 
 ### 3.3.3 Droplet Management
 Users can manage and edit the Droplets that have been previously configured using the following steps.
 
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *2.2. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
-2. **Step-2** On the setup page press the `Configure Droplet` button to navigate to the 'Droplets' screen with the list of configured droplets. If no droplets are currently added the user will see a message stating that 'You dont have any droplets yet' and a prompt to add a droplet.
-3. **Step-3** From the list of Droplets press on the `>` button for the droplet you wish to edit to enter the 'Droplet Settings' for the selected droplet.
-4. **Step-4** From the 'Droplet Settings' screen users will be able to edit each of the following variables:
-    - **Edit Droplet Name** – Rename the Droplet for easy identification by pressing the arrow `>` button beside the current Droplet name. After entering the desired name press the `Save` button to apply the changes or back arrow ![back arrow button](img/arrow-left.png) button to cancel the changes and return to the 'Droplet Settings' screen. <br/>
-    - **Droplet Zone** 
-        - **Adding to Zone** - Pair the droplet to a zone by pressing the `Add Zone` button and selecting a zone from the list. Once paired the zone will show in the 'Droplet Zone' menu. <br/>
-        - **Change Zone** - If the droplet is already paired to a zone the user can press the `Change Zone` button to select a new zone to pair the droplet to. Once paired the zone will show in the 'Droplet Zone' menu. <br/>
-        - **Remove from Zone** - To remove the droplet from a zone press the `>` button on the paired zone then press the `Remove Zone` button. A popup will appear asking the user to confirm the removal by pressing `Delete` or cancel by pressing `Cancel`. <br/>
+1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
 
-5. **Step-5** To delete a Droplet press the `Delete Droplet` button at the bottom of the 'Droplet Settings' screen. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`.
+2. **Step-2** On the setup page press the `Configure Droplet` button to navigate to the 'Droplets' screen with the list of configured droplets. If no droplets are currently added, the user will see a message stating that 'You don't have any droplets yet' and a prompt to add a droplet.
+<img src={require("./screenshots/36.png").default} width="300" />
+
+3. **Step-3** From the list of Droplets press on the `>` button for the droplet you wish to edit to enter the 'Droplet Settings' for the selected droplet.
+<img src={require("./screenshots/37.png").default} width="300" />
+
+4. **Step-4** From the 'Droplet Settings' screen, users will be able to edit each of the following variables:
+    - **Edit Droplet Name** – Rename the Droplet for easy identification by pressing the arrow `>` button beside the current Droplet name. After entering the desired name press the `Save` button to apply the changes or back arrow ![back arrow button](img/arrow-left.png) button to cancel the changes and return to the 'Droplet Settings' screen. <br/>
+   <img src={require("./screenshots/38.png").default} width="300" />
+   <img src={require("./screenshots/39.png").default} width="300" />
+
+    - **Droplet Zone** 
+        - **Adding to Zone** - Pair the droplet to a zone by pressing the `Add Zone` button and selecting a zone from the list. Once paired, the zone will be shown in the 'Droplet Zone' menu. <br/>
+        <img src={require("./screenshots/40.png").default} width="300" />
+
+        - **Change Zone** - If the droplet is already paired to a zone the user can press the `Change Zone` button to select a new zone to pair the droplet to. Once paired, the zone will be shown in the 'Droplet Zone' menu. <br/>
+        <img src={require("./screenshots/41.png").default} width="300" />
+
+        - **Remove from Zone** - To remove the droplet from a zone press the `>` button on the paired zone then press the `Remove Zone` button. A popup will appear asking the user to confirm the removal by pressing `Delete` or cancel by pressing `Cancel`. <br/>
+        <img src={require("./screenshots/42.png").default} width="300" />
+
+5. **Step-5,** To delete a Droplet, press the `Delete Droplet` button at the bottom of the 'Droplet Settings' screen. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`.
+<img src={require("./screenshots/43.png").default} width="300" />
 
 <br/>
 
@@ -188,152 +276,243 @@ Users can manage the system preferences via the installer mode to manually selec
 
 ### 3.4.1 Timezone Configuration
 
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *2.2. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+
 2. **Step-2** On the setup page press the `Preferences` button to navigate to the 'Preferences' screen.
-3. **Step-3** To access the timezone settings the user must press the `>` button on the timezone card to open the list of timezones. 
-4. **Step-4** Users can either search or scroll through the list to find their desried timezone.
-5. **Step-5** To select the timeszone from the list, press on the timezone card. Once selected the user will be navigated back to the 'Preferences' screen and the timezone selected will be shown. 
-6. **Step-6** To edit the timezone, repeat steps 1 to 5. When in the timezome list the currently selected timezone will show a tick ![tick button](img/tick.png) icon on the right hand side of the timezone card.
+<img src={require("./screenshots/44.png").default} width="300" />
+<img src={require("./screenshots/45.png").default} width="300" />
+
+3. **Step-3,** To access the timezone settings, the user must press the `>` button on the timezone card to open the list of timezones.
+
+4. **Step-4** Users can either search or scroll through the list to find their desired timezone.
+
+5. **Step-5** To select the timezone from the list, press on the timezone card. Once selected, the user will be navigated back to the 'Preferences' screen and the timezone selected will be shown.
+
+6. **Step-6** To edit the timezone, repeat steps 1 to 5. When in the timezone list the currently selected timezone will show a tick ![tick button](img/tick.png) icon on the right-hand side of the timezone card.
+<img src={require("./screenshots/46.png").default} width="300" />
+
+<br/>
+
+### 3.4.2 Current Temperature Display Configuration
+
+1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+
+2. **Step-2** On the setup page press the `Preferences` button to navigate to the 'Preferences' screen.
+
+3. **Step-3** To access the current temperature display settings, toggle the switch on the right-hand side of the 'Show Current Temperature' list item.
+<img src={require("./screenshots/47.png").default} width="300" />
+
+<br/>
+
+### 3.4.3 Factory Reset Configuration
+
+To reset the configuration and start the setup from scratch, users can perform the `Factory Reset` by following the steps below:
+
+1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+
+2. **Step-2** On the setup page press the `Preferences` button to navigate to the 'Preferences' screen.
+
+3. **Step-3** To access the factory reset settings, tap the `Factory Reset` button, a popup will appear asking the user to confirm the reset by pressing `Accept` or cancel by pressing `Cancel`.
+<img src={require("./screenshots/48.png").default} width="300" />
+
+<br/>
+
+## 3.5. Exit Installer Mode
+If users wish to exit the installer mode, they can do so by following steps below:
+
+1. **Step-1** Navigate to the 'Setup' screen.
+
+2. **Step-2** Open the menu using the menu ![menu button](img/horizontal-dots.png) button in the top right corner of the screen.
+
+3. **Step-3** If no changes have been made in the installer mode the user can press the `Exit` button and will be navigated to the login/landing screen. A popup will appear asking the user to confirm by pressing `Accept` or cancel by pressing `Cancel`.
+<img src={require("./screenshots/49.png").default} width="300" />
 
 <br/>
 
 ## 3.5. Completing Configuration
-Once configuration is complete users must apply the changes and exit. installer mode using the following steps:
+Once configuration is complete, users must apply the changes and exit the installer mode using the following steps:
 
 1. **Step-1** Navigate to the 'Setup' screen.
-2. **Step-2** Open the menu using the menu ![menu button](img/horizontal-dots.png) button in the top right corner of the screen. 
-3. **Step-3** If no changes have been made in the installer mode the user can press the `Exit` button and will be navigated to the login/landing screen. If changes have been made and need to be confirmed the user can press the `Finish Installation` button to apply the changes made and will be navigated to the welcome/login screen. For both options a popup will appear asking the user to confirm by pressing `Accept` or cancel by pressing `Cancel`.
+
+2. **Step-2** Press the `Finish Installation` button to apply the changes made and will be navigated to the welcome/login screen. A popup will appear asking the user to confirm by pressing `Accept` or cancel by pressing `Cancel`.
+<img src={require("./screenshots/50.png").default} width="300" />
 
 <br/>
 
 # 4. App User/Account Management
-The MIA Mobile App and Zoneconnex system offers a free user account. Users can manage day-to-day operation and manage their system configuration directly from a mobile device.
+The MIA Mobile App and Zoneconnex system offer a free user account. Users can manage day-to-day operations and manage their system configuration directly from a mobile device.
 
 ## 4.1. User Sign Up
-Users have 3 user creation methods using the mobile app. 
+Users have three user creation methods using the mobile app. 
 1. Signing up using an email account.
+
 2. Signing up using a Google account.
-3. Signing up using an Apple account.
+
+3. Signing up using an Apple account (for iOS users).
 
 ### 4.1.1 Email Sign Up
 Use the following steps to create an account using an email account:
 
-1. **Step-1** Launch the MIA App and user will be navigated to the welcome/login screen.
-2. **Step-2** Press the `Sign Up` button at the bottom of the screen next to the prompt 'Don't have an account?'. User will be navigated to the 'Create Account' screen.
-3. **Step-3** Enter a valid email address, then enter and confirm a password for your account. Once email and password are entered press the `Sign Up` button at the bottom of the screen.
+1. **Step-1** Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
+<img src={require("./screenshots/51.png").default} width="300" />
+
+2. **Step-2** Press the `Sign Up` button at the bottom of the screen next to the prompt 'Don't have an account?' User will be navigated to the 'Create Account' screen.
+<img src={require("./screenshots/52.png").default} width="300" />
+<img src={require("./screenshots/53.png").default} width="300" />
+
+3. **Step-3** Enter a valid email address, then enter, and confirm a password for your account. Once email and password are entered press the `Sign Up` button at the bottom of the screen.
+<img src={require("./screenshots/54.png").default} width="300" />
+
 4. **Step-4** User will be navigated to the 'Verify Account' screen where they will be required to enter the 6-digit OTP (One-Time Password) code that has been sent to the email entered in step 3. Once the 6-digit OTP code has been entered press the `Verify Code` button to complete your account creation and be navigated to the onboarding screen.
-5. **Step-5** From the onboarding screen press the `Next` button to be navigated to set your username. Enter your new username and press the `Next` button to complete the account creation. If the entered username is already taken a warning will appear preventing the account creationg from being complete. Please enter an alternative username.
+<img src={require("./screenshots/55.png").default} width="300" />
+
+5. **Step-5** From the onboarding screen press the `Next` button to be navigated to set your username. Enter your new username and press the `Next` button to complete the account creation. If the entered username is already taken, a warning will appear preventing the account creation from being complete. Please enter an alternative username.
+<img src={require("./screenshots/56.png").default} width="300" />
+<img src={require("./screenshots/57.png").default} width="300" />
+
+6. **Step-6** After setting your username, user is presented with terms and conditions. Tap 'Accept Terms' to accept the terms and conditions and complete the account creation.
+<img src={require("./screenshots/58.png").default} width="300" />
 
 **Note:** If the during step-4 an OTP has not been received the user can press the `Resend OTP` button to re-try. Please check junk and span folders if OTP is still not available.
 
 ### 4.1.2 Google Account Sign Up
 Use the following steps to create an account using a Google account:
 
-1. **Step-1** Launch the MIA App and user will be navigated to the welcome/login screen.
+1. **Step-1** Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
+
 2. **Step-2** Press the Google ![Google button](img/google-icon-30pix.png) button at the bottom of the screen. A popup will appear asking the user to confirm by pressing `Continue` or cancel by pressing `Cancel`.
-3. **Step-3** Once confirmed the user will be navigated to a browser to select from existing signed in google accounts or use  another account. <br/>
-    - **Existing account** - If an existing google account is chosen the user will be navigated to a google confirmation screen to allow the MIA Moblie app to access the basic google account info (Name and email address). The user can confirm by pressing `Continue` or cancel by pressing `Cancel`. <br/>
-    - **Use another account** - If 'Use another account' is chosen the user will be navigated through the google sign in process before being navigated to the google confirmation screen to allow the MIA Moblie app to access the basic google account info (Name and email address). The user can confirm by pressing `Continue` or cancel by pressing `Cancel`.<br/>
+
+3. **Step-3** Once confirmed, the user will be navigated to a browser to select from existing signed-in Google accounts or use another account. <br/>
+    - **Existing account** - If an existing Google account is chosen, the user will be navigated to a Google confirmation screen to allow the MIA Moblie app to access the basic Google account info (Name and email address). The user can confirm by pressing `Continue` or cancel by pressing `Cancel`. <br/>
+
+    - **Use another account** - If 'Use another account' is chosen, the user will be navigated through the Google sign-in process before being navigated to the Google confirmation screen to allow the MIA Moblie app to access the basic Google account info (Name and email address). The user can confirm by pressing `Continue` or cancel by pressing `Cancel`.<br/>
 
 4. **Step-4** User will then be navigated to the onboarding screen.
-5. **Step-5** From the onboarding screen press the `Next` button to be navigated to set your username. Enter your new username and press the `Next` button to complete the account creation. If the entered username is already taken a warning will appear preventing the account creationg from being complete. Please enter an alternative username.
+
+5. **Step-5** From the onboarding screen press the `Next` button to be navigated to set your username. Enter your new username and press the `Next` button to complete the account creation. If the entered username is already taken, a warning will appear preventing the account creation from being complete. Please enter an alternative username.
 
 ### 4.1.3 Apple Account Sign Up
-Use the following steps to create an account using a Apple account:
+Use the following steps to create an account using an Apple account:
 
-1. **Step-1** Launch the MIA App and user will be navigated to the welcome/login screen.
-2. **Step-2** Press the Apple ![Apple button](img/apple-icon-30pix.png) button at the bottom of the screen. A popup will appear asking the user to confirm by pressing `Continue` or cancel by pressing `Cancel`.
+1. **Step-1** Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
 
-***TBC***
-<!-- 3. **Step-3** Once confirmed the user will be navigated to a browser to select from existing signed in google accounts or use  another account. <br/>
-    - **Existing account** - If an existing google account is chosen the user will be navigated to a google confirmation screen to allow the MIA Moblie app to access the basic google account info (Name and email address). The user can confirm by pressing `Continue` or cancel by pressing `Cancel`. <br/>
-    - **Use another account** - If 'Use another account' is chosen the user will be navigated through the google sign in process before being navigated to the google confirmation screen to allow the MIA Moblie app to access the basic google account info (Name and email address). The user can confirm by pressing `Continue` or cancel by pressing `Cancel`.<br/> -->
+2. **Step-2** Press the Apple ![Apple button](img/apple-icon-30pix.png) button at the bottom of the screen. A popup will appear asking the user to continue with the actual email or hide an email.
 
-4. **Step-4** User will then be navigated to the onboarding screen.
+3. **Step-3** Follow the prompts to sign in with your Apple account.
+
+4. **Step-4** After successful registration, the user will then be navigated to the onboarding screen.
+
 5. **Step-5** From the onboarding screen press the `Next` button to be navigated to set your username. Enter your new username and press the `Next` button to complete the account creation. If the entered username is already taken a warning will appear preventing the account creationg from being complete. Please enter an alternative username.
 
- <br/>
+<br/>
 
 ## 4.2. User Login
-Users have 3 login methods using the mobile app. 
+Users have three login methods using the mobile app. 
 1. Login using an email account.
+
 2. Login using a Google account.
+
 3. Login using an Apple account.
 
 ### 4.2.1 Email Login
-Use the following steps to login to an existing account using a Google Account:
+Use the following steps to log in to an existing account using an email address:
 
-1. **Step-1** Launch the MIA App and user will be navigated to the welcome/login screen.
-2. **Step-2** Enter your email and password then press the `Sign In` button. If the user does not have a connected home they will be navigated to the 'Setup Home' screen. If the user has a connected home they will be navigated to the main control screen for their home.
+1. **Step-1** Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
+
+2. **Step-2** Enter your email and password then press the `Sign In` button. If the user does not have a connected home, they will be navigated to the 'Setup Home' screen. If the user has a connected home, they will be navigated to the main control screen for their home.
 
 ### 4.2.2 Google Account Login
-Use the following steps to login to an existing account using an email address:
+Use the following steps to log in to an existing account using a Google Account:
 
-1. **Step-1** Launch the MIA App and user will be navigated to the welcome/login screen.
+1. **Step-1** Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
+
 2. **Step-2** Press the Google ![Google button](img/google-icon-30pix.png) button at the bottom of the screen. A popup will appear asking the user to confirm by pressing `Continue` or cancel by pressing `Cancel`.
-3. **Step-3** Once confirmed the user will be navigated to a browser to select from existing signed in google accounts or use  another account. <br/>
-    - **Existing account** - If an existing google account is chosen the user will be navigated to a google confirmation screen advising the user "You're signing back in to MIA. The user can confirm by pressing `Continue` or cancel by pressing `Cancel`. <br/>
-    - **Use another account** - If 'Use another account' is chosen the user will be navigated through the google sign in process before being navigated to the google confirmation screen advising the user "You're signing back in to MIA. The user can confirm by pressing `Continue` or cancel by pressing `Cancel`.<br/>
 
-4. **Step-4** If the user does not have a connected home they will be navigated to the 'Setup Home' screen. If the user has a connected home they will be navigated to the main control screen for their home.
+3. **Step-3** Once confirmed, the user will be navigated to a browser to select from existing signed-in Google accounts or use another account. <br/>
+    - **Existing account** – If an existing Google account is chosen, the user will be navigated to a Google confirmation screen. The user can confirm by pressing `Continue` or cancel by pressing `Cancel`. <br/>
+
+    - **Use another account** – If 'Use another account' is chosen, the user will be navigated through the Google sign-in process before being navigated to the Google confirmation screen. The user can confirm by pressing `Continue` or cancel by pressing `Cancel`.<br/>
+
+4. **Step-4** If the user does not have a connected home, they will be navigated to the 'Setup Home' screen. If the user has a connected home they will be navigated to the main control screen for their home.
 
 
 ### 4.2.3 Apple Account Login
 Use the following steps to login to an existing account using an Apple Account:
 
-1. **Step-1** Launch the MIA App and user will be navigated to the welcome/login screen.
-2. **Step-2** Press the Apple ![Apple button](img/apple-icon-30pix.png) button at the bottom of the screen. A popup will appear asking the user to confirm by pressing `Continue` or cancel by pressing `Cancel`.
-3. **Step-3** Once confirmed the a popup will appear asking the user to confirm by pressing `Continue with Passcode`.
-4. **Step-4** User must then enter their Apple ID passcode. Once entered, if the user does not have a connected home they will be navigated to the 'Setup Home' screen. If the user has a connected home they will be navigated to the main control screen for their home. 
+1. **Step-1** Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
+
+2. **Step-2** Press the Apple ![Apple button](img/apple-icon-30pix.png) button at the bottom of the screen. A popup will appear and continue with log in as prompted.
+
+3. **Step-3** Once successfully logged in, if the user does not have a connected home, they will be navigated to the 'Setup Home' screen. If the user has a connected home they will be navigated to the main control screen for their home. 
 
 <br/>
 
 ## 4.3. Account Management
 The Profile section allows users to view and manage key account details. From this screen, users can update their username, access diagnostic information, and manage their account session.
 
+From the 'Profile' screen, users can perform the following actions:
+- **Username** – Edit the display name associated with the account. <br/>
 
-From the 'Profile' screen users can perform the following actions:
-- **Username** - Edit the display name associated with the account. <br/>
-- **Email Address** - View the registered email address for the account. This field is read-only and cannot be changed. <br/>
-- **View Error Logs** - Access system error logs to assist with troubleshooting and support requests. <br/>
-- **Logout** - Securely log out of the account on the current device. <br/>
-- **Delete Account** - Permanently delete the user account and associated data. This action cannot be undone. <br/>
+- **Email Address** – View the registered email address for the account. This field is read-only and cannot be changed. <br/>
+
+- **View Error Logs** – Access system error logs to assist with troubleshooting and support requests. <br/>
+
+- **Logout** – Securely log out of the account on the current device. <br/>
+
+- **Delete Account** – Permanently delete the user account and associated data. This action cannot be undone. <br/>
 
 ### 4.3.1 Change Username
-Use the following steps to change username for your account:
+Use the following steps to change the username for your account:
 
-1. **Step-1** Launch the MIA App and login to your account as per section *4.2. User Login*.
-2. **Step-2** From either the Home control screen or the Setup Home screen press the profile settings ![Profile settings button](img/user-cog.png) button to enter the profile screen.
+1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+
+2. **Step-2** From either the Home control screen or the Setup Home screen, press the profile settings ![Profile settings button](img/user-cog.png) button to enter the profile screen.
+
 3. **Step-3** On the profile screen press the `>` button on the change username card. An editable username field will appear from the bottom of the screen.
+<img src={require("./screenshots/59.png").default} width="300" />
+
 4. **Step-4** Enter your new username in the editiable field then apply the changes by pressing `Save Changes` or cancel by pressing `Cancel`.
 
 ### 4.3.2 View Error Logs
 Use the following steps to view system error logs:
 
-1. **Step-1** Launch the MIA App and login to your account as per section *4.2. User Login*.
-2. **Step-2** From either the Home control screen or the Setup Home screen press the profile settings ![Profile settings button](img/user-cog.png) button to enter the profile screen.
-3. **Step-3** On the profile screen press the `>` button on the 'View Logs' card to enter the logs screen.
-4. **Step-4** From the logs screen the users can view, pause and clear the error logs.
-    - **Viewing the Logs** - To expand an error to view the full error code, press the `>` button for the desired error. Press the `>` button again to minimise the error view. <br/>
-    - **Pausing the Logs** - To pause the error log press the pause ![Pause button](img/pause.png) button. To restart the error logs press the play ![Play button](img/play.png) button. <br/>
-    - **Clearing the Logs** - To clear the error log press the delete ![Delete button](img/trash-2.png) button. <br/>
+1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-5. **Step-5** To exit out of the error logs press the ack arrow ![back arrow button](img/arrow-left.png) button.
+2. **Step-2** From either the Home control screen or the Setup Home screen, press the profile settings ![Profile settings button](img/user-cog.png) button to enter the profile screen.
+
+3. **Step-3** On the profile screen press the `>` button on the 'View Logs' card to enter the logs screen.
+<img src={require("./screenshots/60.png").default} width="300" />
+
+4. **Step-4** From the logs screen the users can view, pause and clear the error logs.
+    - **Viewing the Logs** – To expand an error to view the full error code, press the `>` button for the desired error. Press the `>` button again to minimise the error view. <br/>
+
+    - **Pausing the Logs** – To pause the error log press the pause ![Pause button](img/pause.png) button. To restart the error logs press the play ![Play button](img/play.png) button. <br/>
+
+    - **Clearing the Logs** – To clear the error log press the delete ![Delete button](img/trash-2.png) button. <br/>
+    <img src={require("./screenshots/63.png").default} width="300" />
+
+5. **Step-5** To exit out of the error logs, press the ack arrow ![back arrow button](img/arrow-left.png) button.
 
 
 ### 4.3.3 Logout
-Use the following steps to logout of your account:
+Use the following steps to log out of your account:
 
-1. **Step-1** From either the Home control screen or the Setup Home screen press the profile settings ![Profile settings button](img/user-cog.png) button to enter the profile screen.
-2. **Step-2** On the profile screen press the `>` button on the 'Logout' card. 
-3. **Step-3** A popup will appear asking the user to confirm they wish to logout by pressing `Yes` or cancel by pressing `Cancel`. If confirmed the user will be logged out and navigated to the welcome/login screen.
+1. **Step-1** From either the Home control screen or the Setup Home screen, press the profile settings ![Profile settings button](img/user-cog.png) button to enter the profile screen.
+
+2. **Step-2** On the profile screen press the `>` button on the 'Logout' card.
+
+3. **Step-3** A popup will appear asking the user to confirm they wish to log out by pressing `Yes` or cancel by pressing `Cancel`. If confirmed, the user will be logged out and navigated to the welcome/login screen.
+<img src={require("./screenshots/61.png").default} width="300" />
 
 ### 4.3.4 Delete Account
 Use the following steps to delete your account:
 
-1. **Step-1** From either the Home control screen or the Setup Home screen press the profile settings ![Profile settings button](img/user-cog.png) button to enter the profile screen.
-2. **Step-2** On the profile screen press the `>` button on the 'Delete Account' card. 
-3. **Step-3** A popup will appear asking the user to confirm they wish to delete their account by pressing `Delete` or cancel by pressing `Cancel`. If confirmed the account will be deleted and the user will be navigated to the welcome/login screen.
+1. **Step-1** From either the Home control screen or the Setup Home screen, press the profile settings ![Profile settings button](img/user-cog.png) button to enter the profile screen.
+
+2. **Step-2** On the profile screen press the `>` button on the 'Delete Account' card.
+
+3. **Step-3** A popup will appear asking the user to confirm they wish to delete their account by pressing `Delete` or cancel by pressing `Cancel`. If confirmed, the account will be deleted and the user will be navigated to the welcome/login screen.
+<img src={require("./screenshots/62.png").default} width="300" />
 
 <br/>
 
@@ -344,112 +523,172 @@ Once a Home is created, users can interact with the connected controller to mana
 
 ## 5.1 Home Setup
 
-
 ### 5.1.1 First Home Setup with QR Code
 Use the following steps to connect your first home using the QR Code:
 
-1. **Step-1** Connect mobile phone to the same wifi network as the Touch Point LCD ***Add link to touch point setup for AP mode*** 
-2. **Step-2** Launch the MIA App and login to your account as per section *4.2. User Login*. User will be navigated to the 'Setup Home' screen.
-3. **Step-3** Select the `Scan QR Code` option. Users will be navigated to the QR code where they can scan the QR code displyed on the Touch Point LCD. 
-4. **Step-4** If a valid QR Code is scanned users will be navigated to the 'Add a Home' screen where they must enter a Home name. Once a home name is entered press the `Add Home` button.
+1. **Step-1** Connect mobile phone to the same Wi-Fi network as the Touch Point LCD ***Add link to touch point setup for AP mode***
+
+2. **Step-2** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*. User will be navigated to the 'Setup Home' screen.
+
+3. **Step-3** Select the `Scan QR Code` option. Users will be navigated to the QR code where they can scan the QR code displayed on the Touch Point LCD.
+<img src={require("./screenshots/64.png").default} width="300" />
+
+4. **Step-4** If a valid QR Code is scanned, users will be navigated to the 'Add a Home' screen where they must enter a Home name. Once a home name is entered press the `Add Home` button.
+<img src={require("./screenshots/65.png").default} width="300" />
+
 5. **Step-5** Users will be navigated to the main control screen for their newly added home. 
 
 
 ### 5.1.2 First Home Setup with Invite Code
 Use the following steps to connect your first home using an invite code:
 
-1. **Step-1** Connect mobile phone to the same wifi network as the Touch Point LCD ***Add link to touch point setup for AP mode*** 
-2. **Step-2** Launch the MIA App and login to your account as per section *4.2. User Login*. User will be navigated to the 'Setup Home' screen.
+1. **Step-1** Connect mobile phone to the same Wi-Fi network as the Touch Point LCD ***Add link to touch point setup for AP mode***
+
+2. **Step-2** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*. User will be navigated to the 'Setup Home' screen.
+
 3. **Step-3** Select the `Join Using Invite Code` option.
-4. **Step-4** Users will be navigated to the 'Join Home' screen where they must enter a valid invite code. Once the invite code is entered press the `Join` button. 
+<img src={require("./screenshots/66.png").default} width="300" />
+
+4. **Step-4** Users will be shown the 'Join Home' popup where they must enter a valid invite code. Once the invite code is entered press the `Join` button.
+<img src={require("./screenshots/67.png").default} width="300" />
+
 5. **Step-5** Users will be navigated to the main control screen for their newly added home. 
 
 
 ### 5.1.3 Add a Home with QR Code
 Use the following steps to add a home using the QR Code:
 
-1. **Step-1** Connect mobile phone to the same wifi network as the Touch Point LCD ***Add link to touch point setup for AP mode*** 
-2. **Step-2** Launch the MIA App and login to your account as per section *4.2. User Login*.
-3. **Step-3** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu. 
+1. **Step-1** Connect mobile phone to the same Wi-Fi network as the Touch Point LCD ***Add link to touch point setup for AP mode***
+
+2. **Step-2** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+
+3. **Step-3** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+
 4. **Step-4** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
+<img src={require("./screenshots/68.png").default} width="300" />
+
 5. **Step-5** Press the `+ Add Home` button on the bottom right to and then select open the add home options.
-6. **Step-6** Select the `Scan QR Code` option. Users will be navigated to the QR code where they can scan the QR code displyed on the Touch Point LCD.
-7. **Step-7** If a valid QR Code is scanned users will be navigated to the 'Add a Home' screen where they must enter a Home name. Once a home name is entered press the `Add Home` button.
-5. **Step-8** Users will be navigated to the main control screen for their newly added home. 
+<img src={require("./screenshots/69.png").default} width="300" />
+
+6. **Step-6** Select the `Scan QR Code` option. Users will be navigated to the QR code where they can scan the QR code displayed on the Touch Point LCD.
+<img src={require("./screenshots/70.png").default} width="300" />
+
+7. **Step-7** If a valid QR Code is scanned, users will be navigated to the 'Add a Home' screen where they must enter a Home name. Once a home name is entered press the `Add Home` button.
+
+8. **Step-8** Users will be navigated to the main control screen for their newly added home. 
 
 
 ### 5.1.4 Add a Home with Invite Code
-Use the following steps to add a home using an invite Code:
+Use the following steps to add a home using an invitation Code:
 
-1. **Step-1** Launch the MIA App and login to your account as per section *4.2. User Login*.
-2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu. 
+1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+
+2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+
 3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
+<img src={require("./screenshots/68.png").default} width="300" />
+
 4. **Step-4** Press the `+ Add Home` button on the bottom right to and then select open the add home options.
+<img src={require("./screenshots/69.png").default} width="300" />
+
 5. **Step-5** Select the `Join by Invite Code` option.
-6. **Step-6** Users will be navigated to the 'Join Home' screen where they must enter a valid invite code. Once the invite code is entered press the `Join` button. 
+<img src={require("./screenshots/71.png").default} width="300" />
+
+6. **Step-6** Users will be shown a popup where they must enter a valid invite code. Once the invite code is entered press the `Join` button.
+
 7. **Step-7** Users will be navigated to the main control screen for their newly added home. 
 
 <br/>
 
 ## 5.2 Home Management
-The Home Settings section allows users to view and manage key home details. From this screen, users can update the home name, manage connected user access, manage home ownership and home status.
+The Home Settings section allows users to view and manage key home details. From this screen, users can update the home name, manage connected user access, manage ownership and home status.
 
-From the 'Profile' screen users can perform the following actions:
-- **Home Name** - Edit the display name associated with the Home. <br/>
-- **User Access** - View the connected users and add addiotional users via their username or by generating an invite code. <br/>
-- **Home Ownership** - Transfer ownership of the connected home to a different user. Note this can only be performed by the current owner. <br/>
-- **Leave Home** - Users can choose to leave the connected home. Note the home owner cannot leave the home without first transferring ownership. <br/>
-- **Delete Home** - The home owner can choose to delete the home setup. This in turn removes access for all connected users.
+From the 'Profile' screen, users can perform the following actions:
+- **Home Name** – Edit the display name associated with the Home. <br/>
+
+- **User Access** – View the connected users and add additional users via their username or by generating an invite code. <br/>
+
+- **Home Ownership** – Transfer ownership of the connected home to a different user. Note this can only be performed by the current owner. <br/>
+
+- **Leave Home** – Users can choose to leave the connected home. Note the owner cannot leave the home without first transferring ownership. <br/>
+
+- **Delete Home** – The owner can choose to delete the home setup. This in turn removes access for all connected users.
 
 ### 5.2.1 Changing the Home Name
 Use the following steps to edit a home name:
-1. **Step-1** Launch the MIA App and login to your account as per section *4.2. User Login*.
-2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu. 
-3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen. 
+1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+
+2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+
+3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
+
 4. **Step-4** Press the `>` button beside the home you wish to edit the name to enter the 'Home Settings' for that home.
+
 5. **Step-5** Press the `>` button on the home name card to open the editable home name field that will appear from the bottom of the screen.
+
 6. **Step-6** Enter your new home name in the editiable field then apply the changes by pressing `Save Changes` or cancel by pressing `Cancel`.
+<img src={require("./screenshots/72.png").default} width="300" />
 
 ### 5.2.2 Adding Users to a Home
-The home owner can add addiotional users to their home via their username or by generating an invite code.
+The homeowner can add additional users to their home via their username or by generating an invite code.
 
 Owners can grant the following user permission levels:
-- **Member** - can add additional members.
-- **Guest** - cannot add or edit user permissions.
+- **Member** – can add additional members.
+
+- **Guest** – cannot add or edit user permissions.
 
 #### 5.2.2.1 Adding Users via Username
 Use the following steps to add a user to home via username:
 
-1. **Step-1** Launch the MIA App and login to your account as per section *4.2. User Login*.
-2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu. 
-3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen. 
+1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+
+2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+
+3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
+
 4. **Step-4** Press the `>` button beside the home you wish to invite a user to enter the 'Home Settings' for that home.
+
 5. **Step-5** Press the `>` button on the `+ Add User` card to open the Username entry field that will appear from the bottom of the screen.
-6. **Step-6** Enter the username for the user you wish to add and select their permissions level, `Member` or `Guest`. 
+
+6. **Step-6** Enter the username for the user you wish to add and select their permissions level, `Member` or `Guest`.
+
 7. **Step-7** Once the username is entered and permission level selected, then apply the changes by pressing `Add` or cancel by pressing `Cancel`.
+<img src={require("./screenshots/73.png").default} width="300" />
 
 
 #### 5.2.2.2 Adding Users via Invite Code
 Use the following steps to share an invite code to a user to join your home:
 
-1. **Step-1** Launch the MIA App and login to your account as per section *4.2. User Login*.
-2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu. 
-3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen. 
+1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+
+2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+
+3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
+
 4. **Step-4** Press the `>` button beside the home you wish to invite a user to enter the 'Home Settings' for that home.
+
 5. **Step-5** Press the `>` button on the `Generate invite code` card to open the permissions level selection that will appear from the bottom of the screen.
-6. **Step-6** Select their permissions level, `Member` or `Guest` and press the `Generate` button to generate the invite code. 
-7. **Step-7** Select the method to share the generated code. The code can either be shared directly to the user via common platforms such as email, SMS, Airdrop and more or alternatively the generated code can be copied and saved.
 
+6. **Step-6** Select their permissions level, `Member` or `Guest` and press the `Generate` button to generate the invite code.
 
-### 5.2.3 Tranferring Home Ownership
-Use the following steps to transfer home ownership to a different user:
+7. **Step-7** Select the method to share the generated code. The code can either be shared directly to the user via common platforms such as email, SMS, Airdrop, and more or alternatively the generated code can be copied and saved.
+<img src={require("./screenshots/74.png").default} width="300" />
 
-1. **Step-1** Launch the MIA App and login to your account as per section *4.2. User Login*.
-2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu. 
-3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen. 
+### 5.2.3 Transferring Home Ownership
+Use the following steps to transfer homeownership to a different user:
+
+1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+
+2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+
+3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
+
 4. **Step-4** Press the `>` button beside the home you wish to transfer ownership for to enter the 'Home Settings' for that home.
+
 5. **Step-5** Press the `>` button on the `Transfer Ownership` card to open the username entry field that will appear from the bottom of the screen.
+
 6. **Step-6** Enter the username for the user you wish to tranfer ownership to and press `Transfer` to complete the ownership transfer or cancel by pressing `Cancel`.
+<img src={require("./screenshots/75.png").default} width="300" />
 
 **Note** Ownership transfer can only be performed by the current owner.
 
@@ -457,165 +696,354 @@ Use the following steps to transfer home ownership to a different user:
 ### 5.2.4 Leave a Home
 Use the following steps to leave a home:
 
-1. **Step-1** Launch the MIA App and login to your account as per section *4.2. User Login*.
-2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu. 
-3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen. 
-4. **Step-4** Press the `>` button beside the home you wish to leave to enter the 'Home Settings' for that home.
-5. **Step-5** Press the `>` button on the `Leave Home` card.
-6. A popup will appear asking the user to confirm they wish to leave the home. Confirm by pressing `Leave` or cancel by pressing `Cancel`. If confirmed the user will lose access to the home and navigated to a different connected home or the 'Setup Home' screen if they are not connected to another home.
+1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-**Note** The home owner cannot leave the home without first transferring ownership.
+2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+
+3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
+
+4. **Step-4** Press the `>` button beside the home you wish to leave to enter the 'Home Settings' for that home.
+
+5. **Step-5** Press the `>` button on the `Leave Home` card.
+
+6. A popup will appear asking the user to confirm they wish to leave the home. Confirm by pressing `Leave` or cancel by pressing `Cancel`. If confirmed, the user will lose access to the home and navigated to a different connected home or the 'Setup Home' screen if they are not connected to another home.
+<img src={require("./screenshots/76.png").default} width="300" />
+
+**Note** The homeowner cannot leave the home without first transferring ownership.
 
 
 ### 5.2.5 Delete a Home
 Use the following steps to delete a home:
 
-1. **Step-1** Launch the MIA App and login to your account as per section *4.2. User Login*.
-2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu. 
-3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen. 
+1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+
+2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+
+3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
+
 4. **Step-4** Press the `>` button beside the home you wish to delete to enter the 'Home Settings' for that home.
+
 5. **Step-5** Press the `>` button on the `Delete Home` card.
-6. A popup will appear asking the user to confirm they wish to leave the home. Confirm by pressing `Delete` or cancel by pressing `Cancel`. If confirmed the user will lose access to the home and navigated to a different connected home or the 'Setup Home' screen if they are not connected to another home.
+
+6. A popup will appear asking the user to confirm they wish to leave the home. Confirm by pressing `Delete` or cancel by pressing `Cancel`. If confirmed, the user will lose access to the home and navigated to a different connected home or the 'Setup Home' screen if they are not connected to another home.
+<img src={require("./screenshots/77.png").default} width="300" />
 
 **Note** Deleting a home can only be performed by the current owner.
 
 <br/>
 
 ## 5.3 Home Navigation
-The MIA mobile app supports connecting to multiple Homes, allowing users to manage Zoneconnex systems across different locations from a single account. Each Home represents a separate installed Zoneconnex system.
+The anywAiR Zone app supports connecting to multiple Homes, allowing users to manage Zoneconnex systems across different locations from a single account. Each Home represents a separate installed Zoneconnex system.
 
 Users can easily switch between Homes within the app to view system status, adjust settings, and control zones for the selected location. This makes it simple to manage multiple properties, such as a primary residence, holiday home, or small commercial site, all from one interface.
 
 Use the following steps to navigate between homes:
-1. **Step-1** Launch the MIA App and login to your account as per section *4.2. User Login*.
-2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu. 
-3. **Step-3** In the home navigation menu the current home the user is connected to will show a tick ![tick icon](img/tick.png) icon to the left of the name. To select a different home to connect to press the Home name you wish to connect to. User will then be navigated to the main control screen for the newly selected home.
+1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+
+2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+
+3. **Step-3** In the home navigation menu, the current home the user is connected to will show a tick ![tick icon](img/tick.png) icon to the left of the name. To select a different home to connect to press the Home name you wish to connect to. User will then be navigated to the main control screen for the newly selected home.
 
 <br/>
 
 # 6. Operation Guide
 
-The Operation section of the MIA mobile app provides users with full control and real-time visibility of their Zoneconnex system. From this area, users can start and stop the system, select operating modes, adjust comfort settings, and monitor temperatures, zones, and system status.
+The Operation section of the anywAiR Zone app provides users with full control and real-time visibility of their Zoneconnex system. From this area, users can start and stop the system, select operating modes, adjust comfort settings, and monitor temperatures, zones, and system status.
 
-The app allows users to tailor system behaviour to suit their lifestyle through manual controls, automation features, and advanced scheduling, helping maintain comfort while improving energy efficiency.
+The app allows users to tailor system behavior to suit their lifestyle through manual controls, automation features, and advanced scheduling, helping maintain comfort while improving energy efficiency.
 
-Key operational features include system on/off control, operating mode selection, temperature and fan adjustments (model dependent), and live temperature monitoring. Users can manage individual zone airflow, create schedules and run timers, apply custom scenes, and view system alerts and error information directly from the app.
+Key operational features include system on/off control, operating mode selection, temperature and fan adjustments (model-dependent), and live temperature monitoring. Users can manage individual zone airflow, create schedules and run timers, apply custom scenes, and view system alerts and error information directly from the app.
 
 This combination of real-time control, automation, and monitoring ensures users can easily manage their HVAC system from a single, intuitive interface.
 
 The following are key control and monitoring points available to the user:
 
 **Operation Control:** Enable the unit on and off.<br/>
+
 **Mode Control:** Switch between cool, heat, dry, auto, and fan modes.<br/>
+
 **Temperature Setpoint Control:** Adjust heating/cooling temperature setpoint.
 - Cooling setpoint 18 to 30 degrees Celsius
+
 - Heating setpoint 16-18 to 30 degrees Celsius (low limit model dependent)
 
 **Fan Speed Control:** Control fan speeds (model dependent).<br/>
+
 **Return Air Temperature Monitoring:** Monitor the return air temperature.<br/>
+
 **Zone Temperature/Humidity Monitoring:**
-**Zone Control:** Via the MIA mobile app users can interface with the ZoneConnex to control up to 10 zone dampers. Each damper can be controller within a range of 0-100% airflow in 5% increments. <br/>
-**Schedule Management:** Via the MIA mobile app, users can configure and manage schedules to automatically run their air conditioning unit at set times and days — helping maintain comfort, reduce manual adjustments, and improve energy efficiency. <br/>
-**Run Mode Management:** Via the MIA mobile app, users can set timed On/Off actions based on the unit’s current state. If the system is already running, a Run Off timer can be enabled to automatically turn the unit off after the selected duration. If the system is currently off, a Run On timer can be set to automatically start the unit after the chosen time period. <br/>
-**Scene Management:** Via the MIA mobile app, users can create custom “scenes” that bundle specific run conditions—such as mode, setpoint, and fan speed. These scenes can then be applied to schedules, or link them to run modes for consistent comfort with a single action. <br/>
-**Error Status Reporting:** Via the MIA mobile app users can monitor the error status and error codes generated by the Air Conditioner unit whilst also monitoring system generated alerts such as communications errors.
+
+**Zone Control:** Via the anywAiR Zone app users can interface with the ZoneConnex to control up to 10 zone dampers. Each damper can be controller within a range of 0-100% airflow in 5% increments. <br/>
+
+**Schedule Management:** Via the anywAiR Zone app, users can configure and manage schedules to automatically run their air conditioning unit at set times and days — helping maintain comfort, reduce manual adjustments, and improve energy efficiency. <br/>
+
+**Run Mode Management:** Via the anywAiR Zone app, users can set timed On/Off actions based on the unit’s current state. If the system is already running, a Run Off timer can be enabled to automatically turn the unit off after the selected duration. If the system is currently off, a Run On timer can be set to automatically start the unit after the chosen time period. <br/>
+
+**Scene Management:** Via the anywAiR Zone app, users can create custom “scenes” that bundle specific run conditions—such as mode, setpoint, and fan speed. These scenes can then be applied to schedules or link them to run modes for consistent comfort with a single action. <br/>
+
+**Error Status Reporting:** Via the anywAiR Zone app users can monitor the error status and error codes generated by the Air Conditioner unit whilst also monitoring system-generated alerts such as communications errors.
 
 
 ## 6.1 Operation Control
-Users can control the unit’s operation from the main control screen for the home using the Power ![Power button](img/power.png) button. When the unit is ON the power button turns red and when the unit is OFF the power button is black.
+Users can control the unit’s operation from the main control screen for the home using the Power ![Power button](img/power.png) button. When the unit is ON, the power button turns to app accent color, and when the unit is OFF, the power button is black.
 
-***Insert Screenshot***
+<img src={require("./screenshots/78.png").default} width="300" />
+<img src={require("./screenshots/79.png").default} width="300" />
 
 <br/>
 
 ## 6.2 Mode Control
-Users can control the unit’s operating mode from the main control screen for the home by pressing on the desired mode within the selector switch. Available modes are model-dependent and may vary by unit. Modes that are not available on the connected unit will automatically greyed out and will not be selectable. <br/>
+Users can control the unit’s operating mode from the main control screen for the home by pressing on the desired mode within the selector switch. Available modes are model-dependent and may vary by unit. Modes that are not available on the connected unit will automatically grey out and will not be selectable. <br/>
 
-The Mode that is currently active will have a solid black background. The non selected Modes will have a white background.
+The Mode that is currently active will have a solid black background. The non-selected Modes will have a white background.
 
 Available operating modes include:
 - **Auto:** The unit automatically selects heating or cooling based on the current room temperature and the setpoint.
+
 - **Cool:** Actively cools the space to reach and maintain the selected temperature.
+
 - **Dry:** Reduces humidity in the space with minimal cooling, helping improve comfort in humid conditions.
+
 - **Fan:** Circulates air within the space without heating or cooling.
+
 - **Heat:** Actively heats the space to reach and maintain the selected temperature.
 
 To check available modes or further details on each operating mode, refer to the unit’s user manual.
 
-***Insert Screenshot***
+<img src={require("./screenshots/78.png").default} width="300" />
+<img src={require("./screenshots/80.png").default} width="300" />
+<img src={require("./screenshots/81.png").default} width="300" />
+<img src={require("./screenshots/82.png").default} width="300" />
 
 <br/>
 
 ## 6.3 Temperature Setpoint Control
 Users can adjust the temperature setpoint from the main control screen for the home to control the temperature maintained by the unit. The setpoint can be increased or decreased in 0.5°C increments within the following ranges.
 - Cooling/Auto/Dry: Setpoint range is 18 to 30 degrees Celsius
+
 - Heating: Setpoint 16-18 to 30 degrees Celsius (Low limit model dependent. Refer to the unit’s user manual)
-- Fan: Setpoint control is diasbled in fan mode as the unit is circulating air within the space without heating or cooling.
+
+- Fan: Setpoint control is disabled in fan mode as the unit is circulating air within the space without heating or cooling.
 
 Users can increase or decrease the setpoint value using the increase ![increase button](img/chevron-up.png) and decrease ![decrease button](img/chevron-down.png) buttons to reach the desired setpoint. 
 
 The current setpoint is displayed in the control ring above the control parameters.
 
-Once at the high or low limit the respective increase or decrease buttons will become unselectable to prevent the user setting a setpoint past the limits.
+Once at the high or low limit, the respective increase or decrease buttons will become unselectable to prevent the user setting a setpoint past the limits.
 
-***Insert Screenshot***
+<img src={require("./screenshots/83.png").default} width="300" />
 
 <br/>
 
 ## 6.4 Fan Speed Control
-Users can control the unit’s fan speed from the main control screen for the home by pressing on the desired speed within the selector switch. Available fan speeds are model-dependent and may vary by unit. Fan speeds that are not available on the connected unit will automatically greyed out and will not be selectable. <br/>
+Users can control the unit’s fan speed from the main control screen for the home by pressing on the desired speed within the selector switch. Available fan speeds are model-dependent and may vary by unit. Fan speeds that are not available on the connected unit will automatically grey out and will not be selectable. <br/>
 
-The Fan speed that is currently active will have a solid black background. The non selected fan speeds will have a white background.
+The Fan speed that is currently active will have a solid black background. The non-selected fan speeds will have a white background.
 
 Available fan speeds include:
 - **Auto:** The unit automatically adjusts the fan speed based on the current room temperature and the set temperature for optimal comfort and efficiency.
+
 - **Quiet:** Operates the fan at a very low speed to minimize noise, ideal for sleeping or quiet environments.
+
 - **Low:** Runs the fan at a low speed for gentle air circulation while maintaining comfort.
+
 - **Medium:** Provides a balanced fan speed for effective cooling or heating while maintaining moderate noise levels.
+
 - **High:** Runs the fan at maximum speed to quickly reach the desired temperature or improve air circulation.
 
 To check available fan speeds or for further details on each fan speed mode, refer to the unit’s user manual.
 
-***Insert Screenshot***
+<img src={require("./screenshots/84.png").default} width="300" />
 
 <br/>
 
+# 7. Zones
+The anywAiR Zone app allows users to manage individual zones within their home.
 
+## 7.1 Zone List
+Use the following steps to view a zones:
 
+1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-<br/>
+2. **Step-2** Press the dropdown ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the home navigation menu.
+<img src={require("./screenshots/85.png").default} width="300" />
 
+3. **Step-3** From the more option popup, press the `Zones` button.
+<img src={require("./screenshots/86.png").default} width="300" />
 
-
-
-
-
-<br/>
-
-
-<br/>
-
-
-
-
-<br/>
-
-
-
-
-
+4. **Step-4** App navigates to the screen with a list of zones.
+<img src={require("./screenshots/87.png").default} width="300" />
 
 <br/>
 
+## 7.2 Zone Control
+Use the following steps to control a zone:
+
+1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+
+2. **Step-2** Tap the zone list item to open the zone control popup.
+<img src={require("./screenshots/88.png").default} width="300" />
+
+3. **Step-3** Perform the desired action on the zone.
+    - **Mark Zone as Main** – Users can designate or disable the zone as the main zone for the system by pressing the toggle button beside the 'Main' setting. Note a zone requires a paired droplet sensor to be set as the Main zone.
+
+    - **Increase:** Increase the zone airflow by 5%
+
+    - **Decrease:** Decrease the zone airflow by 5%
+
+    - **Off:** Turn off the zone airflow
+   <img src={require("./screenshots/91.png").default} width="300" />
+
+4. **Step-4** Press on settings button to open the zone settings screen.
+<img src={require("./screenshots/92.png").default} width="300" />
+<img src={require("./screenshots/93.png").default} width="300" />
+
+5. **Step-5** Edit the zone name. Note, only the owner of the site/home can edit the zone name.
+<img src={require("./screenshots/94.png").default} width="300" />
+
+6. **Step-6** Add/Manage droplets. Refer to **3.3. Droplet Configuration & Management** section for more details.
 
 <br/>
 
-# 7. Document Revision
+# 8. Droplets
 
-| Revision | Date       | Change Description                  |
-|----------|------------|------------------------------------|
-| 1.0      | 29-01-2026 | Initial release of the document for review  |
-| 1.1      | DD-MM-YYYY |     |
-| 1.2      | DD-MM-YYYY |     |
+## 8.1 Droplet List
+Use the following steps to view a droplet:
+
+1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+
+2. **Step-2** Press the dropdown ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the home navigation menu.
+
+3. **Step-3** From the more option popup, tap the `Droplets` button.
+<img src={require("./screenshots/89.png").default} width="300" />
+
+4. **Step-4** App navigates to the screen with a list of droplets.
+<img src={require("./screenshots/90.png").default} width="300" />
+
+5. **Step-5** Tap the droplet list item to open the droplet detail screen.
+
+<br/>
+
+## 8.2 Droplet Detail
+Use the following steps to view a droplet detail:
+
+1. **Step-1** Go to droplet detail as mentioned in section *8.1.
+
+2. **Step-2** Refer to **3.3. Droplet Configuration & Management** section for more details.
+
+**Note:** Only the owner of the site/home can edit the droplet name.
+
+<br/>
+
+# 9. Schedules
+The anywAiR Zone app allows users to manage schedules for their home.
+
+## 9.1 Schedule List
+Use the following steps to view a schedule:
+
+1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+
+2. **Step-2** Press the dropdown ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the home navigation menu.
+
+3. **Step-3** From the more option popup, tap the `Schedules` button.
+<img src={require("./screenshots/95.png").default} width="300" />
+
+4. **Step-4** App navigates to the screen with a list of schedules.
+<img src={require("./screenshots/96.png").default} width="300" />
+
+## 9.2 Add Schedule
+Use the following steps to add a schedule:
+
+1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+
+2. **Step-2** Go to the schedules list screen as mentioned in section *9.1. Schedule List*.
+
+3. **Step-3** Press the `+ Add` button to add a new schedule.
+<img src={require("./screenshots/97.png").default} width="300" />
+<img src={require("./screenshots/98.png").default} width="300" />
+
+4. **Step-4** Enter the schedule name, select days, start time, end time, and toggle `Enable` for the schedule.
+<img src={require("./screenshots/99.png").default} width="300" />
+<img src={require("./screenshots/100.png").default} width="300" />
+
+5. **Add Scene:** Users can add a scene to the schedule by pressing the `+ Create Scene` button. Or users can skip this step and add the scene later.
+<img src={require("./screenshots/101.png").default} width="300" />
+<img src={require("./screenshots/102.png").default} width="300" />
+
+6. **Change or Remove Scene:** Users can change the scene from the schedule by pressing the `Change Scene` button. Or remove it as shown in the screenshot below.
+<img src={require("./screenshots/103.png").default} width="300" />
+<img src={require("./screenshots/105.png").default} width="300" />
+<img src={require("./screenshots/104.png").default} width="300" />
+
+7. **Edit Scene:** Users can edit the scene by pressing an edit icon button.
+<img src={require("./screenshots/106.png").default} width="300" />
+<img src={require("./screenshots/107.png").default} width="300" />
+
+## 9.3 Edit & Delete Schedule
+Use the following steps to edit a schedule:
+
+1. **Step-1** Go to the schedule list screen as mentioned in section *9.1. Schedule List*.
+
+2. **Step-2** Tap the schedule list item to open the schedule detail screen.
+<img src={require("./screenshots/108.png").default} width="300" />
+<img src={require("./screenshots/109.png").default} width="300" />
+
+3. **Step-3** Tap the schedule name to edit the schedule name.
+<img src={require("./screenshots/110.png").default} width="300" />
+<img src={require("./screenshots/111.png").default} width="300" />
+
+<br />
+
+To delete a schedule, tap the `Delete Schedule` button.
+<img src={require("./screenshots/109.png").default} width="300" />
+
+<br />
+
+# 10. Run Modes
+The anywAiR Zone app allows users to manage run modes for their home.
+
+## 10.1 Run Mode Control
+Use the following steps to view a run mode:
+
+1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+
+2. **Step-2** Press the dropdown ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the home navigation menu.
+
+3. **Step-3** From the more option popup, tap the `Run mode` button.
+<img src={require("./screenshots/112.png").default} width="300" />
+<img src={require("./screenshots/113.png").default} width="300" />
+
+<br />
+
+## 10.2. Run Scene
+Open run mode modal as mentioned above
+
+1. **Step-1:** From the "Run mode" modal, choose anyone of the existing scenes. The selected scene is triggered
+<img src={require("./screenshots/114.png").default} width="300" />
+
+<br />
+
+## 10.3. Run for
+Open run mode modal as mentioned above
+
+1. **Step-1:** From the "Run Mode" modal, choose anyone of preset duration or set custom time with "Or until" button. The timer for run mode is set as per selected durations.
+<img src={require("./screenshots/115.png").default} width="300" />
+
+<br />
+
+## 10.4. Cancel Timer
+Open run mode modal as mentioned above
+
+1. **Step-1:** From the "Run Mode" modal, if the timer is already running, the modal will have a "Cancel Timer" button. Tapping on the button will cancel the current timer.
+<img src={require("./screenshots/116.png").default} width="300" />
+
+<br />
+
+# 11. Document Revision
+
+| Revision | Date       | Change Description                                |
+|----------|------------|---------------------------------------------------|
+| 1.0      | 29-01-2026 | Initial release of the document for review        |
+| 1.1      | 23-03-2026 | Update docs with missing features and screenshots |
 
 
