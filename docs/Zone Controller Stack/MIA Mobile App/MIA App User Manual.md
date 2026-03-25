@@ -24,12 +24,12 @@ Designed for both residential and light commercial applications, the Nube iO MIA
 **Mode Control:** Switch between cool, heat, dry, auto, and fan modes.<br/>
 **Temperature Setpoint Control:** Adjust heating/cooling temperature setpoint.
 - Cooling setpoint 18 to 30 degrees Celsius
-- Heating setpoint 16-18 to 30 degrees Celsius (low limit model dependent)
+- Heating setpoint 16 to 30 degrees Celsius (low-limit model-dependent)
 
 **Fan Speed Control:** Control fan speeds (model dependent).<br/>
 **Return Air Temperature Monitoring:** Monitor the return air temperature.<br/>
 **Zone Temperature/Humidity Monitoring:**
-**Zone Control:** Via the anywAiR Zone app users can interface with the ZoneConnex to control up to 10 zone dampers. Each damper can be controller within a range of 0–100% airflow in 5% increments.<br/>
+**Zone Control:** Via the anywAiR Zone app users can interface with the ZoneConnex to control up to 10 zone dampers. Each damper can be controlled within a range of 0–100% airflow in 5% increments.<br/>
 **Schedule Management:** Via the anywAiR Zone app, users can configure and manage schedules to automatically run their air conditioning unit at set times and days — helping maintain comfort, reduce manual adjustments, and improve energy efficiency.<br/>
 **Run Mode Management:** Via the anywAiR Zone app, users can set timed On/Off actions based on the unit’s current state. If the system is already running, a Run Off timer can be enabled to automatically turn the unit off after the selected duration. If the system is currently off, a Run On timer can be set to automatically start the unit after the chosen time period.<br/>
 **Scene Management:** Via the anywAiR Zone app, users can create custom “scenes” that bundle specific run conditions such as mode, setpoint, and fan speed. These scenes can then be applied to schedules, or link them to run modes for consistent comfort with a single action.<br/>
@@ -41,10 +41,10 @@ Designed for both residential and light commercial applications, the Nube iO MIA
 [//]: # (TODO: When officially released, add the real Apple and Google play links*)
 
 
-| Downloads   |                                                                                                                             |
-|-------------|-----------------------------------------------------------------------------------------------------------------------------|
-| Google Play | <a href="https://play.google.com/apps/internaltest/4699394012260856314"> ![max300px](img/google-play-icon.png) </a>         |
-| App Store   | <a href="https://testflight.apple.com/v1/app/6754748732?build=193360892"> ![max300px](img/Apple-app-download-icon.png) </a> |
+| Downloads   |                                                                                                                      |
+|-------------|----------------------------------------------------------------------------------------------------------------------|
+| Google Play | <a href="https://play.google.com/store/apps/details?id=com.nubeio.mia"> ![max300px](img/google-play-icon.png) </a>   |
+| App Store   | <a href="https://apps.apple.com/au/app/anywair-zone/id6748876162"> ![max300px](img/Apple-app-download-icon.png) </a> |
 
 <br/>
 
@@ -57,14 +57,14 @@ Using the Touch Point LCD Wi-Fi access point, installers can use the Installer M
 
 [//]: # (TODO: ***Add link to touch point setup for AP mode*** )
 
-The Insaller Mode can be accessed using the following steps:
+The Installer Mode can be accessed using the following steps:
 1. **Step-1** On the main login/welcome screen press the `Continue as Installer` button below the "Sign In" button.
 <img src={require("./screenshots/1.png").default} width="300" />
 
 2. **Step-2** A popup will appear cautioning the user they are entering the Installer Mode and to proceed with caution. Press `Continue` to enter installer mode or press `Cancel` to back out to the login screen.
 <img src={require("./screenshots/2.png").default} width="300" />
 
-3. **Step-3** Users will be taken to the QR code where they can scan the QR code displyed on the Touch Point LCD. Note if users wish to cancel and return to the login screen, they can press the `Exit installer mode` button to back out.
+3. **Step-3** Users will be taken to the QR code where they can scan the QR code displayed on the Touch Point LCD. Note if users wish to cancel and return to the login screen, they can press the `Exit installer mode` button to back out.
 <img src={require("./screenshots/3.png").default} width="300" />
 <img src={require("./screenshots/4.png").default} width="300" />
 
@@ -107,7 +107,7 @@ Once following section *3.1. Accessing Installer Mode* for a new system, users w
     <img src={require("./screenshots/14.png").default} width="300" />
     <img src={require("./screenshots/15.png").default} width="300" />
  
-    - **Add and Manage Droplets** – Pair and manage associated droplets to the zone by using the `Add Droplets` button then selecting the appropriate droplet from the list. To add a new droplet, press the menu icon to the top right of the list and follow the steps outlined in section *2.4. Droplet Configuration & Management*. To remove/unpair a droplet, press on the `>` button associated with the droplet to open the droplet options screen then press the `Remove Droplet` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
+    - **Add and Manage Droplets** – Pair and manage associated droplets to the zone by using the `Add Droplets` button then selecting the appropriate droplet from the list. To add a new droplet, press the menu icon to the top right of the list and follow the steps outlined in section *3.3. Droplet Configuration & Management*. To remove/unpair a droplet, press on the `>` button associated with the droplet to open the droplet options screen then press the `Remove Droplet` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
     <img src={require("./screenshots/16.png").default} width="300" />
     <img src={require("./screenshots/17.png").default} width="300" />
     <img src={require("./screenshots/18.png").default} width="300" />
@@ -150,7 +150,7 @@ After the initial zone setup following section *3.2.1 Initial Zone Configuration
     - **Minimum Airflow (%)** – Specify the minimum airflow percentage the zone should maintain during operation using the plus ![plus button](img/circle-plus.png) and minus ![minus button](img/circle-minus.png) buttons. <br/>
     - **Maximum Airflow (%)** – Specify the maximum airflow percentage the zone can maintain during operation using the plus ![plus button](img/circle-plus.png) and minus ![minus button](img/circle-minus.png) buttons. <br/>
     - **Add and Manage Zone Dampers** – Pair and manage associated dampers to the zone by using the `Add Dampers` button then selecting the appropriate damper from the list. To remove/unpair damper, press on the `>` button associated with the damper to open the Damper options screen then press the `Remove Damper` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
-    - **Add and Manage Droplets** – Pair and manage associated droplets to the zone by using the `Add Droplets` button then selecting the appropriate droplet from the list. To add a new droplet, press the menu icon to the top right of the list and follow the steps outlined in section *2.4. Droplet Configuration & Management*. To remove/unpair a droplet, press on the `>` button associated with the droplet to open the droplet options screen then press the `Remove Droplet` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
+    - **Add and Manage Droplets** – Pair and manage associated droplets to the zone by using the `Add Droplets` button then selecting the appropriate droplet from the list. To add a new droplet, press the menu icon to the top right of the list and follow the steps outlined in section *3.3. Droplet Configuration & Management*. To remove/unpair a droplet, press on the `>` button associated with the droplet to open the droplet options screen then press the `Remove Droplet` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
 
 6. **Step-6** To delete a Zone, press the `Delete Zone` button at the bottom of the 'Zone Setup' screen. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`.
 <img src={require("./screenshots/30.png").default} width="300" />
@@ -213,7 +213,7 @@ After the initial zone setup following section *3.2.1 Initial Zone Configuration
 ### 3.3.1 Adding a Droplet Manually
 
 To manually add a Droplet, use the following steps:
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *2.2. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
 
 2. **Step-2** On the setup page press the `Configure Droplet` button to navigate to the 'Droplets' screen with the list of configured droplets. If no droplets are currently added the user will see a message stating that 'You dont have any droplets yet' and a prompt to add a droplet.
 
@@ -221,22 +221,22 @@ To manually add a Droplet, use the following steps:
 
 4. **Step-4** Enter the Droplet name and Address (8 digit Lora ID located on the droplet barcode) then press the `Add` button to create the device. Users will then be navigated to the 'Droplets' screen with the newly added droplet appearing in the list with blank values.
 
-5. **Step-5** If the droplet is powered and in range it will pair with the Zoneconnex automatically within 15 minutes with the droplets next interval reporting. Alternatively the user can reset or powercyle the droplet to initiate pairing when the Droplet reboots. Once paired values will appear in the droplet card (°C, %, and dBm).
+5. **Step-5** If the droplet is powered and in range, it will pair with the Zoneconnex automatically within 15 minutes with the droplets' next interval reporting. Alternatively, the user can reset or power cycle the droplet to initiate pairing when the Droplet reboots. Once paired values will appear in the droplet card (°C, %, and dBm).
 
 ### 3.3.2 Adding a Droplet via QR Code
 
-To manually add a Droplet use the following steps:
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *2.2. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+To manually add a Droplet using QR code, use the following steps:
+1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
 
-2. **Step-2** On the setup page press the `Configure Droplet` button to navigate to the 'Droplets' screen with the list of configured droplets. If no droplets are currently added the user will see a message stating that 'You dont have any droplets yet' and a prompt to add a droplet.
+2. **Step-2** On the setup page press the `Configure Droplet` button to navigate to the 'Droplets' screen with the list of configured droplets. If no droplets are currently added the user will see a message stating that 'You don't have any droplets yet' and a prompt to add a droplet.
 
 3. **Step-3** To add a droplet press the `+ Add` button on the bottom right of the Droplets screen. Two options will appear, press on `Scan QR Code` to select the QR Code scan option.
 
-4. **Step-4** Users will be taken to the QR code scanner where they can scan the QR code displyed on the Droplet. If a valid QR Code is scanned the user will be taken to the 'Add Droplet' screen with the Address (8 digit Lora ID) field pre-filled.
+4. **Step-4** Users will be taken to the QR code scanner where they can scan the QR code displayed on the Droplet. If a valid QR Code is scanned, the user will be taken to the 'Add Droplet' screen with the Address (8 digit Lora ID) field pre-filled.
 
 5. **Step-5** Enter the Droplet name then press the `Add` button to create the device. Users will then be navigated to the 'Droplets' screen with the newly added droplet appearing in the list with blank values.
 
-6. **Step-6** If the droplet is powered and in range it will pair with the Zoneconnex automatically within 15 minutes with the droplets next interval reporting. Alternatively the user can reset or powercyle the droplet to initiate pairing when the Droplet reboots. Once paired values will appear in the droplet card (°C, %, and dBm).
+6. **Step-6** If the droplet is powered and in range, it will pair with the Zoneconnex automatically within 15 minutes with the droplets' next interval reporting. Alternatively, the user can reset or power cycle the droplet to initiate pairing when the Droplet reboots. Once paired, values will appear in the droplet card (°C, %, and dBm).
 
 <br/>
 
@@ -272,7 +272,7 @@ Users can manage and edit the Droplets that have been previously configured usin
 <br/>
 
 ## 3.4. System Preferences
-Users can manage the system preferences via the installer mode to manually select the timezone and enable/diasble if the current temperature is displayed to the user.
+Users can manage the system preferences via the installer mode to manually select the timezone and enable/disable if the current temperature is displayed to the user.
 
 ### 3.4.1 Timezone Configuration
 
@@ -329,7 +329,7 @@ If users wish to exit the installer mode, they can do so by following steps belo
 
 <br/>
 
-## 3.5. Completing Configuration
+## 3.6. Completing Configuration
 Once configuration is complete, users must apply the changes and exit the installer mode using the following steps:
 
 1. **Step-1** Navigate to the 'Setup' screen.
@@ -370,10 +370,10 @@ Use the following steps to create an account using an email account:
 <img src={require("./screenshots/56.png").default} width="300" />
 <img src={require("./screenshots/57.png").default} width="300" />
 
-6. **Step-6** After setting your username, user is presented with terms and conditions. Tap 'Accept Terms' to accept the terms and conditions and complete the account creation.
+6. **Step-6** After setting your username, the user is presented with terms and conditions. Tap 'Accept Terms' to accept the terms and conditions and complete the account creation.
 <img src={require("./screenshots/58.png").default} width="300" />
 
-**Note:** If the during step-4 an OTP has not been received the user can press the `Resend OTP` button to re-try. Please check junk and span folders if OTP is still not available.
+**Note:** If the during step-4 an OTP has not been received the user can press the `Resend OTP` button to re-try. Please check junk and spam folders if OTP is still not available.
 
 ### 4.1.2 Google Account Sign Up
 Use the following steps to create an account using a Google account:
@@ -383,9 +383,9 @@ Use the following steps to create an account using a Google account:
 2. **Step-2** Press the Google ![Google button](img/google-icon-30pix.png) button at the bottom of the screen. A popup will appear asking the user to confirm by pressing `Continue` or cancel by pressing `Cancel`.
 
 3. **Step-3** Once confirmed, the user will be navigated to a browser to select from existing signed-in Google accounts or use another account. <br/>
-    - **Existing account** - If an existing Google account is chosen, the user will be navigated to a Google confirmation screen to allow the MIA Moblie app to access the basic Google account info (Name and email address). The user can confirm by pressing `Continue` or cancel by pressing `Cancel`. <br/>
+    - **Existing account** - If an existing Google account is chosen, the user will be navigated to a Google confirmation screen to allow the MIA Mobile app to access the basic Google account info (Name and email address). The user can confirm by pressing `Continue` or cancel by pressing `Cancel`. <br/>
 
-    - **Use another account** - If 'Use another account' is chosen, the user will be navigated through the Google sign-in process before being navigated to the Google confirmation screen to allow the MIA Moblie app to access the basic Google account info (Name and email address). The user can confirm by pressing `Continue` or cancel by pressing `Cancel`.<br/>
+    - **Use another account** - If 'Use another account' is chosen, the user will be navigated through the Google sign-in process before being navigated to the Google confirmation screen to allow the MIA Mobile app to access the basic Google account info (Name and email address). The user can confirm by pressing `Continue` or cancel by pressing `Cancel`.<br/>
 
 4. **Step-4** User will then be navigated to the onboarding screen.
 
@@ -402,7 +402,7 @@ Use the following steps to create an account using an Apple account:
 
 4. **Step-4** After successful registration, the user will then be navigated to the onboarding screen.
 
-5. **Step-5** From the onboarding screen press the `Next` button to be navigated to set your username. Enter your new username and press the `Next` button to complete the account creation. If the entered username is already taken a warning will appear preventing the account creationg from being complete. Please enter an alternative username.
+5. **Step-5** From the onboarding screen press the `Next` button to be navigated to set your username. Enter your new username and press the `Next` button to complete the account creation. If the entered username is already taken a warning will appear preventing the account creation from being complete. Please enter an alternative username.
 
 <br/>
 
@@ -471,7 +471,7 @@ Use the following steps to change the username for your account:
 3. **Step-3** On the profile screen press the `>` button on the change username card. An editable username field will appear from the bottom of the screen.
 <img src={require("./screenshots/59.png").default} width="300" />
 
-4. **Step-4** Enter your new username in the editiable field then apply the changes by pressing `Save Changes` or cancel by pressing `Cancel`.
+4. **Step-4** Enter your new username in the editable field then apply the changes by pressing `Save Changes` or cancel by pressing `Cancel`.
 
 ### 4.3.2 View Error Logs
 Use the following steps to view system error logs:
@@ -491,7 +491,7 @@ Use the following steps to view system error logs:
     - **Clearing the Logs** – To clear the error log press the delete ![Delete button](img/trash-2.png) button. <br/>
     <img src={require("./screenshots/63.png").default} width="300" />
 
-5. **Step-5** To exit out of the error logs, press the ack arrow ![back arrow button](img/arrow-left.png) button.
+5. **Step-5** To exit out of the error logs, press the back arrow ![back arrow button](img/arrow-left.png) button.
 
 
 ### 4.3.3 Logout
@@ -603,7 +603,7 @@ Use the following steps to add a home using an invitation Code:
 ## 5.2 Home Management
 The Home Settings section allows users to view and manage key home details. From this screen, users can update the home name, manage connected user access, manage ownership and home status.
 
-From the 'Profile' screen, users can perform the following actions:
+From the 'Home' detail screen, users can perform the following actions:
 - **Home Name** – Edit the display name associated with the Home. <br/>
 
 - **User Access** – View the connected users and add additional users via their username or by generating an invite code. <br/>
@@ -687,7 +687,7 @@ Use the following steps to transfer homeownership to a different user:
 
 5. **Step-5** Press the `>` button on the `Transfer Ownership` card to open the username entry field that will appear from the bottom of the screen.
 
-6. **Step-6** Enter the username for the user you wish to tranfer ownership to and press `Transfer` to complete the ownership transfer or cancel by pressing `Cancel`.
+6. **Step-6** Enter the username for the user you wish to transfer ownership to and press `Transfer` to complete the ownership transfer or cancel by pressing `Cancel`.
 <img src={require("./screenshots/75.png").default} width="300" />
 
 **Note** Ownership transfer can only be performed by the current owner.
@@ -725,7 +725,7 @@ Use the following steps to delete a home:
 
 5. **Step-5** Press the `>` button on the `Delete Home` card.
 
-6. A popup will appear asking the user to confirm they wish to leave the home. Confirm by pressing `Delete` or cancel by pressing `Cancel`. If confirmed, the user will lose access to the home and navigated to a different connected home or the 'Setup Home' screen if they are not connected to another home.
+6. A popup will appear asking the user to confirm they wish to delete the home. Confirm by pressing `Delete` or cancel by pressing `Cancel`. If confirmed, the user will lose access to the home and navigated to a different connected home or the 'Setup Home' screen if they are not connected to another home.
 <img src={require("./screenshots/77.png").default} width="300" />
 
 **Note** Deleting a home can only be performed by the current owner.
@@ -773,7 +773,7 @@ The following are key control and monitoring points available to the user:
 
 **Zone Temperature/Humidity Monitoring:**
 
-**Zone Control:** Via the anywAiR Zone app users can interface with the ZoneConnex to control up to 10 zone dampers. Each damper can be controller within a range of 0-100% airflow in 5% increments. <br/>
+**Zone Control:** Via the anywAiR Zone app users can interface with the ZoneConnex to control up to 10 zone dampers. Each damper can be controlled within a range of 0-100% airflow in 5% increments. <br/>
 
 **Schedule Management:** Via the anywAiR Zone app, users can configure and manage schedules to automatically run their air conditioning unit at set times and days — helping maintain comfort, reduce manual adjustments, and improve energy efficiency. <br/>
 
@@ -821,7 +821,7 @@ To check available modes or further details on each operating mode, refer to the
 Users can adjust the temperature setpoint from the main control screen for the home to control the temperature maintained by the unit. The setpoint can be increased or decreased in 0.5°C increments within the following ranges.
 - Cooling/Auto/Dry: Setpoint range is 18 to 30 degrees Celsius
 
-- Heating: Setpoint 16-18 to 30 degrees Celsius (Low limit model dependent. Refer to the unit’s user manual)
+- Heating: Setpoint 16 to 30 degrees Celsius (Low limit model dependent. Refer to the unit’s user manual)
 
 - Fan: Setpoint control is disabled in fan mode as the unit is circulating air within the space without heating or cooling.
 
@@ -861,11 +861,11 @@ To check available fan speeds or for further details on each fan speed mode, ref
 The anywAiR Zone app allows users to manage individual zones within their home.
 
 ## 7.1 Zone List
-Use the following steps to view a zones:
+Use the following steps to view zones:
 
 1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Press the dropdown ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the home navigation menu.
+2. **Step-2** Press the ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the more option menu.
 <img src={require("./screenshots/85.png").default} width="300" />
 
 3. **Step-3** From the more option popup, press the `Zones` button.
@@ -912,7 +912,7 @@ Use the following steps to view a droplet:
 
 1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Press the dropdown ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the home navigation menu.
+2. **Step-2** Press the ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the more option menu.
 
 3. **Step-3** From the more option popup, tap the `Droplets` button.
 <img src={require("./screenshots/89.png").default} width="300" />
@@ -943,7 +943,7 @@ Use the following steps to view a schedule:
 
 1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Press the dropdown ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the home navigation menu.
+2. **Step-2** Press the ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the more option menu.
 
 3. **Step-3** From the more option popup, tap the `Schedules` button.
 <img src={require("./screenshots/95.png").default} width="300" />
@@ -1007,7 +1007,7 @@ Use the following steps to view a run mode:
 
 1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Press the dropdown ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the home navigation menu.
+2. **Step-2** Press the ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the more option menu.
 
 3. **Step-3** From the more option popup, tap the `Run mode` button.
 <img src={require("./screenshots/112.png").default} width="300" />
@@ -1018,7 +1018,7 @@ Use the following steps to view a run mode:
 ## 10.2. Run Scene
 Open run mode modal as mentioned above
 
-1. **Step-1:** From the "Run mode" modal, choose anyone of the existing scenes. The selected scene is triggered
+1. **Step-1:** From the "Run mode" modal, choose any one of the existing scenes. The selected scene is triggered
 <img src={require("./screenshots/114.png").default} width="300" />
 
 <br />
@@ -1026,7 +1026,7 @@ Open run mode modal as mentioned above
 ## 10.3. Run for
 Open run mode modal as mentioned above
 
-1. **Step-1:** From the "Run Mode" modal, choose anyone of preset duration or set custom time with "Or until" button. The timer for run mode is set as per selected durations.
+1. **Step-1:** From the "Run Mode" modal, choose any one of preset duration or set custom time with "Or until" button. The timer for run mode is set as per selected durations.
 <img src={require("./screenshots/115.png").default} width="300" />
 
 <br />
