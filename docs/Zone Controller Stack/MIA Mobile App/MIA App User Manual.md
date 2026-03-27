@@ -894,6 +894,8 @@ Use the following steps to control a zone:
     - **Off:** Turn off the zone airflow
    <img src={require("./screenshots/91.png").default} width="300" />
 
+- **Note** The pop up will show temperature if the zone is marked as the main zone.
+
 4. **Step-4** Press on settings button to open the zone settings screen.
 <img src={require("./screenshots/92.png").default} width="300" />
 <img src={require("./screenshots/93.png").default} width="300" />
@@ -1039,7 +1041,27 @@ Open run mode modal as mentioned above
 
 <br />
 
-# 11. Document Revision
+# 11. Reset Password
+
+1. **Step-1** Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
+
+2. **Step-2** Tap on the "Forgot Password" button.
+<img src={require("./screenshots/117.png").default} width="300" />
+
+3. **Step-3** The user will be navigated to the reset password screen. Enter the email address associated with the account and tap on the "Send OTP" button.
+<img src={require("./screenshots/118.png").default} width="300" />
+
+4. **Step-4** The user will receive an OTP on their registered email address. Enter the OTP and tap on the "Verify Code" button.
+<img src={require("./screenshots/119.png").default} width="300" />
+
+5. **Step-5** If you didn't receive the OTP, you can tap on the "Resend OTP" button to resend the OTP.
+
+6. **Step-6** After verifying the OTP, the user will be navigated to the reset password screen. Enter the new password and confirm the password and tap on the "Set Password" button.
+<img src={require("./screenshots/120.png").default} width="300" />
+
+7. **Step-7** After successfully setting the new password, the user will be navigated back to the login screen.
+
+# 12. Document Revision
 
 | Revision | Date       | Change Description                                |
 |----------|------------|---------------------------------------------------|
