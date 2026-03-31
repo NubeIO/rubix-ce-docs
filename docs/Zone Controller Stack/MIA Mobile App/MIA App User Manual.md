@@ -317,7 +317,66 @@ To reset the configuration and start the setup from scratch, users can perform t
 
 <br/>
 
-## 3.5. Exit Installer Mode
+## 3.5. Logs
+
+Users can view the logs of the system.
+
+### 3.5.1 Viewing Logs
+Follow the following steps to view the logs:
+
+1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+
+2. **Step-2** On the setup page press the `Logs` button to navigate to the 'Logs' screen.
+<img src={require("./screenshots/121.png").default} width="300" />
+
+3. **Step-3** User is navigated to the 'Logs' screen and can view the logs.
+<img src={require("./screenshots/122.png").default} width="300" />
+
+<br />
+
+### 3.5.2 Log Detail
+Follow the following steps to view the log detail:
+
+1. **Step-1** Users must first access the logs following the steps outlined in section *3.5.1. Viewing Logs*.
+
+2. **Step-2** On the 'Logs' screen, tap on the log entry to view the log detail.
+<img src={require("./screenshots/123.png").default} width="300" />
+
+<br />
+
+### 3.5.3 Download Logs
+Follow the following steps to download the logs:
+
+1. **Step-1** Users must first access the logs following the steps outlined in section *3.5.1. Viewing Logs*.
+
+2. **Step-2** On the 'Logs' screen, tap on the "Download" icon in the top right corner of the screen.
+<img src={require("./screenshots/124.png").default} width="300" />
+
+3. **Step-3** User can also download the logs from the Log detail screen the same way.
+
+<br />
+
+### 3.5.4 Log Settings
+Follow the following steps to view the log settings:
+
+1. **Step-1** Users must first access the logs following the steps outlined in section *3.5.1. Viewing Logs*.
+
+2. **Step-2** On the 'Logs' screen, tap on the "Settings" icon in the top right corner of the screen.
+<img src={require("./screenshots/125.png").default} width="300" />
+
+3. **Step-3** The app navigates to the log settings screen.
+<img src={require("./screenshots/126.png").default} width="300" />
+
+4. **Step-4** Users can change the console level and file level.
+<img src={require("./screenshots/127.png").default} width="300" />
+<img src={require("./screenshots/128.png").default} width="300" />
+
+5. **Step-5** Users can also configure tag filters and log levels.
+<img src={require("./screenshots/129.png").default} width="300" />
+
+<br />
+
+## 3.6. Exit Installer Mode
 If users wish to exit the installer mode, they can do so by following steps below:
 
 1. **Step-1** Navigate to the 'Setup' screen.
@@ -329,7 +388,7 @@ If users wish to exit the installer mode, they can do so by following steps belo
 
 <br/>
 
-## 3.6. Completing Configuration
+## 3.7. Completing Configuration
 Once configuration is complete, users must apply the changes and exit the installer mode using the following steps:
 
 1. **Step-1** Navigate to the 'Setup' screen.
