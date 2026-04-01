@@ -68,6 +68,12 @@ The Installer Mode can be accessed using the following steps:
 <img src={require("./screenshots/3.png").default} width="300" />
 <img src={require("./screenshots/4.png").default} width="300" />
 
+**Note:**
+- If users arenn't connected to the Touch Point LCD, they can use the Wi-Fi access point to access the installer mode.
+- Upon scanning the valid Wi-Fi QR, the user is shown with an alert with an option to "Join" or "Cancel"
+- If tapped "Cancel", the user is shown a different alert guiding them to connect to network manually
+- If tapped "Join", the phone connects to Wi-Fi SSID and a success alert is shown
+
 <br/>
 
 ## 3.2. Zone Configuration & Management
@@ -79,6 +85,8 @@ Once following section *3.1. Accessing Installer Mode* for a new system, users w
      - `Number Of Zones` - Enter the number of zones connected to the system. <br/>
      - `Constant Zones` - Enter the number of zones required to be active to meet minimum airflow requirements.
    <img src={require("./screenshots/5.png").default} width="300" />
+   
+   **Note:** Constant zones can be set as 0.
 
  2. **Step-2** User will now be on the 'Select Constant Zones' screen. This is where the constant zones are selected. The amount required for selection is dependent on step 1. Once the required number of constant zones is set the user can press `Configure zones` to save and move to the next configuration screen.
 <img src={require("./screenshots/6.png").default} width="300" />
@@ -138,6 +146,11 @@ After the initial zone setup following section *3.2.1 Initial Zone Configuration
 
 3. **Step-3** From the list of zones press on the zone you wish to edit to enter the 'Zone Information' for the selected zone.
 <img src={require("./screenshots/28.png").default} width="300" />
+
+**Note:**
+- User should only be able to turn ON/OFF and increase/decrease the airflow, if the user has added a damper to the zone
+- User should only be able to switch ON the zone as "Main", if a droplet is added to the zone.
+- Upon marking the zone as "Main", the airflow control changes to temperature control. User can then increase or decrease the temperature accordingly.
 
 4. **Step-4** In the 'Zone Information' screen, press the settings ![settings button](img/settings-2.png) button to enter the 'Zone Setup' screen.
 <img src={require("./screenshots/29.png").default} width="300" />
@@ -419,7 +432,7 @@ Use the following steps to create an account using an email account:
 <img src={require("./screenshots/52.png").default} width="300" />
 <img src={require("./screenshots/53.png").default} width="300" />
 
-3. **Step-3** Enter a valid email address, then enter, and confirm a password for your account. Once email and password are entered press the `Sign Up` button at the bottom of the screen.
+3. **Step-3** Enter a valid email address, then enter, and confirm a password for your account. Also, check the box for "Terms and Conditions". Next, press the `Sign Up` button at the bottom of the screen.
 <img src={require("./screenshots/54.png").default} width="300" />
 
 4. **Step-4** User will be navigated to the 'Verify Account' screen where they will be required to enter the 6-digit OTP (One-Time Password) code that has been sent to the email entered in step 3. Once the 6-digit OTP code has been entered press the `Verify Code` button to complete your account creation and be navigated to the onboarding screen.
