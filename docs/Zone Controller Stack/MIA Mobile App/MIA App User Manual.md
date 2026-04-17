@@ -43,7 +43,7 @@ Designed for both residential and light commercial applications, the Nube iO MIA
 
 |Downloads | |
 |-|-|
-| Google Play | <a href="https://play.google.com/apps/internaltest/4699394012260856314"> ![max300px](img/google-play-icon.png) </a> |
+| Google Play | <a href="https://play.google.com/store/apps/details?id=com.nubeio.mia"> ![max300px](img/google-play-icon.png) </a> |
 | App Store | <a href="https://testflight.apple.com/v1/app/6754748732?build=193360892"> ![max300px](img/Apple-app-download-icon.png) </a> |
 
 <br/>
@@ -51,7 +51,7 @@ Designed for both residential and light commercial applications, the Nube iO MIA
 # 3. Installer Mode Configuration
 
 ## 3.1. Accessing Installer Mode
-User the Touch Point LCD wifi access point installers can utalise the Installer Mode to configure the zoneconnex system such as zone setup and damper pairing, min/max airflow preferences, damper calibration and droplet sensor management.
+Using the Touch Point LCD wifi access point installers can utilise the Installer Mode to configure the zoneconnex system such as zone setup and damper pairing, min/max airflow preferences, damper calibration and droplet sensor management.
 
 **Note:** To access installer mode the user must first enable and join the wifi access point on the Touch Point LCD. The AP network will appear in the format of `ZC-LCD-xxxx` and the password can be found on the Wifi access point screen on the Touch Point LCD. <br/>
 ***Add link to touch point setup for AP mode*** 
@@ -522,16 +522,16 @@ The following are key control and monitoring points available to the user:
 
 
 ## 6.1 Operation Control
-Users can control the unit’s operation from the main control screen for the home using the Power ![Power button](img/power.png) button. When the unit is ON the power button turns red and when the unit is OFF the power button is black.
+Users can control the unit’s power from the main control screen using the Power ![Power button](img/power.png) button. When the unit is ON, the power button is displayed in red. When the unit is OFF, the power button is displayed in black.
 
 ***Insert Screenshot***
 
 <br/>
 
 ## 6.2 Mode Control
-Users can control the unit’s operating mode from the main control screen for the home by pressing on the desired mode within the selector switch. Available modes are model-dependent and may vary by unit. Modes that are not available on the connected unit will automatically greyed out and will not be selectable. <br/>
+Users can control the unit’s operating mode from the main control screen for the home by selecting the desired mode on the mode selector. Available modes are model-dependent and may vary between units. Modes that are not supported by the connected unit will appear greyed out and cannot be selected. <br/>
 
-The Mode that is currently active will have a solid black background. The non selected Modes will have a white background.
+The active mode is displayed with a solid black background, while inactive modes appear with a white background.
 
 Available operating modes include:
 - **Auto:** The unit automatically selects heating or cooling based on the current room temperature and the setpoint.
@@ -547,7 +547,7 @@ To check available modes or further details on each operating mode, refer to the
 <br/>
 
 ## 6.3 Temperature Setpoint Control
-Users can adjust the temperature setpoint from the main control screen for the home to control the temperature maintained by the unit. The setpoint can be increased or decreased in 0.5°C increments within the following ranges.
+Users can adjust the temperature setpoint from the main control screen to control the temperature maintained by the unit. The setpoint can be increased or decreased in 0.5 °C increments within the following ranges.
 - Cooling/Auto/Dry: Setpoint range is 18 to 30 degrees Celsius
 - Heating: Setpoint 16-18 to 30 degrees Celsius (Low limit model dependent. Refer to the unit’s user manual)
 - Fan: Setpoint control is diasbled in fan mode as the unit is circulating air within the space without heating or cooling.
@@ -556,7 +556,7 @@ Users can increase or decrease the setpoint value using the increase ![increase 
 
 The current setpoint is displayed in the control ring above the control parameters.
 
-Once at the high or low limit the respective increase or decrease buttons will become unselectable to prevent the user setting a setpoint past the limits.
+When the maximum or minimum setpoint limit is reached, the corresponding increase or decrease button becomes unavailable, preventing the setpoint from being adjusted beyond the allowable range.
 
 ***Insert Screenshot***
 
@@ -610,12 +610,12 @@ To check available fan speeds or for further details on each fan speed mode, ref
 
 <br/>
 
-# 7. Document Revision
+<!-- # 7. Document Revision
 
 | Revision | Date       | Change Description                  |
 |----------|------------|------------------------------------|
 | 1.0      | 29-01-2026 | Initial release of the document for review  |
 | 1.1      | DD-MM-YYYY |     |
-| 1.2      | DD-MM-YYYY |     |
+| 1.2      | DD-MM-YYYY |     | -->
 
 

@@ -51,116 +51,239 @@ Connects easily to centralised BMS platforms via RS485, with support for Modbus 
 # 2. Hardware Overview
 
 ## 2.1. Packing List
-- Installation & User Manual 
-- Touch Point LCD Device 
-- 15m 4 core 24AWG Power/communication cable
+- Zoneconnex Quick Start Guide 
+- TouchPoint LCD
+- 15m 4-core 24 AWG LCD power/communication cable
 - Pan Head Self Tapping Screws (4x M3x25mm)
 
 ## 2.2. Product Dimensions
 |                	        |                                           |
 |-----------------------	|-----------------------------------------	|
-| Height:               	| 112.55 mm / 4.43 inches                	  |
+| Height:               	| 112.44 mm / 4.43 inches                	  |
 | Width:                	| 180.97 mm / 7.13 inches                      |
 | Depth:                	| 17.5 mm / 0.69 inches                   	|
 | LCD Housing             	| White ABS Plastic	    |
 | LCD Panel             	|  Glass, Liquid Crystal, Polarizer, LED    |
 
-<!-- ![max800px](img/ZoneConnex-Dimensions.png) -->
+![max800px](img/LCD-Dimensions.png)
 
 ## 2.3. Product Component Breakdown
 
-### 2.3.1 Front View
-*Insert Image*
-<!-- - 24VAC/DC Power Input: Termination block for connecting the ZoneConnex 24VAC/DC power input.
-- U.FL Antenna: Connects the antenna for LoRa & LoRaWan communication.
+### 2.3.1 LCD Screen
+
+- 18V DC Power Input: Terminals for powering the Touch Point LCD from the ZoneConnex.
 - Wifi Antenna: Connects the antenna for Wifi communication.
-- Din Rail Clip: Allows for secure din rail mounting and maintenance.
-- Mounting Clips: Allows for secure mounting via use of appropriate fixings.
-- UART Port: Termination block for connecting the ZoneConnex to UART communication.
-- RS485-ISO: Termination block for connecting third party field-bus communication devices to the ZoneConnex.
-- LCD RS485: Termination block for connecting Touch Point LCD or local NubeiO Modbus devices to the ZoneConnex.
-- LCD 18VDC Power: Termination block for powering the Touch Point LCD from the ZoneConnex. -->
+- RS485 Connection: Terminals for connecting the Touch Point LCD to the ZoneConnex via RS485 communication.
+- USB-C: Service / Programming Port used to manage the Touch Point LCD firmware.
+- Reset Button: Used to perfom a soft reset on the Touch Point LCD.
 
-<!-- ![max800px](img/ACB-ZC-Components-Markup-Front-View.png) -->
+![max800px](img/Internal-Components-Breakdown-rev2.png)
 
-### 2.3.2 Top View
-*Insert Image*
-<!-- - 24VAC/DC Power Input: Termination block for connecting the ZoneConnex 24VAC/DC power input.
-- Wifi Antenna: Connects the antenna for Wifi communication
-- Zone Control Ports 1-5: RJ12 outputs to supply 24V AC to control the zone dampers.
-- USB-C: Service / Programming Port used to manage the ZoneConnex firmware.
-- 6-Pin STM32 Port: STM32 Programming Port ***used for?***
-- ACBM Reset Button: ***used for?*** ***Factory reset?***
-- ACBM User Button: ***used for?*** ***Reboot?***
-- Zone Control Reset Button: ***used for?*** ***Factory reset?***
-- Zone Control Button: ***used for?*** ***Reboot?*** -->
+### 2.3.2 LCD Housing
 
-<!-- ![max800px](img/ACB-ZC-Components-Markup-Top-View.png) -->
+- Mounting Points: Allows for secure mounting via use of appropriate fixings.
+- Cable Entry Points: Allows for the 24AWG Power/communication cable from the Zoneconnex to be brought into the Touch Point LCD housing.
 
-### 2.3.3 Bottom View
-*Insert Image*
-<!-- - Zone Control Ports 6-10: RJ12 outputs to supply 24V AC to control the zone dampers.
-- U.FL Antenna: Connects the antenna for LoRa & LoRaWan communication.
-- RJ45 Ethernet Port 1: 100 Mbps RJ45 Ethernet Port for LAN Connection.
-- RJ45 Ethernet Port 2: 100 Mbps RJ45 Ethernet Port for LAN Connection.
-- UART Port: Termination block for connecting the ZoneConnex to UART communication.
-- RS485-ISO: Termination block for connecting third party field-bus communication devices to the ZoneConnex.
-- LCD RS485: Termination block for connecting Touch Point LCD or local Modbus devices to the ZoneConnex.
-- LCD 18VDC Power: Termination block for powering the Touch Point LCD from the ZoneConnex. -->
-
-<!-- ![max800px](img/ACB-ZC-Components-Markup-Bottom-View.png) -->
+![max1000px](img/LCD-Housing-Components.png)
 
 <br/>
 
-# 3. Installation & Configuration
+# 3. Installation
 
 ## 3.1. Mounting
 The Touch Point can be mounted via fixings utilising the mounting holes incorporated in the LCD housing. The Touch Point LCD should always be mounted in a location such that it will not experience extreme high or low temperatures, liquids or high humidity.
 
-### 3.1.1 Fixings & Mounting Clips
-Use the following steps to mount the Touch Point LCD utilising the 4x mounting clips and fixings:
+### 3.1.1 Fixings & Mounting Points
+Use the following steps to mount the Touch Point LCD utilising the 4x mounting points and fixings:
 
-1. **Step-1** Using a flat-blade screwdriver, carefully release the two retaining clips on the bottom side of the housing.
-2. **Step-2** Position the Touch Point LCD housing against the mounting surface and mark the fixing hole locations using the mounting holes as a guide.
-3. **Step-3** Remove the Touch Point LCD housing and drill the required fixing holes at the marked locations. Install wall plugs if mounting to masonry or plasterboard.
-4. **Step-4** Align the Touch Point LCD housing with the fixing points and secure it to the surface using appropriate screws or fixings. Do not overtighten.
-5. **Step-5** Gently pull the LCD Screen housing forward to confirm it is securely mounted.
-6. **Step-6** Feed the prewired cable through the desired cable entry point and re-insert the LCD screen ensuring the two retaining clips on the bottom side of the house are re-seated into the slots.
+1. Using a flat-blade screwdriver, carefully release the two retaining clips on the bottom side of the housing to release the LCD from the Touch Point LCD housing.
+2. Position the Touch Point LCD housing against the mounting surface and mark the fixing hole locations using the mounting points as a guide.
+3. Remove the Touch Point LCD housing and drill the required fixing holes at the marked locations. Install wall plugs if mounting to masonry or plasterboard.
+4. Align the Touch Point LCD housing with the fixing points and secure it to the surface using appropriate screws or fixings. Do not overtighten.
+5. Gently pull the LCD housing to confirm it is securely mounted.
+6. Feed the prewired cable through the desired cable entry point. 
+7. Re-insert the LCD screen by re-seating the top two retaining clips into the slots in the top of the housing then slowly angle the LCD down ensuring the two retaining clips on the bottom side of the house are re-seated into the slots.
 
 <br/>
 
 Use the following steps to remove the Touch Point LCD utilising the 4x mounting clips and fixings:
 
-1. **Step-1** Isolate power to the Touch Point LCD and ensure all connected equipment is safely powered down. 
-2. **Step-2** Using a flat-blade screwdriver, carefully release the two retaining clips on the bottom side of the housing.
-3. **Step-3** Gently pull the LCD screen forward and away from the housing to disengage it.
-4. **Step-4** Disconnect the prewired cable from the rear of the LCD screen, or pull through the excess cable if available.
-5. **Step-5** If removing the housing, loosen and remove the fixing screws securing the housing to the mounting surface then carefully lift the Touch Point LCD housing away from the mounting surface.
+1. Isolate power to the Touch Point LCD and ensure all connected equipment is safely powered down. 
+2. Using a flat-blade screwdriver, carefully release the two retaining clips on the bottom side of the housing.
+3. Gently pull the LCD screen forward and away from the housing to disengage it.
+4. Disconnect the prewired cable from the rear of the LCD screen, or pull through the excess cable if available.
+5. If removing the housing, loosen and remove the fixing screws securing the housing to the mounting surface then carefully lift the Touch Point LCD housing away from the mounting surface.
 
-<br/>
-
-*Insert Image*
-<!-- ![max800px](img/ZoneConnex-FixingMounting.png) -->
+<!-- ![max800px](img/LCD-Mountingv3.png) -->
 
 <br/>
 
 ## 3.2. Power Supply Connections
-*Insert Power Connections information and descriptions*
+
+The Touch Point LCD is powered by a 18V DC connection supplied by the Zoneconnex on the power input pins as shown below. 
+
+|            | ![max300px](img/LCD-Wiring-Terminations.png) |
+|----------- |----------------------------------------|
+| Pin 1 (**+**) | 18V DC **+** |
+| Pin 2 (**-**) | 18V DC **−** |
 
 <br/>
 
 ## 3.3. Communication Connections
-*Insert Communications Connections information and descriptions*
+
+The Touch Point LCD communicates to the ZoneConnex via a Modbus RS485 connection.
+
+The RS485 pins are terminated and installed as shown below.
+
+|            | ![max300px](img/LCD-Wiring-Terminations.png) |
+|----------- |----------------------------------------|
+| Pin 3 (**A** or **+**) | **A** or **+** of RS485 Network       |
+| Pin 4 (**B** or **-**) 	| **B** or **-** of RS485 Network        |
+
+<br/>
+
+# 4. Configuration
+
+The Touch Point LCD can be connected to a local Wifi network to allow users to access the system configuration and controls via the Mobile phone app.
+
+## 4.1 Wifi Configuration
+
+### 4.1.1 Initial Wifi Configuration
+Use the following steps to connect a new or unconfigured Touch Point LCD to a local Wi-Fi network:
+
+1. **Step-1** Once the Touch Point LCD is installed and powered on, press the Wifi ![Wifi button](img/wifi.png) button in the top menu bar to open the wifi setup screen.
+2. **Step-2** The screen will display “No Wi-Fi Connection.”. To search for available networks, press the Scan WiFi ![Scan Wifi button](img/scan-search.png) button.
+3. **Step-3** After the scan is complete, a list of available networks will be displayed. To select a network press the `Connect` ![Connect button](img/chevron-right.png) button on the right-hand side of the desired network.
+4. **Step-4** A login window will appear. Press the Password field to open the on-screen keyboard, then enter the password for the selected Wi-Fi network. 
+    - Press `Connect` to join the wifi network.
+    - Press `Cancel` to return to the network list.
+5. **Step-5** If successfully connected the user will be navigated to the wifi setup screen where the connected wifi will be displayed with the following connection characteristics:
+    - **Unique QR Code** Used to connect to the system via the mobile app
+    - **Signal Quality** Strength of the Wi-Fi connection
+    - **Speed** Current network link speed
+    - **Security** Type of network encryption
+    - **Channel** WiFi channel used by the network
+
+<br/>
+
+### 4.1.2 Changing Wifi Networks
+Use the following steps to connect the Touch Point LCD to a different Wi-Fi network:
+
+1. **Step-1** Press the Wifi ![Wifi button](img/wifi.png) button in the top menu bar to open the wifi setup screen.
+2. **Step-2** The screen will display the connection characteristics for the current network. To search for available networks, press the Scan WiFi ![Scan Wifi button](img/scan-search.png) button.
+3. **Step-3** After the scan is complete, a list of available networks will be displayed. To select a network press the `Connect` ![Connect button](img/chevron-right.png) button on the right-hand side of the desired network.
+4. **Step-4** A login window will appear. Press the Password field to open the on-screen keyboard, then enter the password for the selected Wi-Fi network. 
+    - Press `Connect` to join the wifi network.
+    - Press `Cancel` to return to the network list.
+5. **Step-5** If successfully connected the user will be navigated to the wifi setup screen where the connected wifi will be displayed with the following connection characteristics:
+    - **Unique QR Code** Used to connect to the system via the mobile app
+    - **Signal Quality** Strength of the Wi-Fi connection
+    - **Speed** Current network link speed
+    - **Security** Type of network encryption
+    - **Channel** WiFi channel used by the network
+
+<br/>
+
+### 4.1.2 Disconnecting from a Wifi Network
+Use the following steps to disconnect the Touch Point LCD from the current Wi-Fi network:
+
+1. **Step-1** Press the Wifi ![Wifi button](img/wifi.png) button in the top menu bar to open the wifi setup screen.
+2. **Step-2** Press the Disconnect ![Discconect button](img/wifi-off.png) button to disconnect from the wifi network.
+3. **Step-3** The user will be navigated to the wifi setup screen which will display “No Wi-Fi Connection.”
+
+<br/>
+
+## 4.2 Installer Mode Access Point
+Using the Touch Point LCD wifi access point installers can utilise the Installer Mode on the mobile app to configure the zoneconnex system such as zone setup and damper pairing, min/max airflow preferences, damper calibration and droplet sensor management.
+
+Use the following steps to enable installer mode access point on the Touch Point LCD:
+
+1. **Step-1** Press the System Info ![System Info button](img/settings-2.png) button in the top menu bar to open the system info screen.
+2. **Step-2** Tap anywhere in the 'System' area 8 times to initiate 'Installer Mode'. A login window will appear. Enter the password using the onscreen number pad.
+    - Press the delete ![Delete button](img/delete.png) button undo undo password field entries.
+    - Press the check ![Check button](img/check.png) button to enable 'Installer Mode'.
+    - Press home ![Home button](img/house.png) button to cancel installer mode and return to the home screen.
+3. **Step-3** With the Touch Point LCD now in 'Installer Mode' and the access point available, follow the steps outlined in **[Section 3.1. Accessing Installer Mode](/rubix-ce-docs/docs/Zone%20Controller%20Stack/MIA%20Mobile%20App/MIA%20App%20User%20Manual#31-accessing-installer-mode)** using the Mobile App to configure the Zoneconnex system.
+
+**Note:** To cancel and return to the home screen at any time press the `Exit AP Mode` or home ![Home button](img/house.png) button.
 
 <br/>
 
 # 5. Operation Guide
-*Insert Operational information and descriptions*
+
+The Touch Point LCD provides users with full control and real-time visibility of their Zoneconnex system. From the LCD screen, users can start and stop the system, select operating modes, adjust comfort settings, and monitor temperatures, zones, and system status.
+
+The Touch Point LCD allows users to tailor system behaviour to suit their lifestyle through manual controls, automation features, and advanced scheduling, helping maintain comfort while improving energy efficiency.
+
+Key operational features include system on/off control, operating mode selection, temperature and fan adjustments (model dependent), and live temperature monitoring. Users can manage individual zone airflow, create schedules, apply custom scenes, and view system alerts and error information directly from the LCD screen.
+
+This combination of real-time control, automation, and monitoring ensures users can easily manage their HVAC system from a single, intuitive interface.
+
+The following are key control and monitoring points available to the user:
+
+**Operation Control:** Enable the unit on and off.<br/>
+**Mode Control:** Switch between cool, heat, dry, auto, and fan modes.<br/>
+**Temperature Setpoint Control:** Adjust heating/cooling temperature setpoint.
+- Cooling setpoint 18 to 30 degrees Celsius
+- Heating setpoint 16-18 to 30 degrees Celsius (low limit model dependent)
+
+**Fan Speed Control:** Control fan speeds (model dependent).<br/>
+**Return Air Temperature Monitoring:** Monitor the return air temperature.<br/>
+**Zone Temperature/Humidity Monitoring:**
+**Zone Control:** Via the Touch Point LCD users can interface with the ZoneConnex to control up to 10 zone dampers. Each damper can be controller within a range of 0-100% airflow in 5% increments. <br/>
+**Schedule Management:** Via the Touch Point LCD, users can configure and manage schedules to automatically run their air conditioning unit at set times and days — helping maintain comfort, reduce manual adjustments, and improve energy efficiency. <br/>
+**Scene Management:** Via the Touch Point LCD, users can create custom “scenes” that bundle specific run conditions—such as mode, setpoint, and fan speed. These scenes can then be applied to schedules, or link them to run modes for consistent comfort with a single action. <br/>
+**Error Status Reporting:** Via the Touch Point LCD users can monitor the error status and error codes generated by the Air Conditioner unit whilst also monitoring system generated alerts such as communications errors.
 
 <br/>
 
-# 6. Point Register (If Applicable*)
-*Insert Point Register for device including a point table*
+## 5.1 Operation Control
+Users can control the unit’s power from the Home screen of the Zoneconnex system using the Power ![Power button](img/power.png) button. When the unit is ON, the power button is displayed in red. When the unit is OFF, the power button is displayed in black.
+
+***Insert Screenshot***
+
+<br/>
+
+## 5.2 Mode Control
+Users can control the unit’s operating mode from the Home screen of the Zoneconnex system by selecting the desired mode on the mode selector. Available modes are model-dependent and may vary between units. Modes that are not supported by the connected unit will appear greyed out and cannot be selected. <br/>
+
+The active mode is displayed with a solid black background, while inactive modes appear with a white background.
+
+Available operating modes include:
+- **Auto:** The unit automatically selects heating or cooling based on the current room temperature and the setpoint.
+- **Cool:** Actively cools the space to reach and maintain the selected temperature.
+- **Dry:** Reduces humidity in the space with minimal cooling, helping improve comfort in humid conditions.
+- **Fan:** Circulates air within the space without heating or cooling.
+- **Heat:** Actively heats the space to reach and maintain the selected temperature.
+
+To check available modes or further details on each operating mode, refer to the unit’s user manual.
+
+***Insert Screenshot***
+
+<br/>
+
+## 5.3 Temperature Setpoint Control
+Users can adjust the temperature setpoint from the Home screen of the Zoneconnex system to control the temperature maintained by the unit. The setpoint can be increased or decreased in 0.5 °C increments within the following ranges.
+- Cooling/Auto/Dry: Setpoint range is 18 to 30 degrees Celsius
+- Heating: Setpoint 16-18 to 30 degrees Celsius (Low limit model dependent. Refer to the unit’s user manual)
+- Fan: Setpoint control is diasbled in fan mode as the unit is circulating air within the space without heating or cooling.
+
+Users can increase or decrease the setpoint value using the increase ![increase button](img/chevron-up.png) and decrease ![decrease button](img/chevron-down.png) buttons to reach the desired setpoint. 
+
+The current setpoint is displayed in the control ring above the control parameters.
+
+When the maximum or minimum setpoint limit is reached, the corresponding increase or decrease button becomes unavailable, preventing the setpoint from being adjusted beyond the allowable range.
+
+***Insert Screenshot***
+
+<br/>
+
+<br/>
+
+
+
+<!-- # 6. Point Register (If Applicable*)
+*Insert Point Register for device including a point table* -->
 
 <!-- Example:
 
@@ -185,11 +308,11 @@ Use the following steps to remove the Touch Point LCD utilising the 4x mounting 
 
 <br/>
 
-# 7. Document Revision
+<!-- # 7. Document Revision
 
 | Revision | Date       | Change Description                  |
 |----------|------------|------------------------------------|
 | 1.0      | 28-11-2025 | Initial release of the document.   |
 | 1.1      | DD-MM-YYYY | Description of the next change.    |
-| 1.2      | DD-MM-YYYY | Description of the next change.    |
+| 1.2      | DD-MM-YYYY | Description of the next change.    | -->
 

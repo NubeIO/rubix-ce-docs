@@ -9,7 +9,7 @@ It delivers precise zone control and system visibility through the Nube iO MIA m
 
 Optimised for smart home integration and HVAC retrofit installations, ZoneConnex streamlines interactions between users and connected systems — helping improve comfort, efficiency, and overall control flexibility.
 
-![max1000px](img/ACB-ZC-ENCLOSURE.png)
+![max800px](img/ZC-FrontRender.png)
 
 
 ## 1.2. Architecture
@@ -53,12 +53,11 @@ Optimised for smart home integration and HVAC retrofit installations, ZoneConnex
 # 2. Hardware Overview
 
 ## 2.1. Packing List
-- Installation & User Manual 
-- ZoneConnex Device 
-- Wifi Antenna
+- Zoneconnex Quick Start Guide 
+- ZoneConnex Controller
 - LoRa Antenna
-- PAP-04V-S UART communication cable
-- 4 core 24AWG Power/communication cable
+- 2m PAP-04V-S UART communication cable
+- 15m 4-core 24 AWG LCD power/communication cable
 - Pan Head Self Tapping Screws (4x M3x25mm)
 
 ## 2.2. Product Dimensions
@@ -121,46 +120,46 @@ The ZoneConnex can be mounted in on din rail or via fixings utilising the mounti
 ### 3.1.1 Din Rail Mounting
 Use the following steps to mount the ZoneConnex on din rail:
 
-1. **Step-1** Ensure the DIN rail is securely fixed inside an enclosure or control panel with sufficient space for the ZoneConnex and wiring.
-2. **Step-2** Hold the ZoneConnex upright and align the top mounting hooks on the rear of the controller with the top edge of the DIN rail. Angle the ZoneConnex slightly and hook the top of the controller onto the DIN rail.
-3. **Step-3** Leaver the bottom of the ZoneConnex towards the DIN rail until the lower clip is over lower edge of the Din rail.
-4. **Step-4** Push the bottom mounting clip upward until it locks into place, holding the ZoneConnex onto the DIN rail. Gently pull the controller forward to confirm it is securely mounted.
+1. Ensure the DIN rail is securely fixed inside an enclosure or control panel with sufficient space for the ZoneConnex and wiring.
+2. Hold the ZoneConnex upright and align the top mounting hooks on the rear of the controller with the top edge of the DIN rail. Angle the ZoneConnex slightly and hook the top of the controller onto the DIN rail.
+3. Leaver the bottom of the ZoneConnex towards the DIN rail until the lower clip is over lower edge of the Din rail.
+4. Push the bottom mounting clip upward until it locks into place, holding the ZoneConnex onto the DIN rail. Gently pull the controller forward to confirm it is securely mounted.
 
 <br/>
 
 Use the following steps to remove the ZoneConnex from the din rail:
 
-1. **Step-1** Isolate power to the ZoneConnex and ensure all connected equipment is safely powered down. 
-2. **Step-2** Disconnect any wiring or cables as required to allow safe removal of the ZoneConnex.
-3. **Step-3** Pull the bottom clip downward to release it from the DIN rail. If in a tight enclouse you may require a flat-blade screwdriver to pull the bottom clip downward.
-4. **Step-4** Leaver the bottom of the ZoneConnex away from the DIN rail until the lower clip is clear of the lower edge of the Din rail.
-5. **Step-5** Lift the ZoneConnex upwards to disengage the top hooks from the rail.
+1. Isolate power to the ZoneConnex and ensure all connected equipment is safely powered down. 
+2. Disconnect any wiring or cables as required to allow safe removal of the ZoneConnex.
+3. Pull the bottom clip downward to release it from the DIN rail. If in a tight enclouse you may require a flat-blade screwdriver to pull the bottom clip downward.
+4. Leaver the bottom of the ZoneConnex away from the DIN rail until the lower clip is clear of the lower edge of the Din rail.
+5. Lift the ZoneConnex upwards to disengage the top hooks from the rail.
 <br/>
 
-![max800px](img/ZoneConnex-DinMounting.png)
+![max800px](img/ZoneConnex-DinMounting-V2.png)
 
 <br/>
 
 ### 3.1.2 Fixings & Mounting Clips
 Use the following steps to mount the ZoneConnex utilising the 4x mounting clips and fixings:
 
-1. **Step-1** Attach the four mounting clips to the designated mounting points on the rear of the ZoneConnex (if not pre-fitted). Ensure each clip is fully seated and correctly oriented.
-2. **Step-2** Position the ZoneConnex against the mounting surface and mark the fixing hole locations using the mounting clips as a guide.
-3. **Step-3** Remove the ZoneConnex and drill the required fixing holes at the marked locations. Install wall plugs if mounting to masonry or plasterboard.
-4. **Step-4** Align the ZoneConnex with the fixing points and secure it to the surface using appropriate screws or fixings. Do not overtighten.
-5. **Step-5** Gently pull the controller forward to confirm it is securely mounted.
+1. Attach the four mounting clips to the designated mounting points on the rear of the ZoneConnex (if not pre-fitted). Ensure each clip is fully seated and correctly oriented.
+2. Position the ZoneConnex against the mounting surface and mark the fixing hole locations using the mounting clips as a guide.
+3. Remove the ZoneConnex and drill the required fixing holes at the marked locations. Install wall plugs if mounting to masonry or plasterboard.
+4. Align the ZoneConnex with the fixing points and secure it to the surface using appropriate screws or fixings. Do not overtighten.
+5. Gently pull the controller forward to confirm it is securely mounted.
 
 <br/>
 
 Use the following steps to remove the ZoneConnex utilising the 4x mounting clips and fixings:
 
-1. **Step-1** Isolate power to the ZoneConnex and ensure all connected equipment is safely powered down. 
-2. **Step-2** Disconnect any wiring or cables as required to allow safe removal of the ZoneConnex.
-3. **Step-3** Loosen and remove the fixing screws securing the ZoneConnex to the mounting surface.
-4. **Step-4** Carefully lift the ZoneConnex away from the mounting surface once all fixings have been removed.
+1. Isolate power to the ZoneConnex and ensure all connected equipment is safely powered down. 
+2. Disconnect any wiring or cables as required to allow safe removal of the ZoneConnex.
+3. Loosen and remove the fixing screws securing the ZoneConnex to the mounting surface.
+4. Carefully lift the ZoneConnex away from the mounting surface once all fixings have been removed.
 <br/>
 
-![max800px](img/ZoneConnex-FixingMounting.png)
+![max800px](img/ZoneConnex-FixingMounting-v2.png)
 
 <br/>
 
@@ -174,15 +173,18 @@ The ZoneConnex can be powered by a 24V AC or DC power supply on the 24VAC/DC pow
 | Pin 1 **(L / +)** | 24V AC **Live (L)** or 24V DC **+** |
 | Pin 2 **(N / -)** | 24V AC **Neutral (N)** or 24V DC **−** |
 
-**Note:** 24V AC must be used if zone damper control is required in order to power the actuators.
+
+> ⚠️ **Note:** 24V AC must be used if zone damper control is required in order to power the actuators. The Zoneconnex is supplied with a prewired AC power supply as seen below.
+
+![max800px](img/24VAC-ADAPTOR-rev3.png)
 
 ### 3.2.2 Touch Point LCD Power Supply
 The ZoneConnex is equiped power the NubeiO Touch Point LCD. The ZoneConnex supplys 18V DC via connection to the LCD 18VDC Power terminals as shown below. 
 
 |            | ![max300px](img/ZC-LCD-Power-Wiring.png) |
 |----------- |----------------------------------------|
-| Pin 12 **(+)** | 24V DC **+** |
-| Pin 13 **(-)** | 24V DC **−** |
+| Pin 12 **(+)** | 18V DC **+** |
+| Pin 13 **(-)** | 18V DC **−** |
 
 <br/>
 
@@ -200,7 +202,7 @@ The UART connection is terminated and installed as shown below.
 | Pin 5 (**TX**) | **TX** of UART Network     	            |
 | Pin 6 (**Spare**) | NOT USED   	            |
 
-![max1000px](img/ACB-ZC-UART-PAP-04V-S.png)
+![max1000px](img/ACB-ZC-UART-PAP-04V-S-rev2.png)
 
 ### 3.3.2 RS485 Connections
 
@@ -222,8 +224,8 @@ The RS485 connectors are terminated and installed as shown below.
 
 |           	| ![max300px](img/ZC-LCD-RS485-Wiring.png)     |
 |-----------	|----------------	                    |
-| Pin 12 (**+**) | **A** or **+** of RS485 Network       |
-| Pin 13 (**-**) 	| **B** or **-** of of RS485 Network        |
+| Pin 10 (**+**) | **A** or **+** of RS485 Network       |
+| Pin 11 (**-**) 	| **B** or **-** of of RS485 Network        |
 
 
 <br/>
@@ -238,11 +240,11 @@ For further details outlining the ZoneConnex opteration use the following links:
 
 <br/>
 
-# 5. Document Revision
+<!-- # 5. Document Revision
 
 | Revision | Date       | Change Description                  |
 |----------|------------|------------------------------------|
 | 1.0      | 29-01-2026 | Initial release of the document for review  |
 | 1.1      | DD-MM-YYYY |     |
-| 1.2      | DD-MM-YYYY |     |
+| 1.2      | DD-MM-YYYY |     | -->
 
