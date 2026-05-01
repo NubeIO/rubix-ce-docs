@@ -1144,7 +1144,7 @@ Open run mode modal as mentioned above
 # 11 Additional Resources
 For further details outlining the Zoneconnex system use the following links:
 
-- anywAiR® Zone Mobile App User Manual **[anywAiR® Zone Mobile App](/rubix-ce-docs/docs/Zone%20Controller%20Stack/MIA%20Mobile%20App/MIA%20App%20User%20Manual)**
+- Zoneconnex Install and User Manual **[Zoneconnex Install and User Manual](/rubix-ce-docs/docs/Zone%20Controller%20Stack/Zoneconnex%20Install%20Guide)**
 
 - Zoneconnex Quick Start Guide **[Zoneconnex Quick Start Guide](/rubix-ce-docs/docs/Zone%20Controller%20Stack/Zoneconnex%20User%20Start%20Guide)**
 
