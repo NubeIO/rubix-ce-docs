@@ -1,4 +1,4 @@
-# Zoneconnex User Manual
+# Zoneconnex Install and User Manual
 
 # 1. Overview
 
@@ -315,26 +315,31 @@ Follow the steps below to connect the Zoneconnex system to Wi-Fi:
 Once connected, the screen will display network information including:
 - **QR code** - Scan using the anywAiR® Zone Mobile App to add the home to the app for remote access and management.
 - **Signal strength** - Indicates the quality of the Wi-Fi signal between the Zoneconnex device and the selected network.
+   - Excellent: Max speed, most stable connection.
+   - Good: High speed, stable connection.
+   - Moderate: Moderate speed, functional but may experience some instability.
+   - Weak: Low speed, unstable connection, may experience frequent dropouts.
+
 - **Connection speed** - Displays the current data transfer rate between the Zoneconnex device and the Wi-Fi network.
 - **Security type** - Shows the wireless security protocol used by the connected network (e.g. WPA2, WPA3). This identifies the level and type of network protection in use.
 - **Channel** - Displays the Wi-Fi channel the network is operating on.
 
-![max800px](Touch%20point%20LCD/img/LCD-Screenshots/Wi-Fi-Connected-info.png)
+![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Wi-Fi-Connected-info.png)
 
 <br/>
 
 ## 5.3 Installer Mode:
 To access installer mode, follow the prompts below in accordance with the Installer Mode anywAiR® Zone Mobile App workflow:
-1. On the TouchPoint LCD home screen, tap the Settings icon.
-2. On the settings/about screen, tap the "System" card 8 times.
-![max800px](Touch%20point%20LCD/img/LCD-Screenshots/Tap-Settings-Card.png)
-3. Enter the installer password (default 898989) and confirm.
+1. On the TouchPoint LCD home screen, tap the System Info icon.
+2. On the System Info screen, tap the "System" card 8 times.
+![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Tap-Settings-Card.png)
+3. Enter the installer password **(default 898989)** and confirm.
 4. Open the anywAiR® Zone Mobile App. Select Continue as Installer. Scan the left QR for connecting to Zoneconnex Access Point Wi-Fi.
-![max800px](Touch%20point%20LCD/img/LCD-Screenshots/Installer-Connection-step1.png)
+![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-step1.png)
 5. Once connected to the Zoneconnex Access Point Wi-Fi, Scan the right QR to access installer mode for the Zoneconnex.
-![max800px](Touch%20point%20LCD/img/LCD-Screenshots/Installer-Connection-step2.png)
+![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-step2.png)
 
-To exit Installer Mode, press Exit Installer Mode in the app.
+To exit Installer Mode, press `Finish Installation` or `Exit Installer Mode` in the app.
 
 ## 5.4 Zone Configuration:
 By default, zones are configured in a 1:1 pairing with dampers. This means Zone 1 is assigned to Damper 1, Zone 2 to Damper 2, and so on up to 10 zones.
@@ -416,7 +421,7 @@ Use the following steps to complete the zone configuration from the Installer me
 
 5. Press Scan QR Code and scan the QR code displayed on the Touch Point LCD. <br/>
 
-![max800px](Touch%20point%20LCD/img/LCD-Screenshots/Wi-fi-connected.png)
+![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Wi-fi-connected.png)
 
 6. Enter a name for the home, then press Add Home. <br/>
 7. You will be taken to the main control screen for your newly added home.<br/>
@@ -454,38 +459,57 @@ The following are key control and monitoring points available to the user:
 
 ## 6.1 Navigation
 
+The TouchPoint LCD features an intuitive navigation bar located at the top of the screen, providing  quick access to the system's key functions and screens. The navigation bar remains visible across all screens, allowing seamless movement between different control and monitoring interfaces.
+
+Users can navigate between screens by tapping the corresponding icon on the navigation bar. The active screen is indicated by a black background behind the icon.
+
+The main navigation options include:
+- **Home:** Access the main control screen to manage system power, operating mode, temperature setpoint, and fan speed.
+- **Zones:** View and control individual zones and monitor zone temperatures.
+- **Schedules/Scenes:** Create, edit, and manage automated schedules for system operation and configure and apply custom scene presets that combine specific operating parameters.
+- **Wi-Fi:** View network connection status, scan for available networks, and manage Wi-Fi settings.
+- **Alerts:** Monitor system alerts and error codes to stay informed about system status and troubleshoot issues.
+- **Settings:** Access system information and installer mode configuration.
+
+![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/LCD-Navigation.png)
+
 <br/>
 
-## 6.2 Operation Control
-Users can control the unit’s power from the Home screen of the Zoneconnex system using the Power ![Power button](MIA%20Mobile%20App/img/power.png) button. When the unit is ON, the power button is displayed in red. When the unit is OFF, the power button is displayed in black.
+## 6.2 Home Controls
 
-***Insert Screenshot***
+- **Operation** – Turn the unit On and Off. 
+- **Mode Control** – Select Auto, Cool, Heat, Fan, or Dry.
+- **Temperature** – Adjust the temperature setpoint.
+- **Fan Speed Control** – Adjust the fan speed (model dependent).
+- **Current Temperature Display** – View setpoint and current temperature*. (*Current temperature display must be enabled during installation).
 
-<br/>
+![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Main-Controls.png)
 
-## 6.3 Mode Control
-Users can control the unit’s operating mode from the Home screen of the Zoneconnex system by selecting the desired mode on the mode selector. Available modes are model-dependent and may vary between units. Modes that are not supported by the connected unit will appear greyed out and cannot be selected. <br/>
+
+### 6.2.1 Operation Control
+Users can control the unit’s operation from the Home screen of the TouchPoint LCD using the operation ![Operation button](MIA%20Mobile%20App/img/power.png) button. When the unit is ON, the operation button is displayed in teal. When the unit is OFF, the power button is displayed in black paired with a 'System Off' status.
+
+
+### 6.2.2 Mode Control
+Users can control the unit’s operating mode from the Home screen of the TouchPoint LCD by selecting the desired mode on the mode selector. Available modes are model-dependent and may vary between units. Modes that are not supported by the connected unit will appear greyed out and cannot be selected. <br/>
 
 The active mode is displayed with a solid black background, while inactive modes appear with a white background.
 
 Available operating modes include:
 - **Auto:** The unit automatically selects heating or cooling based on the current room temperature and the setpoint.
 - **Cool:** Actively cools the space to reach and maintain the selected temperature.
-- **Dry:** Reduces humidity in the space with minimal cooling, helping improve comfort in humid conditions.
-- **Fan:** Circulates air within the space without heating or cooling.
 - **Heat:** Actively heats the space to reach and maintain the selected temperature.
+- **Fan:** Circulates air within the space without heating or cooling.
+- **Dry:** Reduces humidity in the space with minimal cooling, helping improve comfort in humid conditions.
 
 To check available modes or further details on each operating mode, refer to the unit’s user manual.
 
-***Insert Screenshot***
 
-<br/>
-
-## 6.4 Temperature Setpoint Control
-Users can adjust the temperature setpoint from the Home screen of the Zoneconnex system to control the temperature maintained by the unit. The setpoint can be increased or decreased in 0.5 °C increments within the following ranges.
-- Cooling/Auto/Dry: Setpoint range is 18 to 30 degrees Celsius
+### 6.2.3 Temperature Setpoint Control
+Users can adjust the temperature setpoint from the Home screen of the TouchPoint LCD to control the temperature maintained by the unit. The setpoint can be increased or decreased in 0.5 °C increments within the following ranges.
+- Auto/Cooling/Dry: Setpoint range is 18 to 30 degrees Celsius
 - Heating: Setpoint 16-18 to 30 degrees Celsius (Low limit model dependent. Refer to the unit’s user manual)
-- Fan: Setpoint control is diasbled in fan mode as the unit is circulating air within the space without heating or cooling.
+- Fan: Setpoint control is disabled in fan mode as the unit is circulating air within the space without heating or cooling.
 
 Users can increase or decrease the setpoint value using the increase ![increase button](MIA%20Mobile%20App/img/chevron-up.png) and decrease ![decrease button](MIA%20Mobile%20App/img/chevron-down.png) buttons to reach the desired setpoint. 
 
@@ -493,4 +517,139 @@ The current setpoint is displayed in the control ring above the control paramete
 
 When the maximum or minimum setpoint limit is reached, the corresponding increase or decrease button becomes unavailable, preventing the setpoint from being adjusted beyond the allowable range.
 
-***Insert Screenshot***
+
+### 6.2.4 Fan Speed Control
+Users can adjust the fan speed from the Home screen of the TouchPoint LCD by selecting the desired speed on the mode selector to control the intensity of air circulation. Available fan speeds are model-dependent and may vary between units. Fan speeds that are not supported by the connected unit will appear greyed out and cannot be selected.
+
+In Dry mode, fan speed is automatically set to Auto and cannot be adjusted as the unit is working to reduce humidity with minimal cooling.
+
+Available fan speeds include:
+- **Auto:** The unit automatically adjusts the fan speed based on the current room temperature, setpoint, and operating mode to optimize comfort and energy efficiency.
+- **Quiet:** The unit operates at a reduced fan speed to minimize noise, providing a quieter environment while maintaining comfort.
+- **Low:** The unit operates at a low fan speed, providing gentle air circulation while maintaining comfort.
+- **Medium:** The unit operates at a medium fan speed, providing increased air circulation for enhanced comfort.
+- **High:** The unit operates at a high fan speed, providing maximum air circulation for faster cooling or heating to reach the setpoint quickly. Higher energy consumption may occur at this setting.
+
+<br/>
+
+## 6.3 Zone Control
+- **Zone Enable:** Turn individual zones On or Off. 
+- **Airflow Control:** Adjust airflow (0–100% in 5% increments) of each zone.
+- **Zone Temperature*:** Check the temperature in each zone (*view-only; droplet sensor required).
+- **Sync Zones:** Reset zones to restore correct airflow. Use this if airflow is not working as expected.
+
+![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Zone-Control.png)
+
+### 6.3.1 Zone Enable
+Users can control the airflow to individual zones from the Zones screen of the TouchPoint LCD by enabling or disabling the zone. When a zone is enabled, its damper(s) will operate to allow airflow according to the configured settings for that zone. When a zone is disabled, its damper(s) will close to prevent airflow to that zone.
+
+**Primary Zone:**
+Zones with Droplet sensors can be designated as the Primary Zone during configuration or via the anywAiR® Zone Mobile App. The system will maintain comfort based on the Primary Zone temperature. Airflow to the Primary Zone cannot be disabled to ensure the system can maintain comfort based on the Primary Zone temperature. The Primary Zone is indicated by a `Primary` label above the zone name on the Zones screen.
+
+If no Primary Zone is enabled, the system will maintain comfort based on the return air temperature within the unit. (Default Setting)
+
+**Relief Zones:**
+If Relief Zones have been configured, the system will automatically manage airflow to these zones to maintain minimum airflow requirements for the system. If the system detects that the minimum airflow requirement is not being met, it will enable the relief zones to allow additional airflow until the minimum requirement is satisfied. The Relief Zones are indicated by a `Relief` label above the zone name on the Zones screen.
+
+### 6.3.2 Airflow Control
+Users can adjust the airflow to each zone from the Zones screen of the TouchPoint LCD by selecting the desired airflow percentage for each zone. Airflow can be adjusted in 5% increments within a range of 0% (fully closed damper) to 100% (fully open damper) or between the configured minimum and maximum airflow limits if these have been set for the zone.
+
+Users can increase or decrease the airflow percentage value using the plus ![plus button](MIA%20Mobile%20App/img/circle-plus.png) and minus ![minus button](MIA%20Mobile%20App/img/circle-minus.png) buttons to reach the desired airflow setting.
+
+When the maximum or minimum airflow limit is reached, the corresponding plus or minus button becomes unavailable, preventing the airflow from being adjusted beyond the allowable range.
+
+### 6.3.3 Zone Temperature Monitoring
+If a droplet sensor is paired to the zone, the current temperature of the zone will be displayed on the zone card on the Zones screen of the TouchPoint LCD. This allows users to monitor the temperature in each zone to ensure comfort is being maintained and make adjustments to airflow as needed. If no droplet sensor is paired to the zone, temperature will not be displayed for that zone.
+
+
+### 6.3.4 Sync Zones
+If the airflow to zones is not working as expected, users can sync zones from the Zones screen of the TouchPoint LCD to reset the zone dampers. This is done by pressing the `Sync Zones` button which will send a command to the Zoneconnex to perform a reset of the zone dampers. After syncing, airflow will return to previous settings. If issues persist after syncing, please contact support for further assistance.
+
+<br/>
+
+## 6.4 Schedule/Scene Management
+Users can create and manage schedules and scenes from the Schedule/Scene screen of the TouchPoint LCD to automate system operation based on specific times and days. This allows users to maintain comfort while reducing the need for manual adjustments and improving energy efficiency.
+
+To create a schedule and scene, users can press the plus ![plus button](MIA%20Mobile%20App/img/circle-plus.png) button on the Schedule/Scene screen to create a schedule. If no schedules have been created, users will also have the option to press the `+ Create your first schedule` button to open the creation screen.
+
+![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Schedule-Screen-1.png)
+![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Schedule-Screen-2.png)
+
+From there, users can specify the desired settings for the schedule in section 6.4.1 Schedule Management. After saving the schedule settings, users can proceed to the section 6.4.2 Scene Management to specify the desired settings for the scene that will be applied when the schedule is active. This includes selecting the operating mode, temperature setpoint, and fan speed (model dependent) that will be applied when the schedule is active.
+
+### 6.4.1 Schedule Management
+Once a schedule is created, users can manage the schedule by selecting the schedule from the list on the Schedule/Scene screen. From there, users can edit the schedule settings, adjust the active days and times, and apply specific scenes to the schedule. This allows users to easily modify their schedules as needed to maintain comfort and energy efficiency.
+
+The Schedule screen includes the following key settings:
+- **Schedule Name:** Enter a clear name to identify the schedule (for example, Weekday Morning or Evening Comfort).
+- **Schedule Enable:** Use the enable toggle to activate or disable the schedule without deleting it.
+- **Day Selection:** Select the days the schedule should run. Multiple days can be selected as required.
+- **Time Selection (Start/End times):** Set the start time and end time to define when the schedule becomes active and when it finishes.
+
+Use the following steps to create or update a schedule:
+1. Press the plus ![plus button](MIA%20Mobile%20App/img/circle-plus.png) button on the Schedule/Scene screen or edit an existing schedule by pressing the arrow ![arrow button](MIA%20Mobile%20App/img/arrow-right.png) button on the schedule card to open the schedule settings screen.
+2. Enter the **Schedule Name**.
+3. Set **Schedule Enable** toggle to On if the schedule should be enabled after saving.
+4. Select the required days under **Day Selection**.
+5. Set the **Start** and **End** times under **Time Selection**.
+6. Review the schedule details, then press `Next` to save and proceed to the Scene configuration screen.
+
+![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Schedule-Settings-v2.png)
+
+
+### 6.4.2 Scene Management
+After saving a schedule, users are taken to the Scene configuration screen where a scene is created and linked to the schedule. A scene defines the specific operating conditions — such as mode, setpoint, fan speed, and zone settings — that the system will apply when the schedule becomes active. Users can either assign an existing scene or create a new one with custom settings tailored to the schedule.
+
+The Scene screen includes the following key settings:
+- **Scene Name:** Enter a clear name to identify the scene (for example, Summer Cool or Night Quiet).
+- **Assign Existing Scene:** Select a previously created scene to link to the schedule instead of creating a new one.
+- **Mode Selection:** Select the desired operating mode (Auto, Cool, Heat, Fan, or Dry) for the scene.
+- **Fan Speed Selection:** Select the desired fan speed (Auto, Quiet, Low, Medium, or High) for the scene (model dependent).
+- **Setpoint Selection:** Set the target temperature setpoint the unit should maintain when the scene is active.
+- **Zone Selection:** Select which zones should be active during the scene.
+- **Save Scene:** Press `Save` to save the scene and link it to the schedule.
+- **Run Scene Now:** Press `Run Scene Now` to immediately apply the scene to the system for testing or instant comfort adjustment.
+- **Return to Schedules:** Press `Previous` to return to the Schedule configuration screen without saving the scene.
+
+Use the following steps to create or update a scene:
+1. Enter the **Scene Name**.
+2. Alternatively, select an existing scene using **Assign Existing Scene** to skip manual configuration.
+3. Select the desired **Mode** for the scene.
+4. Select the desired **Fan Speed** for the scene.
+5. Set the **Setpoint** temperature for the scene using the plus ![plus button](MIA%20Mobile%20App/img/circle-plus.png) and minus ![minus button](MIA%20Mobile%20App/img/circle-minus.png) buttons to reach the desired setpoint. 
+6. Select the required **Zones** for the scene.
+7. Press `Save` to save the scene and link it to the schedule.
+8. Optionally, press `Run Scene Now` to immediately apply the scene to the system.
+9. Press `Previous` to return to the Schedule configuration screen if any schedule adjustments are needed.
+
+![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Scene-Settings-v2.png)
+
+<br/>
+
+## 6.5 Alerts & Error Codes
+The TouchPoint LCD provides real-time monitoring of system alerts and error codes to keep users informed about the status of their HVAC system. Users can access the Alerts screen from the navigation bar to view any active alerts or error codes generated by the system. This allows users to quickly identify and troubleshoot issues to maintain comfort and system performance.
+
+**Insert Alerts List**   
+
+
+<br/>
+
+## 6.6 System Info
+The TouchPoint LCD provides access to detailed system information through the Settings screen. Users can view information about their Zoneconnex system, including device details and software version. This information can be useful for troubleshooting, support, and ensuring the system is up to date.
+
+![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/System-Info.png)
+
+<br/>
+
+# 7 Additional Resources
+For further details outlining the Zoneconnex system use the following links:
+
+- anywAiR® Zone Mobile App User Manual **[anywAiR® Zone Mobile App](/rubix-ce-docs/docs/Zone%20Controller%20Stack/MIA%20Mobile%20App/MIA%20App%20User%20Manual)**
+
+- Zoneconnex Quick Start Guide **[Zoneconnex Quick Start Guide](/rubix-ce-docs/docs/Zone%20Controller%20Stack/Zoneconnex%20User%20Start%20Guide)**
+
+- Zoneconnex Quick Install Guide **[Zoneconnex Quick Install Guide](/rubix-ce-docs/docs/Zone%20Controller%20Stack/Zoneconnex%20Quick%20Install%20Guide)**
+
+<!-- - Touch Point LCD Operation **[Touch Point LCD](/rubix-ce-docs/docs/Zone%20Controller%20Stack/Touch%20Point%20LCD/Touch%20Point%20LCD%20User%20Manual)** <br/> -->
+
+

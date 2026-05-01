@@ -1,51 +1,44 @@
-# MIA Mobile App User Manual
+# anywAiR® Zone Mobile App User Manual
 
 # 1. About Product
 
 ## 1.1. Product Overview
-The anywAiR Zone app is a powerful configuration and management tool designed to simplify the setup and ongoing control of the ZoneConnex HVAC zone controller. The app provides installers and users with an intuitive, guided interface to commission systems, configure zones, and manage day-to-day operation directly from a mobile device.
+The anywAiR Zone app is a powerful configuration and management tool designed to simplify the setup and ongoing control of the Zoneconnex HVAC zone controller. The app provides installers and users with an intuitive, guided interface to commission systems, configure zones, and manage day-to-day operation directly from a mobile device.
 
-Through a direct wifi access point connection, the app enables fast and reliable system configuration, including zone setup, temperature setpoints, operating modes, and airflow preferences. Once commissioned, users can pair their ZoneConnex system to their local wifi and continue to monitor the system status in real time and make adjustments as needed, ensuring optimal comfort and performance across all connected zones.
+Through a direct wifi access point connection, the app enables fast and reliable system configuration, including zone setup, temperature setpoints, operating modes, and airflow preferences. Once commissioned, users can pair their Zoneconnex system to their local wifi and continue to monitor the system status in real time and make adjustments as needed, ensuring optimal comfort and performance across all connected zones.
 
-Designed for both residential and light commercial applications, the Nube iO MIA mobile app supports smart home-ready installations and HVAC retrofit projects. By combining straightforward commissioning with flexible system management, the app reduces setup time, minimizes complexity, and delivers a seamless control experience for modern zoned air conditioning systems.
+Designed for both residential and light commercial applications, the Nube iO anywAiR® Zone Mobile App supports smart home-ready installations and HVAC retrofit projects. By combining straightforward commissioning with flexible system management, the app reduces setup time, minimizes complexity, and delivers a seamless control experience for modern zoned air conditioning systems.
 
 <br/>
 
-## 1.2. Architecture
-**ZoneConnex Controller:** Acts as the master device, interfacing with compatible RAC/PAC and VRF Air Conditioning units via the UART protocol. It manages data transmission to and from the field devices and manages the control of the air conditioning system. <br/>
+## 1.2 System Architecture
+**Zoneconnex Controller:** Acts as the master device, interfacing with compatible RAC/PAC and VRF Air Conditioning units via the UART protocal. It manages data transmission to and from the field devices and manages the control of the air conditioning system. <br/>
 **Touch Point LCD:** This wall-mounted touchscreen provides a local control interface for the user to manage and monitor the air conditioning system. <br/>
-**anywAiR Zone App:** This mobile application provides a remote control interface for the user to manage and monitor the air conditioning system. <br/>
-**Droplet:** This wireless LoRa device monitors temperature and humidity in each zone transmitting data to the ZoneConnex allowing for individual zone control. <br/>
+**anywAiR® Zone Mobile App:** This mobile application provides a remote control interface for the user to manage and monitor the air conditioning system. <br/>
+**Droplet (sold separately):** This wireless LoRa device monitors temperature and humitidy in each zone transmitting data to the Zoneconnex allowing for individual zone control. <br/>
 
 <br/>
 
 ## 1.3. Product Features
 **Operation Control:** Enable the unit on and off.<br/>
-**Mode Control:** Switch between cool, heat, dry, auto, and fan modes.<br/>
-**Temperature Setpoint Control:** Adjust heating/cooling temperature setpoint.
-- Cooling setpoint 18 to 30 degrees Celsius
-- Heating setpoint 16 to 30 degrees Celsius (low-limit model-dependent)
+**Mode Control:** Switch between Auto, Cool, Heat, Fan and Dry modes. (model dependent)<br/>
+**Temperature Setpoint Control:** Adjust the temperature setpoint.
+- Auto, Cool and Dry setpoint: 18 to 30 degrees Celsius
+- Heating setpoint: 16-18 to 30 degrees Celsius (low limit model dependent)
 
-**Fan Speed Control:** Control fan speeds (model dependent).<br/>
-**Return Air Temperature Monitoring:** Monitor the return air temperature.<br/>
-**Zone Temperature/Humidity Monitoring:**
-**Zone Control:** Via the anywAiR Zone app users can interface with the ZoneConnex to control up to 10 zone dampers. Each damper can be controlled within a range of 0–100% airflow in 5% increments.<br/>
-**Schedule Management:** Via the anywAiR Zone app, users can configure and manage schedules to automatically run their air conditioning unit at set times and days — helping maintain comfort, reduce manual adjustments, and improve energy efficiency.<br/>
-**Run Mode Management:** Via the anywAiR Zone app, users can set timed On/Off actions based on the unit’s current state. If the system is already running, a Run Off timer can be enabled to automatically turn the unit off after the selected duration. If the system is currently off, a Run On timer can be set to automatically start the unit after the chosen time period.<br/>
-**Scene Management:** Via the anywAiR Zone app, users can create custom “scenes” that bundle specific run conditions such as mode, setpoint, and fan speed. These scenes can then be applied to schedules, or link them to run modes for consistent comfort with a single action.<br/>
-**Error Status Reporting:** Via the anywAiR Zone app users can monitor the error status and error codes generated by the Air Conditioner unit whilst also monitoring system generated alerts such as communications errors. <br/>
+**Fan Speed Control:** Switch between Auto, Quiet, Low, Medium and High fan speeds (model dependent).<br/>
+**Zone Temperature Monitoring:** Monitor the return air temperature or the Primary Zone temperature.<br/>
+**Zone Control:** Via the anywAiR® Zone Mobile App and TouchPoint LCD users can interface with the Zoneconnex to control up to 10 zone dampers. Each damper can be controlled within a range of 0-100% airflow in 5% increments. <br/>
+**Schedule Management:** Via the anywAiR® Zone Mobile App and TouchPoint LCD, users can configure and manage schedules to automatically run their air conditioning unit at set times and days — helping maintain comfort, reduce manual adjustments, and improve energy efficiency. <br/>
+**Scene Management:** Via the anywAiR® Zone Mobile App TouchPoint LCD, users can create custom "scenes" that bundle specific run conditions such as mode, setpoint, and fan speed. These scenes can then be applied to schedules, or link them to run modes for consistent comfort with a single action. <br/>
+**Run Mode Management:** Via the anywAiR® Zone Mobile App, users can set timed On/Off actions based on the unit’s current state. If the system is already running, a Run Off timer can be enabled to automatically turn the unit off after the selected duration. If the system is currently off, a Run On timer can be set to automatically start the unit after the chosen time period. <br/>
+**Error Status Reporting:** Via the anywAiR® Zone Mobile App and TouchPoint LCD users can monitor the error status and error codes generated by the Air Conditioner unit whilst also monitoring system generated alerts such as communications errors. <br/>
 
 <br/>
 
 # 2. Downloading the App
-[//]: # (TODO: When officially released, add the real Apple and Google play links*)
 
-
-<!-- | Downloads   |                                                                                                                      |
-|-------------|----------------------------------------------------------------------------------------------------------------------|
-| Google Play | <a href="https://play.google.com/store/apps/details?id=com.nubeio.mia"> ![max300px](img/google-play-icon.png) </a>   |
-| App Store   | <a href="https://apps.apple.com/au/app/anywair-zone/id6748876162"> ![max300px](img/Apple-app-download-icon.png) </a> | -->
-
+Scan the QR code below to download the anywAiR® Zone Mobile App for iOS or Android.
 
 | Android  | iOS |
 |----------|-----|
@@ -58,13 +51,20 @@ Designed for both residential and light commercial applications, the Nube iO MIA
 # 3. Installer Mode Configuration
 
 ## 3.1. Accessing Installer Mode
-Using the Touch Point LCD Wi-Fi access point, installers can use the Installer Mode to configure the zoneconnex system such as zone setup and damper pairing, min/max airflow preferences, damper calibration and droplet sensor management.
+Using the TouchPoint LCD Wi-Fi access point, installers can use the Installer Mode to configure the Zoneconnex system such as zone setup and damper pairing, min/max airflow preferences, damper calibration and droplet sensor management.
 
-**Note:** To access installer mode the user must first enable and join the Wi-Fi access point on the Touch Point LCD. The AP network will appear in the format of `ZC-LCD-xxxx` and the password can be found on the Wifi access point screen on the Touch Point LCD. <br/>
+To enable installer mode on the Touch Point LCD, use the following steps:
+1. On the TouchPoint LCD home screen, tap the System Info icon.
+2. On the System Info screen, tap the "System" card 8 times.
 
-[//]: # (TODO: ***Add link to touch point setup for AP mode*** )
+![max800px](../Touch%20Point%20LCD/img/LCD-Screenshots/Tap-Settings-Card.png)
 
-The Installer Mode can be accessed using the following steps:
+
+<!-- **Note:** To access installer mode the user must first enable and join the Wi-Fi access point on the Touch Point LCD. The AP network will appear in the format of `ZC-LCD-xxxx` and the password can be found on the Wifi access point screen on the Touch Point LCD. <br/>
+
+[//]: # (TODO: ***Add link to touch point setup for AP mode*** ) -->
+
+The Installer Mode can then be accessed on the anywAiR® Zone Mobile App using the following steps:
 1. **Step-1** On the main login/welcome screen press the `Continue as Installer` button below the "Sign In" button.
 <img src={require("./screenshots/1.png").default} width="300" />
 
@@ -419,7 +419,7 @@ Once configuration is complete, users must apply the changes and exit the instal
 <br/>
 
 # 4. App User/Account Management
-The MIA Mobile App and Zoneconnex system offer a free user account. Users can manage day-to-day operations and manage their system configuration directly from a mobile device.
+The anywAiR® Zone Mobile App and Zoneconnex system offer a free user account. Users can manage day-to-day operations and manage their system configuration directly from a mobile device.
 
 ## 4.1. User Sign Up
 Users have three user creation methods using the mobile app. 
@@ -462,9 +462,9 @@ Use the following steps to create an account using a Google account:
 2. **Step-2** Press the Google ![Google button](img/google-icon-30pix.png) button at the bottom of the screen. A popup will appear asking the user to confirm by pressing `Continue` or cancel by pressing `Cancel`.
 
 3. **Step-3** Once confirmed, the user will be navigated to a browser to select from existing signed-in Google accounts or use another account. <br/>
-    - **Existing account** - If an existing Google account is chosen, the user will be navigated to a Google confirmation screen to allow the MIA Mobile app to access the basic Google account info (Name and email address). The user can confirm by pressing `Continue` or cancel by pressing `Cancel`. <br/>
+    - **Existing account** - If an existing Google account is chosen, the user will be navigated to a Google confirmation screen to allow the anywAiR® Zone Mobile App to access the basic Google account info (Name and email address). The user can confirm by pressing `Continue` or cancel by pressing `Cancel`. <br/>
 
-    - **Use another account** - If 'Use another account' is chosen, the user will be navigated through the Google sign-in process before being navigated to the Google confirmation screen to allow the MIA Mobile app to access the basic Google account info (Name and email address). The user can confirm by pressing `Continue` or cancel by pressing `Cancel`.<br/>
+    - **Use another account** - If 'Use another account' is chosen, the user will be navigated through the Google sign-in process before being navigated to the Google confirmation screen to allow the anywAiR® Zone Mobile App to access the basic Google account info (Name and email address). The user can confirm by pressing `Continue` or cancel by pressing `Cancel`.<br/>
 
 4. **Step-4** User will then be navigated to the onboarding screen.
 
@@ -592,6 +592,27 @@ Use the following steps to delete your account:
 
 3. **Step-3** A popup will appear asking the user to confirm they wish to delete their account by pressing `Delete` or cancel by pressing `Cancel`. If confirmed, the account will be deleted and the user will be navigated to the welcome/login screen.
 <img src={require("./screenshots/62.png").default} width="300" />
+
+### 4.3.5 Reset Password
+Use the following steps to reset your password:
+
+1. **Step-1** Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
+
+2. **Step-2** Tap on the "Forgot Password" button.
+<img src={require("./screenshots/117.png").default} width="300" />
+
+3. **Step-3** The user will be navigated to the reset password screen. Enter the email address associated with the account and tap on the "Send OTP" button.
+<img src={require("./screenshots/118.png").default} width="300" />
+
+4. **Step-4** The user will receive an OTP on their registered email address. Enter the OTP and tap on the "Verify Code" button.
+<img src={require("./screenshots/119.png").default} width="300" />
+
+5. **Step-5** If you didn't receive the OTP, you can tap on the "Resend OTP" button to resend the OTP.
+
+6. **Step-6** After verifying the OTP, the user will be navigated to the reset password screen. Enter the new password and confirm the password and tap on the "Set Password" button.
+<img src={require("./screenshots/120.png").default} width="300" />
+
+7. **Step-7** After successfully setting the new password, the user will be navigated back to the login screen.
 
 <br/>
 
@@ -852,7 +873,7 @@ The following are key control and monitoring points available to the user:
 
 **Zone Temperature/Humidity Monitoring:**
 
-**Zone Control:** Via the anywAiR Zone app users can interface with the ZoneConnex to control up to 10 zone dampers. Each damper can be controlled within a range of 0-100% airflow in 5% increments. <br/>
+**Zone Control:** Via the anywAiR Zone app users can interface with the Zoneconnex to control up to 10 zone dampers. Each damper can be controlled within a range of 0-100% airflow in 5% increments. <br/>
 
 **Schedule Management:** Via the anywAiR Zone app, users can configure and manage schedules to automatically run their air conditioning unit at set times and days — helping maintain comfort, reduce manual adjustments, and improve energy efficiency. <br/>
 
@@ -1120,31 +1141,20 @@ Open run mode modal as mentioned above
 
 <br />
 
-# 11. Reset Password
+# 11 Additional Resources
+For further details outlining the Zoneconnex system use the following links:
 
-1. **Step-1** Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
+- anywAiR® Zone Mobile App User Manual **[anywAiR® Zone Mobile App](/rubix-ce-docs/docs/Zone%20Controller%20Stack/MIA%20Mobile%20App/MIA%20App%20User%20Manual)**
 
-2. **Step-2** Tap on the "Forgot Password" button.
-<img src={require("./screenshots/117.png").default} width="300" />
+- Zoneconnex Quick Start Guide **[Zoneconnex Quick Start Guide](/rubix-ce-docs/docs/Zone%20Controller%20Stack/Zoneconnex%20User%20Start%20Guide)**
 
-3. **Step-3** The user will be navigated to the reset password screen. Enter the email address associated with the account and tap on the "Send OTP" button.
-<img src={require("./screenshots/118.png").default} width="300" />
+- Zoneconnex Quick Install Guide **[Zoneconnex Quick Install Guide](/rubix-ce-docs/docs/Zone%20Controller%20Stack/Zoneconnex%20Quick%20Install%20Guide)**
 
-4. **Step-4** The user will receive an OTP on their registered email address. Enter the OTP and tap on the "Verify Code" button.
-<img src={require("./screenshots/119.png").default} width="300" />
-
-5. **Step-5** If you didn't receive the OTP, you can tap on the "Resend OTP" button to resend the OTP.
-
-6. **Step-6** After verifying the OTP, the user will be navigated to the reset password screen. Enter the new password and confirm the password and tap on the "Set Password" button.
-<img src={require("./screenshots/120.png").default} width="300" />
-
-7. **Step-7** After successfully setting the new password, the user will be navigated back to the login screen.
-
-# 12. Document Revision
+<!-- # 12. Document Revision
 
 | Revision | Date       | Change Description                                |
 |----------|------------|---------------------------------------------------|
 | 1.0      | 29-01-2026 | Initial release of the document for review        |
-| 1.1      | 23-03-2026 | Update docs with missing features and screenshots |
+| 1.1      | 23-03-2026 | Update docs with missing features and screenshots | -->
 
 
