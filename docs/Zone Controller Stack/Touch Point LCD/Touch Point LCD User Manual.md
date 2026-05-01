@@ -32,7 +32,7 @@ Connects easily to centralised BMS platforms via RS485, with support for Modbus 
 
 ## 1.3.2 Control Features
 **Operation Control:** Enable the unit on and off.<br/>
-**Mode Control:** Switch between cool, heat, dry, auto, and fan modes.<br/>
+**Mode Control:** Switch between Auto, Cool, Heat, Fan and Dry modes.<br/>
 **Temperature Setpoint Control:** Adjust heating/cooling temperature setpoint.
 - Cooling setpoint 18 to 30 degrees Celsius
 - Heating setpoint 16-18 to 30 degrees Celsius (low limit model dependent)
