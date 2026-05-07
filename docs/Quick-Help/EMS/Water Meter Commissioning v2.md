@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Water Meter Installation and Commissioning Guide
 
 # 1. Powering and Installing the Gateway

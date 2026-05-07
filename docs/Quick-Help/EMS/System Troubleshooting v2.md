@@ -1,4 +1,8 @@
-# EMS System Troubleshooting Guide v2
+---
+sidebar_position: 3
+---
+
+# EMS System Troubleshooting Guide
 
 ## Overview
 Use this guide for quick on-site checks to identify power, network, sensor, and hardware issues before escalation. Checks are separated by role so the right person performs the right action safely.
