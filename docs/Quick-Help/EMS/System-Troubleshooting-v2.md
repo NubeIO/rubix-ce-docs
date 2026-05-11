@@ -30,13 +30,13 @@ Use this image as a quick visual reference for the Rubix Compute check points:
 | --- | --- | --- | --- | --- | --- |
 | 1 | Gateway Hardware Condition Check | Facilities Manager | Visible water ingress, burn marks, or loose wiring | Physical damage or installation fault | Isolate equipment and escalate to licensed tradesperson. |
 | 2 | Gateway LED Check | Facilities Manager | No LEDs on gateway | Power not present | Check local breaker label/status, confirm 24V power supply is ON, and confirm connectors are seated. |
-| 3 | Gateway Data Status Check | Facilities Manager | Gateway LEDs ON, no data | Network/router issue | Confirm Ethernet link lights, reboot router, and verify WAN service status. |
-| 4 | Ethernet Link-Light Check | Facilities Manager | Ethernet light OFF | No network link | Reconnect or replace Ethernet patch cable. |
+| 3 | Gateway LED Check | Facilities Manager | Solid Orange LED on gateway | Software/Pi not operational | Confirm connectors are seated correctly and powercycle the gateway. |
+| 4 | Ethernet Link-Light Check | Facilities Manager | Gateway LEDs ON,Ethernet lights OFF | Network/router issue | Reconnect or replace Ethernet patch cable and reboot gateway/router. |
 | 5 | 24V Supply Voltage Check | Licensed Tradesperson (Electrician) | Gateway still no power after basic checks | Failed 24V power supply (PSU), missing 24V feed, or wiring fault | Test supply voltage, polarity, and continuity; rectify feed/termination; replace failed 24V power supply. |
 | 6 | Termination Integrity Check | Licensed Tradesperson (Electrician) | Loose or failed terminations | Installation fault | Re-terminate wiring to standard, torque-check terminals, and verify enclosure integrity. |
 | 7 | Electrical Damage Check | Licensed Tradesperson (Electrician) | Burn marks or heat damage | Electrical fault/current event | Isolate circuit, replace damaged components, and verify protective device coordination. |
 
-## Router
+## Router (USR-G806-AU)
 
 Use this image as a quick visual reference for the Rubix Compute check points:
 
@@ -52,10 +52,10 @@ Use this image as a quick visual reference for the Rubix Compute check points:
 
 | No. | Check | Role | Symtom | Likely Cause | Action |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Router Power Check | Facilities Manager | Router has no power | Adapter unplugged/failed | Check adapter is plugged in, verify outlet is active, and swap with known-good adapter if available. |
-| 2 | Router WAN/Internet Check | Facilities Manager | Router no internet | WAN/ISP issue | Reboot router once, confirm WAN indicator, and check known ISP outage. |
-| 3 | Router Ventilation Check | Facilities Manager | Router overheating | Ventilation issue | Improve airflow, remove obstruction, and monitor stability. |
-| 4 | Router Supply Voltage Check | Licensed Tradesperson (Electrician) | Router still no power after basic checks | Failed adapter/power feed or wiring fault | Test supply voltage and polarity, rectify feed/termination, and replace failed supply hardware. |
+| 1 | Router Power Check | Facilities Manager | Router has no power | Failed 24V power supply (PSU), missing 24V feed, or wiring fault | Check local breaker label/status, confirm 24V power supply is ON, and confirm power connectors are seated correctly. |
+| 2 | Router 4G Internet Check | Facilities Manager | Router no 4G internet | Sim/Connection issue | Check 4G antenna connection, reboot router once, confirm 4G signal indicators, and check for known sim outage. |
+| 3 | Router Temperature Check | Facilities Manager | Router overheating | Ventilation or installation issue | Improve airflow (open enclosure lid slightly if not exposed to weather), remove obstruction to airflow, and monitor stability. |
+| 4 | Router Supply Voltage Check | Licensed Tradesperson (Electrician) | Router still no power after basic checks | Failed 24V power supply (PSU) or wiring fault | Test supply voltage and polarity, rectify feed/termination, and replace failed supply hardware. |
 
 ## Micro-Edge (LoRa Sensor)
 
@@ -75,12 +75,13 @@ Use this image as a quick visual reference for the Micro-Edge check points:
 
 | No. | Check | Role | Symtom | Likely Cause | Action |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Battery Health Check | Facilities Manager | Micro-Edge not reporting or low battery alarm | Battery depleted or poor battery contact | Replace battery and recheck reporting. |
-| 2 | Micro-Edge Reporting Check | Facilities Manager | Micro-Edge no data | Battery or LoRa path issue | Replace battery, verify gateway is online, and check for new obstructions. |
-| 3 | LoRa Signal/Antenna Check | Facilities Manager | Intermittent data | Weak signal | Reposition sensor/antenna within approved location. |
-| 4 | Meter Orientation/Install Check | Licensed Tradesperson (Plumber/Electrician) | Incorrect water/flow readings | Sensor install/config issue | Verify meter orientation, installation condition, wiring pulse/config, then recommission. |
-| 5 | Field Device Wiring Check | Licensed Tradesperson (Plumber/Electrician) | Persistent no data from field device | Field wiring/device failure | Test loop/pulse/wiring path, rectify fault, and replace failed field device. |
-| 6 | Ingress Protection Check | Licensed Tradesperson (Plumber/Electrician) | Water ingress at enclosure/device | Seal or gland failure | Replace compromised parts, reseal glands/enclosure, and verify ingress protection. |
+| 1 | LoRa Signal/Antenna Check | Facilities Manager | Intermittent data | Weak signal | Check antenna connection and for damage, reposition sensor/antenna to better location, recheck reporting. |
+| 2 | Battery Health Check | Facilities Manager | Micro-Edge not reporting or low battery alarm | Battery depleted or poor battery contact | Disconnect/Reconnect battery and check for LED activity, check battery and terminal for corrosion, replace battery, recheck reporting. |
+| 3 | Micro-Edge Reporting Check | Facilities Manager | Micro-Edge no data | Battery or LoRa path issue | Press reset button (RST) and check LED activity, replace battery if necessary and recheck reporting. |
+| 4 | Battery Health Check (In Depth) | Licensed Tradesperson (Plumber/Electrician) | Micro-Edge not reporting or low battery alarm | Battery depleted or poor battery contact | Check battery voltage, replace battery and recheck reporting. |
+| 5 | Meter Orientation/Install Check | Licensed Tradesperson (Plumber/Electrician) | Incorrect water/flow readings | Sensor install/config issue | Verify meter orientation, installation condition, wiring pulse/config, then redo rate of change validation. |
+| 6 | Field Device Wiring Check | Licensed Tradesperson (Plumber/Electrician) | Persistent no flow data from field device | Field wiring/device failure | Test loop/pulse/wiring path (remove pulse wiring and bridge inputs to test pulses), rectify wiring faults, and replace failed field device. |
+| 7 | Ingress Protection Check | Licensed Tradesperson (Plumber/Electrician) | Water ingress at enclosure/device | Seal or gland failure | Replace compromised parts, reseal glands/enclosure, and verify ingress protection. |
 
 ## Contact Nube iO Support When
 - Facilities Manager checks are complete and issue persists.
