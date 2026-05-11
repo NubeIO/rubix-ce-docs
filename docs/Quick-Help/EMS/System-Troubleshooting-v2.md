@@ -104,3 +104,9 @@ Use this section when contacting Nube iO support:
 - Licensed trade checks completed:
 - Actions taken:
 - Photos attached:
+
+
+## Related articles
+
+- [Water Meter Installation and Commissioning Guide](./Water-Meter-Commissioning-v2)
+- [Electrical Meter Installation and Commissioning Guide](./Electrical-Meter-Commissioning)

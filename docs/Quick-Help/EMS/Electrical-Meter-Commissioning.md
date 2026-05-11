@@ -86,12 +86,10 @@ See example network topology below.
 
 <br/>
 
-# 3. Commissioning
-The Electrical Meter Commissioning process involves first configuring and commissioning the meter, then confirming communication with the Rubix Compute, and verifying correct readings.
+# 3. Electrical Meter Commissioning
+The Electrical Meter Commissioning process involves configuring and commissioning the meter, then verifying the readings are correct.
 
-## 3.1 Electrical Meter 
-
-## 3.1.1 Meter Configuration
+## 3.1 Electrical Meter Configuration
 Follow the manufacturer instructions for configuring the electrical meter. This will involve configuring the following parameters:
 - Modbus address 
 - TCP IP address (for Modbus TCP meters)
@@ -100,7 +98,7 @@ Follow the manufacturer instructions for configuring the electrical meter. This 
 - Data bits (for Modbus RTU meters)
 - Stop bits (for Modbus RTU meters)
 
-## 3.1.2 Meter Commissioning
+## 3.2 Electrical Meter Commissioning
 The Electrical meter must be commissioned to ensure it is correctly reading and reporting the required parameters. This involves configuring the following:
 - Voltage references
 - Current transformer connection type (eg 2 CT, 3 CT, Single-Balanced CT, etc)
@@ -109,13 +107,64 @@ The Electrical meter must be commissioned to ensure it is correctly reading and 
 Note some smart meter models have the capability to auto-detect CT ratios and CT connection type, refer to the manufacturer instructions for details.
 
 Once the meter is configured, confirm the meter is correctly reading the required parameters such as voltage, current, power, energy, etc. Refer to the manufacturer instructions for how to access these readings on the meter.
-- Voltage - Should be checked to be +/- 10% of nominal voltage (eg 230V)
-- Frequency - Should be checked to be +/- 10% of nominal frequency (eg 50Hz)
-- Current - Should be checked with a clamp meter or similar device to confirm it is reading the current correctly.
-- Power - Should be checked to be approximately equal to Voltage x Current (allowing for power factor). **MUST** be positive when load is connected.
-- Energy - Should be checked to be increasing when load is connected and decreasing when load is removed.
+
+| Parameter | Acceptance Criteria |
+| --- | --- |
+| Voltage | Should be checked to be +/- 10% of nominal voltage (eg 230V) |
+| Frequency | Should be checked to be +/- 10% of nominal frequency (eg 50Hz) |
+| Current | Should be checked with a clamp meter or similar device to confirm it is reading the current correctly. |
+| Power | Should be checked to be approximately equal to Voltage x Current (allowing for power factor). **MUST** be positive when load is connected. |
+| Energy Import | Should be checked to be increasing when load is connected. Should be recorded in kWh. |
+| Reactive Energy | Should be checked to be increasing when load is connected. Should be recorded in kVArh. |
+
+<br/>
+
+# 4 Nube iO Remote Meter Reading System (RMRS)
+Once the electrical meter is configured and commissioned, the meter should be added in the Nube iO RMRS as per the configuration set in [section 3.1](#31-electrical-meter-configuration).  
+
+## 4.1 Confirming Meter Communication
+After the meter is added in the Nube iO RMRS confirm the meter is communicating with the Rubix Compute.
+
+If the meter is not visible, refer to the [EMS System Troubleshooting Guide](./System-Troubleshooting-v2) for steps to identify and rectify communication issues.
+
+## 4.2 Confirming Meter Readings
+Once the meter is communicating with the Rubix Compute, confirm the readings in the Nube iO RMRS are correct by comparing them to the readings on the meter display and/or readings from a clamp meter or similar device.
+
+Values from both the RMRS and the meter display **MUST** be recorded for voltage, frequency, current, power, and energy to confirm the RMRS is accurately polling these parameters from the meter. This verifies correct point to point mapping of the meter registers and correct point scaling in the RMRS.
+
+Values **MUST** be within the acceptable ranges outlined in [section 3.2](#32-electrical-meter-commissioning) and the power reading in the RMRS **MUST** be positive when load is connected.
 
 
-## 3.2 Nube iO Remote Meter Reading System (RMRS)
-Once the meter is configured and commissioned, confirm the meter is communicating with the Rubix Compute and reporting the correct readings in the Nube iO RMRS. If the meter is not reporting, refer to the System Troubleshooting Guide for steps to identify and rectify communication issues.
+| Parameter | Acceptance Criteria |
+| --- | --- |
+| Voltage | Should be checked to be +/- 10% of nominal voltage (eg 230V) |
+| Frequency | Should be checked to be +/- 10% of nominal frequency (eg 50Hz) |
+| Current | Should be checked with a clamp meter or similar device to confirm it is reading the current correctly. |
+| Power | Should be checked to be approximately equal to Voltage x Current (allowing for power factor). **MUST** be positive when load is connected. |
+| Energy Import | Should be checked to be increasing when load is connected. Should be recorded in kWh. |
+| Reactive Energy | Should be checked to be increasing when load is connected. Should be recorded in kVArh. |
 
+## 4.3 Energy Rate of Change Validation
+To further validate the meter readings in the RMRS, the rate of change of energy **MUST** be validated to confirm the Energy consumption reported in the RMRS is consistent with the meter readings and the load connected. 
+
+This is done by recording the energy reading at two different time intervals and confirming the change in energy over time is consistent between the RMRS and the meter display.
+
+# 5. Solar Metering
+Solar metering involves the same process as outlined in sections 1-4, however power and energy readings may differ from the expected values in sections 3.2 and 4.2 as it may be flowing back into the grid depending on the load and generation at the time of testing and the meter configuration.
+
+When commissioning solar meters, it is important to confirm the power readings polarity as the readings may be negative when power is flowing back into the grid. If power readings are negative the energy generation readings must be taken from the **export** point in the RMRS and not the import point. The export energy readings **MUST** be increasing when power is flowing back into the grid.
+
+
+## 6. Contacting Support
+If further assistance or support is required please contact Nube iO's service channel using the below details:<br/>
+**Phone:** 0499 949 449 <br/>
+**Email:** service@nube-io.com
+
+<br/>
+
+<br/>
+
+## Related articles
+
+- [Water Meter Installation and Commissioning Guide](./Water-Meter-Commissioning-v2)
+- [System Troubleshooting Guide](./System-Troubleshooting-v2)
