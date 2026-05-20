@@ -67,7 +67,7 @@ Use this image as a quick visual reference for the Micro-Edge check points:
 - **Battery Connector:** Connection point for the battery.
 - **Screw Terminals:** Connection points for sensor wiring, such as pulse inputs from a water meter.
 
-![max800px](img/MicroEdge1.png)
+![max800px](img/Microedge1.png)
 ![max700px](../../hardware/sensors/micro-edge/MicroEdge-V2/img/internal.png)
 
 <br/>
