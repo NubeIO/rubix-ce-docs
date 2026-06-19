@@ -33,11 +33,7 @@ By following these steps, you'll be able to install Docker on your system and st
 
 ## Install and Run the Rubix Stack
 
-:::info
-To download Docker images from the Nube iO GitHub repository, you will need a **GITHUB_TOKEN** provided by Nube iO support. This token serves as an authentication mechanism to access the private repository where the Docker images are hosted. Once you have the **GITHUB_TOKEN**, you can use it in conjunction with Docker to pull the required images for your deployment. If you haven't received the token yet, please contact Nube iO support to obtain it.
-:::
-
-Once you have received the **GITHUB_TOKEN** from Nube iO support, you can use it to authenticate and download Docker images from their private repository. Here's the command you can use, replacing <GITHUB_TOKEN> with the token provided to you:
+To download the Docker image and run the Rubix Stack, use the following command:
 
 ```
 docker run -p 1659:1659 -p 1660:1660 -v <MOUNTING_LOCATION>:/data --rm -it -d --privileged --name bios ghcr.io/nubeio/rubix-bios-legacy:1.17.0
