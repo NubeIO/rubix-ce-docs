@@ -40,7 +40,7 @@ To download Docker images from the Nube iO GitHub repository, you will need a **
 Once you have received the **GITHUB_TOKEN** from Nube iO support, you can use it to authenticate and download Docker images from their private repository. Here's the command you can use, replacing <GITHUB_TOKEN> with the token provided to you:
 
 ```
-docker run -p 1659:1659 -p 1660:1660 -v <MOUNTING_LOCATION>:/data -e GITHUB_TOKEN=<GITHUB_TOKEN> --rm -it -d --privileged --name bios ghcr.io/nubeio/rubix-bios-legacy:1.13.0
+docker run -p 1659:1659 -p 1660:1660 -v <MOUNTING_LOCATION>:/data --rm -it -d --privileged --name bios ghcr.io/nubeio/rubix-bios-legacy:1.17.0
 ```
 In summary, this Docker command creates a container based on the Rubix BIOS Legacy image, exposing certain ports, mounting a directory, setting environment variables, and running the container in detached mode with elevated privileges.
 
@@ -50,12 +50,12 @@ In the provided Docker command, **<MOUNTING_LOCATION>** can be replaced with eit
 Mounting in /data or rubix-volume provides flexibility in managing where the data is stored within the container environment. Here's how the command would look with these options:
 
 ```
-docker run -p 1659:1659 -p 1660:1660 -v /data:/data -e GITHUB_TOKEN=<GITHUB_TOKEN> --rm -it -d --privileged --name bios ghcr.io/nubeio/rubix-bios-legacy:1.13.0
+docker run -p 1659:1659 -p 1660:1660 -v /data:/data --rm -it -d --privileged --name bios ghcr.io/nubeio/rubix-bios-legacy:1.17.0
 ```
 or
 
 ```
-docker run -p 1659:1659 -p 1660:1660 -v rubix-volume:/data -e GITHUB_TOKEN=<GITHUB_TOKEN> --rm -it -d --privileged --name bios ghcr.io/nubeio/rubix-bios-legacy:1.13.0
+docker run -p 1659:1659 -p 1660:1660 -v rubix-volume:/data --rm -it -d --privileged --name bios ghcr.io/nubeio/rubix-bios-legacy:1.17.0
 ```
 
 This command installs only the BIOS and creates a platform for installing other Nube applications, with the data stored either in the /data directory or in a Docker volume named rubix-volume.
