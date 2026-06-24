@@ -29,16 +29,16 @@ The  Universal Inputs can be used as Analog or Digital inputs.
 ## 1.3. Push rates
 DIP switches 1 to 3 are used to set the push rate of the MicroEdge sensor. After setting the desired push rate, press the reset button to apply the new configuration.
 
-| Minutes | Register Number   |
-|---------|-------------------| 
-| 0.5     | ![max200px](img\dip1.png) |
-| 1       | ![max200px](img\dip2.png) |
-| 3       | ![max200px](img\dip3.png) |
-| 5       | ![max200px](img\dip4.png) |
-| 10      | ![max200px](img\dip5.png) |
-| 15      | ![max200px](img\dip0.png) | 
-| 30      | ![max200px](img\dip6.png) |
-| 60      | ![max200px](img\dip7.png) |
+| Minutes | Position 1=Up, 0=Down | Dips   |
+|---------|-----|---------------------------| 
+| 0.5     | 100 | ![max200px](img\dip1.png) |
+| 1       | 010 | ![max200px](img\dip2.png) |
+| 3       | 110 | ![max200px](img\dip3.png) |
+| 5       | 001 | ![max200px](img\dip4.png) |
+| 10      | 101 | ![max200px](img\dip5.png) |
+| 15      | 000 | ![max200px](img\dip0.png) | 
+| 30      | 011 | ![max200px](img\dip6.png) |
+| 60      | 111 | ![max200px](img\dip7.png) |
 
 <br/>
 
