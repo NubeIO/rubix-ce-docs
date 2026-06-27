@@ -40,6 +40,8 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
+          // PDF-source files (pandoc/weasyprint HTML) aren't valid MDX — keep them out of the site build.
+          exclude: ["**/Zone Controller Stack/**"],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
