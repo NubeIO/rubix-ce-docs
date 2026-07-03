@@ -361,7 +361,7 @@ Use the following steps to complete the zone configuration from the Installer me
    - Set **Zone Name** - Rename the zone for easy identification by pressing the arrow `>` button beside the current zone name. After entering the desired name press the `Save` button to apply the changes or `cancel` button to cancel the changes. <br/>
       <img src={require("./MIA\ Mobile\ App/screenshots/7.png").default} width="300" />
 
-   - Enable **Primary Zone** (if required) -  Users can designate or disable the zone as the main zone for the system by pressing the toggle button beside the 'Main' setting. Note a zone requires a paired droplet sensor to be set as the Main zone. <br/>
+   - Enable **Primary Zone** (if required) -  Users can designate or disable the zone as the primary zone for the system by pressing the toggle button beside the 'Primary' setting. Note a zone requires a paired droplet sensor to be set as the primary zone. <br/>
    <img src={require("./MIA\ Mobile\ App/screenshots/8.png").default} width="300" />
 
    - Enable **Relief Zone** (if required) - Users can enable or disable a zone as a relief zone by pressing the toggle button beside the 'Relief' setting. <br/>

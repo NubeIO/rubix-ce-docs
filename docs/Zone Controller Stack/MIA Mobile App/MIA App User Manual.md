@@ -88,24 +88,24 @@ Via Installer Mode, users can configure zones, pair dampers to specific zones, a
 
 ### 3.2.1 Initial Zone Configuration
 Once following section *3.1. Accessing Installer Mode* for a new system, users will be navigated to the zone configuration workflow allowing users to configure the new system by following the below steps. 
-1. **Step-1** Users must first define how many zones are connected to their system and select an appropriate number of constant zones based on the airflow requirements. Once values are entered press `Next` to save and move to the next configuration screen. <br/>
+1. **Step-1** Users must first define how many zones are connected to their system and select an appropriate number of relief zones based on the airflow requirements. Once values are entered press `Next` to save and move to the next configuration screen. <br/>
      - `Number Of Zones` - Enter the number of zones connected to the system. <br/>
-     - `Constant Zones` - Enter the number of zones required to be active to meet minimum airflow requirements.
+     - `Relief Zones` - Enter the number of zones required to be active to meet minimum airflow requirements.
    <img src={require("./screenshots/5.png").default} width="300" />
    
-   **Note:** Constant zones can be set as 0.
+   **Note:** Relief zones can be set as 0.
 
- 2. **Step-2** User will now be on the 'Select Constant Zones' screen. This is where the constant zones are selected. The amount required for selection is dependent on step 1. Once the required number of constant zones is set the user can press `Configure zones` to save and move to the next configuration screen.
+ 2. **Step-2** User will now be on the 'Select Relief Zones' screen. This is where the relief zones are selected. The amount required for selection is dependent on step 1. Once the required number of relief zones is set the user can press `Configure zones` to save and move to the next configuration screen.
 <img src={require("./screenshots/6.png").default} width="300" />
 
  3. **Step-3** Users will now be taken to the settings page for the first zone. From this screen users will be able to configure each of the following variables:
     - **Edit Zone Name** – Rename the zone for easy identification by pressing the arrow `>` button beside the current zone name. After entering the desired name press the `Save` button to apply the changes or `cancel` button to cancel the changes. <br/>
     <img src={require("./screenshots/7.png").default} width="300" />
  
-    - **Mark Zone as Main** – Users can designate or disable the zone as the main zone for the system by pressing the toggle button beside the 'Main' setting. Note a zone requires a paired droplet sensor to be set as the Main zone. <br/>
+    - **Mark Zone as Primary** – Users can designate or disable the zone as the primary zone for the system by pressing the toggle button beside the 'Primary' setting. Note a zone requires a paired droplet sensor to be set as the primary zone. <br/>
     <img src={require("./screenshots/8.png").default} width="300" />
  
-    - **Mark Zone as Constant** – Users can enable or disable a zone as a constant zone by pressing the toggle button beside the 'Constant' setting. <br/>
+    - **Mark Zone as Relief** – Users can enable or disable a zone as a relief zone by pressing the toggle button beside the 'Relief' setting. <br/>
     <img src={require("./screenshots/9.png").default} width="300" />
  
     - **Toggle Zone Power** – This allows the user to toggle the zones damper power to confirm damper pairing and control by pressing the toggle button. <br/>
@@ -156,16 +156,16 @@ After the initial zone setup following section *3.2.1 Initial Zone Configuration
 
 **Note:**
 - User should only be able to turn ON/OFF and increase/decrease the airflow, if the user has added a damper to the zone
-- User should only be able to switch ON the zone as "Main", if a droplet is added to the zone.
-- Upon marking the zone as "Main", the airflow control changes to temperature control. User can then increase or decrease the temperature accordingly.
+- User should only be able to switch ON the zone as "Primary", if a droplet is added to the zone.
+- Upon marking the zone as "Primary", the airflow control changes to temperature control. User can then increase or decrease the temperature accordingly.
 
 4. **Step-4** In the 'Zone Information' screen, press the settings ![settings button](img/settings-2.png) button to enter the 'Zone Setup' screen.
 <img src={require("./screenshots/29.png").default} width="300" />
 
 5. **Step-5** From the 'Zone Setup' screen, users will be able to edit each of the following variables:
     - **Edit Zone Name** – Rename the zone for easy identification by pressing the arrow `>` button beside the current zone name. After entering the desired name press the `Save` button to apply the changes or `cancel` button to cancel the changes. <br/>
-    - **Mark Zone as Main** – Users can designate or disable the zone as the main zone for the system by pressing the toggle button beside the 'Main' setting. Note a zone requires a paired droplet sensor to be set as the Main zone. <br/>
-    - **Mark Zone as Constant** – Users can enable or disable a zone as a constant zone by pressing the toggle button beside the 'Constant' setting. <br/>
+    - **Mark Zone as Primary** – Users can designate or disable the zone as the primary zone for the system by pressing the toggle button beside the 'Primary' setting. Note a zone requires a paired droplet sensor to be set as the primary zone. <br/>
+    - **Mark Zone as Relief** – Users can enable or disable a zone as a relief zone by pressing the toggle button beside the 'Relief' setting. <br/>
     - **Toggle Zone Power** – This allows the user to toggle the zones damper power to confirm damper pairing and control by pressing the toggle button. <br/>
     - **Minimum Airflow (%)** – Specify the minimum airflow percentage the zone should maintain during operation using the plus ![plus button](img/circle-plus.png) and minus ![minus button](img/circle-minus.png) buttons. <br/>
     - **Maximum Airflow (%)** – Specify the maximum airflow percentage the zone can maintain during operation using the plus ![plus button](img/circle-plus.png) and minus ![minus button](img/circle-minus.png) buttons. <br/>
@@ -324,7 +324,17 @@ Users can manage the system preferences via the installer mode to manually selec
 
 <br/>
 
-### 3.4.3 Factory Reset Configuration
+### 3.4.3 Firmware Update
+
+1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+
+2. **Step-2** On the setup page press the `Preferences` button to navigate to the 'Preferences' screen.
+
+3. **Step-3** To start the firmware update, tap `Firmware Update` button. From the pop-up, tap `Start Update` button.
+<img src={require("./screenshots/130.png").default} width="300" />
+<img src={require("./screenshots/131.png").default} width="300" />
+
+### 3.4.4 Factory Reset Configuration
 
 To reset the configuration and start the setup from scratch, users can perform the `Factory Reset` by following the steps below:
 
@@ -985,7 +995,7 @@ Use the following steps to control a zone:
 <img src={require("./screenshots/88.png").default} width="300" />
 
 3. **Step-3** Perform the desired action on the zone.
-    - **Mark Zone as Main** – Users can designate or disable the zone as the main zone for the system by pressing the toggle button beside the 'Main' setting. Note a zone requires a paired droplet sensor to be set as the Main zone.
+    - **Mark Zone as Primary** – Users can designate or disable the zone as the primary zone for the system by pressing the toggle button beside the 'Primary' setting. Note a zone requires a paired droplet sensor to be set as the primary zone.
 
     - **Increase:** Increase the zone airflow by 5%
 
@@ -994,7 +1004,7 @@ Use the following steps to control a zone:
     - **Off:** Turn off the zone airflow
    <img src={require("./screenshots/91.png").default} width="300" />
 
-- **Note** The pop up will show temperature if the zone is marked as the main zone.
+- **Note** The pop up will show temperature if the zone is marked as the primary zone.
 
 4. **Step-4** Press on settings button to open the zone settings screen.
 <img src={require("./screenshots/92.png").default} width="300" />
