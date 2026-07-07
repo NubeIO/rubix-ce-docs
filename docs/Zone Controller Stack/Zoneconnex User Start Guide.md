@@ -90,7 +90,7 @@ Scan the QR code below to download the anywAiR Zone Mobile App for Android or iO
 - **Mode:** Select Mode. Cool, Heat, Dry, Auto, or Fan.  
 - **Temperature Setpoint:** Adjust heating/cooling temperature setpoint. 
 - **Fan Speed:** Adjust fan speed (speeds model dependent).  
-- **Current Temperature Display:** View main zone current air temperature and setpoint details. (If enabled) 
+- **Current Temperature Display:** View primary zone current air temperature and setpoint details. (If enabled) 
 
 ![max800px](Touch%20point%20LCD/img/LCD-Screenshots/Main-Controls.png)
 
