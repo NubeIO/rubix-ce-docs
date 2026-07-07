@@ -117,6 +117,8 @@ Once following section *3.1. Accessing Installer Mode* for a new system, users w
     <img src={require("./screenshots/11.png").default} width="300" />
  
     - **Add and Manage Zone Dampers** – Pair and manage associated dampers to the zone by using the `Add Dampers` button then selecting the appropriate damper from the list. To remove/unpair damper, press on the `>` button associated with the damper to open the Damper options screen then press the `Remove Damper` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
+    Please note - from factory, dampers are automatically assigned 1 to 1. Damper 1 will auto assign to Zone 1, Damper 2 will auto assign to Zone 2, etc. <br/>
+      - Damper Calibration - To calibrate a damper, press on the `>` button associated with the damper to open the Damper options screen then use the plus ![plus button](img/circle-plus.png) and minus ![minus button](img/circle-minus.png) buttons to increase or decrease the time it takes for the damper to completely open or close (Default is 15 seconds). Use the reset ![reset button](img/rotate-ccw.png) button to reset the calibration to default. <br/>
     <img src={require("./screenshots/12.png").default} width="300" />
     <img src={require("./screenshots/13.png").default} width="300" />
     <img src={require("./screenshots/14.png").default} width="300" />
@@ -132,12 +134,12 @@ Once following section *3.1. Accessing Installer Mode* for a new system, users w
     <img src={require("./screenshots/22.png").default} width="300" />
     <img src={require("./screenshots/23.png").default} width="300" />
 
-4.  Once all variables in step 3 are set press `Next` in the bottom right corner.
+1.  Once all variables in step 3 are set press `Next` in the bottom right corner.
 <img src={require("./screenshots/24.png").default} width="300" />
 
-5.  Repeat steps 3 and 4 for each zone. If at any time the user wishes to go back a step they can press `Back` in the bottom left corner.
+1.  Repeat steps 3 and 4 for each zone. If at any time the user wishes to go back a step they can press `Back` in the bottom left corner.
 
-6.  On the last zone once the variables are set the user can press `Complete` to complete the configuration and be navigated to the 'Zones' screen where they can see current status's and control the zones.
+2.  On the last zone once the variables are set the user can press `Complete` to complete the configuration and be navigated to the 'Zones' screen where they can see current status's and control the zones.
 <img src={require("./screenshots/25.png").default} width="300" />
 
 <br/>
@@ -326,15 +328,32 @@ Users can manage the system preferences via the installer mode to manually selec
 
 ### 3.4.3 Firmware Update
 
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1. Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
 
-2. **Step-2** On the setup page press the `Preferences` button to navigate to the 'Preferences' screen.
+2. On the setup page press the `Preferences` button to navigate to the 'Preferences' screen.
 
-3. **Step-3** To start the firmware update, tap `Firmware Update` button. From the pop-up, tap `Start Update` button.
+3. To start the firmware update, tap `Firmware Update` button. From the pop-up, tap `Start Update` button or cancel by pressing `Cancel`.
 <img src={require("./screenshots/130.png").default} width="300" />
 <img src={require("./screenshots/131.png").default} width="300" />
 
-### 3.4.4 Factory Reset Configuration
+<br/>
+
+### 3.4.4 Global Damper Calibration
+1. Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+
+2. On the setup page press the `Preferences` button to navigate to the 'Preferences' screen.
+
+3. Press the `>` button on the Global Damper Calibration card to open the calibration settings.
+
+4. Use the plus ![plus button](img/circle-plus.png) and minus ![minus button](img/circle-minus.png) buttons to increase or decrease the time it takes for dampers to completely open or close (default is 15 seconds). Use the reset ![reset button](img/rotate-ccw.png) button to restore the default calibration.
+
+**Note:** The Global Damper Calibration is applied only to dampers that are using the default calibration. Dampers with an individual calibration configured will continue to use their individual calibration value.
+
+***Insert Image***
+
+<br/>
+
+### 3.4.5 Factory Reset Configuration
 
 To reset the configuration and start the setup from scratch, users can perform the `Factory Reset` by following the steps below:
 
@@ -636,23 +655,36 @@ Once a Home is created, users can interact with the connected controller to mana
 ### 5.1.1 First Home Setup with QR Code
 Use the following steps to connect your first home using the QR Code:
 
-1.  Connect mobile phone to the same Wi-Fi network as the Touch Point LCD ***Add link to touch point setup for AP mode***
+1. On the Touch Point LCD, press the Wi-Fi button on the navigation bar to open the Wi-Fi screen.
+2. Make sure your Mobile device is connected to the same Wi-Fi network as the Touch Point LCD.
+3. Now on your Mobile Device, open the anywAiR® Zone Mobile App and log in or sign up. <br/>
+    1. Existing Users: Log in and proceed to step 4 <br/>
+    2. New Users: Follow the Sign Up process below: <br/>
+        1. From the Login screen, press Sign Up. <br/>
+        2. Enter prompted details (Email, Password, and Confirm Password) then continue Sign Up. <br/>
+        3. Verify Account by entering the OTP sent to your email (if not received or expired, you can request a new OTP after 2 minutes). <br/>
+        4. Once verified, you will be taken to the ‘Welcome Screen’ press ‘Next’ to continue to set-up a Username. <br/>      
+        <img src={require("./screenshots/52.png").default} width="250" />
+        <img src={require("./screenshots/53.png").default} width="250" />
+        <img src={require("./screenshots/54.png").default} width="250" />
+        <img src={require("./screenshots/55.png").default} width="250" />
+        <img src={require("./screenshots/56.png").default} width="250" />
+        <img src={require("./screenshots/57.png").default} width="250" /> 
+        5. After setting your username, the user is presented with terms and conditions. Tap 'Accept Terms' to accept the terms and conditions and complete the account creation.
+4. You will be taken to the Setup Home screen. <br/>
 
-2.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*. User will be navigated to the 'Setup Home' screen.
+5. Press Scan QR Code and scan the QR code displayed on the Touch Point LCD. <br/>
 
-3.  Select the `Scan QR Code` option. Users will be navigated to the QR code where they can scan the QR code displayed on the Touch Point LCD.
-<img src={require("./screenshots/64.png").default} width="300" />
+![max800px](../Touch%20Point%20LCD/img/LCD-Screenshots/Wi-Fi-Connected.png)
 
-4.  If a valid QR Code is scanned, users will be navigated to the 'Add a Home' screen where they must enter a Home name. Once a home name is entered press the `Add Home` button.
-<img src={require("./screenshots/65.png").default} width="300" />
-
-5.  Users will be navigated to the main control screen for their newly added home. 
+6. Enter a name for the home, then press Add Home. <br/>
+7. You will be taken to the main control screen for your newly added home. <br/>
 
 
 ### 5.1.2 First Home Setup with Invite Code
 Use the following steps to connect your first home using an invite code:
 
-1.  Connect mobile phone to the same Wi-Fi network as the Touch Point LCD ***Add link to touch point setup for AP mode***
+1.  Connect mobile phone to the same Wi-Fi network as the TouchPoint LCD
 
 2.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*. User will be navigated to the 'Setup Home' screen.
 
@@ -668,7 +700,7 @@ Use the following steps to connect your first home using an invite code:
 ### 5.1.3 Add a Home with QR Code
 Use the following steps to add a home using the QR Code:
 
-1.  Connect mobile phone to the same Wi-Fi network as the Touch Point LCD ***Add link to touch point setup for AP mode***
+1.  Connect mobile phone to the same Wi-Fi network as the TouchPoint LCD
 
 2.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
@@ -680,7 +712,7 @@ Use the following steps to add a home using the QR Code:
 5.  Press the `+ Add Home` button on the bottom right to and then select open the add home options.
 <img src={require("./screenshots/69.png").default} width="300" />
 
-6.  Select the `Scan QR Code` option. Users will be navigated to the QR code where they can scan the QR code displayed on the Touch Point LCD.
+6.  Select the `Scan QR Code` option. Users will be navigated to the QR code where they can scan the QR code displayed on the TouchPoint LCD.
 <img src={require("./screenshots/70.png").default} width="300" />
 
 7.  If a valid QR Code is scanned, users will be navigated to the 'Add a Home' screen where they must enter a Home name. Once a home name is entered press the `Add Home` button.
@@ -736,7 +768,7 @@ Use the following steps to edit a home name:
 
 5.  Press the `>` button on the home name card to open the editable home name field that will appear from the bottom of the screen.
 
-6.  Enter your new home name in the editiable field then apply the changes by pressing `Save Changes` or cancel by pressing `Cancel`.
+6.  Enter your new home name in the editable field then apply the changes by pressing `Save Changes` or cancel by pressing `Cancel`.
 <img src={require("./screenshots/72.png").default} width="300" />
 
 ### 5.2.2 Adding Users to a Home
@@ -889,7 +921,7 @@ The following are key control and monitoring points available to the user:
 
 **Run Mode Management:** Via the anywAiR Zone app, users can set timed On/Off actions based on the unit’s current state. If the system is already running, a Run Off timer can be enabled to automatically turn the unit off after the selected duration. If the system is currently off, a Run On timer can be set to automatically start the unit after the chosen time period. <br/>
 
-**Scene Management:** Via the anywAiR Zone app, users can create custom “scenes” that bundle specific run conditions—such as mode, setpoint, and fan speed. These scenes can then be applied to schedules or link them to run modes for consistent comfort with a single action. <br/>
+**Scene Management:** Via the anywAiR Zone app, users can create custom “scenes” that bundle specific run conditions—such as mode, temperature setpoint, fan speed, and zoning. These scenes can then be applied to schedules or link them to run modes for consistent comfort with a single action. <br/>
 
 **Error Status Reporting:** Via the anywAiR Zone app users can monitor the error status and error codes generated by the Air Conditioner unit whilst also monitoring system-generated alerts such as communications errors.
 
@@ -995,7 +1027,7 @@ Use the following steps to control a zone:
 <img src={require("./screenshots/88.png").default} width="300" />
 
 3.  Perform the desired action on the zone.
-    - **Mark Zone as Main** – Users can designate or disable the zone as the main zone for the system by pressing the toggle button beside the 'Main' setting. Note a zone requires a paired droplet sensor to be set as the Main zone.
+    - **Mark Zone as Primary** – Users can designate or disable the zone as the Primary zone for the system by pressing the toggle button beside the 'Primary' setting. Note a zone requires a paired droplet sensor to be set as the Primary zone.
 
     - **Increase:** Increase the zone airflow by 5%
 
