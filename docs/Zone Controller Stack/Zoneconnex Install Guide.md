@@ -5,21 +5,21 @@
 ## 1.1 About Product
 Zoneconnex, paired with the TouchPoint LCD, delivers a complete HVAC control solution designed for residential and light commercial split ducted air conditioning systems. Together, they provide intelligent zone management, intuitive user control, and real-time environmental feedback.
 
-Zoneconnex is Nube iO’s pre-programmed HVAC zone controller, enabling precise control and monitoring of multiple zones within a property. It seamlessly manages airflow, temperature, and system operation, improving comfort and energy efficiency while simplifying installation—particularly in retrofit and smart home environments.
+Zoneconnex is General's pre-programmed HVAC zone controller, enabling precise control and monitoring of multiple zones within a property. It seamlessly manages airflow, temperature, and system operation, improving comfort and energy efficiency while simplifying installation—particularly in retrofit and smart home environments.
 
-The TouchPoint LCD complements Zoneconnex as a wall-mounted touchscreen interface, offering users a clear and responsive way to interact with the system locally. Through its intuitive display, users can easily adjust setpoints, fan modes, zoning preferences, and schedules. Integrated temperature and humidity sensors also provide valuable environmental data, enabling more intelligent and automated HVAC control.
+The TouchPoint LCD compliments Zoneconnex as a wall-mounted touchscreen interface, offering users a clear and responsive way to interact with the system locally. Through its intuitive display, users can easily adjust modes, temperature setpoints, fan speeds, zoning preferences, and schedules. Integrated temperature and humidity sensors also provide valuable environmental data, enabling more intelligent and automated HVAC control.
 
-Designed for IoT-enabled HVAC and Building Management Systems, the solution supports integration via RS485 with Modbus RTU and custom profiles, allowing seamless connectivity to centralised BMS platforms. In addition, remote access is available via the Nube iO MIA mobile app, giving users flexibility to monitor and control their system from anywhere.
+Designed for IoT-enabled HVAC and Building Management Systems, the solution supports integration via RS485 with Modbus RTU and custom profiles, allowing seamless connectivity to centralised BMS platforms. In addition, remote access is available via the anywAiR® Zone Mobile App, giving users flexibility to monitor and control their system from anywhere.
 
 Optimised for both new installations and retrofits, Zoneconnex with TouchPoint LCD enhances user interaction, system visibility, and overall control—delivering a smarter, more efficient indoor climate experience.
 
 ![max800px](img/Guide-Cover.png)
 
 ## 1.2 System Architecture
-**Zoneconnex Controller:** Acts as the master device, interfacing with compatible RAC/PAC and VRF Air Conditioning units via the UART protocal. It manages data transmission to and from the field devices and manages the control of the air conditioning system. <br/>
-**Touch Point LCD:** This wall-mounted touchscreen provides a local control interface for the user to manage and monitor the air conditioning system. <br/>
+**Zoneconnex Controller:** Acts as the master device, interfacing with compatible RAC/PAC and VRF Air Conditioning units via the UART protocol. It manages data transmission to and from the field devices and manages the control of the air conditioning system. <br/>
+**TouchPoint LCD:** This wall-mounted touchscreen provides a local control interface for the user to manage and monitor the air conditioning system. <br/>
 **anywAiR® Zone Mobile App:** This mobile application provides a remote control interface for the user to manage and monitor the air conditioning system. <br/>
-**Droplet (sold separately):** This wireless LoRa device monitors temperature and humitidy in each zone transmitting data to the Zoneconnex allowing for individual zone control. <br/>
+**Droplet (sold separately):** This wireless LoRa device monitors temperature and humidity in each zone transmitting data to the Zoneconnex allowing for individual zone monitoring. <br/>
 
 ## 1.3 Packaging Contents
 Check that you have received all items below.
@@ -37,9 +37,9 @@ Check that you have received all items below.
 ## 1.4.1 Zoneconnex Features
 **Wireless Connectivity:** The Zoneconnex supports Wi-Fi 2.4 GHz and Bluetooth 4.2 connectivity.<br/>
 **Ethernet:** 2x 100 Mbps RJ45 Ethernet Ports for LAN connection.<br/>
-**RS-485:** The Zoneconnex incorrporates 2x RS485 communication ports.
+**RS-485:** The Zoneconnex incorporates 2x RS485 communication ports.
 - 1 × Isolated RS-485 (for third party field-bus communication)
-- 1 × RS-485 (for Touch Point LCD modbus communication).
+- 1 × RS-485 (for TouchPoint LCD Modbus communication).
 
 **Zone Control Ports:** The Zoneconnex is rated to support 10x RJ12 24VAC Dampers up to 150mA each. <br/>
 **TouchPoint LCD Integration:** The Zoneconnex provides an 18VDC power source and Modbus connection point for the TouchPoint LCD.<br/>
@@ -47,8 +47,8 @@ Check that you have received all items below.
 
 ## 1.4.2 TouchPoint LCD Features
 **Wireless Connectivity:** The TouchPoint LCD supports Wi-Fi 802.11 b/g/n connectivity.<br/>
-**RS-485:** The TouchPoint LCD incorrporates 1x RS485 modbus communication port. <br/>
-**DC Power:** The TouchPoint LCD incorrporates an 18VDC power input port. <br/>
+**RS-485:** The TouchPoint LCD incorporates 1x RS485 Modbus communication port. <br/>
+**DC Power:** The TouchPoint LCD incorporates an 18VDC power input port. <br/>
 **USB-C:** Service / Programming Port used to manage the TouchPoint LCD firmware. <br/>
 
 ## 1.4.3 Control Features
@@ -62,7 +62,7 @@ Check that you have received all items below.
 **Zone Temperature Monitoring:** Monitor the return air temperature or the Primary Zone temperature.<br/>
 **Zone Control:** Via the anywAiR® Zone Mobile App and TouchPoint LCD users can interface with the Zoneconnex to control up to 10 zone dampers. Each damper can be controlled within a range of 0-100% airflow in 5% increments. <br/>
 **Schedule Management:** Via the anywAiR® Zone Mobile App and TouchPoint LCD, users can configure and manage schedules to automatically run their air conditioning unit at set times and days — helping maintain comfort, reduce manual adjustments, and improve energy efficiency. <br/>
-**Scene Management:** Via the anywAiR® Zone Mobile App TouchPoint LCD, users can create custom "scenes" that bundle specific run conditions such as mode, setpoint, and fan speed. These scenes can then be applied to schedules, or link them to run modes for consistent comfort with a single action. <br/>
+**Scene Management:** Via the anywAiR® Zone Mobile App TouchPoint LCD, users can create custom "scenes" that bundle specific run conditions such as mode, temperature setpoint, fan speed, and zones. These scenes can then be applied to schedules, or link them to run modes for consistent comfort with a single action. <br/>
 **Run Mode Management:** Via the anywAiR® Zone Mobile App, users can set timed On/Off actions based on the unit’s current state. If the system is already running, a Run Off timer can be enabled to automatically turn the unit off after the selected duration. If the system is currently off, a Run On timer can be set to automatically start the unit after the chosen time period. <br/>
 **Error Status Reporting:** Via the anywAiR® Zone Mobile App and TouchPoint LCD users can monitor the error status and error codes generated by the Air Conditioner unit whilst also monitoring system generated alerts such as communications errors. <br/>
 
@@ -85,9 +85,9 @@ Check that you have received all items below.
 ## 2.2 Zoneconnex Component Breakdown
 
 ### 2.2.1 Front View
-- 24VAC/DC Power Input: Termination block for connecting the ZoneConnex 24VAC/DC power input.
+- 24VAC/DC Power Input: Termination block for connecting the Zoneconnex 24VAC/DC power input.
 - U.FL LoRa Antenna: Connects the antenna for LoRa & LoRaWan communication.
-- Wi-fi Antenna: Connects the antenna for Wifi communication.
+- Wi-Fi Antenna: Connects the antenna for Wi-Fi communication.
 - Din Rail Clip: Allows for secure din rail mounting and maintenance.
 - Mounting Clips: Allows for secure mounting via use of appropriate fixings.
 - UART Port: Termination block for connecting the Zoneconnex to UART communication.
@@ -99,7 +99,7 @@ Check that you have received all items below.
 
 ### 2.2.2 Top View
 - 24VAC/DC Power Input: Termination block for connecting the Zoneconnex 24VAC/DC power input.
-- Wi-fi Antenna: Connects the antenna for Wi-fi communication
+- Wi-Fi Antenna: Connects the antenna for Wi-Fi communication
 - Zone Control Ports 1-5: RJ12 outputs to supply 24V AC to control the zone dampers.
 - USB-C: Service / programming port used to manage the Zoneconnex firmware.
 - 6-Pin STM32 Port: STM32 service / programming port used to manage the Zoneconnex firmware.
@@ -118,7 +118,7 @@ Check that you have received all items below.
 - UART Port: Termination block for connecting the Zoneconnex to UART communication.
 - RS485-ISO: Termination block for connecting third party field-bus communication devices to the Zoneconnex.
 - LCD RS485: Termination block for connecting the TouchPoint LCD Modbus communication to the Zoneconnex.
-- LCD 18VDC Power: Termination block for powering the Touch Point LCD from the ZoneConnex.
+- LCD 18VDC Power: Termination block for powering the TouchPoint LCD from the Zoneconnex.
 
 ![max800px](Zoneconnex/img/ACB-ZC-Components-Markup-Bottom-View.png)
 
@@ -142,19 +142,17 @@ Check that you have received all items below.
 ### 2.4.1 LCD Screen
 
 - 18V DC Power Input: Terminals for powering the TouchPoint LCD from the Zoneconnex.
-- Wi-fi Antenna: Connects the antenna for Wi-fi communication.
-- RS485 Connection: Terminals for connecting the Touch Point LCD to the ZoneConnex via RS485 communication.
-- USB-C: Service / Programming Port used to manage the Touch Point LCD firmware.
-- Reset Button: Used to perfom a soft reset on the Touch Point LCD.
+- Wi-Fi Antenna: Connects the antenna for Wi-Fi communication.
+- RS485 Connection: Terminals for connecting the TouchPoint LCD to the Zoneconnex via RS485 communication.
+- USB-C: Service / Programming Port used to manage the TouchPoint LCD firmware.
+- Reset Button: Used to perform a soft reset on the TouchPoint LCD.
 
-***Update Image***
-
-![max800px](Touch%20Point%20LCD/img/Internal-Components-Breakdown-rev2.png)
+![max800px](Touch%20Point%20LCD/img/LCD-Internal-Components-Breakdown.png)
 
 ### 2.4.2 LCD Housing
 
 - Mounting Points: Allows for secure mounting via use of appropriate fixings.
-- Cable Entry Points: Allows for the 24AWG Power/communication cable from the Zoneconnex to be brought into the Touch Point LCD housing.
+- Cable Entry Points: Allows for the 24AWG Power/communication cable from the Zoneconnex to be brought into the TouchPoint LCD housing.
 
 ![max1000px](Touch%20Point%20LCD/img/LCD-Housing-Components.png)
 
@@ -163,9 +161,9 @@ Check that you have received all items below.
 # 3. Installation
 
 ## 3.1 Zoneconnex Mounting
-The Zoneconnex can be mounted in on din rail or via fixings utilising the mounting clips depending on the type of air conditioning system and mounting location. In all cases, the antenna must remain vertical (unless specifically noted). The Zoneconnex should always be mounted in a location such that it will not experience extreme high or low temperatures, liquids or high humidity.
+The Zoneconnex can be mounted in on DIN rail or via fixings utilising the mounting clips depending on the type of air conditioning system and mounting location. In all cases, the antenna must remain vertical (unless specifically noted). The Zoneconnex should always be mounted in a location such that it will not experience extreme high or low temperatures, liquids or high humidity.
 
-### 3.1.1 Din Rail Mounting
+### 3.1.1 DIN Rail Mounting
 Ensure the DIN rail is securely installed. Hook the top of the Zoneconnex onto the top of the DIN rail.
 Pivot the bottom toward the rail until the lower clip snaps into place. Gently pull forward to confirm the controller is securely mounted.
 
@@ -298,7 +296,7 @@ Scan the QR code below to download the anywAiR® Zone Mobile App for iOS or Andr
 
 <br/>
 
-For further details outlining how top use the anywAiR® Zone Mobile App use the following link: **[anywAiR® Zone Mobile App](/rubix-ce-docs/docs/Zone%20Controller%20Stack/MIA%20Mobile%20App/MIA%20App%20User%20Manual)**
+For further details outlining how to use the anywAiR® Zone Mobile App use the following link: **[anywAiR® Zone Mobile App](/rubix-ce-docs/docs/Zone%20Controller%20Stack/MIA%20Mobile%20App/MIA%20App%20User%20Manual)**
 
 <br/>
 
@@ -361,7 +359,7 @@ Use the following steps to complete the zone configuration from the Installer me
    - Set **Zone Name** - Rename the zone for easy identification by pressing the arrow `>` button beside the current zone name. After entering the desired name press the `Save` button to apply the changes or `cancel` button to cancel the changes. <br/>
       <img src={require("./MIA\ Mobile\ App/screenshots/7.png").default} width="300" />
 
-   - Enable **Primary Zone** (if required) -  Users can designate or disable the zone as the primary zone for the system by pressing the toggle button beside the 'Primary' setting. Note a zone requires a paired droplet sensor to be set as the primary zone. <br/>
+   - Enable **Primary Zone** (if required) -  Users can designate or disable the zone as the Primary zone for the system by pressing the toggle button beside the 'Primary' setting. Note a zone requires a paired droplet sensor to be set as the Primary zone. <br/>
    <img src={require("./MIA\ Mobile\ App/screenshots/8.png").default} width="300" />
 
    - Enable **Relief Zone** (if required) - Users can enable or disable a zone as a relief zone by pressing the toggle button beside the 'Relief' setting. <br/>
@@ -381,7 +379,11 @@ Use the following steps to complete the zone configuration from the Installer me
    <img src={require("./MIA\ Mobile\ App/screenshots/14.png").default} width="300" />
    <img src={require("./MIA\ Mobile\ App/screenshots/15.png").default} width="300" />
 
-    - **Add and Manage Droplets** – Pair and manage associated droplets to the zone by using the `Add Droplets` button then selecting the appropriate droplet from the list. To add a new droplet, press the menu icon to the top right of the list and follow the steps outlined in section *3.3. Droplet Configuration & Management*. To remove/unpair a droplet, press on the `>` button associated with the droplet to open the droplet options screen then press the `Remove Droplet` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
+    - **Add and Manage Droplets** – Pair and manage associated droplets to the zone by using the `Add Droplets` button then selecting the appropriate droplet from the list. To add a new droplet, press the menu icon to the top right of the list and tap `+ Add` on the Droplets screen. Two options are available: 
+      - Manually — Select `Enter Droplet Details` and enter the droplet's name and 8-digit LoRa ID (from the barcode), then tap `Add`.
+      - Via QR Code — Select `Scan QR Code` and scan the barcode on the droplet. The 8-digit LoRa ID will be pre-filled automatically. Enter the droplet name, then tap `Add`. <br/>
+  
+   To remove/unpair a droplet, press on the `>` button associated with the droplet to open the droplet options screen then press the `Remove Droplet` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
    <img src={require("./MIA\ Mobile\ App/screenshots/16.png").default} width="300" />
    <img src={require("./MIA\ Mobile\ App/screenshots/17.png").default} width="300" />
    <img src={require("./MIA\ Mobile\ App/screenshots/18.png").default} width="300" />
@@ -391,11 +393,11 @@ Use the following steps to complete the zone configuration from the Installer me
    <img src={require("./MIA\ Mobile\ App/screenshots/22.png").default} width="300" />
    <img src={require("./MIA\ Mobile\ App/screenshots/23.png").default} width="300" />
 
-4. Press **Next** to save the zone settings.  
+1. Press **Next** to save the zone settings.  
 
-5. Repeat the zone configuration process for all remaining zones (press **Back** if needed to return to the previous zone).
+2. Repeat the zone configuration process for all remaining zones (press **Back** if needed to return to the previous zone).
 
-6. On the final zone, press **Complete** to finish and open the **Zones** screen for monitoring and control.
+3. On the final zone, press **Complete** to finish and open the **Zones** screen for monitoring and control.
 
 <br/>
 
@@ -424,7 +426,7 @@ Use the following steps to complete the zone configuration from the Installer me
 ![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Wi-fi-connected.png)
 
 6. Enter a name for the home, then press Add Home. <br/>
-7. You will be taken to the main control screen for your newly added home.<br/>
+7. You will be taken to the main control screen for your newly added home. <br/>
 
 
 <br/>

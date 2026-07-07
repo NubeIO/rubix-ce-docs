@@ -5,17 +5,17 @@
 ## 1.1. Product Overview
 The anywAiR Zone app is a powerful configuration and management tool designed to simplify the setup and ongoing control of the Zoneconnex HVAC zone controller. The app provides installers and users with an intuitive, guided interface to commission systems, configure zones, and manage day-to-day operation directly from a mobile device.
 
-Through a direct wifi access point connection, the app enables fast and reliable system configuration, including zone setup, temperature setpoints, operating modes, and airflow preferences. Once commissioned, users can pair their Zoneconnex system to their local wifi and continue to monitor the system status in real time and make adjustments as needed, ensuring optimal comfort and performance across all connected zones.
+Through a direct Wi-Fi access point connection, the app enables fast and reliable system configuration, including zone setup, temperature setpoints, operating modes, and airflow preferences. Once commissioned, users can pair their Zoneconnex system to their local Wi-Fi network and continue to monitor the system status in real time and make adjustments as needed, ensuring optimal comfort and performance across all connected zones.
 
-Designed for both residential and light commercial applications, the Nube iO anywAiR® Zone Mobile App supports smart home-ready installations and HVAC retrofit projects. By combining straightforward commissioning with flexible system management, the app reduces setup time, minimizes complexity, and delivers a seamless control experience for modern zoned air conditioning systems.
+Designed for both residential and light commercial applications, the anywAiR® Zone Mobile App supports smart home-ready installations and HVAC retrofit projects. By combining straightforward commissioning with flexible system management, the app reduces setup time, minimizes complexity, and delivers a seamless control experience for modern zoned air conditioning systems.
 
 <br/>
 
 ## 1.2 System Architecture
-**Zoneconnex Controller:** Acts as the master device, interfacing with compatible RAC/PAC and VRF Air Conditioning units via the UART protocal. It manages data transmission to and from the field devices and manages the control of the air conditioning system. <br/>
-**Touch Point LCD:** This wall-mounted touchscreen provides a local control interface for the user to manage and monitor the air conditioning system. <br/>
+**Zoneconnex Controller:** Acts as the master device, interfacing with compatible RAC/PAC and VRF Air Conditioning units via the UART protocol. It manages data transmission to and from the field devices and manages the control of the air conditioning system. <br/>
+**TouchPoint LCD:** This wall-mounted touchscreen provides a local control interface for the user to manage and monitor the air conditioning system. <br/>
 **anywAiR® Zone Mobile App:** This mobile application provides a remote control interface for the user to manage and monitor the air conditioning system. <br/>
-**Droplet (sold separately):** This wireless LoRa device monitors temperature and humitidy in each zone transmitting data to the Zoneconnex allowing for individual zone control. <br/>
+**Droplet (sold separately):** This wireless LoRa device monitors temperature and humidity in each zone transmitting data to the Zoneconnex allowing for individual zone monitoring. <br/>
 
 <br/>
 
@@ -27,10 +27,10 @@ Designed for both residential and light commercial applications, the Nube iO any
 - Heating setpoint: 16-18 to 30 degrees Celsius (low limit model dependent)
 
 **Fan Speed Control:** Switch between Auto, Quiet, Low, Medium and High fan speeds (model dependent).<br/>
-**Zone Temperature Monitoring:** Monitor the return air temperature or the Primary Zone temperature.<br/>
+**Zone Temperature Monitoring:** Monitor the return air temperature of the unit or the Primary Zone temperature (droplet required).<br/>
 **Zone Control:** Via the anywAiR® Zone Mobile App and TouchPoint LCD users can interface with the Zoneconnex to control up to 10 zone dampers. Each damper can be controlled within a range of 0-100% airflow in 5% increments. <br/>
 **Schedule Management:** Via the anywAiR® Zone Mobile App and TouchPoint LCD, users can configure and manage schedules to automatically run their air conditioning unit at set times and days — helping maintain comfort, reduce manual adjustments, and improve energy efficiency. <br/>
-**Scene Management:** Via the anywAiR® Zone Mobile App TouchPoint LCD, users can create custom "scenes" that bundle specific run conditions such as mode, setpoint, and fan speed. These scenes can then be applied to schedules, or link them to run modes for consistent comfort with a single action. <br/>
+**Scene Management:** Via the anywAiR® Zone Mobile App or TouchPoint LCD, users can create custom "scenes" that bundle specific run conditions such as mode, temperature setpoint, fan speed, and zoning. These scenes can then be applied to schedules, or link them to run modes for consistent comfort with a single action. <br/>
 **Run Mode Management:** Via the anywAiR® Zone Mobile App, users can set timed On/Off actions based on the unit’s current state. If the system is already running, a Run Off timer can be enabled to automatically turn the unit off after the selected duration. If the system is currently off, a Run On timer can be set to automatically start the unit after the chosen time period. <br/>
 **Error Status Reporting:** Via the anywAiR® Zone Mobile App and TouchPoint LCD users can monitor the error status and error codes generated by the Air Conditioner unit whilst also monitoring system generated alerts such as communications errors. <br/>
 
@@ -53,7 +53,7 @@ Scan the QR code below to download the anywAiR® Zone Mobile App for iOS or Andr
 ## 3.1. Accessing Installer Mode
 Using the TouchPoint LCD Wi-Fi access point, installers can use the Installer Mode to configure the Zoneconnex system such as zone setup and damper pairing, min/max airflow preferences, damper calibration and droplet sensor management.
 
-To enable installer mode on the Touch Point LCD, use the following steps:
+To enable installer mode on the TouchPoint LCD, use the following steps:
 1. On the TouchPoint LCD home screen, tap the System Info icon.
 2. On the System Info screen, tap the "System" card 8 times.
 
@@ -65,19 +65,19 @@ To enable installer mode on the Touch Point LCD, use the following steps:
 [//]: # (TODO: ***Add link to touch point setup for AP mode*** ) -->
 
 The Installer Mode can then be accessed on the anywAiR® Zone Mobile App using the following steps:
-1. **Step-1** On the main login/welcome screen press the `Continue as Installer` button below the "Sign In" button.
+1. On the main login/welcome screen press the `Continue as Installer` button below the "Sign In" button.
 <img src={require("./screenshots/1.png").default} width="300" />
 
-2. **Step-2** A popup will appear cautioning the user they are entering the Installer Mode and to proceed with caution. Press `Continue` to enter installer mode or press `Cancel` to back out to the login screen.
+2. A popup will appear cautioning the user they are entering the Installer Mode and to proceed with caution. Press `Continue` to enter installer mode or press `Cancel` to back out to the login screen.
 <img src={require("./screenshots/2.png").default} width="300" />
 
-3. **Step-3** Users will be taken to the QR code where they can scan the QR code displayed on the Touch Point LCD. Note if users wish to cancel and return to the login screen, they can press the `Exit installer mode` button to back out.
+3. Users will be taken to the QR code where they can scan the QR code displayed on the TouchPoint LCD. Note if users wish to cancel and return to the login screen, they can press the `Exit installer mode` button to back out.
 <img src={require("./screenshots/3.png").default} width="300" />
 <img src={require("./screenshots/4.png").default} width="300" />
 
 **Note:**
-- If users arenn't connected to the Touch Point LCD, they can use the Wi-Fi access point to access the installer mode.
-- Upon scanning the valid Wi-Fi QR, the user is shown with an alert with an option to "Join" or "Cancel"
+- If users aren't connected to the TouchPoint LCD, they can use the Wi-Fi access point to access the installer mode.
+- Upon scanning the valid Wi-Fi QR Code, the user is shown with an alert with an option to "Join" or "Cancel"
 - If tapped "Cancel", the user is shown a different alert guiding them to connect to network manually
 - If tapped "Join", the phone connects to Wi-Fi SSID and a success alert is shown
 
@@ -88,21 +88,21 @@ Via Installer Mode, users can configure zones, pair dampers to specific zones, a
 
 ### 3.2.1 Initial Zone Configuration
 Once following section *3.1. Accessing Installer Mode* for a new system, users will be navigated to the zone configuration workflow allowing users to configure the new system by following the below steps. 
-1. **Step-1** Users must first define how many zones are connected to their system and select an appropriate number of relief zones based on the airflow requirements. Once values are entered press `Next` to save and move to the next configuration screen. <br/>
+1. Users must first define how many zones are connected to their system and select an appropriate number of relief zones based on the airflow requirements. Once values are entered press `Next` to save and move to the next configuration screen. <br/>
      - `Number Of Zones` - Enter the number of zones connected to the system. <br/>
      - `Relief Zones` - Enter the number of zones required to be active to meet minimum airflow requirements.
    <img src={require("./screenshots/5.png").default} width="300" />
    
    **Note:** Relief zones can be set as 0.
 
- 2. **Step-2** User will now be on the 'Select Relief Zones' screen. This is where the relief zones are selected. The amount required for selection is dependent on step 1. Once the required number of relief zones is set the user can press `Configure zones` to save and move to the next configuration screen.
+ 2. User will now be on the 'Select Relief Zones' screen. This is where the relief zones are selected. The amount required for selection is dependent on step 1. Once the required number of relief zones is set the user can press `Configure zones` to save and move to the next configuration screen.
 <img src={require("./screenshots/6.png").default} width="300" />
 
- 3. **Step-3** Users will now be taken to the settings page for the first zone. From this screen users will be able to configure each of the following variables:
+ 3. Users will now be taken to the settings page for the first zone. From this screen users will be able to configure each of the following variables:
     - **Edit Zone Name** – Rename the zone for easy identification by pressing the arrow `>` button beside the current zone name. After entering the desired name press the `Save` button to apply the changes or `cancel` button to cancel the changes. <br/>
     <img src={require("./screenshots/7.png").default} width="300" />
  
-    - **Mark Zone as Primary** – Users can designate or disable the zone as the primary zone for the system by pressing the toggle button beside the 'Primary' setting. Note a zone requires a paired droplet sensor to be set as the primary zone. <br/>
+    - **Mark Zone as Primary** – Users can designate or disable the zone as the primary zone for the system by pressing the toggle button beside the 'Primary' setting. Note a zone requires a paired droplet sensor to be set as the Primary zone. <br/>
     <img src={require("./screenshots/8.png").default} width="300" />
  
     - **Mark Zone as Relief** – Users can enable or disable a zone as a relief zone by pressing the toggle button beside the 'Relief' setting. <br/>
@@ -132,12 +132,12 @@ Once following section *3.1. Accessing Installer Mode* for a new system, users w
     <img src={require("./screenshots/22.png").default} width="300" />
     <img src={require("./screenshots/23.png").default} width="300" />
 
-4. **Step-4** Once all variables in step 3 are set press `Next` in the bottom right corner.
+4.  Once all variables in step 3 are set press `Next` in the bottom right corner.
 <img src={require("./screenshots/24.png").default} width="300" />
 
-5. **Step-5** Repeat steps 3 and 4 for each zone. If at any time the user wishes to go back a step they can press `Back` in the bottom left corner.
+5.  Repeat steps 3 and 4 for each zone. If at any time the user wishes to go back a step they can press `Back` in the bottom left corner.
 
-6. **Step-6** On the last zone once the variables are set the user can press `Complete` to complete the configuration and be navigated to the 'Zones' screen where they can see current status's and control the zones.
+6.  On the last zone once the variables are set the user can press `Complete` to complete the configuration and be navigated to the 'Zones' screen where they can see current status's and control the zones.
 <img src={require("./screenshots/25.png").default} width="300" />
 
 <br/>
@@ -145,13 +145,13 @@ Once following section *3.1. Accessing Installer Mode* for a new system, users w
 ### 3.2.2 Zone Management
 After the initial zone setup following section *3.2.1 Initial Zone Configuration* users can manage and edit the zones that have been previously configured using the following steps.
 
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1.  Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
 
-2. **Step-2** On the setup page press the `Configure Zones` button to navigate to the 'Zones' screen with the list of configured zones.
+2.  On the setup page press the `Configure Zones` button to navigate to the 'Zones' screen with the list of configured zones.
 <img src={require("./screenshots/26.png").default} width="300" />
 <img src={require("./screenshots/27.png").default} width="300" />
 
-3. **Step-3** From the list of zones press on the zone you wish to edit to enter the 'Zone Information' for the selected zone.
+3.  From the list of zones press on the zone you wish to edit to enter the 'Zone Information' for the selected zone.
 <img src={require("./screenshots/28.png").default} width="300" />
 
 **Note:**
@@ -159,10 +159,10 @@ After the initial zone setup following section *3.2.1 Initial Zone Configuration
 - User should only be able to switch ON the zone as "Primary", if a droplet is added to the zone.
 - Upon marking the zone as "Primary", the airflow control changes to temperature control. User can then increase or decrease the temperature accordingly.
 
-4. **Step-4** In the 'Zone Information' screen, press the settings ![settings button](img/settings-2.png) button to enter the 'Zone Setup' screen.
+4.  In the 'Zone Information' screen, press the settings ![settings button](img/settings-2.png) button to enter the 'Zone Setup' screen.
 <img src={require("./screenshots/29.png").default} width="300" />
 
-5. **Step-5** From the 'Zone Setup' screen, users will be able to edit each of the following variables:
+5.  From the 'Zone Setup' screen, users will be able to edit each of the following variables:
     - **Edit Zone Name** – Rename the zone for easy identification by pressing the arrow `>` button beside the current zone name. After entering the desired name press the `Save` button to apply the changes or `cancel` button to cancel the changes. <br/>
     - **Mark Zone as Primary** – Users can designate or disable the zone as the primary zone for the system by pressing the toggle button beside the 'Primary' setting. Note a zone requires a paired droplet sensor to be set as the primary zone. <br/>
     - **Mark Zone as Relief** – Users can enable or disable a zone as a relief zone by pressing the toggle button beside the 'Relief' setting. <br/>
@@ -172,7 +172,7 @@ After the initial zone setup following section *3.2.1 Initial Zone Configuration
     - **Add and Manage Zone Dampers** – Pair and manage associated dampers to the zone by using the `Add Dampers` button then selecting the appropriate damper from the list. To remove/unpair damper, press on the `>` button associated with the damper to open the Damper options screen then press the `Remove Damper` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
     - **Add and Manage Droplets** – Pair and manage associated droplets to the zone by using the `Add Droplets` button then selecting the appropriate droplet from the list. To add a new droplet, press the menu icon to the top right of the list and follow the steps outlined in section *3.3. Droplet Configuration & Management*. To remove/unpair a droplet, press on the `>` button associated with the droplet to open the droplet options screen then press the `Remove Droplet` button. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`. <br/>
 
-6. **Step-6** To delete a Zone, press the `Delete Zone` button at the bottom of the 'Zone Setup' screen. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`.
+6.  To delete a Zone, press the `Delete Zone` button at the bottom of the 'Zone Setup' screen. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`.
 <img src={require("./screenshots/30.png").default} width="300" />
 
 ### 3.2.3 Zone Quick Pairing
@@ -182,48 +182,48 @@ use the quick-add feature in the 'Zones' screen to quickly add dampers and/or dr
 #### 3.2.3.1 Damper Quick Pairing
 
 Use the following steps to Add a Damper to the zone:
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1.  Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
 
-2. **Step-2** On the setup page press the `Configure Zones` button to navigate to the 'Zones' screen with the list of configured zones.
+2.  On the setup page press the `Configure Zones` button to navigate to the 'Zones' screen with the list of configured zones.
 
-3. **Step-3** On the 'Zones' screen each Zone will have a plus ![plus button](img/plus.png) button on the zone card. Besides, this plus button will either be the count for the currently paired dampers (e.g., 1 Damper) or if no dampers are paired, it will show 'Add Dampers'. Press the plus ![plus button](img/plus.png) button to open the damper selection list.
+3.  On the 'Zones' screen each Zone will have a plus ![plus button](img/plus.png) button on the zone card. Besides, this plus button will either be the count for the currently paired dampers (e.g., 1 Damper) or if no dampers are paired, it will show 'Add Dampers'. Press the plus ![plus button](img/plus.png) button to open the damper selection list.
 
-4. **Step-4** To add a damper from the list, press on the damper card and a loading wheel will appear. Once added, a damper will show a tick ![tick button](img/tick.png) icon on the right-hand side of the damper card.
+4.  To add a damper from the list, press on the damper card and a loading wheel will appear. Once added, a damper will show a tick ![tick button](img/tick.png) icon on the right-hand side of the damper card.
 <img src={require("./screenshots/31.png").default} width="300" />
 <img src={require("./screenshots/32.png").default} width="300" />
 <img src={require("./screenshots/33.png").default} width="300" />
 
 Use the following steps to Remove a Damper from the zone:
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1.  Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
 
-2. **Step-2** On the setup page press the `Configure Zones` button to navigate to the 'Zones' screen with the list of configured zones.
+2.  On the setup page press the `Configure Zones` button to navigate to the 'Zones' screen with the list of configured zones.
 
-3. **Step-3** On the 'Zones' screen each Zone will have a plus ![plus button](img/plus.png) button on the zone card. Besides, this plus button will either be the count for the currently paired dampers (e.g., 1 Damper) or if no dampers are paired, it will show 'Add Dampers' Press the plus ![plus button](img/plus.png) button to open the damper selection list.
+3.  On the 'Zones' screen each Zone will have a plus ![plus button](img/plus.png) button on the zone card. Besides, this plus button will either be the count for the currently paired dampers (e.g., 1 Damper) or if no dampers are paired, it will show 'Add Dampers' Press the plus ![plus button](img/plus.png) button to open the damper selection list.
 
-4. **Step-4** Dampers already added to the selected zone will show a tick ![tick button](img/tick.png) icon on the right-hand side of the damper card. To remove a damper, press on the damper card and a loading wheel will appear. Once removed, the tick ![tick button](img/tick.png) icon will be removed from the right-hand side of the damper card.
+4.  Dampers already added to the selected zone will show a tick ![tick button](img/tick.png) icon on the right-hand side of the damper card. To remove a damper, press on the damper card and a loading wheel will appear. Once removed, the tick ![tick button](img/tick.png) icon will be removed from the right-hand side of the damper card.
 
 
 #### 3.2.3.2 Droplet Quick Pairing
 
 Use the following steps to Add a Droplet to the zone:
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1.  Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
 
-2. **Step-2** On the setup page press the `Configure Zones` button to navigate to the 'Zones' screen with the list of configured zones.
+2.  On the setup page press the `Configure Zones` button to navigate to the 'Zones' screen with the list of configured zones.
 
-3. **Step-3** On the 'Zones' screen each Zone will have a plus ![plus button](img/plus.png) button on the zone card. Beside this plus button will either be the count for the currently paired Droplets (eg 1 Droplet) or if no Droplets are paired, it will show 'Add Droplets'. Press the plus ![plus button](img/plus.png) button to open the Droplet selection list.
+3.  On the 'Zones' screen each Zone will have a plus ![plus button](img/plus.png) button on the zone card. Beside this plus button will either be the count for the currently paired Droplets (eg 1 Droplet) or if no Droplets are paired, it will show 'Add Droplets'. Press the plus ![plus button](img/plus.png) button to open the Droplet selection list.
 
-4. **Step-4** To add a Droplet from the list, press on the Droplet card and a loading wheel will appear. Once added, a Droplet will show a tick ![tick button](img/tick.png) icon on the right-hand side of the Droplet card.
+4.  To add a Droplet from the list, press on the Droplet card and a loading wheel will appear. Once added, a Droplet will show a tick ![tick button](img/tick.png) icon on the right-hand side of the Droplet card.
 <img src={require("./screenshots/34.png").default} width="300" />
 <img src={require("./screenshots/35.png").default} width="300" />
 
 Use the following steps to Remove a Droplet from the zone:
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1.  Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
 
-2. **Step-2** On the setup page press the `Configure Zones` button to navigate to the 'Zones' screen with the list of configured zones.
+2.  On the setup page press the `Configure Zones` button to navigate to the 'Zones' screen with the list of configured zones.
 
-3. **Step-3** On the 'Zones' screen each Zone will have a plus ![plus button](img/plus.png) button on the zone card. Beside this plus button will either be the count for the currently paired Droplets (e.g., 1 Droplet) or if no Droplets are paired, it will show 'Add Droplets'. Press the plus ![plus button](img/plus.png) button to open the Droplet selection list.
+3.  On the 'Zones' screen each Zone will have a plus ![plus button](img/plus.png) button on the zone card. Beside this plus button will either be the count for the currently paired Droplets (e.g., 1 Droplet) or if no Droplets are paired, it will show 'Add Droplets'. Press the plus ![plus button](img/plus.png) button to open the Droplet selection list.
 
-4. **Step-4** Droplets already added to the selected zone will show a tick ![tick button](img/tick.png) icon on the right-hand side of the Droplet card. To remove a Droplet, press on the Droplet card and a loading wheel will appear. Once removed, the tick ![tick button](img/tick.png) icon will be removed from the right-hand side of the Droplet card.
+4.  Droplets already added to the selected zone will show a tick ![tick button](img/tick.png) icon on the right-hand side of the Droplet card. To remove a Droplet, press on the Droplet card and a loading wheel will appear. Once removed, the tick ![tick button](img/tick.png) icon will be removed from the right-hand side of the Droplet card.
 
 <br/>
 
@@ -233,45 +233,45 @@ After the initial zone setup following section *3.2.1 Initial Zone Configuration
 ### 3.3.1 Adding a Droplet Manually
 
 To manually add a Droplet, use the following steps:
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1.  Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
 
-2. **Step-2** On the setup page press the `Configure Droplet` button to navigate to the 'Droplets' screen with the list of configured droplets. If no droplets are currently added the user will see a message stating that 'You dont have any droplets yet' and a prompt to add a droplet.
+2.  On the setup page press the `Configure Droplet` button to navigate to the 'Droplets' screen with the list of configured droplets. If no droplets are currently added the user will see a message stating that 'You dont have any droplets yet' and a prompt to add a droplet.
 
-3. **Step-3** To add a droplet press the `+ Add` button on the bottom right of the Droplets screen. Two options will appear, press on `+ Enter Droplet Details` to select the manual entry option.
+3.  To add a droplet press the `+ Add` button on the bottom right of the Droplets screen. Two options will appear, press on `+ Enter Droplet Details` to select the manual entry option.
 
-4. **Step-4** Enter the Droplet name and Address (8 digit Lora ID located on the droplet barcode) then press the `Add` button to create the device. Users will then be navigated to the 'Droplets' screen with the newly added droplet appearing in the list with blank values.
+4.  Enter the Droplet name and Address (8 digit Lora ID located on the droplet barcode) then press the `Add` button to create the device. Users will then be navigated to the 'Droplets' screen with the newly added droplet appearing in the list with blank values.
 
-5. **Step-5** If the droplet is powered and in range, it will pair with the Zoneconnex automatically within 15 minutes with the droplets' next interval reporting. Alternatively, the user can reset or power cycle the droplet to initiate pairing when the Droplet reboots. Once paired values will appear in the droplet card (°C, %, and dBm).
+5.  If the droplet is powered and in range, it will pair with the Zoneconnex automatically within 15 minutes with the droplets' next interval reporting. Alternatively, the user can reset or power cycle the droplet to initiate pairing when the Droplet reboots. Once paired values will appear in the droplet card (°C, %, and dBm).
 
 ### 3.3.2 Adding a Droplet via QR Code
 
 To manually add a Droplet using QR code, use the following steps:
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1.  Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
 
-2. **Step-2** On the setup page press the `Configure Droplet` button to navigate to the 'Droplets' screen with the list of configured droplets. If no droplets are currently added the user will see a message stating that 'You don't have any droplets yet' and a prompt to add a droplet.
+2.  On the setup page press the `Configure Droplet` button to navigate to the 'Droplets' screen with the list of configured droplets. If no droplets are currently added the user will see a message stating that 'You don't have any droplets yet' and a prompt to add a droplet.
 
-3. **Step-3** To add a droplet press the `+ Add` button on the bottom right of the Droplets screen. Two options will appear, press on `Scan QR Code` to select the QR Code scan option.
+3.  To add a droplet press the `+ Add` button on the bottom right of the Droplets screen. Two options will appear, press on `Scan QR Code` to select the QR Code scan option.
 
-4. **Step-4** Users will be taken to the QR code scanner where they can scan the QR code displayed on the Droplet. If a valid QR Code is scanned, the user will be taken to the 'Add Droplet' screen with the Address (8 digit Lora ID) field pre-filled.
+4.  Users will be taken to the QR code scanner where they can scan the QR code displayed on the Droplet. If a valid QR Code is scanned, the user will be taken to the 'Add Droplet' screen with the Address (8 digit Lora ID) field pre-filled.
 
-5. **Step-5** Enter the Droplet name then press the `Add` button to create the device. Users will then be navigated to the 'Droplets' screen with the newly added droplet appearing in the list with blank values.
+5.  Enter the Droplet name then press the `Add` button to create the device. Users will then be navigated to the 'Droplets' screen with the newly added droplet appearing in the list with blank values.
 
-6. **Step-6** If the droplet is powered and in range, it will pair with the Zoneconnex automatically within 15 minutes with the droplets' next interval reporting. Alternatively, the user can reset or power cycle the droplet to initiate pairing when the Droplet reboots. Once paired, values will appear in the droplet card (°C, %, and dBm).
+6.  If the droplet is powered and in range, it will pair with the Zoneconnex automatically within 15 minutes with the droplets' next interval reporting. Alternatively, the user can reset or power cycle the droplet to initiate pairing when the Droplet reboots. Once paired, values will appear in the droplet card (°C, %, and dBm).
 
 <br/>
 
 ### 3.3.3 Droplet Management
 Users can manage and edit the Droplets that have been previously configured using the following steps.
 
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1.  Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
 
-2. **Step-2** On the setup page press the `Configure Droplet` button to navigate to the 'Droplets' screen with the list of configured droplets. If no droplets are currently added, the user will see a message stating that 'You don't have any droplets yet' and a prompt to add a droplet.
+2.  On the setup page press the `Configure Droplet` button to navigate to the 'Droplets' screen with the list of configured droplets. If no droplets are currently added, the user will see a message stating that 'You don't have any droplets yet' and a prompt to add a droplet.
 <img src={require("./screenshots/36.png").default} width="300" />
 
-3. **Step-3** From the list of Droplets press on the `>` button for the droplet you wish to edit to enter the 'Droplet Settings' for the selected droplet.
+3.  From the list of Droplets press on the `>` button for the droplet you wish to edit to enter the 'Droplet Settings' for the selected droplet.
 <img src={require("./screenshots/37.png").default} width="300" />
 
-4. **Step-4** From the 'Droplet Settings' screen, users will be able to edit each of the following variables:
+4.  From the 'Droplet Settings' screen, users will be able to edit each of the following variables:
     - **Edit Droplet Name** – Rename the Droplet for easy identification by pressing the arrow `>` button beside the current Droplet name. After entering the desired name press the `Save` button to apply the changes or back arrow ![back arrow button](img/arrow-left.png) button to cancel the changes and return to the 'Droplet Settings' screen. <br/>
    <img src={require("./screenshots/38.png").default} width="300" />
    <img src={require("./screenshots/39.png").default} width="300" />
@@ -286,7 +286,7 @@ Users can manage and edit the Droplets that have been previously configured usin
         - **Remove from Zone** - To remove the droplet from a zone press the `>` button on the paired zone then press the `Remove Zone` button. A popup will appear asking the user to confirm the removal by pressing `Delete` or cancel by pressing `Cancel`. <br/>
         <img src={require("./screenshots/42.png").default} width="300" />
 
-5. **Step-5,** To delete a Droplet, press the `Delete Droplet` button at the bottom of the 'Droplet Settings' screen. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`.
+5.  To delete a Droplet, press the `Delete Droplet` button at the bottom of the 'Droplet Settings' screen. A popup will appear asking the user to confirm the deletion by pressing `Delete` or cancel by pressing `Cancel`.
 <img src={require("./screenshots/43.png").default} width="300" />
 
 <br/>
@@ -296,30 +296,30 @@ Users can manage the system preferences via the installer mode to manually selec
 
 ### 3.4.1 Timezone Configuration
 
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1.  Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
 
-2. **Step-2** On the setup page press the `Preferences` button to navigate to the 'Preferences' screen.
+2.  On the setup page press the `Preferences` button to navigate to the 'Preferences' screen.
 <img src={require("./screenshots/44.png").default} width="300" />
 <img src={require("./screenshots/45.png").default} width="300" />
 
-3. **Step-3,** To access the timezone settings, the user must press the `>` button on the timezone card to open the list of timezones.
+3.  To access the timezone settings, the user must press the `>` button on the timezone card to open the list of timezones.
 
-4. **Step-4** Users can either search or scroll through the list to find their desired timezone.
+4.  Users can either search or scroll through the list to find their desired timezone.
 
-5. **Step-5** To select the timezone from the list, press on the timezone card. Once selected, the user will be navigated back to the 'Preferences' screen and the timezone selected will be shown.
+5.  To select the timezone from the list, press on the timezone card. Once selected, the user will be navigated back to the 'Preferences' screen and the timezone selected will be shown.
 
-6. **Step-6** To edit the timezone, repeat steps 1 to 5. When in the timezone list the currently selected timezone will show a tick ![tick button](img/tick.png) icon on the right-hand side of the timezone card.
+6.  To edit the timezone, repeat steps 1 to 5. When in the timezone list the currently selected timezone will show a tick ![tick button](img/tick.png) icon on the right-hand side of the timezone card.
 <img src={require("./screenshots/46.png").default} width="300" />
 
 <br/>
 
 ### 3.4.2 Current Temperature Display Configuration
 
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1.  Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
 
-2. **Step-2** On the setup page press the `Preferences` button to navigate to the 'Preferences' screen.
+2.  On the setup page press the `Preferences` button to navigate to the 'Preferences' screen.
 
-3. **Step-3** To access the current temperature display settings, toggle the switch on the right-hand side of the 'Show Current Temperature' list item.
+3.  To access the current temperature display settings, toggle the switch on the right-hand side of the 'Show Current Temperature' list item.
 <img src={require("./screenshots/47.png").default} width="300" />
 
 <br/>
@@ -338,11 +338,11 @@ Users can manage the system preferences via the installer mode to manually selec
 
 To reset the configuration and start the setup from scratch, users can perform the `Factory Reset` by following the steps below:
 
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1.  Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
 
-2. **Step-2** On the setup page press the `Preferences` button to navigate to the 'Preferences' screen.
+2.  On the setup page press the `Preferences` button to navigate to the 'Preferences' screen.
 
-3. **Step-3** To access the factory reset settings, tap the `Factory Reset` button, a popup will appear asking the user to confirm the reset by pressing `Accept` or cancel by pressing `Cancel`.
+3.  To access the factory reset settings, tap the `Factory Reset` button, a popup will appear asking the user to confirm the reset by pressing `Accept` or cancel by pressing `Cancel`.
 <img src={require("./screenshots/48.png").default} width="300" />
 
 <br/>
@@ -354,12 +354,12 @@ Users can view the logs of the system.
 ### 3.5.1 Viewing Logs
 Follow the following steps to view the logs:
 
-1. **Step-1** Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
+1.  Users must first access the installer mode following the steps outlined in section *3.1. Accessing Installer Mode* where the user will be navigated to the 'Setup' screen.
 
-2. **Step-2** On the setup page press the `Logs` button to navigate to the 'Logs' screen.
+2.  On the setup page press the `Logs` button to navigate to the 'Logs' screen.
 <img src={require("./screenshots/121.png").default} width="300" />
 
-3. **Step-3** User is navigated to the 'Logs' screen and can view the logs.
+3.  User is navigated to the 'Logs' screen and can view the logs.
 <img src={require("./screenshots/122.png").default} width="300" />
 
 <br />
@@ -367,9 +367,9 @@ Follow the following steps to view the logs:
 ### 3.5.2 Log Detail
 Follow the following steps to view the log detail:
 
-1. **Step-1** Users must first access the logs following the steps outlined in section *3.5.1. Viewing Logs*.
+1.  Users must first access the logs following the steps outlined in section *3.5.1. Viewing Logs*.
 
-2. **Step-2** On the 'Logs' screen, tap on the log entry to view the log detail.
+2.  On the 'Logs' screen, tap on the log entry to view the log detail.
 <img src={require("./screenshots/123.png").default} width="300" />
 
 <br />
@@ -377,31 +377,31 @@ Follow the following steps to view the log detail:
 ### 3.5.3 Download Logs
 Follow the following steps to download the logs:
 
-1. **Step-1** Users must first access the logs following the steps outlined in section *3.5.1. Viewing Logs*.
+1.  Users must first access the logs following the steps outlined in section *3.5.1. Viewing Logs*.
 
-2. **Step-2** On the 'Logs' screen, tap on the "Download" icon in the top right corner of the screen.
+2.  On the 'Logs' screen, tap on the "Download" icon in the top right corner of the screen.
 <img src={require("./screenshots/124.png").default} width="300" />
 
-3. **Step-3** User can also download the logs from the Log detail screen the same way.
+3.  User can also download the logs from the Log detail screen the same way.
 
 <br />
 
 ### 3.5.4 Log Settings
 Follow the following steps to view the log settings:
 
-1. **Step-1** Users must first access the logs following the steps outlined in section *3.5.1. Viewing Logs*.
+1.  Users must first access the logs following the steps outlined in section *3.5.1. Viewing Logs*.
 
-2. **Step-2** On the 'Logs' screen, tap on the "Settings" icon in the top right corner of the screen.
+2.  On the 'Logs' screen, tap on the "Settings" icon in the top right corner of the screen.
 <img src={require("./screenshots/125.png").default} width="300" />
 
-3. **Step-3** The app navigates to the log settings screen.
+3.  The app navigates to the log settings screen.
 <img src={require("./screenshots/126.png").default} width="300" />
 
-4. **Step-4** Users can change the console level and file level.
+4.  Users can change the console level and file level.
 <img src={require("./screenshots/127.png").default} width="300" />
 <img src={require("./screenshots/128.png").default} width="300" />
 
-5. **Step-5** Users can also configure tag filters and log levels.
+5.  Users can also configure tag filters and log levels.
 <img src={require("./screenshots/129.png").default} width="300" />
 
 <br />
@@ -409,11 +409,11 @@ Follow the following steps to view the log settings:
 ## 3.6. Exit Installer Mode
 If users wish to exit the installer mode, they can do so by following steps below:
 
-1. **Step-1** Navigate to the 'Setup' screen.
+1.  Navigate to the 'Setup' screen.
 
-2. **Step-2** Open the menu using the menu ![menu button](img/horizontal-dots.png) button in the top right corner of the screen.
+2.  Open the menu using the menu ![menu button](img/horizontal-dots.png) button in the top right corner of the screen.
 
-3. **Step-3** If no changes have been made in the installer mode the user can press the `Exit` button and will be navigated to the login/landing screen. A popup will appear asking the user to confirm by pressing `Accept` or cancel by pressing `Cancel`.
+3.  If no changes have been made in the installer mode the user can press the `Exit` button and will be navigated to the login/landing screen. A popup will appear asking the user to confirm by pressing `Accept` or cancel by pressing `Cancel`.
 <img src={require("./screenshots/49.png").default} width="300" />
 
 <br/>
@@ -421,9 +421,9 @@ If users wish to exit the installer mode, they can do so by following steps belo
 ## 3.7. Completing Configuration
 Once configuration is complete, users must apply the changes and exit the installer mode using the following steps:
 
-1. **Step-1** Navigate to the 'Setup' screen.
+1.  Navigate to the 'Setup' screen.
 
-2. **Step-2** Press the `Finish Installation` button to apply the changes made and will be navigated to the welcome/login screen. A popup will appear asking the user to confirm by pressing `Accept` or cancel by pressing `Cancel`.
+2.  Press the `Finish Installation` button to apply the changes made and will be navigated to the welcome/login screen. A popup will appear asking the user to confirm by pressing `Accept` or cancel by pressing `Cancel`.
 <img src={require("./screenshots/50.png").default} width="300" />
 
 <br/>
@@ -442,24 +442,24 @@ Users have three user creation methods using the mobile app.
 ### 4.1.1 Email Sign Up
 Use the following steps to create an account using an email account:
 
-1. **Step-1** Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
+1.  Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
 <img src={require("./screenshots/51.png").default} width="300" />
 
-2. **Step-2** Press the `Sign Up` button at the bottom of the screen next to the prompt 'Don't have an account?' User will be navigated to the 'Create Account' screen.
+2.  Press the `Sign Up` button at the bottom of the screen next to the prompt 'Don't have an account?' User will be navigated to the 'Create Account' screen.
 <img src={require("./screenshots/52.png").default} width="300" />
 <img src={require("./screenshots/53.png").default} width="300" />
 
-3. **Step-3** Enter a valid email address, then enter, and confirm a password for your account. Also, check the box for "Terms and Conditions". Next, press the `Sign Up` button at the bottom of the screen.
+3.  Enter a valid email address, then enter, and confirm a password for your account. Also, check the box for "Terms and Conditions". Next, press the `Sign Up` button at the bottom of the screen.
 <img src={require("./screenshots/54.png").default} width="300" />
 
-4. **Step-4** User will be navigated to the 'Verify Account' screen where they will be required to enter the 6-digit OTP (One-Time Password) code that has been sent to the email entered in step 3. Once the 6-digit OTP code has been entered press the `Verify Code` button to complete your account creation and be navigated to the onboarding screen.
+4.  User will be navigated to the 'Verify Account' screen where they will be required to enter the 6-digit OTP (One-Time Password) code that has been sent to the email entered in step 3. Once the 6-digit OTP code has been entered press the `Verify Code` button to complete your account creation and be navigated to the onboarding screen.
 <img src={require("./screenshots/55.png").default} width="300" />
 
-5. **Step-5** From the onboarding screen press the `Next` button to be navigated to set your username. Enter your new username and press the `Next` button to complete the account creation. If the entered username is already taken, a warning will appear preventing the account creation from being complete. Please enter an alternative username.
+5.  From the onboarding screen press the `Next` button to be navigated to set your username. Enter your new username and press the `Next` button to complete the account creation. If the entered username is already taken, a warning will appear preventing the account creation from being complete. Please enter an alternative username.
 <img src={require("./screenshots/56.png").default} width="300" />
 <img src={require("./screenshots/57.png").default} width="300" />
 
-6. **Step-6** After setting your username, the user is presented with terms and conditions. Tap 'Accept Terms' to accept the terms and conditions and complete the account creation.
+6.  After setting your username, the user is presented with terms and conditions. Tap 'Accept Terms' to accept the terms and conditions and complete the account creation.
 <img src={require("./screenshots/58.png").default} width="300" />
 
 **Note:** If the during step-4 an OTP has not been received the user can press the `Resend OTP` button to re-try. Please check junk and spam folders if OTP is still not available.
@@ -467,31 +467,31 @@ Use the following steps to create an account using an email account:
 ### 4.1.2 Google Account Sign Up
 Use the following steps to create an account using a Google account:
 
-1. **Step-1** Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
+1.  Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
 
-2. **Step-2** Press the Google ![Google button](img/google-icon-30pix.png) button at the bottom of the screen. A popup will appear asking the user to confirm by pressing `Continue` or cancel by pressing `Cancel`.
+2.  Press the Google ![Google button](img/google-icon-30pix.png) button at the bottom of the screen. A popup will appear asking the user to confirm by pressing `Continue` or cancel by pressing `Cancel`.
 
-3. **Step-3** Once confirmed, the user will be navigated to a browser to select from existing signed-in Google accounts or use another account. <br/>
+3.  Once confirmed, the user will be navigated to a browser to select from existing signed-in Google accounts or use another account. <br/>
     - **Existing account** - If an existing Google account is chosen, the user will be navigated to a Google confirmation screen to allow the anywAiR® Zone Mobile App to access the basic Google account info (Name and email address). The user can confirm by pressing `Continue` or cancel by pressing `Cancel`. <br/>
 
     - **Use another account** - If 'Use another account' is chosen, the user will be navigated through the Google sign-in process before being navigated to the Google confirmation screen to allow the anywAiR® Zone Mobile App to access the basic Google account info (Name and email address). The user can confirm by pressing `Continue` or cancel by pressing `Cancel`.<br/>
 
-4. **Step-4** User will then be navigated to the onboarding screen.
+4.  User will then be navigated to the onboarding screen.
 
-5. **Step-5** From the onboarding screen press the `Next` button to be navigated to set your username. Enter your new username and press the `Next` button to complete the account creation. If the entered username is already taken, a warning will appear preventing the account creation from being complete. Please enter an alternative username.
+5.  From the onboarding screen press the `Next` button to be navigated to set your username. Enter your new username and press the `Next` button to complete the account creation. If the entered username is already taken, a warning will appear preventing the account creation from being complete. Please enter an alternative username.
 
 ### 4.1.3 Apple Account Sign Up
 Use the following steps to create an account using an Apple account:
 
-1. **Step-1** Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
+1.  Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
 
-2. **Step-2** Press the Apple ![Apple button](img/apple-icon-30pix.png) button at the bottom of the screen. A popup will appear asking the user to continue with the actual email or hide an email.
+2.  Press the Apple ![Apple button](img/apple-icon-30pix.png) button at the bottom of the screen. A popup will appear asking the user to continue with the actual email or hide an email.
 
-3. **Step-3** Follow the prompts to sign in with your Apple account.
+3.  Follow the prompts to sign in with your Apple account.
 
-4. **Step-4** After successful registration, the user will then be navigated to the onboarding screen.
+4.  After successful registration, the user will then be navigated to the onboarding screen.
 
-5. **Step-5** From the onboarding screen press the `Next` button to be navigated to set your username. Enter your new username and press the `Next` button to complete the account creation. If the entered username is already taken a warning will appear preventing the account creation from being complete. Please enter an alternative username.
+5.  From the onboarding screen press the `Next` button to be navigated to set your username. Enter your new username and press the `Next` button to complete the account creation. If the entered username is already taken a warning will appear preventing the account creation from being complete. Please enter an alternative username.
 
 <br/>
 
@@ -506,33 +506,33 @@ Users have three login methods using the mobile app.
 ### 4.2.1 Email Login
 Use the following steps to log in to an existing account using an email address:
 
-1. **Step-1** Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
+1.  Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
 
-2. **Step-2** Enter your email and password then press the `Sign In` button. If the user does not have a connected home, they will be navigated to the 'Setup Home' screen. If the user has a connected home, they will be navigated to the main control screen for their home.
+2.  Enter your email and password then press the `Sign In` button. If the user does not have a connected home, they will be navigated to the 'Setup Home' screen. If the user has a connected home, they will be navigated to the main control screen for their home.
 
 ### 4.2.2 Google Account Login
 Use the following steps to log in to an existing account using a Google Account:
 
-1. **Step-1** Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
+1.  Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
 
-2. **Step-2** Press the Google ![Google button](img/google-icon-30pix.png) button at the bottom of the screen. A popup will appear asking the user to confirm by pressing `Continue` or cancel by pressing `Cancel`.
+2.  Press the Google ![Google button](img/google-icon-30pix.png) button at the bottom of the screen. A popup will appear asking the user to confirm by pressing `Continue` or cancel by pressing `Cancel`.
 
-3. **Step-3** Once confirmed, the user will be navigated to a browser to select from existing signed-in Google accounts or use another account. <br/>
+3.  Once confirmed, the user will be navigated to a browser to select from existing signed-in Google accounts or use another account. <br/>
     - **Existing account** – If an existing Google account is chosen, the user will be navigated to a Google confirmation screen. The user can confirm by pressing `Continue` or cancel by pressing `Cancel`. <br/>
 
     - **Use another account** – If 'Use another account' is chosen, the user will be navigated through the Google sign-in process before being navigated to the Google confirmation screen. The user can confirm by pressing `Continue` or cancel by pressing `Cancel`.<br/>
 
-4. **Step-4** If the user does not have a connected home, they will be navigated to the 'Setup Home' screen. If the user has a connected home they will be navigated to the main control screen for their home.
+4.  If the user does not have a connected home, they will be navigated to the 'Setup Home' screen. If the user has a connected home they will be navigated to the main control screen for their home.
 
 
 ### 4.2.3 Apple Account Login
 Use the following steps to login to an existing account using an Apple Account:
 
-1. **Step-1** Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
+1.  Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
 
-2. **Step-2** Press the Apple ![Apple button](img/apple-icon-30pix.png) button at the bottom of the screen. A popup will appear and continue with log in as prompted.
+2.  Press the Apple ![Apple button](img/apple-icon-30pix.png) button at the bottom of the screen. A popup will appear and continue with log in as prompted.
 
-3. **Step-3** Once successfully logged in, if the user does not have a connected home, they will be navigated to the 'Setup Home' screen. If the user has a connected home they will be navigated to the main control screen for their home. 
+3.  Once successfully logged in, if the user does not have a connected home, they will be navigated to the 'Setup Home' screen. If the user has a connected home they will be navigated to the main control screen for their home. 
 
 <br/>
 
@@ -553,26 +553,26 @@ From the 'Profile' screen, users can perform the following actions:
 ### 4.3.1 Change Username
 Use the following steps to change the username for your account:
 
-1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+1.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** From either the Home control screen or the Setup Home screen, press the profile settings ![Profile settings button](img/user-cog.png) button to enter the profile screen.
+2.  From either the Home control screen or the Setup Home screen, press the profile settings ![Profile settings button](img/user-cog.png) button to enter the profile screen.
 
-3. **Step-3** On the profile screen press the `>` button on the change username card. An editable username field will appear from the bottom of the screen.
+3.  On the profile screen press the `>` button on the change username card. An editable username field will appear from the bottom of the screen.
 <img src={require("./screenshots/59.png").default} width="300" />
 
-4. **Step-4** Enter your new username in the editable field then apply the changes by pressing `Save Changes` or cancel by pressing `Cancel`.
+4.  Enter your new username in the editable field then apply the changes by pressing `Save Changes` or cancel by pressing `Cancel`.
 
 ### 4.3.2 View Error Logs
 Use the following steps to view system error logs:
 
-1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+1.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** From either the Home control screen or the Setup Home screen, press the profile settings ![Profile settings button](img/user-cog.png) button to enter the profile screen.
+2.  From either the Home control screen or the Setup Home screen, press the profile settings ![Profile settings button](img/user-cog.png) button to enter the profile screen.
 
-3. **Step-3** On the profile screen press the `>` button on the 'View Logs' card to enter the logs screen.
+3.  On the profile screen press the `>` button on the 'View Logs' card to enter the logs screen.
 <img src={require("./screenshots/60.png").default} width="300" />
 
-4. **Step-4** From the logs screen the users can view, pause and clear the error logs.
+4.  From the logs screen the users can view, pause and clear the error logs.
     - **Viewing the Logs** – To expand an error to view the full error code, press the `>` button for the desired error. Press the `>` button again to minimise the error view. <br/>
 
     - **Pausing the Logs** – To pause the error log press the pause ![Pause button](img/pause.png) button. To restart the error logs press the play ![Play button](img/play.png) button. <br/>
@@ -580,49 +580,49 @@ Use the following steps to view system error logs:
     - **Clearing the Logs** – To clear the error log press the delete ![Delete button](img/trash-2.png) button. <br/>
     <img src={require("./screenshots/63.png").default} width="300" />
 
-5. **Step-5** To exit out of the error logs, press the back arrow ![back arrow button](img/arrow-left.png) button.
+5.  To exit out of the error logs, press the back arrow ![back arrow button](img/arrow-left.png) button.
 
 
 ### 4.3.3 Logout
 Use the following steps to log out of your account:
 
-1. **Step-1** From either the Home control screen or the Setup Home screen, press the profile settings ![Profile settings button](img/user-cog.png) button to enter the profile screen.
+1.  From either the Home control screen or the Setup Home screen, press the profile settings ![Profile settings button](img/user-cog.png) button to enter the profile screen.
 
-2. **Step-2** On the profile screen press the `>` button on the 'Logout' card.
+2.  On the profile screen press the `>` button on the 'Logout' card.
 
-3. **Step-3** A popup will appear asking the user to confirm they wish to log out by pressing `Yes` or cancel by pressing `Cancel`. If confirmed, the user will be logged out and navigated to the welcome/login screen.
+3.  A popup will appear asking the user to confirm they wish to log out by pressing `Yes` or cancel by pressing `Cancel`. If confirmed, the user will be logged out and navigated to the welcome/login screen.
 <img src={require("./screenshots/61.png").default} width="300" />
 
 ### 4.3.4 Delete Account
 Use the following steps to delete your account:
 
-1. **Step-1** From either the Home control screen or the Setup Home screen, press the profile settings ![Profile settings button](img/user-cog.png) button to enter the profile screen.
+1.  From either the Home control screen or the Setup Home screen, press the profile settings ![Profile settings button](img/user-cog.png) button to enter the profile screen.
 
-2. **Step-2** On the profile screen press the `>` button on the 'Delete Account' card.
+2.  On the profile screen press the `>` button on the 'Delete Account' card.
 
-3. **Step-3** A popup will appear asking the user to confirm they wish to delete their account by pressing `Delete` or cancel by pressing `Cancel`. If confirmed, the account will be deleted and the user will be navigated to the welcome/login screen.
+3.  A popup will appear asking the user to confirm they wish to delete their account by pressing `Delete` or cancel by pressing `Cancel`. If confirmed, the account will be deleted and the user will be navigated to the welcome/login screen.
 <img src={require("./screenshots/62.png").default} width="300" />
 
 ### 4.3.5 Reset Password
 Use the following steps to reset your password:
 
-1. **Step-1** Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
+1.  Launch the anywAiR Zone app and the user will be navigated to the welcome/login screen.
 
-2. **Step-2** Tap on the "Forgot Password" button.
+2.  Tap on the "Forgot Password" button.
 <img src={require("./screenshots/117.png").default} width="300" />
 
-3. **Step-3** The user will be navigated to the reset password screen. Enter the email address associated with the account and tap on the "Send OTP" button.
+3.  The user will be navigated to the reset password screen. Enter the email address associated with the account and tap on the "Send OTP" button.
 <img src={require("./screenshots/118.png").default} width="300" />
 
-4. **Step-4** The user will receive an OTP on their registered email address. Enter the OTP and tap on the "Verify Code" button.
+4.  The user will receive an OTP on their registered email address. Enter the OTP and tap on the "Verify Code" button.
 <img src={require("./screenshots/119.png").default} width="300" />
 
-5. **Step-5** If you didn't receive the OTP, you can tap on the "Resend OTP" button to resend the OTP.
+5.  If you didn't receive the OTP, you can tap on the "Resend OTP" button to resend the OTP.
 
-6. **Step-6** After verifying the OTP, the user will be navigated to the reset password screen. Enter the new password and confirm the password and tap on the "Set Password" button.
+6.  After verifying the OTP, the user will be navigated to the reset password screen. Enter the new password and confirm the password and tap on the "Set Password" button.
 <img src={require("./screenshots/120.png").default} width="300" />
 
-7. **Step-7** After successfully setting the new password, the user will be navigated back to the login screen.
+7.  After successfully setting the new password, the user will be navigated back to the login screen.
 
 <br/>
 
@@ -636,77 +636,77 @@ Once a Home is created, users can interact with the connected controller to mana
 ### 5.1.1 First Home Setup with QR Code
 Use the following steps to connect your first home using the QR Code:
 
-1. **Step-1** Connect mobile phone to the same Wi-Fi network as the Touch Point LCD ***Add link to touch point setup for AP mode***
+1.  Connect mobile phone to the same Wi-Fi network as the Touch Point LCD ***Add link to touch point setup for AP mode***
 
-2. **Step-2** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*. User will be navigated to the 'Setup Home' screen.
+2.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*. User will be navigated to the 'Setup Home' screen.
 
-3. **Step-3** Select the `Scan QR Code` option. Users will be navigated to the QR code where they can scan the QR code displayed on the Touch Point LCD.
+3.  Select the `Scan QR Code` option. Users will be navigated to the QR code where they can scan the QR code displayed on the Touch Point LCD.
 <img src={require("./screenshots/64.png").default} width="300" />
 
-4. **Step-4** If a valid QR Code is scanned, users will be navigated to the 'Add a Home' screen where they must enter a Home name. Once a home name is entered press the `Add Home` button.
+4.  If a valid QR Code is scanned, users will be navigated to the 'Add a Home' screen where they must enter a Home name. Once a home name is entered press the `Add Home` button.
 <img src={require("./screenshots/65.png").default} width="300" />
 
-5. **Step-5** Users will be navigated to the main control screen for their newly added home. 
+5.  Users will be navigated to the main control screen for their newly added home. 
 
 
 ### 5.1.2 First Home Setup with Invite Code
 Use the following steps to connect your first home using an invite code:
 
-1. **Step-1** Connect mobile phone to the same Wi-Fi network as the Touch Point LCD ***Add link to touch point setup for AP mode***
+1.  Connect mobile phone to the same Wi-Fi network as the Touch Point LCD ***Add link to touch point setup for AP mode***
 
-2. **Step-2** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*. User will be navigated to the 'Setup Home' screen.
+2.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*. User will be navigated to the 'Setup Home' screen.
 
-3. **Step-3** Select the `Join Using Invite Code` option.
+3.  Select the `Join Using Invite Code` option.
 <img src={require("./screenshots/66.png").default} width="300" />
 
-4. **Step-4** Users will be shown the 'Join Home' popup where they must enter a valid invite code. Once the invite code is entered press the `Join` button.
+4.  Users will be shown the 'Join Home' popup where they must enter a valid invite code. Once the invite code is entered press the `Join` button.
 <img src={require("./screenshots/67.png").default} width="300" />
 
-5. **Step-5** Users will be navigated to the main control screen for their newly added home. 
+5.  Users will be navigated to the main control screen for their newly added home. 
 
 
 ### 5.1.3 Add a Home with QR Code
 Use the following steps to add a home using the QR Code:
 
-1. **Step-1** Connect mobile phone to the same Wi-Fi network as the Touch Point LCD ***Add link to touch point setup for AP mode***
+1.  Connect mobile phone to the same Wi-Fi network as the Touch Point LCD ***Add link to touch point setup for AP mode***
 
-2. **Step-2** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+2.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-3. **Step-3** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+3.  Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
 
-4. **Step-4** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
+4.  From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
 <img src={require("./screenshots/68.png").default} width="300" />
 
-5. **Step-5** Press the `+ Add Home` button on the bottom right to and then select open the add home options.
+5.  Press the `+ Add Home` button on the bottom right to and then select open the add home options.
 <img src={require("./screenshots/69.png").default} width="300" />
 
-6. **Step-6** Select the `Scan QR Code` option. Users will be navigated to the QR code where they can scan the QR code displayed on the Touch Point LCD.
+6.  Select the `Scan QR Code` option. Users will be navigated to the QR code where they can scan the QR code displayed on the Touch Point LCD.
 <img src={require("./screenshots/70.png").default} width="300" />
 
-7. **Step-7** If a valid QR Code is scanned, users will be navigated to the 'Add a Home' screen where they must enter a Home name. Once a home name is entered press the `Add Home` button.
+7.  If a valid QR Code is scanned, users will be navigated to the 'Add a Home' screen where they must enter a Home name. Once a home name is entered press the `Add Home` button.
 
-8. **Step-8** Users will be navigated to the main control screen for their newly added home. 
+8.  Users will be navigated to the main control screen for their newly added home. 
 
 
 ### 5.1.4 Add a Home with Invite Code
 Use the following steps to add a home using an invitation Code:
 
-1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+1.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+2.  Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
 
-3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
+3.  From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
 <img src={require("./screenshots/68.png").default} width="300" />
 
-4. **Step-4** Press the `+ Add Home` button on the bottom right to and then select open the add home options.
+4.  Press the `+ Add Home` button on the bottom right to and then select open the add home options.
 <img src={require("./screenshots/69.png").default} width="300" />
 
-5. **Step-5** Select the `Join by Invite Code` option.
+5.  Select the `Join by Invite Code` option.
 <img src={require("./screenshots/71.png").default} width="300" />
 
-6. **Step-6** Users will be shown a popup where they must enter a valid invite code. Once the invite code is entered press the `Join` button.
+6.  Users will be shown a popup where they must enter a valid invite code. Once the invite code is entered press the `Join` button.
 
-7. **Step-7** Users will be navigated to the main control screen for their newly added home. 
+7.  Users will be navigated to the main control screen for their newly added home. 
 
 <br/>
 
@@ -726,17 +726,17 @@ From the 'Home' detail screen, users can perform the following actions:
 
 ### 5.2.1 Changing the Home Name
 Use the following steps to edit a home name:
-1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+1.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+2.  Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
 
-3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
+3.  From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
 
-4. **Step-4** Press the `>` button beside the home you wish to edit the name to enter the 'Home Settings' for that home.
+4.  Press the `>` button beside the home you wish to edit the name to enter the 'Home Settings' for that home.
 
-5. **Step-5** Press the `>` button on the home name card to open the editable home name field that will appear from the bottom of the screen.
+5.  Press the `>` button on the home name card to open the editable home name field that will appear from the bottom of the screen.
 
-6. **Step-6** Enter your new home name in the editiable field then apply the changes by pressing `Save Changes` or cancel by pressing `Cancel`.
+6.  Enter your new home name in the editiable field then apply the changes by pressing `Save Changes` or cancel by pressing `Cancel`.
 <img src={require("./screenshots/72.png").default} width="300" />
 
 ### 5.2.2 Adding Users to a Home
@@ -750,54 +750,54 @@ Owners can grant the following user permission levels:
 #### 5.2.2.1 Adding Users via Username
 Use the following steps to add a user to home via username:
 
-1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+1.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+2.  Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
 
-3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
+3.  From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
 
-4. **Step-4** Press the `>` button beside the home you wish to invite a user to enter the 'Home Settings' for that home.
+4.  Press the `>` button beside the home you wish to invite a user to enter the 'Home Settings' for that home.
 
-5. **Step-5** Press the `>` button on the `+ Add User` card to open the Username entry field that will appear from the bottom of the screen.
+5.  Press the `>` button on the `+ Add User` card to open the Username entry field that will appear from the bottom of the screen.
 
-6. **Step-6** Enter the username for the user you wish to add and select their permissions level, `Member` or `Guest`.
+6.  Enter the username for the user you wish to add and select their permissions level, `Member` or `Guest`.
 
-7. **Step-7** Once the username is entered and permission level selected, then apply the changes by pressing `Add` or cancel by pressing `Cancel`.
+7.  Once the username is entered and permission level selected, then apply the changes by pressing `Add` or cancel by pressing `Cancel`.
 <img src={require("./screenshots/73.png").default} width="300" />
 
 
 #### 5.2.2.2 Adding Users via Invite Code
 Use the following steps to share an invite code to a user to join your home:
 
-1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+1.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+2.  Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
 
-3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
+3.  From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
 
-4. **Step-4** Press the `>` button beside the home you wish to invite a user to enter the 'Home Settings' for that home.
+4.  Press the `>` button beside the home you wish to invite a user to enter the 'Home Settings' for that home.
 
-5. **Step-5** Press the `>` button on the `Generate invite code` card to open the permissions level selection that will appear from the bottom of the screen.
+5.  Press the `>` button on the `Generate invite code` card to open the permissions level selection that will appear from the bottom of the screen.
 
-6. **Step-6** Select their permissions level, `Member` or `Guest` and press the `Generate` button to generate the invite code.
+6.  Select their permissions level, `Member` or `Guest` and press the `Generate` button to generate the invite code.
 
-7. **Step-7** Select the method to share the generated code. The code can either be shared directly to the user via common platforms such as email, SMS, Airdrop, and more or alternatively the generated code can be copied and saved.
+7.  Select the method to share the generated code. The code can either be shared directly to the user via common platforms such as email, SMS, Airdrop, and more or alternatively the generated code can be copied and saved.
 <img src={require("./screenshots/74.png").default} width="300" />
 
 ### 5.2.3 Transferring Home Ownership
 Use the following steps to transfer homeownership to a different user:
 
-1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+1.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+2.  Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
 
-3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
+3.  From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
 
-4. **Step-4** Press the `>` button beside the home you wish to transfer ownership for to enter the 'Home Settings' for that home.
+4.  Press the `>` button beside the home you wish to transfer ownership for to enter the 'Home Settings' for that home.
 
-5. **Step-5** Press the `>` button on the `Transfer Ownership` card to open the username entry field that will appear from the bottom of the screen.
+5.  Press the `>` button on the `Transfer Ownership` card to open the username entry field that will appear from the bottom of the screen.
 
-6. **Step-6** Enter the username for the user you wish to transfer ownership to and press `Transfer` to complete the ownership transfer or cancel by pressing `Cancel`.
+6.  Enter the username for the user you wish to transfer ownership to and press `Transfer` to complete the ownership transfer or cancel by pressing `Cancel`.
 <img src={require("./screenshots/75.png").default} width="300" />
 
 **Note** Ownership transfer can only be performed by the current owner.
@@ -806,15 +806,15 @@ Use the following steps to transfer homeownership to a different user:
 ### 5.2.4 Leave a Home
 Use the following steps to leave a home:
 
-1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+1.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+2.  Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
 
-3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
+3.  From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
 
-4. **Step-4** Press the `>` button beside the home you wish to leave to enter the 'Home Settings' for that home.
+4.  Press the `>` button beside the home you wish to leave to enter the 'Home Settings' for that home.
 
-5. **Step-5** Press the `>` button on the `Leave Home` card.
+5.  Press the `>` button on the `Leave Home` card.
 
 6. A popup will appear asking the user to confirm they wish to leave the home. Confirm by pressing `Leave` or cancel by pressing `Cancel`. If confirmed, the user will lose access to the home and navigated to a different connected home or the 'Setup Home' screen if they are not connected to another home.
 <img src={require("./screenshots/76.png").default} width="300" />
@@ -825,15 +825,15 @@ Use the following steps to leave a home:
 ### 5.2.5 Delete a Home
 Use the following steps to delete a home:
 
-1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+1.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+2.  Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
 
-3. **Step-3** From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
+3.  From the home navigation menu press the `>` button on the 'Manage Homes' card to enter the 'Manage Homes' screen.
 
-4. **Step-4** Press the `>` button beside the home you wish to delete to enter the 'Home Settings' for that home.
+4.  Press the `>` button beside the home you wish to delete to enter the 'Home Settings' for that home.
 
-5. **Step-5** Press the `>` button on the `Delete Home` card.
+5.  Press the `>` button on the `Delete Home` card.
 
 6. A popup will appear asking the user to confirm they wish to delete the home. Confirm by pressing `Delete` or cancel by pressing `Cancel`. If confirmed, the user will lose access to the home and navigated to a different connected home or the 'Setup Home' screen if they are not connected to another home.
 <img src={require("./screenshots/77.png").default} width="300" />
@@ -848,11 +848,11 @@ The anywAiR Zone app supports connecting to multiple Homes, allowing users to ma
 Users can easily switch between Homes within the app to view system status, adjust settings, and control zones for the selected location. This makes it simple to manage multiple properties, such as a primary residence, holiday home, or small commercial site, all from one interface.
 
 Use the following steps to navigate between homes:
-1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+1.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
+2.  Press the dropdown ![Dropdown button](img/chevron-down.png) button beside the name for the current home to open the home navigation menu.
 
-3. **Step-3** In the home navigation menu, the current home the user is connected to will show a tick ![tick icon](img/tick.png) icon to the left of the name. To select a different home to connect to press the Home name you wish to connect to. User will then be navigated to the main control screen for the newly selected home.
+3.  In the home navigation menu, the current home the user is connected to will show a tick ![tick icon](img/tick.png) icon to the left of the name. To select a different home to connect to press the Home name you wish to connect to. User will then be navigated to the main control screen for the newly selected home.
 
 <br/>
 
@@ -973,15 +973,15 @@ The anywAiR Zone app allows users to manage individual zones within their home.
 ## 7.1 Zone List
 Use the following steps to view zones:
 
-1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+1.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Press the ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the more option menu.
+2.  Press the ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the more option menu.
 <img src={require("./screenshots/85.png").default} width="300" />
 
-3. **Step-3** From the more option popup, press the `Zones` button.
+3.  From the more option popup, press the `Zones` button.
 <img src={require("./screenshots/86.png").default} width="300" />
 
-4. **Step-4** App navigates to the screen with a list of zones.
+4.  App navigates to the screen with a list of zones.
 <img src={require("./screenshots/87.png").default} width="300" />
 
 <br/>
@@ -989,13 +989,13 @@ Use the following steps to view zones:
 ## 7.2 Zone Control
 Use the following steps to control a zone:
 
-1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+1.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Tap the zone list item to open the zone control popup.
+2.  Tap the zone list item to open the zone control popup.
 <img src={require("./screenshots/88.png").default} width="300" />
 
-3. **Step-3** Perform the desired action on the zone.
-    - **Mark Zone as Primary** – Users can designate or disable the zone as the primary zone for the system by pressing the toggle button beside the 'Primary' setting. Note a zone requires a paired droplet sensor to be set as the primary zone.
+3.  Perform the desired action on the zone.
+    - **Mark Zone as Main** – Users can designate or disable the zone as the main zone for the system by pressing the toggle button beside the 'Main' setting. Note a zone requires a paired droplet sensor to be set as the Main zone.
 
     - **Increase:** Increase the zone airflow by 5%
 
@@ -1006,14 +1006,14 @@ Use the following steps to control a zone:
 
 - **Note** The pop up will show temperature if the zone is marked as the primary zone.
 
-4. **Step-4** Press on settings button to open the zone settings screen.
+4.  Press on settings button to open the zone settings screen.
 <img src={require("./screenshots/92.png").default} width="300" />
 <img src={require("./screenshots/93.png").default} width="300" />
 
-5. **Step-5** Edit the zone name. Note, only the owner of the site/home can edit the zone name.
+5.  Edit the zone name. Note, only the owner of the site/home can edit the zone name.
 <img src={require("./screenshots/94.png").default} width="300" />
 
-6. **Step-6** Add/Manage droplets. Refer to **3.3. Droplet Configuration & Management** section for more details.
+6.  Add/Manage droplets. Refer to **3.3. Droplet Configuration & Management** section for more details.
 
 <br/>
 
@@ -1022,26 +1022,26 @@ Use the following steps to control a zone:
 ## 8.1 Droplet List
 Use the following steps to view a droplet:
 
-1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+1.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Press the ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the more option menu.
+2.  Press the ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the more option menu.
 
-3. **Step-3** From the more option popup, tap the `Droplets` button.
+3.  From the more option popup, tap the `Droplets` button.
 <img src={require("./screenshots/89.png").default} width="300" />
 
-4. **Step-4** App navigates to the screen with a list of droplets.
+4.  App navigates to the screen with a list of droplets.
 <img src={require("./screenshots/90.png").default} width="300" />
 
-5. **Step-5** Tap the droplet list item to open the droplet detail screen.
+5.  Tap the droplet list item to open the droplet detail screen.
 
 <br/>
 
 ## 8.2 Droplet Detail
 Use the following steps to view a droplet detail:
 
-1. **Step-1** Go to droplet detail as mentioned in section *8.1.
+1.  Go to droplet detail as mentioned in section *8.1.
 
-2. **Step-2** Refer to **3.3. Droplet Configuration & Management** section for more details.
+2.  Refer to **3.3. Droplet Configuration & Management** section for more details.
 
 **Note:** Only the owner of the site/home can edit the droplet name.
 
@@ -1053,28 +1053,28 @@ The anywAiR Zone app allows users to manage schedules for their home.
 ## 9.1 Schedule List
 Use the following steps to view a schedule:
 
-1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+1.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Press the ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the more option menu.
+2.  Press the ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the more option menu.
 
-3. **Step-3** From the more option popup, tap the `Schedules` button.
+3.  From the more option popup, tap the `Schedules` button.
 <img src={require("./screenshots/95.png").default} width="300" />
 
-4. **Step-4** App navigates to the screen with a list of schedules.
+4.  App navigates to the screen with a list of schedules.
 <img src={require("./screenshots/96.png").default} width="300" />
 
 ## 9.2 Add Schedule
 Use the following steps to add a schedule:
 
-1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+1.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Go to the schedules list screen as mentioned in section *9.1. Schedule List*.
+2.  Go to the schedules list screen as mentioned in section *9.1. Schedule List*.
 
-3. **Step-3** Press the `+ Add` button to add a new schedule.
+3.  Press the `+ Add` button to add a new schedule.
 <img src={require("./screenshots/97.png").default} width="300" />
 <img src={require("./screenshots/98.png").default} width="300" />
 
-4. **Step-4** Enter the schedule name, select days, start time, end time, and toggle `Enable` for the schedule.
+4.  Enter the schedule name, select days, start time, end time, and toggle `Enable` for the schedule.
 <img src={require("./screenshots/99.png").default} width="300" />
 <img src={require("./screenshots/100.png").default} width="300" />
 
@@ -1094,13 +1094,13 @@ Use the following steps to add a schedule:
 ## 9.3 Edit & Delete Schedule
 Use the following steps to edit a schedule:
 
-1. **Step-1** Go to the schedule list screen as mentioned in section *9.1. Schedule List*.
+1.  Go to the schedule list screen as mentioned in section *9.1. Schedule List*.
 
-2. **Step-2** Tap the schedule list item to open the schedule detail screen.
+2.  Tap the schedule list item to open the schedule detail screen.
 <img src={require("./screenshots/108.png").default} width="300" />
 <img src={require("./screenshots/109.png").default} width="300" />
 
-3. **Step-3** Tap the schedule name to edit the schedule name.
+3.  Tap the schedule name to edit the schedule name.
 <img src={require("./screenshots/110.png").default} width="300" />
 <img src={require("./screenshots/111.png").default} width="300" />
 
@@ -1117,11 +1117,11 @@ The anywAiR Zone app allows users to manage run modes for their home.
 ## 10.1 Run Mode Control
 Use the following steps to view a run mode:
 
-1. **Step-1** Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
+1.  Launch the anywAiR Zone app and log in to your account as per section *4.2. User Login*.
 
-2. **Step-2** Press the ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the more option menu.
+2.  Press the ![Horizontal button](img/horizontal-dots.png) button beside the name for the current home to open the more option menu.
 
-3. **Step-3** From the more option popup, tap the `Run mode` button.
+3.  From the more option popup, tap the `Run mode` button.
 <img src={require("./screenshots/112.png").default} width="300" />
 <img src={require("./screenshots/113.png").default} width="300" />
 
@@ -1130,7 +1130,7 @@ Use the following steps to view a run mode:
 ## 10.2. Run Scene
 Open run mode modal as mentioned above
 
-1. **Step-1:** From the "Run mode" modal, choose any one of the existing scenes. The selected scene is triggered
+1.  From the "Run mode" modal, choose any one of the existing scenes. The selected scene is triggered
 <img src={require("./screenshots/114.png").default} width="300" />
 
 <br />
@@ -1138,7 +1138,7 @@ Open run mode modal as mentioned above
 ## 10.3. Run for
 Open run mode modal as mentioned above
 
-1. **Step-1:** From the "Run Mode" modal, choose any one of preset duration or set custom time with "Or until" button. The timer for run mode is set as per selected durations.
+1.  From the "Run Mode" modal, choose any one of preset duration or set custom time with "Or until" button. The timer for run mode is set as per selected durations.
 <img src={require("./screenshots/115.png").default} width="300" />
 
 <br />
@@ -1146,7 +1146,7 @@ Open run mode modal as mentioned above
 ## 10.4. Cancel Timer
 Open run mode modal as mentioned above
 
-1. **Step-1:** From the "Run Mode" modal, if the timer is already running, the modal will have a "Cancel Timer" button. Tapping on the button will cancel the current timer.
+1.  From the "Run Mode" modal, if the timer is already running, the modal will have a "Cancel Timer" button. Tapping on the button will cancel the current timer.
 <img src={require("./screenshots/116.png").default} width="300" />
 
 <br />
