@@ -343,13 +343,13 @@ Users can manage the system preferences via the installer mode to manually selec
 
 2. On the setup page press the `Preferences` button to navigate to the 'Preferences' screen.
 
-3. Press the `>` button on the Global Damper Calibration card to open the calibration settings.
+3. Tap the `Global Damper Calibration` button to open the calibration settings.
 
 4. Use the plus ![plus button](img/circle-plus.png) and minus ![minus button](img/circle-minus.png) buttons to increase or decrease the time it takes for dampers to completely open or close (default is 15 seconds). Use the reset ![reset button](img/rotate-ccw.png) button to restore the default calibration.
 
 **Note:** The Global Damper Calibration is applied only to dampers that are using the default calibration. Dampers with an individual calibration configured will continue to use their individual calibration value.
 
-***Insert Image***
+<img src={require("./screenshots/132.png").default} width="300" />
 
 <br/>
 
