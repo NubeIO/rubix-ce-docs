@@ -253,13 +253,13 @@ Use the following steps to access installer mode via the anywAiR Zone Mobile App
 ## 4.4 Zone Configuration
 Use the following steps to complete the initial zone configuration from the installed menu on the anywAiR Zone app.
 
-1. Enter the total Number of Zones and required Constant Zones, then press **Next**. 
-2. Select the required Constant Zones, then press **Configure Zones**.
+1. Enter the total Number of Zones and required Relief Zones, then press **Next**.
+2. Select the required Relief Zones, then press **Configure Zones**.
 3. Configure the first zone:
 
     - Set Zone Name. <br/>
-    - Enable Main Zone (if required). <br/>
-    - Enable Constant Zone (if required). <br/>
+    - Enable Primary Zone (if required). <br/>
+    - Enable Relief Zone (if required). <br/>
     - Toggle Zone Power to test control. <br/>
     - Set Minimum and Maximum Airflow (%). <br/>
     - Add/remove Dampers and Droplets. <br/>
