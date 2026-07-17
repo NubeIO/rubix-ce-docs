@@ -250,6 +250,20 @@ COVER_INSTALL = """<div class="cover">
 </div>
 </div>"""
 
+# --- Quick Start Guide (runs from the ZC-copy root). Red cover variant, own cover
+#     image (img/QSG cover.png), custom title/subtitle. ---
+COVER_QSG = """<div class="cover cover-qsg">
+<div class="cover-inner">
+<img class="cover-logo" src="pdf-toolkit/assets/logos/anywair-logo.svg">
+<h1 class="cover-title">Quick Start Guide<br>Zoneconnex</h1>
+<div class="cover-divider"></div>
+<p class="cover-sub">Installation Guide</p>
+<div class="cover-divider"></div>
+<img class="cover-product" src="img/QSG%20cover.png">
+<p class="cover-model">Model: UTY-ZCAW1</p>
+</div>
+</div>"""
+
 # --- MIA (runs from MIA Mobile App/; toolkit assets one level up) ---
 COVER_MIA = """<div class="cover">
 <div class="cover-inner">
@@ -269,3 +283,5 @@ if __name__ == "__main__":
           COVER_INSTALL, "pdf-toolkit/assets/logos/anywair-logo.svg", mobile=True)
     brand(os.path.join(BUILD, "MIA Mobile App", "MIA App User Manual.md"),
           COVER_MIA, "../pdf-toolkit/assets/logos/anywair-logo.svg", mobile=True)
+    brand(os.path.join(BUILD, "Zoneconnex Quick Start Guide.md"),
+          COVER_QSG, "pdf-toolkit/assets/logos/anywair-logo.svg", mobile=True)

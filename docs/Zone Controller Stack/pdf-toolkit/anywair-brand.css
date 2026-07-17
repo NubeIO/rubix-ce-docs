@@ -444,6 +444,12 @@ pre {
   letter-spacing: 0.5pt;
   margin: 0;
 }
+/* Quick Start Guide cover variant: red border + dividers (#ED1B25) instead of
+   the teal. Tag the cover <div class="cover cover-qsg">. Only the cover changes;
+   the rest of the document keeps the teal accent. */
+.cover-qsg .cover-inner { border-color: #ED1B25; }
+.cover-qsg .cover-divider { background: #ED1B25; }
+
 .cover-product {
   max-width: 82%;
   align-self: center;
