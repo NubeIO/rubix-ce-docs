@@ -9,8 +9,9 @@ the final PDF. See INSTRUCTIONS.md for the full pipeline.
 
 What it does (each pass is idempotent-ish and safe on already-clean input):
   * fix_require            – unwrap Docusaurus `<img src={require("./x").default}>` -> `<img src="x">`
-  * normalize_and_tag_icons– drop the `![max300px](..)` size-hack alt text; tag known
-                             inline UI glyphs (plus/minus/chevron/tick/…) with {.icon}
+  * normalize_and_tag_icons– drop the `![max800px](..)` size-hack alt text; tag inline UI
+                             glyphs with {.icon}, detected automatically by image size
+                             (any PNG <= 64x64px); restore the store-badge width cap
   * wrap_diagram_tables    – wrap pin/connector tables (blank/image header) in
                              `::: diagram-table` so they lose the teal header + shrink
   * group_screenshots      – tag phone screenshots {.phone} and pack consecutive ones
@@ -28,7 +29,7 @@ Usage:
 BUILD_DIR is the copy of the "Zone Controller Stack" folder to process.
 Defaults to the current working directory.
 """
-import sys, io, re, os
+import sys, io, re, os, struct, urllib.parse
 
 # Directory holding the copied manual files (the "Zone Controller Stack" copy).
 BUILD = sys.argv[1] if len(sys.argv) > 1 else os.getcwd()
@@ -53,25 +54,57 @@ def fix_require(text):
 
 
 # ---- inline UI icons: shrink to text height with {.icon} ----
-ICON_NAMES = {
-    "circle-plus", "circle-minus", "chevron-up", "chevron-down", "tick",
-    "power", "rotate-ccw", "arrow-left", "user-cog", "plus", "play",
-    "pause", "horizontal-dots", "apple-icon-30pix",
-}
+# Detection is automatic by image size: any PNG <= ICON_MAX_PX in both dimensions
+# is treated as an inline glyph. The repo has a clean cutoff (real icons are
+# <= 51x51; nothing exists between 52 and 141px), so 64 is a safe threshold and
+# new icons "just work" with no list to maintain.
+ICON_MAX_PX = 64
+
+# Store badges are far larger than any icon, so the size gate excludes them — but
+# they must not fall back to the block rule, so their width cap is preserved.
+BADGE_NAMES = ("google-play-icon", "Apple-app-download-icon")
 
 
-def normalize_and_tag_icons(text):
-    # 1) strip the homemade size-hack alt text: ![max300px](x) / ![max800px](x) -> ![](x)
+def png_size(abspath):
+    """Return (width, height) read from the PNG IHDR chunk, or None if the file is
+    missing / not a readable PNG. No third-party dependency."""
+    try:
+        with open(abspath, "rb") as f:
+            data = f.read(24)
+        if len(data) < 24 or data[:8] != b"\x89PNG\r\n\x1a\n":
+            return None
+        return struct.unpack(">I", data[16:20])[0], struct.unpack(">I", data[20:24])[0]
+    except (OSError, struct.error):
+        return None
+
+
+def _resolve(ref, base_dir):
+    """Map a markdown image ref (URL-encoded, relative) to an absolute path on disk."""
+    p = urllib.parse.unquote(ref).lstrip("./")
+    return os.path.normpath(os.path.join(base_dir, p))
+
+
+def normalize_and_tag_icons(text, base_dir):
+    # 1) store badges: convert the size-hack alt into a real width cap so they don't
+    #    fall back to the global block rule. Other maxNNNpx hints (diagrams) are left
+    #    for step 2 to strip, preserving their current 108mm block behaviour.
+    badge_re = re.compile(
+        r'!\[max(\d+)px\]\(([^)]*(?:%s)\.png)\)(?!\{)' % "|".join(BADGE_NAMES))
+    text = badge_re.sub(r'![](\2){width=\1px}', text)
+    # 2) strip the remaining size-hack alt text: ![max800px](x) -> ![](x)
     text = re.sub(r'!\[(?:max\d+px)\]\(', '![](', text)
-    # 2) tag known inline-icon images with {.icon}, regardless of directory prefix
-    #    (raw MIA uses "img/NAME.png"; Install Guide uses "MIA%20Mobile%20App/img/NAME.png")
+    # 3) tag inline-icon images with {.icon}, detected by pixel size (<= ICON_MAX_PX).
     def icon_repl(m):
         whole, alt, path = m.group(0), m.group(1), m.group(2)
-        name = path.rsplit("/", 1)[-1].rsplit(".", 1)[0]
-        if name in ICON_NAMES:
+        dims = png_size(_resolve(path, base_dir))
+        if dims is None:
+            sys.stderr.write("brand.py: could not size image, left untagged: %s\n"
+                             % _resolve(path, base_dir))
+            return whole
+        if dims[0] <= ICON_MAX_PX and dims[1] <= ICON_MAX_PX:
             return '![%s](%s){.icon}' % (alt, path)
         return whole
-    text = re.sub(r'!\[([^\]]*)\]\(([^)]*\bimg/[A-Za-z0-9._%-]+\.png)\)(?!\{)', icon_repl, text)
+    text = re.sub(r'!\[([^\]]*)\]\(([^)]+\.png)\)(?!\{)', icon_repl, text)
     return text
 
 
@@ -213,11 +246,14 @@ def wrap_diagram_tables(text):
 
 
 def brand(infile, cover, logo_path, mobile=False):
+    if not os.path.exists(infile):
+        print("skipped (not found):", infile)
+        return
     with io.open(infile, encoding="utf-8") as f:
         text = f.read()
     text = fix_require(text)
     if mobile:
-        text = normalize_and_tag_icons(text)
+        text = normalize_and_tag_icons(text, os.path.dirname(infile))
         text = wrap_diagram_tables(text)
         text = group_screenshots(text, per_row=3)
         text = fix_orphan_code_blocks(text)
@@ -277,6 +313,20 @@ COVER_MIA = """<div class="cover">
 </div>
 </div>"""
 
+# --- User Guide (runs from the ZC-copy root). Same layout as the Quick Start Guide
+#     cover, "USER GUIDE" subtitle, Main-Controls LCD render as the cover product. ---
+COVER_USER = """<div class="cover cover-qsg">
+<div class="cover-inner">
+<img class="cover-logo" src="pdf-toolkit/assets/logos/anywair-logo.svg">
+<h1 class="cover-title">Quick Start Guide<br>Zoneconnex</h1>
+<div class="cover-divider"></div>
+<p class="cover-sub">USER GUIDE</p>
+<div class="cover-divider"></div>
+<img class="cover-product" src="Touch%20point%20LCD/img/LCD-Screenshots/Main-Controls-rev3.png">
+<p class="cover-model">Model: UTY-ZCAW1</p>
+</div>
+</div>"""
+
 
 if __name__ == "__main__":
     brand(os.path.join(BUILD, "Zoneconnex Install Guide.md"),
@@ -285,3 +335,5 @@ if __name__ == "__main__":
           COVER_MIA, "../pdf-toolkit/assets/logos/anywair-logo.svg", mobile=True)
     brand(os.path.join(BUILD, "Zoneconnex Quick Start Guide.md"),
           COVER_QSG, "pdf-toolkit/assets/logos/anywair-logo.svg", mobile=True)
+    brand(os.path.join(BUILD, "Zoneconnex User Start Guide.md"),
+          COVER_USER, "pdf-toolkit/assets/logos/anywair-logo.svg", mobile=True)

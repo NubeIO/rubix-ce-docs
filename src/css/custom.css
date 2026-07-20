@@ -59,6 +59,26 @@
   background-color: #000000;
 }
 
+/* Inline UI glyphs — small button icons that sit inside a sentence. Docusaurus
+   stamps the source pixel size onto each <img> as width/height attributes, so we
+   key off the discrete icon dimensions and flow them at text height instead of as
+   a block. Every real icon in the repo is one of these sizes (all <=51px; nothing
+   else is below 142px). A new icon at a new small size just needs its w/h added
+   here. Mirrors the PDF's img.icon rule (pdf-toolkit/anywair-brand.css). */
+.markdown img[width="24"][height="24"],
+.markdown img[width="30"][height="30"],
+.markdown img[width="51"][height="51"],
+.markdown img[width="22"][height="21"],
+.markdown img[width="20"][height="21"],
+.markdown img[width="12"][height="11"] {
+  display: inline;
+  height: 1em;
+  width: auto;
+  max-width: none;          /* defeat Infima's img { max-width: 100% } */
+  vertical-align: -0.18em;
+  margin: 0 1px;
+}
+
 img[alt="max50px"] {
   max-width: 10px;
   display: block;
