@@ -322,7 +322,7 @@ COVER_USER = """<div class="cover cover-qsg">
 <div class="cover-divider"></div>
 <p class="cover-sub">USER GUIDE</p>
 <div class="cover-divider"></div>
-<img class="cover-product" src="Touch%20Point%20LCD/img/LCD-Screenshots/Main-Controls.png">
+<img class="cover-product" src="pdf-toolkit/assets/images/zc-cover.png">
 <p class="cover-model">Model: UTY-ZCAW1</p>
 </div>
 </div>"""
