@@ -24,15 +24,15 @@ Refer to following diagrams for component locations:
 
 **Zoneconnex Front View:**
 
-![max500px](Zoneconnex/img/ACB-ZC-Components-Markup-Front-View-rev3.png)
+![max500px](ZoneConnex/img/ACB-ZC-Components-Markup-Front-View-rev3.png)
 
 **Zoneconnex Top View:**
 
-![max500px](Zoneconnex/img/ACB-ZC-Components-Markup-Top-View-rev3.png)
+![max500px](ZoneConnex/img/ACB-ZC-Components-Markup-Top-View-rev3.png)
 
 **Zoneconnex Bottom View:**
 
-![max500px](Zoneconnex/img/ACB-ZC-Components-Markup-Bottom-View-rev3.png)
+![max500px](ZoneConnex/img/ACB-ZC-Components-Markup-Bottom-View-rev3.png)
 
 # 3. Fitting Installation
 
@@ -44,7 +44,7 @@ Ensure the DIN rail is securely installed. **Hook the top of the Zoneconnex** on
 
 Pivot the bottom toward the rail until the **lower clip snaps into place**. Gently pull forward to confirm the Controller is securely mounted.
 
-![max500px](Zoneconnex/img/ZoneConnex-DinMounting-v2.png)
+![max500px](ZoneConnex/img/ZoneConnex-DinMounting-v2.png)
 
 **B. Direct Mounting**
 
@@ -52,7 +52,7 @@ Attach mounting clips to the back of the Controller (if not pre-fitted). Positio
 
 **Drill the holes and insert wall plugs if required.** **Secure the Controller** using appropriate **screws or fixings**. Gently pull forward to confirm it is firmly mounted.
 
-![max500px](Zoneconnex/img/ZoneConnex-FixingMounting-v2.png)
+![max500px](ZoneConnex/img/ZoneConnex-FixingMounting-v2.png)
 
 ## 3.2 Mounting the TouchPoint LCD
 
@@ -78,15 +78,15 @@ Release the **two bottom clips** to remove the LCD from its housing. Hold the ho
 
 Connect the **prewired AC power supply** to the **24VAC** terminals (1 & 2) on the Zoneconnex — see diagram below:
 
-![max300px](Zoneconnex/img/24VAC-ADAPTOR-BOLD-2.png)
+![max300px](ZoneConnex/img/24VAC-ADAPTOR-BOLD-2.png)
 
 ## 4.2 UART Connection
 
 Route the **UART cable** into the Air Conditioning unit control panel and connect it to the **CN65** or **CN75** port via the UART interface — refer to diagram below:
 
-![max500px](Zoneconnex/img/ACB-ZC-UART-PAP-04V-S-rev3.png)
+![max500px](ZoneConnex/img/ACB-ZC-UART-PAP-04V-S-rev3.png)
 
-![max300px](Zoneconnex/img/UART-Cable-photo.jpg)
+![max300px](ZoneConnex/img/UART-Cable-photo.jpg)
 
 ## 4.3 TouchPoint LCD RS485 & Power Supply
 
@@ -97,7 +97,7 @@ The TouchPoint LCD:
 - Communicates via a **Modbus RS485**.
 - Receives **18VDC power from the Zoneconnex**.
 
-![max300px](Zoneconnex/img/LCD-Cable-photo.jpg)
+![max300px](ZoneConnex/img/LCD-Cable-photo.jpg)
 
 **Zoneconnex Pin Reference:**
 

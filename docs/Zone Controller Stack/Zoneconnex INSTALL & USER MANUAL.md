@@ -78,7 +78,7 @@ Check that you have received all items below.
 | Depth:                	| 70.25 mm (72.95 incl. clips) / 2.76 inches (2.87 incl. clips)                    	|
 | Enclosure             	| PC/ABS blend (Flame Retardant Grade, UL94 V-0) Matte Black, IP2X Rated 	    |
 
-![max800px](Zoneconnex/img/ZoneConnex-Dimensions.png)
+![max800px](ZoneConnex/img/ZoneConnex-Dimensions.png)
 
 <br/>
 
@@ -95,7 +95,7 @@ Check that you have received all items below.
 - LCD RS485: Termination block for connecting the TouchPoint LCD Modbus communication to the Zoneconnex.
 - LCD 18VDC Power: Termination block for powering the TouchPoint LCD from the Zoneconnex.
 
-![max800px](Zoneconnex/img/ACB-ZC-Components-Markup-Front-View.png)
+![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Front-View.png)
 
 ### 2.2.2 Top View
 - 24VAC/DC Power Input: Termination block for connecting the Zoneconnex 24VAC/DC power input.
@@ -108,7 +108,7 @@ Check that you have received all items below.
 - Zone Control Reset Button: Used to restart (reboot) the Zone Control IO board
 - Zone Control Button: Performs a factory reset, clearing all persisted data.
 
-![max800px](Zoneconnex/img/ACB-ZC-Components-Markup-Top-View.png)
+![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Top-View.png)
 
 ### 2.2.3 Bottom View
 - Zone Control Ports 6-10: RJ12 outputs to supply 24V AC to control the zone dampers.
@@ -120,7 +120,7 @@ Check that you have received all items below.
 - LCD RS485: Termination block for connecting the TouchPoint LCD Modbus communication to the Zoneconnex.
 - LCD 18VDC Power: Termination block for powering the TouchPoint LCD from the Zoneconnex.
 
-![max800px](Zoneconnex/img/ACB-ZC-Components-Markup-Bottom-View.png)
+![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Bottom-View.png)
 
 <br/>
 
@@ -167,14 +167,14 @@ The Zoneconnex can be mounted in on DIN rail or via fixings utilising the mounti
 Ensure the DIN rail is securely installed. Hook the top of the Zoneconnex onto the top of the DIN rail.
 Pivot the bottom toward the rail until the lower clip snaps into place. Gently pull forward to confirm the controller is securely mounted.
 
-![max800px](Zoneconnex/img/ZoneConnex-DinMounting-V2.png)
+![max800px](ZoneConnex/img/ZoneConnex-DinMounting-v2.png)
 
 ### 3.1.2 Direct Mounting
 Attach mounting clips to the back of the Zoneconnex controller (if not pre-fitted). Position the controller against the mounting location & mark the fixing points.
 
 Drill the holes & insert wall plugs if required. Secure the controller using appropriate screws or fixings. Gently pull forward to confirm it is firmly mounted.
 
-![max800px](Zoneconnex/img/ZoneConnex-FixingMounting-v2.png)
+![max800px](ZoneConnex/img/ZoneConnex-FixingMounting-v2.png)
 
 <br/>
 
@@ -423,7 +423,7 @@ Use the following steps to complete the zone configuration from the Installer me
 
 5. Press Scan QR Code and scan the QR code displayed on the Touch Point LCD. <br/>
 
-![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Wi-fi-connected.png)
+![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Wi-Fi-Connected.png)
 
 6. Enter a name for the home, then press Add Home. <br/>
 7. You will be taken to the main control screen for your newly added home. <br/>
