@@ -1,7 +1,7 @@
 <div class="cover">
 <div class="cover-inner">
 <img class="cover-logo" src="assets/logos/anywair-logo.svg">
-<h1 class="cover-title">Quick Start Guide<br>Zoneconnex</h1>
+<h1 class="cover-title">Quick Start Guide<br/>Zoneconnex</h1>
 <div class="cover-divider"></div>
 <p class="cover-sub">INSTALLATION GUIDE</p>
 <div class="cover-divider"></div>
@@ -9,6 +9,9 @@
 <p class="cover-model">Model: UTY-ZCAW1</p>
 </div>
 </div>
+
+<h1 class="doc-title">Zoneconnex Quick Start Guide</h1>
+<p class="doc-subtitle">Installation Guide</p>
 
 Please read the following information before installation and use.
 

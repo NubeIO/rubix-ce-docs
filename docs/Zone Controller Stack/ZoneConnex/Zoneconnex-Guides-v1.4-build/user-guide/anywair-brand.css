@@ -130,6 +130,25 @@ h3 {
   page-break-after: avoid;
 }
 
+/* Document title on the first content page (matches approved reference).
+   Big bold black title + lighter subtitle, sitting at the top of page 1
+   content — separate from the branded cover page and from numbered H1s. */
+.doc-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26pt;
+  font-weight: bold;
+  color: var(--text);
+  line-height: 1.05;
+  margin: 0 0 2pt 0;
+}
+.doc-subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17pt;
+  font-weight: normal;
+  color: var(--text);
+  margin: 0 0 12pt 0;
+}
+
 /* ---- BODY TEXT ------------------------------------------ */
 p {
   margin: 0 0 8pt 0;
