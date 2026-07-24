@@ -24,15 +24,15 @@ Refer to following diagrams for component locations:
 
 **Zoneconnex Front View:**
 
-![max800px](Zoneconnex/img/ACB-ZC-Components-Markup-Front-View-rev3.png)
+![max500px](Zoneconnex/img/ACB-ZC-Components-Markup-Front-View-rev3.png)
 
 **Zoneconnex Top View:**
 
-![max800px](Zoneconnex/img/ACB-ZC-Components-Markup-Top-View-rev3.png)
+![max500px](Zoneconnex/img/ACB-ZC-Components-Markup-Top-View-rev3.png)
 
 **Zoneconnex Bottom View:**
 
-![max800px](Zoneconnex/img/ACB-ZC-Components-Markup-Bottom-View-rev3.png)
+![max500px](Zoneconnex/img/ACB-ZC-Components-Markup-Bottom-View-rev3.png)
 
 # 3. Fitting Installation
 
@@ -44,7 +44,7 @@ Ensure the DIN rail is securely installed. **Hook the top of the Zoneconnex** on
 
 Pivot the bottom toward the rail until the **lower clip snaps into place**. Gently pull forward to confirm the Controller is securely mounted.
 
-![max800px](Zoneconnex/img/ZoneConnex-DinMounting-v2.png)
+![max500px](Zoneconnex/img/ZoneConnex-DinMounting-v2.png)
 
 **B. Direct Mounting**
 
@@ -52,24 +52,23 @@ Attach mounting clips to the back of the Controller (if not pre-fitted). Positio
 
 **Drill the holes and insert wall plugs if required.** **Secure the Controller** using appropriate **screws or fixings**. Gently pull forward to confirm it is firmly mounted.
 
-![max800px](Zoneconnex/img/ZoneConnex-FixingMounting-v2.png)
+![max500px](Zoneconnex/img/ZoneConnex-FixingMounting-v2.png)
 
 ## 3.2 Mounting the TouchPoint LCD
 
 Release the **two bottom clips** to remove the LCD from its housing. Hold the housing against the wall and **mark the fixing points**. **Drill holes and insert wall plugs if needed.** **Secure the housing** to the wall with **screws**. Feed the **pre-wired cable** through the desired entry point. Re-insert the LCD by: engaging the **top clips first**, **then pressing the bottom clips** into place.
 
-![max800px](Touch%20Point%20LCD/img/LCD-Mounting-v3.png)
+![max500px](Touch%20Point%20LCD/img/LCD-Mounting-v3.png)
 
 <img src={require("./Touch Point LCD/img/Top-Retaining-Clips-v2.png").default} width="50%" />
 <img src={require("./Touch Point LCD/img/Bottom-Retaining-Clips-v2.png").default} width="50%" />
 
 **Releasing the retaining clips**
 
-![max1000px](Touch%20Point%20LCD/img/LCD-Clip-Release-v2.png)
-
-|**Correct**            | **Incorrect**                           |
-|-----------------------|-----------------------------------------|
-|Insert a flat blade screwdriver onto the angled edge of the retaining clip (furthest from the LCD screen) and gently lever the clip away from the housing.| Do not insert the screwdriver into the slot closest to the LCD screen, as the clip cannot be safely or effectively levered away from the housing in this position. |
+| **Correct** | **Incorrect** |
+|-------------|---------------|
+| ![max300px](Touch%20Point%20LCD/img/LCD-Clip-Release-Correct.jpg) | ![max300px](Touch%20Point%20LCD/img/LCD-Clip-Release-Incorrect.jpg) |
+| Insert a flat blade screwdriver onto the angled edge of the retaining clip (furthest from the LCD screen) and gently lever the clip away from the housing. | Do not insert the screwdriver into the slot closest to the LCD screen, as the clip cannot be safely or effectively levered away from the housing in this position. |
 
 # 4. Power & Wiring
 
@@ -85,7 +84,7 @@ Connect the **prewired AC power supply** to the **24VAC** terminals (1 & 2) on t
 
 Route the **UART cable** into the Air Conditioning unit control panel and connect it to the **CN65** or **CN75** port via the UART interface — refer to diagram below:
 
-![max800px](Zoneconnex/img/ACB-ZC-UART-PAP-04V-S-rev3.png)
+![max500px](Zoneconnex/img/ACB-ZC-UART-PAP-04V-S-rev3.png)
 
 ![max300px](Zoneconnex/img/UART-Cable-photo.jpg)
 
@@ -115,7 +114,7 @@ The TouchPoint LCD utilises **Push-To-Release** terminals. Gently press down on 
 
 The TouchPoint LCD pin connections are as shown in the following image:
 
-![max800px](Touch%20Point%20LCD/img/LCD-Internal-Labelled.jpg)
+![max500px](Touch%20Point%20LCD/img/LCD-Internal-Labelled.jpg)
 
 # 5. Configuration
 
@@ -140,11 +139,9 @@ Follow the steps below to connect your Zoneconnex system to Wi-Fi:
 
 Once connected, the screen will display network information including: QR code, signal strength, connection speed, security type, and channel.
 
-![max300px](Touch%20Point%20LCD/img/LCD-Screenshots/No-Wifi.png)
-*Scan Wi-Fi*
-
-![max300px](Touch%20Point%20LCD/img/LCD-Screenshots/Wifi-Info.png)
-*Connection details*
+| ![max300px](Touch%20Point%20LCD/img/LCD-Screenshots/No-Wifi.png) | ![max300px](Touch%20Point%20LCD/img/LCD-Screenshots/Wifi-Info.png) |
+|:-:|:-:|
+| *Scan Wi-Fi* | *Connection details* |
 
 # 6. Installer Mode
 
@@ -153,16 +150,16 @@ To access installer mode, follow the prompts below in accordance with the Instal
 1. On the TouchPoint LCD home screen, tap the **Settings** icon.
 2. On the settings/about screen, tap the **System** card **8 times**.
 
-![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Tap-Settings-8x-Card.svg)
+![max500px](Touch%20Point%20LCD/img/LCD-Screenshots/Tap-Settings-8x-Card.svg)
 
 3. Enter the **installer password (default 898989)** and confirm.
 4. Open the **anywAiR® Zone Mobile App**. Select **Continue as Installer**. Scan the **left QR** for connecting to Zoneconnex Access Point Wi-Fi.
 
-![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-LeftQR.svg)
+![max500px](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-LeftQR.svg)
 
 5. Once connected to the Zoneconnex Access Point Wi-Fi, scan the **right QR** to access installer mode for the Zoneconnex.
 
-![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-RightQR.svg)
+![max500px](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-RightQR.svg)
 
 **Note:** To exit Installer Mode at any time, press **Exit Installer Mode** in the app.
 

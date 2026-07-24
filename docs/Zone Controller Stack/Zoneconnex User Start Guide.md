@@ -4,18 +4,18 @@
 
 1. On the TouchPoint LCD, **press the Wi-Fi** button on the navigation bar.
 
-![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Quick-Start-WiFi-Location.svg)
+![max500px](Touch%20Point%20LCD/img/LCD-Screenshots/Quick-Start-WiFi-Location.svg)
 
 2. If no network is connected, press **Scan Wi-Fi** to search for available networks.
 
-![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Scan-Wi-Fi.svg)
+![max500px](Touch%20Point%20LCD/img/LCD-Screenshots/Scan-Wi-Fi.svg)
 
 3. Select your desired network and press **Connect**.
 4. Enter the network password using the on-screen keyboard, then press **Connect**.
 
 Once connected, the **Wi-Fi setup screen will display network details**, including: QR code (used in Step 3 — setting up Home Screen), signal strength, speed, security type, and channel.
 
-![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Wi-Fi-Connected-info.svg)
+![max500px](Touch%20Point%20LCD/img/LCD-Screenshots/Wi-Fi-Connected-info.svg)
 
 # 2. Install anywAiR® Zone Mobile App
 
@@ -49,7 +49,7 @@ Scan the QR code below to download the anywAiR® Zone Mobile App for Android or 
 1. On the **Setup home** screen, press **Scan QR code**.
 2. Scan the QR code displayed on the TouchPoint LCD.
 
-![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Wi-Fi-Connected.svg)
+![max500px](Touch%20Point%20LCD/img/LCD-Screenshots/Wi-Fi-Connected.svg)
 
 3. Enter a name for your home, then press **Add Home**.
 
@@ -65,7 +65,7 @@ You will be taken to the **Main Control home screen**.
 - **Fan Speed Control** — Adjust the fan speed (*model dependent*).
 - **Temperature Display** — View setpoint and current temperature\*. (*\*Current temperature display must be enabled during installation*).
 
-![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Main-Controls.svg)
+![max500px](Touch%20Point%20LCD/img/LCD-Screenshots/Main-Controls.svg)
 
 ## 4.2 Zone Control
 
@@ -74,20 +74,20 @@ You will be taken to the **Main Control home screen**.
 - **Zone Temperature\*:** Check the temperature in each zone (*\*view-only; droplet sensor required*).
 - **Sync Zones** — Reset zones to restore correct airflow. Use this if airflow is not working as expected.
 
-![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Zone-Control.svg)
+![max500px](Touch%20Point%20LCD/img/LCD-Screenshots/Zone-Control.svg)
 
 ## 4.3 Scenes & Schedules
 
 - **Scenes** — Allow you to save preferred settings (mode, temperature, fan speed, zones) and set how you want them to be activated (Directly = Run Now, or via a Schedule).
 - **Schedules** — Automatically run scenes at set times and days.
 
-![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Schedule-Screen-1.svg)
+![max500px](Touch%20Point%20LCD/img/LCD-Screenshots/Schedule-Screen-1.svg)
 
-![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Schedule-Screen-2.svg)
+![max500px](Touch%20Point%20LCD/img/LCD-Screenshots/Schedule-Screen-2.svg)
 
-![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Schedule-Settings.svg)
+![max500px](Touch%20Point%20LCD/img/LCD-Screenshots/Schedule-Settings.svg)
 
-![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Scene-Settings.svg)
+![max500px](Touch%20Point%20LCD/img/LCD-Screenshots/Scene-Settings.svg)
 
 # 5. User Manuals
 
