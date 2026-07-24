@@ -134,28 +134,20 @@ Please check the package contents to verify that you have received the items bel
 ![max800px](Zoneconnex/img/ZoneConnex-FixingMounting-v2.png)
 
 ### 3.1.3 Touch Point LCD Mounting
-1. Carefully release the two bottom clips to remove the LCD from its housing.
-2. Hold the housing against the wall and mark the fixing points using the mounting holes as a guide.
-3. Drill holes and insert wall plugs if needed.
-4. Secure the housing to the wall with screws or fixings.
-5. Feed the prewired cable through the desired entry point.
-6. Re-insert the LCD screen by first seating the top clips, then gently angle the bottom to re-seat the lower clips.
+The TouchPoint LCD can be mounted via fixings utilising the mounting holes incorporated in the LCD housing. The TouchPoint LCD should always be mounted in a location such that it will not experience extreme high or low temperatures, liquids or high humidity.
 
-![max800px](Touch%20Point%20LCD/img/LCD-Screen-Screws-Open.png)
+Release the two bottom clips to remove the LCD from its housing. Hold the housing against the wall & mark the fixing points. Drill holes & insert wall plugs if needed. Secure the housing to the wall with screws. Feed the pre-wired cable through the desired entry point. Re-insert the LCD by: Engaging the top clips first, then pressing the bottom clips into place.
 
-![max300px](Touch%20Point%20LCD/img/LCD-Top-Retaining-Clips.png)
-*Top retaining clips*
+![max800px](Touch%20Point%20LCD/img/LCD-Mounting-v3.png)
 
-![max300px](Touch%20Point%20LCD/img/LCD-Bottom-Retaining-Clips.png)
-*Bottom retaining clips*
+<img src={require("./Touch Point LCD/img/Top-Retaining-Clips-v2.png").default} width="50%" />
+<img src={require("./Touch Point LCD/img/Bottom-Retaining-Clips-v2.png").default} width="50%" />
 
-**Releasing the retaining clips**
+![max1000px](Touch%20Point%20LCD/img/LCD-Clip-Release-v2.png)
 
-![max300px](Touch%20Point%20LCD/img/LCD-Clip-Release-Correct.jpg)
-**Correct method:** Insert a flat blade screwdriver onto the angled edge of the retaining clip (furthest from the LCD screen) and gently lever the clip away from the housing.
-
-![max300px](Touch%20Point%20LCD/img/LCD-Clip-Release-Incorrect.jpg)
-**Incorrect method:** Do not insert the screwdriver into the slot closest to the LCD screen, as the clip cannot be safely or effectively levered away from the housing in this position.
+|**Correct**            | **Incorrect**                           |
+|-----------------------|-----------------------------------------|
+|Insert a flat blade screwdriver onto the angled edge of the retaining clip (furthest from the LCD screen) and gently lever the clip away from the housing.| Do not insert the screwdriver into the slot closest to the LCD screen, as the clip cannot be safely or effectively levered away from the housing in this position. |
 
 <br/>
 
