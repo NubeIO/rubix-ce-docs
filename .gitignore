@@ -1,6 +1,9 @@
 # Dependencies
 /node_modules
 
+# PDF toolkit local build venv (not part of the repo)
+docs/Zone Controller Stack/pdf-toolkit/.venv/
+
 # Production
 /build
 

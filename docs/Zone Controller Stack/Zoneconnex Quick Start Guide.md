@@ -24,15 +24,15 @@ Refer to following diagrams for component locations:
 
 **Zoneconnex Front View:**
 
-![max500px](ZoneConnex/img/ACB-ZC-Components-Markup-Front-View-rev3.png)
+![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Front-View-rev3.png)
 
 **Zoneconnex Top View:**
 
-![max500px](ZoneConnex/img/ACB-ZC-Components-Markup-Top-View-rev3.png)
+![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Top-View-rev3.png)
 
 **Zoneconnex Bottom View:**
 
-![max500px](ZoneConnex/img/ACB-ZC-Components-Markup-Bottom-View-rev3.png)
+![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Bottom-View-rev3.png)
 
 # 3. Fitting Installation
 
@@ -44,7 +44,7 @@ Ensure the DIN rail is securely installed. **Hook the top of the Zoneconnex** on
 
 Pivot the bottom toward the rail until the **lower clip snaps into place**. Gently pull forward to confirm the Controller is securely mounted.
 
-![max500px](ZoneConnex/img/ZoneConnex-DinMounting-v2.png)
+![max800px](ZoneConnex/img/ZoneConnex-DinMounting-v2.png)
 
 **B. Direct Mounting**
 
@@ -52,13 +52,13 @@ Attach mounting clips to the back of the Controller (if not pre-fitted). Positio
 
 **Drill the holes and insert wall plugs if required.** **Secure the Controller** using appropriate **screws or fixings**. Gently pull forward to confirm it is firmly mounted.
 
-![max500px](ZoneConnex/img/ZoneConnex-FixingMounting-v2.png)
+![max800px](ZoneConnex/img/ZoneConnex-FixingMounting-v2.png)
 
 ## 3.2 Mounting the TouchPoint LCD
 
 Release the **two bottom clips** to remove the LCD from its housing. Hold the housing against the wall and **mark the fixing points**. **Drill holes and insert wall plugs if needed.** **Secure the housing** to the wall with **screws**. Feed the **pre-wired cable** through the desired entry point. Re-insert the LCD by: engaging the **top clips first**, **then pressing the bottom clips** into place.
 
-![max500px](Touch%20Point%20LCD/img/LCD-Mounting-v3.png)
+![max800px](Touch%20Point%20LCD/img/LCD-Mounting-v3.png)
 
 <img src={require("./Touch Point LCD/img/Top-Retaining-Clips-v2.png").default} width="50%" />
 <img src={require("./Touch Point LCD/img/Bottom-Retaining-Clips-v2.png").default} width="50%" />
