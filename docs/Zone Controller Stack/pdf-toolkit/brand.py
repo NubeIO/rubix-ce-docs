@@ -285,7 +285,7 @@ def wrap_diagram_tables(text):
     return "\n".join(out)
 
 
-def brand(infile, cover, logo_path, mobile=False):
+def brand(infile, cover, logo_path, mobile=False, subtitle=None):
     if not os.path.exists(infile):
         print("skipped (not found):", infile)
         return
@@ -303,12 +303,20 @@ def brand(infile, cover, logo_path, mobile=False):
         text = group_screenshots(text, per_row=3)
         text = fix_orphan_code_blocks(text)
     lines = text.split("\n")
-    # drop the first top-level H1 title line — the cover replaces it
+    # The first top-level H1 is the document title. The branded cover page shows it,
+    # but the approved v1.4 layout ALSO repeats it as a styled title block at the top
+    # of the first content page (title + subtitle, above the intro). So instead of
+    # dropping the H1, convert it into <h1 class="doc-title"> + <p class="doc-subtitle">.
     out = []
-    dropped = False
+    handled = False
     for ln in lines:
-        if not dropped and ln.strip().startswith("# "):
-            dropped = True
+        if not handled and ln.strip().startswith("# "):
+            handled = True
+            title = ln.strip()[2:].strip()
+            block = '<h1 class="doc-title">%s</h1>' % title
+            if subtitle:
+                block += '\n<p class="doc-subtitle">%s</p>' % subtitle
+            out.append(block)
             continue
         out.append(ln)
     body = "\n".join(out).lstrip("\n")
@@ -360,7 +368,7 @@ COVER_MIA = """<div class="cover">
 
 # --- User Guide (runs from the ZC-copy root). Same layout as the Quick Start Guide
 #     cover, "USER GUIDE" subtitle, Main-Controls LCD render as the cover product. ---
-COVER_USER = """<div class="cover cover-qsg">
+COVER_USER = """<div class="cover">
 <div class="cover-inner">
 <img class="cover-logo" src="pdf-toolkit/assets/logos/anywair-logo.svg">
 <h1 class="cover-title">Quick Start Guide<br>Zoneconnex</h1>
@@ -407,8 +415,11 @@ if __name__ == "__main__":
     # Flatten transparent PNGs FIRST so covers and all referenced images are safe.
     flatten_transparent_pngs(BUILD)
     brand(os.path.join(BUILD, "Zoneconnex INSTALL & USER MANUAL.md"),
-          COVER_INSTALL, "pdf-toolkit/assets/logos/anywair-logo.svg", mobile=True)
+          COVER_INSTALL, "pdf-toolkit/assets/logos/anywair-logo.svg", mobile=True,
+          subtitle="Install & User Manual")
     brand(os.path.join(BUILD, "Zoneconnex Quick Start Guide.md"),
-          COVER_QSG, "pdf-toolkit/assets/logos/anywair-logo.svg", mobile=True)
+          COVER_QSG, "pdf-toolkit/assets/logos/anywair-logo.svg", mobile=True,
+          subtitle="Installation Guide")
     brand(os.path.join(BUILD, "Zoneconnex User Start Guide.md"),
-          COVER_USER, "pdf-toolkit/assets/logos/anywair-logo.svg", mobile=True)
+          COVER_USER, "pdf-toolkit/assets/logos/anywair-logo.svg", mobile=True,
+          subtitle="User Guide")

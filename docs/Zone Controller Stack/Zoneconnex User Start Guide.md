@@ -1,4 +1,14 @@
-# Zoneconnex User Start Guide
+# Zoneconnex Quick Start Guide
+
+**Welcome**
+
+Welcome to your new **Zoneconnex system**. This guide will help you set up and access the wall-mounted TouchPoint screen and anywAiR® Zone mobile app, so you can start controlling your air conditioning.
+
+Once set up, you can easily:
+
+- Adjust temperature settings
+- Change operating modes
+- Control airflow across different zones in your home
 
 # 1. Setup Wi-Fi on the TouchPoint LCD
 

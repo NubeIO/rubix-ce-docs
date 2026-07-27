@@ -102,10 +102,31 @@ h1 {
    Excludes .cover-title so the cover layout is untouched.
    break-before:page makes every numbered section start on a fresh page
    automatically — no manual <div class="page-break"> needed before an H1. */
-h1:not(.cover-title) {
+h1:not(.cover-title):not(.doc-title) {
   break-before: page;
   page-break-before: always;
   padding-top: 18pt;   /* modest, consistent chapter-drop above each fresh-page H1 */
+}
+
+/* Document title on the first content page (matches the approved v1.4 reference).
+   Big bold black title + lighter subtitle at the top of the first content page —
+   separate from the branded cover page and from numbered H1s. Excluded from the
+   page-break rule above so it flows inline above the intro, not on its own page. */
+.doc-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26pt;
+  font-weight: bold;
+  color: var(--text);
+  line-height: 1.05;
+  margin: 0 0 2pt 0;
+  padding-top: 0;
+}
+.doc-subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17pt;
+  font-weight: normal;
+  color: var(--text);
+  margin: 0 0 12pt 0;
 }
 
 /* H2 = subsection. Teal, slightly smaller */

@@ -4,7 +4,9 @@ Please read the following information before installation and use.
 
 For authorised service personnel only.
 
-> ⚠️ **Note:** This Zoneconnex system is only **compatible with General Air Con's that have UART ports**. Please check compatibility before installing.
+<div class="callout-warning">
+<strong>Note:</strong> This Zoneconnex system is only <strong>compatible with General Air Con's that have UART ports</strong>. Please check compatibility before installing.
+</div>
 
 # 1. Packaging Contents
 
