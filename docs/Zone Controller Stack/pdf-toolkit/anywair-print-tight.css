@@ -1,0 +1,93 @@
+/* ============================================================
+   anywair-print-tight.css — TIGHTER print-density override layer
+   Loaded AFTER anywair-brand.css (second --css) so equal-specificity
+   rules win by cascade order. A moderately more compressed sibling of
+   anywair-print.css: same 1.4 content, less vertical white space.
+
+   Protected (per request):
+     - No orphan headings: h1-h4 keep break-after/inside:avoid (base CSS)
+       and we DO NOT touch that here.
+     - Images stay with captions: figure/figcaption break rules inherited
+       from anywair-brand.css — deliberately NOT overridden.
+     - Comfortable margins: @page margins (22/18mm) left untouched.
+
+   Only vertical spacing + the fresh-page-per-H1 gap are compressed.
+   Cover, back page, callouts, colours, tables, @page all untouched.
+   Pairs with build-tight.sh (no TOC).
+   ============================================================ */
+
+/* (a) Stop forcing a fresh page before every numbered H1; let it flow inline
+   with a modest gap, glued to the content that follows so it can't strand at a
+   page bottom. Base rule (anywair-brand.css:105-108) forced break-before:page
+   + 18pt pad; anywair-print.css used 16pt in-flow — we tighten to 10pt. */
+h1:not(.cover-title):not(.doc-title) {
+  break-before: auto;
+  page-break-before: auto;
+  padding-top: 0;
+  margin-top: 10pt;            /* tighter in-flow separation instead of a fresh page */
+  break-after: avoid;  page-break-after: avoid;    /* keeps rule 1: no orphan heading */
+  break-inside: avoid; page-break-inside: avoid;
+}
+
+/* (a2) Keep a bold "caption-style" label glued to the image it introduces.
+   Pattern in these guides (e.g. **Zoneconnex Top View:** then the diagram):
+     <p><strong>Zoneconnex Top View:</strong></p>
+     <p><img ...></p>
+   The label is a paragraph, not a heading, so the base "keep heading with
+   image" rules don't catch it — it can strand at a page bottom with its
+   diagram pushed to the next page. Target a paragraph whose ONLY content is a
+   <strong> AND which is immediately followed by an image paragraph, and forbid
+   a page break after it so the label travels with its image.
+   (WeasyPrint supports :has().) */
+p:has(> strong:only-child):has(+ p > img:only-child) {
+  break-after: avoid;  page-break-after: avoid;
+  break-inside: avoid; page-break-inside: avoid;
+}
+/* The image paragraph that follows such a label must not break before it,
+   completing the glue so label + image move together to the next page. */
+p:has(> strong:only-child) + p:has(> img:only-child) {
+  break-before: avoid; page-break-before: avoid;
+}
+
+/* (a3) A numbered section heading (H1/H2) must NEVER strand at a page bottom,
+   whatever block follows it. Base CSS only glues headings to a following
+   paragraph-image or figure; here the heading is often followed instead by a
+   callout/blockquote (e.g. "3. Set Up Your Account and Home" + the info box),
+   a list, or a table — and the break slips in between. Force the FIRST block
+   after such a heading to stay on the heading's page, and belt-and-braces the
+   heading's own break-after. */
+h1:not(.cover-title):not(.doc-title),
+h2 {
+  break-after: avoid;  page-break-after: avoid;
+}
+h1:not(.cover-title):not(.doc-title) + *,
+h2 + * {
+  break-before: avoid;  page-break-before: avoid;
+}
+
+/* (b) Image sizing matches the standard print layer (only spacing tightens). */
+img { max-width: 82mm; margin: 3pt auto; }          /* print.css was 5pt */
+img.lcd, figure.lcd img, .lcd img {
+  width: 90mm !important; max-width: 90mm !important; height: auto !important;
+}
+img.medium, figure.medium img, .medium img { max-width: 82mm; }
+/* .large (max-width:100%) and explicit width="N%" images deliberately NOT touched. */
+
+/* (c) Tighter heading / figure / block spacing. */
+h2 { margin: 7pt 0 3pt 0; }          /* print.css 10pt 0 4pt 0 */
+h3 { margin: 6pt 0 2pt 0; }          /* print.css 8pt 0 3pt 0 */
+figure { margin: 4pt 0; }            /* print.css 6pt 0 */
+p > img:only-child { margin: 4pt auto; }   /* print.css 6pt auto */
+.img-row { margin: 4pt 0; }          /* print.css 6pt 0 */
+table { margin: 4pt 0; }             /* print.css 6pt 0 */
+
+/* (d) Relax orphans/widows so paragraphs fill page bottoms; tighter block gaps. */
+p { orphans: 2; widows: 2; margin: 0 0 5pt 0; }   /* print.css 6pt */
+ul, ol { margin: 3pt 0 4pt 0; }      /* print.css 4pt 0 6pt 0 */
+li { margin-bottom: 2pt; }           /* print.css 3pt */
+
+/* NOT overridden (so density work can't break layout):
+   figure/figcaption break rules (rule 2: image+caption together),
+   .cover { page-break-after:always }, .back-page { page-break-before:always },
+   .large / explicit-width images, img.icon, img.phone, .diagram-table, td img,
+   callouts, and all @page / footer / page-number rules (rule 3: margins). */
