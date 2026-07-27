@@ -285,7 +285,8 @@ def wrap_diagram_tables(text):
     return "\n".join(out)
 
 
-def brand(infile, cover, logo_path, mobile=False, subtitle=None):
+def brand(infile, cover, logo_path, mobile=False, subtitle=None,
+          title_override=None, intro=None):
     if not os.path.exists(infile):
         print("skipped (not found):", infile)
         return
@@ -305,17 +306,23 @@ def brand(infile, cover, logo_path, mobile=False, subtitle=None):
     lines = text.split("\n")
     # The first top-level H1 is the document title. The branded cover page shows it,
     # but the approved v1.4 layout ALSO repeats it as a styled title block at the top
-    # of the first content page (title + subtitle, above the intro). So instead of
-    # dropping the H1, convert it into <h1 class="doc-title"> + <p class="doc-subtitle">.
+    # of the first content page (title + subtitle, then an optional intro). So instead
+    # of dropping the H1, convert it into <h1 class="doc-title"> + <p class="doc-subtitle">.
+    #   title_override: PDF title text when it should differ from the .md's H1
+    #     (the .md is also the website, so we don't rename the H1 there).
+    #   intro: PDF-ONLY prose injected right after the title (e.g. the User guide
+    #     "Welcome" block). MUST NOT live in the .md — that is the live website page.
     out = []
     handled = False
     for ln in lines:
         if not handled and ln.strip().startswith("# "):
             handled = True
-            title = ln.strip()[2:].strip()
+            title = title_override or ln.strip()[2:].strip()
             block = '<h1 class="doc-title">%s</h1>' % title
             if subtitle:
                 block += '\n<p class="doc-subtitle">%s</p>' % subtitle
+            if intro:
+                block += '\n\n' + intro.strip()
             out.append(block)
             continue
         out.append(ln)
@@ -325,6 +332,18 @@ def brand(infile, cover, logo_path, mobile=False, subtitle=None):
         f.write(result)
     print("branded:", infile)
 
+
+# PDF-ONLY intro for the User guide (the "Welcome" block). Kept here, NOT in the
+# .md, because the .md is also the live Docusaurus website page.
+USER_INTRO = """**Welcome**
+
+Welcome to your new **Zoneconnex system**. This guide will help you set up and access the wall-mounted TouchPoint screen and anywAiR® Zone mobile app, so you can start controlling your air conditioning.
+
+Once set up, you can easily:
+
+- Adjust temperature settings
+- Change operating modes
+- Control airflow across different zones in your home"""
 
 # --- Install Guide (runs from the ZC-copy root; toolkit assets under pdf-toolkit/assets/) ---
 COVER_INSTALL = """<div class="cover">
@@ -422,4 +441,5 @@ if __name__ == "__main__":
           subtitle="Installation Guide")
     brand(os.path.join(BUILD, "Zoneconnex User Start Guide.md"),
           COVER_USER, "pdf-toolkit/assets/logos/anywair-logo.svg", mobile=True,
-          subtitle="User Guide")
+          subtitle="User Guide", title_override="Zoneconnex Quick Start Guide",
+          intro=USER_INTRO)
