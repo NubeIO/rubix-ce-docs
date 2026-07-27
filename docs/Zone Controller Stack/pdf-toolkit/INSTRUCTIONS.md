@@ -93,6 +93,7 @@ build copy; the rest are applied per manual page:
    copy, so the source PNGs — which the website also serves — stay transparent and
    untouched. This fixes every current and future transparent image at once.
 1. **`fix_require`** — Docusaurus `<img src={require("./x.png").default}>` → plain `<img src="x.png">` (Pandoc can't resolve `require`).
+1b. **strip emoji variation selector (U+FE0F)** — browsers render `⚠️`/`ℹ️` as one colour glyph, but WeasyPrint renders the trailing U+FE0F as a stray bullet/pilcrow next to callout emoji. Removing it leaves the plain `⚠` / `ℹ` symbol. (Source `.md`/website keep the full emoji.)
 2. **`rasterize_svgs`** — converts every `LCD-Screenshots/*.svg` to PNG (`*.from-svg.png`)
    in the build copy and rewrites the ref. WeasyPrint will not scale these SVGs up to a
    CSS width, so SVG screenshots render at an inconsistent intrinsic size next to the

@@ -283,6 +283,10 @@ def brand(infile, cover, logo_path, mobile=False):
     with io.open(infile, encoding="utf-8") as f:
         text = f.read()
     text = fix_require(text)
+    # Strip the emoji variation selector (U+FE0F). Browsers render ⚠️/ℹ️ as a single
+    # colour glyph, but WeasyPrint renders the trailing U+FE0F as a stray bullet /
+    # pilcrow next to the callout emoji. Removing it leaves the plain ⚠ / ℹ symbol.
+    text = text.replace("️", "")
     text = rasterize_svgs(text, os.path.dirname(infile))
     if mobile:
         text = normalize_and_tag_icons(text, os.path.dirname(infile))
