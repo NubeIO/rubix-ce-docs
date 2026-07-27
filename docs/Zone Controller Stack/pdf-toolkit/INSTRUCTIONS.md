@@ -37,46 +37,39 @@ brew install glib pango cairo gdk-pixbuf fontconfig harfbuzz
 
 ---
 
-## 2. Build (do NOT run against the source folder)
+## 2. Build — use `build.sh` (the one canonical command)
 
-`brand.py` rewrites `.md` files **in place**, so always run it on a **copy** of the
-`Zone Controller Stack` folder, then copy the finished PDFs back.
+**Always build with `pdf-toolkit/build.sh`.** It is the single source of truth for
+the recipe — it copies the folder to a throwaway temp dir, runs `brand.py`, calls
+pandoc + weasyprint with the right CSS, compresses images, and copies the finished
+PDF into `pdfs/`. Do NOT hand-assemble pandoc commands: that is how PDFs drifted
+back to the old spread-out format. `brand.py` rewrites `.md` in place, which is why
+the script always works on a copy — never run it against the source folder.
 
 ```bash
-# From repo root. TMP is a throwaway copy of the manual folder.
-TMP="$(mktemp -d)/Zone Controller Stack"
-cp -R "docs/Zone Controller Stack" "$TMP"
-
-# 1) Rewrite the Markdown into print-ready form (cover, icons, screenshot rows, tables…).
-python3 "$TMP/pdf-toolkit/brand.py" "$TMP"
-
-# WeasyPrint on macOS can't find Homebrew's libgobject unless this is set:
-export DYLD_FALLBACK_LIBRARY_PATH="/opt/homebrew/lib"
-
-# 2a) Build the Install Guide (run from the folder root).
-( cd "$TMP" && pandoc "Zoneconnex Install Guide.md" \
-    -o "Zoneconnex Install Guide.pdf" \
-    --pdf-engine=weasyprint \
-    --css=pdf-toolkit/anywair-brand.css \
-    --lua-filter=pdf-toolkit/insert-toc.lua \
-    --standalone )
-
-# 2b) Build the MIA manual (run from the MIA subfolder; toolkit is one level up).
-( cd "$TMP/MIA Mobile App" && pandoc "MIA App User Manual.md" \
-    -o "MIA App User Manual.pdf" \
-    --pdf-engine=weasyprint \
-    --css=../pdf-toolkit/anywair-brand.css \
-    --lua-filter=../pdf-toolkit/insert-toc.lua \
-    --standalone )
-
-# 3) Copy the finished PDFs back next to the source.
-cp "$TMP/Zoneconnex Install Guide.pdf" "docs/Zone Controller Stack/"
-cp "$TMP/MIA Mobile App/MIA App User Manual.pdf" "docs/Zone Controller Stack/MIA Mobile App/"
+# from the repo root OR from this "Zone Controller Stack" folder:
+pdf-toolkit/build.sh                                  # all guides — PRINT density, no TOC
+pdf-toolkit/build.sh --toc                            # all guides — with a Table of Contents page
+pdf-toolkit/build.sh "Zoneconnex Quick Start Guide"   # just one guide
+pdf-toolkit/build.sh --toc "Zoneconnex INSTALL & USER MANUAL"
 ```
 
-Eyeball each PDF (cover, TOC, footer page numbers, phone-screenshot rows, pin
-tables) before handing it to the client. To preview a page as an image without
-opening Preview: `qlmanage -t -s 1100 -o /tmp "some.pdf"`.
+**Print density is the default.** The build loads `anywair-print.css` *after*
+`anywair-brand.css`, so the print layer wins by cascade order: numbered `# H1`s no
+longer force a fresh page (title + intro + first section flow together), images sit
+at reference density, spacing is tighter. See `anywair-print.css` for exactly which
+rules it overrides — it touches only density; cover, back page, colours, tables and
+callouts are untouched.
+
+**The Table of Contents is OPTIONAL** — off by default, added with `--toc` (which
+switches on `insert-toc.lua`).
+
+Compression is `compress.py` (run automatically as the last build step): composites
+transparency onto white, caps the long edge at 1800 px, re-encodes JPEG q82.
+
+Eyeball each PDF (cover, footer page numbers, screenshot rows, pin tables) before
+handing it to the client. To preview a page as an image without opening Preview:
+`qlmanage -t -s 1100 -o /tmp "some.pdf"`.
 
 ---
 

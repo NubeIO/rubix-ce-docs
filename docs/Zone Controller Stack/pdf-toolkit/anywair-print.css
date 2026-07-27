@@ -1,0 +1,45 @@
+/* ============================================================
+   anywair-print.css — PRINT-DENSITY override layer
+   Loaded AFTER anywair-brand.css (second --css) so equal-specificity
+   rules win by cascade order. Overrides only density-related rules;
+   cover, back page, TOC styling, colours, tables, callouts untouched.
+   Pairs with a build that DROPS insert-toc.lua (no TOC page).
+   ============================================================ */
+
+/* (a) Stop forcing a fresh page before every numbered H1; keep it glued to
+   the content that follows so it can't strand at a page bottom.
+   Base rule (anywair-brand.css:105-109) forced break-before:page + 18pt pad. */
+h1:not(.cover-title) {
+  break-before: auto;
+  page-break-before: auto;
+  padding-top: 0;
+  margin-top: 16pt;            /* modest in-flow separation instead of a fresh page */
+  break-after: avoid;  page-break-after: avoid;
+  break-inside: avoid; page-break-inside: avoid;
+}
+
+/* (b) Shrink images to reference density (ref figures ~75-90mm in a ~174mm column). */
+img { max-width: 82mm; margin: 5pt auto; }          /* base was 108mm / 10pt */
+img.lcd, figure.lcd img, .lcd img {
+  width: 90mm !important; max-width: 90mm !important; height: auto !important;  /* base uses !important (120mm) */
+}
+img.medium, figure.medium img, .medium img { max-width: 82mm; }   /* base 90mm */
+/* .large (max-width:100%) and explicit width="N%" images are deliberately NOT touched. */
+
+/* (c) Tighter heading / figure / block spacing. */
+h2 { margin: 10pt 0 4pt 0; }         /* base 16pt 0 6pt 0 */
+h3 { margin: 8pt 0 3pt 0; }          /* base 12pt 0 4pt 0 */
+figure { margin: 6pt 0; }            /* base 14pt 0 */
+p > img:only-child { margin: 6pt auto; }   /* base 12pt auto */
+.img-row { margin: 6pt 0; }          /* base 12pt 0 */
+table { margin: 6pt 0; }             /* base 10pt 0 */
+
+/* (d) Relax orphans/widows so paragraphs fill page bottoms. */
+p { orphans: 2; widows: 2; margin: 0 0 6pt 0; }   /* base 4/4, 8pt */
+ul, ol { margin: 4pt 0 6pt 0; }      /* base 6pt 0 10pt 0 */
+li { margin-bottom: 3pt; }           /* base 4pt */
+
+/* NOT overridden (so density work can't break layout):
+   .cover { page-break-after:always }, .back-page { page-break-before:always },
+   .large / explicit-width images, img.icon, img.phone, .diagram-table, td img,
+   and all @page / footer / page-number rules. */
