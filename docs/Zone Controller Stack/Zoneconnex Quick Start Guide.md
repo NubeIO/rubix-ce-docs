@@ -65,9 +65,10 @@ Release the **two bottom clips** to remove the LCD from its housing. Hold the ho
 
 **Releasing the retaining clips**
 
+![](Touch%20Point%20LCD/img/LCD-Clip-Release-v2.png)
+
 | **Correct** | **Incorrect** |
 |-------------|---------------|
-| ![max300px](Touch%20Point%20LCD/img/LCD-Clip-Release-Correct.jpg) | ![max300px](Touch%20Point%20LCD/img/LCD-Clip-Release-Incorrect.jpg) |
 | Insert a flat blade screwdriver onto the angled edge of the retaining clip (furthest from the LCD screen) and gently lever the clip away from the housing. | Do not insert the screwdriver into the slot closest to the LCD screen, as the clip cannot be safely or effectively levered away from the housing in this position. |
 
 # 4. Power & Wiring
@@ -78,13 +79,13 @@ Release the **two bottom clips** to remove the LCD from its housing. Hold the ho
 
 Connect the **prewired AC power supply** to the **24VAC** terminals (1 & 2) on the Zoneconnex — see diagram below:
 
-![max300px](ZoneConnex/img/24VAC-ADAPTOR-BOLD-2.png)
+![](ZoneConnex/img/24VAC-ADAPTOR-BOLD-2.png){.large width=80%}
 
 ## 4.2 UART Connection
 
 Route the **UART cable** into the Air Conditioning unit control panel and connect it to the **CN65** or **CN75** port via the UART interface — refer to diagram below:
 
-![max500px](ZoneConnex/img/ACB-ZC-UART-PAP-04V-S-rev3.png)
+![](ZoneConnex/img/ACB-ZC-UART-PAP-04V-S-rev3.png){.large width=80%}
 
 ![max300px](ZoneConnex/img/UART-Cable-photo.jpg)
 
@@ -114,7 +115,7 @@ The TouchPoint LCD utilises **Push-To-Release** terminals. Gently press down on 
 
 The TouchPoint LCD pin connections are as shown in the following image:
 
-![max500px](Touch%20Point%20LCD/img/LCD-Internal-Labelled.jpg)
+![max1000px](Touch%20Point%20LCD/img/LCD-Stickered-Internal-Zoomed.png)
 
 # 5. Configuration
 
@@ -133,15 +134,16 @@ Follow the steps below to connect your Zoneconnex system to Wi-Fi:
 
 1. On the TouchPoint LCD, press **Wi-Fi**.
 2. Press **Scan Wi-Fi** to search for networks.
+
+![](Touch%20Point%20LCD/img/LCD-Screenshots/Scan-Wi-Fi-v2.png){.lcd}
+
 3. Select your network and press **Connect**.
 4. Enter the network password using the on-screen keyboard.
 5. Press **Connect**.
 
 Once connected, the screen will display network information including: QR code, signal strength, connection speed, security type, and channel.
 
-| ![max300px](Touch%20Point%20LCD/img/LCD-Screenshots/No-Wifi.png) | ![max300px](Touch%20Point%20LCD/img/LCD-Screenshots/Wifi-Info.png) |
-|:-:|:-:|
-| *Scan Wi-Fi* | *Connection details* |
+![](Touch%20Point%20LCD/img/LCD-Screenshots/Wi-Fi-Connected-info.png){.lcd}
 
 # 6. Installer Mode
 
@@ -150,16 +152,16 @@ To access installer mode, follow the prompts below in accordance with the Instal
 1. On the TouchPoint LCD home screen, tap the **Settings** icon.
 2. On the settings/about screen, tap the **System** card **8 times**.
 
-![max500px](Touch%20Point%20LCD/img/LCD-Screenshots/Tap-Settings-8x-Card.svg)
+![](Touch%20Point%20LCD/img/LCD-Screenshots/Tap-Settings-8x-Card.svg){.lcd}
 
 3. Enter the **installer password (default 898989)** and confirm.
 4. Open the **anywAiR® Zone Mobile App**. Select **Continue as Installer**. Scan the **left QR** for connecting to Zoneconnex Access Point Wi-Fi.
 
-![max500px](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-LeftQR.svg)
+![](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-LeftQR.svg){.lcd}
 
 5. Once connected to the Zoneconnex Access Point Wi-Fi, scan the **right QR** to access installer mode for the Zoneconnex.
 
-![max500px](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-RightQR.svg)
+![](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-RightQR.svg){.lcd}
 
 **Note:** To exit Installer Mode at any time, press **Exit Installer Mode** in the app.
 

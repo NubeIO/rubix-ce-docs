@@ -84,6 +84,37 @@ def _resolve(ref, base_dir):
     return os.path.normpath(os.path.join(base_dir, p))
 
 
+def rasterize_svgs(text, base_dir):
+    """Convert LCD-Screenshots SVG images to PNG in the build copy and rewrite refs.
+
+    WeasyPrint will not scale these SVGs up to a CSS width, so LCD screenshots
+    written as .svg render at an inconsistent intrinsic size next to the .png ones.
+    Rasterizing every LCD-Screenshots SVG to PNG at build time makes them all size
+    uniformly via the shared `.lcd` class. Only touches the throwaway build copy;
+    the source .md / website .svg refs are unaffected. Requires PyMuPDF (fitz).
+    """
+    import fitz  # PyMuPDF, already a build dependency
+    svg_ref = re.compile(r'(!\[[^\]]*\]\()([^)]*LCD-Screenshots/[^)]+\.svg)(\)(?:\{[^}]*\})?)')
+
+    def repl(m):
+        pre, ref, post = m.group(1), m.group(2), m.group(3)
+        src = _resolve(ref, base_dir)
+        if not os.path.exists(src):
+            return m.group(0)  # leave untouched if missing
+        # Use a distinct suffix so we never overwrite an existing (possibly
+        # differently-annotated) PNG of the same base name.
+        png_ref = ref[:-4] + ".from-svg.png"
+        dst = _resolve(png_ref, base_dir)
+        # render at ~200 dpi for crisp print output
+        doc = fitz.open(src)
+        pix = doc[0].get_pixmap(dpi=200)
+        pix.save(dst)
+        doc.close()
+        return pre + urlenc(png_ref) + post
+
+    return svg_ref.sub(repl, text)
+
+
 def normalize_and_tag_icons(text, base_dir):
     # 1) store badges: convert the size-hack alt into a real width cap so they don't
     #    fall back to the global block rule. Other maxNNNpx hints (diagrams) are left
@@ -252,6 +283,7 @@ def brand(infile, cover, logo_path, mobile=False):
     with io.open(infile, encoding="utf-8") as f:
         text = f.read()
     text = fix_require(text)
+    text = rasterize_svgs(text, os.path.dirname(infile))
     if mobile:
         text = normalize_and_tag_icons(text, os.path.dirname(infile))
         text = wrap_diagram_tables(text)
@@ -328,7 +360,39 @@ COVER_USER = """<div class="cover cover-qsg">
 </div>"""
 
 
+def flatten_transparent_pngs(build_dir):
+    """Composite every transparent PNG in the build copy onto a WHITE background.
+
+    Many product renders / screenshots / icons are transparent RGBA. WeasyPrint (and
+    the downstream image compressor) can composite those onto BLACK, producing the
+    "product on a black box" bug — especially on the covers and any image landing on
+    a dark area. Flattening onto white here, in the throwaway build copy, fixes every
+    such image at once and can never recur. Source files (also served on the website)
+    are left untouched. Uses the soft-mask via alpha_composite (the known-good method).
+    """
+    from PIL import Image
+    n = 0
+    for root, _dirs, files in os.walk(build_dir):
+        for fn in files:
+            if not fn.lower().endswith(".png"):
+                continue
+            p = os.path.join(root, fn)
+            try:
+                im = Image.open(p)
+            except Exception:
+                continue
+            if im.mode in ("RGBA", "LA") or (im.mode == "P" and "transparency" in im.info):
+                im = im.convert("RGBA")
+                if im.getchannel("A").getextrema()[0] < 255:  # actually transparent
+                    bg = Image.new("RGBA", im.size, (255, 255, 255, 255))
+                    Image.alpha_composite(bg, im).convert("RGB").save(p)
+                    n += 1
+    print("flattened %d transparent PNG(s) onto white" % n)
+
+
 if __name__ == "__main__":
+    # Flatten transparent PNGs FIRST so covers and all referenced images are safe.
+    flatten_transparent_pngs(BUILD)
     brand(os.path.join(BUILD, "Zoneconnex INSTALL & USER MANUAL.md"),
           COVER_INSTALL, "pdf-toolkit/assets/logos/anywair-logo.svg", mobile=True)
     brand(os.path.join(BUILD, "Zoneconnex Quick Start Guide.md"),

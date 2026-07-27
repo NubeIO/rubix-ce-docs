@@ -174,6 +174,11 @@ img.small,  figure.small img,  .small img  { max-width: 55mm; }   /* plugs, conn
 img.medium, figure.medium img, .medium img { max-width: 90mm; }   /* mid-size screenshots */
 img.large,  figure.large img,  .large img  { max-width: 100%; }   /* full-width, the rare wide diagram */
 
+/* LCD TouchPoint screenshots — ONE fixed size across all guides, for both PNG and
+   SVG. `width` (not just max-width) + !important forces WeasyPrint to scale the SVG
+   box to this size instead of falling back to the SVG's intrinsic px dimensions. */
+img.lcd, figure.lcd img, .lcd img { width: 120mm !important; max-width: 120mm !important; height: auto !important; }
+
 /* Inline button glyph (plus/minus/chevron/power) sitting INSIDE a sentence.
    Overrides the global block/centred image rule so it flows with the text. */
 img.icon {

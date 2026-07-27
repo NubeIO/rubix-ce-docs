@@ -82,18 +82,38 @@ opening Preview: `qlmanage -t -s 1100 -o /tmp "some.pdf"`.
 
 ## 3. What `brand.py` does (so you can predict the output)
 
-Run automatically by the command above. Each pass is applied to the manual pages:
+Run automatically by the command above. Passes 1–2 below run once over the whole
+build copy; the rest are applied per manual page:
 
+0. **`flatten_transparent_pngs`** *(runs once, on the whole build copy)* — composites
+   **every** transparent PNG onto a WHITE background. Many product renders, LCD
+   screenshots and icons are transparent RGBA; WeasyPrint / the image compressor can
+   otherwise composite them onto BLACK, giving the "product on a black box" bug
+   (covers were the worst offender). Flattening happens only in the throwaway build
+   copy, so the source PNGs — which the website also serves — stay transparent and
+   untouched. This fixes every current and future transparent image at once.
 1. **`fix_require`** — Docusaurus `<img src={require("./x.png").default}>` → plain `<img src="x.png">` (Pandoc can't resolve `require`).
-2. **`normalize_and_tag_icons`** — restores the store-badge width cap, removes the `![max800px](…)` alt-text size hack, and tags inline UI glyphs with `{.icon}` so they sit inline at text height. Detection is **automatic by image size**: any PNG ≤ 64×64px is treated as an icon — no list to maintain, new icons just work.
-3. **`wrap_diagram_tables`** — wraps pin/connector tables (blank or image-only header row) in `::: diagram-table :::` so they drop the teal header bar and shrink to ~95mm.
-4. **`group_screenshots`** — tags phone screenshots `{.phone}` and packs consecutive ones into `<div class="img-row">` **rows of 3**; a lone screenshot becomes a `{.phone}` single. All screenshots render at a fixed 55mm.
-5. **`fix_orphan_code_blocks`** — flattens deep (4+ space) list bullets so Pandoc doesn't mis-parse a bullet that follows an image block as an overflowing code block.
-6. **cover + back page** — drops the doc's first `# H1` and injects the branded cover, then appends the copyright back page.
+2. **`rasterize_svgs`** — converts every `LCD-Screenshots/*.svg` to PNG (`*.from-svg.png`)
+   in the build copy and rewrites the ref. WeasyPrint will not scale these SVGs up to a
+   CSS width, so SVG screenshots render at an inconsistent intrinsic size next to the
+   PNG ones. Rasterizing makes them all size uniformly via the `.lcd` class. A distinct
+   `.from-svg.png` suffix is used so an existing (possibly differently-annotated) PNG of
+   the same base name is never overwritten. Source `.md` / website `.svg` refs unaffected.
+3. **`normalize_and_tag_icons`** — restores the store-badge width cap, removes the `![max800px](…)` alt-text size hack, and tags inline UI glyphs with `{.icon}` so they sit inline at text height. Detection is **automatic by image size**: any PNG ≤ 64×64px is treated as an icon — no list to maintain, new icons just work.
+4. **`wrap_diagram_tables`** — wraps pin/connector tables (blank or image-only header row) in `::: diagram-table :::` so they drop the teal header bar and shrink to ~95mm.
+5. **`group_screenshots`** — tags phone screenshots `{.phone}` and packs consecutive ones into `<div class="img-row">` **rows of 3**; a lone screenshot becomes a `{.phone}` single. All screenshots render at a fixed 55mm.
+6. **`fix_orphan_code_blocks`** — flattens deep (4+ space) list bullets so Pandoc doesn't mis-parse a bullet that follows an image block as an overflowing code block.
+7. **cover + back page** — drops the doc's first `# H1` and injects the branded cover, then appends the copyright back page.
 
 Icons are detected automatically by image size (≤ 64×64px) — there is no icon list
 to maintain. To tweak that threshold, screenshot columns, or cover text, edit the
 constants near the top/bottom of `brand.py` (`ICON_MAX_PX`, `per_row=3`, `COVER_INSTALL`, `COVER_MIA`).
+
+**LCD TouchPoint screenshots — one consistent size across guides:** tag each with
+`{.lcd}` in the `.md`. The `.lcd` CSS class forces a single fixed width (120mm) for
+both raster PNGs and the SVGs rasterized by pass 2, so the same screen never renders
+at different sizes between the Quick Start and User guides. To change that width, edit
+the `img.lcd` rule in `anywair-brand.css`.
 
 ---
 
@@ -102,6 +122,7 @@ constants near the top/bottom of `brand.py` (`ICON_MAX_PX`, `per_row=3`, `COVER_
 You normally don't hand-write these (brand.py adds them), but for reference:
 
 - `{.phone}` — phone-screenshot sizing (fixed 55mm). Rows: wrap figures in `<div class="img-row">`.
+- `{.lcd}` — LCD TouchPoint screenshot at one fixed width (120mm), consistent across all guides; works on PNGs and rasterized SVGs.
 - `{.icon}` — inline button glyph at text height.
 - `{.small}` (55mm) / `{.medium}` (90mm) / `{.large}` (full width) — generic image sizes.
 - `::: diagram-table … :::` — compact wiring/pin table, white header, ~95mm wide.
