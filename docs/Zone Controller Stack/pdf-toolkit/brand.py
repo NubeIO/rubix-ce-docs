@@ -116,6 +116,15 @@ def rasterize_svgs(text, base_dir):
 
 
 def normalize_and_tag_icons(text, base_dir):
+    # 0) alt-text size TAGS -> real Pandoc attributes. These live inside the alt
+    #    text (![lcd](x)) so Docusaurus renders them harmlessly (alt text is
+    #    invisible on the website), while here we turn them into the Pandoc
+    #    class/width the print CSS needs. Never write bare {.class} / {width=} in
+    #    the shared .md — Docusaurus prints those braces as literal text.
+    #      ![lcd](x)   -> ![](x){.lcd}                 (fixed-width LCD screenshot)
+    #      ![large](x) -> ![](x){.large width=80%}     (wide diagram at 80%)
+    text = re.sub(r'!\[lcd\]\(([^)]+)\)(?!\{)',   r'![](\1){.lcd}', text)
+    text = re.sub(r'!\[large\]\(([^)]+)\)(?!\{)', r'![](\1){.large width=80%}', text)
     # 1) store badges: convert the size-hack alt into a real width cap so they don't
     #    fall back to the global block rule. Other maxNNNpx hints (diagrams) are left
     #    for step 2 to strip, preserving their current 108mm block behaviour.

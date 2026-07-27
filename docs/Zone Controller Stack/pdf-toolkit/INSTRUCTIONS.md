@@ -111,10 +111,23 @@ to maintain. To tweak that threshold, screenshot columns, or cover text, edit th
 constants near the top/bottom of `brand.py` (`ICON_MAX_PX`, `per_row=3`, `COVER_INSTALL`, `COVER_MIA`).
 
 **LCD TouchPoint screenshots — one consistent size across guides:** tag each with
-`{.lcd}` in the `.md`. The `.lcd` CSS class forces a single fixed width (120mm) for
-both raster PNGs and the SVGs rasterized by pass 2, so the same screen never renders
-at different sizes between the Quick Start and User guides. To change that width, edit
+the **alt-text tag `![lcd](…)`** in the `.md`. `brand.py` converts it to `{.lcd}` at
+build time; the `.lcd` CSS class then forces a single fixed width (120mm) for both
+raster PNGs and the SVGs rasterized by pass 2, so the same screen never renders at
+different sizes between the Quick Start and User guides. To change that width, edit
 the `img.lcd` rule in `anywair-brand.css`.
+
+> **IMPORTANT — the `.md` is ALSO the live website (Docusaurus).** Never write bare
+> Pandoc attributes like `{.lcd}`, `{.large}`, or `{width=…}` directly in the `.md`:
+> Pandoc understands them, but **Docusaurus prints the braces as literal text on the
+> web page**. Instead put the hint in the **alt text**, which is invisible on the
+> website, and let `brand.py` translate it for the PDF:
+>
+> | Author in the `.md` (web-safe) | brand.py emits for the PDF |
+> |--------------------------------|----------------------------|
+> | `![lcd](x)`                    | `![](x){.lcd}` — fixed 120mm LCD screenshot |
+> | `![large](x)`                  | `![](x){.large width=80%}` — wide diagram at 80% |
+> | `![max800px](x)`               | `![](x)` — hint stripped, default 108mm |
 
 ---
 

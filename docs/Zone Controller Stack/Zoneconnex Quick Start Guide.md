@@ -79,13 +79,13 @@ Release the **two bottom clips** to remove the LCD from its housing. Hold the ho
 
 Connect the **prewired AC power supply** to the **24VAC** terminals (1 & 2) on the Zoneconnex — see diagram below:
 
-![](ZoneConnex/img/24VAC-ADAPTOR-BOLD-2.png){.large width=80%}
+![large](ZoneConnex/img/24VAC-ADAPTOR-BOLD-2.png)
 
 ## 4.2 UART Connection
 
 Route the **UART cable** into the Air Conditioning unit control panel and connect it to the **CN65** or **CN75** port via the UART interface — refer to diagram below:
 
-![](ZoneConnex/img/ACB-ZC-UART-PAP-04V-S-rev3.png){.large width=80%}
+![large](ZoneConnex/img/ACB-ZC-UART-PAP-04V-S-rev3.png)
 
 ![max300px](ZoneConnex/img/UART-Cable-photo.jpg)
 
@@ -135,7 +135,7 @@ Follow the steps below to connect your Zoneconnex system to Wi-Fi:
 1. On the TouchPoint LCD, press **Wi-Fi**.
 2. Press **Scan Wi-Fi** to search for networks.
 
-![](Touch%20Point%20LCD/img/LCD-Screenshots/Scan-Wi-Fi-v2.png){.lcd}
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Scan-Wi-Fi-v2.png)
 
 3. Select your network and press **Connect**.
 4. Enter the network password using the on-screen keyboard.
@@ -143,7 +143,7 @@ Follow the steps below to connect your Zoneconnex system to Wi-Fi:
 
 Once connected, the screen will display network information including: QR code, signal strength, connection speed, security type, and channel.
 
-![](Touch%20Point%20LCD/img/LCD-Screenshots/Wi-Fi-Connected-info.png){.lcd}
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Wi-Fi-Connected-info.png)
 
 # 6. Installer Mode
 
@@ -152,16 +152,16 @@ To access installer mode, follow the prompts below in accordance with the Instal
 1. On the TouchPoint LCD home screen, tap the **Settings** icon.
 2. On the settings/about screen, tap the **System** card **8 times**.
 
-![](Touch%20Point%20LCD/img/LCD-Screenshots/Tap-Settings-8x-Card.svg){.lcd}
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Tap-Settings-8x-Card.svg)
 
 3. Enter the **installer password (default 898989)** and confirm.
 4. Open the **anywAiR® Zone Mobile App**. Select **Continue as Installer**. Scan the **left QR** for connecting to Zoneconnex Access Point Wi-Fi.
 
-![](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-LeftQR.svg){.lcd}
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-LeftQR.svg)
 
 5. Once connected to the Zoneconnex Access Point Wi-Fi, scan the **right QR** to access installer mode for the Zoneconnex.
 
-![](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-RightQR.svg){.lcd}
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-RightQR.svg)
 
 **Note:** To exit Installer Mode at any time, press **Exit Installer Mode** in the app.
 
