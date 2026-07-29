@@ -237,7 +237,7 @@ Zoneconnex UART Pin Reference shown below:
 
 <br/>
 
-## 4.2 TouchPoint LCD RS485 & Power Supply
+## 4.3 TouchPoint LCD RS485 & Power Supply
 The TouchPoint LCD:
 
 - Communicates the the Zoneconnex via **Modbus RS485**.
@@ -248,7 +248,7 @@ Connect the 15m 4-core 24 AWG LCD power/communication cable between the TouchPoi
 ![max800px](ZoneConnex/img/LCD-Cable.jpg)
 
 
-### 4.2.1 Zoneconnex Pin Connections
+### 4.3.1 Zoneconnex Pin Connections
 
 The RS485 connector is terminated as shown below.
 
@@ -267,7 +267,7 @@ The 18VDC power connector is terminated as shown below.
 | Pin 13 **(-)** | 18V DC **−** |
 
 
-### 4.2.2 TouchPoint LCD Pin Connections
+### 4.3.2 TouchPoint LCD Pin Connections
 The TouchPoint LCD utilises Push-To-Release terminals. Gently press down on the terminal pin to release the clamp, insert or remove the cable, then release the pin to lock the cable in place.
 
 The TouchPoint LCD pin connections are as shown in the following image:
