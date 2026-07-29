@@ -30,21 +30,21 @@ Scan the QR code below to download the anywAiR® Zone Mobile App for Android or 
 
 > ℹ️ **Before starting,** ensure your mobile device is connected to the same Wi-Fi network as the TouchPoint screen. To check, press the **Wi-Fi** button on the LCD screen to view network details.
 
-**Create or log in to your account:**
+## 3.1 Create or log in to your account
 
 1. On your mobile device, **open the anywAiR® Zone Mobile App**.
 2. **Log in or Sign-Up:**
 3. **Existing Users:** Log in and continue to **Add Your Home**.
 4. **New Users:** Follow the Sign-Up process below.
 
-**Sign-Up — new users:**
+## 3.2 Sign-Up — new users
 
 1. From the Login screen, press **Sign-Up**.
 2. **Enter your details** (Email, Password, and Confirm Password) then press **Sign-Up**.
 3. **Enter the Verification Code (OTP)** sent to your email (if not received, you can request a new code after 2 minutes).
 4. Once verified, press **Next** to continue.
 
-**Add your home:**
+## 3.3 Add Your Home
 
 1. On the **Setup home** screen, press **Scan QR code**.
 2. Scan the QR code displayed on the TouchPoint LCD.

@@ -184,12 +184,18 @@ ol ol ol { list-style-type: lower-alpha; }
 h1, h2 { counter-reset: step; }
 ol > li { counter-increment: step; }
 ol { list-style: none; }
+ol > li {
+  position: relative;      /* anchor the absolutely-positioned marker */
+}
 ol > li::before {
-  content: counter(step) ". ";
+  content: counter(step) ".";
   font-weight: bold;
-  margin-left: -22pt;      /* pull the marker into the padding gutter */
-  display: inline-block;
-  width: 22pt;
+  position: absolute;      /* pin the number top-left so it stays on the first
+                              line even when the item starts with a block
+                              (image / paragraph) — avoids a stranded "3." */
+  left: -22pt;
+  width: 20pt;
+  text-align: left;
 }
 /* Nested lists keep browser-native markers, not the step counter. */
 ol ol { list-style: upper-alpha; }

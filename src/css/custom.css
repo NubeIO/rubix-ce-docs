@@ -138,13 +138,18 @@ img[alt="max900px"] {
    to .markdown so site chrome and nested lists are untouched. */
 .markdown h1, .markdown h2 { counter-reset: step; }
 .markdown ol { list-style: none; }
-.markdown ol > li { counter-increment: step; }
+.markdown ol > li {
+  counter-increment: step;
+  position: relative;         /* anchor the marker */
+}
 .markdown ol > li::before {
-  content: counter(step) ". ";
+  content: counter(step) ".";
   font-weight: 600;
-  margin-left: -1.4em;
-  display: inline-block;
+  position: absolute;         /* pin top-left so block-first items (image /
+                                 paragraph) don't strand the number on its own line */
+  left: -1.6em;
   width: 1.4em;
+  text-align: left;
 }
 /* Nested lists keep native A/B/C, a/b/c markers, not the step counter. */
 .markdown ol ol { list-style: upper-alpha; }
