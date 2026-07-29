@@ -48,6 +48,18 @@ p:has(> strong:only-child):has(+ p > img:only-child) {
 p:has(> strong:only-child) + p:has(> img:only-child) {
   break-before: avoid; page-break-before: avoid;
 }
+/* (a2b) Same stranding, but the label is followed by a TABLE instead of an image
+   — e.g. "Zoneconnex Pin Reference:" + the pin table. Glue the label to a
+   following table (or diagram-table wrapper) so they travel together. */
+p:has(> strong:only-child):has(+ table),
+p:has(> strong:only-child):has(+ div.diagram-table) {
+  break-after: avoid;  page-break-after: avoid;
+  break-inside: avoid; page-break-inside: avoid;
+}
+p:has(> strong:only-child) + table,
+p:has(> strong:only-child) + div.diagram-table {
+  break-before: avoid; page-break-before: avoid;
+}
 
 /* (a3) A numbered section heading (H1/H2) must NEVER strand at a page bottom,
    whatever block follows it. Base CSS only glues headings to a following
@@ -85,6 +97,24 @@ table { margin: 4pt 0; }             /* print.css 6pt 0 */
 p { orphans: 2; widows: 2; margin: 0 0 5pt 0; }   /* print.css 6pt */
 ul, ol { margin: 3pt 0 4pt 0; }      /* print.css 4pt 0 6pt 0 */
 li { margin-bottom: 2pt; }           /* print.css 3pt */
+
+/* (e) Content QR codes (e.g. §8 User Manuals "onlinedocs" QR). Authored as a
+   LINKED image [![max300px](..)](url); brand.py strips the max300px hint and its
+   badge exception only catches bare images, so this QR falls back to the ~82mm
+   block cap and, with break-inside:avoid, gets bumped whole onto the next page,
+   leaving the section half-empty. Cap it small so it sits under its intro line. */
+img.doc-qr, .doc-qr img, a img.doc-qr { width: 38mm !important; max-width: 38mm !important; height: auto !important; margin: 4pt auto; }
+
+/* (e2) App-store QR codes in the §5.1 download table. At the 58mm td-img cap the
+   two-column table is so tall it gets pushed to its own page, stranding the
+   "5.1 anywAiR Zone Mobile App" heading + intro at the previous page bottom.
+   Shrink these two QRs so the whole heading+table block fits together. */
+img.app-qr, .app-qr img, td img.app-qr { max-width: 42mm !important; height: auto !important; }
+
+/* (f) Keep the Compliance AS/NZS standards list together — without this the last
+   item (AS/NZS 4268) widows onto its own page. Target the list as a whole; the
+   existing per-li avoid rule doesn't stop the <ul> itself from splitting. */
+.compliance-list, .compliance-list ul { break-inside: avoid; page-break-inside: avoid; }
 
 /* NOT overridden (so density work can't break layout):
    figure/figcaption break rules (rule 2: image+caption together),

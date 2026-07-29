@@ -128,3 +128,26 @@ img[alt="max900px"] {
   max-width: 900px;
   display: block;
 }
+
+/* Continuous ordered-list numbering — mirrors pdf-toolkit/anywair-brand.css.
+   A standalone image block between numbered steps makes the Markdown parser end
+   one <ol> and start a fresh one, so the visible numbers restart at 1 mid-step
+   (e.g. §5.2 Wi-Fi, §6 Installer). We drive numbering with a counter that resets
+   at each section heading and increments per top-level <li>, so it runs
+   continuously across image-split lists but still restarts per section. Scoped
+   to .markdown so site chrome and nested lists are untouched. */
+.markdown h1, .markdown h2 { counter-reset: step; }
+.markdown ol { list-style: none; }
+.markdown ol > li { counter-increment: step; }
+.markdown ol > li::before {
+  content: counter(step) ". ";
+  font-weight: 600;
+  margin-left: -1.4em;
+  display: inline-block;
+  width: 1.4em;
+}
+/* Nested lists keep native A/B/C, a/b/c markers, not the step counter. */
+.markdown ol ol { list-style: upper-alpha; }
+.markdown ol ol ol { list-style: lower-alpha; }
+.markdown ol ol > li, .markdown ol ol ol > li { counter-increment: none; }
+.markdown ol ol > li::before, .markdown ol ol ol > li::before { content: none; }

@@ -95,6 +95,8 @@ Route the **UART cable** into the Air Conditioning unit control panel and connec
 
 Connect the power/communication cable between the TouchPoint LCD and Zoneconnex.
 
+## 4.4 The TouchPoint LCD
+
 The TouchPoint LCD:
 
 - Communicates via a **Modbus RS485**.
@@ -111,7 +113,7 @@ The TouchPoint LCD:
 | Pin 12 **(+)** | 18V DC **+** |
 | Pin 13 **(-)** | 18V DC **−** |
 
-## 4.4 TouchPoint LCD Connections
+## 4.5 TouchPoint LCD Connections
 
 The TouchPoint LCD utilises **Push-To-Release** terminals. Gently press down on the terminal pin to release the clamp, insert or remove the cable, then release the pin to lock the cable in place.
 

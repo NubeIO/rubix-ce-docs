@@ -125,6 +125,18 @@ def normalize_and_tag_icons(text, base_dir):
     #      ![large](x) -> ![](x){.large width=80%}     (wide diagram at 80%)
     text = re.sub(r'!\[lcd\]\(([^)]+)\)(?!\{)',   r'![](\1){.lcd}', text)
     text = re.sub(r'!\[large\]\(([^)]+)\)(?!\{)', r'![](\1){.large width=80%}', text)
+    # Content QR codes (e.g. §8 "onlinedocs" QR) are LINKED images and otherwise
+    # fall back to the full-width block rule, spilling onto their own page. Tag with
+    # {.doc-qr} so the print CSS can cap them small. Alt is stripped in step 2, so
+    # match on the filename and re-emit with the class (keep the surrounding link).
+    text = re.sub(r'!\[[^\]]*\]\((img/onlinedocs-qr-code\.png)\)(?!\{)',
+                  r'![](\1){.doc-qr}', text)
+    # App-store QR codes in the §5.1 download table: tag {.app-qr} so the print CSS
+    # can shrink them (the 58mm td-img cap makes the table too tall to fit with its
+    # heading). Same class-based mechanism as .doc-qr (src-attr selectors don't
+    # reliably match through the pandoc->weasyprint pipeline).
+    text = re.sub(r'!\[[^\]]*\]\((img/(?:googleplay-qr-code|iOS-anywair-zone-qr-code)\.png)\)(?!\{)',
+                  r'![](\1){.app-qr}', text)
     # 1) store badges: convert the size-hack alt into a real width cap so they don't
     #    fall back to the global block rule. Other maxNNNpx hints (diagrams) are left
     #    for step 2 to strip, preserving their current 108mm block behaviour.
@@ -218,7 +230,7 @@ BACK_PAGE = """
 
 <p class="back-company">General Australia Pty Ltd</p>
 
-<p class="back-links">www.generalairstage.com.au | www.generalairstage.co.nz</p>
+<p class="back-links"><a href="https://www.generalairstage.com.au">www.generalairstage.com.au</a> | <a href="https://www.generalairstage.co.nz">www.generalairstage.co.nz</a></p>
 
 <p class="back-contact">contact@fujitsugeneral.com.au | 1300 882 201</p>
 
@@ -244,6 +256,36 @@ def fix_orphan_code_blocks(text):
             out.append("- " + m.group(3))
         else:
             out.append(ln)
+    return "\n".join(out)
+
+
+def wrap_compliance_list(text):
+    """Keep the Compliance standards list (AS/NZS ...) together on one page.
+    The list is short but sits near a page bottom, so its last item widows onto
+    a fresh page. We wrap just this list in a Pandoc fenced div so the print CSS
+    (.compliance-list { break-inside: avoid }) can hold it together. Matched by
+    the '**Compliance**' lead-in + the RCM sentence, so no other list is touched."""
+    lines = text.split("\n")
+    out = []
+    i = 0
+    n = len(lines)
+    while i < n:
+        if lines[i].strip().startswith("This product carries the RCM mark"):
+            out.append(lines[i])
+            i += 1
+            # skip blank lines, then wrap the contiguous bullet list that follows
+            while i < n and lines[i].strip() == "":
+                out.append(lines[i]); i += 1
+            if i < n and lines[i].lstrip().startswith("- "):
+                out.append("")
+                out.append("::: {.compliance-list}")
+                while i < n and (lines[i].lstrip().startswith("- ") or lines[i].strip() == ""):
+                    out.append(lines[i]); i += 1
+                out.append(":::")
+                out.append("")
+                continue
+        else:
+            out.append(lines[i]); i += 1
     return "\n".join(out)
 
 
@@ -301,6 +343,7 @@ def brand(infile, cover, logo_path, mobile=False, subtitle=None,
     if mobile:
         text = normalize_and_tag_icons(text, os.path.dirname(infile))
         text = wrap_diagram_tables(text)
+        text = wrap_compliance_list(text)
         text = group_screenshots(text, per_row=3)
         text = fix_orphan_code_blocks(text)
     lines = text.split("\n")

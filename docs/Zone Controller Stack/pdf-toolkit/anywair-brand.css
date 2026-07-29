@@ -174,6 +174,29 @@ li {
 ol ol { list-style-type: upper-alpha; }
 ol ol ol { list-style-type: lower-alpha; }
 
+/* ---- CONTINUOUS ORDERED-LIST NUMBERING ------------------ */
+/* A standalone image block between numbered steps makes Pandoc/CommonMark end
+   one <ol> and start a fresh one, so the visible numbers restart at 1 mid-step
+   (e.g. §5.2 Wi-Fi, §6 Installer). We drive numbering with a counter that resets
+   at each section heading and increments per top-level <li>, so it runs
+   continuously across image-split lists but still restarts per section.
+   Nested lists keep their native A/B/C, a/b/c markers (untouched below). */
+h1, h2 { counter-reset: step; }
+ol > li { counter-increment: step; }
+ol { list-style: none; }
+ol > li::before {
+  content: counter(step) ". ";
+  font-weight: bold;
+  margin-left: -22pt;      /* pull the marker into the padding gutter */
+  display: inline-block;
+  width: 22pt;
+}
+/* Nested lists keep browser-native markers, not the step counter. */
+ol ol { list-style: upper-alpha; }
+ol ol ol { list-style: lower-alpha; }
+ol ol > li, ol ol ol > li { counter-increment: none; }
+ol ol > li::before, ol ol ol > li::before { content: none; }
+
 /* ---- IMAGES --------------------------------------------- */
 /* Default: cap width so diagrams don't run full-bleed and eat the page.
    ~120mm sits comfortably inside the ~174mm text column. Images are centred.
@@ -521,7 +544,7 @@ pre {
    <div class="back-page">
      <img class="back-logo" src="assets/logos/anywair-logo.svg">
      <p class="back-company">General Australia Pty Ltd</p>
-     <p class="back-links">www.generalairstage.com.au | www.generalairstage.co.nz</p>
+     <p class="back-links"><a href="https://www.generalairstage.com.au">www.generalairstage.com.au</a> | <a href="https://www.generalairstage.co.nz">www.generalairstage.co.nz</a></p>
      <p class="back-contact">contact@fujitsugeneral.com.au | 1300 882 201</p>
    </div>
 */
@@ -548,6 +571,9 @@ pre {
   text-decoration: underline;
   margin: 2mm 0;
 }
+/* AU and NZ are two separate sites, each its own clickable link — keep the
+   approved blue-underline look rather than the default UA link colour. */
+.back-links a { color: #0563C1; text-decoration: underline; }
 .back-contact {
   font-size: 10pt;
   color: var(--text);
