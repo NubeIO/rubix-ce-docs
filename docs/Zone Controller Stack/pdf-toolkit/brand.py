@@ -135,14 +135,22 @@ def normalize_and_tag_icons(text, base_dir):
     # can shrink them (the 58mm td-img cap makes the table too tall to fit with its
     # heading). Same class-based mechanism as .doc-qr (src-attr selectors don't
     # reliably match through the pandoc->weasyprint pipeline).
-    text = re.sub(r'!\[[^\]]*\]\((img/(?:googleplay-qr-code|iOS-anywair-zone-qr-code)\.png)\)(?!\{)',
-                  r'![](\1){.app-qr}', text)
-    # 1) store badges: convert the size-hack alt into a real width cap so they don't
-    #    fall back to the global block rule. Other maxNNNpx hints (diagrams) are left
-    #    for step 2 to strip, preserving their current 108mm block behaviour.
+    #    (filenames vary between guides: googleplay-qr-code, Andriod-anywair-zone-qr-code,
+    #    iOS-anywair-zone-qr-code — match any app-store QR, but NOT the onlinedocs QR
+    #    already tagged .doc-qr above.)
+    def _appqr(m):
+        fn = m.group(1)
+        if 'onlinedocs' in fn:
+            return m.group(0)
+        return '![](%s){.app-qr}' % fn
+    text = re.sub(r'!\[[^\]]*\]\((img/[^)]*qr-code\.png)\)(?!\{)', _appqr, text)
+    # 1) store badges (Google Play / App Store) live in the same app-download table
+    #    as the app QR codes. Tag them {.app-qr} too so EVERY image in that table is
+    #    capped to the one consistent size (see .app-qr in the print CSS), instead of
+    #    the QR codes and badges rendering at different sizes.
     badge_re = re.compile(
-        r'!\[max(\d+)px\]\(([^)]*(?:%s)\.png)\)(?!\{)' % "|".join(BADGE_NAMES))
-    text = badge_re.sub(r'![](\2){width=\1px}', text)
+        r'!\[max\d+px\]\(([^)]*(?:%s)\.png)\)(?!\{)' % "|".join(BADGE_NAMES))
+    text = badge_re.sub(r'![](\1){.app-qr}', text)
     # 2) strip the remaining size-hack alt text: ![max800px](x) -> ![](x)
     text = re.sub(r'!\[(?:max\d+px)\]\(', '![](', text)
     # 3) tag inline-icon images with {.icon}, detected by pixel size (<= ICON_MAX_PX).

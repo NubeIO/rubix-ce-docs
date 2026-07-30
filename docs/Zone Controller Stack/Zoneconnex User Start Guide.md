@@ -74,7 +74,7 @@ You will be taken to the **Main Control home screen**.
 - **Zone Temperature\*:** Check the temperature in each zone (*\*view-only; droplet sensor required*).
 - **Sync Zones** — Reset zones to restore correct airflow. Use this if airflow is not working as expected.
 
-![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Zone-Control.svg)
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Zone-Control.png)
 
 ## 4.3 Scenes & Schedules
 

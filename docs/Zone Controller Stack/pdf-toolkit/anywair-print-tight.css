@@ -77,6 +77,27 @@ h2 + * {
   break-before: avoid;  page-break-before: avoid;
 }
 
+/* (a4) Keep a section's LEAD IMAGE with its heading + intro list.
+   USG §4.x is "H2 -> bullet list -> screenshot": (a3) only glues the list, so
+   the break slipped in at the list->image boundary and the screenshot landed
+   alone at the top of the next page, reading as a chopped-off, caption-less
+   graphic (USG p5/p6 review comments). Glue the SECOND block after the heading
+   too, so heading + list + first screenshot travel together. */
+h1:not(.cover-title):not(.doc-title) + * + p,
+h1:not(.cover-title):not(.doc-title) + * + figure,
+h2 + * + p,
+h2 + * + figure {
+  break-before: avoid;  page-break-before: avoid;
+}
+
+/* (a5) A run of consecutive screenshots (USG §4.3 has four stacked with no
+   text between) must not be split so that images end up on a page with no
+   heading or caption at all. Keep each image welded to the one before it. */
+p:has(> img.lcd) + p:has(> img.lcd),
+figure.lcd + figure.lcd {
+  break-before: avoid;  page-break-before: avoid;
+}
+
 /* (b) Image sizing matches the standard print layer (only spacing tightens). */
 img { max-width: 82mm; margin: 3pt auto; }          /* print.css was 5pt */
 img.lcd, figure.lcd img, .lcd img {

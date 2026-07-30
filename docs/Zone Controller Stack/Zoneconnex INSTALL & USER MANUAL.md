@@ -240,7 +240,7 @@ Zoneconnex UART Pin Reference shown below:
 ## 4.3 TouchPoint LCD RS485 & Power Supply
 The TouchPoint LCD:
 
-- Communicates the the Zoneconnex via **Modbus RS485**.
+- Communicates with the Zoneconnex via **Modbus RS485**.
 - Receives **18VDC power** from the Zonneconnex.
 
 Connect the 15m 4-core 24 AWG LCD power/communication cable between the TouchPoint LCD and Zoneconnex as shown below. 
@@ -272,7 +272,7 @@ The TouchPoint LCD utilises Push-To-Release terminals. Gently press down on the 
 
 The TouchPoint LCD pin connections are as shown in the following image:
 
-|            | ![max300px](Touch%20point%20LCD/img/LCD-Wiring-Terminations.png) |
+|            | ![max300px](Touch%20Point%20LCD/img/LCD-Wiring-Terminations.png) |
 |----------- |----------------------------------------|
 | Pin 1 (**A** or **+**) | **A** or **+** of RS485 Network       |
 | Pin 2 (**B** or **-**) 	| **B** or **-** of RS485 Network        |
@@ -283,7 +283,7 @@ The TouchPoint LCD pin connections are as shown in the following image:
 
 The TouchPoint LCD pin connections are marked on the LCD as shown in the following image:
 
-![max1000px](Touch%20point%20LCD/img/LCD-Stickered-Internal-Zoomed.png)
+![max1000px](Touch%20Point%20LCD/img/LCD-Stickered-Internal-Zoomed.png)
 
 # 5 Configuration
 
@@ -308,7 +308,7 @@ Follow the steps below to connect the Zoneconnex system to Wi-Fi:
 1. On the TouchPoint LCD, press **Wi-Fi**.
 2. Press **Scan Wi-Fi** to search for available networks.
 
-![max800px](Touch%20point%20LCD/img/LCD-Screenshots/Scan-wi-fi-v2.png)
+![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Scan-Wi-Fi-v2.png)
 
 3. Select your network and press **Connect**.
 4. Enter the network password using the on-screen keyboard.
