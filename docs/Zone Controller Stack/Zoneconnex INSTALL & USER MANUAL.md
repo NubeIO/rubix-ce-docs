@@ -658,15 +658,11 @@ The TouchPoint LCD provides access to detailed system information through the Se
 
 ![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/System-Info.png)
 
-<br/>
-
 # 7 Additional Resources
 For further details outlining the Zoneconnex system use the following links:
 
 - anywAiR® Zone Mobile App User Manual **[anywAiR® Zone Mobile App](/rubix-ce-docs/docs/Zone%20Controller%20Stack/MIA%20Mobile%20App/MIA%20App%20User%20Manual)**
-
 - Zoneconnex Quick Start Guide **[Zoneconnex Quick Start Guide](/rubix-ce-docs/docs/Zone%20Controller%20Stack/Zoneconnex%20User%20Start%20Guide)**
-
 - Zoneconnex Quick Install Guide **[Zoneconnex Quick Install Guide](/rubix-ce-docs/docs/Zone%20Controller%20Stack/Zoneconnex%20Quick%20Install%20Guide)**
 
 <!-- - Touch Point LCD Operation **[Touch Point LCD](/rubix-ce-docs/docs/Zone%20Controller%20Stack/Touch%20Point%20LCD/Touch%20Point%20LCD%20User%20Manual)** <br/> -->

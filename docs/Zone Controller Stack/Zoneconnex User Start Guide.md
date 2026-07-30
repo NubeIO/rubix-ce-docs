@@ -87,7 +87,7 @@ You will be taken to the **Main Control home screen**.
 
 ![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Schedule-Settings.svg)
 
-![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Scene-Settings.svg)
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Assign-Existing-Scene.png)
 
 # 5. User Manuals
 

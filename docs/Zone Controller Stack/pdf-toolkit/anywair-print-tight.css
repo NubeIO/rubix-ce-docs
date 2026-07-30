@@ -147,6 +147,18 @@ img.app-qr, .app-qr img, td img.app-qr { max-width: 42mm !important; height: aut
    existing per-li avoid rule doesn't stop the <ul> itself from splitting. */
 .compliance-list, .compliance-list ul { break-inside: avoid; page-break-inside: avoid; }
 
+/* (f2) Manual §7 "Additional Resources" — the final section is a heading, one
+   intro line and 3 links, and it overflowed the last text page by ~5pt, pushing
+   the third link onto a page of its own (one line + footer, ~66 chars).
+   Reclaim those points from the LAST section only (h1 immediately followed by a
+   p + ul that end the document body) so no other page in the 41-page manual
+   reflows. Deliberately NOT break-inside:avoid — that bumps the whole section
+   to a fresh page and costs a page instead of saving one. */
+h1#additional-resources { margin-top: 5pt; }
+h1#additional-resources + p { margin-bottom: 3pt; }
+h1#additional-resources ~ ul { margin: 2pt 0 0 0; }
+h1#additional-resources ~ ul > li { margin-bottom: 1pt; }
+
 /* NOT overridden (so density work can't break layout):
    figure/figcaption break rules (rule 2: image+caption together),
    .cover { page-break-after:always }, .back-page { page-break-before:always },
