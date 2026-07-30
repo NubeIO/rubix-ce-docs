@@ -65,7 +65,7 @@ You will be taken to the **Main Control home screen**.
 - **Fan Speed Control** — Adjust the fan speed (*model dependent*).
 - **Temperature Display** — View setpoint and current temperature\*. (*\*Current temperature display must be enabled during installation*).
 
-![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Main-Controls.svg)
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Main-Controls.png)
 
 ## 4.2 Zone Control
 

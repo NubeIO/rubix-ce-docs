@@ -85,9 +85,19 @@ h2 + * {
    too, so heading + list + first screenshot travel together. */
 h1:not(.cover-title):not(.doc-title) + * + p,
 h1:not(.cover-title):not(.doc-title) + * + figure,
+h1:not(.cover-title):not(.doc-title) + * + table,
 h2 + * + p,
-h2 + * + figure {
+h2 + * + figure,
+h2 + * + table {
   break-before: avoid;  page-break-before: avoid;
+}
+/* (a4b) The app-download QR table specifically: keep the whole table on one page
+   and glued to its §5.1 heading + intro, so the heading doesn't strand at a page
+   bottom with the table pushed to the next page (manual §5.1). */
+table:has(img.app-qr) { break-inside: avoid; page-break-inside: avoid; }
+h2 + p + table:has(img.app-qr),
+h1:not(.cover-title):not(.doc-title) + p + table:has(img.app-qr) {
+  break-before: avoid; page-break-before: avoid;
 }
 
 /* (a5) A run of consecutive screenshots (USG §4.3 has four stacked with no
