@@ -48,18 +48,38 @@ the script always works on a copy — never run it against the source folder.
 
 ```bash
 # from the repo root OR from this "Zone Controller Stack" folder:
-pdf-toolkit/build.sh                                  # all guides — PRINT density, no TOC
-pdf-toolkit/build.sh --toc                            # all guides — with a Table of Contents page
-pdf-toolkit/build.sh "Zoneconnex Quick Start Guide"   # just one guide
-pdf-toolkit/build.sh --toc "Zoneconnex INSTALL & USER MANUAL"
+pdf-toolkit/build.sh                                  # all guides — A5 (print deliverable), no TOC
+pdf-toolkit/build.sh --a4                             # all guides — A4 (screen/desk reference)
+pdf-toolkit/build.sh --toc                            # A5, with a Table of Contents page
+pdf-toolkit/build.sh --a4 "Zoneconnex Quick Start Guide"    # just one guide
+pdf-toolkit/build.sh --size a5 --toc "Zoneconnex INSTALL & USER MANUAL"
 ```
 
-**Print density is the default.** The build loads `anywair-print.css` *after*
-`anywair-brand.css`, so the print layer wins by cascade order: numbered `# H1`s no
-longer force a fresh page (title + intro + first section flow together), images sit
-at reference density, spacing is tighter. See `anywair-print.css` for exactly which
-rules it overrides — it touches only density; cover, back page, colours, tables and
-callouts are untouched.
+**Page size is an argument, and A5 is the default.** A5 is the print
+deliverable and is *built* at A5 — nothing is ever shrunk to reach a format.
+A4 is screen/desk reference only. Every output filename ends in `-A4` or
+`-A5`; there are deliberately no unsuffixed PDFs, so nobody has to open a
+file to find out what size it is.
+
+The CSS chain is:
+
+| Layer | File | Holds |
+|---|---|---|
+| engine + skin | `anywair-brand.css` | layout, colours, fonts, logos. No page dimensions. |
+| page size | `page-a4.css` / `page-a5.css` | page size, margins, type scale, image scale |
+
+Page size comes from the CSS `@page` rule only — there is no `-V papersize`
+flag, so the two can never disagree. To add a format, copy
+`_page-template.css` to `page-<name>.css`, fill in the values, and add a row
+to the format registry in the repo README. Read the floors at the top of the
+template first: 9pt body, 10mm margins, ~40mm images. When a format hits a
+floor the answer is less content per page, more pages — never smaller type.
+
+**Print density is built in.** Numbered `# H1`s no longer force a fresh page
+(title + intro + first section flow together), images sit at reference
+density, and spacing is tighter. These were previously a separate
+`anywair-print.css` override layer; they are now density variables in the
+page-size files, so each format sets its own rhythm.
 
 **The Table of Contents is OPTIONAL** — off by default, added with `--toc` (which
 switches on `insert-toc.lua`).

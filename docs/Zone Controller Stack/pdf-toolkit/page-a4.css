@@ -1,0 +1,105 @@
+/* ============================================================
+   Page format: A4  ·  210 x 297 mm
+   Screen / desk reference. NOT the print deliverable — that is A5.
+
+   Load AFTER anywair-brand.css and BEFORE any OEM skin:
+     --css=anywair-brand.css --css=page-a4.css
+   Holds values only. Any rule that is not a value belongs in
+   anywair-brand.css. See _page-template.css before adding a format.
+   ============================================================ */
+
+@page { size: A4; margin: 22mm 18mm 20mm 18mm; }
+
+:root {
+  --page-w:  210mm;   /* full page width — the cover spans this, not --col */
+  --page-h:  297mm;   /* cover height — must match the @page height above */
+  --col:     174mm;   /* 210 - 2x18mm side margins; image %s resolve against this */
+
+  /* ---- type scale ---- */
+  --body:     11pt;   /* floor is 9pt — never go below */
+  --h1:       17pt;
+  --h2:       13pt;
+  --h3:       11pt;
+  --caption:   9pt;
+  --table:    10pt;
+
+  /* ---- first-content-page title block ---- */
+  --doc-title:    26pt;
+  --doc-subtitle: 17pt;
+
+  /* ---- cover chrome ---- */
+  --cover-pad:        16mm;
+  --cover-inner-pad:  14mm 12mm 18mm 12mm;
+  --cover-logo-w:     52mm;
+  --cover-title:      30pt;
+  --cover-divider-w:  62mm;
+  --cover-sub:        16pt;
+  --cover-model:      15pt;
+
+  /* ---- back page + TOC ---- */
+  --back-pad-top:   18mm;
+  --back-logo-gap:  34mm;
+  --back-logo-w:    70mm;
+  --toc-indent:     12mm;
+}
+
+/* ---- IMAGE TIERS ------------------------------------------
+   Percentages of --col (174mm at A4). These reproduce the APPROVED
+   rendered widths exactly, so the A4 build is unchanged by this layer:
+     47% = 82mm (default figure)   52% = 90mm (LCD screenshot)
+     32% = 55mm (app screenshot)   71% = 124mm (.large-ish diagrams)
+   --img-cell is an absolute length on purpose: a % inside a table cell
+   resolves against the cell, not the column, which collapses it. */
+:root {
+  --img-small:      32%;   /* 55mm — plugs, connectors */
+  --img-medium:     47%;   /* 82mm */
+  --img-default:    47%;   /* 82mm — approved reference density */
+  --img-lcd:        52%;   /* 90mm — TouchPoint LCD screenshots */
+  --img-phone:      55mm;  /* absolute: packed into flex rows, see note */
+  --img-cell:       58mm;  /* absolute: see note above */
+  --diagram-table:  55%;
+}
+
+/* ---- DENSITY ----------------------------------------------
+   These reproduce the approved print density (formerly the separate
+   anywair-print.css override layer, now retired):
+     - numbered H1s flow in-line rather than each starting a fresh page,
+       so there are no near-blank pages before every section
+     - tighter heading / figure / block spacing
+     - relaxed orphans/widows so paragraphs fill the page bottom       */
+:root {
+  --h1-break:         auto;
+  --h1-break-legacy:  auto;
+  --h1-pad-top:       0;
+  --h1-margin-top:    16pt;
+
+  --h2-margin:  10pt 0 4pt 0;
+  --h3-margin:  8pt 0 3pt 0;
+  --p-margin:   0 0 6pt 0;
+  --orphans:    2;
+  --widows:     2;
+  --list-margin: 4pt 0 6pt 0;
+  --li-margin:   3pt;
+
+  --figure-margin:          6pt 0;
+  --img-margin:             5pt auto;
+  --standalone-img-margin:  6pt auto;
+  --img-row-margin:         6pt 0;
+  --table-margin:           6pt 0;
+}
+
+/* ---- COVER / BACK-PAGE INTERNAL SPACING -------------------- */
+:root {
+  --cover-logo-gap:         8mm;
+  --cover-title-gap:        6mm;
+  --cover-divider-margin:   5mm;
+  --cover-product-gap:      8mm;
+  --cover-model-pad-top:    8mm;
+  --cover-model-pad-bottom: 6mm;
+  --copyright-heading-gap:  5mm;
+  --copyright-text-gap:     4mm;
+  --copyright-rule-gap:     6mm;
+  --back-logo-margin:       8mm;
+  --back-line-gap:          2mm;
+  --toc-pad-top:            4mm;
+}

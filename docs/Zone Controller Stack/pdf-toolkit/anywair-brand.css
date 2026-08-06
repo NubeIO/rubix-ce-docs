@@ -3,9 +3,34 @@
    Matches approved Fujitsu General style
    Font: Arial  ·  Accent: #008996 teal
    For use with Pandoc + WeasyPrint OR Markdown PDF (yzane) ext
-   ============================================================ */
+   ============================================================
 
-/* ---- BRAND TOKENS ---------------------------------------- */
+   CSS LAYER ORDER — load exactly one page-size file, in the middle:
+
+     anywair-brand.css      this file (engine + skin, still combined)
+     page-<size>.css        page size, margins, type scale  — pick ONE
+     (future) <oem>-skin.css
+
+   This file holds NO page dimensions, type sizes, or image widths.
+   Those live in page-a4.css / page-a5.css as custom properties; every
+   rule below references them via var() with an A4 fallback. Building
+   without a page file therefore still yields a valid A4 document.
+
+   ------------------------------------------------------------
+   TODO — PLANNED ENGINE / SKIN SPLIT
+   ------------------------------------------------------------
+   This file is scheduled to split into engine.css (layout) and
+   anywair-skin.css (brand). Blocks are tagged [SKIN] or [ENGINE]
+   below so the split is a mechanical move, not a rewrite. Rule of
+   thumb: colour, font-family, logo and cover chrome are SKIN;
+   spacing, breaking, sizing and structure are ENGINE. Blocks
+   tagged [MIXED] need splitting line-by-line — typically a colour
+   declaration sitting inside an otherwise structural rule.
+   Do this only once the A5 build is signed off, using the approved
+   A5 PDF as the regression baseline.
+   ------------------------------------------------------------ */
+
+/* ---- BRAND TOKENS ------------------------------- [SKIN] --- */
 :root {
   --accent:      #008996;   /* anywAiR teal — headings, rules, cover border */
   --accent-dark: #006670;   /* darker teal for hover/depth if needed */
@@ -17,11 +42,10 @@
   --white:       #FFFFFF;
 }
 
-/* ---- PAGE SETUP ------------------------------------------ */
+/* ---- PAGE SETUP --------------------------------- [ENGINE] -- */
+/* size + margin come from the page-size file (page-a4.css / page-a5.css).
+   Only footer furniture is defined here — it is identical at every format. */
 @page {
-  size: A4;
-  margin: 22mm 18mm 20mm 18mm;
-
   /* Footer: full-width grey rule spanning the page, drawn in the left box */
   @bottom-left {
     content: "";
@@ -34,7 +58,7 @@
   @bottom-center {
     content: counter(page);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 10pt;
+    font-size: var(--table, 10pt);
     color: var(--text);
     vertical-align: top;
     padding-top: 5pt;
@@ -64,14 +88,25 @@
   print-color-adjust: exact;
 }
 
+/* [MIXED] font-family/colour are SKIN; width/size are ENGINE.
+   width is set explicitly from --col so that percentage image widths
+   resolve against a known text column rather than an auto-sized box. */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 11pt;
+  font-size: var(--body, 11pt);
   line-height: 1.5;
   color: var(--text);
   background: var(--white);
   margin: 0;
   padding: 0;
+}
+
+/* Percentage image widths resolve against their containing block, so the
+   text column is pinned to --col to make those percentages predictable.
+   NOT set on body itself: the cover and back page are full-bleed children
+   of body and must keep the whole sheet width. */
+body > *:not(.cover):not(.back-page) {
+  max-width: var(--col, 174mm);
 }
 
 /* ---- HEADINGS ------------------------------------------- */
@@ -84,10 +119,10 @@ h1, h2, h3, h4 {
   break-inside: avoid;
 }
 
-/* H1 = major numbered section. Teal, starts on a fresh page */
+/* H1 = major numbered section. Teal, starts on a fresh page   [MIXED] */
 h1 {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 17pt;
+  font-size: var(--h1, 17pt);
   font-weight: bold;
   color: var(--accent);
   margin: 0 0 10pt 0;
@@ -103,9 +138,12 @@ h1 {
    break-before:page makes every numbered section start on a fresh page
    automatically — no manual <div class="page-break"> needed before an H1. */
 h1:not(.cover-title):not(.doc-title) {
-  break-before: page;
-  page-break-before: always;
-  padding-top: 18pt;   /* modest, consistent chapter-drop above each fresh-page H1 */
+  break-before: var(--h1-break, page);
+  page-break-before: var(--h1-break-legacy, always);
+  padding-top: var(--h1-pad-top, 18pt);   /* consistent chapter-drop above each fresh-page H1 */
+  margin-top: var(--h1-margin-top, 0);    /* used instead of padding when H1s flow in-line */
+  break-after: avoid;  page-break-after: avoid;
+  break-inside: avoid; page-break-inside: avoid;
 }
 
 /* Document title on the first content page (matches the approved v1.4 reference).
@@ -114,7 +152,7 @@ h1:not(.cover-title):not(.doc-title) {
    page-break rule above so it flows inline above the intro, not on its own page. */
 .doc-title {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 26pt;
+  font-size: var(--doc-title, 26pt);
   font-weight: bold;
   color: var(--text);
   line-height: 1.05;
@@ -123,7 +161,7 @@ h1:not(.cover-title):not(.doc-title) {
 }
 .doc-subtitle {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 17pt;
+  font-size: var(--doc-subtitle, 17pt);
   font-weight: normal;
   color: var(--text);
   margin: 0 0 12pt 0;
@@ -132,10 +170,10 @@ h1:not(.cover-title):not(.doc-title) {
 /* H2 = subsection. Teal, slightly smaller */
 h2 {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 13pt;
+  font-size: var(--h2, 13pt);
   font-weight: bold;
   color: var(--accent);
-  margin: 16pt 0 6pt 0;
+  margin: var(--h2-margin, 16pt 0 6pt 0);
   page-break-after: avoid;
   page-break-inside: avoid;
 }
@@ -143,18 +181,18 @@ h2 {
 /* H3 = minor heading. Black bold (matches approved doc sub-labels) */
 h3 {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 11pt;
+  font-size: var(--h3, 11pt);
   font-weight: bold;
   color: var(--text);
-  margin: 12pt 0 4pt 0;
+  margin: var(--h3-margin, 12pt 0 4pt 0);
   page-break-after: avoid;
 }
 
 /* ---- BODY TEXT ------------------------------------------ */
 p {
-  margin: 0 0 8pt 0;
-  orphans: 4;   /* keep >=4 lines together: a heading won't strand with 1-2 lines */
-  widows: 4;    /* and a paragraph won't start a page with 1-2 trailing lines */
+  margin: var(--p-margin, 0 0 8pt 0);
+  orphans: var(--orphans, 4);   /* keep lines together: a heading won't strand with 1-2 lines */
+  widows:  var(--widows, 4);    /* and a paragraph won't start a page with 1-2 trailing lines */
 }
 
 strong, b { font-weight: bold; }
@@ -162,11 +200,11 @@ em, i { font-style: italic; }
 
 /* ---- LISTS ---------------------------------------------- */
 ul, ol {
-  margin: 6pt 0 10pt 0;
+  margin: var(--list-margin, 6pt 0 10pt 0);
   padding-left: 22pt;
 }
 li {
-  margin-bottom: 4pt;
+  margin-bottom: var(--li-margin, 4pt);
   page-break-inside: avoid;
 }
 
@@ -205,13 +243,14 @@ ol ol > li::before, ol ol ol > li::before { content: none; }
 
 /* ---- IMAGES --------------------------------------------- */
 /* Default: cap width so diagrams don't run full-bleed and eat the page.
-   ~120mm sits comfortably inside the ~174mm text column. Images are centred.
+   Sized as a percentage of the text column so it holds at any page format.
+   Images are centred.
    Override per-image with a size class (see below). */
 img {
-  max-width: 108mm;          /* default standalone-image width (+20%); cover, tables, app screenshots have their own sizes */
+  max-width: var(--img-default, 80%);   /* default standalone-image width (Option B); cover, tables, app screenshots have their own sizes */
   height: auto;
   display: block;
-  margin: 10pt auto;              /* centred, with breathing room above + below */
+  margin: var(--img-margin, 10pt auto);   /* centred, with breathing room above + below */
   image-rendering: high-quality;
   page-break-inside: avoid;       /* never split an image across pages */
   break-inside: avoid;            /* modern browsers / WeasyPrint */
@@ -220,14 +259,14 @@ img {
 /* Per-image size overrides — Bryn tags the image, e.g.
    ![Pin layout](assets/images/plug.png){.small}
    or on a figure's <img class="small" ...>. Works on the image or its figure. */
-img.small,  figure.small img,  .small img  { max-width: 55mm; }   /* plugs, connectors, small diagrams */
-img.medium, figure.medium img, .medium img { max-width: 90mm; }   /* mid-size screenshots */
+img.small,  figure.small img,  .small img  { max-width: var(--img-small,  32%); }   /* plugs, connectors, small diagrams */
+img.medium, figure.medium img, .medium img { max-width: var(--img-medium, 52%); }   /* mid-size screenshots */
 img.large,  figure.large img,  .large img  { max-width: 100%; }   /* full-width, the rare wide diagram */
 
 /* LCD TouchPoint screenshots — ONE fixed size across all guides, for both PNG and
    SVG. `width` (not just max-width) + !important forces WeasyPrint to scale the SVG
    box to this size instead of falling back to the SVG's intrinsic px dimensions. */
-img.lcd, figure.lcd img, .lcd img { width: 120mm !important; max-width: 120mm !important; height: auto !important; }
+img.lcd, figure.lcd img, .lcd img { width: var(--img-lcd, 69%) !important; max-width: var(--img-lcd, 69%) !important; height: auto !important; }
 
 /* Inline button glyph (plus/minus/chevron/power) sitting INSIDE a sentence.
    Overrides the global block/centred image rule so it flows with the text. */
@@ -245,10 +284,10 @@ img.icon {
    own caption. Use <div class="img-row"> in the markdown, flush-left. */
 .img-row {
   display: flex;
-  gap: 6mm;
+  gap: var(--img-row-gap, 6mm);
   justify-content: center;
   align-items: flex-start;
-  margin: 12pt 0;
+  margin: var(--img-row-margin, 12pt 0);
   page-break-inside: avoid;
   break-inside: avoid;
 }
@@ -270,12 +309,15 @@ img.icon {
 img.phone, .phone img {
   box-sizing: border-box;
 }
-/* Every screenshot — single or in a row — is the SAME fixed 55mm width for consistency. */
-img.phone, .img-row img.phone { width: 55mm; max-width: 55mm; }
+/* Every screenshot — single or in a row — is the SAME width for consistency.
+   NOTE: these are packed into <div class="img-row"> flex rows of 3 by brand.py,
+   so a % would resolve against the FLEX ITEM (~1/3 of the column) and collapse
+   to ~16mm. --img-phone is therefore an absolute length, set per page file. */
+img.phone, .img-row img.phone { width: var(--img-phone, 55mm); max-width: var(--img-phone, 55mm); }
 
 /* Figure wrapper keeps image + caption together as one block */
 figure {
-  margin: 14pt 0;                 /* consistent spacing around every figure */
+  margin: var(--figure-margin, 14pt 0);   /* consistent spacing around every figure */
   padding: 0;
   page-break-inside: avoid;
   break-inside: avoid;
@@ -286,7 +328,7 @@ figure img {
   display: block;
 }
 figcaption {
-  font-size: 9pt;
+  font-size: var(--caption, 9pt);
   color: var(--grey-soft);
   margin-top: 6pt;
   page-break-before: avoid;       /* caption never separates from its image */
@@ -309,7 +351,7 @@ h3 + figure {
 p > img:only-child {
   page-break-inside: avoid;
   break-inside: avoid;
-  margin: 12pt auto;
+  margin: var(--standalone-img-margin, 12pt auto);
   display: block;
 }
 
@@ -317,8 +359,8 @@ p > img:only-child {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 10pt 0;
-  font-size: 10pt;
+  margin: var(--table-margin, 10pt 0);
+  font-size: var(--table, 10pt);
   page-break-inside: avoid;       /* keep small tables whole */
 }
 thead { display: table-header-group; }  /* repeat header if table breaks */
@@ -349,9 +391,9 @@ th:empty {
 
 /* Wiring/diagram tables (wrapped in .diagram-table in the markdown) shrink to
    fit their content instead of stretching full width, so rows stay compact.
-   ~95mm keeps the image column + pin column tidy on the left of the page. */
+   ~55% of the column keeps the image + pin column tidy on the left of the page. */
 .diagram-table table {
-  width: 95mm;
+  width: var(--diagram-table, 55%);
 }
 /* Inside a diagram table the header row holds the connector image (or is blank),
    never a real column heading — so kill the teal header fill and white it out,
@@ -364,9 +406,12 @@ th:empty {
 }
 
 /* Images placed inside a table cell are wiring/connector diagrams — keep them
-   small so the cell hugs the image (matches the approved compact layout). */
+   small so the cell hugs the image (matches the approved compact layout).
+   NOTE: a % here would resolve against the TABLE CELL, not the text column,
+   which collapses these to ~28mm. --img-cell is therefore an absolute length
+   (calc'd from --col in the page file), not a percentage. */
 td img, th img {
-  max-width: 58mm;
+  max-width: var(--img-cell, 58mm);
   margin: 4pt auto;
 }
 
@@ -459,41 +504,44 @@ pre {
 */
 .cover {
   page-break-after: always;
-  height: 297mm;        /* full A4 page height (cover @page has 0 margin) — WeasyPrint ignores 100vh */
+  height: var(--page-h, 297mm);  /* full page height (cover @page has 0 margin) — WeasyPrint ignores 100vh */
+  /* The cover @page has zero margin. body{width:--col} would otherwise
+     narrow it, so the cover reclaims the full sheet width itself. */
+  width: 100%;
   box-sizing: border-box;
-  padding: 16mm;
+  padding: var(--cover-pad, 16mm);
   position: relative;
 }
 .cover-inner {
   border: 4.5pt solid var(--accent);   /* teal border box — thicker, matches approved cover */
   border-radius: 2pt;                  /* subtle rounded corners like approved doc */
   height: 100%;
-  padding: 14mm 12mm 18mm 12mm;
+  padding: var(--cover-inner-pad, 14mm 12mm 18mm 12mm);
   display: flex;
   flex-direction: column;
   justify-content: center;   /* vertically centre the content stack within the teal box */
 }
 .cover-logo {
-  width: 52mm;
+  width: var(--cover-logo-w, 52mm);
   align-self: flex-start;          /* left-align the logo on the cover */
-  margin: 0 auto 8mm 0;            /* left:0 overrides the global img `margin:auto` centering */
+  margin: 0 auto var(--cover-logo-gap, 8mm) 0;            /* left:0 overrides the global img `margin:auto` centering */
 }
 .cover-title {
-  font-size: 30pt;
+  font-size: var(--cover-title, 30pt);
   font-weight: bold;
   color: var(--text);
   line-height: 1.15;
-  margin: 0 0 6mm 0;
+  margin: 0 0 var(--cover-title-gap, 6mm) 0;
   page-break-after: auto;       /* cover title is exempt from avoid rule */
 }
 .cover-divider {
-  width: 62mm;
+  width: var(--cover-divider-w, 62mm);
   height: 3pt;
   background: var(--accent);
-  margin: 5mm 0;
+  margin: var(--cover-divider-margin, 5mm) 0;
 }
 .cover-sub {
-  font-size: 16pt;
+  font-size: var(--cover-sub, 16pt);
   font-weight: bold;
   color: var(--text);
   letter-spacing: 0.5pt;
@@ -508,14 +556,14 @@ pre {
 .cover-product {
   max-width: 82%;
   align-self: center;
-  margin: 8mm auto 0 auto;   /* fills the middle band, centred */
+  margin: var(--cover-product-gap, 8mm) auto 0 auto;   /* fills the middle band, centred */
 }
 .cover-model {
-  font-size: 15pt;
+  font-size: var(--cover-model, 15pt);
   color: var(--text);
   margin-top: auto;          /* pushed toward the bottom */
-  padding-top: 8mm;
-  padding-bottom: 6mm;       /* keeps a clear gap below, not jammed to the edge */
+  padding-top: var(--cover-model-pad-top, 8mm);
+  padding-bottom: var(--cover-model-pad-bottom, 6mm);       /* keeps a clear gap below, not jammed to the edge */
 }
 
 /* ---- COPYRIGHT & TRADEMARKS (top of back page) ---------- */
@@ -530,19 +578,19 @@ pre {
   font-weight: bold;
   color: var(--text);
   text-align: left;
-  margin: 0 0 5mm 0;
+  margin: 0 0 var(--copyright-heading-gap, 5mm) 0;
 }
 .copyright-text {
   font-size: 10pt;
   color: var(--text);
   text-align: left;
   line-height: 1.4;
-  margin: 0 0 4mm 0;
+  margin: 0 0 var(--copyright-text-gap, 4mm) 0;
 }
 .copyright-rule {
   border: none;
   border-top: 0.75pt solid var(--grey-rule);
-  margin: 6mm 0 0 0;
+  margin: var(--copyright-rule-gap, 6mm) 0 0 0;
 }
 
 /* ---- BACK PAGE (logo + contact info) -------------------- */
@@ -557,25 +605,25 @@ pre {
 .back-page {
   page-break-before: always;
   text-align: center;
-  padding-top: 18mm;
+  padding-top: var(--back-pad-top, 18mm);
 }
 .back-page .back-logo {
-  margin-top: 34mm;   /* gap between the copyright block and the logo */
+  margin-top: var(--back-logo-gap, 34mm);   /* gap between the copyright block and the logo */
 }
 .back-logo {
-  width: 70mm;
-  margin: 0 auto 8mm auto;
+  width: var(--back-logo-w, 70mm);
+  margin: 0 auto var(--back-logo-margin, 8mm) auto;
 }
 .back-company {
   font-size: 11pt;
   color: var(--text);
-  margin: 2mm 0;
+  margin: var(--back-line-gap, 2mm) 0;
 }
 .back-links {
   font-size: 10pt;
   color: #0563C1;          /* standard blue hyperlink, matches approved doc */
   text-decoration: underline;
-  margin: 2mm 0;
+  margin: var(--back-line-gap, 2mm) 0;
 }
 /* AU and NZ are two separate sites, each its own clickable link — keep the
    approved blue-underline look rather than the default UA link colour. */
@@ -583,7 +631,7 @@ pre {
 .back-contact {
   font-size: 10pt;
   color: var(--text);
-  margin: 2mm 0;
+  margin: var(--back-line-gap, 2mm) 0;
 }
 
 /* ---- UTILITY -------------------------------------------- */
@@ -604,7 +652,7 @@ header#title-block-header,
 nav#TOC, #TOC, .toc {
   page-break-before: always;
   page-break-after: always;
-  padding-top: 4mm;
+  padding-top: var(--toc-pad-top, 4mm);
 }
 
 /* TOC heading "Contents" */
@@ -612,7 +660,7 @@ nav#TOC::before, #TOC::before {
   content: "Contents";
   display: block;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 17pt;
+  font-size: var(--h1, 17pt);
   font-weight: bold;
   color: var(--accent);
   border-bottom: 2.5pt solid var(--accent);
@@ -627,7 +675,7 @@ nav#TOC ul, #TOC ul {
   margin: 0;
 }
 nav#TOC ul ul, #TOC ul ul {
-  padding-left: 12mm;   /* indent H2 entries under H1 */
+  padding-left: var(--toc-indent, 12mm);   /* indent H2 entries under H1 */
 }
 
 /* TOC entries */
