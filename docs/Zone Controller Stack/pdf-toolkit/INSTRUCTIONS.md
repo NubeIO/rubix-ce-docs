@@ -115,13 +115,13 @@ build copy; the rest are applied per manual page:
    the same base name is never overwritten. Source `.md` / website `.svg` refs unaffected.
 3. **`normalize_and_tag_icons`** — restores the store-badge width cap, removes the `![max800px](…)` alt-text size hack, and tags inline UI glyphs with `{.icon}` so they sit inline at text height. Detection is **automatic by image size**: any PNG ≤ 64×64px is treated as an icon — no list to maintain, new icons just work.
 4. **`wrap_diagram_tables`** — wraps pin/connector tables (blank or image-only header row) in `::: diagram-table :::` so they drop the teal header bar and shrink to ~95mm.
-5. **`group_screenshots`** — tags phone screenshots `{.phone}` and packs consecutive ones into `<div class="img-row">` **rows of 3**; a lone screenshot becomes a `{.phone}` single. All screenshots render at a fixed 55mm.
+5. **`group_screenshots`** — tags phone screenshots `{.phone}` and packs consecutive ones into `<div class="img-row">` rows; a lone screenshot becomes a `{.phone}` single. **The row size is per page format** — 3 at A4, 2 at A5 — because three phones do not fit inside the A5 column (see `SCREENSHOTS_PER_ROW` in `brand.py`). Screenshots render at `--img-phone` from the page file: 54mm at A4, 46mm at A5.
 6. **`fix_orphan_code_blocks`** — flattens deep (4+ space) list bullets so Pandoc doesn't mis-parse a bullet that follows an image block as an overflowing code block.
 7. **cover + back page** — drops the doc's first `# H1` and injects the branded cover, then appends the copyright back page.
 
 Icons are detected automatically by image size (≤ 64×64px) — there is no icon list
 to maintain. To tweak that threshold, screenshot columns, or cover text, edit the
-constants near the top/bottom of `brand.py` (`ICON_MAX_PX`, `per_row=3`, `COVER_INSTALL`, `COVER_MIA`).
+constants near the top/bottom of `brand.py` (`ICON_MAX_PX`, `SCREENSHOTS_PER_ROW`, `COVER_INSTALL`, `COVER_MIA`).
 
 **LCD TouchPoint screenshots — one consistent size across guides:** tag each with
 the **alt-text tag `![lcd](…)`** in the `.md`. `brand.py` converts it to `{.lcd}` at
@@ -148,7 +148,7 @@ the `img.lcd` rule in `anywair-brand.css`.
 
 You normally don't hand-write these (brand.py adds them), but for reference:
 
-- `{.phone}` — phone-screenshot sizing (fixed 55mm). Rows: wrap figures in `<div class="img-row">`.
+- `{.phone}` — phone-screenshot sizing (`--img-phone`: 54mm at A4, 46mm at A5). Rows: wrap figures in `<div class="img-row">`, 3 per row at A4 and 2 at A5.
 - `{.lcd}` — LCD TouchPoint screenshot at one fixed width (120mm), consistent across all guides; works on PNGs and rasterized SVGs.
 - `{.icon}` — inline button glyph at text height.
 - `{.small}` (55mm) / `{.medium}` (90mm) / `{.large}` (full width) — generic image sizes.

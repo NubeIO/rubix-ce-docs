@@ -218,8 +218,13 @@ ol ol ol { list-style-type: lower-alpha; }
    (e.g. §5.2 Wi-Fi, §6 Installer). We drive numbering with a counter that resets
    at each section heading and increments per top-level <li>, so it runs
    continuously across image-split lists but still restarts per section.
-   Nested lists keep their native A/B/C, a/b/c markers (untouched below). */
-h1, h2 { counter-reset: step; }
+   Nested lists keep their native A/B/C, a/b/c markers (untouched below).
+
+   Reset on h3/h4 as well as h1/h2: subsections carry their own step lists, and
+   with the reset only on h1/h2 they shared one counter — §6.4.1 ran 1-6 and
+   §6.4.2 then continued 7-15 instead of restarting, even though both are
+   written 1., 2., 3. in the markdown. */
+h1, h2, h3, h4 { counter-reset: step; }
 ol > li { counter-increment: step; }
 ol { list-style: none; }
 ol > li {
@@ -263,6 +268,23 @@ img.small,  figure.small img,  .small img  { max-width: var(--img-small,  32%); 
 img.medium, figure.medium img, .medium img { max-width: var(--img-medium, 52%); }   /* mid-size screenshots */
 img.large,  figure.large img,  .large img  { max-width: 100%; }   /* full-width, the rare wide diagram */
 
+/* QR codes — brand.py tags these ({.doc-qr} for the standalone online-docs QR,
+   {.app-qr} for the app-store QRs in the §5.1 download table). A QR carries no
+   detail that rewards size: it only has to clear the ~25mm phone-scan floor.
+   At the default image width the standalone QR is ~105mm and gets pushed onto a
+   page of its own. Absolute, not a percentage — .app-qr sits in a table cell,
+   where a % resolves against the cell and collapses (see --img-cell). */
+img.doc-qr, figure.doc-qr img, .doc-qr img {
+  width: var(--img-qr, 32mm) !important;
+  max-width: var(--img-qr, 32mm) !important;
+  height: auto !important;
+}
+img.app-qr, figure.app-qr img, .app-qr img {
+  width: var(--img-app-qr, 26mm) !important;
+  max-width: var(--img-app-qr, 26mm) !important;
+  height: auto !important;
+}
+
 /* LCD TouchPoint screenshots — ONE fixed size across all guides, for both PNG and
    SVG. `width` (not just max-width) + !important forces WeasyPrint to scale the SVG
    box to this size instead of falling back to the SVG's intrinsic px dimensions. */
@@ -281,7 +303,11 @@ img.icon {
 }
 
 /* Side-by-side images: 2 (or 3) figures sitting in one flex row, each with its
-   own caption. Use <div class="img-row"> in the markdown, flush-left. */
+   own caption. Use <div class="img-row"> in the markdown, flush-left.
+   Row width is budgeted against the FULL text column (see the row budget in
+   _page-template.css), so a row must never inherit a list's indent — inside a
+   <li> it would start ~4mm in and hang the same distance past the right margin.
+   li > .img-row below cancels that indent so the row spans the true column. */
 .img-row {
   display: flex;
   gap: var(--img-row-gap, 6mm);
@@ -290,6 +316,16 @@ img.icon {
   margin: var(--img-row-margin, 12pt 0);
   page-break-inside: avoid;
   break-inside: avoid;
+}
+/* Screenshot rows sit inside bullet items throughout the manual. Shift them back
+   out to the column edge; --list-indent is set per page file.
+   Negative margin on ONE side only — negating both would widen the flex
+   container instead of moving it, and justify-content:center would then spread
+   the figures into the extra width (measured: a 174mm row became 179.2mm). */
+li .img-row {
+  margin-left: calc(-1 * var(--list-indent, 0mm));
+  width: var(--col);
+  max-width: var(--col);
 }
 .img-row figure {
   flex: 1 1 0;

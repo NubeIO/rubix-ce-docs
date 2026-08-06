@@ -33,6 +33,26 @@ import sys, io, re, os, struct, urllib.parse
 
 # Directory holding the copied manual files (the "Zone Controller Stack" copy).
 BUILD = sys.argv[1] if len(sys.argv) > 1 else os.getcwd()
+# Page size being built ("a4" / "a5"), passed by build.sh. Only affects how many
+# phone screenshots go in a row — see SCREENSHOTS_PER_ROW.
+SIZE = (sys.argv[2] if len(sys.argv) > 2 else "a5").lower()
+
+# How many phone screenshots fit in one <div class="img-row">, per page size.
+# This is the COUNTERPART to --img-phone in page-<size>.css, and it has to live
+# here rather than in CSS: .img-row is display:flex with no wrap, so the count is
+# baked into the HTML by group_screenshots() before any stylesheet is applied.
+# The two halves must satisfy the row budget:
+#     n * --img-phone + (n - 1) * --img-row-gap  <=  --col
+# subject to --img-phone >= ~40mm (the screenshot legibility floor).
+SCREENSHOTS_PER_ROW = {
+    "a4": 3,   # 3*54 + 2*6 = 174mm == --col (174mm)
+    "a5": 2,   # 2*46 + 1*6 =  98mm <= --col (122mm).
+               # 3-up would need <=36.6mm per phone — under the 40mm floor, so A5
+               # genuinely cannot carry three. This is a capacity limit, not a preference.
+}
+# An unregistered format gets the conservative 2-up rather than inheriting A4's 3,
+# which would silently reproduce the overflow this table exists to prevent.
+PER_ROW = SCREENSHOTS_PER_ROW.get(SIZE, 2)
 
 
 def urlenc(path):
@@ -168,7 +188,8 @@ def normalize_and_tag_icons(text, base_dir):
     return text
 
 
-# ---- phone screenshots: tag .phone, group consecutive into rows of 3 ----
+# ---- phone screenshots: tag .phone, group consecutive into rows ----
+# Row size is per page format — see SCREENSHOTS_PER_ROW at the top of this file.
 SCREENSHOT_IMG = re.compile(r'<img\s+src="((?:\./)?[^"]*screenshots/[^"]+\.png)"[^>]*/?>')
 
 
@@ -177,7 +198,7 @@ def _figure(path):
             '<figcaption></figcaption>\n</figure>' % urlenc(path))
 
 
-def group_screenshots(text, per_row=3):
+def group_screenshots(text, per_row=2):
     lines = text.split("\n")
     out = []
     i = 0
@@ -352,7 +373,7 @@ def brand(infile, cover, logo_path, mobile=False, subtitle=None,
         text = normalize_and_tag_icons(text, os.path.dirname(infile))
         text = wrap_diagram_tables(text)
         text = wrap_compliance_list(text)
-        text = group_screenshots(text, per_row=3)
+        text = group_screenshots(text, per_row=PER_ROW)
         text = fix_orphan_code_blocks(text)
     lines = text.split("\n")
     # The first top-level H1 is the document title. The branded cover page shows it,

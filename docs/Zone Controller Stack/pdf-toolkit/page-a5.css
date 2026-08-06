@@ -58,14 +58,31 @@
    override an image rule (see _page-template.css). Resulting widths:
      38% = 46mm, 58% = 71mm, 88% = 107mm, 78% = 95mm, 38% = 46mm.
    --img-cell is absolute: a % inside a table cell resolves against the
-   cell, not the column. 46mm keeps wiring diagrams above the floor. */
+   cell, not the column. 46mm keeps wiring diagrams above the floor.
+
+   Phone screenshots are 2-up at A5, not 3-up like A4: three 46mm phones plus
+   gaps need 150mm, which is wider than the 122mm column AND wider than the
+   148mm sheet, so the third phone was being clipped at the trim edge. Fitting
+   three would need 36.6mm each — under the legibility floor. The count lives in
+   SCREENSHOTS_PER_ROW in brand.py; keep it in step with --img-phone below. */
 :root {
   --img-small:      38%;
   --img-medium:     58%;
   --img-default:    88%;
   --img-lcd:        78%;
-  --img-phone:      46mm;  /* absolute: packed into flex rows; above the ~40mm floor */
+  --img-phone:      46mm;  /* absolute: 2-up (SCREENSHOTS_PER_ROW["a5"] in brand.py).
+                              2*46 + 1*6 (gap) = 98mm, inside the 122mm --col.
+                              HELD at 46mm on purpose. 2-up leaves ~24mm spare width,
+                              but these PNGs are 2.08:1, so every 1mm of width costs
+                              ~2mm of height; widening to fill the column would push
+                              rows onto fresh pages (.img-row is break-inside:avoid).
+                              46mm is also clear of the ~40mm legibility floor. */
+  --img-row-gap:     6mm;  /* explicit: was silently inheriting the brand.css fallback */
+  --list-indent:    7.8mm; /* measured bullet indent; li .img-row cancels it so a
+                              full-width row still spans the true text column */
   --img-cell:       46mm;  /* absolute: see note above */
+  --img-qr:         30mm;  /* absolute: standalone online-docs QR; scan floor is ~25mm */
+  --img-app-qr:     24mm;  /* absolute: app-store QRs, in a table cell */
   --diagram-table:  62%;
 }
 

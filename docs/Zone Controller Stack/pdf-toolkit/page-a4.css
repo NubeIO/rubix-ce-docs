@@ -47,7 +47,7 @@
    Percentages of --col (174mm at A4). These reproduce the APPROVED
    rendered widths exactly, so the A4 build is unchanged by this layer:
      47% = 82mm (default figure)   52% = 90mm (LCD screenshot)
-     32% = 55mm (app screenshot)   71% = 124mm (.large-ish diagrams)
+     32% = 55mm (small diagrams)   71% = 124mm (.large-ish diagrams)
    --img-cell is an absolute length on purpose: a % inside a table cell
    resolves against the cell, not the column, which collapses it. */
 :root {
@@ -55,8 +55,15 @@
   --img-medium:     47%;   /* 82mm */
   --img-default:    47%;   /* 82mm — approved reference density */
   --img-lcd:        52%;   /* 90mm — TouchPoint LCD screenshots */
-  --img-phone:      55mm;  /* absolute: packed into flex rows, see note */
+  --img-phone:      54mm;  /* absolute: 3-up (SCREENSHOTS_PER_ROW["a4"] in brand.py).
+                              3*54 + 2*6 (gap) = 174mm, exactly --col. Was 55mm,
+                              which made rows 177mm and overhung the column by 3mm. */
+  --img-row-gap:     6mm;  /* explicit: was silently inheriting the brand.css fallback */
+  --list-indent:    7.8mm; /* measured bullet indent; li .img-row cancels it so a
+                              full-width row still spans the true text column */
   --img-cell:       58mm;  /* absolute: see note above */
+  --img-qr:         34mm;  /* absolute: standalone online-docs QR; scan floor is ~25mm */
+  --img-app-qr:     26mm;  /* absolute: app-store QRs, in a table cell */
   --diagram-table:  55%;
 }
 

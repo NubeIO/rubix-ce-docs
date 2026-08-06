@@ -6,7 +6,9 @@
 # BUILT at A5 — nothing is ever shrunk to reach a format. A4 is screen /
 # desk reference only. Every output filename ends in -A4 or -A5.
 #
-# The Table of Contents is OPTIONAL — off by default, add --toc.
+# The Table of Contents is OPTIONAL — off by default, add --toc. The two short
+# guides are excluded from it by name (see NO_TOC_GUIDES below), so in practice
+# only the INSTALL & USER MANUAL ever gets a Contents page.
 #
 # Usage (run from the repo root OR this folder):
 #   pdf-toolkit/build.sh                       # all guides, A5, no TOC
@@ -73,18 +75,32 @@ TMP="$(mktemp -d)/Zone Controller Stack"
 cp -R "$SRC_DIR" "$TMP"
 
 # --- 2) brand.py on the copy ------------------------------------------------
-"$PY" "$TMP/pdf-toolkit/brand.py" "$TMP"
+# $SIZE is passed through: phone screenshots are packed N-per-row in the HTML,
+# and N depends on the page width (see SCREENSHOTS_PER_ROW in brand.py).
+"$PY" "$TMP/pdf-toolkit/brand.py" "$TMP" "$SIZE"
 
 # --- weasyprint needs Homebrew's libgobject; venv bin first on PATH ----------
 export DYLD_FALLBACK_LIBRARY_PATH="/opt/homebrew/lib"
 export PATH="$VENV:/opt/homebrew/bin:$PATH"
 
-TOC_ARGS=()
-if [[ $WANT_TOC -eq 1 ]]; then TOC_ARGS=(--lua-filter=pdf-toolkit/insert-toc.lua); fi
+# Guides that never get a Contents page, even with --toc. Both short guides are
+# fold-outs: a TOC costs each of them a whole page and earns nothing at that
+# length. Only the INSTALL & USER MANUAL is long enough to need one.
+# NOTE both of these show "Quick Start Guide" as the cover TITLE — they are told
+# apart by their subtitle (Installation Guide vs USER GUIDE). Match on the
+# filename, as below, not on anything shown on the cover.
+NO_TOC_GUIDES=("Zoneconnex Quick Start Guide" "Zoneconnex User Start Guide")
 
 for g in "${GUIDES[@]}"; do
   out="$g$SUFFIX"
-  echo "==> building: $g  (size=$SIZE, toc=$WANT_TOC)"
+  # TOC is decided per guide: the global --toc flag, minus the opt-outs above.
+  guide_toc=$WANT_TOC
+  for skip in "${NO_TOC_GUIDES[@]}"; do
+    if [[ "$g" == "$skip" ]]; then guide_toc=0; fi
+  done
+  TOC_ARGS=()
+  if [[ $guide_toc -eq 1 ]]; then TOC_ARGS=(--lua-filter=pdf-toolkit/insert-toc.lua); fi
+  echo "==> building: $g  (size=$SIZE, toc=$guide_toc)"
   # 3) pandoc: brand CSS first, page-size CSS second (cascade wins)
   ( cd "$TMP" && pandoc "$g.md" -o "$out.pdf" \
       --pdf-engine=weasyprint \

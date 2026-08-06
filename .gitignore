@@ -3,6 +3,7 @@
 
 # PDF toolkit local build venv (not part of the repo)
 docs/Zone Controller Stack/pdf-toolkit/.venv/
+docs/Zone Controller Stack/pdf-toolkit/__pycache__/
 
 # Production
 /build
