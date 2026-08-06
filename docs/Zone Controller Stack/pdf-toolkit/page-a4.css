@@ -44,17 +44,24 @@
 }
 
 /* ---- IMAGE TIERS ------------------------------------------
-   Percentages of --col (174mm at A4). These reproduce the APPROVED
-   rendered widths exactly, so the A4 build is unchanged by this layer:
-     47% = 82mm (default figure)   52% = 90mm (LCD screenshot)
-     32% = 55mm (small diagrams)   71% = 124mm (.large-ish diagrams)
-   --img-cell is an absolute length on purpose: a % inside a table cell
-   resolves against the cell, not the column, which collapses it. */
+   Percentages of --col (174mm at A4). These MATCH page-a5.css tier for
+   tier, so an image occupies the same fraction of the text column at
+   both sizes and therefore reads at the same visual weight on the page.
+   Keep the two files in step: change a tier here, change it there.
+
+   This supersedes the older A4 percentages (32/47/47/52%), which were
+   inherited from the approved pre-page-size A4 and rendered images at
+   roughly half the relative width A5 used — physically larger, but
+   visibly smaller against the bigger sheet.
+
+   --img-cell and the QR/phone tiers stay absolute: a % inside a table
+   cell or an .img-row flex item resolves against the cell, not the
+   column, which collapses it below the ~40mm legibility floor. */
 :root {
-  --img-small:      32%;   /* 55mm — plugs, connectors */
-  --img-medium:     47%;   /* 82mm */
-  --img-default:    47%;   /* 82mm — approved reference density */
-  --img-lcd:        52%;   /* 90mm — TouchPoint LCD screenshots */
+  --img-small:      38%;   /* 66mm — plugs, connectors */
+  --img-medium:     58%;   /* 101mm */
+  --img-default:    88%;   /* 153mm — matches A5 relative density */
+  --img-lcd:        78%;   /* 136mm — TouchPoint LCD screenshots */
   --img-phone:      54mm;  /* absolute: 3-up (SCREENSHOTS_PER_ROW["a4"] in brand.py).
                               3*54 + 2*6 (gap) = 174mm, exactly --col. Was 55mm,
                               which made rows 177mm and overhung the column by 3mm. */
