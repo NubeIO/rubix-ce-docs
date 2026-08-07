@@ -519,17 +519,34 @@ COVER_TEMPLATE = """<div class="cover{cover_class}">
 </div>"""
 
 
+def toolkit_prefix(guide_file):
+    """Path from a guide's OWN folder back to the toolkit folder.
+
+    A guide in a subfolder ("MIA Mobile App/MIA App User Manual.md") is built
+    with pandoc running in that subfolder, so its own image refs (img/...,
+    screenshots/...) resolve against its own assets rather than the root's —
+    the two folders hold same-named QR files, so the root-relative form picks
+    the wrong ones. Cover and logo paths must then climb back out.
+    Returns "pdf-toolkit" at the root, "../pdf-toolkit" one level down, etc.
+    """
+    depth = len(os.path.dirname(guide_file).split(os.sep)) if os.path.dirname(guide_file) else 0
+    return "/".join([".."] * depth + [TOOLKIT_REL])
+
+
 def render_cover(guide, brand):
     """Build a cover HTML block from a project.toml [[guides]] entry."""
     cls = guide.get("cover_class", "")
-    model = brand.get("model", "")
+    # Per-guide `model` overrides [brand].model; an explicit "" omits the line
+    # entirely (a software manual has no hardware model number).
+    model = guide.get("model", brand.get("model", ""))
     style = guide.get("cover_image_style", "")
+    prefix = toolkit_prefix(require(guide, "file", "guides"))
     return COVER_TEMPLATE.format(
         cover_class=(" " + cls) if cls else "",
-        logo=urlenc(TOOLKIT_REL + "/" + brand["logo"]),
+        logo=urlenc(prefix + "/" + brand["logo"]),
         title=guide["title"],
         cover_sub=guide.get("cover_sub", guide.get("subtitle", "")),
-        cover_image=urlenc(TOOLKIT_REL + "/" + guide["cover_image"]),
+        cover_image=urlenc(prefix + "/" + guide["cover_image"]),
         cover_image_style=(' style="%s"' % style) if style else "",
         model_line=('<p class="cover-model">Model: %s</p>\n' % model) if model else "",
     )
@@ -570,12 +587,15 @@ if __name__ == "__main__":
     # document, a brand or an asset — see README.md ("Reusing the toolkit").
     manifest = MANIFEST          # loaded and validated at import
     brand_cfg = manifest["brand"]
-    logo_rel = urlenc(TOOLKIT_REL + "/" + require(brand_cfg, "logo", "brand"))
+    logo = require(brand_cfg, "logo", "brand")
 
     # Flatten transparent PNGs FIRST so covers and all referenced images are safe.
     flatten_transparent_pngs(BUILD)
 
     for guide in manifest["guides"]:
+        # Cover, logo and back-page logo all sit in the toolkit folder, so they
+        # take the same climb-out prefix as the guide they belong to.
+        logo_rel = urlenc(toolkit_prefix(guide["file"]) + "/" + logo)
         brand(os.path.join(BUILD, guide["file"]),
               render_cover(guide, brand_cfg),
               logo_rel,

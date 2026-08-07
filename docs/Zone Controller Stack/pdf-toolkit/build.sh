@@ -133,28 +133,41 @@ PYEOF
 )
 
 for g in "${GUIDES[@]}"; do
-  out="$g$SUFFIX"
+  # Output is always a flat name in pdfs/, even for a guide in a subfolder.
+  out="$(basename "$g")$SUFFIX"
   # TOC is decided per guide: the global --toc flag, minus the opt-outs above.
   guide_toc=$WANT_TOC
   for skip in "${NO_TOC_GUIDES[@]}"; do
     if [[ "$g" == "$skip" ]]; then guide_toc=0; fi
   done
-  TOC_ARGS=()
-  if [[ $guide_toc -eq 1 ]]; then TOC_ARGS=(--lua-filter=pdf-toolkit/insert-toc.lua); fi
   echo "==> building: $g  (size=$SIZE, toc=$guide_toc)"
+  # Guides may live in a subfolder. Pandoc runs in the guide's OWN directory so
+  # that its relative image refs (img/…, screenshots/…) resolve against its own
+  # assets — a root-relative build picks up same-named files from the root's
+  # img/ instead. CSS and lua paths climb back out by the same depth, matching
+  # toolkit_prefix() in brand.py.
+  guide_dir="$(dirname "$g")"
+  guide_base="$(basename "$g")"
+  UP=""
+  if [[ "$guide_dir" != "." ]]; then
+    depth=$(printf '%s' "$guide_dir" | awk -F/ '{print NF}')
+    for ((d = 0; d < depth; d++)); do UP="../$UP"; done
+  fi
+  TOC_ARGS=()
+  if [[ $guide_toc -eq 1 ]]; then TOC_ARGS=(--lua-filter="${UP}pdf-toolkit/insert-toc.lua"); fi
   # 3) pandoc: brand CSS first, page-size CSS second (cascade wins)
-  ( cd "$TMP" && pandoc "$g.md" -o "$out.pdf" \
+  ( cd "$TMP/$guide_dir" && pandoc "$guide_base.md" -o "$guide_base.pdf" \
       --pdf-engine=weasyprint \
       -f markdown+raw_html \
-      --css="pdf-toolkit/$ENGINE_CSS" \
-      --css="pdf-toolkit/$SKIN_CSS" \
-      --css="pdf-toolkit/page-$SIZE.css" \
+      --css="${UP}pdf-toolkit/$ENGINE_CSS" \
+      --css="${UP}pdf-toolkit/$SKIN_CSS" \
+      --css="${UP}pdf-toolkit/page-$SIZE.css" \
       ${TOC_ARGS[@]+"${TOC_ARGS[@]}"} \
       --standalone )
   # 4) compress images
-  "$PY" "$SCRIPT_DIR/compress.py" "$TMP/$out.pdf"
-  # 5) copy back next to the source
-  cp "$TMP/$out.pdf" "$SRC_DIR/pdfs/$out.pdf"
+  "$PY" "$SCRIPT_DIR/compress.py" "$TMP/$guide_dir/$guide_base.pdf"
+  # 5) copy back next to the source, under the -A4/-A5 output name
+  cp "$TMP/$guide_dir/$guide_base.pdf" "$SRC_DIR/pdfs/$out.pdf"
   echo "    -> $SRC_DIR/pdfs/$out.pdf"
 done
 

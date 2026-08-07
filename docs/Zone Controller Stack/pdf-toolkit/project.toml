@@ -101,10 +101,10 @@ vector_dir      = "LCD-Screenshots"
 #   cover_image_style  optional inline style on the cover image, for a shot
 #               that needs a height cap rather than the default width fit.
 #
-# NOT LISTED HERE: the MIA Mobile App manual. It lives in a subfolder
-# ("MIA Mobile App/"), so its asset paths resolve one level up from the build
-# root, which the current single TOOLKIT_REL prefix in brand.py does not model.
-# Adding it needs a per-guide asset-root, not just a new [[guides]] block.
+# A guide may live in a SUBFOLDER (see the MIA manual below). Pandoc is run in
+# the guide's own directory so its relative image refs resolve against its own
+# assets — necessary because subfolder and root both carry same-named QR files.
+# Cover/logo paths climb back out automatically; nothing extra to declare.
 
 [[guides]]
 file        = "Zoneconnex INSTALL & USER MANUAL.md"
@@ -143,3 +143,18 @@ Once set up, you can easily:
 - Adjust temperature settings
 - Change operating modes
 - Control airflow across different zones in your home"""
+
+# The MIA app manual lives in a subfolder, so it is built with pandoc running
+# in "MIA Mobile App/" — see the subfolder note above.
+#
+# NOTE cover_image is the Zoneconnex product shot, reused because no MIA-
+# specific cover art exists in assets/images/ yet. Swap it when one does.
+[[guides]]
+file        = "MIA Mobile App/MIA App User Manual.md"
+title       = "anywAiR&reg; Zone<br>Mobile App"
+subtitle    = "User Manual"
+cover_sub   = "USER MANUAL"
+cover_image = "assets/images/zc-cover.png"
+# Empty: this is a software manual, so the hardware model line is omitted.
+model       = ""
+toc         = true

@@ -541,6 +541,18 @@ pre {
   flex-direction: column;
   justify-content: center;   /* vertically centre the content stack within the bordered box */
 }
+/* A guide with a model number gets the fixed-height box: .cover-model carries
+   `margin-top:auto`, which soaks up the column's leftover space and pins the
+   model line to the bottom.
+   A guide WITHOUT one (a software manual) has no such element, and WeasyPrint
+   then overflows the whole flex column off the page — a BLANK cover, border
+   only. With no line to pin, the fixed height buys nothing, so let the box size
+   to its contents instead. `:has()` keeps the approved layout byte-identical
+   for every guide that does carry a model line.
+   Caught on the MIA app manual, the first guide to omit it. */
+.cover-inner:not(:has(.cover-model)) {
+  height: auto;
+}
 .cover-logo {
   width: var(--cover-logo-w, 52mm);
   align-self: flex-start;          /* left-align the logo on the cover */
