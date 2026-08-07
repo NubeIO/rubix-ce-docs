@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
 """
-brand.py — prepares the Zoneconnex / MIA manual Markdown for branded PDF output.
+brand.py — prepares Docusaurus-style Markdown for branded PDF output.
 
 This is the converter half of the PDF toolkit. It takes the raw Docusaurus-style
 manual Markdown (which is authored for the WEBSITE) and rewrites it into the
 print-ready form the brand CSS expects, then Pandoc + WeasyPrint turn that into
 the final PDF. See INSTRUCTIONS.md for the full pipeline.
+
+This file holds MECHANICS ONLY. Every product name, contact detail, trademark
+line and asset-naming convention comes from project.toml ([back_page] and
+[assets]). Missing keys are a hard error — there is deliberately no fallback to
+a built-in default, so a new project can never silently inherit another
+client's strings. See cfg() / require().
 
 What it does (each pass is idempotent-ish and safe on already-clean input):
   * fix_require            – unwrap Docusaurus `<img src={require("./x").default}>` -> `<img src="x">`
@@ -65,6 +71,61 @@ def urlenc(path):
     return path.replace(" ", "%20")
 
 
+# --- project config ---------------------------------------------------------
+# Loaded once at import so the tagging passes below can read [assets] without
+# threading the manifest through every call signature.
+def load_manifest():
+    if not os.path.exists(MANIFEST_PATH):
+        sys.exit("error: no project.toml at %s" % MANIFEST_PATH)
+    with open(MANIFEST_PATH, "rb") as f:
+        return tomllib.load(f)
+
+
+MANIFEST = load_manifest()
+
+
+def require(table, key, section):
+    """Fetch a required project.toml value, or fail with a pointed message.
+
+    No defaults: brand.py must never fall back to a hardcoded client string.
+    If a key is missing the build stops here rather than emitting a PDF
+    carrying the wrong company's details.
+    """
+    if key not in table:
+        sys.exit("error: project.toml is missing [%s].%s\n"
+                 "       brand.py has no default for this — add it to %s"
+                 % (section, key, MANIFEST_PATH))
+    return table[key]
+
+
+def cfg(section, key):
+    if section not in MANIFEST:
+        sys.exit("error: project.toml is missing the [%s] section\n"
+                 "       required by brand.py; see the toolkit's project.toml"
+                 % section)
+    return require(MANIFEST[section], key, section)
+
+
+# Asset-naming conventions of the content set — see [assets] in project.toml.
+IMAGE_DIR       = cfg("assets", "image_dir")
+DOC_QR          = cfg("assets", "doc_qr")
+APP_QR_PATTERN  = cfg("assets", "app_qr_pattern")
+# The pattern is spliced into a `!\[..\]\((dir/PATTERN)\)` matcher. Two image
+# refs commonly share one markdown table row, so a pattern containing a bare
+# `.` wildcard runs past the closing ")" and swallows BOTH refs in a single
+# match — the first then silently loses its {.app-qr} cap and blows out the
+# page. Caught exactly that way once; fail loudly instead of shipping it.
+if ".*" in APP_QR_PATTERN or ".+" in APP_QR_PATTERN:
+    sys.exit("error: [assets].app_qr_pattern contains a greedy '.' wildcard: %r\n"
+             "       It is matched inside markdown '(...)' image refs, so '.*' spans\n"
+             "       the closing paren and merges two images into one match.\n"
+             "       Use '[^)]*' instead of '.*'." % APP_QR_PATTERN)
+BADGE_NAMES     = tuple(cfg("assets", "badges"))
+SCREENSHOTS_DIR = cfg("assets", "screenshots_dir")
+SCREENSHOT_ALT  = cfg("assets", "screenshot_alt")
+VECTOR_DIR      = cfg("assets", "vector_dir")
+
+
 def fix_require(text):
     # Docusaurus JSX <img src={require("./path").default} width="X%" /> -> plain <img src="path" ...>
     def repl(m):
@@ -87,7 +148,7 @@ ICON_MAX_PX = 64
 
 # Store badges are far larger than any icon, so the size gate excludes them — but
 # they must not fall back to the block rule, so their width cap is preserved.
-BADGE_NAMES = ("google-play-icon", "Apple-app-download-icon")
+# Their basenames come from [assets].badges — see BADGE_NAMES above.
 
 
 def png_size(abspath):
@@ -110,16 +171,21 @@ def _resolve(ref, base_dir):
 
 
 def rasterize_svgs(text, base_dir):
-    """Convert LCD-Screenshots SVG images to PNG in the build copy and rewrite refs.
+    """Convert SVGs under [assets].vector_dir to PNG in the build copy, rewriting refs.
 
-    WeasyPrint will not scale these SVGs up to a CSS width, so LCD screenshots
-    written as .svg render at an inconsistent intrinsic size next to the .png ones.
-    Rasterizing every LCD-Screenshots SVG to PNG at build time makes them all size
+    WeasyPrint will not scale these SVGs up to a CSS width, so screenshots written
+    as .svg render at an inconsistent intrinsic size next to the .png ones.
+    Rasterizing every SVG in that folder to PNG at build time makes them all size
     uniformly via the shared `.lcd` class. Only touches the throwaway build copy;
     the source .md / website .svg refs are unaffected. Requires PyMuPDF (fitz).
+
+    An empty [assets].vector_dir disables the pass.
     """
+    if not VECTOR_DIR:
+        return text
     import fitz  # PyMuPDF, already a build dependency
-    svg_ref = re.compile(r'(!\[[^\]]*\]\()([^)]*LCD-Screenshots/[^)]+\.svg)(\)(?:\{[^}]*\})?)')
+    svg_ref = re.compile(r'(!\[[^\]]*\]\()([^)]*%s/[^)]+\.svg)(\)(?:\{[^}]*\})?)'
+                         % re.escape(VECTOR_DIR))
 
     def repl(m):
         pre, ref, post = m.group(1), m.group(2), m.group(3)
@@ -150,25 +216,26 @@ def normalize_and_tag_icons(text, base_dir):
     #      ![large](x) -> ![](x){.large width=80%}     (wide diagram at 80%)
     text = re.sub(r'!\[lcd\]\(([^)]+)\)(?!\{)',   r'![](\1){.lcd}', text)
     text = re.sub(r'!\[large\]\(([^)]+)\)(?!\{)', r'![](\1){.large width=80%}', text)
-    # Content QR codes (e.g. §8 "onlinedocs" QR) are LINKED images and otherwise
-    # fall back to the full-width block rule, spilling onto their own page. Tag with
-    # {.doc-qr} so the print CSS can cap them small. Alt is stripped in step 2, so
+    # The standalone in-content QR ([assets].doc_qr) is a LINKED image and otherwise
+    # falls back to the full-width block rule, spilling onto its own page. Tag with
+    # {.doc-qr} so the print CSS can cap it small. Alt is stripped in step 2, so
     # match on the filename and re-emit with the class (keep the surrounding link).
-    text = re.sub(r'!\[[^\]]*\]\((img/onlinedocs-qr-code\.png)\)(?!\{)',
+    doc_qr_ref = "%s/%s" % (IMAGE_DIR, DOC_QR)
+    text = re.sub(r'!\[[^\]]*\]\((%s)\)(?!\{)' % re.escape(doc_qr_ref),
                   r'![](\1){.doc-qr}', text)
-    # App-store QR codes in the §5.1 download table: tag {.app-qr} so the print CSS
-    # can shrink them (the 58mm td-img cap makes the table too tall to fit with its
-    # heading). Same class-based mechanism as .doc-qr (src-attr selectors don't
-    # reliably match through the pandoc->weasyprint pipeline).
-    #    (filenames vary between guides: googleplay-qr-code, Andriod-anywair-zone-qr-code,
-    #    iOS-anywair-zone-qr-code — match any app-store QR, but NOT the onlinedocs QR
-    #    already tagged .doc-qr above.)
+    # App-store QR codes in the download table: tag {.app-qr} so the print CSS can
+    # shrink them (the td-img cap makes the table too tall to fit with its heading).
+    # Same class-based mechanism as .doc-qr (src-attr selectors don't reliably match
+    # through the pandoc->weasyprint pipeline). Filenames vary between guides, so
+    # [assets].app_qr_pattern matches them as a group — but never the doc QR already
+    # tagged above.
     def _appqr(m):
         fn = m.group(1)
-        if 'onlinedocs' in fn:
+        if fn == doc_qr_ref:
             return m.group(0)
         return '![](%s){.app-qr}' % fn
-    text = re.sub(r'!\[[^\]]*\]\((img/[^)]*qr-code\.png)\)(?!\{)', _appqr, text)
+    text = re.sub(r'!\[[^\]]*\]\((%s/%s)\)(?!\{)' % (re.escape(IMAGE_DIR), APP_QR_PATTERN),
+                  _appqr, text)
     # 1) store badges (Google Play / App Store) live in the same app-download table
     #    as the app QR codes. Tag them {.app-qr} too so EVERY image in that table is
     #    capped to the one consistent size (see .app-qr in the print CSS), instead of
@@ -195,12 +262,23 @@ def normalize_and_tag_icons(text, base_dir):
 
 # ---- phone screenshots: tag .phone, group consecutive into rows ----
 # Row size is per page format — see SCREENSHOTS_PER_ROW at the top of this file.
-SCREENSHOT_IMG = re.compile(r'<img\s+src="((?:\./)?[^"]*screenshots/[^"]+\.png)"[^>]*/?>')
+SCREENSHOT_IMG = re.compile(r'<img\s+src="((?:\./)?[^"]*%s/[^"]+\.png)"[^>]*/?>'
+                            % re.escape(SCREENSHOTS_DIR))
 
 
 def _figure(path):
-    return ('<figure>\n<img class="phone" src="%s" alt="anywAiR Zone app screenshot">\n'
-            '<figcaption></figcaption>\n</figure>' % urlenc(path))
+    return ('<figure>\n<img class="phone" src="%s" alt="%s">\n'
+            '<figcaption></figcaption>\n</figure>' % (urlenc(path), SCREENSHOT_ALT))
+
+
+def _screenshot_line(line):
+    """The line is a bare screenshot <img> — return its src, else None.
+    SCREENSHOT_IMG already encodes the folder convention, so the folder name
+    is not repeated here."""
+    m = SCREENSHOT_IMG.search(line)
+    if m and line.strip().startswith("<img"):
+        return m.group(1)
+    return None
 
 
 def group_screenshots(text, per_row=2):
@@ -209,25 +287,22 @@ def group_screenshots(text, per_row=2):
     i = 0
     n = len(lines)
     while i < n:
-        m = SCREENSHOT_IMG.search(lines[i])
-        if m and lines[i].strip().startswith("<img") and "screenshots/" in lines[i]:
+        if _screenshot_line(lines[i]):
             # collect a run of consecutive screenshot-only lines (blank lines allowed between)
             run = []
             j = i
             while j < n:
-                mj = SCREENSHOT_IMG.search(lines[j])
-                if mj and lines[j].strip().startswith("<img") and "screenshots/" in lines[j]:
-                    run.append(mj.group(1))
+                src = _screenshot_line(lines[j])
+                if src:
+                    run.append(src)
                     j += 1
                 elif lines[j].strip() == "":
                     k = j + 1
                     while k < n and lines[k].strip() == "":
                         k += 1
-                    if k < n:
-                        mk = SCREENSHOT_IMG.search(lines[k])
-                        if mk and lines[k].strip().startswith("<img") and "screenshots/" in lines[k]:
-                            j = k
-                            continue
+                    if k < n and _screenshot_line(lines[k]):
+                        j = k
+                        continue
                     break
                 else:
                     break
@@ -248,28 +323,45 @@ def group_screenshots(text, per_row=2):
     return "\n".join(out)
 
 
-BACK_PAGE = """
+def render_back_page(logo_path):
+    """Build the copyright / contact back page from [back_page] in project.toml.
+
+    The markup and CSS classes are the engine's; every string is the project's.
+    Each required key is fetched via cfg(), so an incomplete [back_page] stops
+    the build rather than shipping a page with no — or the wrong — details.
+    """
+    trademarks = "\n\n".join(
+        '<p class="copyright-text">%s</p>' % t
+        for t in cfg("back_page", "trademarks"))
+    links = " | ".join(
+        '<a href="%s">%s</a>' % (require(l, "href", "back_page.links"),
+                                 require(l, "text", "back_page.links"))
+        for l in cfg("back_page", "links"))
+    return """
 
 <div class="back-page">
 
-<h3 class="copyright-heading">Copyright &amp; Trademarks</h3>
+<h3 class="copyright-heading">{heading}</h3>
 
-<p class="copyright-text">Copyright© 2026 GENERAL Australia &amp; New Zealand. All rights reserved. Actual products' colours may be different from the colours shown.</p>
-
-<p class="copyright-text">App Store is a service mark of Apple Inc. © 2019. Google Play and the Google Play logo are trademarks of Google LLC. All other trademarks and tradenames are the property of their respective owners.</p>
+{trademarks}
 
 <div class="copyright-rule"></div>
 
 <img class="back-logo" src="{logo}">
 
-<p class="back-company">General Australia Pty Ltd</p>
+<p class="back-company">{company}</p>
 
-<p class="back-links"><a href="https://www.generalairstage.com.au">www.generalairstage.com.au</a> | <a href="https://www.generalairstage.co.nz">www.generalairstage.co.nz</a></p>
+<p class="back-links">{links}</p>
 
-<p class="back-contact">contact@fujitsugeneral.com.au | 1300 882 201</p>
+<p class="back-contact">{contact}</p>
 
 </div>
-"""
+""".format(heading=cfg("back_page", "heading"),
+           trademarks=trademarks,
+           logo=logo_path,
+           company=cfg("back_page", "company"),
+           links=links,
+           contact=cfg("back_page", "contact"))
 
 
 def fix_orphan_code_blocks(text):
@@ -404,7 +496,7 @@ def brand(infile, cover, logo_path, mobile=False, subtitle=None,
             continue
         out.append(ln)
     body = "\n".join(out).lstrip("\n")
-    result = cover + "\n\n" + body + BACK_PAGE.format(logo=logo_path)
+    result = cover + "\n\n" + body + render_back_page(logo_path)
     with io.open(infile, "w", encoding="utf-8") as f:
         f.write(result)
     print("branded:", infile)
@@ -476,12 +568,9 @@ def flatten_transparent_pngs(build_dir):
 if __name__ == "__main__":
     # Everything product-specific comes from project.toml. Nothing below names a
     # document, a brand or an asset — see README.md ("Reusing the toolkit").
-    if not os.path.exists(MANIFEST_PATH):
-        sys.exit("error: no project.toml at %s" % MANIFEST_PATH)
-    with open(MANIFEST_PATH, "rb") as f:
-        manifest = tomllib.load(f)
+    manifest = MANIFEST          # loaded and validated at import
     brand_cfg = manifest["brand"]
-    logo_rel = urlenc(TOOLKIT_REL + "/" + brand_cfg["logo"])
+    logo_rel = urlenc(TOOLKIT_REL + "/" + require(brand_cfg, "logo", "brand"))
 
     # Flatten transparent PNGs FIRST so covers and all referenced images are safe.
     flatten_transparent_pngs(BUILD)

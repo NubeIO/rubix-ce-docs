@@ -30,6 +30,58 @@ logo = "assets/logos/anywair-logo.svg"
 # Model number printed under the cover image. Blank string = omitted.
 model = "UTY-ZCAW1"
 
+# ---- BACK PAGE ----------------------------------------------
+# The copyright / contact page appended to every guide. brand.py owns the
+# markup and the CSS classes; every string below is yours. There is no
+# default for any of these — a missing key is a hard error, so a new
+# project can never silently ship another client's contact details.
+#
+#   trademarks  one <p class="copyright-text"> per list entry, in order.
+#   links       {text, href} pairs, joined with " | " on one line.
+[back_page]
+heading    = "Copyright &amp; Trademarks"
+trademarks = [
+  "Copyright© 2026 GENERAL Australia &amp; New Zealand. All rights reserved. Actual products' colours may be different from the colours shown.",
+  "App Store is a service mark of Apple Inc. © 2019. Google Play and the Google Play logo are trademarks of Google LLC. All other trademarks and tradenames are the property of their respective owners.",
+]
+company    = "General Australia Pty Ltd"
+links      = [
+  { text = "www.generalairstage.com.au", href = "https://www.generalairstage.com.au" },
+  { text = "www.generalairstage.co.nz",  href = "https://www.generalairstage.co.nz" },
+]
+contact    = "contact@fujitsugeneral.com.au | 1300 882 201"
+
+# ---- ASSET CONVENTIONS --------------------------------------
+# Filename and folder patterns brand.py matches on when it tags images.
+# These are naming conventions of THIS content set, not engine behaviour.
+#
+#   image_dir        folder prefix the QR patterns are matched under.
+#   doc_qr           standalone in-content QR (e.g. the online-docs QR).
+#                    Capped small by {.doc-qr} so it doesn't take a page.
+#   app_qr_pattern   regex (filename part only) for app-store QRs, which
+#                    sit in the download table and are capped by {.app-qr}.
+#                    Matched under image_dir; doc_qr is excluded from it.
+#                    MUST NOT match a ")" — two image refs often share a
+#                    table row, and a greedy `.*` here swallows both into
+#                    one match and silently leaves the first untagged.
+#                    Use [^)]* rather than .* .
+#   badges           store-badge basenames (no .png); tagged {.app-qr} too
+#                    so every image in the download table caps to one size.
+#   screenshots_dir  path fragment identifying phone screenshots, which get
+#                    tagged {.phone} and packed into .img-row rows.
+#   screenshot_alt   alt text written on each packed screenshot.
+#   vector_dir       path fragment whose .svg images are rasterized to PNG
+#                    at build time (WeasyPrint won't scale SVGs to a CSS
+#                    width). Empty string disables the pass.
+[assets]
+image_dir       = "img"
+doc_qr          = "onlinedocs-qr-code.png"
+app_qr_pattern  = "[^)]*qr-code\\.png"
+badges          = ["google-play-icon", "Apple-app-download-icon"]
+screenshots_dir = "screenshots"
+screenshot_alt  = "anywAiR Zone app screenshot"
+vector_dir      = "LCD-Screenshots"
+
 # ---- GUIDES -------------------------------------------------
 # One [[guides]] block per document. Order is the build order.
 #
