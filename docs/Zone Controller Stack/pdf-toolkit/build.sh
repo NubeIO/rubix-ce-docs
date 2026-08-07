@@ -18,8 +18,8 @@
 #   pdf-toolkit/build.sh                       # all guides, A5, no TOC
 #   pdf-toolkit/build.sh --a4                  # all guides, A4
 #   pdf-toolkit/build.sh --toc                 # A5 with a TOC page
-#   pdf-toolkit/build.sh --a4 "Zoneconnex Quick Start Guide"    # one guide
-#   pdf-toolkit/build.sh --size a5 --toc "Zoneconnex INSTALL & USER MANUAL"
+#   pdf-toolkit/build.sh --a4 "Quick Start Guide"    # one guide, by basename
+#   pdf-toolkit/build.sh --size a5 --toc "Install & User Manual"
 #
 # CSS layer order (cascade matters):
 #   engine.css          layout + structure, brand-neutral

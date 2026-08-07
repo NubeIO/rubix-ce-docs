@@ -75,8 +75,7 @@
 }
 
 /* ---- DENSITY ----------------------------------------------
-   These reproduce the approved print density (formerly the separate
-   anywair-print.css override layer, now retired):
+   These reproduce the approved print density:
      - numbered H1s flow in-line rather than each starting a fresh page,
        so there are no near-blank pages before every section
      - tighter heading / figure / block spacing

@@ -245,8 +245,8 @@ img {
   break-inside: avoid;            /* modern browsers / WeasyPrint */
 }
 
-/* Per-image size overrides — Bryn tags the image, e.g.
-   ![Pin layout](assets/images/plug.png){.small}
+/* Per-image size overrides — tag the image in the markdown, e.g.
+   ![Pin layout](assets/images/example-diagram.png){.small}
    or on a figure's <img class="small" ...>. Works on the image or its figure. */
 img.small,  figure.small img,  .small img  { max-width: var(--img-small,  32%); }   /* plugs, connectors, small diagrams */
 img.medium, figure.medium img, .medium img { max-width: var(--img-medium, 52%); }   /* mid-size screenshots */
@@ -512,13 +512,13 @@ pre {
 /* Markdown usage:
    <div class="cover">
      <div class="cover-inner">
-       <img class="cover-logo" src="assets/logos/anywair-logo.svg">
-       <h1 class="cover-title">Quick Start Guide<br>Zoneconnex</h1>
+       <img class="cover-logo" src="assets/logos/<oem>-logo.svg">
+       <h1 class="cover-title">Product Title</h1>
        <div class="cover-divider"></div>
        <p class="cover-sub">INSTALLATION GUIDE</p>
        <div class="cover-divider"></div>
-       <img class="cover-product" src="assets/images/zc-cover.png">
-       <p class="cover-model">Model: UTY-ZCAW1</p>
+       <img class="cover-product" src="assets/images/<product>-cover.png">
+       <p class="cover-model">Model: MODEL-0000</p>
      </div>
    </div>
 */
@@ -616,10 +616,10 @@ pre {
 /* ---- BACK PAGE (logo + contact info) -------------------- */
 /* Markdown usage:
    <div class="back-page">
-     <img class="back-logo" src="assets/logos/anywair-logo.svg">
-     <p class="back-company">General Australia Pty Ltd</p>
-     <p class="back-links"><a href="https://www.generalairstage.com.au">www.generalairstage.com.au</a> | <a href="https://www.generalairstage.co.nz">www.generalairstage.co.nz</a></p>
-     <p class="back-contact">contact@fujitsugeneral.com.au | 1300 882 201</p>
+     <img class="back-logo" src="assets/logos/<oem>-logo.svg">
+     <p class="back-company">Example Company Pty Ltd</p>
+     <p class="back-links"><a href="https://www.example.com">www.example.com</a> | <a href="https://www.example.co.nz">www.example.co.nz</a></p>
+     <p class="back-contact">contact@example.com | 0000 000 000</p>
    </div>
 */
 .back-page {
