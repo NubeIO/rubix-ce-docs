@@ -41,12 +41,8 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // The Zone Controller Stack manuals ARE live pages; only the PDF build
-          // toolkit (its INSTRUCTIONS.md, CSS, lua, brand.py, assets) and the
-          // self-contained PDF build sources (raw-HTML covers, not MDX) are kept out.
-          exclude: [
-            "**/Zone Controller Stack/pdf-toolkit/**",
-            "**/Zoneconnex-Guides-v1.4-build/**",
-          ],
+          // toolkit (its INSTRUCTIONS.md, CSS, lua, brand.py, assets) is kept out.
+          exclude: ["**/Zone Controller Stack/pdf-toolkit/**"],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
