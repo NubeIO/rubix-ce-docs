@@ -29,10 +29,15 @@ Usage:
 BUILD_DIR is the copy of the "Zone Controller Stack" folder to process.
 Defaults to the current working directory.
 """
-import sys, io, re, os, struct, urllib.parse
+import sys, io, re, os, struct, urllib.parse, tomllib
 
 # Directory holding the copied manual files (the "Zone Controller Stack" copy).
 BUILD = sys.argv[1] if len(sys.argv) > 1 else os.getcwd()
+
+# Toolkit folder, relative to BUILD — where the manifest and assets live. Pandoc
+# runs from BUILD, so cover/logo src paths are written relative to it.
+TOOLKIT_REL = "pdf-toolkit"
+MANIFEST_PATH = os.path.join(BUILD, TOOLKIT_REL, "project.toml")
 # Page size being built ("a4" / "a5"), passed by build.sh. Only affects how many
 # phone screenshots go in a row — see SCREENSHOTS_PER_ROW.
 SIZE = (sys.argv[2] if len(sys.argv) > 2 else "a5").lower()
@@ -405,71 +410,37 @@ def brand(infile, cover, logo_path, mobile=False, subtitle=None,
     print("branded:", infile)
 
 
-# PDF-ONLY intro for the User guide (the "Welcome" block). Kept here, NOT in the
-# .md, because the .md is also the live Docusaurus website page.
-USER_INTRO = """**Welcome**
-
-Welcome to your new **Zoneconnex system**. This guide will help you set up and access the wall-mounted TouchPoint screen and anywAiR® Zone mobile app, so you can start controlling your air conditioning.
-
-Once set up, you can easily:
-
-- Adjust temperature settings
-- Change operating modes
-- Control airflow across different zones in your home"""
-
-# --- Install Guide (runs from the ZC-copy root; toolkit assets under pdf-toolkit/assets/) ---
-COVER_INSTALL = """<div class="cover">
+# --- COVER TEMPLATE ---------------------------------------------------------
+# One template for every guide. The four hand-written cover blocks this replaced
+# differed only in the values now supplied by project.toml: cover_class, title,
+# cover_sub, cover_image and the model line. Paths are relative to the build-copy
+# root, which is where pandoc runs.
+COVER_TEMPLATE = """<div class="cover{cover_class}">
 <div class="cover-inner">
-<img class="cover-logo" src="pdf-toolkit/assets/logos/anywair-logo.svg">
-<h1 class="cover-title">Zoneconnex<br>Install &amp; User Manual</h1>
+<img class="cover-logo" src="{logo}">
+<h1 class="cover-title">{title}</h1>
 <div class="cover-divider"></div>
-<p class="cover-sub">INSTALL & USER MANUAL</p>
+<p class="cover-sub">{cover_sub}</p>
 <div class="cover-divider"></div>
-<img class="cover-product" src="pdf-toolkit/assets/images/zc-cover.png">
-<p class="cover-model">Model: UTY-ZCAW1</p>
-</div>
+<img class="cover-product" src="{cover_image}"{cover_image_style}>
+{model_line}</div>
 </div>"""
 
-# --- Quick Start Guide (runs from the ZC-copy root). Red cover variant, own cover
-#     image (img/QSG cover.png), custom title/subtitle. ---
-COVER_QSG = """<div class="cover cover-qsg">
-<div class="cover-inner">
-<img class="cover-logo" src="pdf-toolkit/assets/logos/anywair-logo.svg">
-<h1 class="cover-title">Quick Start Guide<br>Zoneconnex</h1>
-<div class="cover-divider"></div>
-<p class="cover-sub">Installation Guide</p>
-<div class="cover-divider"></div>
-<img class="cover-product" src="pdf-toolkit/assets/images/QSG%20cover.png">
-<p class="cover-model">Model: UTY-ZCAW1</p>
-</div>
-</div>"""
 
-# --- MIA (runs from MIA Mobile App/; toolkit assets one level up) ---
-COVER_MIA = """<div class="cover">
-<div class="cover-inner">
-<img class="cover-logo" src="../pdf-toolkit/assets/logos/anywair-logo.svg">
-<h1 class="cover-title">anywAiR&reg; Zone<br>Mobile App User Manual</h1>
-<div class="cover-divider"></div>
-<p class="cover-sub">MOBILE APP USER MANUAL</p>
-<div class="cover-divider"></div>
-<img class="cover-product" src="screenshots/112.png" style="max-height:95mm;width:auto;">
-<p class="cover-model">Model: UTY-ZCAW1</p>
-</div>
-</div>"""
-
-# --- User Guide (runs from the ZC-copy root). Same layout as the Quick Start Guide
-#     cover, "USER GUIDE" subtitle, Main-Controls LCD render as the cover product. ---
-COVER_USER = """<div class="cover">
-<div class="cover-inner">
-<img class="cover-logo" src="pdf-toolkit/assets/logos/anywair-logo.svg">
-<h1 class="cover-title">Quick Start Guide<br>Zoneconnex</h1>
-<div class="cover-divider"></div>
-<p class="cover-sub">USER GUIDE</p>
-<div class="cover-divider"></div>
-<img class="cover-product" src="pdf-toolkit/assets/images/zc-cover.png">
-<p class="cover-model">Model: UTY-ZCAW1</p>
-</div>
-</div>"""
+def render_cover(guide, brand):
+    """Build a cover HTML block from a project.toml [[guides]] entry."""
+    cls = guide.get("cover_class", "")
+    model = brand.get("model", "")
+    style = guide.get("cover_image_style", "")
+    return COVER_TEMPLATE.format(
+        cover_class=(" " + cls) if cls else "",
+        logo=urlenc(TOOLKIT_REL + "/" + brand["logo"]),
+        title=guide["title"],
+        cover_sub=guide.get("cover_sub", guide.get("subtitle", "")),
+        cover_image=urlenc(TOOLKIT_REL + "/" + guide["cover_image"]),
+        cover_image_style=(' style="%s"' % style) if style else "",
+        model_line=('<p class="cover-model">Model: %s</p>\n' % model) if model else "",
+    )
 
 
 def flatten_transparent_pngs(build_dir):
@@ -503,15 +474,23 @@ def flatten_transparent_pngs(build_dir):
 
 
 if __name__ == "__main__":
+    # Everything product-specific comes from project.toml. Nothing below names a
+    # document, a brand or an asset — see README.md ("Reusing the toolkit").
+    if not os.path.exists(MANIFEST_PATH):
+        sys.exit("error: no project.toml at %s" % MANIFEST_PATH)
+    with open(MANIFEST_PATH, "rb") as f:
+        manifest = tomllib.load(f)
+    brand_cfg = manifest["brand"]
+    logo_rel = urlenc(TOOLKIT_REL + "/" + brand_cfg["logo"])
+
     # Flatten transparent PNGs FIRST so covers and all referenced images are safe.
     flatten_transparent_pngs(BUILD)
-    brand(os.path.join(BUILD, "Zoneconnex INSTALL & USER MANUAL.md"),
-          COVER_INSTALL, "pdf-toolkit/assets/logos/anywair-logo.svg", mobile=True,
-          subtitle="Install & User Manual")
-    brand(os.path.join(BUILD, "Zoneconnex Quick Start Guide.md"),
-          COVER_QSG, "pdf-toolkit/assets/logos/anywair-logo.svg", mobile=True,
-          subtitle="Installation Guide")
-    brand(os.path.join(BUILD, "Zoneconnex User Start Guide.md"),
-          COVER_USER, "pdf-toolkit/assets/logos/anywair-logo.svg", mobile=True,
-          subtitle="User Guide", title_override="Zoneconnex Quick Start Guide",
-          intro=USER_INTRO)
+
+    for guide in manifest["guides"]:
+        brand(os.path.join(BUILD, guide["file"]),
+              render_cover(guide, brand_cfg),
+              logo_rel,
+              mobile=guide.get("mobile", True),
+              subtitle=guide.get("subtitle"),
+              title_override=guide.get("title_override"),
+              intro=guide.get("intro"))

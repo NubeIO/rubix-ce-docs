@@ -2,8 +2,8 @@
    Page format: A5  ·  148 x 210 mm
    THE PRINT DELIVERABLE — saddle-stitched booklet.
 
-   Load AFTER anywair-brand.css and BEFORE any OEM skin:
-     --css=anywair-brand.css --css=page-a5.css
+   Load LAST, after the engine and skin:
+     --css=engine.css --css=<oem>-skin.css --css=page-a5.css
 
    Body is 10pt by intent, not by scaling. It matches the effective
    printed size of the approved originals (A4 at 14.4pt reduced by
@@ -77,7 +77,7 @@
                               ~2mm of height; widening to fill the column would push
                               rows onto fresh pages (.img-row is break-inside:avoid).
                               46mm is also clear of the ~40mm legibility floor. */
-  --img-row-gap:     6mm;  /* explicit: was silently inheriting the brand.css fallback */
+  --img-row-gap:     6mm;  /* explicit: was silently inheriting the engine.css fallback */
   --list-indent:    7.8mm; /* measured bullet indent; li .img-row cancels it so a
                               full-width row still spans the true text column */
   --img-cell:       46mm;  /* absolute: see note above */

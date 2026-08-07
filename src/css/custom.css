@@ -64,7 +64,7 @@
    key off the discrete icon dimensions and flow them at text height instead of as
    a block. Every real icon in the repo is one of these sizes (all <=51px; nothing
    else is below 142px). A new icon at a new small size just needs its w/h added
-   here. Mirrors the PDF's img.icon rule (pdf-toolkit/anywair-brand.css). */
+   here. Mirrors the PDF's img.icon rule (pdf-toolkit/engine.css). */
 .markdown img[width="24"][height="24"],
 .markdown img[width="30"][height="30"],
 .markdown img[width="51"][height="51"],
@@ -129,7 +129,7 @@ img[alt="max900px"] {
   display: block;
 }
 
-/* Continuous ordered-list numbering — mirrors pdf-toolkit/anywair-brand.css.
+/* Continuous ordered-list numbering — mirrors pdf-toolkit/engine.css.
    A standalone image block between numbered steps makes the Markdown parser end
    one <ol> and start a fresh one, so the visible numbers restart at 1 mid-step
    (e.g. §5.2 Wi-Fi, §6 Installer). We drive numbering with a counter that resets

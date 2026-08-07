@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 # ============================================================
-# build.sh — canonical Zoneconnex / MIA PDF build.
+# build.sh — canonical branded PDF build.
+#
+# Product-specific facts (which guides exist, their cover text, images, model
+# number, which get a TOC, which skin to use) all live in project.toml. This
+# script names no document and no brand.
 #
 # Page size is a first-class argument. A5 is the print deliverable and is
 # BUILT at A5 — nothing is ever shrunk to reach a format. A4 is screen /
@@ -18,16 +22,17 @@
 #   pdf-toolkit/build.sh --size a5 --toc "Zoneconnex INSTALL & USER MANUAL"
 #
 # CSS layer order (cascade matters):
-#   anywair-brand.css   engine + skin
+#   engine.css          layout + structure, brand-neutral
+#   <oem>-skin.css      colour, type, cover chrome   ([brand].css in project.toml)
 #   page-<size>.css     page size, margins, type scale, image scale
 # Page size comes from the CSS @page rule only — there is deliberately no
 # -V papersize flag, so the two can never disagree.
 #
 # What it does (see INSTRUCTIONS.md for the passes brand.py runs):
-#   1. copies "Zone Controller Stack" to a throwaway temp dir
+#   1. copies the source folder to a throwaway temp dir
 #   2. runs brand.py on the copy (flatten transparent PNGs, rasterize SVGs,
 #      strip U+FE0F, alt-tag -> attributes, cover + back page)
-#   3. pandoc + weasyprint with anywair-brand.css THEN page-<size>.css
+#   3. pandoc + weasyprint with engine.css, then the skin, then page-<size>.css
 #      (page layer wins by cascade order); insert-toc.lua only with --toc
 #   4. compresses images (PyMuPDF: cap 1800px, JPEG q82, white-composite)
 #   5. copies the finished PDF into docs/Zone Controller Stack/pdfs/
@@ -66,12 +71,40 @@ if [[ ! -f "$PAGE_CSS" ]]; then
 fi
 SUFFIX="-$(printf '%s' "$SIZE" | tr '[:lower:]' '[:upper:]')"   # -A4 / -A5
 
+# Guide list and per-guide settings come from project.toml — the only file that
+# knows anything product-specific. Nothing below hardcodes a document name.
+MANIFEST="$SCRIPT_DIR/project.toml"
+if [[ ! -f "$MANIFEST" ]]; then
+  echo "error: no project.toml in $SCRIPT_DIR" >&2
+  exit 1
+fi
+
+# Stylesheet layer names come from [brand] in the manifest, so a different OEM
+# is a manifest edit, not a build.sh edit.
+ENGINE_CSS="$("$PY" -c 'import sys,tomllib;print(tomllib.load(open(sys.argv[1],"rb"))["brand"].get("engine","engine.css"))' "$MANIFEST")"
+SKIN_CSS="$("$PY" -c 'import sys,tomllib;print(tomllib.load(open(sys.argv[1],"rb"))["brand"]["css"])' "$MANIFEST")"
+for css in "$ENGINE_CSS" "$SKIN_CSS"; do
+  if [[ ! -f "$SCRIPT_DIR/$css" ]]; then
+    echo "error: stylesheet '$css' referenced by project.toml not found in $SCRIPT_DIR" >&2
+    exit 1
+  fi
+done
+
 if [[ ${#GUIDES[@]} -eq 0 ]]; then
-  GUIDES=("Zoneconnex INSTALL & USER MANUAL" "Zoneconnex Quick Start Guide" "Zoneconnex User Start Guide")
+  while IFS= read -r line; do GUIDES+=("$line"); done < <(
+    "$PY" - "$MANIFEST" <<'PYEOF'
+import sys, tomllib
+m = tomllib.load(open(sys.argv[1], "rb"))
+for g in m["guides"]:
+    print(g["file"].removesuffix(".md"))
+PYEOF
+  )
 fi
 
 # --- 1) throwaway copy ------------------------------------------------------
-TMP="$(mktemp -d)/Zone Controller Stack"
+# brand.py rewrites .md in place, so the build always runs on a copy — never
+# against the source folder. The copy keeps the source folder's own name.
+TMP="$(mktemp -d)/$(basename "$SRC_DIR")"
 cp -R "$SRC_DIR" "$TMP"
 
 # --- 2) brand.py on the copy ------------------------------------------------
@@ -83,13 +116,21 @@ cp -R "$SRC_DIR" "$TMP"
 export DYLD_FALLBACK_LIBRARY_PATH="/opt/homebrew/lib"
 export PATH="$VENV:/opt/homebrew/bin:$PATH"
 
-# Guides that never get a Contents page, even with --toc. Both short guides are
-# fold-outs: a TOC costs each of them a whole page and earns nothing at that
-# length. Only the INSTALL & USER MANUAL is long enough to need one.
-# NOTE both of these show "Quick Start Guide" as the cover TITLE — they are told
-# apart by their subtitle (Installation Guide vs USER GUIDE). Match on the
-# filename, as below, not on anything shown on the cover.
-NO_TOC_GUIDES=("Zoneconnex Quick Start Guide" "Zoneconnex User Start Guide")
+# Guides that never get a Contents page, even with --toc — the `toc = false`
+# entries in project.toml. Short fold-out guides opt out: a TOC costs each of
+# them a whole page and earns nothing at that length.
+# NOTE guides may share a cover TITLE and be told apart only by subtitle, so the
+# manifest matches on FILENAME, never on anything shown on the cover.
+NO_TOC_GUIDES=()
+while IFS= read -r line; do NO_TOC_GUIDES+=("$line"); done < <(
+  "$PY" - "$MANIFEST" <<'PYEOF'
+import sys, tomllib
+m = tomllib.load(open(sys.argv[1], "rb"))
+for g in m["guides"]:
+    if not g.get("toc", False):
+        print(g["file"].removesuffix(".md"))
+PYEOF
+)
 
 for g in "${GUIDES[@]}"; do
   out="$g$SUFFIX"
@@ -105,7 +146,8 @@ for g in "${GUIDES[@]}"; do
   ( cd "$TMP" && pandoc "$g.md" -o "$out.pdf" \
       --pdf-engine=weasyprint \
       -f markdown+raw_html \
-      --css=pdf-toolkit/anywair-brand.css \
+      --css="pdf-toolkit/$ENGINE_CSS" \
+      --css="pdf-toolkit/$SKIN_CSS" \
       --css="pdf-toolkit/page-$SIZE.css" \
       ${TOC_ARGS[@]+"${TOC_ARGS[@]}"} \
       --standalone )

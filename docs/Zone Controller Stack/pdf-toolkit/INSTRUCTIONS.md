@@ -1,7 +1,13 @@
-# Zoneconnex / MIA PDF Build Toolkit
+# PDF Build Toolkit
 
-Everything needed to turn the Zoneconnex and MIA manual Markdown into the branded
-anywAiR / Fujitsu General client PDFs. This folder is self-contained.
+Turns manual Markdown into branded, print-ready client PDFs. This folder is
+self-contained and reusable: everything product-specific lives in
+`project.toml`, and everything brand-specific lives in a skin stylesheet, so
+pointing it at another product or OEM is a config change rather than a code
+change. See "Reusing the toolkit" in the repo README.
+
+Currently configured for the Zoneconnex guides in the anywAiR / Fujitsu General
+brand.
 
 **Source of truth:** the manual `.md` files in `docs/Zone Controller Stack/` are the
 single source — they are ALSO the live website pages. The PDFs are generated *from*
@@ -12,10 +18,15 @@ change the `.md` and rebuild.
 
 | File | Purpose |
 |------|---------|
-| `brand.py` | The converter. Rewrites the website-flavoured Markdown into the print-ready form the CSS expects (unwraps Docusaurus `require()` images, tags inline icons, groups phone screenshots into rows, wraps pin tables, fixes list/code-block issues, injects the cover + back page). |
-| `anywair-brand.css` | The brand print stylesheet — cover page, TOC, callouts, phone-screenshot sizing, diagram/pin tables, A4 setup, footer page numbers. |
+| `project.toml` | **What to build.** Guide list, cover titles/subtitles/images, model number, per-guide TOC opt-out, PDF-only intro copy, and which skin to use. The only file that names a product — edit this, not the scripts. |
+| `brand.py` | The converter. Rewrites the website-flavoured Markdown into the print-ready form the CSS expects (unwraps Docusaurus `require()` images, tags inline icons, groups phone screenshots into rows, wraps pin tables, fixes list/code-block issues, injects the cover + back page). Reads `project.toml`; names no document itself. |
+| `engine.css` | Layout and structure — page furniture, headings, lists, tables, callouts, cover/back-page geometry, TOC. **Brand-neutral:** no colours, no font names. |
+| `anywair-skin.css` | The anywAiR brand layer — palette, typeface, callout/table fills, cover chrome. Copy this to add another OEM. |
+| `page-a4.css` / `page-a5.css` | Page size, margins, type scale, image scale. Pick exactly one. |
+| `_page-template.css` | Blank page file to copy when adding a new format. |
 | `insert-toc.lua` | Pandoc filter that auto-builds the clickable Table of Contents after the cover. |
-| `assets/` | Cover/logo images used by the CSS cover (`logos/anywair-logo.svg`, `images/zc-cover.png`). |
+| `compress.py` | Post-pass image compression (PyMuPDF: cap 1800px, JPEG q82, white-composite). |
+| `assets/` | Cover/logo images referenced from `project.toml` (`logos/anywair-logo.svg`, `images/zc-cover.png`). |
 | `INSTRUCTIONS.md` | This file. |
 
 > This whole `pdf-toolkit/` folder is excluded from the Docusaurus site build, so
@@ -33,7 +44,9 @@ brew install glib pango cairo gdk-pixbuf fontconfig harfbuzz
 ```
 
 - **Pandoc** stitches the Markdown + Lua filter together.
-- **WeasyPrint** is the PDF engine that reads `anywair-brand.css` and paints the pages.
+- **WeasyPrint** is the PDF engine that reads the CSS layers and paints the pages.
+- **Python 3.11+** is required — `brand.py` and `build.sh` read `project.toml`
+  with the stdlib `tomllib`. The pinned venv (`.venv/`) is 3.12.
 
 ---
 
@@ -61,11 +74,12 @@ A4 is screen/desk reference only. Every output filename ends in `-A4` or
 `-A5`; there are deliberately no unsuffixed PDFs, so nobody has to open a
 file to find out what size it is.
 
-The CSS chain is:
+The CSS chain is, in load order (later layers win by cascade):
 
 | Layer | File | Holds |
 |---|---|---|
-| engine + skin | `anywair-brand.css` | layout, colours, fonts, logos. No page dimensions. |
+| engine | `engine.css` | layout + structure. No colours, no fonts, no page dimensions. |
+| skin | `anywair-skin.css` | colour, typeface, cover chrome. Set by `[brand].css` in `project.toml`. |
 | page size | `page-a4.css` / `page-a5.css` | page size, margins, type scale, image scale |
 
 Page size comes from the CSS `@page` rule only — there is no `-V papersize`
@@ -90,6 +104,32 @@ transparency onto white, caps the long edge at 1800 px, re-encodes JPEG q82.
 Eyeball each PDF (cover, footer page numbers, screenshot rows, pin tables) before
 handing it to the client. To preview a page as an image without opening Preview:
 `qlmanage -t -s 1100 -o /tmp "some.pdf"`.
+
+### Ground truth — verified, please don't re-derive
+
+These were each established by a regression that page count alone did not catch.
+
+- **Percentage image widths only work when the containing block is the text
+  column.** Inside `<td>`/`<th>` and inside the `.img-row` flex rows `brand.py`
+  generates, a percentage resolves against the cell or flex item and collapses
+  images to 16–28mm, under the ~40mm legibility floor. `--img-cell`,
+  `--img-phone`, `--img-qr` and `--img-app-qr` are absolute lengths for this
+  reason.
+- **`.cover` is full-bleed.** Its `@page` has zero margin, so it must span the
+  whole sheet. The text column is pinned via
+  `body > *:not(.cover):not(.back-page)`, *not* on `body` itself — a body-level
+  width pushes the cover's border off the right edge of the page.
+- **Density lives in the page files** (`--h1-break`, `--p-margin`,
+  `--figure-margin`, `--orphans`, …), not in a separate override layer. If a
+  build ever looks too loose or too sparse, check those variables first.
+- **A5 is not A4 scaled by 0.707.** Its type scale was set to match the
+  effective printed size of the approved originals. Deriving one format's scale
+  from another's reproduces the oversized-text problem the page-size layer
+  exists to remove.
+- **Screenshot row count is a capacity limit, not a preference.** A5 genuinely
+  cannot carry three phones per row: 3-up would need ≤36.6mm each, under the
+  40mm floor. `SCREENSHOTS_PER_ROW` in `brand.py` is the counterpart to
+  `--img-phone` in the page file — keep the two in step.
 
 ---
 
@@ -128,7 +168,7 @@ the **alt-text tag `![lcd](…)`** in the `.md`. `brand.py` converts it to `{.lc
 build time; the `.lcd` CSS class then forces a single fixed width (120mm) for both
 raster PNGs and the SVGs rasterized by pass 2, so the same screen never renders at
 different sizes between the Quick Start and User guides. To change that width, edit
-the `img.lcd` rule in `anywair-brand.css`.
+the `img.lcd` rule in `engine.css`.
 
 > **IMPORTANT — the `.md` is ALSO the live website (Docusaurus).** Never write bare
 > Pandoc attributes like `{.lcd}`, `{.large}`, or `{width=…}` directly in the `.md`:
@@ -148,18 +188,57 @@ the `img.lcd` rule in `anywair-brand.css`.
 
 You normally don't hand-write these (brand.py adds them), but for reference:
 
-- `{.phone}` — phone-screenshot sizing (`--img-phone`: 54mm at A4, 46mm at A5). Rows: wrap figures in `<div class="img-row">`, 3 per row at A4 and 2 at A5.
-- `{.lcd}` — LCD TouchPoint screenshot at one fixed width (120mm), consistent across all guides; works on PNGs and rasterized SVGs.
+- `{.phone}` — phone-screenshot sizing (`--img-phone`, an **absolute** length: 54mm at A4, 46mm at A5). Rows: wrap figures in `<div class="img-row">`, 3 per row at A4 and 2 at A5.
 - `{.icon}` — inline button glyph at text height.
-- `{.small}` (55mm) / `{.medium}` (90mm) / `{.large}` (full width) — generic image sizes.
-- `::: diagram-table … :::` — compact wiring/pin table, white header, ~95mm wide.
-- Callouts: blockquote starting `**Please note:**` (teal) / `**Warning:**` (amber) / `**Danger:**` (red).
+- `::: diagram-table … :::` — compact wiring/pin table, white header, 55% of the column.
+- Callouts: blockquote starting `**Please note:**` (accent) / `**Warning:**` (amber) / `**Danger:**` (red).
 - Every `# H1` starts a new page automatically; `<div class="page-break"></div>` forces one elsewhere.
+
+### Image size tiers
+
+Percentages of the text column. **A4 and A5 use the same percentages**, so an
+image occupies the same fraction of the page at both sizes and reads at the
+same visual weight. Change a tier in one page file, change it in the other.
+
+| Class | % of column | A4 (col 174mm) | A5 (col 122mm) |
+|---|---|---|---|
+| `{.small}` | 38% | 66mm | 46mm |
+| `{.medium}` | 58% | 101mm | 71mm |
+| *(none — default)* | 88% | 153mm | 107mm |
+| `{.lcd}` | 78% | 136mm | 95mm |
+| `{.large}` | 100% (full column) | 174mm | 122mm |
+
+**Percentages only work when the containing block is the text column.** Inside
+`<td>`/`<th>` and inside `.img-row` flex rows, a percentage resolves against the
+cell or flex item and collapses the image to 16–28mm — under the ~40mm
+legibility floor. `--img-cell`, `--img-phone`, `--img-qr` and `--img-app-qr` are
+therefore **absolute lengths** in each page file. Don't "tidy" them into
+percentages.
 
 ---
 
 ## 5. Editing the design
 
-1. Edit `anywair-brand.css` (styling) or `brand.py` (structure) here in `pdf-toolkit/`.
-2. Re-run the build in section 2.
-3. Commit the regenerated PDFs alongside your changes.
+Pick the layer that matches what you're changing:
+
+| Changing… | Edit |
+|---|---|
+| Which guides build, cover text/images, model no., TOC opt-outs | `project.toml` |
+| A colour, the typeface, cover chrome | `anywair-skin.css` |
+| Spacing, breaking, structure, a new rule | `engine.css` |
+| Page size, margins, type scale, image tiers | `page-a4.css` / `page-a5.css` |
+| The Markdown→print transform itself | `brand.py` |
+
+Then re-run the build in section 2 and commit the regenerated PDFs alongside
+your changes.
+
+**Before and after any change, capture a baseline and diff it** — page counts,
+per-image rendered widths, and extracted word counts. Image widths are the
+sensitive signal; they catch regressions that page count alone misses.
+
+```bash
+./pdf-toolkit/build.sh --a4 --toc && cp pdfs/*-A4.pdf /tmp/baseline/
+# ...make changes...
+./pdf-toolkit/build.sh --a4 --toc
+# then compare
+```

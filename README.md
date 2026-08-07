@@ -44,17 +44,28 @@ GIT_USER=<Your GitHub username> yarn deploy
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
-## PDF page-format registry
+## PDF document system
 
-PDF guides are built by `docs/Zone Controller Stack/pdf-toolkit/build.sh`. Page
-size is an argument, and the CSS chain is:
+PDF guides are built by `docs/Zone Controller Stack/pdf-toolkit/build.sh`.
+The toolkit is designed to be reused across products and brands: four
+independent layers, each with one job.
 
 ```
-anywair-brand.css      engine + skin — layout, colours, fonts. No page dimensions.
+project.toml           WHAT to build — guides, cover text, images, model no.
+engine.css             layout + structure. Brand-neutral: no colours, no fonts.
+<oem>-skin.css         colour, type, cover chrome — pick exactly one
 page-<size>.css        page size, margins, type scale, image scale — pick exactly one
 ```
 
+CSS load order is engine → skin → page, and the cascade means each layer can
+override the one before it.
+
 **A5 output is built at A5. Nothing is ever shrunk to reach a format.**
+
+```bash
+pdf-toolkit/build.sh                 # all guides at A5 (default)
+pdf-toolkit/build.sh --a4 --toc      # A4, with a Table of Contents page
+```
 
 ### Supported formats
 
@@ -66,16 +77,27 @@ page-<size>.css        page size, margins, type scale, image scale — pick exac
 Every output filename ends in `-A4` or `-A5`. There are no unsuffixed PDFs —
 nobody should have to open a file to find out what size it is.
 
-```bash
-pdf-toolkit/build.sh                 # all guides at A5 (default)
-pdf-toolkit/build.sh --a4 --toc      # A4, with a Table of Contents page
-```
+### Reusing the toolkit
 
-### Adding a format
+Copy `pdf-toolkit/` into the new repo, then:
+
+1. **Replace `project.toml`** — guide list, cover titles/subtitles, cover
+   images, model number, and which guides get a Contents page. This is the only
+   file that knows product names; `build.sh` and `brand.py` name no document.
+2. **Add a skin** — copy `anywair-skin.css` to `<oem>-skin.css`, change the
+   token values, point `[brand].css` at it. Every token the engine needs is
+   listed in the `engine.css` header.
+3. **Replace the assets** it references (`assets/logos/`, `assets/images/`).
+
+You should not need to edit `engine.css`. If a new brand can't be expressed in
+skin tokens, add a token to the engine rather than forking it — a raw colour or
+font name in `engine.css` silently pins one OEM's brand into the shared layer.
+
+### Adding a page format
 
 Copy `_page-template.css` to `page-<name>.css`, fill in the values, and add a
-row above. No change to `anywair-brand.css` is needed. If a new format needs a
-*rule* rather than a *value*, that rule belongs in `anywair-brand.css`.
+row above. No engine change is needed. If a new format needs a *rule* rather
+than a *value*, that rule belongs in `engine.css`.
 
 ### Floors — these do not scale
 
@@ -89,9 +111,23 @@ row above. No change to `anywair-brand.css` is needed. If a new format needs a
 When a format hits a floor, the answer is **less content per page, more
 pages** — never smaller type.
 
-Note: image tiers are percentages of the text column, but images inside table
-cells and inside `.img-row` flex rows use absolute lengths — a percentage
-there resolves against the cell/flex item, not the column, and collapses.
+### Image tiers
+
+Tiers are percentages of the text column, and **A4 and A5 use the same
+percentages** so an image carries the same visual weight on both. Change a tier
+in one page file and change it in the other.
+
+| Tier | Class | % of column | A4 | A5 |
+|---|---|---|---|---|
+| small | `{.small}` | 38% | 66mm | 46mm |
+| medium | `{.medium}` | 58% | 101mm | 71mm |
+| default | *(none)* | 88% | 153mm | 107mm |
+| LCD | `{.lcd}` | 78% | 136mm | 95mm |
+
+Images inside **table cells** and inside `.img-row` flex rows are absolute
+lengths, not percentages — a percentage there resolves against the cell or flex
+item rather than the column and collapses the image below the 40mm floor. Don't
+"tidy" those into percentages.
 
 ## Doc Generation from Golang to MD
 

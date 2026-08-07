@@ -2,10 +2,10 @@
    Page format: A4  ·  210 x 297 mm
    Screen / desk reference. NOT the print deliverable — that is A5.
 
-   Load AFTER anywair-brand.css and BEFORE any OEM skin:
-     --css=anywair-brand.css --css=page-a4.css
+   Load LAST, after the engine and skin:
+     --css=engine.css --css=<oem>-skin.css --css=page-a4.css
    Holds values only. Any rule that is not a value belongs in
-   anywair-brand.css. See _page-template.css before adding a format.
+   engine.css. See _page-template.css before adding a format.
    ============================================================ */
 
 @page { size: A4; margin: 22mm 18mm 20mm 18mm; }
@@ -65,7 +65,7 @@
   --img-phone:      54mm;  /* absolute: 3-up (SCREENSHOTS_PER_ROW["a4"] in brand.py).
                               3*54 + 2*6 (gap) = 174mm, exactly --col. Was 55mm,
                               which made rows 177mm and overhung the column by 3mm. */
-  --img-row-gap:     6mm;  /* explicit: was silently inheriting the brand.css fallback */
+  --img-row-gap:     6mm;  /* explicit: was silently inheriting the engine.css fallback */
   --list-indent:    7.8mm; /* measured bullet indent; li .img-row cancels it so a
                               full-width row still spans the true text column */
   --img-cell:       58mm;  /* absolute: see note above */

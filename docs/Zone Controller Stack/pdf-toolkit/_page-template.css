@@ -29,10 +29,10 @@
         SCREENSHOT ROWS note further down for how to choose it.
      5. Add the format to the registry table in the repo README.
      6. Build with:
-          --css=anywair-brand.css --css=page-<name>.css
+          --css=engine.css --css=<oem>-skin.css --css=page-<name>.css
 
    Nothing but values belongs in a page file. If a new format needs a
-   rule that is not a value, that rule belongs in anywair-brand.css —
+   rule that is not a value, that rule belongs in engine.css —
    with the single exception of the image tiers at the bottom.
    ============================================================ */
 

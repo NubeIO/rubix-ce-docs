@@ -1,0 +1,93 @@
+# ============================================================
+# project.toml — everything project-specific about a PDF build.
+#
+# This file is the ONLY thing you edit to point the toolkit at a
+# different product, brand or document set. brand.py and build.sh
+# read it and contain no product names, titles, cover markup or
+# asset paths of their own.
+#
+# To reuse the toolkit in another project: copy pdf-toolkit/, then
+# replace this file and the assets it references. See README.md
+# ("Reusing the toolkit").
+#
+# Paths are relative to the toolkit folder (pdf-toolkit/) unless
+# noted. Guide `file` paths are relative to the source folder — the
+# directory that contains pdf-toolkit/.
+# ============================================================
+
+[project]
+# Source folder name, used only in log output.
+name = "Zone Controller Stack"
+
+[brand]
+# Skin stylesheet, loaded BEFORE the page-size file so the page file
+# wins by cascade. Swap this for another OEM skin.
+css  = "anywair-skin.css"
+# Layout engine, loaded first. Brand-neutral — normally left alone.
+engine = "engine.css"
+# Logo used on the cover and the back page.
+logo = "assets/logos/anywair-logo.svg"
+# Model number printed under the cover image. Blank string = omitted.
+model = "UTY-ZCAW1"
+
+# ---- GUIDES -------------------------------------------------
+# One [[guides]] block per document. Order is the build order.
+#
+#   file        source .md, relative to the source folder
+#   title       cover title; <br> allowed, HTML-escaped entities allowed
+#   subtitle    small caps line under the cover divider
+#   cover_image product shot on the cover
+#   cover_class extra class on .cover (e.g. "cover-qsg" for the red variant)
+#   toc         include a Contents page when the build is run with --toc.
+#               Short fold-out guides set false: a TOC costs them a whole
+#               page and earns nothing at that length.
+#   title_override  doc-title text when it must differ from the .md's H1.
+#                   The .md is also the live website page, so we never
+#                   rename the H1 there just to change the PDF.
+#   intro       PDF-ONLY prose injected after the title block. MUST NOT
+#               live in the .md, for the same reason.
+#   cover_image_style  optional inline style on the cover image, for a shot
+#               that needs a height cap rather than the default width fit.
+#
+# NOT LISTED HERE: the MIA Mobile App manual. It lives in a subfolder
+# ("MIA Mobile App/"), so its asset paths resolve one level up from the build
+# root, which the current single TOOLKIT_REL prefix in brand.py does not model.
+# Adding it needs a per-guide asset-root, not just a new [[guides]] block.
+
+[[guides]]
+file        = "Zoneconnex INSTALL & USER MANUAL.md"
+title       = "Zoneconnex<br>Install &amp; User Manual"
+subtitle    = "Install & User Manual"
+cover_sub   = "INSTALL & USER MANUAL"
+cover_image = "assets/images/zc-cover.png"
+toc         = true
+
+[[guides]]
+file        = "Zoneconnex Quick Start Guide.md"
+title       = "Quick Start Guide<br>Zoneconnex"
+subtitle    = "Installation Guide"
+cover_sub   = "Installation Guide"
+cover_image = "assets/images/QSG cover.png"
+cover_class = "cover-qsg"
+toc         = false
+
+# NOTE: this guide's cover TITLE is also "Quick Start Guide" — it is told
+# apart from the one above by its subtitle (USER GUIDE vs Installation
+# Guide). Match on `file`, never on anything shown on the cover.
+[[guides]]
+file           = "Zoneconnex User Start Guide.md"
+title          = "Quick Start Guide<br>Zoneconnex"
+subtitle       = "User Guide"
+cover_sub      = "USER GUIDE"
+cover_image    = "assets/images/zc-cover.png"
+toc            = false
+title_override = "Zoneconnex Quick Start Guide"
+intro = """**Welcome**
+
+Welcome to your new **Zoneconnex system**. This guide will help you set up and access the wall-mounted TouchPoint screen and anywAiR® Zone mobile app, so you can start controlling your air conditioning.
+
+Once set up, you can easily:
+
+- Adjust temperature settings
+- Change operating modes
+- Control airflow across different zones in your home"""
