@@ -24,50 +24,67 @@ Check that you have received all items below.
 
 Refer to following diagrams for component locations:
 
-**Zoneconnex Front View:**
+### Zoneconnex Front View
 
-![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Front-View-rev3.png)
+![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Front-View-rev3.png){width=78%}
 
-**Zoneconnex Top View:**
+### Zoneconnex Top View
 
-![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Top-View-rev3.png)
+![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Top-View-rev3.png){width=49%}
 
-**Zoneconnex Bottom View:**
+### Zoneconnex Bottom View
 
-![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Bottom-View-rev3.png)
+![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Bottom-View-rev3.png){width=80%}
 
 # 3. Fitting Installation
 
 ## 3.1 Mounting the Zoneconnex Controller
 
-**A. DIN Rail Mounting**
+<div class="no-break">
+
+### A. DIN Rail Mounting
 
 Ensure the DIN rail is securely installed. **Hook the top of the Zoneconnex** onto the top of the DIN rail.
 
 Pivot the bottom toward the rail until the **lower clip snaps into place**. Gently pull forward to confirm the Controller is securely mounted.
 
-![max800px](ZoneConnex/img/ZoneConnex-DinMounting-v2.png)
+![max800px](ZoneConnex/img/ZoneConnex-DinMounting-v2.png){width=70%}
 
-**B. Direct Mounting**
+</div>
+
+<div class="no-break">
+
+### B. Direct Mounting
 
 Attach mounting clips to the back of the Controller (if not pre-fitted). Position the Controller against the mounting location and **mark the fixing points**.
 
 **Drill the holes and insert wall plugs if required.** **Secure the Controller** using appropriate **screws or fixings**. Gently pull forward to confirm it is firmly mounted.
 
-![max800px](ZoneConnex/img/ZoneConnex-FixingMounting-v2.png)
+![max800px](ZoneConnex/img/ZoneConnex-FixingMounting-v2.png){width=70%}
+
+</div>
+
+<div class="no-break">
 
 ## 3.2 Mounting the TouchPoint LCD
 
 Release the **two bottom clips** to remove the LCD from its housing. Hold the housing against the wall and **mark the fixing points**. **Drill holes and insert wall plugs if needed.** **Secure the housing** to the wall with **screws**. Feed the **pre-wired cable** through the desired entry point. Re-insert the LCD by: engaging the **top clips first**, **then pressing the bottom clips** into place.
 
-![max800px](Touch%20Point%20LCD/img/LCD-Mounting-v3.png)
+![max800px](Touch%20Point%20LCD/img/LCD-Mounting-v3.png){width=67%}
 
-<img src={require("./Touch Point LCD/img/Top-Retaining-Clips-v2.png").default} width="50%" />
-<img src={require("./Touch Point LCD/img/Bottom-Retaining-Clips-v2.png").default} width="50%" />
+</div>
 
-**Releasing the retaining clips**
+<div class="no-break">
 
-![](Touch%20Point%20LCD/img/LCD-Clip-Release-v2.png)
+![max800px](Touch%20Point%20LCD/img/Top-Retaining-Clips-v2.png){width=53%}
+
+![max800px](Touch%20Point%20LCD/img/Bottom-Retaining-Clips-v2.png){width=53%}
+
+</div>
+
+### Releasing the retaining clips
+
+![](Touch%20Point%20LCD/img/LCD-Clip-Release-v2.png){.medium}
 
 | **Correct** | **Incorrect** |
 |-------------|---------------|
