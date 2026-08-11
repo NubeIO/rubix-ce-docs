@@ -671,6 +671,23 @@ pre {
 .no-break   { page-break-inside: avoid; }
 .center     { text-align: center; }
 
+/* Extra air below an image immediately followed by the next section's heading.
+   OPT-IN: fires only on images tagged {.view-gap} — currently the Front and Top
+   component views in the QSG Hardware Overview. No other image is affected.
+
+   Must target the WRAPPER, not the img. brand.py strips alt text, so pandoc
+   emits <p><img class="view-gap">; the <p> (or <figure>, when alt survives) is
+   the block adjacent to the heading, and a margin on the img is trapped inside
+   it and never reaches the gap. A rule on .view-gap itself measurably does
+   nothing — verified at both 10pt and 12pt.
+
+   The gap is the COLLAPSED max() of the wrapper's bottom margin and the
+   heading's top margin; they do not add. 14pt clears --p-margin (5pt A5 /
+   6pt A4) and --h3-margin's top (6pt A5 / 8pt A4), giving ~5.6mm — double
+   the 2.8mm default at both page sizes. */
+p:has(> img.view-gap),
+figure:has(img.view-gap) { margin-bottom: 14pt; }
+
 /* Suppress the auto-generated Pandoc title block on cover */
 header#title-block-header,
 .title { display: none; }

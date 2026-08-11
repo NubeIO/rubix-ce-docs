@@ -26,11 +26,11 @@ Refer to following diagrams for component locations:
 
 ### Zoneconnex Front View
 
-![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Front-View-rev3.png){width=78%}
+![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Front-View-rev3.png){.view-gap width=78%}
 
 ### Zoneconnex Top View
 
-![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Top-View-rev3.png){width=49%}
+![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Top-View-rev3.png){.view-gap width=49%}
 
 ### Zoneconnex Bottom View
 
@@ -60,7 +60,7 @@ Attach mounting clips to the back of the Controller (if not pre-fitted). Positio
 
 **Drill the holes and insert wall plugs if required.** **Secure the Controller** using appropriate **screws or fixings**. Gently pull forward to confirm it is firmly mounted.
 
-![max800px](ZoneConnex/img/ZoneConnex-FixingMounting-v2.png){width=70%}
+![max800px](ZoneConnex/img/ZoneConnex-FixingMounting-v2.png){width=33%}
 
 </div>
 
@@ -70,15 +70,12 @@ Attach mounting clips to the back of the Controller (if not pre-fitted). Positio
 
 Release the **two bottom clips** to remove the LCD from its housing. Hold the housing against the wall and **mark the fixing points**. **Drill holes and insert wall plugs if needed.** **Secure the housing** to the wall with **screws**. Feed the **pre-wired cable** through the desired entry point. Re-insert the LCD by: engaging the **top clips first**, **then pressing the bottom clips** into place.
 
-![max800px](Touch%20Point%20LCD/img/LCD-Mounting-v3.png){width=67%}
+![max800px](Touch%20Point%20LCD/img/LCD-Mounting-v3.png){width=55%}
 
+<div class="img-row">
+<figure><img src="Touch Point LCD/img/Top-Retaining-Clips-v2.png" /></figure>
+<figure><img src="Touch Point LCD/img/Bottom-Retaining-Clips-v2.png" /></figure>
 </div>
-
-<div class="no-break">
-
-![max800px](Touch%20Point%20LCD/img/Top-Retaining-Clips-v2.png){width=53%}
-
-![max800px](Touch%20Point%20LCD/img/Bottom-Retaining-Clips-v2.png){width=53%}
 
 </div>
 
