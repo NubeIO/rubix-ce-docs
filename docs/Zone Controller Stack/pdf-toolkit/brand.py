@@ -243,6 +243,17 @@ def normalize_and_tag_icons(text, base_dir):
     #      ![large](x) -> ![](x){.large}                (wide diagram, full column)
     text = re.sub(r'!\[lcd\]\(([^)]+)\)(?!\{)',   r'![](\1){.lcd}', text)
     text = re.sub(r'!\[large\]\(([^)]+)\)(?!\{)', r'![](\1){.large}', text)
+    # 0b) LCD screenshots are identified by PATH, not by whoever remembered the
+    #     ![lcd] alt tag. Every image in [assets].vector_dir is the same physical
+    #     TouchPoint screen and must render at ONE size in every guide. Relying on
+    #     the alt tag let the same screenshot ship at 117.1mm in the Install manual
+    #     (untagged -> default tier) and 104.9mm in the Quick Start / User Start
+    #     guides (tagged) — 14 untagged in INSTALL, 2 in MIA. Tagging by folder
+    #     makes that class of drift impossible.
+    if VECTOR_DIR:
+        text = re.sub(r'!\[[^\]]*\]\((?![^)]*\{)([^)]*%s/[^)]+)\)(?!\{)'
+                      % re.escape(VECTOR_DIR),
+                      r'![](\1){.lcd}', text)
     # The standalone in-content QR ([assets].doc_qr) is a LINKED image and otherwise
     # falls back to the full-width block rule, spilling onto its own page. Tag with
     # {.doc-qr} so the print CSS can cap it small. Alt is stripped in step 2, so

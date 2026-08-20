@@ -100,6 +100,7 @@ image_pairs = [
 "ZoneConnex-FixingMounting-v2"              = "small"
 "ACB-ZC-Components-Markup-Top-View-rev3"    = "medium"
 "UART-Cable"                                = "medium"
+"LCD-Clip-Release-v2"                       = "medium"
 
 # ---- GUIDES -------------------------------------------------
 # One [[guides]] block per document. Order is the build order.
