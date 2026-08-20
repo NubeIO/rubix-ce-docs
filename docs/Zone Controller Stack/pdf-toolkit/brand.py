@@ -18,6 +18,8 @@ What it does (each pass is idempotent-ish and safe on already-clean input):
   * normalize_and_tag_icons– drop the `![max800px](..)` size-hack alt text; tag inline UI
                              glyphs with {.icon}, detected automatically by image size
                              (any PNG <= 64x64px); restore the store-badge width cap
+  * group_image_pairs      – wrap matched image pairs ([assets].image_pairs) in one
+                             <div class="img-row"> so they stay side by side
   * wrap_diagram_tables    – wrap pin/connector tables (blank/image header) in
                              `::: diagram-table` so they lose the teal header + shrink
   * group_screenshots      – tag phone screenshots {.phone} and pack consecutive ones
@@ -129,6 +131,9 @@ VECTOR_DIR      = cfg("assets", "vector_dir")
 # OPTIONAL — a content set with no hand-tuned images simply omits the table.
 # See [assets.tier_overrides] in project.toml for why these exist.
 TIER_OVERRIDES  = MANIFEST.get("assets", {}).get("tier_overrides", {})
+# Matched pairs that must share one .img-row — see [assets].image_pairs.
+IMAGE_PAIRS     = [tuple(pair) for pair in
+                   MANIFEST.get("assets", {}).get("image_pairs", [])]
 VALID_TIERS     = ("small", "medium", "large")
 for _k, _v in TIER_OVERRIDES.items():
     if _v not in VALID_TIERS:
@@ -313,6 +318,37 @@ def normalize_and_tag_icons(text, base_dir):
 
     text = re.sub(r'!\[[^\]]*\]\(([^)]+)\)(?!\{)', _bare_tier, text)
     return text
+
+
+# ---- matched image pairs: keep two related figures side by side ----
+def group_image_pairs(text):
+    """Wrap each [assets].image_pairs run of consecutive raw <img> lines in a
+    <div class="img-row">. Without this the two halves are independent blocks:
+    they take the full default width, stack vertically, and a page break can
+    land between them (observed — Top/Bottom retaining clips split across two
+    pages at different widths). .img-row is break-inside:avoid and .img-row img
+    is max-width:100%, so the pair shares one row and one width."""
+    lines = text.split("\n")
+    for pair in IMAGE_PAIRS:
+        idx = []
+        for want in pair:
+            hit = None
+            for i, ln in enumerate(lines):
+                if i not in idx and ln.strip().startswith("<img") and want in ln:
+                    hit = i
+                    break
+            if hit is None:
+                break
+            idx.append(hit)
+        # only rewrite a complete, strictly consecutive run
+        if len(idx) != len(pair) or idx != list(range(idx[0], idx[0] + len(idx))):
+            continue
+        block = ['<div class="img-row">']
+        for i in idx:
+            block.append("<figure>%s</figure>" % lines[i].strip())
+        block.append("</div>")
+        lines[idx[0]:idx[-1] + 1] = ["\n".join(block)]
+    return "\n".join(lines)
 
 
 # ---- phone screenshots: tag .phone, group consecutive into rows ----
@@ -524,6 +560,7 @@ def brand(infile, cover, logo_path, mobile=False, subtitle=None,
     if mobile:
         text = normalize_and_tag_icons(text, os.path.dirname(infile))
         text = wrap_diagram_tables(text)
+        text = group_image_pairs(text)
         text = wrap_compliance_list(text)
         text = group_screenshots(text, per_row=PER_ROW)
         text = fix_orphan_code_blocks(text)

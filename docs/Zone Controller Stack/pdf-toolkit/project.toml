@@ -82,6 +82,15 @@ screenshots_dir = "screenshots"
 screenshot_alt  = "anywAiR Zone app screenshot"
 vector_dir      = "LCD-Screenshots"
 
+# Matched image PAIRS: consecutive raw <img> siblings documenting two halves of
+# one idea. They must sit SIDE BY SIDE, sharing a row and a width. brand.py
+# wraps a consecutive run in <div class="img-row">, which is break-inside:avoid,
+# so the pair can never be split across a page boundary. Sizing such a pair
+# individually is what pushed Top/Bottom-Retaining-Clips onto two pages.
+image_pairs = [
+  ["Top-Retaining-Clips-v2", "Bottom-Retaining-Clips-v2"],
+]
+
 # Per-image tier overrides. Basename (no extension) -> size class.
 # These images were hand-tuned small in earlier review rounds via inline
 # width=NN%. The inline widths are now stripped at build time (see brand.py)
@@ -90,8 +99,6 @@ vector_dir      = "LCD-Screenshots"
 [assets.tier_overrides]
 "ZoneConnex-FixingMounting-v2"              = "small"
 "ACB-ZC-Components-Markup-Top-View-rev3"    = "medium"
-"Top-Retaining-Clips-v2"                    = "medium"
-"Bottom-Retaining-Clips-v2"                 = "medium"
 "UART-Cable"                                = "medium"
 
 # ---- GUIDES -------------------------------------------------
