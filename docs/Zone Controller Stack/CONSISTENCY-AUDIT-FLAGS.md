@@ -28,6 +28,17 @@ QSG changed to match the manual's presentation, using files confirmed to be the 
   manual's orientation; **§4.4** switched to the manual's zoomed-sticker image.
   *(from earlier in this work session)*
 
+### Resolved 2026-08-20
+
+- **UART diagram — standardised on `ACB-ZC-UART-PAP-04V-S-rev3.png`** (was rev2 in the
+  manual, rev3 in the QSG). This was not only a formatting difference: the two revisions
+  stated **different cable lengths** — rev2 "Length: 2m", rev3 "Length: 5m\*" — so the two
+  guides were shipping conflicting specs for the same part. rev3 also has correctly
+  aligned right-hand pin labels and no baked-in whitespace (rev2's canvas was 3508x2480
+  for 3106x691 of content — 75% empty, which made the diagram render small and
+  visually adrift on manual p18). Manual now points at rev3.
+  **Confirm 5m is the correct current spec** — the change was made on that assumption.
+
 ---
 
 ## 🚩 FLAGGED — different actual assets (NOT changed; tech team to choose the correct one)
@@ -39,7 +50,6 @@ downgrading a newer asset — an editorial call.
 | Subject | Manual uses | Other guide uses | Why flagged |
 |---|---|---|---|
 | Component views (Front/Top/Bottom) | `ACB-ZC-Components-Markup-*-View.png` | QSG: `…-View-rev3.png` | **Pixels differ** — QSG is a newer rev. Which rev is current? |
-| UART diagram | `ACB-ZC-UART-PAP-04V-S-rev2.png` | QSG: `…-rev3.png` | Different size/content — rev2 vs rev3. Which is current? |
 | 24 VAC power adaptor | `24VAC-ADAPTOR-rev3.png` | QSG: `24VAC-ADAPTOR-BOLD-2.png` | Different files entirely (807×533 vs 1518×718). |
 | UART cable photo | `UART-Cable.png` | QSG: `UART-Cable-photo.jpg` | Same size, **pixels differ** — different photo. |
 | LCD cable photo | `LCD-Cable.jpg` | QSG: `LCD-Cable-photo.jpg` | Same size, **pixels differ** — different photo. |

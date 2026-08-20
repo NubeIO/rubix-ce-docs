@@ -101,6 +101,9 @@ image_pairs = [
 "ACB-ZC-Components-Markup-Top-View-rev3"    = "medium"
 "UART-Cable"                                = "medium"
 "LCD-Clip-Release-v2"                       = "medium"
+# Very wide diagrams (>3:1) carry embedded text that is already small at A5.
+# Give them the full column so nothing is lost to the default tier's side margin.
+"ACB-ZC-UART-PAP-04V-S-rev3"                = "large"
 
 # ---- GUIDES -------------------------------------------------
 # One [[guides]] block per document. Order is the build order.

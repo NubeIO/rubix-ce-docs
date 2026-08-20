@@ -217,7 +217,7 @@ Connect the Prewired AC power supply to the 24VAC terminals
 Route the prewired UART cable into the Air Conditioning unit control panel and connect it to the **CN65** or **CN75** port via the UART interface. The UART cable is then connected to the Zoneconnex device. Refer to the diagrams below:
 
 <div style={{ textAlign: 'center' }}>
-<img src={require("./ZoneConnex/img/ACB-ZC-UART-PAP-04V-S-rev2.png").default} width="80%" />
+<img src={require("./ZoneConnex/img/ACB-ZC-UART-PAP-04V-S-rev3.png").default} width="80%" />
 </div>
 
 <div style={{ textAlign: 'center' }}>
