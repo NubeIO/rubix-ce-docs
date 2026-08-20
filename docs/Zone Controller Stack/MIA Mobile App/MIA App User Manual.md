@@ -353,7 +353,32 @@ Users can manage the system preferences via the installer mode to manually selec
 
 <br/>
 
-### 3.4.5 Factory Reset Configuration
+### 3.4.5 Soft Reset Configuration
+
+:::info
+A soft reset can only be performed when the controller has a strong and stable internet connection. The controller must successfully connect to the server throughout the reset process. If the internet connection is weak, unstable, or disconnected, the soft reset will fail.
+:::
+
+To perform a soft reset to clear the previous user configuration, users can perform the `Soft Reset` by following the steps below:
+
+1. Users must first access the installer mode following the steps outlined in section 3.1. Accessing Installer Mode where the user will be navigated to the 'Setup' screen.
+   
+2. On the setup page press the `Preferences` button to navigate to the 'Preferences' screen.
+   
+3. To perform the soft reset press the `Soft Reset` button, a popup will appear asking the user to confirm the reset by pressing `Accept` or cancel by pressing `Cancel`.
+   
+4. User will then be navigated out of the Installer menu and the Zoneconnex system will execute the reset.
+   
+5. After the Zoneconnex system has executed the soft reset and the LCD screen has reloaded (wait approximately 2 minutes) the user must reset the system via the LCD reset button to ensure the changes are applied.
+   
+6. User can now add the home as the new owner following the steps outlined in section 5.1 Home Setup
+
+***Image to be updated***
+<img src={require("./screenshots/48.png").default} width="300" />
+
+<br/>
+
+### 3.4.6 Factory Reset Configuration
 
 To reset the configuration and start the setup from scratch, users can perform the `Factory Reset` by following the steps below:
 
@@ -361,7 +386,8 @@ To reset the configuration and start the setup from scratch, users can perform t
 
 2.  On the setup page press the `Preferences` button to navigate to the 'Preferences' screen.
 
-3.  To access the factory reset settings, tap the `Factory Reset` button, a popup will appear asking the user to confirm the reset by pressing `Accept` or cancel by pressing `Cancel`.
+3.  To access the factory reset settings, press the `Factory Reset` button, a popup will appear asking the user to confirm the reset by pressing `Accept` or cancel by pressing `Cancel`.
+
 <img src={require("./screenshots/48.png").default} width="300" />
 
 <br/>
