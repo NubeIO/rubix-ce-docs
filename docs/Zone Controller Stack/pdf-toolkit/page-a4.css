@@ -58,10 +58,10 @@
    cell or an .img-row flex item resolves against the cell, not the
    column, which collapses it below the ~40mm legibility floor. */
 :root {
-  --img-small:      38%;   /* 66mm — plugs, connectors */
-  --img-medium:     58%;   /* 101mm */
-  --img-default:    88%;   /* 153mm — matches A5 relative density */
-  --img-lcd:        78%;   /* 136mm — TouchPoint LCD screenshots */
+  --img-small:      44%;   /* 77mm — plugs, connectors */
+  --img-medium:     66%;   /* 115mm */
+  --img-default:    96%;   /* 167mm — matches A5 relative density */
+  --img-lcd:        86%;   /* 150mm — TouchPoint LCD screenshots */
   --img-phone:      54mm;  /* absolute: 3-up (SCREENSHOTS_PER_ROW["a4"] in brand.py).
                               3*54 + 2*6 (gap) = 174mm, exactly --col. Was 55mm,
                               which made rows 177mm and overhung the column by 3mm. */

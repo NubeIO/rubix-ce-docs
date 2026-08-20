@@ -16,10 +16,23 @@ owned here: project.toml, anywair-skin.css, assets/ and INSTRUCTIONS.md.
 
 KNOWN DIFFERENCES from doc-engine 1.0.0, as split:
 
-  page-a4.css, page-a5.css, _page-template.css, compress.py
+  _page-template.css, compress.py
       identical.
 
+  page-a4.css, page-a5.css
+      diverged 2026-08-20: image tiers raised for a uniform, larger
+      default across all four guides (small 38->44%, medium 58->66%,
+      lcd 78->86%, default 88->96%). A4/A5 parity kept. The absolute
+      tiers (--img-phone/-cell/-qr/-app-qr) are unchanged.
+
   build.sh, brand.py
+      brand.py ALSO diverged 2026-08-20: it now strips inline percentage
+      widths (markdown {width=NN%} and Docusaurus <img width="NN%">) so
+      every image is governed by the CSS tiers rather than by per-image
+      tuning left over from past review rounds. Pixel widths are kept —
+      the phone screenshots depend on them. Images that must stay small
+      are named in [assets.tier_overrides] in project.toml.
+
       diverged BY DESIGN. The engine versions take their paths as
       arguments (--project, and the project-folder name) to suit the
       engine's engine/ + scripts/ layout; the copies here keep the

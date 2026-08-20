@@ -125,6 +125,16 @@ SCREENSHOTS_DIR = cfg("assets", "screenshots_dir")
 SCREENSHOT_ALT  = cfg("assets", "screenshot_alt")
 VECTOR_DIR      = cfg("assets", "vector_dir")
 
+# Per-image tier overrides: basename (no extension) -> size class.
+# OPTIONAL — a content set with no hand-tuned images simply omits the table.
+# See [assets.tier_overrides] in project.toml for why these exist.
+TIER_OVERRIDES  = MANIFEST.get("assets", {}).get("tier_overrides", {})
+VALID_TIERS     = ("small", "medium", "large")
+for _k, _v in TIER_OVERRIDES.items():
+    if _v not in VALID_TIERS:
+        sys.exit("error: [assets.tier_overrides] %r = %r is not a size class;\n"
+                 "       expected one of %s" % (_k, _v, ", ".join(VALID_TIERS)))
+
 
 def fix_require(text):
     # Docusaurus JSX <img src={require("./path").default} width="X%" /> -> plain <img src="path" ...>
@@ -133,7 +143,19 @@ def fix_require(text):
         path = path.lstrip("./")            # drop leading ./
         path = path.replace("\\ ", " ")     # unescape spaces
         rest = m.group(2) or ""
-        return 'src="%s"%s' % (path, rest)
+        # Drop PERCENTAGE widths: those are legacy per-image size tuning, and an
+        # inline width= beats the CSS max-width tiers, so they would silently
+        # opt the image out of the general rules. Pixel widths are KEPT — the
+        # phone screenshots (width="300"/"250") depend on them.
+        if "%" in rest:
+            rest = ""
+        # A raw <img> never passes through the markdown tier step, so apply any
+        # [assets.tier_overrides] entry here instead — otherwise these images
+        # (hand-tuned to 50% in earlier rounds) would jump to the full default.
+        base = os.path.splitext(os.path.basename(path))[0]
+        tier = TIER_OVERRIDES.get(base)
+        cls = ' class="%s"' % tier if tier else ""
+        return 'src="%s"%s%s' % (path, cls, rest)
     text = re.sub(r'src=\{require\("([^"]+)"\)\.default\}(\s+width="[^"]*")?',
                   repl, text)
     return text
@@ -213,9 +235,9 @@ def normalize_and_tag_icons(text, base_dir):
     #    class/width the print CSS needs. Never write bare {.class} / {width=} in
     #    the shared .md — Docusaurus prints those braces as literal text.
     #      ![lcd](x)   -> ![](x){.lcd}                 (fixed-width LCD screenshot)
-    #      ![large](x) -> ![](x){.large width=80%}     (wide diagram at 80%)
+    #      ![large](x) -> ![](x){.large}                (wide diagram, full column)
     text = re.sub(r'!\[lcd\]\(([^)]+)\)(?!\{)',   r'![](\1){.lcd}', text)
-    text = re.sub(r'!\[large\]\(([^)]+)\)(?!\{)', r'![](\1){.large width=80%}', text)
+    text = re.sub(r'!\[large\]\(([^)]+)\)(?!\{)', r'![](\1){.large}', text)
     # The standalone in-content QR ([assets].doc_qr) is a LINKED image and otherwise
     # falls back to the full-width block rule, spilling onto its own page. Tag with
     # {.doc-qr} so the print CSS can cap it small. Alt is stripped in step 2, so
@@ -257,6 +279,39 @@ def normalize_and_tag_icons(text, base_dir):
             return '![%s](%s){.icon}' % (alt, path)
         return whole
     text = re.sub(r'!\[([^\]]*)\]\(([^)]+\.png)\)(?!\{)', icon_repl, text)
+
+    # 4) UNIFORM SIZING. Earlier review rounds hand-tuned individual images with
+    #    inline {width=NN%}. An inline width beats the CSS max-width tiers, so
+    #    those images silently opted out of the general rules and sizing drifted
+    #    apart between guides. Strip the percentages here (build-time, on the
+    #    throwaway copy) so every image is governed by page-<size>.css.
+    #    NOT done by editing the .md: these files are also the live Docusaurus
+    #    website, where the inline widths still apply.
+    #
+    #    Images that were deliberately SMALLER than the default keep that intent
+    #    via [assets.tier_overrides] — as a named tier, not a magic number.
+    def _size_attrs(m):
+        path, attrs = m.group(1), m.group(2)
+        # drop percentage widths only; a pixel width is a real intrinsic size
+        attrs = re.sub(r'\s*width=\d+(?:\.\d+)?%', '', attrs)
+        base = os.path.splitext(os.path.basename(urllib.parse.unquote(path)))[0]
+        tier = TIER_OVERRIDES.get(base)
+        # don't stack a tier onto an image that already carries a size class
+        if tier and not re.search(r'\.(?:small|medium|large|lcd|icon|phone|doc-qr|app-qr)\b', attrs):
+            attrs = attrs.rstrip() + ' .' + tier
+        attrs = re.sub(r'\s+', ' ', attrs).strip()
+        return '![](%s){%s}' % (path, attrs) if attrs else '![](%s)' % path
+
+    text = re.sub(r'!\[[^\]]*\]\(([^)]+)\)\{([^}]*)\}', _size_attrs, text)
+
+    # Images with NO attribute block at all can still take a tier override.
+    def _bare_tier(m):
+        path = m.group(1)
+        base = os.path.splitext(os.path.basename(urllib.parse.unquote(path)))[0]
+        tier = TIER_OVERRIDES.get(base)
+        return '![](%s){.%s}' % (path, tier) if tier else m.group(0)
+
+    text = re.sub(r'!\[[^\]]*\]\(([^)]+)\)(?!\{)', _bare_tier, text)
     return text
 
 

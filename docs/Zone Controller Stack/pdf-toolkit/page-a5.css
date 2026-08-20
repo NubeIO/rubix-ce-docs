@@ -56,7 +56,7 @@
    The small tiers are therefore bumped: screenshots with UI labels stop
    being readable below ~40mm. This is the one place a page file may
    override an image rule (see _page-template.css). Resulting widths:
-     38% = 46mm, 58% = 71mm, 88% = 107mm, 78% = 95mm, 38% = 46mm.
+     44% = 54mm, 66% = 81mm, 96% = 117mm, 86% = 105mm.
    --img-cell is absolute: a % inside a table cell resolves against the
    cell, not the column. 46mm keeps wiring diagrams above the floor.
 
@@ -66,10 +66,10 @@
    three would need 36.6mm each — under the legibility floor. The count lives in
    SCREENSHOTS_PER_ROW in brand.py; keep it in step with --img-phone below. */
 :root {
-  --img-small:      38%;
-  --img-medium:     58%;
-  --img-default:    88%;
-  --img-lcd:        78%;
+  --img-small:      44%;
+  --img-medium:     66%;
+  --img-default:    96%;
+  --img-lcd:        86%;
   --img-phone:      46mm;  /* absolute: 2-up (SCREENSHOTS_PER_ROW["a5"] in brand.py).
                               2*46 + 1*6 (gap) = 98mm, inside the 122mm --col.
                               HELD at 46mm on purpose. 2-up leaves ~24mm spare width,

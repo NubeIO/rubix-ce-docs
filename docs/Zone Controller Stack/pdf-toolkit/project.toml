@@ -82,6 +82,18 @@ screenshots_dir = "screenshots"
 screenshot_alt  = "anywAiR Zone app screenshot"
 vector_dir      = "LCD-Screenshots"
 
+# Per-image tier overrides. Basename (no extension) -> size class.
+# These images were hand-tuned small in earlier review rounds via inline
+# width=NN%. The inline widths are now stripped at build time (see brand.py)
+# so every image is governed by the general tiers; this map preserves the
+# "deliberately smaller than default" intent as a TIER, not a magic number.
+[assets.tier_overrides]
+"ZoneConnex-FixingMounting-v2"              = "small"
+"ACB-ZC-Components-Markup-Top-View-rev3"    = "medium"
+"Top-Retaining-Clips-v2"                    = "medium"
+"Bottom-Retaining-Clips-v2"                 = "medium"
+"UART-Cable"                                = "medium"
+
 # ---- GUIDES -------------------------------------------------
 # One [[guides]] block per document. Order is the build order.
 #
