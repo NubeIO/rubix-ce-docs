@@ -9,8 +9,7 @@ interface directly with compatible RAC/PAC and VRF Air Conditioning units in a s
 LoRa® wireless IoT technology offers a long
 transmission range, low power consumption, and is less susceptible to object interference than other wireless technologies. This ensures seamless control integration for a range of applications.
 
-***Insert Silk Screen Render***
-![max1000px](img/LORA-UART-v0-5-Assembly.png)
+![max800px](img/uart-render-2.png)
 
 
 ## 1.2. Architecture
