@@ -373,8 +373,7 @@ To perform a soft reset to clear the previous user configuration, users can perf
    
 6. User can now add the home as the new owner following the steps outlined in section 5.1 Home Setup
 
-***Image to be updated***
-<img src={require("./screenshots/48.png").default} width="300" />
+<img src={require("./screenshots/133.png").default} width="300" />
 
 <br/>
 
