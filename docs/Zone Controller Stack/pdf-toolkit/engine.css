@@ -1,0 +1,756 @@
+/* ============================================================
+   DOCUMENT ENGINE — layout, structure, page furniture
+   For use with Pandoc + WeasyPrint
+   ============================================================
+
+   BRAND-NEUTRAL. This file contains no colours and no font names:
+   every such value is a var() supplied by the skin layer. Keep it
+   that way — a raw #hex or "Arial" in here is a bug, because it
+   silently pins one OEM's brand into the shared engine.
+
+   CSS LAYER ORDER (cascade matters — load in this order):
+
+     engine.css             THIS FILE — layout + structure
+     <oem>-skin.css         colour, type, cover chrome  — pick ONE
+     page-<size>.css        page size, margins, type scale, image scale — pick ONE
+
+   Nor does it hold page dimensions, type sizes or image widths;
+   those live in page-a4.css / page-a5.css as custom properties.
+   Every rule below references them via var() with an A4 fallback,
+   so building without a page file still yields a valid A4 document.
+
+   Skin tokens consumed by this file — a skin MUST define all of them:
+     --accent --accent-dark --text --text-soft --grey-rule --grey-soft
+     --danger --white --font --font-mono --table-border --table-zebra
+     --callout-info --callout-warn --callout-warn-b --callout-danger
+     --code-bg --link --cover-alt
+   ============================================================ */
+
+
+/* ---- PAGE SETUP ----------------------------------------- */
+/* size + margin come from the page-size file (page-a4.css / page-a5.css).
+   Only footer furniture is defined here — it is identical at every format. */
+@page {
+  /* Footer: full-width grey rule spanning the page, drawn in the left box */
+  @bottom-left {
+    content: "";
+    border-top: 0.5pt solid var(--grey-rule);
+    width: 100%;
+    margin-top: 0;
+  }
+
+  /* Centred page number, sitting just below the grey rule */
+  @bottom-center {
+    content: counter(page);
+    font-family: var(--font);
+    font-size: var(--table, 10pt);
+    color: var(--text);
+    vertical-align: top;
+    padding-top: 5pt;
+    border-top: 0.5pt solid var(--grey-rule);
+  }
+
+  /* Right box also carries the rule so the line spans full width */
+  @bottom-right {
+    content: "";
+    border-top: 0.5pt solid var(--grey-rule);
+    width: 100%;
+  }
+}
+
+/* Cover page (first page): no footer, no page number, no rule */
+@page :first {
+  margin: 0;
+  @bottom-left   { content: none; border-top: none; }
+  @bottom-center { content: none; border-top: none; }
+  @bottom-right  { content: none; border-top: none; }
+}
+
+/* ---- GLOBAL --------------------------------------------- */
+* {
+  box-sizing: border-box;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* width is set explicitly from --col so that percentage image widths
+   resolve against a known text column rather than an auto-sized box. */
+body {
+  font-family: var(--font);
+  font-size: var(--body, 11pt);
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--white);
+  margin: 0;
+  padding: 0;
+}
+
+/* Percentage image widths resolve against their containing block, so the
+   text column is pinned to --col to make those percentages predictable.
+   NOT set on body itself: the cover and back page are full-bleed children
+   of body and must keep the whole sheet width. */
+body > *:not(.cover):not(.back-page) {
+  max-width: var(--col, 174mm);
+}
+
+/* ---- HEADINGS ------------------------------------------- */
+/* All headings stay glued to the content that follows them —
+   a heading will never be the last thing on a page. */
+h1, h2, h3, h4 {
+  page-break-after: avoid;
+  break-after: avoid;            /* modern equivalent for WeasyPrint */
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* H1 = major numbered section. Accent colour, starts on a fresh page */
+h1 {
+  font-family: var(--font);
+  font-size: var(--h1, 17pt);
+  font-weight: bold;
+  color: var(--accent);
+  margin: 0 0 10pt 0;
+  padding: 0;
+}
+
+/* Reliable top breathing room above a fresh-page H1.
+   Uses PADDING, not margin: WeasyPrint truncates a top margin to zero at
+   a page boundary (so margin-based spacing vanishes on some pages and not
+   others — the inconsistency you saw). Padding is always honoured at the
+   top of a page, so every section heading sits the same distance down.
+   Excludes .cover-title so the cover layout is untouched.
+   break-before:page makes every numbered section start on a fresh page
+   automatically — no manual <div class="page-break"> needed before an H1. */
+h1:not(.cover-title):not(.doc-title) {
+  break-before: var(--h1-break, page);
+  page-break-before: var(--h1-break-legacy, always);
+  padding-top: var(--h1-pad-top, 18pt);   /* consistent chapter-drop above each fresh-page H1 */
+  margin-top: var(--h1-margin-top, 0);    /* used instead of padding when H1s flow in-line */
+  break-after: avoid;  page-break-after: avoid;
+  break-inside: avoid; page-break-inside: avoid;
+}
+
+/* Document title on the first content page (matches the approved v1.4 reference).
+   Big bold black title + lighter subtitle at the top of the first content page —
+   separate from the branded cover page and from numbered H1s. Excluded from the
+   page-break rule above so it flows inline above the intro, not on its own page. */
+.doc-title {
+  font-family: var(--font);
+  font-size: var(--doc-title, 26pt);
+  font-weight: bold;
+  color: var(--text);
+  line-height: 1.05;
+  margin: 0 0 2pt 0;
+  padding-top: 0;
+}
+.doc-subtitle {
+  font-family: var(--font);
+  font-size: var(--doc-subtitle, 17pt);
+  font-weight: normal;
+  color: var(--text);
+  margin: 0 0 12pt 0;
+}
+
+/* H2 = subsection. Accent colour, slightly smaller */
+h2 {
+  font-family: var(--font);
+  font-size: var(--h2, 13pt);
+  font-weight: bold;
+  color: var(--accent);
+  margin: var(--h2-margin, 16pt 0 6pt 0);
+  page-break-after: avoid;
+  page-break-inside: avoid;
+}
+
+/* H3 = minor heading. Body colour, bold (matches approved doc sub-labels) */
+h3 {
+  font-family: var(--font);
+  font-size: var(--h3, 11pt);
+  font-weight: bold;
+  color: var(--text);
+  margin: var(--h3-margin, 12pt 0 4pt 0);
+  page-break-after: avoid;
+}
+
+/* ---- BODY TEXT ------------------------------------------ */
+p {
+  margin: var(--p-margin, 0 0 8pt 0);
+  orphans: var(--orphans, 4);   /* keep lines together: a heading won't strand with 1-2 lines */
+  widows:  var(--widows, 4);    /* and a paragraph won't start a page with 1-2 trailing lines */
+}
+
+strong, b { font-weight: bold; }
+em, i { font-style: italic; }
+
+/* ---- LISTS ---------------------------------------------- */
+ul, ol {
+  margin: var(--list-margin, 6pt 0 10pt 0);
+  padding-left: 22pt;
+}
+li {
+  margin-bottom: var(--li-margin, 4pt);
+  page-break-inside: avoid;
+}
+
+/* Nested lettered sub-steps (A, B, C) like the approved guide */
+ol ol { list-style-type: upper-alpha; }
+ol ol ol { list-style-type: lower-alpha; }
+
+/* ---- CONTINUOUS ORDERED-LIST NUMBERING ------------------ */
+/* A standalone image block between numbered steps makes Pandoc/CommonMark end
+   one <ol> and start a fresh one, so the visible numbers restart at 1 mid-step
+   (e.g. §5.2 Wi-Fi, §6 Installer). We drive numbering with a counter that resets
+   at each section heading and increments per top-level <li>, so it runs
+   continuously across image-split lists but still restarts per section.
+   Nested lists keep their native A/B/C, a/b/c markers (untouched below).
+
+   Reset on h3/h4 as well as h1/h2: subsections carry their own step lists, and
+   with the reset only on h1/h2 they shared one counter — §6.4.1 ran 1-6 and
+   §6.4.2 then continued 7-15 instead of restarting, even though both are
+   written 1., 2., 3. in the markdown. */
+h1, h2, h3, h4 { counter-reset: step; }
+ol > li { counter-increment: step; }
+ol { list-style: none; }
+ol > li {
+  position: relative;      /* anchor the absolutely-positioned marker */
+}
+ol > li::before {
+  content: counter(step) ".";
+  font-weight: bold;
+  position: absolute;      /* pin the number top-left so it stays on the first
+                              line even when the item starts with a block
+                              (image / paragraph) — avoids a stranded "3." */
+  left: -22pt;
+  width: 20pt;
+  text-align: left;
+}
+/* Nested lists keep browser-native markers, not the step counter. */
+ol ol { list-style: upper-alpha; }
+ol ol ol { list-style: lower-alpha; }
+ol ol > li, ol ol ol > li { counter-increment: none; }
+ol ol > li::before, ol ol ol > li::before { content: none; }
+
+/* ---- IMAGES --------------------------------------------- */
+/* Default: cap width so diagrams don't run full-bleed and eat the page.
+   Sized as a percentage of the text column so it holds at any page format.
+   Images are centred.
+   Override per-image with a size class (see below). */
+img {
+  max-width: var(--img-default, 80%);   /* default standalone-image width (Option B); cover, tables, app screenshots have their own sizes */
+  height: auto;
+  display: block;
+  margin: var(--img-margin, 10pt auto);   /* centred, with breathing room above + below */
+  image-rendering: high-quality;
+  page-break-inside: avoid;       /* never split an image across pages */
+  break-inside: avoid;            /* modern browsers / WeasyPrint */
+}
+
+/* Per-image size overrides — tag the image in the markdown, e.g.
+   ![Pin layout](assets/images/example-diagram.png){.small}
+   or on a figure's <img class="small" ...>. Works on the image or its figure. */
+img.small,  figure.small img,  .small img  { max-width: var(--img-small,  32%); }   /* plugs, connectors, small diagrams */
+img.medium, figure.medium img, .medium img { max-width: var(--img-medium, 52%); }   /* mid-size screenshots */
+img.large,  figure.large img,  .large img  { max-width: 100%; }   /* full-width, the rare wide diagram */
+
+/* QR codes — brand.py tags these ({.doc-qr} for the standalone online-docs QR,
+   {.app-qr} for the app-store QRs in the §5.1 download table). A QR carries no
+   detail that rewards size: it only has to clear the ~25mm phone-scan floor.
+   At the default image width the standalone QR is ~105mm and gets pushed onto a
+   page of its own. Absolute, not a percentage — .app-qr sits in a table cell,
+   where a % resolves against the cell and collapses (see --img-cell). */
+img.doc-qr, figure.doc-qr img, .doc-qr img {
+  width: var(--img-qr, 32mm) !important;
+  max-width: var(--img-qr, 32mm) !important;
+  height: auto !important;
+}
+img.app-qr, figure.app-qr img, .app-qr img {
+  width: var(--img-app-qr, 26mm) !important;
+  max-width: var(--img-app-qr, 26mm) !important;
+  height: auto !important;
+}
+
+/* LCD TouchPoint screenshots — ONE fixed size across all guides, for both PNG and
+   SVG. `width` (not just max-width) + !important forces WeasyPrint to scale the SVG
+   box to this size instead of falling back to the SVG's intrinsic px dimensions. */
+img.lcd, figure.lcd img, .lcd img { width: var(--img-lcd, 69%) !important; max-width: var(--img-lcd, 69%) !important; height: auto !important; }
+
+/* Inline button glyph (plus/minus/chevron/power) sitting INSIDE a sentence.
+   Overrides the global block/centred image rule so it flows with the text. */
+img.icon {
+  display: inline;
+  max-width: none;
+  height: 1em;                     /* match the line's text height */
+  width: auto;
+  margin: 0 1pt;
+  vertical-align: -0.18em;         /* sit on the text baseline */
+  page-break-inside: avoid;
+}
+
+/* Side-by-side images: 2 (or 3) figures sitting in one flex row, each with its
+   own caption. Use <div class="img-row"> in the markdown, flush-left.
+   Row width is budgeted against the FULL text column (see the row budget in
+   _page-template.css), so a row must never inherit a list's indent — inside a
+   <li> it would start ~4mm in and hang the same distance past the right margin.
+   li > .img-row below cancels that indent so the row spans the true column. */
+.img-row {
+  display: flex;
+  gap: var(--img-row-gap, 6mm);
+  justify-content: center;
+  align-items: flex-start;
+  margin: var(--img-row-margin, 12pt 0);
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+/* Screenshot rows sit inside bullet items throughout the manual. Shift them back
+   out to the column edge; --list-indent is set per page file.
+   Negative margin on ONE side only — negating both would widen the flex
+   container instead of moving it, and justify-content:center would then spread
+   the figures into the extra width (measured: a 174mm row became 179.2mm). */
+li .img-row {
+  margin-left: calc(-1 * var(--list-indent, 0mm));
+  width: var(--col);
+  max-width: var(--col);
+}
+.img-row figure {
+  flex: 1 1 0;
+  margin: 0;
+  text-align: center;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.img-row img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Mobile-app screenshots — the phone frame is baked into the PNGs themselves,
+   so NO CSS bezel/border is applied (would double-frame them). Just sized.
+   Tag the image {.phone}. Works standalone or inside .img-row. */
+img.phone, .phone img {
+  box-sizing: border-box;
+}
+/* Every screenshot — single or in a row — is the SAME width for consistency.
+   NOTE: these are packed into <div class="img-row"> flex rows of 3 by brand.py,
+   so a % would resolve against the FLEX ITEM (~1/3 of the column) and collapse
+   to ~16mm. --img-phone is therefore an absolute length, set per page file. */
+img.phone, .img-row img.phone { width: var(--img-phone, 55mm); max-width: var(--img-phone, 55mm); }
+
+/* Figure wrapper keeps image + caption together as one block */
+figure {
+  margin: var(--figure-margin, 14pt 0);   /* consistent spacing around every figure */
+  padding: 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  text-align: center;
+}
+figure img {
+  margin: 0 auto;                 /* image inside a figure is centred, no double margin */
+  display: block;
+}
+figcaption {
+  font-size: var(--caption, 9pt);
+  color: var(--grey-soft);
+  margin-top: 6pt;
+  page-break-before: avoid;       /* caption never separates from its image */
+  break-before: avoid;
+}
+
+/* A heading immediately followed by an image must stay with that image.
+   This catches the very common "## Step 3" + screenshot pattern. */
+h1 + p img,
+h2 + p img,
+h3 + p img,
+h1 + figure,
+h2 + figure,
+h3 + figure {
+  page-break-before: avoid;
+  break-before: avoid;
+}
+
+/* Standalone images in a paragraph get the same protection + spacing */
+p > img:only-child {
+  page-break-inside: avoid;
+  break-inside: avoid;
+  margin: var(--standalone-img-margin, 12pt auto);
+  display: block;
+}
+
+/* ---- TABLES --------------------------------------------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--table-margin, 10pt 0);
+  font-size: var(--table, 10pt);
+  page-break-inside: avoid;       /* keep small tables whole */
+}
+thead { display: table-header-group; }  /* repeat header if table breaks */
+th {
+  background: var(--accent);
+  color: var(--white);
+  font-weight: bold;
+  text-align: left;
+  padding: 6pt 8pt;
+  border: 0.5pt solid var(--accent);
+}
+td {
+  padding: 6pt 8pt;
+  border: 0.5pt solid var(--table-border);
+  vertical-align: top;
+}
+tr { page-break-inside: avoid; }
+tr:nth-child(even) td { background: var(--table-zebra); }
+
+/* Diagram/pin tables use an EMPTY header row (|   |   |) so the image + pin
+   rows are plain bordered body cells (matches the approved wiring layout).
+   An empty header cell should read as a normal white cell, not an accent bar. */
+th:empty {
+  background: var(--white);
+  border: 0.5pt solid var(--table-border);
+  padding: 0;
+}
+
+/* Wiring/diagram tables (wrapped in .diagram-table in the markdown) shrink to
+   fit their content instead of stretching full width, so rows stay compact.
+   ~55% of the column keeps the image + pin column tidy on the left of the page. */
+.diagram-table table {
+  width: var(--diagram-table, 55%);
+}
+/* Inside a diagram table the header row holds the connector image (or is blank),
+   never a real column heading — so kill the accent header fill and white it out,
+   even when the cell contains an image (th:empty alone wouldn't catch that). */
+.diagram-table th {
+  background: var(--white) !important;
+  color: inherit;
+  border: 0.5pt solid var(--table-border);
+  padding: 4pt;
+}
+
+/* Images placed inside a table cell are wiring/connector diagrams — keep them
+   small so the cell hugs the image (matches the approved compact layout).
+   NOTE: a % here would resolve against the TABLE CELL, not the text column,
+   which collapses these to ~28mm. --img-cell is therefore an absolute length
+   (calc'd from --col in the page file), not a percentage. */
+td img, th img {
+  max-width: var(--img-cell, 58mm);
+  margin: 4pt auto;
+}
+
+/* Side-by-side image row: two (or more) images in one row, no borders,
+   no zebra striping — just images sitting next to each other, centred. */
+.image-row table { width: 100%; }
+.image-row th { display: none; }              /* drop the empty header row entirely */
+.image-row td {
+  border: none;
+  background: none !important;                /* override zebra striping */
+  text-align: center;
+  vertical-align: middle;
+  padding: 4pt;
+}
+.image-row td img { max-width: 100%; }        /* let each image fill its half-column */
+
+
+/* ---- CALLOUTS (3 types only) ---------------------------- */
+/* Use in markdown as blockquote with a leading marker:
+   > **Please note:** text...                → info
+   > **Warning:** text...                    → warning
+   > **Danger:** text...                     → danger
+   Or wrap in a div with the class for full control. */
+
+blockquote {
+  margin: 10pt 0;
+  padding: 8pt 12pt;
+  background: var(--callout-info);
+  border-left: 4pt solid var(--accent);
+  font-size: 10pt;
+  color: var(--text);
+  page-break-inside: avoid;
+}
+
+.callout-info {
+  background: var(--callout-info);
+  border-left: 4pt solid var(--accent);
+  padding: 8pt 12pt;
+  margin: 10pt 0;
+  page-break-inside: avoid;
+}
+.callout-warning {
+  background: var(--callout-warn);
+  border-left: 4pt solid var(--callout-warn-b);
+  padding: 8pt 12pt;
+  margin: 10pt 0;
+  page-break-inside: avoid;
+}
+.callout-danger {
+  background: var(--callout-danger);
+  border-left: 4pt solid var(--danger);
+  padding: 8pt 12pt;
+  margin: 10pt 0;
+  color: var(--danger);
+  page-break-inside: avoid;
+}
+
+/* ---- CODE (rare in these docs, but supported) ----------- */
+code {
+  font-family: var(--font-mono);
+  font-size: 9.5pt;
+  background: var(--code-bg);
+  padding: 1pt 3pt;
+}
+pre {
+  background: var(--code-bg);
+  border-left: 3pt solid var(--accent);
+  padding: 8pt 12pt;
+  font-size: 9pt;
+  page-break-inside: avoid;
+}
+
+/* ============================================================
+   SPECIAL PAGES — cover and back. Use HTML blocks in markdown.
+   ============================================================ */
+
+/* ---- COVER PAGE ----------------------------------------- */
+/* Markdown usage:
+   <div class="cover">
+     <div class="cover-inner">
+       <img class="cover-logo" src="assets/logos/<oem>-logo.svg">
+       <h1 class="cover-title">Product Title</h1>
+       <div class="cover-divider"></div>
+       <p class="cover-sub">INSTALLATION GUIDE</p>
+       <div class="cover-divider"></div>
+       <img class="cover-product" src="assets/images/<product>-cover.png">
+       <p class="cover-model">Model: MODEL-0000</p>
+     </div>
+   </div>
+*/
+.cover {
+  page-break-after: always;
+  height: var(--page-h, 297mm);  /* full page height (cover @page has 0 margin) — WeasyPrint ignores 100vh */
+  /* The cover @page has zero margin. body{width:--col} would otherwise
+     narrow it, so the cover reclaims the full sheet width itself. */
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--cover-pad, 16mm);
+  position: relative;
+}
+.cover-inner {
+  border: 4.5pt solid var(--accent);   /* accent border box — thicker, matches approved cover */
+  border-radius: 2pt;                  /* subtle rounded corners like approved doc */
+  height: 100%;
+  padding: var(--cover-inner-pad, 14mm 12mm 18mm 12mm);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertically centre the content stack within the bordered box */
+}
+/* A guide with a model number gets the fixed-height box: .cover-model carries
+   `margin-top:auto`, which soaks up the column's leftover space and pins the
+   model line to the bottom.
+   A guide WITHOUT one (a software manual) has no such element, and WeasyPrint
+   then overflows the whole flex column off the page — a BLANK cover, border
+   only. With no line to pin, the fixed height buys nothing, so let the box size
+   to its contents instead. `:has()` keeps the approved layout byte-identical
+   for every guide that does carry a model line.
+   Caught on the MIA app manual, the first guide to omit it. */
+.cover-inner:not(:has(.cover-model)) {
+  height: auto;
+}
+.cover-logo {
+  width: var(--cover-logo-w, 52mm);
+  align-self: flex-start;          /* left-align the logo on the cover */
+  margin: 0 auto var(--cover-logo-gap, 8mm) 0;            /* left:0 overrides the global img `margin:auto` centering */
+}
+.cover-title {
+  font-size: var(--cover-title, 30pt);
+  font-weight: bold;
+  color: var(--text);
+  line-height: 1.15;
+  margin: 0 0 var(--cover-title-gap, 6mm) 0;
+  page-break-after: auto;       /* cover title is exempt from avoid rule */
+}
+.cover-divider {
+  width: var(--cover-divider-w, 62mm);
+  height: 3pt;
+  background: var(--accent);
+  margin: var(--cover-divider-margin, 5mm) 0;
+}
+.cover-sub {
+  font-size: var(--cover-sub, 16pt);
+  font-weight: bold;
+  color: var(--text);
+  letter-spacing: 0.5pt;
+  margin: 0;
+}
+/* Alternate cover variant: --cover-alt border + dividers instead of --accent.
+   Tag the cover <div class="cover cover-qsg">. Only the cover changes; the rest
+   of the document keeps the accent colour. */
+.cover-qsg .cover-inner { border-color: var(--cover-alt); }
+.cover-qsg .cover-divider { background: var(--cover-alt); }
+
+.cover-product {
+  max-width: 82%;
+  align-self: center;
+  margin: var(--cover-product-gap, 8mm) auto 0 auto;   /* fills the middle band, centred */
+}
+.cover-model {
+  font-size: var(--cover-model, 15pt);
+  color: var(--text);
+  margin-top: auto;          /* pushed toward the bottom */
+  padding-top: var(--cover-model-pad-top, 8mm);
+  padding-bottom: var(--cover-model-pad-bottom, 6mm);       /* keeps a clear gap below, not jammed to the edge */
+}
+
+/* ---- COPYRIGHT & TRADEMARKS (top of back page) ---------- */
+/* Markdown usage: place inside the .back-page div, before the logo:
+   <h3 class="copyright-heading">Copyright &amp; Trademarks</h3>
+   <p class="copyright-text">Copyright© 2026 ...</p>
+   <p class="copyright-text">App Store is a service mark ...</p>
+   <div class="copyright-rule"></div>
+*/
+.copyright-heading {
+  font-size: 13pt;
+  font-weight: bold;
+  color: var(--text);
+  text-align: left;
+  margin: 0 0 var(--copyright-heading-gap, 5mm) 0;
+}
+.copyright-text {
+  font-size: 10pt;
+  color: var(--text);
+  text-align: left;
+  line-height: 1.4;
+  margin: 0 0 var(--copyright-text-gap, 4mm) 0;
+}
+.copyright-rule {
+  border: none;
+  border-top: 0.75pt solid var(--grey-rule);
+  margin: var(--copyright-rule-gap, 6mm) 0 0 0;
+}
+
+/* ---- BACK PAGE (logo + contact info) -------------------- */
+/* Markdown usage:
+   <div class="back-page">
+     <img class="back-logo" src="assets/logos/<oem>-logo.svg">
+     <p class="back-company">Example Company Pty Ltd</p>
+     <p class="back-links"><a href="https://www.example.com">www.example.com</a> | <a href="https://www.example.co.nz">www.example.co.nz</a></p>
+     <p class="back-contact">contact@example.com | 0000 000 000</p>
+   </div>
+*/
+.back-page {
+  page-break-before: always;
+  text-align: center;
+  padding-top: var(--back-pad-top, 18mm);
+}
+.back-page .back-logo {
+  margin-top: var(--back-logo-gap, 34mm);   /* gap between the copyright block and the logo */
+}
+.back-logo {
+  width: var(--back-logo-w, 70mm);
+  margin: 0 auto var(--back-logo-margin, 8mm) auto;
+}
+.back-company {
+  font-size: 11pt;
+  color: var(--text);
+  margin: var(--back-line-gap, 2mm) 0;
+}
+.back-links {
+  font-size: 10pt;
+  color: var(--link);          /* standard blue hyperlink, matches approved doc */
+  text-decoration: underline;
+  margin: var(--back-line-gap, 2mm) 0;
+}
+/* AU and NZ are two separate sites, each its own clickable link — keep the
+   approved blue-underline look rather than the default UA link colour. */
+.back-links a { color: var(--link); text-decoration: underline; }
+.back-contact {
+  font-size: 10pt;
+  color: var(--text);
+  margin: var(--back-line-gap, 2mm) 0;
+}
+
+/* ---- UTILITY -------------------------------------------- */
+.page-break { page-break-before: always; }
+.no-break   { page-break-inside: avoid; }
+.center     { text-align: center; }
+
+/* Extra air below an image immediately followed by the next section's heading.
+   OPT-IN: fires only on images tagged {.view-gap} — currently the Front and Top
+   component views in the QSG Hardware Overview. No other image is affected.
+
+   Must target the WRAPPER, not the img. brand.py strips alt text, so pandoc
+   emits <p><img class="view-gap">; the <p> (or <figure>, when alt survives) is
+   the block adjacent to the heading, and a margin on the img is trapped inside
+   it and never reaches the gap. A rule on .view-gap itself measurably does
+   nothing — verified at both 10pt and 12pt.
+
+   The gap is the COLLAPSED max() of the wrapper's bottom margin and the
+   heading's top margin; they do not add. 14pt clears --p-margin (5pt A5 /
+   6pt A4) and --h3-margin's top (6pt A5 / 8pt A4), giving ~5.6mm — double
+   the 2.8mm default at both page sizes. */
+p:has(> img.view-gap),
+figure:has(img.view-gap) { margin-bottom: 14pt; }
+
+/* Suppress the auto-generated Pandoc title block on cover */
+header#title-block-header,
+.title { display: none; }
+
+/* ============================================================
+   TABLE OF CONTENTS — clickable navigation, on its own page
+   Generated automatically by Pandoc with --toc flag
+   ============================================================ */
+
+/* The TOC sits on its own page after the cover */
+nav#TOC, #TOC, .toc {
+  page-break-before: always;
+  page-break-after: always;
+  padding-top: var(--toc-pad-top, 4mm);
+}
+
+/* TOC heading "Contents" */
+nav#TOC::before, #TOC::before {
+  content: "Contents";
+  display: block;
+  font-family: var(--font);
+  font-size: var(--h1, 17pt);
+  font-weight: bold;
+  color: var(--accent);
+  border-bottom: 2.5pt solid var(--accent);
+  padding-bottom: 6pt;
+  margin-bottom: 14pt;
+}
+
+/* TOC list — clean, no bullets */
+nav#TOC ul, #TOC ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+nav#TOC ul ul, #TOC ul ul {
+  padding-left: var(--toc-indent, 12mm);   /* indent H2 entries under H1 */
+}
+
+/* TOC entries */
+nav#TOC li, #TOC li {
+  margin: 0 0 7pt 0;
+  page-break-inside: avoid;
+}
+
+/* TOC links — accent colour, no underline */
+nav#TOC a, #TOC a {
+  text-decoration: none;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 11pt;
+}
+
+/* H1-level TOC entries — bold black */
+nav#TOC > ul > li > a, #TOC > ul > li > a {
+  font-weight: bold;
+  color: var(--text);
+  font-size: 11.5pt;
+}
+
+/* H2-level TOC entries — lighter */
+nav#TOC ul ul a, #TOC ul ul a {
+  font-weight: normal;
+  color: var(--text-soft);
+  font-size: 10.5pt;
+}

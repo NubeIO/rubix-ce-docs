@@ -1,0 +1,56 @@
+/* ============================================================
+   anywAiR / Zoneconnex — BRAND SKIN
+   Matches approved Fujitsu General style
+   Font: Arial  ·  Accent: #008996 teal
+   ============================================================
+
+   This file holds ONLY brand values: colours, fonts, and the few
+   cover/back-page chrome details that are specific to anywAiR.
+   It contains no layout, no page dimensions, and no structural
+   rules — those are in engine.css, which is brand-neutral.
+
+   CSS LAYER ORDER (cascade matters — load in this order):
+
+     engine.css             layout + structure   (brand-neutral)
+     <oem>-skin.css         THIS LAYER — colour, type, chrome
+     page-<size>.css        page size, margins, type scale, image scale
+
+   TO ADD A NEW OEM SKIN: copy this file, change the token values
+   below, and point [brand].css in project.toml at it. You should
+   not need to touch engine.css. If a new skin cannot be expressed
+   in these tokens, add a token to the engine rather than forking it.
+   ============================================================ */
+
+:root {
+  /* ---- PALETTE ------------------------------------------- */
+  --accent:      #008996;   /* anywAiR teal — headings, rules, cover border */
+  --accent-dark: #006670;   /* darker teal for hover/depth if needed */
+  --text:        #000000;   /* body text — black, matches approved doc */
+  --text-soft:   #333333;   /* secondary text */
+  --grey-rule:   #A6A6A6;   /* footer rule grey, matches original */
+  --grey-soft:   #888888;   /* captions */
+  --danger:      #C00000;   /* safety red */
+  --white:       #FFFFFF;
+
+  /* ---- TYPEFACE ------------------------------------------ */
+  --font:      Arial, Helvetica, sans-serif;
+  --font-mono: 'Courier New', monospace;
+
+  /* ---- DERIVED SURFACES ---------------------------------- */
+  /* Table and callout fills. Tinted from --accent by hand — if you
+     change --accent, re-pick these; they are not computed. */
+  --table-border:   #CCCCCC;   /* cell borders */
+  --table-zebra:    #F2F9FA;   /* even-row fill, a pale tint of --accent */
+  --callout-info:   #E6F4F5;   /* info / blockquote fill */
+  --callout-warn:   #FEF3C7;   /* warning fill */
+  --callout-warn-b: #E0A800;   /* warning left border */
+  --callout-danger: #FDE8EA;   /* danger fill */
+  --code-bg:        #F4F4F4;   /* inline code + pre fill */
+  --link:           #0563C1;   /* standard blue hyperlink, matches approved doc */
+
+  /* ---- COVER VARIANT ------------------------------------- */
+  /* The Quick Start Guide cover uses a red border + dividers instead of
+     the teal. Tag the cover <div class="cover cover-qsg">. Only the
+     cover changes; the rest of the document keeps the teal accent. */
+  --cover-alt: #ED1B25;
+}
