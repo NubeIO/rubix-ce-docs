@@ -3,32 +3,29 @@
 # 1. About Product
 
 ## 1.1. Product Overview
-The UART Long Range Adaptor (LRA) is anywAiR iO’s wireless (LoRa®) Long Range Adaptor (LRA) controller. Designed to
-interface directly with compatible RAC/PAC and VRF Air Conditioning units in a small package, reducing the installation time and bypassing the AT command interface.
+The Long Range Adaptor (LRA) is anywAiR iO’s wireless (LoRa®) Long Range Adaptor (LRA) controller. Designed to
+interface directly with compatible General Airstage Split System, Multi System and VRF Air Conditioning units wirelessly through the LoRa wireless IoT technology, reducing the installation time and bypassing the AT command interface.
 
 LoRa® wireless IoT technology offers a long
 transmission range, low power consumption, and is less susceptible to object interference than other wireless technologies. This ensures seamless control integration for a range of applications.
 
-![max600px](img/uart-render-2.png)
+![max600px](img/uart-render-5.png)
 
 
 ## 1.2. Architecture
-**Long Range Adaptor (LRA):** Acts as the communication device, interfacing with compatible RAC/PAC and VRF Air Conditioning units via the UART protocal. It manages data transmission to and from the central anywAiR iO gateway. <br/>
+**Long Range Adaptor (LRA):** Acts as the communication device, interfacing with compatible General Airstage Split System, Multi System and VRF Air Conditioning units via the UART protocol. It manages data transmission to and from the central anywAiR iO gateway. <br/>
 **anywAiR iO Gateway:** Serves as the central node, managing communication from multiple Long Range Adaptor (LRA) devices and distributing data as needed. <br/>
-**Control:** The Long Range Adaptor (LRA) device directly manages data exchange with compatible Air Conditioning units using their specific UART protocol.
+**Control:** The Long Range Adaptor (LRA) device directly manages data exchange with compatible General Airstage Air Conditioning units using their specific UART protocol.
 
 
 ## 1.3. Product Features
 **Operation Control:** Enable the unit on and off.<br/>
-**Mode Control:** Switch between cool, heat, dry, auto, and fan modes.<br/>
-**Temperature Setpoint Control:** Adjust heating/cooling temperature setpoint.
-- Cooling setpoint 18 to 30 degrees Celsius
-- Heating setpoint 16-18 to 30 degrees Celsius (low limit model dependent)
-
+**Mode Control:** Switch between cool, heat, dry, auto, and fan modes (model dependent).<br/>
+**Temperature Setpoint Control:** Adjust heating/cooling temperature setpoint in line with the mode and model operation ranges.<br/>
 **Fan Speed Control:** Control fan speed (model dependent).<br/>
 **Louvre Direction Control:** Adjust vertical and horizontal louvre position and louvre swing operation (model dependent).<br/>
 **Economy Control:** Enable and disable the unit's economy mode. <br/>
-**Return Air Temperature Monitoring:** Monitor the return air temperature.<br/>
+**Return Air Temperature Monitoring:** Monitor the return air temperature (model dependent).<br/>
 **Error Status Reporting:** Retrieve the error status and error code.
 
 <br/>
@@ -37,7 +34,7 @@ transmission range, low power consumption, and is less susceptible to object int
 
 ## 2.1. Packing List
 - Installation & User Manual. 
-- UART Long Range Adaptor (LRA) Device
+- anywAiR iO Long Range Adaptor
 - LoRa Antenna. 
 - PAP-04V-S power/communication cable. 
 - Mounting screws/velcro tape.
@@ -52,7 +49,7 @@ transmission range, low power consumption, and is less susceptible to object int
 | Height:               	| 36 mm / 1.42 inches                   	  |
 | Width:                	| 110 mm / 4.33 inches                      |
 | Depth:                	| 35 mm / 1.38 inches                     	|
-| Enclosure             	| Light Grey Polycarbonate, IP68 Rated 	    |
+| Enclosure             	| Light Grey Polycarbonate, IP54 Rated 	    |
 
 ![max1000px](img/UART_Dimensions-1.png)
 
@@ -62,12 +59,12 @@ transmission range, low power consumption, and is less susceptible to object int
 - U.FL Antenna Connector: Connects the antenna for wireless communication.
 - Mounting Holes: Allows for secure mounting via appropriate fixings.
 - Countersunk Screws: Allows for easy opening of the device.
-- Nylon Bushing: Facilitates the entry of cables into the device.
+- Nylon Bushing: Facilitates the entry of the connecting cable into the device.
 
 ![max1000px](img/UART-LoRaLink-External-Parts.png)
 
 ### 2.3.2 Internal
-- **Reset Button:** Pressing this button will reset the UART Long Range Adaptor (LRA), restart the firmware and publish a lora message.
+- **Reset Button:** Pressing this button will reset the anywAiR iO Long Range Adaptor (LRA), restart the firmware and publish a lora message.
 - **Boot Button:** Used to enter the device into Boot mode for firmware updates
 - **LED Indicators:** Used to indicate device operation status's.
   - Red PWR light - When active indicates the device is powered.
@@ -76,7 +73,7 @@ transmission range, low power consumption, and is less susceptible to object int
   - Orange L1 light - Will be inactive in normal operation. If reset is pressed L1 will illuminate momentarily during the reboot cycle.
 - **Lora Connector:** Connects the U.FL Antenna Connector to the internal PCB.
 - **USB-C Port:** Provides a connection point to update the device firmware.
-- **CN Connector:** Connection point for the PAP-04V-S Connector linking the Long Range Adaptor (LRA) to the Air Conditioner UART port (CN6, CN65 or CN75).
+- **CN Connector:** Connection point for the PAP-04V-S Connector linking the Long Range Adaptor (LRA) to the Air Conditioner UART port (refer to compatibility list for specific port for each indoor unit).
 - **PCB Screws:** Used to secure the PCB in the enclosure.
 
 ![max1000px](img/UART-LoRaLink-Internal-Parts.png)
@@ -86,22 +83,22 @@ transmission range, low power consumption, and is less susceptible to object int
 # 3. Installation & Configuration
 
 ## 3.1. Mounting
-The UART Long Range Adaptor (LRA) can be mounted in several ways depending on the type of air conditioning system. In all cases, the antenna must remain vertical (unless specifically noted). The UART Long Range Adaptor (LRA) should always be mounted in a location such that it will not experience extreme high or low temperatures, liquids or high humidity. Use either the provided Velcro tape or fixings, depending on the surface and accessibility. 
+The anywAiR iO Long Range Adaptor (LRA) can be mounted in several ways depending on the type of air conditioning system. In all cases, the antenna must remain vertical (unless specifically noted). The anywAiR iO Long Range Adaptor (LRA) should always be mounted in a location such that it will not experience extreme high or low temperatures, liquids or high humidity. Use either the provided Velcro tape or fixings, depending on the surface and accessibility. 
 
 **General Notes**
 
 - Keep the antenna vertical and unobstructed for best signal performance.
 - Use existing penetrations where possible to avoid damaging the air conditioning unit.
-- Velcro tape is preferred where drilling may risk damage to internal components.
+- Do not drill through the air conditioner as there is a risk of damaged to internal components.
 - Ensure the cable path is tidy, protected, and free from heat sources or moving parts.
 
 ### 3.1.1 Direct Mounting 
-The UART Long Range Adaptor (LRA) can be mounted via fixings utilising the mounting clips depending on the type of air conditioning system and mounting location.
+The anywAiR iO Long Range Adaptor (LRA) can be mounted via screws and wall plugs where suitable.
 
 Direct Mounting Process:
-1. Position the UART Long Range Adaptor (LRA) against the mounting location & mark the fixing points.
+1. Position the anywAiR iO Long Range Adaptor (LRA) against the mounting location & mark the fixing points.
 2. Drill the holes & insert wall plugs if required.
-3. Secure the UART Long Range Adaptor (LRA) using appropriate screws or fixings.
+3. Secure the anywAiR iO Long Range Adaptor (LRA) using appropriate screws or fixings.
 4. Gently pull forward to confirm it is firmly mounted.
 
 ![max800px](img/screw-mounting.png)
@@ -109,32 +106,31 @@ Direct Mounting Process:
 <br/>
 
 ### 3.1.2 Adhesive Mounting 
-The UART Long Range Adaptor (LRA) can be mounted via adhesive velcro tape depending on the type of air conditioning system and mounting location.
+The anywAiR iO Long Range Adaptor (LRA) can be mounted via adhesive velcro tape depending on the type of air conditioning system and mounting location.
 
 Adhesive Mounting Process:
 1. Clean the mounting surface with a suitable cleaner to remove dust, grease, or other contaminants.
-2. Peel the backing strips off one side of the Velcro pads and stick them to the back of the UART Long Range Adaptor (LRA) device.
-3. Then, remove the remaining backing strips and press the UART Long Range Adaptor (LRA) firmly against the wall or surface where it will be mounted. Maintain firm pressure for approximately 30 seconds to ensure a strong bond.
+2. Peel the backing strips off one side of the Velcro pads and stick them to the back of the anywAiR iO Long Range Adaptor (LRA) device.
+3. Then, remove the remaining backing strips and press the anywAiR iO Long Range Adaptor (LRA) firmly against the wall or surface where it will be mounted. Maintain firm pressure for approximately 30 seconds to ensure a strong bond.
 
 ![max700px](img/adhesive-mounting.png)
 
 <br/>
 
 ### 3.3 Unit Mounting Locations
-The UART Long Range Adaptor (LRA) can be mounted in various locations depending on the type of air conditioning system. The following sections outline the recommended mounting locations for different system types.
+The anywAiR iO Long Range Adaptor (LRA) can be mounted in various locations depending on the type of air conditioning system. The following sections outline the recommended mounting locations for different system types.
 
-#### 3.3.1 Split Systems
-The UART Long Range Adaptor (LRA) can be mounted:
+#### 3.3.1 Wall Mounted Indoor Units
+The anywAiR iO Long Range Adaptor (LRA) can be mounted:
 
-- On the unit — either at the bottom, top, or side of the outdoor case.
+- On the indoor unit — either at the bottom, top, or side of the outer chassis.
 - On the wall next to the unit — horizontally or vertically.
-- Inside trunking — above or beside cable penetrations.
 
 Choose the closest practical location to the electrical PCB.
 Ensure the antenna is vertical and that cables are routed cleanly via existing penetrations or wall cavities.
 
-#### 3.3.2 Ducted Systems
-The UART Long Range Adaptor (LRA) can be mounted:
+#### 3.3.2 Ducted Indoor Units
+The anywAiR iO Long Range Adaptor (LRA) can be mounted:
 
 - Top of the indoor unit
 - A nearby joist
@@ -142,8 +138,8 @@ The UART Long Range Adaptor (LRA) can be mounted:
 
 Velcro or screws can be used, depending on the surface. Maintain a clear vertical antenna position.
 
-#### 3.3.3 Under-Ceiling Systems
-The UART Long Range Adaptor (LRA) can be mounted::
+#### 3.3.3 Under Ceiling Console Indoor Units
+The anywAiR iO Long Range Adaptor (LRA) can be mounted::
 
 - Bottom right-hand side of the unit
 - Top right-hand side of the unit
@@ -151,8 +147,8 @@ The UART Long Range Adaptor (LRA) can be mounted::
 
 Use existing cable entry points. Attach with Velcro or screws as appropriate.
 
-#### 3.3.4 Cassette Systems
-The UART Long Range Adaptor (LRA) can be mounted:
+#### 3.3.4 Ceiling Cassette Indoor Units
+The anywAiR iO Long Range Adaptor (LRA) can be mounted:
 
 - On the ceiling surface
 - On the side of the cassette unit
@@ -161,8 +157,8 @@ The UART Long Range Adaptor (LRA) can be mounted:
 Choose the closest practical location to the electrical PCB.
 Ensure the antenna is vertical and that cables are routed cleanly via existing penetrations or roof cavities.
 
-#### 3.3.5 Floor Systems
-The UART Long Range Adaptor (LRA) can be mounted:
+#### 3.3.5 Floor Console Indoor Units
+The anywAiR iO Long Range Adaptor (LRA) can be mounted:
 
 - On the side of the floor unit
 - On the wall next to the unit
@@ -174,9 +170,9 @@ Ensure the antenna is vertical and that cables are routed cleanly via existing p
 
 ## 3.4. UART Connection
 
-The UART Long Range Adaptor (LRA) is designed to connect to the indoor unit of the air conditioning system. The connection is made using the supplied PAP-04V-S cable, which has a 4-pin connector on one end for the indoor unit and a 4-pin connector on the other end for the UART Long Range Adaptor (LRA).
+The anywAiR iO Long Range Adaptor (LRA) is designed to connect to the indoor unit of the air conditioning system. The connection is made using the supplied PAP-04V-S cable, which has a 4-pin connector on one end for the indoor unit and a 4-pin connector on the other end for the anywAiR iO Long Range Adaptor (LRA).
 
-Note: If a different cable is used, ensure that the pinout matches the following configuration as pin 3 and 4 are reversed between the indoor unit and the UART Long Range Adaptor (LRA). the provided PAP-04V-S cable is designed to match the pinout of the indoor unit and the UART Long Range Adaptor (LRA) regardless of which end is connected to which device.
+Note: Only use the cable that comes with the device, using a different cable can cause failure.
 
 | Indoor Unit  |                |
 |-----------	|----------------|
@@ -185,7 +181,7 @@ Note: If a different cable is used, ensure that the pinout matches the following
 | Pin 3     	| Sending Tx     |
 | Pin 4      	| Receiving Rx   |
 
-| UART Long Range Adaptor (LRA)    |                |
+| anywAiR iO Long Range Adaptor (LRA)    |                |
 |-----------	|----------------|
 | Pin 1     	| 12VDC          |  
 | Pin 2     	| DC Ground      |
@@ -198,27 +194,27 @@ Note: If a different cable is used, ensure that the pinout matches the following
 <br/>
 
 ## 3.5. Installation
-Connect the UART Long Range Adaptor (LRA) follor the below steps:
-<!-- > **Note:** It is advised to install the antenna vertically and keep it clear of obstructions for maximum transmission capability between the UART Long Range Adaptor (LRA) and the Rubix Compute(s) on site. -->
+Connect the anywAiR iO Long Range Adaptor (LRA) following the below steps:
+<!-- > **Note:** It is advised to install the antenna vertically and keep it clear of obstructions for maximum transmission capability between the anywAiR iO Long Range Adaptor (LRA) and the Rubix Compute(s) on site. -->
 
-1. Remove the cover of the UART device by loosening the 4 external screws. (Refer to section 2.3.1)
+1. Remove the cover of the anywAiR iO Long Range Adaptor by loosening the 4 external screws. (Refer to section 2.3.1)
 2. Attach the supplied LoRa antenna to the U.FL Antenna Connector. (Refer to section 2.3.1)
-3. Locate the air conditioner unit that the UART Long Range Adaptor (LRA) device is to be installed on.
+3. Locate the air conditioner unit that the anywAiR iO Long Range Adaptor (LRA) device is to be installed on.
 4. Remove the electrical panel cover from the air conditioner indoor unit.
-   - For **wall-mounted**, **floor-mounted**, and **under-ceiling** systems: remove the plastic case of the air conditioner.
-   - For **cassette systems**: remove the air intake cover.
-   - For **ducted systems**: remove the electrical door/panel.
+   - For **wall-mounted**, **floor-mounted**, and **under-ceiling** indoor units: remove the plastic case of the air conditioner.
+   - For **cassette indoor units**: remove the air intake cover.
+   - For **ducted indoor units**: remove the electrical door/panel.
 
-5. Locate the **CN6**, **CN65**, or **CN75** plug base on the indoor unit's printed control board. The available plug depends on the unit model. Check the air conditioner’s user guide and installation manual for details.
-6. Plug the PAP-04V-S cable into the available CN6, CN65 or CN75 plug.
-7. There are four LED indicators on the PCB inside the UART Long Range Adaptor (LRA) enclosure. (Refer to section 2.3.1.) <br/>
+5. Locate the **CN6**, **CN65**, or **CN75** port, on the indoor unit's  PCB. The available port depends on the unit model. Check the air conditioner’s user guide and installation manual for details.
+6. Plug the connection cable into the available UART port on the indoor unit (for specific port numbers for each model refer to the anywAiR iO Long Range Adaptor compatibility list).
+7. There are four LED indicators on the PCB inside the anywAiR iO Long Range Adaptor (LRA) enclosure. (Refer to section 2.3.1.) <br/>
     When initially powered:
 
     - **PWR** and **TX** will illuminate and hold.  
     
     After approximately 15 seconds:
 
-    - **L1**, **TX**, and **RX** will begin alternating flashing — this indicates the UART Long Range Adaptor (LRA) is receiving and transmitting data.
+    - **L1**, **TX**, and **RX** will begin alternating flashing — this indicates the anywAiR iO Long Range Adaptor (LRA) is receiving and transmitting data.
 
     Then:
 
@@ -235,16 +231,16 @@ Test control via the dashboard. Change operating settings and ensure the air con
 > - If a **wired remote controller** is present, ensure all setting changes are reflected on the wall controller.  
 > - If a **wireless remote** is used, toggle power and change modes to ensure the unit responds correctly. -->
 
-8. Once connected to the correct indoor unit, ensure the UART Long Range Adaptor (LRA) is mounted securely as per **Section 2. Mounting** and ensure the antenna is positioned correctly to maximise signal transmission.
-9. After confirming the enclosure is correctly installed, reinstall the front cover. The device is now ready to be paired with the onsite dashboard.
+8. Once connected to the correct indoor unit, ensure the anywAiR iO Long Range Adaptor (LRA) is mounted securely as per **Section 2. Mounting** and ensure the antenna is positioned correctly to maximise signal transmission.
+9. After confirming the enclosure is correctly installed, reinstall the front cover. The device is now ready to be paired with the onsite gateway.
 10.  Reinstall the electrical panel on the indoor unit. Then reinstall the air conditioner’s plastic cover (if applicable).
 
  <br/>
 
 ## 3.6. Configuration
-The UART Long Range Adaptor (LRA) can be configured in two ways.
+The anywAiR iO Long Range Adaptor (LRA) can be configured in two ways.
 
-**Option 1** is to configure and manage the Long Range Adaptors (LRAs) via the anywAiR iO Mobile App. This method is the simplest and most efficient as the installer can add and manage devices from anywhere in the facility using only there mobile phone.
+**Option 1** is to configure and manage the Long Range Adaptors (LRAs) via the LRA Setup: anywAiR iO App. This method is the simplest and most efficient as the installer can add and manage devices while connected to the supplied enclosure with the modem and gateway..
 
 **Option 2** is to configure and manage the Long Range Adaptors (LRAs) via anywAiR iO's engineering software, Rubix CE. Further details outlining Lora configuration in Rubix CE can be found using the following link: **[LoraRaw](/rubix-ce-docs/docs/rubix-ce/drivers/lora/lora-raw/lora)**
 
@@ -266,10 +262,12 @@ The UART Long Range Adaptor (LRA) can be configured in two ways.
 ### 3.6.2 Gateway Management
 There are two methods to add a Rubix Compute Gateway via the mobile app. 
 1. Manually Entering the gateway configuration details 
-2. Scanning the local network for compatible Rubix Computes
+2. Scanning the local network for compatible Rubix Compute Gateways
+
+Please note: The on-site gateway will need to plugged in, powered up, and on-line to perform either of these.
 
 **Manually Adding a Gateway**
-1. Launch the mobile app and ensure Rubix Computes Screen is opened.
+1. Launch the mobile app and ensure Rubix Compute Gateways Screen is opened.
 2. Press the `Add Rubix Compute` button located on the bottom right of the screen.
 3. Press the `Enter Details Manually` button to select this method and navigate to the configuration.
 4. Enter the appropriate information. The mandatory fields include:
@@ -283,10 +281,10 @@ There are two methods to add a Rubix Compute Gateway via the mobile app.
 **Note:** If you are unsure of the username and password please contact your service provider or anywAiR iO technical suport via `support@nube-io.com`
 
 **Scanning Network to Add a Gateway**
-1. Launch the mobile app and ensure Rubix Computes Screen is opened.
+1. Launch the mobile app and ensure Rubix Compute Gateways Screen is opened.
 2. Press the `Add Rubix Compute` button located on the bottom right of the screen.
-3. Press the `Enter Details Manually` button to select this method and initiate the network scan. A progress bar will automatically be displayed showing the scan progress.
-4. Any compatible Rubix Compute Gateways will show in the `Found Gateway's`section below the progress bar. Select the desired Rubix Compute to enter the configuration menu and fill out the mandatory fields:
+3. Press the `Scan Network` button to select this method and initiate the network scan. A progress bar will automatically be displayed showing the scan progress.
+4. Any compatible Rubix Compute Gateways will show in the `Found Gateway's`section below the progress bar. Select the desired Rubix Compute Gateway to enter the configuration menu and fill out the mandatory fields:
     - Gateway Name
     - Username
     - Password
@@ -295,32 +293,36 @@ There are two methods to add a Rubix Compute Gateway via the mobile app.
 **Note:** If you are unsure of the username and password please contact your service provider or anywAiR iO technical suport via `support@nube-io.com`
 
 **Editing a Gateway**
-1. Launch the mobile app and ensure Rubix Computes Screen is opened.
+1. Launch the mobile app and ensure Rubix Compute Gateways Screen is opened.
 2. Press on the `information` button ![info icon](img/information-icon-30pix.png) for the gateway you wish to edit and enter the gateway information view
 3. Press the `pencil` button ![pencil icon](img/Edit-Pencil-30pix.png) to enter the editable settings for the rubix compute gateway.
 4. Update/edit gateway information and re-enter the password.
 5. Press `Update` button to save and apply the changes. The App will then navigate to the devices screen for the updated gateway.
 
 **Deleting a Gateway**
-1. Launch the mobile app and ensure Rubix Computes Screen is opened.
+1. Launch the mobile app and ensure Rubix Compute Gateways Screen is opened.
 2. Press on the `information` button ![info icon](img/information-icon-30pix.png) for the gateway you wish to edit and enter the gateway information view
 3. Press the `Delete Gateway` button at the bottom of the gateway information screen.
 4. A confirmation warning will appear with the following options <br/>  
     - `Cancel`: Select this option if you wish to cancel the deletion. <br/>  
     - `Delete`: Select this option to confirm the deletion. <br/>
-5. If deletion is confirmed as per Step-4 the Rubix Compute gateway will be removed and user will be navigated back to the Rubix Computes gateways screen.
+5. If deletion is confirmed as per Step-4 the Rubix Compute Gateway will be removed and user will be navigated back to the Rubix Compute Gateways screen.
 
 **Accessing Gateway Information**
-1. Launch the mobile app and ensure Rubix Computes Screen is opened.
-2. Press on the `information` button ![info icon](img/information-icon-30pix.png) for the Rubix Compute Gateway you wish to enter the Device information view.
+1. Launch the mobile app and ensure Rubix Compute Gateways Screen is opened.
+2. Press on the `information` button ![info icon](img/information-icon-30pix.png) for the Rubix Compute Gateway you wish to enter the Device information view. Here you'll find the following details: <br/>
+    - Name
+    - IP Address
+    - Port
+    - Username
 
 <br/>
 
 ### 3.6.3 Device Management
 
-There are two methods to add a Long Range Adaptor (LRA) Device via the mobile app. 
-1. Manually Entering the Long Range Adaptor (LRA) device details 
-2. Scanning the device QR Code
+There are two methods to add a Long Range Adaptor (LRA) via the mobile app. 
+1. Manually Entering the Long Range Adaptor (LRA) details.
+2. Scanning the device QR Code.
 
 **Manually Adding a Long Range Adaptor (LRA)**
 1. Launch the mobile app and ensure Rubix Computes Screen is opened.
@@ -332,7 +334,7 @@ There are two methods to add a Long Range Adaptor (LRA) Device via the mobile ap
     - Address UUID (8 digit ID located on the product labelling on the Long Range Adaptor (LRA) device)
     - History Enable/Diable (Enabled as default)
 6. Press the `Continue` button located on the bottom of the screen to confirm the configuration and the device will be created and points provisioned.
-7. Once the Long Range Adaptor (LRA) device returns a response during the provisioning the controls dashboard will be automatically generated and opened for the newly added device.
+7. Once the Long Range Adaptor (LRA) returns a response during the provisioning the controls dashboard will be automatically generated and opened for the newly added device.
 
 **Scanning the QR Code**
 1. Launch the mobile app and ensure Rubix Computes Screen is opened.
@@ -340,9 +342,9 @@ There are two methods to add a Long Range Adaptor (LRA) Device via the mobile ap
 3. Press the `Add Device` button located on the bottom right of the screen.
 4. Press the `Scan Device QR` button to select this method and navigate to the configuration.
 5. Scan the QR Code displayed on the Long Range Adaptor (LRA) device.
-6. 
-
-***TBC***
+6. Once the QR Code is scanned, the device UUID will be automatically populated. Enter the remaining appropriate information. The remaining mandatory fields include: 
+    - Device Name
+    - History Enable/Diable (Enabled as default)
 
 **Editing a Device**
 1. Launch the mobile app and navigate from the Rubix Computes screen to the Devices Screen for the appropriate gateway.
@@ -368,21 +370,21 @@ There are two methods to add a Long Range Adaptor (LRA) Device via the mobile ap
 
 # 4. Operation Guide
 
-The Long Range Adaptor (LRA) allows users to control and monitor compatible RAC/PAC and VRF Air Conditioning units in a small package, reducing the installation time and bypassing the AT command interface. 
+The Long Range Adaptor (LRA) allows users to control and monitor compatible General Airstage Split System, Multi System and VRF Air Conditioning units, reducing the installation time and bypassing the AT command interface. 
 
 The Long Range Adaptor (LRA) interface dynamically configures the control panel based on the connected unit model, reflecting only the operating modes and control points supported by that model.
 
 The following are key control and monitoring points available to the user:
 
 **Operation Control:** Enable the unit on and off.<br/>
-**Mode Control:** Switch between cool, heat, dry, auto, and fan modes.<br/>
+**Mode Control:** Switch between cool, heat, dry, auto, and fan modes (model dependent).<br/>
 **Temperature Setpoint Control:** Adjust heating/cooling temperature setpoint.
 - Cooling setpoint 18 to 30 degrees Celsius
 - Heating setpoint 16-18 to 30 degrees Celsius (low limit model dependent)
 
 **Fan Speed Control:** Control fan speed (model dependent).<br/>
 **Louvre Direction Control:** Adjust vertical and horizontal louvre position and louvre swing operation (model dependent).<br/>
-**Return Air Temperature Monitoring:** Monitor the return air temperature.<br/>
+**Return Air Temperature Monitoring:** Monitor the return air temperature (model dependent).<br/>
 **Error Status Reporting:** Retrieve the error status and error code.
 
 ![max1000px](img/UART-Control-1.png)
@@ -396,7 +398,7 @@ For additional device details press on the `information` button ![info icon](img
 
 The Device Details screen displays additional information for device monitoring, including wireless signal quality, unit type, and available control and louver parameters.
 
-**Recieved signal strength indicator (RSSI):** Indicates the strength of the wireless signal between the device and the gateway. Stronger signals improve communication reliability.
+**Received Signal Strength Indicator (RSSI):** Indicates the strength of the wireless signal between the device and the gateway. Stronger signals improve communication reliability.
 - GOOD = 0 to -90
 - MODERATE = -90 TO -110
 - POOR = Less than -110
@@ -407,7 +409,7 @@ The Device Details screen displays additional information for device monitoring,
 - POOR = Less than -10
 
 **Unit Type:** Identifies the type of air conditioning system connected.
--   Examples: Single, Ducted
+-   Examples: Single, Multi, VRF
 
 **Available control variables:** Displays which control functions are supported by the connected unit model.
 - Example: Has Mode Cool = Yes
@@ -423,7 +425,7 @@ The Device Details screen displays additional information for device monitoring,
 <br/>
 
 ## 4.2. Operation Control
-Users can control the unit’s operation using the `Stop/Start` toggle switch. <br/>
+Users can control the unit’s operation using the `Off/On` toggle switch. <br/>
 For additional point information press on the `information` button ![info icon](img/information-icon-30pix.png).
 
 ![max1000px](img/UART-OnOffControl.png)
@@ -455,7 +457,7 @@ Users can adjust the temperature setpoint to control the temperature maintained 
 1. Increase or decrease the setpoint value using the plus ![plus button](img/circle-plus.png) and minus ![minus button](img/circle-minus.png) buttons to the desired setpoint.
 2. Once at the desired setpoint press the tick ![tick button](img/circle-tick.png) button to save and apply the new setpoint.
 
-**Canecling Changes:** To cancel a setpoint change press the reset ![reset button](img/rotate-ccw.png) button prior to **Step-2**. This will revert the setpoint to the previous value.
+**Canceling Changes:** To cancel a setpoint change press the reset ![reset button](img/rotate-ccw.png) button prior to **Step-2**. This will revert the setpoint to the previous value.
 
 ![max1000px](img/UART-SetpointControl.png)
 
@@ -477,7 +479,7 @@ For further details on each fan speed mode, refer to the unit’s user manual.
 <br/>
 
 ## 4.6. Economy Mode Control
-Users can enable or disable the unit’s economy mode using the `No/Yes` toggle switch. <br/>
+Users can enable or disable the unit’s economy mode using the `Off/On` toggle switch. <br/>
 
 ![max1000px](img/UART-Economy.png)
 
@@ -490,9 +492,9 @@ Users can adjust the vertical louvers to a position of their choosing or enable 
 1. Increase or decrease the step position value the plus ![plus button](img/circle-plus.png) and minus ![minus button](img/circle-minus.png) buttons to the desired setpoint.
 2. Once at the desired step position press the tick ![tick button](img/circle-tick.png) button to save and apply the new position.
 
-**Canecling Changes:** To cancel a position change press the reset ![reset button](img/rotate-ccw.png) button prior to **Step-2**. This will revert the step position to the previous value.
+**Canceling Changes:** To cancel a position change press the reset ![reset button](img/rotate-ccw.png) button prior to **Step-2**. This will revert the step position to the previous value.
 
-**Vertical Louver Swing:** Users can enable or disable the unit’s vertical louver swing mode using the `No/Yes` toggle switch. When the vertical louver swing is enabled the manually set step position will be ignored. If a step postion is set by a user this change will overide the swing function and the vertical louver swing mode will automatically toggle to `No`.
+**Vertical Louver Swing:** Users can enable or disable the unit’s vertical louver swing mode using the `Off/On` toggle switch. When the vertical louver swing is enabled the manually set step position will be ignored. If a step postion is set by a user this change will overide the swing function and the vertical louver swing mode will automatically toggle to `Off`.
 
 ![max1000px](img/UART-VerticalControl.png)
 
@@ -505,9 +507,9 @@ Users can adjust the horizontal louvers to a position of their choosing or enabl
 1. Increase or decrease the step position value the plus ![plus button](img/circle-plus.png) and minus ![minus button](img/circle-minus.png) buttons to the desired setpoint.
 2. Once at the desired step position press the tick ![tick button](img/circle-tick.png) button to save and apply the new position.
 
-**Canecling Changes:** To cancel a position change press the reset ![reset button](img/rotate-ccw.png) button prior to **Step-2**. This will revert the step position to the previous value.
+**Canceling Changes:** To cancel a position change press the reset ![reset button](img/rotate-ccw.png) button prior to **Step-2**. This will revert the step position to the previous value.
 
-**Horizontal Louver Swing:** Users can enable or disable the unit’s horizontal louver swing mode using the `No/Yes` toggle switch. When the horizontal louver swing is enabled the manually set step position will be ignored. If a step postion is set by a user this change will overide the swing function and the horizontal louver swing mode will automatically toggle to `No`.
+**Horizontal Louver Swing:** Users can enable or disable the unit’s horizontal louver swing mode using the `Off/On` toggle switch. When the horizontal louver swing is enabled the manually set step position will be ignored. If a step postion is set by a user this change will overide the swing function and the horizontal louver swing mode will automatically toggle to `Off`.
 
 ![max1000px](img/UART-HorizontalControl.png)
 
