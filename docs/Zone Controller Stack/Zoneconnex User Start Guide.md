@@ -1,151 +1,132 @@
 # Zoneconnex User Start Guide
 
-# 1. Overview/About Product
+# 1. Setup Wi-Fi on the TouchPoint LCD
 
-## 1.1. Product Overview
-The ZoneConnex System is Nube iO’s integrated HVAC zone control solution for split ducted air conditioning systems in residential and light commercial environments. It combines the ZoneConnex controller, the Nube iO MIA mobile app, and the Touch Point LCD screen to provide flexible local and mobile control of zoned HVAC systems.
+1. On the TouchPoint LCD, **press the Wi-Fi** button on the navigation bar.
 
-Installers can quickly commission and configure the system using the mobile app via a direct Wi-Fi connection, while users can monitor and adjust temperature setpoints, operating modes, and zone airflow through either the mobile app or the wall-mounted LCD interface.
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Quick-Start-WiFi-Location.svg)
 
-## 1.2. Architecture
-- **ZoneConnex Controller:** The master device that communicates with compatible air conditioning units to manage system operation and control.  
-- **Touch Point LCD:** Wall-mounted touchscreen for local control and monitoring of the air conditioning system.  
-- **anywAiR Zone Mobile App:** Mobile interface for remote control and monitoring.  
-- **Droplet (optional):** Wireless sensor that monitors temperature and humidity in each zone, enabling individual zone control.
+2. If no network is connected, press **Scan Wi-Fi** to search for available networks.
 
-<!-- # 3. Navigation
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Scan-Wi-Fi.svg)
 
-Use the top navigation bar to quickly switch between system screens, including Home, Zones, Schedules, Wi-Fi, Alerts, and System Information.
+3. Select your desired network and press **Connect**.
+4. Enter the network password using the on-screen keyboard, then press **Connect**.
 
-![max800px](Touch%20point%20LCD/img/LCD-Screenshots/LCD-navigation.png) -->
+Once connected, the **Wi-Fi setup screen will display network details**, including: QR code (used in Step 3 — setting up Home Screen), signal strength, speed, security type, and channel.
 
-<br/>
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Wi-Fi-Connected-info.svg)
 
-# 2. TouchPoint LCD Wi-Fi Setup
+# 2. Install anywAiR® Zone Mobile App
 
-1. On the Touch Point LCD, press the **Wi-Fi** ![Wifi button](Touch%20point%20LCD/img/wifi.png) button on the navigation bar to open the Wi-Fi setup screen.  
-2. If no network is connected, press **Scan Wi-Fi** ![Scan Wifi button](Touch%20point%20LCD/img/scan-search.png) to search for available networks.  
-3. Select your desired network and press **Connect** ![Connect button](Touch%20point%20LCD/img/chevron-right.png).  
-4. Enter the network password using the on-screen keyboard, then press **Connect**.  
-5. Once connected, the Wi-Fi setup screen will show the network and connection details, including QR code, signal strength, speed, security type, and channel.
+Scan the QR code below to download the anywAiR® Zone Mobile App for Android or iOS then follow the prompts to install.
 
-![max800px](Touch%20point%20LCD/img/LCD-Screenshots/Tap-wi-fi-icon.png)
-![max800px](Touch%20point%20LCD/img/LCD-Screenshots/Scan-wi-fi.png)
-![max800px](Touch%20point%20LCD/img/LCD-Screenshots/Wi-fi-connected-info.png)
-
-<br/>
-
-# 3. anywAiR Zone Mobile App
-
-Scan the QR code below to download the anywAiR Zone Mobile App for Android or iOS.
-
-| Android | IOS |
+| Android | iOS |
 |-|-|
-| ![max300px](img/Andriod-anywair-zone-qr-code.png) | ![max300px](img/iOS-anywair-zone-qr-code.png) |
+| ![max300px](img/googleplay-qr-code.png) | ![max300px](img/iOS-anywair-zone-qr-code.png) |
 | <a href="https://play.google.com/store/apps/details?id=com.nubeio.mia"> ![max300px](MIA%20Mobile%20App/img/google-play-icon.png) </a> | <a href="https://apps.apple.com/au/app/anywair-zone/id6748876162"> ![max300px](MIA%20Mobile%20App/img/Apple-app-download-icon.png) </a> |
 
-<br/>
+# 3. Set Up Your Account and Home
 
-# 4. anywAiR Zone User Sign Up
+> ℹ️ **Before starting,** ensure your mobile device is connected to the same Wi-Fi network as the TouchPoint screen. To check, press the **Wi-Fi** button on the LCD screen to view network details.
 
-1. From the Login screen, press **Sign Up**.  
-2. Enter your email, password, and confirm password, then press **Sign Up**.  
-3. Enter the OTP sent to your email to verify your account.  
-   - If not received or expired, you can request a new OTP after 2 minutes.  
-4. Once verified, you will be taken to the onboarding screen to set your username.
+## 3.1 Create or log in to your account
 
-<br/>
+1. On your mobile device, **open the anywAiR® Zone Mobile App**.
+2. **Log in or Sign-Up:**
+3. **Existing Users:** Log in and continue to **Add Your Home**.
+4. **New Users:** Follow the Sign-Up process below.
 
-# 5. Home Setup
+## 3.2 Sign-Up — new users
 
-1. On the Touch Point LCD, press the Wi-Fi button on the navigation bar to open the Wi-Fi screen.
-2. Make sure your Mobile device is connected to the same Wi-Fi network as the Touch Point LCD.
-3. Now on your Mobile Device, open the anywAiR® Zone Mobile App and log in or sign up. <br/>
-    1. Existing Users: Log in and proceed to step 4 <br/>
-    2. New Users: Follow the Sign Up process below: <br/>
-        1. From the Login screen, press Sign Up. <br/>
-        2. Enter prompted details (Email, Password, and Confirm Password) then continue Sign Up. <br/>
-        3. Verify Account by entering the OTP sent to your email (if not received or expired, you can request a new OTP after 2 minutes). <br/>
-        4. Once verified, you will be taken to the ‘Welcome Screen’ press ‘Next’ to continue to set-up a Username. <br/>       
-4. You will be taken to the Setup Home screen. <br/>
-5. Press Scan QR Code and scan the QR code displayed on the Touch Point LCD. <br/>
-6. Enter a name for the home, then press Add Home. <br/>
-7. You will be taken to the main control screen for your newly added home.<br/>
+1. From the Login screen, press **Sign-Up**.
+2. **Enter your details** (Email, Password, and Confirm Password) then press **Sign-Up**.
+3. **Enter the Verification Code (OTP)** sent to your email (if not received, you can request a new code after 2 minutes).
+4. Once verified, press **Next** to continue.
 
+## 3.3 Add Your Home
 
-<!-- 1. On the Touch Point LCD, press the **Wi-Fi** ![Wifi button](Touch%20point%20LCD/img/wifi.png) button on the navigation bar to open the Wi-Fi setup screen.
-2. Connect your mobile device to the same Wi-Fi network as the Touch Point LCD.
-3. Open the anywAiR Zone Mobile App and log in or sign up. You will be taken to the **Setup Home** screen.  
-4. Press **Scan QR Code** and scan the QR code displayed on the Touch Point LCD.  
-5. Enter a name for the home, then press **Add Home**.  
-6. You will be taken to the main control screen for your newly added home. -->
+1. On the **Setup home** screen, press **Scan QR code**.
+2. Scan the QR code displayed on the TouchPoint LCD.
 
-![max800px](Touch%20point%20LCD/img/LCD-Screenshots/Wi-fi-connected.png)
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Wi-Fi-Connected.svg)
 
-<br/>
+3. Enter a name for your home, then press **Add Home**.
 
-# 6. Main Control Functions
+You will be taken to the **Main Control home screen**.
 
-- **Power:** Turn the unit on or off.  
-- **Mode:** Select Mode. Cool, Heat, Dry, Auto, or Fan.  
-- **Temperature Setpoint:** Adjust heating/cooling temperature setpoint. 
-- **Fan Speed:** Adjust fan speed (speeds model dependent).  
-- **Current Temperature Display:** View primary zone current air temperature and setpoint details. (If enabled) 
+# 4. Using Your TouchPoint LCD
 
-![max800px](Touch%20point%20LCD/img/LCD-Screenshots/Main-Controls.png)
+## 4.1 Main Controls
 
-<br/>
+- **Power** — Turn the unit On or Off.
+- **Mode Control** — Select Auto, Cool, Heat, Fan, or Dry.
+- **Temperature** — Adjust the Temperature Setpoint.
+- **Fan Speed Control** — Adjust the fan speed (*model dependent*).
+- **Temperature Display** — View setpoint and current temperature\*. (*\*Current temperature display must be enabled during installation*).
 
-# 7. Zone Control
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Main-Controls.png)
 
-- **Zone Control:** Turn the zone on or off.
-- **Airflow Control:** Manage up to 10 zones, adjusting airflow from 0–100% in 5% increments.  
-- **Zone Temperature Monitoring:** Check current temperatures in each zone. (Droplet sensor required)
+## 4.2 Zone Control
 
-![max800px](Touch%20point%20LCD/img/LCD-Screenshots/Zone-Control.png)
+- **Zone On/Off:** Turn individual zones on or off.
+- **Airflow Control:** Adjust airflow (0–100% in 5% increments) of each zone.
+- **Zone Temperature\*:** Check the temperature in each zone (*\*view-only; droplet sensor required*).
+- **Sync Zones** — Reset zones to restore correct airflow. Use this if airflow is not working as expected.
 
-<br/>
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Zone-Control.png)
 
-# 8. Schedules & Scenes
+## 4.3 Scenes & Schedules
 
-**Schedules:**
-The functionality for creating a repeating and custom schedule. Schedules are configured to automatically activate assigned Scenes based on defined start time, end time, and active days of the week.
+- **Scenes** — Allow you to save preferred settings (mode, temperature, fan speed, zones) and set how you want them to be activated (Directly = Run Now, or via a Schedule).
+- **Schedules** — Automatically run scenes at set times and days.
 
-**Scenes:**
-A pre-determined control profile (Mode, fan speed, target temperature, and all zone settings). Scenes can be activated directly (Run Now) or via a Schedule.
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Schedule-Screen-1.svg)
 
-![max800px](Touch%20point%20LCD/img/LCD-Screenshots/schedule-Screen-1.png)
-![max800px](Touch%20point%20LCD/img/LCD-Screenshots/schedule-Screen-2.png)
-![max800px](Touch%20point%20LCD/img/LCD-Screenshots/schedule-Settings.png)
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Schedule-Screen-2.svg)
 
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Schedule-Settings.svg)
 
-<br/>
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Assign-Existing-Scene.png)
 
-## 9. User Manuals 
+# 5. User Manuals
 
 For full setup instructions and product documentation, scan the QR code below.
 
 [![max300px](img/onlinedocs-qr-code.png)](https://nubeio.github.io/rubix-ce-docs/docs/overview)
 
-<br/>
+# Important Information
 
+**Compatibility**
 
-<!-- ## 4.1. Engineering Tool
-*Insert Engineering Tool summarry and where to download* -->
+The **anywAiR® Zone Mobile App** is compatible with selected General ducted air conditioning systems when used with the optional anywAiR® Zoneconnex Controller.
 
-<!-- ## 4.2. Modile App (If Applicable*)
-*Insert Engineering Tool summarry and App name to download* -->
+**Installation & Safety**
 
-<br/>
+- Installation and servicing must be carried out by authorised and qualified personnel only.
+- Always isolate power before wiring or servicing the Controller or LCD panel.
+- Use only supplied or approved power supplies, antennas and cables.
+- Do not modify, open or alter the product, as this may void safety and compliance approvals.
 
-<!-- # 5. Document Revision
+**Data & Usage Disclaimer**
 
-| Revision | Date       | Change Description                  |
-|----------|------------|------------------------------------|
-| 1.0      | 28-11-2025 | Initial release of the document.   |
-| 1.1      | DD-MM-YYYY | Description of the next change.    |
-| 1.2      | DD-MM-YYYY | Description of the next change.    | -->
+GENERAL Australia & New Zealand accepts no liability for incorrect data. Please ensure you have confirmed installation requirements prior to install.
 
+**Security**
 
+- The product does not use universal default passwords.
+- If a password is required, it must be set by the user and should not be easy to guess.
 
+If you identify a potential security vulnerability, please report it via: [www.fujitsugeneral.com.au/contact-us](https://www.fujitsugeneral.com.au/contact-us)
 
+Reporting is free of charge, and no personal information is required for initial submission.
+
+**Cyber security support ends on 01/01/2029.**
+
+**Compliance**
+
+This product carries the RCM mark and complies with the following standards:
+
+- AS/NZS 62368.1
+- AS/NZS CISPR 32
+- AS/NZS 4268

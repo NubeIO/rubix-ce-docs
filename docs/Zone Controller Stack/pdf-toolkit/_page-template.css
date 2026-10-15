@@ -1,0 +1,131 @@
+/* ============================================================
+   PAGE FORMAT TEMPLATE — copy to page-<name>.css and fill in.
+
+   READ THIS FIRST — THESE FLOORS DO NOT SCALE
+   ------------------------------------------------------------
+   Page size can keep shrinking. These cannot:
+
+     Body text     9pt minimum   below this it fails as printed
+                                 instruction material
+     Margins      10mm minimum   trimming tolerance on saddle-
+                                 stitched booklets
+     Gutter side   +3mm          on the bound edge, or text
+                                 disappears into the fold
+     Any image    ~40mm minimum  screenshots with UI labels stop
+                                 being legible
+
+   When a format hits a floor, the answer is LESS CONTENT PER PAGE,
+   MORE PAGES — never smaller type. Nothing is ever shrunk to reach
+   a format.
+   ------------------------------------------------------------
+
+   HOW TO USE
+     1. Copy this file to page-<name>.css.
+     2. Fill in every value below. Derive --col as W - 2x side margin.
+     3. --page-h MUST equal the @page height, or the cover will not
+        fill the page.
+     4. Add the format to SCREENSHOTS_PER_ROW in brand.py — the phone-row
+        count is the one per-format value CSS cannot hold. See the
+        SCREENSHOT ROWS note further down for how to choose it.
+     5. Add the format to the registry table in the repo README.
+     6. Build with:
+          --css=engine.css --css=<oem>-skin.css --css=page-<name>.css
+
+   Nothing but values belongs in a page file. If a new format needs a
+   rule that is not a value, that rule belongs in engine.css —
+   with the single exception of the image tiers at the bottom.
+   ============================================================ */
+
+/* Page format: <NAME>  ·  <W> x <H> mm */
+@page { size: <W>mm <H>mm; margin: <top> <side> <bottom> <side>; }
+
+:root {
+  --page-h:  <H>mm;              /* used by the cover — must match @page height */
+  --col:     <W - 2x side>mm;    /* text column; image %s resolve against this */
+
+  /* ---- type scale (9pt floor on --body) ---- */
+  --body:     <pt>;
+  --h1:       <pt>;
+  --h2:       <pt>;
+  --h3:       <pt>;
+  --caption:  <pt>;
+  --table:    <pt>;
+
+  /* ---- first-content-page title block ---- */
+  --doc-title:    <pt>;
+  --doc-subtitle: <pt>;
+
+  /* ---- cover chrome (scale with the page, or the cover overflows) ---- */
+  --cover-pad:        <mm>;
+  --cover-inner-pad:  <top> <side> <bottom> <side>;
+  --cover-logo-w:     <mm>;
+  --cover-title:      <pt>;
+  --cover-divider-w:  <mm>;
+  --cover-sub:        <pt>;
+  --cover-model:      <pt>;
+
+  /* ---- back page + TOC ---- */
+  --back-pad-top:   <mm>;
+  --back-logo-gap:  <mm>;
+  --back-logo-w:    <mm>;
+  --toc-indent:     <mm>;
+}
+
+/* ---- IMAGE TIERS ------------------------------------------
+   Percentages of --col. This holds well from A4 down to A5.
+
+   BELOW ~120mm COLUMN IT STOPS WORKING. img.small at 32% is 55mm on
+   A4 and 39mm on A5, but only 27mm on A6 — past the legibility floor.
+   So for any format narrower than ~120mm, RAISE these rather than
+   inherit them. Multiply your column width by each % and check every
+   result against the ~40mm floor before shipping.
+
+   A6 and smaller, as a starting point — small items cannot shrink
+   any further, so they take proportionally more of the page:
+     --img-small: 55%;  --img-medium: 75%;  --img-default: 92%;
+
+   This is the ONLY place a page file may override an image rule. */
+:root {
+  --img-small:      <%>;
+  --img-medium:     <%>;
+  --img-default:    <%>;   /* standalone figures */
+  --img-lcd:        <%>;   /* TouchPoint LCD screenshots */
+  --img-phone:      <mm>;  /* mobile-app screenshots — ABSOLUTE, not a %. These sit
+                              inside .img-row flex items, where a % resolves against
+                              the item and collapses. See the row budget below. */
+  --img-row-gap:    <mm>;  /* gap between figures in an .img-row */
+  --list-indent:    <mm>;  /* bullet indent; li .img-row cancels it so a full-width
+                              row is not pushed past the right margin. Measure it:
+                              indented text x-position minus the side margin. */
+  --img-cell:       <%>;   /* images inside table cells */
+  --img-qr:         <mm>;  /* standalone online-docs QR; absolute, ~25mm scan floor */
+  --img-app-qr:     <mm>;  /* app-store QRs in the download table; absolute */
+  --diagram-table:  <%>;   /* width of a .diagram-table */
+}
+
+/* ---- SCREENSHOT ROWS: THE ONE VALUE THAT IS NOT IN THIS FILE ----
+   Phone screenshots are packed N-per-row into <div class="img-row">. N is NOT a
+   CSS value: .img-row is display:flex with no wrap, and brand.py has already
+   emitted one div per group of N before any stylesheet is applied. CSS cannot
+   reflow them.
+
+   N therefore lives in SCREENSHOTS_PER_ROW in brand.py, keyed by format name.
+   WHEN YOU ADD A FORMAT YOU MUST ADD AN ENTRY THERE TOO — a format that is
+   missing from that table falls back to 2-up.
+
+   Pick the largest N satisfying BOTH:
+       N * --img-phone + (N - 1) * --img-row-gap  <=  --col
+       --img-phone >= ~40mm                       (legibility floor)
+
+   Worked examples:
+     A4  --col 174mm:  N=3 at 54mm  (3*54 + 2*6 = 174mm, exactly the column)
+     A5  --col 122mm:  N=2 at 46mm  (2*46 + 1*6 =  98mm)
+                       N=3 would need <=36.6mm — under the floor, and the 150mm
+                       row was wider than the 148mm sheet, clipping the third phone.
+
+   Watch the VERTICAL cost too: these PNGs are ~2.08:1, so a phone at width w is
+   2.08*w tall, and .img-row is break-inside:avoid — a row that no longer co-fits
+   with its heading gets pushed whole onto the next page. Widening phones to fill
+   spare column width is usually a page-count regression, not an improvement. */
+
+/* img.icon is EXEMPT — it is height:1em and must never be scaled. */

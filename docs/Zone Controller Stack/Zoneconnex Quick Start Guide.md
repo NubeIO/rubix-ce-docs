@@ -1,303 +1,246 @@
 # Zoneconnex Quick Start Guide
 
-# 1. Overview/About Product
+Please read the following information before installation and use.
 
-## 1.1. Product Overview
-The ZoneConnex System is Nube iO’s integrated HVAC zone control solution for split ducted air conditioning systems in residential and light commercial environments. It combines the ZoneConnex controller, the Nube iO MIA mobile app, and the Touch Point LCD screen to provide flexible local and mobile control of zoned HVAC systems.
+For authorised service personnel only.
 
-Installers can quickly commission and configure the system using the mobile app via a direct Wi-Fi connection, while users can monitor and adjust temperature setpoints, operating modes, and zone airflow through either the mobile app or the wall-mounted LCD interface.
+<div class="callout-warning">
+<strong>Note:</strong> This Zoneconnex system is only <strong>compatible with General Air Con's that have UART ports</strong>. Please check compatibility before installing.
+</div>
 
-## 1.2. Architecture
-- **ZoneConnex Controller:** The master device that communicates with compatible air conditioning units to manage system operation and control.  
-- **Touch Point LCD:** Wall-mounted touchscreen for local control and monitoring of the air conditioning system.  
-- **anywAiR Zone Mobile App:** Mobile interface for remote control and monitoring.  
-- **Droplet (optional):** Wireless sensor that monitors temperature and humidity in each zone, enabling individual zone control.
+# 1. Packaging Contents
 
-## 1.3. Product Features
-*Insert Product Features*
+Check that you have received all items below.
 
-<br/>
+- Zoneconnex Controller
+- TouchPoint LCD
+- LoRa® Antenna
+- 24VAC Power Supply
+- 15m 4-core 24 AWG LCD power/communication cable
+- 2m PAP-04V-S UART communication cable
+- Pan head self tapping screws (8x M3 x 25mm)
 
 # 2. Hardware Overview
 
-## 2.1. Packing List
+Refer to following diagrams for component locations:
 
-Please check the package contents to verify that you have received the items below:
-- Zoneconnex Quick Start Guide
-- Zoneconnex Controller 
-- Touch Point LCD 
-- Wifi Antenna
-- LoRa Antenna
-- 15m 4 core 24AWG LCD power/communication cable
-- 2m PAP-04V-S UART communication cable
-- Pan head self tapping screws (8x M3x25mm)
+### Zoneconnex Front View
 
-## 2.2. Zoneconnex Controller Introduction
+![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Front-View-rev3.png){.view-gap width=78%}
 
-### 2.2.1 Zoneconnex Front View
-<!-- - 24VAC/DC Power Input: Termination block for connecting the ZoneConnex 24VAC/DC power input.
-- U.FL Antenna: Connects the antenna for LoRa & LoRaWan communication.
-- Wifi Antenna: Connects the antenna for Wifi communication.
-- Din Rail Clip: Allows for secure din rail mounting and maintenance.
-- Mounting Clips: Allows for secure mounting via use of appropriate fixings.
-- UART Port: Termination block for connecting the ZoneConnex to UART communication.
-- RS485-ISO: Termination block for connecting third party field-bus communication devices to the ZoneConnex.
-- LCD RS485: Termination block for connecting Touch Point LCD or local NubeiO Modbus devices to the ZoneConnex.
-- LCD 18VDC Power: Termination block for powering the Touch Point LCD from the ZoneConnex. -->
+### Zoneconnex Top View
 
-![max800px](Zoneconnex/img/ACB-ZC-Components-Markup-Front-View-rev2.png)
+![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Top-View-rev3.png){.view-gap width=49%}
 
-### 2.2.2 Zoneconnex Top View
-<!-- - 24VAC/DC Power Input: Termination block for connecting the ZoneConnex 24VAC/DC power input.
-- Wifi Antenna: Connects the antenna for Wifi communication
-- Zone Control Ports 1-5: RJ12 outputs to supply 24V AC to control the zone dampers.
-- USB-C: Service / Programming Port used to manage the ZoneConnex firmware.
-- 6-Pin STM32 Port: STM32 Programming Port ***used for?***
-- ACBM Reset Button: ***used for?*** ***Factory reset?***
-- ACBM User Button: ***used for?*** ***Reboot?***
-- Zone Control Reset Button: ***used for?*** ***Factory reset?***
-- Zone Control Button: ***used for?*** ***Reboot?*** -->
+### Zoneconnex Bottom View
 
-![max800px](Zoneconnex/img/ACB-ZC-Components-Markup-Top-View-rev2.png)
+![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Bottom-View-rev3.png){width=80%}
 
-### 2.2.3 Zoneconnex Bottom View
-<!-- - Zone Control Ports 6-10: RJ12 outputs to supply 24V AC to control the zone dampers.
-- U.FL Antenna: Connects the antenna for LoRa & LoRaWan communication.
-- RJ45 Ethernet Port 1: 100 Mbps RJ45 Ethernet Port for LAN Connection.
-- RJ45 Ethernet Port 2: 100 Mbps RJ45 Ethernet Port for LAN Connection.
-- UART Port: Termination block for connecting the ZoneConnex to UART communication.
-- RS485-ISO: Termination block for connecting third party field-bus communication devices to the ZoneConnex.
-- LCD RS485: Termination block for connecting Touch Point LCD or local Modbus devices to the ZoneConnex.
-- LCD 18VDC Power: Termination block for powering the Touch Point LCD from the ZoneConnex. -->
+# 3. Fitting Installation
 
-![max800px](Zoneconnex/img/ACB-ZC-Components-Markup-Bottom-View-rev2.png)
+## 3.1 Mounting the Zoneconnex Controller
 
-<br/>
+<div class="no-break">
 
-## 2.3. Touch Point LCD Introduction
+### A. DIN Rail Mounting
 
-### 2.3.1 LCD Screen
+Ensure the DIN rail is securely installed. **Hook the top of the Zoneconnex** onto the top of the DIN rail.
 
-<!-- - 18V DC Power Input: Terminals for powering the Touch Point LCD from the ZoneConnex.
-- Wifi Antenna: Connects the antenna for Wifi communication.
-- RS485 Connection: Terminals for connecting the Touch Point LCD to the ZoneConnex via RS485 communication.
-- USB-C: Service / Programming Port used to manage the Touch Point LCD firmware.
-- Reset Button: Used to perfom a soft reset on the Touch Point LCD. -->
+Pivot the bottom toward the rail until the **lower clip snaps into place**. Gently pull forward to confirm the Controller is securely mounted.
 
-![max800px](img/LCD-Internal-Components-Breakdown.png)
+![max800px](ZoneConnex/img/ZoneConnex-DinMounting-v2.png){width=70%}
 
-### 2.3.2 LCD Housing
+</div>
 
-<!-- - Mounting Points: Allows for secure mounting via use of appropriate fixings.
-- Cable Entry Points: Allows for the 24AWG Power/communication cable from the Zoneconnex to be brought into the Touch Point LCD housing. -->
+<div class="no-break">
 
-![max1000px](img/LCD-Housing-Components.png)
+### B. Direct Mounting
 
-<br/>
+Attach mounting clips to the back of the Controller (if not pre-fitted). Position the Controller against the mounting location and **mark the fixing points**.
 
-# 3. Installation
+**Drill the holes and insert wall plugs if required.** **Secure the Controller** using appropriate **screws or fixings**. Gently pull forward to confirm it is firmly mounted.
 
-# 3.1 Mounting
+![max800px](ZoneConnex/img/ZoneConnex-FixingMounting-v2.png){width=33%}
 
-### 3.1.1 Zoneconnex DIN Rail Mounting
-1. Ensure the DIN rail is securely installed inside your enclosure or control panel.
-2. Hang the top of the ZoneConnex onto the top edge of the DIN rail.
-3. Pivot the bottom of the controller toward the rail and snap the lower clip into place.
-4. Gently pull the controller forward to confirm it is securely mounted.
+</div>
 
-![max800px](Zoneconnex/img/ZoneConnex-DinMounting.png)
+<div class="no-break">
 
-### 3.1.2 Zoneconnex Wall Mounting
-1. Attach the mounting clips to the back of the ZoneConnex (if not pre-fitted).  
-2. Hold the controller against the wall and mark the fixing points using the clips as a guide.  
-3. Drill the holes and insert wall plugs if needed.  
-4. Secure the Zoneconnex to the wall with screws or fixings.  
-5. Gently pull the controller forward to confirm it is firmly mounted.
+## 3.2 Mounting the TouchPoint LCD
 
-![max800px](Zoneconnex/img/ZoneConnex-FixingMounting.png)
+Release the **two bottom clips** to remove the LCD from its housing. Hold the housing against the wall and **mark the fixing points**. **Drill holes and insert wall plugs if needed.** **Secure the housing** to the wall with **screws**. Feed the **pre-wired cable** through the desired entry point. Re-insert the LCD by: engaging the **top clips first**, **then pressing the bottom clips** into place.
 
-### 3.1.3 Touch Point LCD Mounting
-1. Carefully release the two bottom clips to remove the LCD from its housing.  
-2. Hold the housing against the wall and mark the fixing points using the mounting holes as a guide.  
-3. Drill holes and insert wall plugs if needed.  
-4. Secure the housing to the wall with screws or fixings.  
-5. Gently pull the housing to confirm it is firmly mounted.  
-6. Feed the prewired cable through the desired entry point.  
-7. Re-insert the LCD screen by first seating the top clips, then gently angle the bottom to re-seat the lower clips.
+![max800px](Touch%20Point%20LCD/img/LCD-Mounting-v3.png){width=55%}
 
-![max800px](Touch%20point%20LCD/img/LCD-Mounting-v2.png)
+<div class="img-row">
+<figure><img src="Touch Point LCD/img/Top-Retaining-Clips-v2.png" /></figure>
+<figure><img src="Touch Point LCD/img/Bottom-Retaining-Clips-v2.png" /></figure>
+</div>
 
-![max800px](Touch%20point%20LCD/img/TouchPointLCD-TopClips.png)
+</div>
 
-![max800px](Touch%20point%20LCD/img/TouchPointLCD-BottomClips.png)
+### Releasing the retaining clips
 
-<br/>
+![](Touch%20Point%20LCD/img/LCD-Clip-Release-v2.png){.medium}
 
-## 3.2 Zoneconnex Connections
+| **Correct** | **Incorrect** |
+|-------------|---------------|
+| Insert a flat blade screwdriver onto the angled edge of the retaining clip (furthest from the LCD screen) and gently lever the clip away from the housing. | Do not insert the screwdriver into the slot closest to the LCD screen, as the clip cannot be safely or effectively levered away from the housing in this position. |
 
-### 3.2.1 Zoneconnex Power Supply
-The ZoneConnex is powered by a 24V AC power supply on the 24VAC power terminals as shown below. The unit is supplied with a prewired power supply.
+# 4. Power & Wiring
 
-|            | ![max300px](Zoneconnex/img/ZC-24VAC-DC-Wiring.png) |
-|----------- |----------------------------------------|
-| Pin 1 **(+)** | 24V DC **+** |
-| Pin 2 **(-)** | 24V DC **−** |
+## 4.1 Zoneconnex Power Supply
 
-### 3.2.2 UART Connection
-The Zoneconnex is equiped to interface with compatible RAC/PAC and VRF Air Conditioning units via the UART protocal. The UART connection is terminated and installed as shown below.
+> ⚠️ **Please note:** The Air Conditioning unit should be isolated and off prior to any power & wiring.
 
-|           	| ![max300px](Zoneconnex/img/ZC-UART-Wiring.png)     |
-|-----------	|----------------	                    |
-| Pin 3 (**G**) | **Ground** of UART Network       |
-| Pin 4 (**RX**) | **RX** of UART Network       |
-| Pin 5 (**TX**) | **TX** of UART Network     	            |
-| Pin 6 (**Spare**) | NOT USED   	            |
+Connect the **prewired AC power supply** to the **24VAC** terminals (1 & 2) on the Zoneconnex — see diagram below:
 
-![max1000px](Zoneconnex/img/ACB-ZC-UART-PAP-04V-S.png)
+![large](ZoneConnex/img/24VAC-ADAPTOR-BOLD-2.png)
 
-### 3.2.3 RS485-ISO
-The RS485-ISO allows connection of third-party field-bus devices to the ZoneConnex. The RS485 connector is terminated and installed as shown below.
+## 4.2 UART Connection
 
-|           	| ![max300px](Zoneconnex/img/ZC-RS485-ISO-Wiring.png)     |
-|-----------	|----------------	                    |
-| Pin 7 (**+**) | **A** or **+** of RS485 Network       |
-| Pin 8 (**-**) 	| **B** or **-** of of RS485 Network        |
-| Pin 9 (**G**) | **C** or **Ground**      	            |
+Route the **UART cable** into the Air Conditioning unit control panel and connect it to the **CN65** or **CN75** port via the UART interface — refer to diagram below:
 
-### 3.2.4 LCD RS485
-The LCD RS485 allows connection of the Touch Point LCD to the ZoneConnex. The RS485 connector is terminated and installed as shown below.
+![large](ZoneConnex/img/ACB-ZC-UART-PAP-04V-S-rev3.png)
 
-|           	| ![max300px](Zoneconnex/img/ZC-LCD-RS485-Wiring.png)     |
-|-----------	|----------------	                    |
-| Pin 10 (**+**) | **A** or **+** of RS485 Network       |
-| Pin 11 (**-**) 	| **B** or **-** of of RS485 Network        |
+![max300px](ZoneConnex/img/UART-Cable-photo.jpg)
 
-### 3.2.5 Touch Point LCD Power Supply
-The ZoneConnex is equiped to power the NubeiO Touch Point LCD. The ZoneConnex supplys 18V DC via connection to the LCD 18VDC Power terminals as shown below. 
+## 4.3 TouchPoint LCD RS485 & Power Supply
 
-|            | ![max300px](Zoneconnex/img/ZC-LCD-Power-Wiring.png) |
-|----------- |----------------------------------------|
+Connect the power/communication cable between the TouchPoint LCD and Zoneconnex.
+
+## 4.4 The TouchPoint LCD
+
+The TouchPoint LCD:
+
+- Communicates via a **Modbus RS485**.
+- Receives **18VDC power from the Zoneconnex**.
+
+![max300px](ZoneConnex/img/LCD-Cable-photo.jpg)
+
+**Zoneconnex Pin Reference:**
+
+|   |   |
+|---|---|
+| Pin 10 **(+)** | **A** or **+** of RS485 Network |
+| Pin 11 **(-)** | **B** or **-** of RS485 Network |
 | Pin 12 **(+)** | 18V DC **+** |
 | Pin 13 **(-)** | 18V DC **−** |
 
+## 4.5 TouchPoint LCD Connections
 
-|           	|      |
-|-----------	|----------------	                    |
-| Pin 10 (**+**) | **A** or **+** of RS485 Network       |
-| Pin 11 (**-**) 	| **B** or **-** of of RS485 Network        |
-| Pin 12 **(+)** | 18V DC **+** |
-| Pin 13 **(-)** | 18V DC **−** |
+The TouchPoint LCD utilises **Push-To-Release** terminals. Gently press down on the terminal pin to release the clamp, insert or remove the cable, then release the pin to lock the cable in place.
 
-<br/>
+The TouchPoint LCD pin connections are as shown in the following image:
 
-## 3.3 Touch Point LCD Connections
+![max1000px](Touch%20Point%20LCD/img/LCD-Stickered-Internal-Zoomed.png)
 
-The Touch Point LCD is powered by a 18V DC connection supplied by the Zoneconnex on the power input pins and communicates to the ZoneConnex via a Modbus RS485 connection. The pins are terminated and installed as shown below. 
+# 5. Configuration
 
-|            | ![max300px](Touch%20point%20LCD/img/LCD-Wiring-Terminations.png) |
-|----------- |----------------------------------------|
-| Pin 1 (**A** or **+**) | **A** or **+** of RS485 Network       |
-| Pin 2 (**B** or **-**) 	| **B** or **-** of RS485 Network        |
-| Pin 3 (**+**) | 18V DC **+** |
-| Pin 4 (**-**) | 18V DC **−** |
+## 5.1 anywAiR® Zone Mobile App
 
-<br/>
+Scan the QR code below to download the anywAiR® Zone Mobile App for iOS or Android.
 
-<br/>
-
-# 4. Configuration
-
-<br/>
-
-## 4.1 anywAiR Zone Mobile App
-
-Scan the QR code below to download the anywAiR Zone Mobile App for iOS or Android.
-
-| Android | IOS |
+| Android | iOS |
 |-|-|
-| ![max300px](img/googleplay-qr-code.png) | ![max300px](img/testflight-qr-code.png) |
-| <a href="https://play.google.com/store/apps/details?id=com.nubeio.mia"> ![max300px](MIA%20Mobile%20App/img/google-play-icon.png) </a> | <a href="https://testflight.apple.com/v1/app/6754748732?build=193360892"> ![max300px](MIA%20Mobile%20App/img/Apple-app-download-icon.png) </a> |
+| ![max300px](img/googleplay-qr-code.png) | ![max300px](img/iOS-anywair-zone-qr-code.png) |
+| <a href="https://play.google.com/store/apps/details?id=com.nubeio.mia"> ![max300px](MIA%20Mobile%20App/img/google-play-icon.png) </a> | <a href="https://apps.apple.com/au/app/anywair-zone/id6748876162"> ![max300px](MIA%20Mobile%20App/img/Apple-app-download-icon.png) </a> |
 
-<br/>
+## 5.2 Wifi Configuration
 
-## 4.2 Wifi Configuration
+Follow the steps below to connect your Zoneconnex system to Wi-Fi:
 
-1. On the Touch Point LCD, press the **Wi-Fi** ![Wifi button](Touch%20point%20LCD/img/wifi.png) button to open the Wi-Fi setup screen.  
-2. If no network is connected, press **Scan Wi-Fi** ![Scan Wifi button](Touch%20point%20LCD/img/scan-search.png) to search for available networks.  
-3. Select your desired network and press **Connect** ![Connect button](Touch%20point%20LCD/img/chevron-right.png).  
-4. Enter the network password using the on-screen keyboard, then press **Connect**.  
-5. Once connected, the Wi-Fi setup screen will show the network and connection details, including QR code, signal strength, speed, security type, and channel.
+1. On the TouchPoint LCD, press **Wi-Fi**.
+2. Press **Scan Wi-Fi** to search for networks.
 
-## 4.3 Installer Mode
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Scan-Wi-Fi-v2.png)
 
-Use the following steps to enable installer mode access point on the Touch Point LCD.
+3. Select your network and press **Connect**.
+4. Enter the network password using the on-screen keyboard.
+5. Press **Connect**.
 
-1. Press the **System Info** ![System Info button](Touch%20point%20LCD/img/settings-2.png) button to open the system info screen.  
-2. Tap the **System** area 8 times to activate Installer Mode, then enter the password and confirm.  
-3. Once in Installer Mode, the LCD’s access point is available for configuring the ZoneConnex system via the **anywAiR Zone Mobile App**.  
-4. To exit at any time, press **Exit AP Mode** or the **Home** ![Home button](Touch%20point%20LCD/img/house.png) button to return to the home screen.
+Once connected, the screen will display network information including: QR code, signal strength, connection speed, security type, and channel.
 
-<br/>
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Wi-Fi-Connected-info.png)
 
-Use the following steps to access installer mode via the anywAiR Zone Mobile App.
- 
-1. Scan the **Connect Wifi** QR code displayed on the Touch Point LCD to connect to the access point wifi.
-2. Open the anywAiR Zone Mobile App to the login/welcome screen, press **Continue as Installer**.  
-3. Confirm the caution popup by pressing **Continue** to enter Installer Mode (or **Cancel** to return to the login screen).  
-4. Scan the **API Access** QR code displayed on the Touch Point LCD to enter installer mode.
+# 6. Installer Mode
 
-**Note:** To exit Installer Mode at any time, press **Exit Installer Mode** to return to the login screen.
+To access installer mode, follow the prompts below in accordance with the Installer Mode anywAiR® Zone Mobile App workflow:
 
-<br/>
+1. On the TouchPoint LCD home screen, tap the **Settings** icon.
+2. On the settings/about screen, tap the **System** card **8 times**.
 
-## 4.4 Zone Configuration
-Use the following steps to complete the initial zone configuration from the installed menu on the anywAiR Zone app.
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Tap-Settings-8x-Card.svg)
 
-1. Enter the total Number of Zones and required Relief Zones, then press **Next**.
-2. Select the required Relief Zones, then press **Configure Zones**.
-3. Configure the first zone:
+3. Enter the **installer password (default 898989)** and confirm.
+4. Open the **anywAiR® Zone Mobile App**. Select **Continue as Installer**. Scan the **left QR** for connecting to Zoneconnex Access Point Wi-Fi.
 
-    - Set Zone Name. <br/>
-    - Enable Primary Zone (if required). <br/>
-    - Enable Relief Zone (if required). <br/>
-    - Toggle Zone Power to test control. <br/>
-    - Set Minimum and Maximum Airflow (%). <br/>
-    - Add/remove Dampers and Droplets. <br/>
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-LeftQR.svg)
 
-4. Press **Next** to save the zone settings. 
-5. Repeat zone configuration for all remaining zones (press **Back** if needed to return to the previous zone).
-6. On the final zone, press **Complete** to finish and open the Zones screen for monitoring and control.
+5. Once connected to the Zoneconnex Access Point Wi-Fi, scan the **right QR** to access installer mode for the Zoneconnex.
 
+![lcd](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-RightQR.svg)
 
-<br/>
+**Note:** To exit Installer Mode at any time, press **Exit Installer Mode** in the app.
 
-## 5. User Manuals 
+# 7. Zone Configuration
 
-For full setup instructions and product documentation, scan the QR code below.
+By default, zones are configured in a 1:1 pairing with dampers. This means Zone 1 is assigned to Damper 1, Zone 2 to Damper 2, and so on up to 10 zones.
+
+This default setup allows for quick commissioning with minimal configuration. If required, zone-to-damper assignments can be customised during the zone configuration — refer to the configuration steps below:
+
+1. Use the following steps to complete the **zone configuration** from the **Installer menu** on the **anywAiR® Zone app**.
+2. Enter the total Number of Zones and required Constant Zones, then press **Next**.
+3. Select the required Relief Zones, then press **Configure Zones**.
+4. Configure the first zone:
+    - Set Zone Name
+    - Enable Primary Zone (if required)
+    - Enable Relief Zone (if required)
+    - Toggle Zone Power to test control
+    - Set Minimum and Maximum Airflow (%)
+5. Add/remove Dampers\* and Droplets\* (\*sold separately; the Zoneconnex is rated to support RJ12 24VAC dampers up to 150mA).
+6. Press **Next** to save the zone settings.
+7. Repeat zone configuration for all remaining zones (press **Back** if needed to return to the previous zone).
+8. On the final zone, press **Complete** to finish and open the Zones screen for monitoring and control.
+
+# 8. User Manuals
+
+For **full setup instructions and product documentation**, scan the following QR code:
 
 [![max300px](img/onlinedocs-qr-code.png)](https://nubeio.github.io/rubix-ce-docs/docs/overview)
 
-<br/>
+# Important Information
 
+**Compatibility**
 
+The **anywAiR® Zone Mobile App** is compatible with selected General ducted air conditioning systems when used with the optional anywAiR® Zoneconnex Controller.
 
+**Installation & Safety**
 
-<!-- ## 4.1. Engineering Tool
-*Insert Engineering Tool summarry and where to download* -->
+- Installation and servicing must be carried out by authorised and qualified personnel only.
+- Always isolate power before wiring or servicing the Controller or LCD panel.
+- Use only supplied or approved power supplies, antennas and cables.
+- Do not modify, open or alter the product, as this may void safety and compliance approvals.
 
-<!-- ## 4.2. Modile App (If Applicable*)
-*Insert Engineering Tool summarry and App name to download* -->
+**Data & Usage Disclaimer**
 
-<br/>
+GENERAL Australia & New Zealand accepts no liability for incorrect data. Please ensure you have confirmed installation requirements.
 
-<!-- # 5. Document Revision
+**Security**
 
-| Revision | Date       | Change Description                  |
-|----------|------------|------------------------------------|
-| 1.0      | 28-11-2025 | Initial release of the document.   |
-| 1.1      | DD-MM-YYYY | Description of the next change.    |
-| 1.2      | DD-MM-YYYY | Description of the next change.    | -->
+- The product does not use universal default passwords.
+- If a password is required, it must be set by the user and should not be easy to guess.
 
+If you identify a potential security vulnerability, please report it via: [www.fujitsugeneral.com.au/contact-us](https://www.fujitsugeneral.com.au/contact-us)
 
+Reporting is free of charge, and no personal information is required for initial submission.
 
+**Cyber security support ends on 01/01/2029.**
 
+**Compliance**
+
+This product carries the RCM mark and complies with the following standards:
+
+- AS/NZS 62368.1
+- AS/NZS CISPR 32
+- AS/NZS 4268

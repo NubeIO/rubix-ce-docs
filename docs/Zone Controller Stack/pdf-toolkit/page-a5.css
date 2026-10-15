@@ -1,0 +1,131 @@
+/* ============================================================
+   Page format: A5  ·  148 x 210 mm
+   THE PRINT DELIVERABLE — saddle-stitched booklet.
+
+   Load LAST, after the engine and skin:
+     --css=engine.css --css=<oem>-skin.css --css=page-a5.css
+
+   Body is 10pt by intent, not by scaling. It matches the effective
+   printed size of the approved originals (A4 at 14.4pt reduced by
+   0.707 ~= 10.2pt). Do NOT derive these from the A4 values by
+   multiplying by 0.707 — that reintroduces the shrink-to-fit problem
+   this layer exists to remove.
+
+   Holds values only. See _page-template.css before adding a format.
+   ============================================================ */
+
+@page { size: A5; margin: 15mm 13mm 14mm 13mm; }
+
+:root {
+  --page-w:  148mm;   /* full page width — the cover spans this, not --col */
+  --page-h:  210mm;   /* cover height — must match the @page height above */
+  --col:     122mm;   /* 148 - 2x13mm side margins; image %s resolve against this */
+
+  /* ---- type scale (floor is 9pt — --caption sits on it) ---- */
+  --body:     10pt;
+  --h1:       14pt;
+  --h2:     11.5pt;
+  --h3:       10pt;
+  --caption:   8pt;   /* NOTE: below the 9pt floor, but captions are
+                         supplementary labels, not instruction text. */
+  --table:     9pt;
+
+  /* ---- first-content-page title block ---- */
+  --doc-title:    19pt;
+  --doc-subtitle: 13pt;
+
+  /* ---- cover chrome — scaled so the cover keeps its proportions ---- */
+  --cover-pad:        11mm;
+  --cover-inner-pad:  10mm 8mm 13mm 8mm;
+  --cover-logo-w:     37mm;
+  --cover-title:      21pt;
+  --cover-divider-w:  44mm;
+  --cover-sub:        12pt;
+  --cover-model:      11pt;
+
+  /* ---- back page + TOC ---- */
+  --back-pad-top:   13mm;
+  --back-logo-gap:  24mm;
+  --back-logo-w:    50mm;
+  --toc-indent:      8mm;
+}
+
+/* Image tiers — RAISED, not inherited.
+   The column is 122mm here, so the A4 percentages would give:
+     small 32% = 39mm — at/below the ~40mm legibility floor.
+   The small tiers are therefore bumped: screenshots with UI labels stop
+   being readable below ~40mm. This is the one place a page file may
+   override an image rule (see _page-template.css). Resulting widths:
+     44% = 54mm, 66% = 81mm, 96% = 117mm, 86% = 105mm.
+   --img-cell is absolute: a % inside a table cell resolves against the
+   cell, not the column. 46mm keeps wiring diagrams above the floor.
+
+   Phone screenshots are 2-up at A5, not 3-up like A4: three 46mm phones plus
+   gaps need 150mm, which is wider than the 122mm column AND wider than the
+   148mm sheet, so the third phone was being clipped at the trim edge. Fitting
+   three would need 36.6mm each — under the legibility floor. The count lives in
+   SCREENSHOTS_PER_ROW in brand.py; keep it in step with --img-phone below. */
+:root {
+  --img-small:      44%;
+  --img-medium:     66%;
+  --img-default:    96%;
+  --img-lcd:        86%;
+  --img-phone:      46mm;  /* absolute: 2-up (SCREENSHOTS_PER_ROW["a5"] in brand.py).
+                              2*46 + 1*6 (gap) = 98mm, inside the 122mm --col.
+                              HELD at 46mm on purpose. 2-up leaves ~24mm spare width,
+                              but these PNGs are 2.08:1, so every 1mm of width costs
+                              ~2mm of height; widening to fill the column would push
+                              rows onto fresh pages (.img-row is break-inside:avoid).
+                              46mm is also clear of the ~40mm legibility floor. */
+  --img-row-gap:     6mm;  /* explicit: was silently inheriting the engine.css fallback */
+  --list-indent:    7.8mm; /* measured bullet indent; li .img-row cancels it so a
+                              full-width row still spans the true text column */
+  --img-cell:       46mm;  /* absolute: see note above */
+  --img-qr:         30mm;  /* absolute: standalone online-docs QR; scan floor is ~25mm */
+  --img-app-qr:     24mm;  /* absolute: app-store QRs, in a table cell */
+  --diagram-table:  62%;
+}
+
+/* ---- DENSITY ----------------------------------------------
+   These reproduce the approved print density:
+     - numbered H1s flow in-line rather than each starting a fresh page,
+       so there are no near-blank pages before every section
+     - tighter heading / figure / block spacing
+     - relaxed orphans/widows so paragraphs fill the page bottom       */
+:root {
+  --h1-break:         auto;
+  --h1-break-legacy:  auto;
+  --h1-pad-top:       0;
+  --h1-margin-top:    13pt;
+
+  --h2-margin:  8pt 0 3pt 0;
+  --h3-margin:  6pt 0 2pt 0;
+  --p-margin:   0 0 5pt 0;
+  --orphans:    2;
+  --widows:     2;
+  --list-margin: 3pt 0 5pt 0;
+  --li-margin:   2.5pt;
+
+  --figure-margin:          5pt 0;
+  --img-margin:             4pt auto;
+  --standalone-img-margin:  5pt auto;
+  --img-row-margin:         5pt 0;
+  --table-margin:           5pt 0;
+}
+
+/* ---- COVER / BACK-PAGE INTERNAL SPACING -------------------- */
+/* Scaled to the smaller sheet so the cover keeps its proportions. */
+:root {
+  --cover-logo-gap:         6mm;
+  --cover-title-gap:        4mm;
+  --cover-divider-margin: 3.5mm;
+  --cover-product-gap:      6mm;
+  --cover-model-pad-top:    6mm;
+  --cover-model-pad-bottom: 4mm;
+  --copyright-heading-gap:  4mm;
+  --copyright-text-gap:     3mm;
+  --copyright-rule-gap:     4mm;
+  --back-logo-margin:       6mm;
+  --back-line-gap:        1.5mm;
+  --toc-pad-top:            3mm;
+}

@@ -1,3 +1,4 @@
+
 function Pandoc(doc)
   -- Build a bullet list TOC from level-1 and level-2 headers
   local items = {}

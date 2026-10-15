@@ -23,6 +23,7 @@ Optimised for both new installations and retrofits, Zoneconnex with TouchPoint L
 
 ## 1.3 Packaging Contents
 Check that you have received all items below.
+
 - Zoneconnex Controller
 - TouchPoint LCD
 - LoRa Antenna
@@ -78,7 +79,7 @@ Check that you have received all items below.
 | Depth:                	| 70.25 mm (72.95 incl. clips) / 2.76 inches (2.87 incl. clips)                    	|
 | Enclosure             	| PC/ABS blend (Flame Retardant Grade, UL94 V-0) Matte Black, IP2X Rated 	    |
 
-![max800px](Zoneconnex/img/ZoneConnex-Dimensions.png)
+![max800px](ZoneConnex/img/ZoneConnex-Dimensions.png)
 
 <br/>
 
@@ -95,7 +96,7 @@ Check that you have received all items below.
 - LCD RS485: Termination block for connecting the TouchPoint LCD Modbus communication to the Zoneconnex.
 - LCD 18VDC Power: Termination block for powering the TouchPoint LCD from the Zoneconnex.
 
-![max800px](Zoneconnex/img/ACB-ZC-Components-Markup-Front-View.png)
+![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Front-View.png)
 
 ### 2.2.2 Top View
 - 24VAC/DC Power Input: Termination block for connecting the Zoneconnex 24VAC/DC power input.
@@ -108,7 +109,7 @@ Check that you have received all items below.
 - Zone Control Reset Button: Used to restart (reboot) the Zone Control IO board
 - Zone Control Button: Performs a factory reset, clearing all persisted data.
 
-![max800px](Zoneconnex/img/ACB-ZC-Components-Markup-Top-View.png)
+![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Top-View.png)
 
 ### 2.2.3 Bottom View
 - Zone Control Ports 6-10: RJ12 outputs to supply 24V AC to control the zone dampers.
@@ -120,7 +121,7 @@ Check that you have received all items below.
 - LCD RS485: Termination block for connecting the TouchPoint LCD Modbus communication to the Zoneconnex.
 - LCD 18VDC Power: Termination block for powering the TouchPoint LCD from the Zoneconnex.
 
-![max800px](Zoneconnex/img/ACB-ZC-Components-Markup-Bottom-View.png)
+![max800px](ZoneConnex/img/ACB-ZC-Components-Markup-Bottom-View.png)
 
 <br/>
 
@@ -167,14 +168,14 @@ The Zoneconnex can be mounted in on DIN rail or via fixings utilising the mounti
 Ensure the DIN rail is securely installed. Hook the top of the Zoneconnex onto the top of the DIN rail.
 Pivot the bottom toward the rail until the lower clip snaps into place. Gently pull forward to confirm the controller is securely mounted.
 
-![max800px](Zoneconnex/img/ZoneConnex-DinMounting-V2.png)
+![max800px](ZoneConnex/img/ZoneConnex-DinMounting-v2.png)
 
 ### 3.1.2 Direct Mounting
 Attach mounting clips to the back of the Zoneconnex controller (if not pre-fitted). Position the controller against the mounting location & mark the fixing points.
 
 Drill the holes & insert wall plugs if required. Secure the controller using appropriate screws or fixings. Gently pull forward to confirm it is firmly mounted.
 
-![max800px](Zoneconnex/img/ZoneConnex-FixingMounting-v2.png)
+![max800px](ZoneConnex/img/ZoneConnex-FixingMounting-v2.png)
 
 <br/>
 
@@ -216,7 +217,7 @@ Connect the Prewired AC power supply to the 24VAC terminals
 Route the prewired UART cable into the Air Conditioning unit control panel and connect it to the **CN65** or **CN75** port via the UART interface. The UART cable is then connected to the Zoneconnex device. Refer to the diagrams below:
 
 <div style={{ textAlign: 'center' }}>
-<img src={require("./ZoneConnex/img/ACB-ZC-UART-PAP-04V-S-rev2.png").default} width="80%" />
+<img src={require("./ZoneConnex/img/ACB-ZC-UART-PAP-04V-S-rev3.png").default} width="80%" />
 </div>
 
 <div style={{ textAlign: 'center' }}>
@@ -236,9 +237,10 @@ Zoneconnex UART Pin Reference shown below:
 
 <br/>
 
-## 4.2 TouchPoint LCD RS485 & Power Supply
+## 4.3 TouchPoint LCD RS485 & Power Supply
 The TouchPoint LCD:
-- Communicates the the Zoneconnex via **Modbus RS485**.
+
+- Communicates with the Zoneconnex via **Modbus RS485**.
 - Receives **18VDC power** from the Zonneconnex.
 
 Connect the 15m 4-core 24 AWG LCD power/communication cable between the TouchPoint LCD and Zoneconnex as shown below. 
@@ -246,7 +248,7 @@ Connect the 15m 4-core 24 AWG LCD power/communication cable between the TouchPoi
 ![max800px](ZoneConnex/img/LCD-Cable.jpg)
 
 
-### 4.2.1 Zoneconnex Pin Connections
+### 4.3.1 Zoneconnex Pin Connections
 
 The RS485 connector is terminated as shown below.
 
@@ -265,12 +267,12 @@ The 18VDC power connector is terminated as shown below.
 | Pin 13 **(-)** | 18V DC **−** |
 
 
-### 4.2.2 TouchPoint LCD Pin Connections
+### 4.3.2 TouchPoint LCD Pin Connections
 The TouchPoint LCD utilises Push-To-Release terminals. Gently press down on the terminal pin to release the clamp, insert or remove the cable, then release the pin to lock the cable in place.
 
 The TouchPoint LCD pin connections are as shown in the following image:
 
-|            | ![max300px](Touch%20point%20LCD/img/LCD-Wiring-Terminations.png) |
+|            | ![max300px](Touch%20Point%20LCD/img/LCD-Wiring-Terminations.png) |
 |----------- |----------------------------------------|
 | Pin 1 (**A** or **+**) | **A** or **+** of RS485 Network       |
 | Pin 2 (**B** or **-**) 	| **B** or **-** of RS485 Network        |
@@ -281,7 +283,7 @@ The TouchPoint LCD pin connections are as shown in the following image:
 
 The TouchPoint LCD pin connections are marked on the LCD as shown in the following image:
 
-![max1000px](Touch%20point%20LCD/img/LCD-Stickered-Internal-Zoomed.png)
+![max1000px](Touch%20Point%20LCD/img/LCD-Stickered-Internal-Zoomed.png)
 
 # 5 Configuration
 
@@ -303,21 +305,23 @@ For further details outlining how to use the anywAiR® Zone Mobile App use the f
 ## 5.2 Wi-Fi Configuration:
 Follow the steps below to connect the Zoneconnex system to Wi-Fi:
 
-1. On the TouchPoint LCD, press **Wi-Fi**.  
-2. Press **Scan Wi-Fi** to search for available networks.  
-![max800px](Touch%20point%20LCD/img/LCD-Screenshots/Scan-wi-fi-v2.png)
-3. Select your network and press **Connect**.  
-4. Enter the network password using the on-screen keyboard.  
-5. Press **Connect**.  
+1. On the TouchPoint LCD, press **Wi-Fi**.
+2. Press **Scan Wi-Fi** to search for available networks.
+
+![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Scan-Wi-Fi-v2.png)
+
+3. Select your network and press **Connect**.
+4. Enter the network password using the on-screen keyboard.
+5. Press **Connect**.
 
 Once connected, the screen will display network information including:
+
 - **QR code** - Scan using the anywAiR® Zone Mobile App to add the home to the app for remote access and management.
 - **Signal strength** - Indicates the quality of the Wi-Fi signal between the Zoneconnex device and the selected network.
-   - Excellent: Max speed, most stable connection.
-   - Good: High speed, stable connection.
-   - Moderate: Moderate speed, functional but may experience some instability.
-   - Weak: Low speed, unstable connection, may experience frequent dropouts.
-
+  - Excellent: Max speed, most stable connection.
+  - Good: High speed, stable connection.
+  - Moderate: Moderate speed, functional but may experience some instability.
+  - Weak: Low speed, unstable connection, may experience frequent dropouts.
 - **Connection speed** - Displays the current data transfer rate between the Zoneconnex device and the Wi-Fi network.
 - **Security type** - Shows the wireless security protocol used by the connected network (e.g. WPA2, WPA3). This identifies the level and type of network protection in use.
 - **Channel** - Displays the Wi-Fi channel the network is operating on.
@@ -327,14 +331,21 @@ Once connected, the screen will display network information including:
 <br/>
 
 ## 5.3 Installer Mode:
+
 To access installer mode, follow the prompts below in accordance with the Installer Mode anywAiR® Zone Mobile App workflow:
+
 1. On the TouchPoint LCD home screen, tap the System Info icon.
 2. On the System Info screen, tap the "System" card 8 times.
+
 ![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Tap-Settings-Card.png)
+
 3. Enter the installer password **(default 898989)** and confirm.
 4. Open the anywAiR® Zone Mobile App. Select Continue as Installer. Scan the left QR for connecting to Zoneconnex Access Point Wi-Fi.
+
 ![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-step1.png)
+
 5. Once connected to the Zoneconnex Access Point Wi-Fi, Scan the right QR to access installer mode for the Zoneconnex.
+
 ![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Installer-Connection-step2.png)
 
 To exit Installer Mode, press `Finish Installation` or `Exit Installer Mode` in the app.
@@ -423,7 +434,7 @@ Use the following steps to complete the zone configuration from the Installer me
 
 5. Press Scan QR Code and scan the QR code displayed on the Touch Point LCD. <br/>
 
-![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Wi-fi-connected.png)
+![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/Wi-Fi-Connected.png)
 
 6. Enter a name for the home, then press Add Home. <br/>
 7. You will be taken to the main control screen for your newly added home. <br/>
@@ -443,19 +454,17 @@ This combination of real-time control, automation, and monitoring ensures users 
 
 The following are key control and monitoring points available to the user:
 
-**Operation Control:** Enable the unit on and off.<br/>
-**Mode Control:** Switch between cool, heat, dry, auto, and fan modes.<br/>
-**Temperature Setpoint Control:** Adjust heating/cooling temperature setpoint.
-- Cooling setpoint 18 to 30 degrees Celsius
-- Heating setpoint 16-18 to 30 degrees Celsius (low limit model dependent)
-
-**Fan Speed Control:** Control fan speeds (model dependent).<br/>
-**Return Air Temperature Monitoring:** Monitor the return air temperature.<br/>
-**Zone Temperature/Humidity Monitoring:**
-**Zone Control:** Via the Touch Point LCD users can interface with the ZoneConnex to control up to 10 zone dampers. Each damper can be controller within a range of 0-100% airflow in 5% increments. <br/>
-**Schedule Management:** Via the Touch Point LCD, users can configure and manage schedules to automatically run their air conditioning unit at set times and days — helping maintain comfort, reduce manual adjustments, and improve energy efficiency. <br/>
-**Scene Management:** Via the Touch Point LCD, users can create custom “scenes” that bundle specific run conditions—such as mode, setpoint, and fan speed. These scenes can then be applied to schedules, or link them to run modes for consistent comfort with a single action. <br/>
-**Error Status Reporting:** Via the Touch Point LCD users can monitor the error status and error codes generated by the Air Conditioner unit whilst also monitoring system generated alerts such as communications errors. <br/>
+- **Operation Control:** Enable the unit on and off.
+- **Mode Control:** Switch between cool, heat, dry, auto, and fan modes.
+- **Temperature Setpoint Control:** Adjust heating/cooling temperature setpoint.
+  - Cooling setpoint 18 to 30 degrees Celsius
+  - Heating setpoint 16-18 to 30 degrees Celsius (low limit model dependent)
+- **Fan Speed Control:** Control fan speeds (model dependent).
+- **Return Air Temperature Monitoring:** Monitor the return air temperature.
+- **Zone Control:** Via the Touch Point LCD users can interface with the ZoneConnex to control up to 10 zone dampers. Each damper can be controlled within a range of 0-100% airflow in 5% increments.
+- **Schedule Management:** Via the Touch Point LCD, users can configure and manage schedules to automatically run their air conditioning unit at set times and days — helping maintain comfort, reduce manual adjustments, and improve energy efficiency.
+- **Scene Management:** Via the Touch Point LCD, users can create custom “scenes” that bundle specific run conditions—such as mode, setpoint, and fan speed. These scenes can then be applied to schedules, or link them to run modes for consistent comfort with a single action.
+- **Error Status Reporting:** Via the Touch Point LCD users can monitor the error status and error codes generated by the Air Conditioner unit whilst also monitoring system generated alerts such as communications errors.
 
 <br/>
 
@@ -466,6 +475,7 @@ The TouchPoint LCD features an intuitive navigation bar located at the top of th
 Users can navigate between screens by tapping the corresponding icon on the navigation bar. The active screen is indicated by a black background behind the icon.
 
 The main navigation options include:
+
 - **Home:** Access the main control screen to manage system power, operating mode, temperature setpoint, and fan speed.
 - **Zones:** View and control individual zones and monitor zone temperatures.
 - **Schedules/Scenes:** Create, edit, and manage automated schedules for system operation and configure and apply custom scene presets that combine specific operating parameters.
@@ -498,6 +508,7 @@ Users can control the unit’s operating mode from the Home screen of the TouchP
 The active mode is displayed with a solid black background, while inactive modes appear with a white background.
 
 Available operating modes include:
+
 - **Auto:** The unit automatically selects heating or cooling based on the current room temperature and the setpoint.
 - **Cool:** Actively cools the space to reach and maintain the selected temperature.
 - **Heat:** Actively heats the space to reach and maintain the selected temperature.
@@ -509,6 +520,7 @@ To check available modes or further details on each operating mode, refer to the
 
 ### 6.2.3 Temperature Setpoint Control
 Users can adjust the temperature setpoint from the Home screen of the TouchPoint LCD to control the temperature maintained by the unit. The setpoint can be increased or decreased in 0.5 °C increments within the following ranges.
+
 - Auto/Cooling/Dry: Setpoint range is 18 to 30 degrees Celsius
 - Heating: Setpoint 16-18 to 30 degrees Celsius (Low limit model dependent. Refer to the unit’s user manual)
 - Fan: Setpoint control is disabled in fan mode as the unit is circulating air within the space without heating or cooling.
@@ -526,6 +538,7 @@ Users can adjust the fan speed from the Home screen of the TouchPoint LCD by sel
 In Dry mode, fan speed is automatically set to Auto and cannot be adjusted as the unit is working to reduce humidity with minimal cooling.
 
 Available fan speeds include:
+
 - **Auto:** The unit automatically adjusts the fan speed based on the current room temperature, setpoint, and operating mode to optimize comfort and energy efficiency.
 - **Quiet:** The unit operates at a reduced fan speed to minimize noise, providing a quieter environment while maintaining comfort.
 - **Low:** The unit operates at a low fan speed, providing gentle air circulation while maintaining comfort.
@@ -583,12 +596,14 @@ From there, users can specify the desired settings for the schedule in section 6
 Once a schedule is created, users can manage the schedule by selecting the schedule from the list on the Schedule/Scene screen. From there, users can edit the schedule settings, adjust the active days and times, and apply specific scenes to the schedule. This allows users to easily modify their schedules as needed to maintain comfort and energy efficiency.
 
 The Schedule screen includes the following key settings:
+
 - **Schedule Name:** Enter a clear name to identify the schedule (for example, Weekday Morning or Evening Comfort).
 - **Schedule Enable:** Use the enable toggle to activate or disable the schedule without deleting it.
 - **Day Selection:** Select the days the schedule should run. Multiple days can be selected as required.
 - **Time Selection (Start/End times):** Set the start time and end time to define when the schedule becomes active and when it finishes.
 
 Use the following steps to create or update a schedule:
+
 1. Press the plus ![plus button](MIA%20Mobile%20App/img/circle-plus.png) button on the Schedule/Scene screen or edit an existing schedule by pressing the arrow ![arrow button](MIA%20Mobile%20App/img/arrow-right.png) button on the schedule card to open the schedule settings screen.
 2. Enter the **Schedule Name**.
 3. Set **Schedule Enable** toggle to On if the schedule should be enabled after saving.
@@ -603,6 +618,7 @@ Use the following steps to create or update a schedule:
 After saving a schedule, users are taken to the Scene configuration screen where a scene is created and linked to the schedule. A scene defines the specific operating conditions — such as mode, setpoint, fan speed, and zone settings — that the system will apply when the schedule becomes active. Users can either assign an existing scene or create a new one with custom settings tailored to the schedule.
 
 The Scene screen includes the following key settings:
+
 - **Scene Name:** Enter a clear name to identify the scene (for example, Summer Cool or Night Quiet).
 - **Assign Existing Scene:** Select a previously created scene to link to the schedule instead of creating a new one.
 - **Mode Selection:** Select the desired operating mode (Auto, Cool, Heat, Fan, or Dry) for the scene.
@@ -614,6 +630,7 @@ The Scene screen includes the following key settings:
 - **Return to Schedules:** Press `Previous` to return to the Schedule configuration screen without saving the scene.
 
 Use the following steps to create or update a scene:
+
 1. Enter the **Scene Name**.
 2. Alternatively, select an existing scene using **Assign Existing Scene** to skip manual configuration.
 3. Select the desired **Mode** for the scene.
@@ -641,15 +658,11 @@ The TouchPoint LCD provides access to detailed system information through the Se
 
 ![max800px](Touch%20Point%20LCD/img/LCD-Screenshots/System-Info.png)
 
-<br/>
-
 # 7 Additional Resources
 For further details outlining the Zoneconnex system use the following links:
 
 - anywAiR® Zone Mobile App User Manual **[anywAiR® Zone Mobile App](/rubix-ce-docs/docs/Zone%20Controller%20Stack/MIA%20Mobile%20App/MIA%20App%20User%20Manual)**
-
 - Zoneconnex Quick Start Guide **[Zoneconnex Quick Start Guide](/rubix-ce-docs/docs/Zone%20Controller%20Stack/Zoneconnex%20User%20Start%20Guide)**
-
 - Zoneconnex Quick Install Guide **[Zoneconnex Quick Install Guide](/rubix-ce-docs/docs/Zone%20Controller%20Stack/Zoneconnex%20Quick%20Install%20Guide)**
 
 <!-- - Touch Point LCD Operation **[Touch Point LCD](/rubix-ce-docs/docs/Zone%20Controller%20Stack/Touch%20Point%20LCD/Touch%20Point%20LCD%20User%20Manual)** <br/> -->
