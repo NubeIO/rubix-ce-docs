@@ -59,6 +59,26 @@
   background-color: #000000;
 }
 
+/* Inline UI glyphs — small button icons that sit inside a sentence. Docusaurus
+   stamps the source pixel size onto each <img> as width/height attributes, so we
+   key off the discrete icon dimensions and flow them at text height instead of as
+   a block. Every real icon in the repo is one of these sizes (all <=51px; nothing
+   else is below 142px). A new icon at a new small size just needs its w/h added
+   here. Mirrors the PDF's img.icon rule (pdf-toolkit/engine.css). */
+.markdown img[width="24"][height="24"],
+.markdown img[width="30"][height="30"],
+.markdown img[width="51"][height="51"],
+.markdown img[width="22"][height="21"],
+.markdown img[width="20"][height="21"],
+.markdown img[width="12"][height="11"] {
+  display: inline;
+  height: 1em;
+  width: auto;
+  max-width: none;          /* defeat Infima's img { max-width: 100% } */
+  vertical-align: -0.18em;
+  margin: 0 1px;
+}
+
 img[alt="max50px"] {
   max-width: 10px;
   display: block;
@@ -108,3 +128,31 @@ img[alt="max900px"] {
   max-width: 900px;
   display: block;
 }
+
+/* Continuous ordered-list numbering — mirrors pdf-toolkit/engine.css.
+   A standalone image block between numbered steps makes the Markdown parser end
+   one <ol> and start a fresh one, so the visible numbers restart at 1 mid-step
+   (e.g. §5.2 Wi-Fi, §6 Installer). We drive numbering with a counter that resets
+   at each section heading and increments per top-level <li>, so it runs
+   continuously across image-split lists but still restarts per section. Scoped
+   to .markdown so site chrome and nested lists are untouched. */
+.markdown h1, .markdown h2 { counter-reset: step; }
+.markdown ol { list-style: none; }
+.markdown ol > li {
+  counter-increment: step;
+  position: relative;         /* anchor the marker */
+}
+.markdown ol > li::before {
+  content: counter(step) ".";
+  font-weight: 600;
+  position: absolute;         /* pin top-left so block-first items (image /
+                                 paragraph) don't strand the number on its own line */
+  left: -1.6em;
+  width: 1.4em;
+  text-align: left;
+}
+/* Nested lists keep native A/B/C, a/b/c markers, not the step counter. */
+.markdown ol ol { list-style: upper-alpha; }
+.markdown ol ol ol { list-style: lower-alpha; }
+.markdown ol ol > li, .markdown ol ol ol > li { counter-increment: none; }
+.markdown ol ol > li::before, .markdown ol ol ol > li::before { content: none; }
