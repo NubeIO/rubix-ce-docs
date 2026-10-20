@@ -1,4 +1,4 @@
-# UART Long Range Adaptor (LRA) User Manual
+# anywAiR iO Long Range Adaptor (LRA) User Manual
 
 # 1. About Product
 
@@ -36,10 +36,10 @@ transmission range, low power consumption, and is less susceptible to object int
 - Installation & User Manual. 
 - anywAiR iO Long Range Adaptor
 - LoRa Antenna. 
-- PAP-04V-S power/communication cable. 
+- LRA power/communication cable. 
 - Mounting screws/velcro tape.
 
-*Insert Packing list images*
+<!-- *Insert Packing list images* -->
 
 <br/>
 
@@ -73,7 +73,7 @@ transmission range, low power consumption, and is less susceptible to object int
   - Orange L1 light - Will be inactive in normal operation. If reset is pressed L1 will illuminate momentarily during the reboot cycle.
 - **Lora Connector:** Connects the U.FL Antenna Connector to the internal PCB.
 - **USB-C Port:** Provides a connection point to update the device firmware.
-- **CN Connector:** Connection point for the PAP-04V-S Connector linking the Long Range Adaptor (LRA) to the Air Conditioner UART port (refer to compatibility list for specific port for each indoor unit).
+- **PAP-04V-S Connector:** Connection point for the LRA power/communication cable linking the Long Range Adaptor (LRA) to the Air Conditioner UART port (refer to compatibility list for specific port for each indoor unit).
 - **PCB Screws:** Used to secure the PCB in the enclosure.
 
 ![max1000px](img/UART-LoRaLink-Internal-Parts.png)
@@ -170,23 +170,25 @@ Ensure the antenna is vertical and that cables are routed cleanly via existing p
 
 ## 3.4. UART Connection
 
-The anywAiR iO Long Range Adaptor (LRA) is designed to connect to the indoor unit of the air conditioning system. The connection is made using the supplied PAP-04V-S cable, which has a 4-pin connector on one end for the indoor unit and a 4-pin connector on the other end for the anywAiR iO Long Range Adaptor (LRA).
+The anywAiR iO Long Range Adaptor (LRA) is designed to connect to the indoor unit of the air conditioning system. The connection is made using the supplied LRA power/communication cable, which has a 4-pin connector on one end for the indoor unit and a 4-pin connector on the other end for the anywAiR iO Long Range Adaptor (LRA).
 
-Note: Only use the cable that comes with the device, using a different cable can cause failure.
+:::caution
+Only use the cable that comes with the device, using a different cable can cause failure. DO NOT modify the cable in any way, as this may cause damage to the anywAiR iO Long Range Adaptor (LRA) or the indoor unit. 
+:::
 
-| Indoor Unit  |                |
-|-----------	|----------------|
-| Pin 1     	| 12VDC          |  
-| Pin 2     	| DC Ground      |
-| Pin 3     	| Sending Tx     |
-| Pin 4      	| Receiving Rx   |
+| Indoor Unit |                | | anywAiR iO Long Range Adaptor (LRA) |                |
+|-------------|----------------|-|--------------|----------------|
+| Pin 1       | 12VDC          | | Pin 1     	| 12VDC          | 
+| Pin 2       | DC Ground      | | Pin 2     	| DC Ground      |
+| Pin 3       | Sending Tx     | | Pin 3     	| Receiving Rx   |
+| Pin 4       | Receiving Rx   | | Pin 4        | Sending Tx     |
 
-| anywAiR iO Long Range Adaptor (LRA)    |                |
+<!-- | anywAiR iO Long Range Adaptor (LRA)    |                |
 |-----------	|----------------|
 | Pin 1     	| 12VDC          |  
 | Pin 2     	| DC Ground      |
 | Pin 3     	| Receiving Rx   |
-| Pin 4      	| Sending Tx     |
+| Pin 4      	| Sending Tx     | -->
 
 
 ![max1000px](img/PAP-04V-S_Cable.png)
@@ -246,16 +248,19 @@ The anywAiR iO Long Range Adaptor (LRA) can be configured in two ways.
 
 
 ### 3.6.1 Downloading the App
-*When officially released add the real Apple and Google play links*
+*When officially released add the real Apple and Google play links and QR codes*
 
 
-|Downloads | |
+<!-- |Downloads | |
 |-|-|
 | Google Play | <a href="https://play.google.com/apps/internaltest/4699394012260856314"> ![max300px](img/google-play-icon.png) </a> |
-| App Store | <a href="https://testflight.apple.com/v1/app/6754748732?build=193360892"> ![max300px](img/Apple-app-download-icon.png) </a> |
+| App Store | <a href="https://testflight.apple.com/v1/app/6754748732?build=193360892"> ![max300px](img/Apple-app-download-icon.png) </a> | -->
 
 
-
+| Android  | iOS |
+|----------|-----|
+| **Insert QR Code** | **Insert QR Code** |
+| <a href="https://play.google.com/apps/internaltest/4699394012260856314"> ![max300px](img/google-play-icon.png) </a>   | <a href="https://testflight.apple.com/v1/app/6754748732?build=193360892"> ![max300px](img/Apple-app-download-icon.png) </a> |
 
 
 
@@ -280,6 +285,14 @@ Please note: The on-site gateway will need to plugged in, powered up, and on-lin
 
 **Note:** If you are unsure of the username and password please contact your service provider or anywAiR iO technical suport via `support@nube-io.com`
 
+<img src={require("./screenshots/LRA-Screenshot-5.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-9.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-10.png").default} width="25%" />
+
+<br/>
+<br/>
+
+
 **Scanning Network to Add a Gateway**
 1. Launch the mobile app and ensure Rubix Compute Gateways Screen is opened.
 2. Press the `Add Rubix Compute` button located on the bottom right of the screen.
@@ -292,12 +305,28 @@ Please note: The on-site gateway will need to plugged in, powered up, and on-lin
 
 **Note:** If you are unsure of the username and password please contact your service provider or anywAiR iO technical suport via `support@nube-io.com`
 
+<img src={require("./screenshots/LRA-Screenshot-5.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-6.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-9.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-10.png").default} width="25%" />
+
+<br/>
+<br/>
+
+
 **Editing a Gateway**
 1. Launch the mobile app and ensure Rubix Compute Gateways Screen is opened.
 2. Press on the `information` button ![info icon](img/information-icon-30pix.png) for the gateway you wish to edit and enter the gateway information view
 3. Press the `pencil` button ![pencil icon](img/Edit-Pencil-30pix.png) to enter the editable settings for the rubix compute gateway.
 4. Update/edit gateway information and re-enter the password.
 5. Press `Update` button to save and apply the changes. The App will then navigate to the devices screen for the updated gateway.
+
+<img src={require("./screenshots/LRA-Screenshot-10.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-27.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-30.png").default} width="25%" />
+
+<br/>
+<br/>
 
 **Deleting a Gateway**
 1. Launch the mobile app and ensure Rubix Compute Gateways Screen is opened.
@@ -308,6 +337,13 @@ Please note: The on-site gateway will need to plugged in, powered up, and on-lin
     - `Delete`: Select this option to confirm the deletion. <br/>
 5. If deletion is confirmed as per Step-4 the Rubix Compute Gateway will be removed and user will be navigated back to the Rubix Compute Gateways screen.
 
+<img src={require("./screenshots/LRA-Screenshot-10.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-27.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-29.png").default} width="25%" />
+
+<br/>
+<br/>
+
 **Accessing Gateway Information**
 1. Launch the mobile app and ensure Rubix Compute Gateways Screen is opened.
 2. Press on the `information` button ![info icon](img/information-icon-30pix.png) for the Rubix Compute Gateway you wish to enter the Device information view. Here you'll find the following details: <br/>
@@ -316,6 +352,10 @@ Please note: The on-site gateway will need to plugged in, powered up, and on-lin
     - Port
     - Username
 
+<img src={require("./screenshots/LRA-Screenshot-10.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-27.png").default} width="25%" />
+
+<br/>
 <br/>
 
 ### 3.6.3 Device Management
@@ -336,15 +376,35 @@ There are two methods to add a Long Range Adaptor (LRA) via the mobile app.
 6. Press the `Continue` button located on the bottom of the screen to confirm the configuration and the device will be created and points provisioned.
 7. Once the Long Range Adaptor (LRA) returns a response during the provisioning the controls dashboard will be automatically generated and opened for the newly added device.
 
+<img src={require("./screenshots/LRA-Screenshot-10.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-13.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-17.png").default} width="25%" />
+
+<br/>
+<br/>
+
 **Scanning the QR Code**
 1. Launch the mobile app and ensure Rubix Computes Screen is opened.
 2. Select the Rubix Compute Gateway from the list of gateway that you intend to add a Long Range Adaptor (LRA) to by clicking on the Gateway card. You will be navigated to the Devices screen.
 3. Press the `Add Device` button located on the bottom right of the screen.
 4. Press the `Scan Device QR` button to select this method and navigate to the configuration.
-5. Scan the QR Code displayed on the Long Range Adaptor (LRA) device.
+5. Scan the QR Code displayed on the Long Range Adaptor (LRA) device. Phone camera permissions will need to be enabled to allow the app to access the camera for scanning. The QR Code is located on the product labelling on the Long Range Adaptor (LRA).
 6. Once the QR Code is scanned, the device UUID will be automatically populated. Enter the remaining appropriate information. The remaining mandatory fields include: 
     - Device Name
     - History Enable/Diable (Enabled as default)
+
+<img src={require("./screenshots/LRA-Screenshot-10.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-13.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-14.png").default} width="25%" />
+<br/>
+<img src={require("./screenshots/LRA-Screenshot-15.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-16.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-28.png").default} width="25%" />
+
+<br/>
+<br/>
+
+
 
 **Editing a Device**
 1. Launch the mobile app and navigate from the Rubix Computes screen to the Devices Screen for the appropriate gateway.
@@ -352,6 +412,13 @@ There are two methods to add a Long Range Adaptor (LRA) via the mobile app.
 3. Press the `pencil` button ![pencil icon](img/Edit-Pencil-30pix.png) to enter the editable settings for the Long Range Adaptor (LRA) device.
 4. Update/edit device information.
 5. Press `Update` button to save and apply the changes. The App will then navigate to the control dashboard for the updated device.
+
+<img src={require("./screenshots/LRA-Screenshot-11.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-18.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-21.png").default} width="25%" />
+
+<br/>
+<br/>
 
 **Deleting a Device**
 1. Launch the mobile app and navigate from the Rubix Computes screen to the Devices Screen for the appropriate gateway.
@@ -362,10 +429,22 @@ There are two methods to add a Long Range Adaptor (LRA) via the mobile app.
     - `Delete`: Select this option to confirm the deletion. <br/>
 5. If deletion is confirmed as per Step-4 the Long Range Adaptor (LRA) device will be removed and user will be navigated back to the Devices screen.
 
+<img src={require("./screenshots/LRA-Screenshot-11.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-18.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-20.png").default} width="25%" />
+
+
+<br/>
+<br/>
+
 **Accessing Device Information**
 1. Launch the mobile app and navigate from the Rubix Computes screen to the Devices Screen for the appropriate gateway.
 2. Press on the `information` button ![info icon](img/information-icon-30pix.png) for the Long Range Adaptor (LRA) you wish to enter the Device information view.
 
+<img src={require("./screenshots/LRA-Screenshot-11.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-18.png").default} width="25%" />
+
+<br/>
 <br/>
 
 # 4. Operation Guide
@@ -387,8 +466,12 @@ The following are key control and monitoring points available to the user:
 **Return Air Temperature Monitoring:** Monitor the return air temperature (model dependent).<br/>
 **Error Status Reporting:** Retrieve the error status and error code.
 
-![max1000px](img/UART-Control-1.png)
-![max1000px](img/UART-Control-2.png)
+<!-- ![max1000px](img/UART-Control-1.png)
+![max1000px](img/UART-Control-2.png) -->
+
+<img src={require("./screenshots/LRA-Screenshot-24.png").default} width="25%" />
+<img src={require("./screenshots/LRA-Screenshot-25.png").default} width="25%" />
+
 
 <br/>
 
@@ -418,17 +501,20 @@ The Device Details screen displays additional information for device monitoring,
 - Example: Has Vertical Louver Swing = Yes
 - Vertical Louver Step Count = 4 Steps 
 
-<br/>
 
-![max1000px](img/Device-details.png)
+<!-- ![max1000px](img/Device-details.png) -->
 
+<img src={require("./screenshots/LRA-Screenshot-26.png").default} width="25%" />
+
+<br/> 
 <br/>
 
 ## 4.2. Operation Control
 Users can control the unit’s operation using the `Off/On` toggle switch. <br/>
 For additional point information press on the `information` button ![info icon](img/information-icon-30pix.png).
 
-![max1000px](img/UART-OnOffControl.png)
+![max800px](img/UART-OnOffControl.png)
+
 
 <br/>
 
@@ -443,7 +529,7 @@ Available operating modes include:
 
 For further details on each operating mode, refer to the unit’s user manual.
 
-![max1000px](img/UART-ModeControl.png)
+![max800px](img/UART-ModeControl.png)
 
 <br/>
 
@@ -459,7 +545,7 @@ Users can adjust the temperature setpoint to control the temperature maintained 
 
 **Canceling Changes:** To cancel a setpoint change press the reset ![reset button](img/rotate-ccw.png) button prior to **Step-2**. This will revert the setpoint to the previous value.
 
-![max1000px](img/UART-SetpointControl.png)
+![max800px](img/UART-SetpointControl.png)
 
 <br/>
 
@@ -474,14 +560,14 @@ Available fan speeds include:
 
 For further details on each fan speed mode, refer to the unit’s user manual.
 
-![max1000px](img/UART-FanSpeed.png)
+![max800px](img/UART-FanSpeed.png)
 
 <br/>
 
 ## 4.6. Economy Mode Control
 Users can enable or disable the unit’s economy mode using the `Off/On` toggle switch. <br/>
 
-![max1000px](img/UART-Economy.png)
+![max800px](img/UART-Economy.png)
 
 <br/>
 
@@ -496,7 +582,7 @@ Users can adjust the vertical louvers to a position of their choosing or enable 
 
 **Vertical Louver Swing:** Users can enable or disable the unit’s vertical louver swing mode using the `Off/On` toggle switch. When the vertical louver swing is enabled the manually set step position will be ignored. If a step postion is set by a user this change will overide the swing function and the vertical louver swing mode will automatically toggle to `Off`.
 
-![max1000px](img/UART-VerticalControl.png)
+![max800px](img/UART-VerticalControl.png)
 
 <br/>
 
@@ -511,14 +597,80 @@ Users can adjust the horizontal louvers to a position of their choosing or enabl
 
 **Horizontal Louver Swing:** Users can enable or disable the unit’s horizontal louver swing mode using the `Off/On` toggle switch. When the horizontal louver swing is enabled the manually set step position will be ignored. If a step postion is set by a user this change will overide the swing function and the horizontal louver swing mode will automatically toggle to `Off`.
 
-![max1000px](img/UART-HorizontalControl.png)
+![max800px](img/UART-HorizontalControl.png)
 
 <br/>
 
 # 5. UART Long Range Adaptor (LRA) Point Register
 
+**Boot:** Full snapshot of all points on the device sent when the device powers on or is reset using the RST button. <br/>
+**Device snapshot:** Full snapshot of all points on the device sent when the device is first created in the system or when it is pinged via Rubix CE or the LRA Setup: anywAiR iO App. <br/>
+**Full snapshot (every 15 min):** Point values are read and reported every 15 minutes, whether or not they have changed. <br/>
+**COV on change:** Point values are checked every 1 second. A new value is reported only when a change is detected.
 
-| Point ID | Point Name                        | New Variable (Data Type) | Attribute  |
+<br/>
+
+| Point ID | Point Name                        | Data Type | Attribute  | Update Behaviour |
+|----------|-----------------------------------|-------------------------|------------|------------------|
+| N/A      | snr                               | float                   | Read Only  | Boot + full snapshot (every 15 min) |
+| N/A      | rssi                              | float                   | Read Only  | Boot + full snapshot (every 15 min) |
+| 1        | Communication Status              | uint8                   | Read Only  | Boot + full snapshot (every 15 min) |
+| 2        | Unit Type                         | uint8                   | Read Only  | Boot + device snapshot |
+| 3        | Has Economy                       | bool                    | Read Only  | Boot + device snapshot |
+| 10       | Has Mode Cool                     | bool                    | Read Only  | Boot + device snapshot |
+| 11       | Has Mode Dry                      | bool                    | Read Only  | Boot + device snapshot |
+| 12       | Has Mode Fan                      | bool                    | Read Only  | Boot + device snapshot |
+| 13       | Has Mode Heat                     | bool                    | Read Only  | Boot + device snapshot |
+| 14       | Has Mode Auto                     | bool                    | Read Only  | Boot + device snapshot |
+| 15       | Has Fan Auto                      | bool                    | Read Only  | Boot + device snapshot |
+| 16       | Has Fan High                      | bool                    | Read Only  | Boot + device snapshot |
+| 17       | Has Fan Medium                    | bool                    | Read Only  | Boot + device snapshot |
+| 18       | Has Fan Low                       | bool                    | Read Only  | Boot + device snapshot |
+| 19       | Has Fan Quiet                     | bool                    | Read Only  | Boot + device snapshot |
+| 20       | Vertical Louver Step Count        | uint8                   | Read Only  | Boot + device snapshot |
+| 21       | Has Vertical Louver Swing         | bool                    | Read Only  | Boot + device snapshot |
+| 22       | Vertical Louver 1 Step Count      | uint8                   | Read Only  | Boot + device snapshot |
+| 23       | Has Vertical Louver 1 Swing       | bool                    | Read Only  | Boot + device snapshot |
+| 24       | Vertical Louver 2 Step Count      | uint8                   | Read Only  | Boot + device snapshot |
+| 25       | Has Vertical Louver 2 Swing       | bool                    | Read Only  | Boot + device snapshot |
+| 26       | Vertical Louver 3 Step Count      | uint8                   | Read Only  | Boot + device snapshot |
+| 27       | Has Vertical Louver 3 Swing       | bool                    | Read Only  | Boot + device snapshot |
+| 28       | Vertical Louver 4 Step Count      | uint8                   | Read Only  | Boot + device snapshot |
+| 29       | Has Vertical Louver 4 Swing       | bool                    | Read Only  | Boot + device snapshot |
+| 30       | Horizontal Louver Step Count      | uint8                   | Read Only  | Boot + device snapshot |
+| 31       | Has Horizontal Louver Swing       | bool                    | Read Only  | Boot + device snapshot |
+| 32       | Horizontal Louver 1 Step Count    | uint8                   | Read Only  | Boot + device snapshot |
+| 33       | Has Horizontal Louver 1 Swing     | bool                    | Read Only  | Boot + device snapshot |
+| 34       | Horizontal Louver 2 Step Count    | uint8                   | Read Only  | Boot + device snapshot |
+| 35       | Has Horizontal Louver 2 Swing     | bool                    | Read Only  | Boot + device snapshot |
+| 36       | Horizontal Louver 3 Step Count    | uint8                   | Read Only  | Boot + device snapshot |
+| 37       | Has Horizontal Louver 3 Swing     | bool                    | Read Only  | Boot + device snapshot |
+| 38       | Horizontal Louver 4 Step Count    | uint8                   | Read Only  | Boot + device snapshot |
+| 39       | Has Horizontal Louver 4 Swing     | bool                    | Read Only  | Boot + device snapshot |
+| 40       | Set Operation Status              | bool                    | Write      | COV on change + 15 min snapshot |
+| 41       | Set Operation Mode                | uint8                   | Write      | COV on change + 15 min snapshot |
+| 42       | Set Temperature                   | temp                    | Write      | COV on change + 15 min snapshot |
+| 43       | Set Fan                           | uint8                   | Write      | COV on change + 15 min snapshot |
+| 44       | Vertical Louver Current Position  | uint8                   | Write      | COV on change + 15 min snapshot (model dependant) |
+| 45       | Vertical Louver Swing             | bool                    | Write      | COV on change + 15 min snapshot (model dependant) |
+| 46       | Vertical Louver 1 Current Position | uint8                  | Write      | COV on change + 15 min snapshot (model dependant) |
+| 47       | Verticle Louver 1 Swing           | bool                    | Write      | COV on change + 15 min snapshot (model dependant) |
+| 48       | Vertical Louver 2 Current Position | uint8                  | Write      | COV on change + 15 min snapshot (model dependant) |
+| 49       | Verticle Louver 2 Swing           | bool                    | Write      | COV on change + 15 min snapshot (model dependant) |
+| 50       | Vertical Louver 3 Current Position | uint8                  | Write      | COV on change + 15 min snapshot (model dependant) |
+| 51       | Verticle Louver 3 Swing           | bool                    | Write      | COV on change + 15 min snapshot (model dependant) |
+| 52       | Vertical Louver 4 Current Position | uint8                  | Write      | COV on change + 15 min snapshot (model dependant) |
+| 53       | Verticle Louver 4 Swing           | bool                    | Write      | COV on change + 15 min snapshot (model dependant) |
+| 54       | Horizontal Louver Current Position | uint8                  | Write      | COV on change + 15 min snapshot (model dependant) |
+| 55       | Horizontal Louver Swing           | bool                    | Write      | COV on change + 15 min snapshot (model dependant) |
+| 56       | Room Temperature                  | temp                    | Read Only  | COV when change >= 0.3 degC + 15 min snapshot |
+| 57       | Error State                       | uint16                  | Read Only  | COV on change + 15 min snapshot |
+| 58       | Error Code                        | uint16                  | Read Only  | COV on change + 15 min snapshot |
+| 59       | Set Economy                       | bool                    | Write      | COV on change + 15 min snapshot (model dependant) |
+
+
+
+<!-- | Point ID | Point Name                        | New Variable (Data Type) | Attribute  |
 |----------|-----------------------------------|-------------------------|------------|
 | N/A   | snr                               | float                   | Read Only  |
 | N/A   | rssi                              | float                   | Read Only  |
@@ -574,7 +726,7 @@ Users can adjust the horizontal louvers to a position of their choosing or enabl
 | 56       | Room Temperature                   | temp                   | Read Only  |
 | 57       | Error State                        | uint16                 | Read Only  |
 | 58       | Error Code                         | uint16                 | Read Only  |
-| 59       | Set Economy                        | bool                   | Write      |
+| 59       | Set Economy                        | bool                   | Write      | -->
 
 
 <br/>
